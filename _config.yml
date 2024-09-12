@@ -9,7 +9,7 @@
 title: MWNS
 brief-intro: Master Wifi Network Solution
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://mwns.github.io" # the base hostname & protocol for your site
+url: "https://masterwifinetworksolution.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
