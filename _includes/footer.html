@@ -7,17 +7,10 @@
             {% if site.description_footer %} {{site.description_footer}} {% endif %}
         </p>
         <p class="contact">
-            Contact and Follow Me: {% if site.github_username %}
-            <a href="https://github.com/{{site.github_username}}" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a> {% endif %} {% if site.email %}
-            <a href="mailto:{{site.email}}" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a> {% endif %} {% if site.weibo_username %}
-            <a href="http://weibo.com/{{site.weibo_username}}" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a> {% endif %} {% if site.zhihu_username %}
-            <a href="https://www.zhihu.com/people/{{site.zhihu_username}}" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a> {% endif %} {% if site.twitter_username %}
-            <a href="https://twitter.com/{{site.twitter_username}}" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a> {% endif %} {% if site.facebook_username %}
-            <a href="https://www.facebook.com/{{site.facebook_username}}" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a> {% endif %}  {% if site.linkedIn_username %}
-            <a href="https://www.linkedin.com/in/{{site.linkedIn_username}}" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a> {% endif %} {% if site.dribbble_username %}
-            <a href=" https://dribbble.com/{{site.dribbble_username}}" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a> {% endif %}
+            Ikuti saya : {% if site.email %}
+            <a href="mailto:{{site.email}}" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a> {% endif %} {% if site.github_username %} <a href="https://github.com/{{site.github_username}}" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a> {% endif %} {% if site.facebook_username %} <a href="https://www.facebook.com/{{site.facebook_username}}" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a> {% endif %} {% if site.youtube_username %} <a href="https://youtube.com/@{{youtube_username}}" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a> {% endif %} {% if site.telegram_username %} <a href="https://t.me/{{site.telegram_username}}" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a> {% endif %} {% if site.whatsapp_username %} <a href="https://wa.me/{{site.whatsapp_username}}" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> {% endif %}
         </p>
-        <p><span><a href="/">Disclaimer</a></span> - <span><a href="/">Privacy Policy</a></span></p>
+        <p><span><a href="/disclaimer/">Disclaimer</a></span> - <span><a href="/privacy-policy/">Privacy Policy</a></span></p>
         <p class="power">
             <span>
                 Copyright © 2018-2024 <a href="/">{{ site.title }}</a>

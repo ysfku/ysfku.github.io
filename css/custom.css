@@ -1,0 +1,82 @@
+/*
+- Widget Donasi ala Igniel
+- Source code: https://www.igniel.com/2023/04/widget-donasi-blog.html
+*/
+.ignielDonasi {
+    --background: #f9f9f9;
+    --backgroundHover: #f0f0f0;
+    --color: #2f2f2f;
+    --colorHover: #2f2f2f;
+    --icon: #5c5c5c;
+    --col: 2;
+    margin-top: 2rem;
+  }
+  .ignielDonasi path {
+    fill: none;
+    stroke: var(--icon);
+    stroke-width: 1.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+  .ignielDonasi svg:first-child {
+    height: 2rem;
+    width: 35px;
+  }
+  .ignielDonasi svg:last-child {
+    height: 1rem;
+    width: 1rem;
+  }
+  .ignielDonasi-judul {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .ignielDonasi img {
+    width: 35px;
+  }
+  .ignielDonasi-ikon {
+    margin-right: 1rem;
+  }
+  .ignielDonasi-isi {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(var(--col), 1fr);
+  }
+  .ignielDonasi-isi a {
+    align-items: center;
+    background-color: var(--background);
+    border-radius: 7px;
+    color: var(--color);
+    display: flex;
+    gap: 1rem;
+    padding: .75rem 1.25rem;
+    text-decoration: none;
+    transition: all .3s;
+  }
+  .ignielDonasi-isi a:hover {
+    background-color: var(--backgroundHover);
+    color: var(--colorHover);
+    text-decoration: none;
+  }
+  .ignielDonasi-isi .wallet {
+    flex-direction: column;
+  }
+  .ignielDonasi-isi .wallet i {
+    display: block;
+    font-size: 11px;
+    font-style: normal;
+    line-height: 13px;
+  }
+  .ignielDonasi-isi a, .ignielDonasi-isi a span {
+    flex-grow: 1;
+  }
+  @media screen and (max-width: 768px) {
+    .ignielDonasi-isi {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (max-width: 568px) {
+    .ignielDonasi-isi {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }

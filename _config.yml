@@ -14,16 +14,13 @@ url: "https://masterwifinetworksolution.github.io" # the base hostname & protoco
 permalink: /:year/:month/:day/:title/
 
 # other links
-twitter_username:
-facebook_username: muhammadyusuf1992
-github_username:  masterwifinetworksolution
 email: myarachma@gmail.com
-weibo_username: 
-zhihu_username: 
-linkedIn_username: 
-dribbble_username:
-
-description_footer: 本站记录我前端之旅的沿途风景！
+github_username:  masterwifinetworksolution
+facebook_username: muhammadyusuf1992
+youtube_username: masterwifinetworksolution
+telegram_username: +HUPmiH4JI0AwZDVl
+whatsapp_username: 6287764241047
+description_footer: MWNS adalah website resmi dari channel youtube Master Wifi Network Solution.
 
 # comments
 # two ways to comment, only choose one, and use your own short name
@@ -61,3 +58,6 @@ paginate: 10
 
 plugins:
   - jekyll-paginate
+
+collections:
+  databases:
