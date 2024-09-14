@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-icon: user
+icon: user-circle-o
 type: page
 ---
 
@@ -27,26 +27,23 @@ Saya menekuni kegiatan ini sejak 2008 hingga sampai sekarang. Dan berhasil memba
 
 ## Pengalaman Kerja
 
-- Telkom Indonesia (Speedy) 2008-2010
-- Telkom (Flexi) 2009-2011
-- Telkom (Vision) 2009-2011
-- Selayar Network 2019-2020
-- PT.CBT 2024
+| Telkom Indonesia (Speedy) 2008-2010 |
+| Telkom (Flexi) 2009-2011 |
+| Telkom (Vision) 2009-2011 |
+| Selayar Network 2019-2020 |
+| PT.CBT 2024 |
 
 ## Pengalaman Lainnya
 
-- Adobe Animate CC
-- Adobe Ilustrator
-- Adobe Prime Studio
+| Adobe Animate CC |
+| Adobe Ilustrator |
+| Adobe Prime Studio |
 
-## Kontak
+## Terhubung Via
 
-- [Telegram](https://t.me/masterwifinetworksolution)
-- [Whatsapp](https://wa.me/6287764241047)
-- [Messenger](https://m.me/muhammadyusuf1992)
-- [Email](mailto:myarachma92@gmail.com)
-
-## Groups
-
-- [Telegram Groups](https://t.me/+HUPmiH4JI0AwZDVl)
-- [Facebook](https://facebook.com/groups/openclashpasswallindonesia)
+| Kontak | Groups |
+| - | - |
+| [Telegram](https://t.me/masterwifinetworksolution) | [Facebook](https://facebook.com/groups/openclashpasswallindonesia) |
+| [Whatsapp](https://wa.me/6287764241047) | [Telegram Groups](https://t.me/+HUPmiH4JI0AwZDVl) |
+| [Messenger](https://m.me/muhammadyusuf1992) | 
+| [Email](mailto:myarachma92@gmail.com) | 
