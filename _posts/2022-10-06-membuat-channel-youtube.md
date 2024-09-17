@@ -4,6 +4,7 @@ title:  "Membuat Channel Youtube"
 categories: Youtube
 tags:  channel
 author: Muhammad Yusuf
+excerpt: Setelah channel siap, bagikan video Anda di media sosial, blog, atau platform lain untuk menarik penonton.
 ---
 
 * content

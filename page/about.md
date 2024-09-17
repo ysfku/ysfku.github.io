@@ -11,7 +11,7 @@ type: page
 
 ## Informasi Owner Website
 
-```
+```yaml
 Nama      : Muhammad Yusuf
 Kelahiran : Gambut, Kab. Banjar
 Propinsi  : Kalimantan Selatan

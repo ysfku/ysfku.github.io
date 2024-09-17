@@ -4,6 +4,7 @@ title:  "Cara kejar jam tayang youtube"
 categories: Youtube
 tags:  SEO
 author: Muhammad Yusuf
+excerpt: Mencapai 4000 jam tayang di YouTube adalah salah satu syarat untuk memonetisasi channel Anda melalui Program Partner YouTube. Mencapai target ini membutuhkan strategi yang terfokus pada konten berkualitas, optimasi SEO, dan interaksi dengan penonton.
 ---
 
 * content

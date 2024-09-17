@@ -4,6 +4,7 @@ title:  "Mencari kata kunci video youtube"
 categories: Youtube
 tags:  SEO
 author: Muhammad Yusuf
+excerpt: Mencari kata kunci yang tepat untuk video YouTube sangat penting untuk meningkatkan visibilitas dan menarik penonton.
 ---
 
 * content

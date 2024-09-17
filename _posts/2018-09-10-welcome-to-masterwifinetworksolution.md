@@ -4,7 +4,8 @@ title:  "Wellcome To Master Wifi Network Solution"
 date:   2024-09-10 15:14:54
 categories: blog
 tags: blog
-excerpt: blog, jekyll, website, youtube
+author: Muhammad Yusuf
+excerpt: Adapun berkaitan dalam website ini, saya sudah sudah berpegang teguh untuk menjalankan progres ini yang dimana bisa membantu channel youitube saya untuk bisa memberikan edukasi secara tertulis pada website ini.
 mathjax: false
 ---
 
@@ -17,13 +18,13 @@ Selamat datang di website resmi channel youtube `Master Wifi Network Solution`
 
 Pada post pertama ini, izinkan saya untuk memperkenalkan diri terlebih dahulu agar kita saling mengenal satu sama lainnya. Dan bagi anda ingin memperkenalkan diri, silahkan berikan komentar pada bawah halaman post ini.
 
-```
-Nama : Muhammad yusuf
+```yaml
+Nama      : Muhammad yusuf
 Kelahiran : Gambut
 Kecamatan : Gambut
 Kelurahan : gambut
 Kabupaten : Banjar
-Propinsi: Kalimantan Selatan
+Propinsi  : Kalimantan Selatan
 ```
 
 ## Motivasi

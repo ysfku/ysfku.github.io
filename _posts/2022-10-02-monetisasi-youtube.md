@@ -4,6 +4,7 @@ title:  "Monetisasi Youtube"
 categories: Youtube
 tags:  Monetisasi
 author: Muhammad Yusuf
+excerpt: Monetisasi YouTube memungkinkan kreator mendapatkan penghasilan dari video yang diunggah melalui iklan, keanggotaan, sponsor, dan metode lainnya. Untuk mulai menghasilkan uang dari YouTube, ada beberapa syarat dan proses yang harus Anda ikuti.
 ---
 
 * content

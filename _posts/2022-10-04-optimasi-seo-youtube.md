@@ -4,6 +4,7 @@ title:  "Optimasi SEO Youtube"
 categories: Youtube
 tags:  SEO
 author: Muhammad Yusuf
+excerpt: Optimasi SEO di YouTube sangat penting untuk membantu video Anda mendapatkan lebih banyak penonton.
 ---
 
 * content
