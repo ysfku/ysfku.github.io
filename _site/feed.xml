@@ -5,3021 +5,682 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 14 Sep 2024 03:03:21 +0800</pubDate>
-    <lastBuildDate>Sat, 14 Sep 2024 03:03:21 +0800</lastBuildDate>
+    <pubDate>Tue, 17 Sep 2024 18:55:35 +0800</pubDate>
+    <lastBuildDate>Tue, 17 Sep 2024 18:55:35 +0800</lastBuildDate>
     <generator>Jekyll v4.3.3</generator>
     
       <item>
-        <title>Huawei Manager V9 Indonesia</title>
+        <title>Membuat Channel Youtube</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#fitur&quot; id=&quot;markdown-toc-fitur&quot;&gt;Fitur&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#get-file-huawei-manager&quot; id=&quot;markdown-toc-get-file-huawei-manager&quot;&gt;Get file Huawei Manager&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-masuk-ke-akun-google&quot; id=&quot;markdown-toc-1-masuk-ke-akun-google&quot;&gt;1. &lt;strong&gt;Masuk ke Akun Google&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-akses-your-channel-channel-anda&quot; id=&quot;markdown-toc-2-akses-your-channel-channel-anda&quot;&gt;2. &lt;strong&gt;Akses “Your Channel” (Channel Anda)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-mulai-membuat-channel&quot; id=&quot;markdown-toc-3-mulai-membuat-channel&quot;&gt;3. &lt;strong&gt;Mulai Membuat Channel&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-beri-nama-channel&quot; id=&quot;markdown-toc-4-beri-nama-channel&quot;&gt;4. &lt;strong&gt;Beri Nama Channel&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-sesuaikan-channel&quot; id=&quot;markdown-toc-5-sesuaikan-channel&quot;&gt;5. &lt;strong&gt;Sesuaikan Channel&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-unggah-video-pertama-anda&quot; id=&quot;markdown-toc-6-unggah-video-pertama-anda&quot;&gt;6. &lt;strong&gt;Unggah Video Pertama Anda&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-tambahkan-pengaturan-lanjutan-opsional&quot; id=&quot;markdown-toc-7-tambahkan-pengaturan-lanjutan-opsional&quot;&gt;7. &lt;strong&gt;Tambahkan Pengaturan Lanjutan (Opsional)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-promosikan-channel-anda&quot; id=&quot;markdown-toc-8-promosikan-channel-anda&quot;&gt;8. &lt;strong&gt;Promosikan Channel Anda&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;embed-container&quot;&gt;
-  &lt;iframe src=&quot;https://www.youtube.com/embed/g47CzhqcZoM&quot; width=&quot;100%&quot; height=&quot;320&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt;
-  &lt;/iframe&gt;
-&lt;/div&gt;
+Langkah-langkah untuk membuat channel YouTube:
 
-&lt;h2 id=&quot;fitur&quot;&gt;Fitur&lt;/h2&gt;
+&lt;h2 id=&quot;1-masuk-ke-akun-google&quot;&gt;1. &lt;strong&gt;Masuk ke Akun Google&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Lock Cell ID.&lt;/li&gt;
-  &lt;li&gt;Switch All Band.&lt;/li&gt;
-  &lt;li&gt;Lock freq manual.&lt;/li&gt;
-  &lt;li&gt;Show connection device to modem.&lt;/li&gt;
-  &lt;li&gt;Show percent battery.&lt;/li&gt;
-  &lt;li&gt;Show flag country.&lt;/li&gt;
-  &lt;li&gt;Show external antenna.&lt;/li&gt;
-  &lt;li&gt;Support 24 hour nonstop.&lt;/li&gt;
-  &lt;li&gt;Support Huawei modem, Hilink Modem, Orbit Modem.&lt;/li&gt;
-  &lt;li&gt;and more.&lt;/li&gt;
+  &lt;li&gt;Kunjungi &lt;a href=&quot;https://www.youtube.com&quot;&gt;www.youtube.com&lt;/a&gt; dan klik &lt;strong&gt;“Sign in”&lt;/strong&gt; (Masuk) di pojok kanan atas.&lt;/li&gt;
+  &lt;li&gt;Masukkan akun Google Anda. Jika belum memiliki akun Google, buat terlebih dahulu dengan mengikuti petunjuk yang ada.&lt;/li&gt;
 &lt;/ul&gt;
 
-Bootsrap theme for huawei manager version 9 indonesian.
+&lt;h2 id=&quot;2-akses-your-channel-channel-anda&quot;&gt;2. &lt;strong&gt;Akses “Your Channel” (Channel Anda)&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;h2 id=&quot;get-file-huawei-manager&quot;&gt;Get file Huawei Manager&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Setelah berhasil login, klik pada &lt;strong&gt;foto profil&lt;/strong&gt; di pojok kanan atas.&lt;/li&gt;
+  &lt;li&gt;Pilih &lt;strong&gt;“Your Channel”&lt;/strong&gt; (Channel Anda) dari menu dropdown.&lt;/li&gt;
+&lt;/ul&gt;
 
-You can get file in &lt;a href=&quot;https://ouo.io/W2I9M9&quot;&gt;here&lt;/a&gt;.
+&lt;h2 id=&quot;3-mulai-membuat-channel&quot;&gt;3. &lt;strong&gt;Mulai Membuat Channel&lt;/strong&gt;&lt;/h2&gt;
 
-password check in video.
+&lt;ul&gt;
+  &lt;li&gt;YouTube akan menampilkan pilihan untuk membuat channel. Jika ini pertama kali Anda membuat channel, Anda akan diminta untuk memilih antara:&lt;/li&gt;
+  &lt;li&gt;Menggunakan nama Google Anda untuk channel.&lt;/li&gt;
+  &lt;li&gt;Membuat nama channel khusus.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-beri-nama-channel&quot;&gt;4. &lt;strong&gt;Beri Nama Channel&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pilih nama channel yang Anda inginkan. Jika ingin membangun brand, sebaiknya pilih nama yang sesuai dengan niche atau topik yang akan Anda bahas di channel Anda.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-sesuaikan-channel&quot;&gt;5. &lt;strong&gt;Sesuaikan Channel&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    Setelah channel dibuat, Anda dapat menyesuaikannya lebih lanjut dengan menambahkan &lt;strong&gt;deskripsi&lt;/strong&gt; channel, &lt;strong&gt;gambar profil&lt;/strong&gt;, dan &lt;strong&gt;banner&lt;/strong&gt;.
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ini penting untuk menarik perhatian penonton dan membuat channel Anda terlihat profesional.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-unggah-video-pertama-anda&quot;&gt;6. &lt;strong&gt;Unggah Video Pertama Anda&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    Untuk mengunggah video, klik ikon &lt;strong&gt;kamera dengan tanda plus&lt;/strong&gt; di sudut kanan atas layar, lalu pilih &lt;strong&gt;“Upload video”&lt;/strong&gt; (Unggah video).
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ikuti langkah-langkah untuk mengunggah video dari komputer atau perangkat Anda.
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-tambahkan-pengaturan-lanjutan-opsional&quot;&gt;7. &lt;strong&gt;Tambahkan Pengaturan Lanjutan (Opsional)&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Masuk ke bagian &lt;strong&gt;YouTube Studio&lt;/strong&gt; untuk mengelola video, melihat statistik, dan mengatur pengaturan lebih lanjut.&lt;/li&gt;
+  &lt;li&gt;Di sini Anda bisa mengatur &lt;strong&gt;kategori&lt;/strong&gt;, &lt;strong&gt;tag&lt;/strong&gt;, &lt;strong&gt;thumbnail&lt;/strong&gt; kustom, dan sebagainya.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;8-promosikan-channel-anda&quot;&gt;8. &lt;strong&gt;Promosikan Channel Anda&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Setelah channel siap, bagikan video Anda di media sosial, blog, atau platform lain untuk menarik penonton.&lt;/li&gt;
+&lt;/ul&gt;
+
+Setelah semua selesai, Anda sudah siap untuk mulai membuat konten dan mengembangkan channel YouTube Anda!
 </description>
         <pubDate>Thu, 06 Oct 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/10/06/huawei-manager-v9-indonesia/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/10/06/huawei-manager-v9-indonesia/</guid>
+        <link>http://localhost:4000/2022/10/06/membuat-channel-youtube/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/06/membuat-channel-youtube/</guid>
         
-        <category>HuaweiManager</category>
-        
-        
-        <category>Aplikasi</category>
-        
-      </item>
-    
-      <item>
-        <title>Backup Openclash Simaster</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#configuration&quot; id=&quot;markdown-toc-configuration&quot;&gt;Configuration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#proxy-provider&quot; id=&quot;markdown-toc-proxy-provider&quot;&gt;Proxy Provider&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#modem-wan&quot; id=&quot;markdown-toc-modem-wan&quot;&gt;Modem WAN&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#modem-wanb&quot; id=&quot;markdown-toc-modem-wanb&quot;&gt;Modem WANB&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#rule-provider&quot; id=&quot;markdown-toc-rule-provider&quot;&gt;Rule Provider&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#game&quot; id=&quot;markdown-toc-game&quot;&gt;Game&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#sosmed&quot; id=&quot;markdown-toc-sosmed&quot;&gt;Sosmed&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#stream&quot; id=&quot;markdown-toc-stream&quot;&gt;Stream&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#online-shop&quot; id=&quot;markdown-toc-online-shop&quot;&gt;Online Shop&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#bank&quot; id=&quot;markdown-toc-bank&quot;&gt;Bank&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#port-simaster&quot; id=&quot;markdown-toc-port-simaster&quot;&gt;Port Simaster&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#download-file&quot; id=&quot;markdown-toc-download-file&quot;&gt;Download File&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#cara-upload-backup&quot; id=&quot;markdown-toc-cara-upload-backup&quot;&gt;Cara Upload Backup&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-Tutorial backup &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;clash&lt;/code&gt; file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;simaster&lt;/code&gt; di &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openwrt&lt;/code&gt; ini sangat sederhana dan cocok untuk &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openwrt&lt;/code&gt; versi &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;23.05.0&lt;/code&gt;.
-
-Dengan backup ini anda sangat mudah untuk menggunakan dengan memasang &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;file backup&lt;/code&gt; di &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config manager&lt;/code&gt;.
-
-Dan berikut tampilan file yang sudah saya siapkan untuk anda.
-
-&lt;h2 id=&quot;configuration&quot;&gt;Configuration&lt;/h2&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
-port: 7890
-socks-port: 7891
-redir-port: 7892
-tproxy-port: 7895
-mixed-port: 7893
-allow-lan: true
-mode: script
-log-level: info
-ipv6: false
-external-controller: 0.0.0.0:9090
-external-ui: &quot;/usr/share/openclash/ui&quot;
-dns:
-  enable: true
-  ipv6: false
-  enhanced-mode: fake-ip
-  listen: 0.0.0.0:7874
-  fallback-filter:
-    geoip: true
-    geoip-code: ID
-    ipcidr:
-    - 0.0.0.0/8
-    - 10.0.0.0/8
-    - 100.64.0.0/10
-    - 127.0.0.0/8
-    - 169.254.0.0/16
-    - 172.24.0.0/16
-    - 172.16.0.0/12
-    - 192.0.0.0/24
-    - 192.0.2.0/24
-    - 192.88.99.0/24
-    - 192.168.0.0/16
-    - 198.18.0.0/15
-    - 198.51.100.0/24
-    - 203.0.113.0/24
-    - 224.0.0.0/4
-    - 240.0.0.0/4
-    - 255.255.255.255/32
-    domain:
-    - &quot;+.google.com&quot;
-    - &quot;+.netflix.com&quot;
-    - &quot;+.facebook.com&quot;
-    - &quot;+.youtube.com&quot;
-    - &quot;+.githubusercontent.com&quot;
-    - &quot;+.googlevideo.com&quot;
-    - &quot;+.msftconnecttest.com&quot;
-    - &quot;+.msftncsi.com&quot;
-    - msftconnecttest.com
-    - msftncsi.com
-  fake-ip-filter:
-  - &quot;+.pool.ntp.org&quot;
-  - ntp7.*.com
-  - ntp6.*.com
-  - ntp5.*.com
-  - ntp4.*.com
-  - ntp3.*.com
-  - ntp2.*.com
-  - ntp1.*.com
-  - ntp.*.com
-  - time7.*.com
-  - time6.*.com
-  - time5.*.com
-  - time4.*.com
-  - time3.*.com
-  - time2.*.com
-  - time1.*.com
-  - time.*.apple.com
-  - time.*.edu.cn
-  - time.*.gov
-  - time.*.com
-  - &quot;*.home.arpa&quot;
-  - &quot;*.local&quot;
-  - &quot;*.test&quot;
-  - &quot;*.localhost&quot;
-  - &quot;*.invalid&quot;
-  - &quot;*.example&quot;
-  - &quot;*.localdomain&quot;
-  - time1.cloud.tencent.com
-  - &quot;*.ntp.org&quot;
-  - &quot;*.time.edu&quot;
-  - &quot;*.lan&quot;
-  - &quot;*.ntp.org.cn&quot;
-  - &quot;*.time.edu.cn&quot;
-  - &quot;+.*&quot;
-  default-nameserver:
-  - 8.8.8.8
-  - 8.8.4.4
-  - 1.1.1.1
-  - 1.0.0.1
-  - 192.168.42.129
-  nameserver:
-  - 8.8.8.8
-  - 8.8.4.4
-  - 1.1.1.1
-  - 1.0.0.1
-  - https://dns.google/dns-query
-  - tls://dns.google
-  - https://dns.cloudflare.com/dns-query
-  - tls://dns.google:853
-  - https://1.1.1.1/dns-query
-  - tls://1.1.1.1:853
-  - https://dns.adguard-dns.com:3000/dns-query
-  - tls://dns.adguard-dns.com:3000
-  fake-ip-range: 198.18.0.1/16
-proxy-providers:
-  AKUN1 GSM:
-    type: file
-    path: &quot;./proxy_provider/account-master1.yaml&quot;
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 99
-  AKUN2 GSM:
-    type: file
-    path: &quot;./proxy_provider/account-master2.yaml&quot;
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 99
-proxy-groups:
-- name: SIMASTER V2
-  type: select
-  disable-udp: false
-  proxies:
-  - LB GSM
-  - BESTPING GSM
-  - FAILOVER GSM
-  - SELECT GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB GSM
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  proxies:
-  - LB AKUN1
-  - LB AKUN2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB AKUN1
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING AKUN1
-  - FAILOVER AKUN1
-  - PILIH AKUN1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: LB AKUN2
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING AKUN2
-  - FAILOVER AKUN2
-  - PILIH AKUN1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: BESTPING GSM
-  type: url-test
-  disable-udp: false
-  proxies:
-  - BESTPING AKUN1
-  - BESTPING AKUN2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: BESTPING AKUN1
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: BESTPING AKUN2
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: FAILOVER GSM
-  type: fallback
-  disable-udp: false
-  proxies:
-  - FAILOVER AKUN1
-  - FAILOVER AKUN2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: FAILOVER AKUN1
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: FAILOVER AKUN2
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: SELECT GSM
-  type: select
-  disable-udp: false
-  proxies:
-  - PILIH AKUN1
-  - PILIH AKUN2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: PILIH AKUN1
-  type: select
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH AKUN2
-  type: select
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: &quot;GAME \U0001F4E1&quot;
-  type: select
-  disable-udp: false
-  proxies:
-  - LB GAME
-  - BESTPING GAME
-  - FAILOVER GAME
-  - PILIH GAME
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB GAME
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  proxies:
-  - LB GAME1
-  - LB GAME2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB GAME1
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING GAME1
-  - FAILOVER GAME1
-  - PILIH GAME1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: LB GAME2
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING GAME2
-  - FAILOVER GAME2
-  - PILIH GAME1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: BESTPING GAME
-  type: url-test
-  disable-udp: false
-  proxies:
-  - BESTPING GAME1
-  - BESTPING GAME2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: BESTPING GAME1
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: BESTPING GAME2
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: FAILOVER GAME
-  type: fallback
-  disable-udp: false
-  proxies:
-  - FAILOVER GAME1
-  - FAILOVER GAME2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: FAILOVER GAME1
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: FAILOVER GAME2
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH GAME
-  type: select
-  disable-udp: false
-  proxies:
-  - PILIH GAME1
-  - PILIH GAME2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: PILIH GAME1
-  type: select
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH GAME2
-  type: select
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: &quot;WHATSAPP \U0001F4E1&quot;
-  type: select
-  disable-udp: false
-  proxies:
-  - LB WHATSAPP
-  - BESTPING WHATSAPP
-  - FAILOVER WHATSAPP
-  - PILIH WHATSAPP
-  - DIRECT
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB WHATSAPP
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  proxies:
-  - LB WHATSAPP1
-  - LB WHATSAPP2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB WHATSAPP1
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING WHATSAPP1
-  - FAILOVER WHATSAPP1
-  - PILIH WHATSAPP1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: LB WHATSAPP2
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING WHATSAPP2
-  - FAILOVER WHATSAPP2
-  - PILIH WHATSAPP1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: BESTPING WHATSAPP
-  type: url-test
-  disable-udp: false
-  proxies:
-  - BESTPING WHATSAPP1
-  - BESTPING WHATSAPP2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: BESTPING WHATSAPP1
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: BESTPING WHATSAPP2
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: FAILOVER WHATSAPP
-  type: fallback
-  disable-udp: false
-  proxies:
-  - FAILOVER WHATSAPP1
-  - FAILOVER WHATSAPP2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: FAILOVER WHATSAPP1
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: FAILOVER WHATSAPP2
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH WHATSAPP
-  type: select
-  disable-udp: false
-  proxies:
-  - PILIH WHATSAPP1
-  - PILIH WHATSAPP2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: PILIH WHATSAPP1
-  type: select
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH WHATSAPP2
-  type: select
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: &quot;SOSMED \U0001F4E1&quot;
-  type: select
-  disable-udp: false
-  proxies:
-  - LB SOSMED
-  - BESTPING SOSMED
-  - FAILOVER SOSMED
-  - PILIH SOSMED
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB SOSMED
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  proxies:
-  - LB SOSMED1
-  - LB SOSMED2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB SOSMED1
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING SOSMED1
-  - FAILOVER SOSMED1
-  - PILIH SOSMED1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: LB SOSMED2
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING SOSMED2
-  - FAILOVER SOSMED2
-  - PILIH SOSMED1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: BESTPING SOSMED
-  type: url-test
-  disable-udp: false
-  proxies:
-  - BESTPING SOSMED1
-  - BESTPING SOSMED2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: BESTPING SOSMED1
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: BESTPING SOSMED2
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: FAILOVER SOSMED
-  type: fallback
-  disable-udp: false
-  proxies:
-  - FAILOVER SOSMED1
-  - FAILOVER SOSMED2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: FAILOVER SOSMED1
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: FAILOVER SOSMED2
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH SOSMED
-  type: select
-  disable-udp: false
-  proxies:
-  - PILIH SOSMED1
-  - PILIH SOSMED2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: PILIH SOSMED1
-  type: select
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH SOSMED2
-  type: select
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: &quot;STREAM \U0001F4E1&quot;
-  type: select
-  disable-udp: false
-  proxies:
-  - LB STREAM
-  - BESTPING STREAM
-  - FAILOVER STREAM
-  - PILIH STREAM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB STREAM
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  proxies:
-  - LB STREAM1
-  - LB STREAM2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB STREAM1
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING STREAM1
-  - FAILOVER STREAM1
-  - PILIH STREAM1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: LB STREAM2
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING STREAM2
-  - FAILOVER STREAM2
-  - PILIH STREAM1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: BESTPING STREAM
-  type: url-test
-  disable-udp: false
-  proxies:
-  - BESTPING STREAM1
-  - BESTPING STREAM2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: BESTPING STREAM1
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: BESTPING STREAM2
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: FAILOVER STREAM
-  type: fallback
-  disable-udp: false
-  proxies:
-  - FAILOVER STREAM1
-  - FAILOVER STREAM2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: FAILOVER STREAM1
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: FAILOVER STREAM2
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH STREAM
-  type: select
-  disable-udp: false
-  proxies:
-  - PILIH STREAM1
-  - PILIH STREAM2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: PILIH STREAM1
-  type: select
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH STREAM2
-  type: select
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: &quot;BANK \U0001F4E1&quot;
-  type: select
-  disable-udp: false
-  proxies:
-  - LB BANK
-  - BESTPING BANK
-  - FAILOVER BANK
-  - PILIH BANK
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB BANK
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  proxies:
-  - LB BANK1
-  - LB BANK2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB BANK1
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING BANK1
-  - FAILOVER BANK1
-  - PILIH BANK1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: LB BANK2
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING BANK2
-  - FAILOVER BANK2
-  - PILIH BANK1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: BESTPING BANK
-  type: url-test
-  disable-udp: false
-  proxies:
-  - BESTPING BANK1
-  - BESTPING BANK2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: BESTPING BANK1
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: BESTPING BANK2
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: FAILOVER BANK
-  type: fallback
-  disable-udp: false
-  proxies:
-  - FAILOVER BANK1
-  - FAILOVER BANK2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: FAILOVER BANK1
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: FAILOVER BANK2
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH BANK
-  type: select
-  disable-udp: false
-  proxies:
-  - PILIH BANK1
-  - PILIH BANK2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: PILIH BANK1
-  type: select
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH BANK2
-  type: select
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: &quot;OLSHOP \U0001F4E1&quot;
-  type: select
-  disable-udp: false
-  proxies:
-  - LB OLSHOP
-  - BESTPING OLSHOP
-  - FAILOVER OLSHOP
-  - PILIH OLSHOP
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB OLSHOP
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  proxies:
-  - LB OLSHOP1
-  - LB OLSHOP2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: LB OLSHOP1
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING OLSHOP1
-  - FAILOVER OLSHOP1
-  - PILIH OLSHOP1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: LB OLSHOP2
-  type: select
-  disable-udp: false
-  proxies:
-  - BESTPING OLSHOP2
-  - FAILOVER OLSHOP2
-  - PILIH OLSHOP1
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: BESTPING OLSHOP
-  type: url-test
-  disable-udp: false
-  proxies:
-  - BESTPING OLSHOP1
-  - BESTPING OLSHOP2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: BESTPING OLSHOP1
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: BESTPING OLSHOP2
-  type: url-test
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  tolerance: &apos;150&apos;
-  interface-name: usb0
-- name: FAILOVER OLSHOP
-  type: fallback
-  disable-udp: false
-  proxies:
-  - FAILOVER OLSHOP1
-  - FAILOVER OLSHOP2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: FAILOVER OLSHOP1
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: FAILOVER OLSHOP2
-  type: fallback
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH OLSHOP
-  type: select
-  disable-udp: false
-  proxies:
-  - PILIH OLSHOP1
-  - PILIH OLSHOP2
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-- name: PILIH OLSHOP1
-  type: select
-  disable-udp: false
-  use:
-  - AKUN1 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-- name: PILIH OLSHOP2
-  type: select
-  disable-udp: false
-  use:
-  - AKUN2 GSM
-  url: http://www.gstatic.com/generate_204
-  interval: &apos;99&apos;
-  interface-name: usb0
-rule-providers:
-  Gamemaster:
-    type: file
-    behavior: classical
-    path: &quot;./rule_provider/rule-port-game.yaml&quot;
-  Sosmedmaster:
-    type: file
-    behavior: classical
-    path: &quot;./rule_provider/rule-port-sosmed.yaml&quot;
-  Streammaster:
-    type: file
-    behavior: classical
-    path: &quot;./rule_provider/rule-port-stream.yaml&quot;
-  Olshopmaster:
-    type: file
-    behavior: classical
-    path: &quot;./rule_provider/rule-port-olshop.yaml&quot;
-  Bankmaster:
-    type: file
-    behavior: classical
-    path: &quot;./rule_provider/rule-port-bank.yaml&quot;
-  Whatsappmaster:
-    type: file
-    behavior: classical
-    path: &quot;./rule_provider/rule-port-whatsapp.yaml&quot;
-script:
-  code: &quot;def main(ctx, metadata):\n    ruleset_action = {\&quot;Gamemaster\&quot;: \&quot;GAME \U0001F4E1\&quot;,\n
-    \       \&quot;Sosmedmaster\&quot;: \&quot;SOSMED \U0001F4E1\&quot;,\n        \&quot;Streammaster\&quot;: \&quot;STREAM
-    \U0001F4E1\&quot;,\n        \&quot;Olshopmaster\&quot;: \&quot;OLSHOP \U0001F4E1\&quot;,\n        \&quot;Bankmaster\&quot;:
-    \&quot;BANK \U0001F4E1\&quot;,\n        \&quot;Whatsappmaster\&quot;: \&quot;WHATSAPP \U0001F4E1\&quot;\n      }\n\n
-    \   port = int(metadata[\&quot;dst_port\&quot;])\n\n    if metadata[\&quot;network\&quot;] == \&quot;UDP\&quot;:\n
-    \       if port == [21,22,23,53,80,123,143,194,443,465,587,853,993,995,998,2052,2053,2082,2083,2086,2095,2096,5222,5228,5229,5230,8080,8443,8880,8888,8889]:\n
-    \           ctx.log(&apos;[Script] matched QUIC traffic use SIMASTER V2&apos;)\n            return
-    \&quot;SIMASTER V2\&quot;\n\n    port_list = [21, 22, 23, 53, 80, 123, 143, 194, 443, 465,
-    587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222, 5228,
-    5229, 5230, 8080, 8443, 8880, 8888, 8889]\n    if port not in port_list:\n        ctx.log(&apos;[Script]
-    not common port use GAME&apos;)\n        return \&quot;GAME \U0001F4E1\&quot;\n\n    if metadata[\&quot;dst_ip\&quot;]
-    == \&quot;\&quot;:\n        metadata[\&quot;dst_ip\&quot;] = ctx.resolve_ip(metadata[\&quot;host\&quot;])\n\n
-    \   for ruleset in ruleset_action:\n        if ctx.rule_providers[ruleset].match(metadata):\n
-    \           return ruleset_action[ruleset]\n\n    if metadata[\&quot;dst_ip\&quot;] == \&quot;\&quot;:\n
-    \       return \&quot;DIRECT\&quot;\n\n    code = ctx.geoip(metadata[\&quot;dst_ip\&quot;])\n    if
-    code == \&quot;ID\&quot;:\n        ctx.log(&apos;[Script] Geoip ID&apos;)\n        return \&quot;SIMASTER
-    V2\&quot;\n\n    ctx.log(&apos;[Script] SIMASTER V2&apos;)\n    return \&quot;SIMASTER V2\&quot;\n&quot;
-rules:
-- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-- &quot;RULE-SET,Gamemaster,GAME \U0001F4E1&quot;
-- &quot;RULE-SET,Sosmedmaster,SOSMED \U0001F4E1&quot;
-- &quot;RULE-SET,Streammaster,STREAM \U0001F4E1&quot;
-- &quot;RULE-SET,Olshopmaster,OLSHOP \U0001F4E1&quot;
-- &quot;RULE-SET,Bankmaster,BANK \U0001F4E1&quot;
-- &quot;RULE-SET,Whatsappmaster,WHATSAPP \U0001F4E1&quot;
-- GEOIP,ID,SIMASTER V2
-- MATCH,SIMASTER V2
-tun:
-  enable: true
-  stack: system
-  auto-route: false
-  auto-detect-interface: false
-  dns-hijack:
-  - tcp://any:53
-profile:
-  store-selected: true
-  store-fake-ip: true
-bind-address: &quot;*&quot;
-secret: &apos;123456&apos;
-experimental:
-  sniff-tls-sni: true
-authentication:
-- Clash:hckUjOup
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;proxy-provider&quot;&gt;Proxy Provider&lt;/h2&gt;
-
-Saya sudah membagikan menjadi 2 bagian untuk loadbalance dalam pisah trafik.
-
-&lt;h3 id=&quot;modem-wan&quot;&gt;Modem WAN&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;proxies:
-- name: Vmess WS1
-  type: vmess
-  server: bug.com
-  port: 80
-  uuid: a9a2acc8-648b-434f-8b16-6d5e9fff22f2
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /v2ray
-    headers:
-      Host: ip/domain-akun
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;modem-wanb&quot;&gt;Modem WANB&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;proxies:
-- name: Vmess WS2
-  type: vmess
-  server: bug.com
-  port: 80
-  uuid: a9a2acc8-648b-434f-8b16-6d5e9fff22f2
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /v2ray
-    headers:
-      Host: ip/domain-akun
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;rule-provider&quot;&gt;Rule Provider&lt;/h2&gt;
-
-Ini adalah khusus buat pisah trafik dari berbagai domain dan juga suffix.
-
-&lt;h3 id=&quot;game&quot;&gt;Game&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;payload:
-
-  # &amp;gt; MOBILE LEGENDS
-  - DOMAIN-KEYWORD,ml
-  - DOMAIN-KEYWORD,mobilelegends
-  - DOMAIN-KEYWORD,aihelp
-  - DOMAIN-KEYWORD,yuanzapp
-
-  # &amp;gt; GARENA
-  - DOMAIN-KEYWORD,freefire
-  - DOMAIN-KEYWORD,aov
-  - DOMAIN-KEYWORD,cod
-  - DOMAIN-KEYWORD,callofduty
-  - DOMAIN-KEYWORD,garena
-  - DOMAIN-KEYWORD,avatargarenanow-a
-  - DOMAIN-KEYWORD,cdngarenanow-a
-  - DOMAIN-KEYWORD,dlmobilegarena-a
-  - DOMAIN-KEYWORD,garena
-  - DOMAIN-KEYWORD,garenanow
-  - DOMAIN-KEYWORD,seagroup
-  
-  # &amp;gt; PUBG
-  - DOMAIN-KEYWORD,pubgmobile  
-  - DOMAIN-KEYWORD,igamecj
-  - DOMAIN-KEYWORD,file-igamecj
-  - DOMAIN-KEYWORD,krafton
-  - DOMAIN-KEYWORD,pubg
-  - DOMAIN-KEYWORD,anticheatexpert
-  
-  # &amp;gt; Roblox
-  - DOMAIN-KEYWORD,rbxcdn
-  - DOMAIN-KEYWORD,roblox
-  
-  # &amp;gt; Game
-  - DOMAIN-KEYWORD,logincdn
-  - DOMAIN-KEYWORD,100classicbooks
-  - DOMAIN-KEYWORD,ac-pocketcamp
-  - DOMAIN-KEYWORD,amiibo
-  - DOMAIN-KEYWORD,anthemgame
-  - DOMAIN-KEYWORD,anthemthegame
-  - DOMAIN-KEYWORD,apexlegends
-  - DOMAIN-KEYWORD,cygames
-  - DOMAIN-KEYWORD,avatargarenanow-a
-  - DOMAIN-KEYWORD,awayoutgame
-  - DOMAIN-KEYWORD,ayudanintendo
-  - DOMAIN-KEYWORD,battle
-  - DOMAIN-KEYWORD,battlebreakers
-  - DOMAIN-KEYWORD,battlefield
-  - DOMAIN-KEYWORD,battlefield1943
-  - DOMAIN-KEYWORD,battlefield3
-  - DOMAIN-KEYWORD,battlefield4
-  - DOMAIN-KEYWORD,battlefield5
-  - DOMAIN-KEYWORD,battlefieldbapany2
-  - DOMAIN-KEYWORD,battlefieldheroes
-  - DOMAIN-KEYWORD,battlefieldv
-  - DOMAIN-KEYWORD,battlefront2
-  - DOMAIN-KEYWORD,battlefrontii
-  - DOMAIN-KEYWORD,battlelog
-  - DOMAIN-KEYWORD,battl
-  - DOMAIN-KEYWORD,bejeweledstars
-  - DOMAIN-KEYWORD,bejewled-stars
-  - DOMAIN-KEYWORD,beth.games
-  - DOMAIN-KEYWORD,bethesda
-  - DOMAIN-KEYWORD,bethesdagamestudios
-  - DOMAIN-KEYWORD,bethsoft
-  - DOMAIN-KEYWORD,bioware
-  - DOMAIN-KEYWORD,biowarestore
-  - DOMAIN-KEYWORD,blackboxgames
-  - DOMAIN-KEYWORD,blizzard
-  - DOMAIN-KEYWORD,blizzardgames
-  - DOMAIN-KEYWORD,blizzardgearstore
-  - DOMAIN-KEYWORD,blizzcon-a
-  - DOMAIN-KEYWORD,blz-contentstack
-  - DOMAIN-KEYWORD,blzddist1-a
-  - DOMAIN-KEYWORD,blzddistkr1-a
-  - DOMAIN-KEYWORD,blzmedia-a
-  - DOMAIN-KEYWORD,blznav
-  - DOMAIN-KEYWORD,blzstatic
-  - DOMAIN-KEYWORD,163
-  - DOMAIN-KEYWORD,cmsus-a
-  - DOMAIN-KEYWORD,product-a
-  - DOMAIN-KEYWORD,shopus
-  - DOMAIN-KEYWORD,bowsersinsidestory
-  - DOMAIN-KEYWORD,brawlstars
-  - DOMAIN-KEYWORD,brawlstarsgame
-  - DOMAIN-KEYWORD,callersbane
-  - DOMAIN-KEYWORD,camelot-europe
-  - DOMAIN-KEYWORD,camelotherald
-  - DOMAIN-KEYWORD,capitalgames
-  - DOMAIN-KEYWORD,cdngarenanow-a
-  - DOMAIN-KEYWORD,unity3d
-  - DOMAIN-KEYWORD,championshipseriesleague
-  - DOMAIN-KEYWORD,chillingo
-  - DOMAIN-KEYWORD,cloudsync-prod
-  - DOMAIN-KEYWORD,cncrivals
-  - DOMAIN-KEYWORD,mandandconquer
-  - DOMAIN-KEYWORD,conquerwithcharacter
-  - DOMAIN-KEYWORD,convrgencegame
-  - DOMAIN-KEYWORD,crysis
-  - DOMAIN-KEYWORD,wmsj
-  - DOMAIN-KEYWORD,daoc
-  - DOMAIN-KEYWORD,darkageofcamelot
-  - DOMAIN-KEYWORD,darkness-risen
-  - DOMAIN-KEYWORD,dawngate
-  - DOMAIN-KEYWORD,dawngatechronicles
-  - DOMAIN-KEYWORD,deadspacegame
-  - DOMAIN-KEYWORD,resease
-  - DOMAIN-KEYWORD,diablo3
-  - DOMAIN-KEYWORD,diabloimmortal
-  - DOMAIN-KEYWORD,dialga
-  - DOMAIN-KEYWORD,dice.se
-  - DOMAIN-KEYWORD,dicela
-  - DOMAIN-KEYWORD,dicela
-  - DOMAIN-KEYWORD,diddykongracing
-  - DOMAIN-KEYWORD,dkr
-  - DOMAIN-KEYWORD,steam
-  - DOMAIN-KEYWORD,dlmobilegarena-a
-  - DOMAIN-KEYWORD,donkeykongcountryreturns
-  - DOMAIN-KEYWORD,dota2
-  - DOMAIN-KEYWORD,dragonage
-  - DOMAIN-KEYWORD,dragonagekeep
-  - DOMAIN-KEYWORD,dragonagemovie
-  - DOMAIN-KEYWORD,drmario-world
-  - DOMAIN-KEYWORD,dungeonkeeper
-  - DOMAIN-KEYWORD,ea-anz-press
-  - DOMAIN-KEYWORD,ea
-  - DOMAIN-KEYWORD,omtrdc
-  - DOMAIN-KEYWORD,eaaccess
-  - DOMAIN-KEYWORD,eaassets-a
-  - DOMAIN-KEYWORD,eablackbox
-  - DOMAIN-KEYWORD,eac-cdn
-  - DOMAIN-KEYWORD,eacashcard
-  - DOMAIN-KEYWORD,eacodigos
-  - DOMAIN-KEYWORD,eafootballworld
-  - DOMAIN-KEYWORD,eakorea
-  - DOMAIN-KEYWORD,eamirrorsedge
-  - DOMAIN-KEYWORD,eamobile
-  - DOMAIN-KEYWORD,eamythic
-  - DOMAIN-KEYWORD,eaplay
-  - DOMAIN-KEYWORD,easports
-  - DOMAIN-KEYWORD,easportsactive
-  - DOMAIN-KEYWORD,easportsactiveonline
-  - DOMAIN-KEYWORD,easportsfootball
-  - DOMAIN-KEYWORD,easportsfootballclub
-  - DOMAIN-KEYWORD,easportsmma
-  - DOMAIN-KEYWORD,easportsworld
-  - DOMAIN-KEYWORD,eastore
-  - DOMAIN-KEYWORD,easy
-  - DOMAIN-KEYWORD,easyanticheat
-  - DOMAIN-KEYWORD,electronicarts
-  - DOMAIN-KEYWORD,epicgames
-  - DOMAIN-KEYWORD,excitebots
-  - DOMAIN-KEYWORD,fanatical
-  - DOMAIN-KEYWORD,fifastreet
-  - DOMAIN-KEYWORD,fifastreet3
-  - DOMAIN-KEYWORD,fire-emblem-heroes
-  - DOMAIN-KEYWORD,fireemblemawakening
-  - DOMAIN-KEYWORD,firesidegatherings
-  - DOMAIN-KEYWORD,flipnotestudio
-  - DOMAIN-KEYWORD,fortnite
-  - DOMAIN-KEYWORD,forzamotorsport
-  - DOMAIN-KEYWORD,forzaracingchampionship
-  - DOMAIN-KEYWORD,forzarc
-  - DOMAIN-KEYWORD,frostbite
-  - DOMAIN-KEYWORD,futpromos
-  - DOMAIN-KEYWORD,futunited
-  - DOMAIN-KEYWORD,gamedownloads-rockstargames
-  - DOMAIN-KEYWORD,gamepass
-  - DOMAIN-KEYWORD,garena
-  - DOMAIN-KEYWORD,garenanow
-  - DOMAIN-KEYWORD,ghostgames
-  - DOMAIN-KEYWORD,giratina
-  - DOMAIN-KEYWORD,gloryofheracles
-  - DOMAIN-KEYWORD,gog-statics
-  - DOMAIN-KEYWORD,gog
-  - DOMAIN-KEYWORD,qtlglb
-  - DOMAIN-KEYWORD,hackyourconsole
-  - DOMAIN-KEYWORD,helpshift
-  - DOMAIN-KEYWORD,nosease
-  - DOMAIN-KEYWORD,heroesofdragonage
-  - DOMAIN-KEYWORD,heroesofthestorm
-  - DOMAIN-KEYWORD,historyofdota
-  - DOMAIN-KEYWORD,humblebundle
-  - DOMAIN-KEYWORD,hutpromos
-  - DOMAIN-KEYWORD,industrialtoys
-  - DOMAIN-KEYWORD,instituteofwar
-  - DOMAIN-KEYWORD,kirbysepicyarn
-  - DOMAIN-KEYWORD,kirbysuperstarultra
-  - DOMAIN-KEYWORD,kyurem
-  - DOMAIN-KEYWORD,lcsmerch
-  - DOMAIN-KEYWORD,leaguehighschool
-  - DOMAIN-KEYWORD,leagueoflegends
-  - DOMAIN-KEYWORD,leagueoflegendsscripts
-  - DOMAIN-KEYWORD,leaguesharp
-  - DOMAIN-KEYWORD,leaguoflegends
-  - DOMAIN-KEYWORD,learnwithleague
-  - DOMAIN-KEYWORD,legendofzelda
-  - DOMAIN-KEYWORD,lol-europe
-  - DOMAIN-KEYWORD,lolclub
-  - DOMAIN-KEYWORD,lolespor
-  - DOMAIN-KEYWORD,lolesports
-  - DOMAIN-KEYWORD,lolfanart
-  - DOMAIN-KEYWORD,lolpcs
-  - DOMAIN-KEYWORD,lolshop
-  - DOMAIN-KEYWORD,lolstatic-a
-  - DOMAIN-KEYWORD,lolstatic
-  - DOMAIN-KEYWORD,lolusercontent
-  - DOMAIN-KEYWORD,lordofultima
-  - DOMAIN-KEYWORD,lpl
-  - DOMAIN-KEYWORD,maddenchampionship
-  - DOMAIN-KEYWORD,maddenrewards
-  - DOMAIN-KEYWORD,maddenseason
-  - DOMAIN-KEYWORD,marioandluigidreamteam
-  - DOMAIN-KEYWORD,mariobroswii
-  - DOMAIN-KEYWORD,mariokart
-  - DOMAIN-KEYWORD,mariokart7
-  - DOMAIN-KEYWORD,mariokart8
-  - DOMAIN-KEYWORD,mariosupersluggers
-  - DOMAIN-KEYWORD,masseffect
-  - DOMAIN-KEYWORD,masseffectarchives
-  - DOMAIN-KEYWORD,maxis
-  - DOMAIN-KEYWORD,media-rockstargames
-  - DOMAIN-KEYWORD,miitomo
-  - DOMAIN-KEYWORD,miiverse
-  - DOMAIN-KEYWORD,minecraft
-  - DOMAIN-KEYWORD,minecraftshop
-  - DOMAIN-KEYWORD,mirrorsedge
-  - DOMAIN-KEYWORD,mirrorsedge2
-  - DOMAIN-KEYWORD,mirrorsedge2d
-  - DOMAIN-KEYWORD,mojang
-  - DOMAIN-KEYWORD,molesports
-  - DOMAIN-KEYWORD,msgamestudios
-  - DOMAIN-KEYWORD,mysims
-  - DOMAIN-KEYWORD,mysimsracing
-  - DOMAIN-KEYWORD,mythicentertainment
-  - DOMAIN-KEYWORD,mythicentertainment
-  - DOMAIN-KEYWORD,mythicgames
-  - DOMAIN-KEYWORD,needforspeed
-  - DOMAIN-KEYWORD,needforspeedboost
-  - DOMAIN-KEYWORD,needforspeeddriftkings
-  - DOMAIN-KEYWORD,needforspeedeliminator
-  - DOMAIN-KEYWORD,needforspeedlightning
-  - DOMAIN-KEYWORD,needforspeedoverdrive
-  - DOMAIN-KEYWORD,needforspeedproven
-  - DOMAIN-KEYWORD,needforspeedredline
-  - DOMAIN-KEYWORD,needforspeedshowdown
-  - DOMAIN-KEYWORD,needforspeedstreetkings
-  - DOMAIN-KEYWORD,needforspeedtakedown
-  - DOMAIN-KEYWORD,needforspeedtherun
-  - DOMAIN-KEYWORD,needforspeedtimeattack
-  - DOMAIN-KEYWORD,needforspeedundergroundeast
-  - DOMAIN-KEYWORD,newsupermariobrosu
-  - DOMAIN-KEYWORD,nfsworld
-  - DOMAIN-KEYWORD,nintendo-europe-sales
-  - DOMAIN-KEYWORD,nintendo-europe
-  - DOMAIN-KEYWORD,nintendo
-  - DOMAIN-KEYWORD,nintendo3ds
-  - DOMAIN-KEYWORD,nintendodsi
-  - DOMAIN-KEYWORD,nintendoeurope
-  - DOMAIN-KEYWORD,nintendolabo.cn
-  - DOMAIN-KEYWORD,nintendwork
-  - DOMAIN-KEYWORD,nintendonyc
-  - DOMAIN-KEYWORD,nintendostore
-  - DOMAIN-KEYWORD,nintendoswitch
-  - DOMAIN-KEYWORD,nintendoswitch
-  - DOMAIN-KEYWORD,nintendoswitchtogether
-  - DOMAIN-KEYWORD,nintendowii
-  - DOMAIN-KEYWORD,cygames
-  - DOMAIN-KEYWORD,op.gg
-  - DOMAIN-KEYWORD,opgg-static
-  - DOMAIN-KEYWORD,origin-a
-  - DOMAIN-KEYWORD,origin
-  - DOMAIN-KEYWORD,origin
-  - DOMAIN-KEYWORD,orithegame
-  - DOMAIN-KEYWORD,paragon
-  - DOMAIN-KEYWORD,personaltrainermath
-  - DOMAIN-KEYWORD,plantsvszombies2
-  - DOMAIN-KEYWORD,play4free
-  - DOMAIN-KEYWORD,playapex
-  - DOMAIN-KEYWORD,playartifact
-  - DOMAIN-KEYWORD,playhearthstone
-  - DOMAIN-KEYWORD,playnintendo
-  - DOMAIN-KEYWORD,playoverwatch
-  - DOMAIN-KEYWORD,playparagon
-  - DOMAIN-KEYWORD,playstation
-  - DOMAIN-KEYWORD,playstation
-  - DOMAIN-KEYWORD,playstatiowork
-  - DOMAIN-KEYWORD,playvalorant
-  - DOMAIN-KEYWORD,playwarcraft3
-  - DOMAIN-KEYWORD,pogo
-  - DOMAIN-KEYWORD,pogobeta
-  - DOMAIN-KEYWORD,pokedex3d
-  - DOMAIN-KEYWORD,pokemon-moon
-  - DOMAIN-KEYWORD,pokemon-sun
-  - DOMAIN-KEYWORD,pokemon-sunmoon
-  - DOMAIN-KEYWORD,pokemon
-  - DOMAIN-KEYWORD,pokemonbank
-  - DOMAIN-KEYWORD,pokemonblackwhite
-  - DOMAIN-KEYWORD,pokemonbw
-  - DOMAIN-KEYWORD,pokemonchampionships
-  - DOMAIN-KEYWORD,pokemongoldsilver
-  - DOMAIN-KEYWORD,pokemonhome
-  - DOMAIN-KEYWORD,pokemonletsgoeevee
-  - DOMAIN-KEYWORD,pokemonletsgopikachu
-  - DOMAIN-KEYWORD,pokemonmysterydungeon
-  - DOMAIN-KEYWORD,pokemonpicross
-  - DOMAIN-KEYWORD,pokemonplatinum
-  - DOMAIN-KEYWORD,pokemonrubysapphire
-  - DOMAIN-KEYWORD,pokemonsunmoon
-  - DOMAIN-KEYWORD,pokemonswordshield
-  - DOMAIN-KEYWORD,pokemonultrasunmoon
-  - DOMAIN-KEYWORD,pokemonvgc
-  - DOMAIN-KEYWORD,pokemonwifi
-  - DOMAIN-KEYWORD,popcap
-  - DOMAIN-KEYWORD,prd-priconne-redive
-  - DOMAIN-KEYWORD,projectapex
-  - DOMAIN-KEYWORD,pvzgw2
-  - DOMAIN-KEYWORD,pvzheroes
-  - DOMAIN-KEYWORD,renovacionxboxlive
-  - DOMAIN-KEYWORD,rgpub
-  - DOMAIN-KEYWORD,riotpin
-  - DOMAIN-KEYWORD,riotpoints
-  - DOMAIN-KEYWORD,roborecall
-  - DOMAIN-KEYWORD,rockstargames
-  - DOMAIN-KEYWORD,rsg
-  - DOMAIN-KEYWORD,rstatic
-  - DOMAIN-KEYWORD,ruinedking
-  - DOMAIN-KEYWORD,nosdn
-  - DOMAIN-KEYWORD,seagroup
-  - DOMAIN-KEYWORD,seaofsolitude
-  - DOMAIN-KEYWORD,shadoplex
-  - DOMAIN-KEYWORD,simcity-buildit
-  - DOMAIN-KEYWORD,simcity
-  - DOMAIN-KEYWORD,skate2
-  - DOMAIN-KEYWORD,sony
-  - DOMAIN-KEYWORD,sonyentertainmenwork
-  - DOMAIN-KEYWORD,spearhead
-  - DOMAIN-KEYWORD,speedhunters
-  - DOMAIN-KEYWORD,splatoon2tournament
-  - DOMAIN-KEYWORD,spore
-  - DOMAIN-KEYWORD,spyjinx
-  - DOMAIN-KEYWORD,ssx3
-  - DOMAIN-KEYWORD,bscstorage
-  - DOMAIN-KEYWORD,eccdnx
-  - DOMAIN-KEYWORD,pinyuncloud
-  - DOMAIN-KEYWORD,starcraft
-  - DOMAIN-KEYWORD,starcraft2
-  - DOMAIN-KEYWORD,starfox
-  - DOMAIN-KEYWORD,starwarsbattlefront
-  - DOMAIN-KEYWORD,starwarsbattlefront2
-  - DOMAIN-KEYWORD,starwarsfallenorder
-  - DOMAIN-KEYWORD,starwarsjedifallenorder
-  - DOMAIN-KEYWORD,starwarstheoldrepublic
-  - DOMAIN-KEYWORD,steam-chat
-  - DOMAIN-KEYWORD,steambroadcast
-  - DOMAIN-KEYWORD,steamcdn-a
-  - DOMAIN-KEYWORD,steamunity-a
-  - DOMAIN-KEYWORD,steamunity
-  - DOMAIN-KEYWORD,steamcontent
-  - DOMAIN-KEYWORD,steamgames
-  - DOMAIN-KEYWORD,steampowered
-  - DOMAIN-KEYWORD,steamstat
-  - DOMAIN-KEYWORD,steamstatic
-  - DOMAIN-KEYWORD,steamstore-a
-  - DOMAIN-KEYWORD,steamunlocked
-  - DOMAIN-KEYWORD,steamusercontent-a
-  - DOMAIN-KEYWORD,steamusercontent
-  - DOMAIN-KEYWORD,steamuserimages-a
-  - DOMAIN-KEYWORD,steamvideo-a
-  - DOMAIN-KEYWORD,supermario
-  - DOMAIN-KEYWORD,supermario3dworld
-  - DOMAIN-KEYWORD,supermariobros
-  - DOMAIN-KEYWORD,supermariogalaxy
-  - DOMAIN-KEYWORD,supermariorun
-  - DOMAIN-KEYWORD,superpapermario
-  - DOMAIN-KEYWORD,supersmashbros
-  - DOMAIN-KEYWORD,supremacy
-  - DOMAIN-KEYWORD,supremacy
-  - DOMAIN-KEYWORD,swjedifallenorder
-  - DOMAIN-KEYWORD,swjfo
-  - DOMAIN-KEYWORD,swtor
-  - DOMAIN-KEYWORD,swtor
-  - DOMAIN-KEYWORD,teamneedforspeed
-  - DOMAIN-KEYWORD,tellmewhygame
-  - DOMAIN-KEYWORD,thedreadwolfrises
-  - DOMAIN-KEYWORD,thelegendarystarfy
-  - DOMAIN-KEYWORD,thesims
-  - DOMAIN-KEYWORD,thesims3
-  - DOMAIN-KEYWORD,thesims4
-  - DOMAIN-KEYWORD,thesimssocial
-  - DOMAIN-KEYWORD,thewonderful101
-  - DOMAIN-KEYWORD,tiberiumalliances
-  - DOMAIN-KEYWORD,tiburon
-  - DOMAIN-KEYWORD,titanfall
-  - DOMAIN-KEYWORD,tnt-ea
-  - DOMAIN-KEYWORD,ubi
-  - DOMAIN-KEYWORD,ubisoft-uplay-savegames
-  - DOMAIN-KEYWORD,ubisoft
-  - DOMAIN-KEYWORD,ulol
-  - DOMAIN-KEYWORD,ultimaforever
-  - DOMAIN-KEYWORD,ultimaonline
-  - DOMAIN-KEYWORD,underlords
-  - DOMAIN-KEYWORD,unravel2
-  - DOMAIN-KEYWORD,unraveltwo
-  - DOMAIN-KEYWORD,unrealengine
-  - DOMAIN-KEYWORD,unrealtournament
-  - DOMAIN-KEYWORD,uo
-  - DOMAIN-KEYWORD,uoherald
-  - DOMAIN-KEYWORD,uplay
-  - DOMAIN-KEYWORD,valvesoftware
-  - DOMAIN-KEYWORD,videos-rockstargames
-  - DOMAIN-KEYWORD,visceralgames
-  - DOMAIN-KEYWORD,wariolandshakeit
-  - DOMAIN-KEYWORD,wariowarediy
-  - DOMAIN-KEYWORD,wii-u
-  - DOMAIN-KEYWORD,wiifit
-  - DOMAIN-KEYWORD,wiifitu
-  - DOMAIN-KEYWORD,wiipartyu
-  - DOMAIN-KEYWORD,wiisports
-  - DOMAIN-KEYWORD,wiisportsresort
-  - DOMAIN-KEYWORD,wiiugamepad
-  - DOMAIN-KEYWORD,wiivc
-  - DOMAIN-KEYWORD,worldofwarcraft
-  - DOMAIN-KEYWORD,nosdn
-  - DOMAIN-KEYWORD,wowchina
-  - DOMAIN-KEYWORD,xbox
-  - DOMAIN-KEYWORD,xbox360
-  - DOMAIN-KEYWORD,xboxab
-  - DOMAIN-KEYWORD,xboxgamepass
-  - DOMAIN-KEYWORD,xboxgamestudios
-  - DOMAIN-KEYWORD,xboxlive
-  - DOMAIN-KEYWORD,xboxone
-  - DOMAIN-KEYWORD,xboxplayanywhere
-  - DOMAIN-KEYWORD,xboxservices
-  - DOMAIN-KEYWORD,xboxstudios
-  - DOMAIN-KEYWORD,xbx
-  - DOMAIN-KEYWORD,xdsummit
-  - DOMAIN-KEYWORD,xenoblade
-  - DOMAIN-KEYWORD,xn--mts47c3w9b1qr
-  - DOMAIN-KEYWORD,yogify
-  - DOMAIN-KEYWORD,yoshisnewisland
-  - DOMAIN-KEYWORD,epicgames
-  - DOMAIN-KEYWORD,steambroadcast
-  - DOMAIN-KEYWORD,steamstore
-  - DOMAIN-KEYWORD,steamuserimages
-  
-  # &amp;gt; Plants VS Zombies
-  - DOMAIN-KEYWORD,plantsvszombies2
-  - DOMAIN-KEYWORD,pvzgw2
-  - DOMAIN-KEYWORD,pvzheroes
-  
-  # &amp;gt; Riot
-  - DOMAIN-KEYWORD,historyofdota
-  - DOMAIN-KEYWORD,instituteofwar
-  - DOMAIN-KEYWORD,molesports
-  - DOMAIN-KEYWORD,rgpub
-  - DOMAIN-KEYWORD,riot-games
-  - DOMAIN-KEYWORD,riot
-  - DOMAIN-KEYWORD,riotcdn
-  - DOMAIN-KEYWORD,riotgames
-  - DOMAIN-KEYWORD,riotpin
-  - DOMAIN-KEYWORD,riotpoints
-  - DOMAIN-KEYWORD,rstatic
-  - DOMAIN-KEYWORD,supremacy=
-  
-  # &amp;gt; League of Lengends
-  - DOMAIN-KEYWORD,championshipseriesleague
-  - DOMAIN-KEYWORD,lcsmerch
-  - DOMAIN-KEYWORD,leaguehighschool
-  - DOMAIN-KEYWORD,leagueoflegends
-  - DOMAIN-KEYWORD,leagueoflegendsscripts
-  - DOMAIN-KEYWORD,leaguesharp
-  - DOMAIN-KEYWORD,leaguoflegends
-  - DOMAIN-KEYWORD,learnwithleague
-  - DOMAIN-KEYWORD,lol-europe
-  - DOMAIN-KEYWORD,lolclub
-  - DOMAIN-KEYWORD,lolespor
-  - DOMAIN-KEYWORD,lolesports
-  - DOMAIN-KEYWORD,lolfanart
-  - DOMAIN-KEYWORD,lolpcs
-  - DOMAIN-KEYWORD,lolshop
-  - DOMAIN-KEYWORD,lolstatic
-  - DOMAIN-KEYWORD,lolusercontent
-  - DOMAIN-KEYWORD,lpl
-  - DOMAIN-KEYWORD,pvp
-  - DOMAIN-KEYWORD,ulol
-  
-  # &amp;gt; Valorant
-  - DOMAIN-KEYWORD,playvalorant
-  
-  # &amp;gt; Riot e
-  - DOMAIN-KEYWORD,convrgencegame
-  - DOMAIN-KEYWORD,riotegames
-  - DOMAIN-KEYWORD,ruinedking
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;sosmed&quot;&gt;Sosmed&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;payload:
-
-  # &amp;gt; INSTAGRAM
-  - DOMAIN-KEYWORD,cdninstagram
-  - DOMAIN-KEYWORD,instagram
-
-  # &amp;gt; FACEBOOK
-  - DOMAIN-KEYWORD,messenger
-  - DOMAIN-KEYWORD,facebook
-  - DOMAIN-KEYWORD,fb
-  - DOMAIN-KEYWORD,fbaddins
-  - DOMAIN-KEYWORD,fbcdn
-  - DOMAIN-KEYWORD,fbsbx
-  - DOMAIN-KEYWORD,fbworkmail
-  - DOMAIN-KEYWORD,facebookmail
-  - DOMAIN-KEYWORD,m.me
-  - DOMAIN-KEYWORD,oculus
-  - DOMAIN-KEYWORD,oculuscdn
-  - DOMAIN-KEYWORD,rocksdb
-  
-  # &amp;gt; LINE
-  - DOMAIN-KEYWORD,lin
-  - DOMAIN-KEYWORD,line
-  - DOMAIN-KEYWORD,line-apps
-  - DOMAIN-KEYWORD,line-cdn
-  - DOMAIN-KEYWORD,line-scdn
-  - DOMAIN-KEYWORD,nhncorp
-  - DOMAIN-KEYWORD,naver.jp
-  
-  # &amp;gt; TELEGRAM
-  - DOMAIN-KEYWORD,telegra
-  - DOMAIN-KEYWORD,telegram
-  - DOMAIN-KEYWORD,t.me
-  - DOMAIN-KEYWORD,tdesktop
-  - DOMAIN-KEYWORD,telesco
-  - IP-CIDR,91.108.4.0/22
-  - IP-CIDR,91.108.8.0/22
-  - IP-CIDR,91.108.12.0/22
-  - IP-CIDR,91.108.16.0/22
-  - IP-CIDR,91.108.20.0/22
-  - IP-CIDR,91.108.56.0/22
-  - IP-CIDR,149.154.160.0/20
-
-  # &amp;gt; TWITTER
-  - DOMAIN-KEYWORD,tiktok
-  - DOMAIN-KEYWORD,tiktokv
-  - DOMAIN-KEYWORD,tiktokcdn
-  
-  # &amp;gt; TWITTER
-  - DOMAIN-KEYWORD,pscp
-  - DOMAIN-KEYWORD,periscope
-  - DOMAIN-KEYWORD,t.co
-  - DOMAIN-KEYWORD,twimg
-  - DOMAIN-KEYWORD,twimg
-  - DOMAIN-KEYWORD,twitpic
-  - DOMAIN-KEYWORD,twitter
-  - DOMAIN-KEYWORD,vine
-  - DOMAIN-KEYWORD,twitter
-  - DOMAIN-KEYWORD,twttr
-  - DOMAIN-KEYWORD,twttr
-  - DOMAIN-KEYWORD,twitter
-  
-  # &amp;gt; SNACKVIDEO
-  - DOMAIN-KEYWORD,snackvideo
-  
-  # &amp;gt; TIKTOK
-  - DOMAIN-KEYWORD,tiktok
-  - DOMAIN-KEYWORD,tiktokv
-  - DOMAIN-KEYWORD,tiktokcdn
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;stream&quot;&gt;Stream&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;payload:
-
-  # &amp;gt; Himalaya
-  - DOMAIN-KEYWORD,himalaya
-
-  # &amp;gt; Deezer
-  - DOMAIN-KEYWORD,deezer
-  - DOMAIN-KEYWORD,dzcdn
-  
-  # &amp;gt; JOOX
-  - DOMAIN-KEYWORD,joox
-  - DOMAIN-KEYWORD,jooxweb-api
-  
-  # &amp;gt; KKBOX
-  - DOMAIN-KEYWORD,kkbox
-  - DOMAIN-KEYWORD,kfs
-  
-  # &amp;gt; Pandora
-  - DOMAIN-KEYWORD,pandora
-  
-  # &amp;gt; SoundCloud
-  - DOMAIN-KEYWORD,p-cdn
-  - DOMAIN-KEYWORD,sndcdn
-  - DOMAIN-KEYWORD,soundcloud
-  
-  # &amp;gt; Spotify
-  - DOMAIN-KEYWORD,pscdn
-  - DOMAIN-KEYWORD,scdn
-  - DOMAIN-KEYWORD,spotify
-  - DOMAIN-KEYWORD,spoti
-  - DOMAIN-KEYWORD,spotify
-  - DOMAIN-KEYWORD,-spotify-com
-  
-  # &amp;gt; TIDAL
-  - DOMAIN-KEYWORD,tidal
-  
-  # &amp;gt; AbemaTV
-  - DOMAIN-KEYWORD,abema
-  - DOMAIN-KEYWORD,hayabusa
-  - DOMAIN-KEYWORD,abematv
-  
-  # &amp;gt; All 4
-  - DOMAIN-KEYWORD,c4assets
-  - DOMAIN-KEYWORD,channel4
-  
-  # &amp;gt; Amazon Prime Video
-  - DOMAIN-KEYWORD,aiv-cdn
-  - DOMAIN-KEYWORD,aiv-delivery
-  - DOMAIN-KEYWORD,amazonvideo
-  - DOMAIN-KEYWORD,primevideo
-  - DOMAIN,avodmp4s3ww-a
-  - DOMAIN,d25xi40x97liuc
-  - DOMAIN,dmqdd6hw24ucf
-  - DOMAIN,dmqdd6hw24ucf
-  - DOMAIN,d22qjgkvxw22r6
-  - DOMAIN,d1v5ir2lpwr8os
-  - DOMAIN-KEYWORD,avoddashs
-  
-  # &amp;gt; Apple TV
-  - DOMAIN-KEYWORD,apple
-  
-  # &amp;gt; Bahamut
-  - DOMAIN-KEYWORD,bahamut
-  - DOMAIN-KEYWORD,gamer
-  - DOMAIN,gamer-cds
-  - DOMAIN,gamer2-cds
-  
-  # &amp;gt; BBC iPlayer
-  - DOMAIN-KEYWORD,bbc
-  - DOMAIN-KEYWORD,bbci
-  - DOMAIN-KEYWORD,bbcfmt
-  - DOMAIN-KEYWORD,uk-live
-  
-  # &amp;gt; DAZN
-  - DOMAIN-KEYWORD,dazn
-  - DOMAIN-KEYWORD,dazn-api
-  - DOMAIN,d151l6v8er5bdm
-  - DOMAIN-KEYWORD,voddazn
-  
-  # &amp;gt; Disney+
-  - DOMAIN-KEYWORD,disney-plus
-  - DOMAIN-KEYWORD,disneyplus
-  - DOMAIN-KEYWORD,dssott
-  - DOMAIN,registerdisney
-  - DOMAIN,bamgrid
-  
-  # &amp;gt; DMM
-  - DOMAIN-KEYWORD,dmm
-  - DOMAIN-KEYWORD,dmm-extension
-  
-  # &amp;gt; encoreTVB
-  - DOMAIN-KEYWORD,encoretvb
-  - DOMAIN-KEYWORD,brightcove
-  - DOMAIN-KEYWORD,bcbolt446c5271-a
-  
-  # &amp;gt; FOX NOW
-  - DOMAIN-KEYWORD,fox
-  - DOMAIN-KEYWORD,foxdcg
-  - DOMAIN-KEYWORD,theplatform
-  - DOMAIN-KEYWORD,uplynk
-  
-  # &amp;gt; FOX+
-  - DOMAIN-KEYWORD,foxplus
-  - DOMAIN-KEYWORD,theplatform
-  - DOMAIN-KEYWORD,cdn-fox-networks-group-green
-  - DOMAIN-KEYWORD,d3cv4a9a9wh0bt
-  - DOMAIN-KEYWORD,foxsports01-i
-  - DOMAIN-KEYWORD,foxsports02-i
-  - DOMAIN-KEYWORD,foxsports03-i
-  - DOMAIN-KEYWORD,staticasiafox
-  
-  # &amp;gt; HBO NOW &amp;amp; Max
-  - DOMAIN-KEYWORD,hbo
-  - DOMAIN-KEYWORD,hbogo
-  - DOMAIN-KEYWORD,hbonow
-  - DOMAIN-KEYWORD,hbomax
-  
-  # &amp;gt; HBO GO HKG
-  - DOMAIN-KEYWORD,hbogoasia
-  - DOMAIN-KEYWORD,bcbolthboa-a
-  - DOMAIN-KEYWORD,players.brightcove
-  - DOMAIN-KEYWORD,s3-ap-southeast-1
-  - DOMAIN-KEYWORD,dai3fd1oh325y
-  - DOMAIN-KEYWORD,44wilhpljf.execute-api.ap-southeast-1
-  - DOMAIN-KEYWORD,hboasia1-i
-  - DOMAIN-KEYWORD,hboasia2-i
-  - DOMAIN-KEYWORD,hboasia3-i
-  - DOMAIN-KEYWORD,hboasia4-i
-  - DOMAIN-KEYWORD,hboasia5-i
-  - DOMAIN-KEYWORD,cf-images.ap-southeast-1
-  
-  # &amp;gt; 华文电视
-  - DOMAIN-KEYWORD,5itv.tv
-  - DOMAIN-KEYWORD,ocnttv
-  
-  # &amp;gt; Hulu
-  - DOMAIN-KEYWORD,hulu
-  - DOMAIN-KEYWORD,huluim
-  - DOMAIN-KEYWORD,hulustream
-  
-  # &amp;gt; Hulu / フールー
-  - DOMAIN-KEYWORD,happyon
-  - DOMAIN-KEYWORD,hjholdings
-  - DOMAIN-KEYWORD,hulu
-  
-  # &amp;gt; ITV
-  - DOMAIN-KEYWORD,itv
-  - DOMAIN-KEYWORD,itvstatic
-  - DOMAIN,itvpnpmobile-a
-  
-  # &amp;gt; KKTV
-  - DOMAIN-KEYWORD,kktv
-  - DOMAIN-KEYWORD,kktv-theater
-  
-  # &amp;gt; LINE TV
-  - DOMAIN-KEYWORD,linetv
-  - DOMAIN-KEYWORD,d3c7rimkq79yfu
-  
-  # &amp;gt; LiTV
-  - DOMAIN-KEYWORD,litv
-  - DOMAIN-KEYWORD,litvfreemobile-hichannel
-  
-  # &amp;gt; My5
-  # USER-AGENT,My5*
-  - DOMAIN-KEYWORD,channel5
-  - DOMAIN-KEYWORD,my5.tv
-  - DOMAIN-KEYWORD,d349g9zuie06uo
-  
-  # &amp;gt; myTV SUPER
-  - DOMAIN-KEYWORD,mytvsuper
-  - DOMAIN-KEYWORD,tvb
-  
-  # &amp;gt; Netflix
-  - DOMAIN-KEYWORD,netflix
-  - DOMAIN-KEYWORD,nflxext
-  - DOMAIN-KEYWORD,nflximg
-  - DOMAIN-KEYWORD,nflxso
-  - DOMAIN-KEYWORD,nflxvideo
-  - DOMAIN-KEYWORD,netflixdnstest0
-  - DOMAIN-KEYWORD,netflixdnstest1
-  - DOMAIN-KEYWORD,netflixdnstest2
-  - DOMAIN-KEYWORD,netflixdnstest3
-  - DOMAIN-KEYWORD,netflixdnstest4
-  - DOMAIN-KEYWORD,netflixdnstest5
-  - DOMAIN-KEYWORD,netflixdnstest6
-  - DOMAIN-KEYWORD,netflixdnstest7
-  - DOMAIN-KEYWORD,netflixdnstest8
-  - DOMAIN-KEYWORD,netflixdnstest9
-  - IP-CIDR,23.246.0.0/18,no-resolve
-  - IP-CIDR,37.77.184.0/21,no-resolve
-  - IP-CIDR,45.57.0.0/17,no-resolve
-  - IP-CIDR,64.120.128.0/17,no-resolve
-  - IP-CIDR,66.197.128.0/17,no-resolve
-  - IP-CIDR,108.175.32.0/20,no-resolve
-  - IP-CIDR,192.173.64.0/18,no-resolve
-  - IP-CIDR,198.38.96.0/19,no-resolve
-  - IP-CIDR,198.45.48.0/20,no-resolve
-  
-  # &amp;gt; niconico
-  - DOMAIN-KEYWORD,dmc.nico
-  - DOMAIN-KEYWORD,nicovideo
-  - DOMAIN-KEYWORD,nimg
-  - DOMAIN-KEYWORD,socdm
-  
-  # &amp;gt; Now E
-  - DOMAIN-KEYWORD,nowe
-  - DOMAIN-KEYWORD,nowestatic
-  
-  # &amp;gt; PBS
-  - DOMAIN-KEYWORD,pbs
-
-  # &amp;gt; 台湾好
-  - DOMAIN-KEYWORD,skyking
-  - DOMAIN-KEYWORD,hamifans
-  
-  # &amp;gt; TikTok
-  - DOMAIN-KEYWORD,byteoversea
-  - DOMAIN-KEYWORD,ibytedtos
-  - DOMAIN-KEYWORD,ipstatp
-  - DOMAIN-KEYWORD,muscdn
-  - DOMAIN-KEYWORD,musical
-  - DOMAIN-KEYWORD,tiktok
-  - DOMAIN-KEYWORD,tiktokcdn
-  - DOMAIN-KEYWORD,tiktokv
-  - DOMAIN-KEYWORD,-tiktokcdn-com
-  
-  # &amp;gt; Twitch
-  - DOMAIN-KEYWORD,jtvnw
-  - DOMAIN-KEYWORD,ttvnw
-  - DOMAIN-KEYWORD,twitch
-  - DOMAIN-KEYWORD,twitchcdn
-  
-  # &amp;gt; ViuTV
-  - DOMAIN-KEYWORD,viu
-  - DOMAIN-KEYWORD,d1k2us671qcoau
-  - DOMAIN-KEYWORD,d2anahhhmp1ffz
-  - DOMAIN-KEYWORD,dfp6rglgjqszk
-  
-  # &amp;gt; Semua berisikan tentang Youtube
-  - DOMAIN,www.youtube.com
-  - DOMAIN-SUFFIX,i.ytimg.com
-  - DOMAIN-SUFFIX,i9.ytimg.com
-  - DOMAIN-SUFFIX,s.youtube.com
-  - DOMAIN-SUFFIX,yt3.ggpht.com
-  - DOMAIN-SUFFIX,yt4.ggpht.com
-  - DOMAIN-SUFFIX,youtubei.googleapis.com
-  - DOMAIN-SUFFIX,beacons.gcp.gvt2.com
-  - DOMAIN-SUFFIX,suggestqueries.google.com
-  - DOMAIN-SUFFIX,redirector.googlevideo.com
-  - DOMAIN-SUFFIX,rr1---sn-npoeenll.googlevideo.com
-  - DOMAIN-SUFFIX,rr1---sn-npoe7nsr.googlevideo.com
-  - DOMAIN-SUFFIX,rr2---sn-npoe7nsk.googlevideo.com
-  - DOMAIN-SUFFIX,rr2---sn-npoeener.googlevideo.com
-  - DOMAIN-SUFFIX,rr2---sn-npoldne7.googlevideo.com
-  - DOMAIN-SUFFIX,rr2---sn-npoldn7y.googlevideo.com
-  - DOMAIN-SUFFIX,rr3---sn-npoldn7l.googlevideo.com
-  - DOMAIN-SUFFIX,rr3---sn-npoe7nes.googlevideo.com
-  - DOMAIN-SUFFIX,rr4---sn-npoe7nss.googlevideo.com
-  - DOMAIN-SUFFIX,rr4---sn-npoe7nl6.googlevideo.com
-  - DOMAIN-SUFFIX,rr4---sn-npoe7ns6.googlevideo.com
-  - DOMAIN-SUFFIX,rr5---sn-npoeenle.googlevideo.com
-  - DOMAIN-SUFFIX,rr5---sn-npoe7nsy.googlevideo.com
-  - DOMAIN-SUFFIX,rr5---sn-npoldn7z.googlevideo.com
-  - DOMAIN-SUFFIX,rr2---sn-npoldn7s.googlevideo.com
-  - DOMAIN-SUFFIX,rr2---sn-npoeeney.googlevideo.com
-  - DOMAIN-SUFFIX,rr3---sn-npoeenlk.googlevideo.com
-  - DOMAIN-SUFFIX,rr3---sn-npoldn7z.googlevideo.com
-  - DOMAIN-SUFFIX,rr5---sn-npoldn7e.googlevideo.com
-  - DOMAIN-SUFFIX,rr3---sn-npoeenl7.googlevideo.com
-  - DOMAIN-SUFFIX,rr1---sn-npoeeney.googlevideo.com
-  - DOMAIN-SUFFIX,rr5---sn-npoeenll.googlevideo.com
-  - DOMAIN-SUFFIX,rr3---sn-npoe7nds.googlevideo.com
-  - DOMAIN-SUFFIX,rr5---sn-npoldne7.googlevideo.com
-  - DOMAIN-SUFFIX,rr4---sn-npoeener.googlevideo.com
-  - DOMAIN-SUFFIX,rr5---sn-npoeenlk.googlevideo.com
-  - DOMAIN-SUFFIX,rr2---sn-npoeenle.googlevideo.com
-  - DOMAIN-SUFFIX,rr3---sn-npoeene6.googlevideo.com
-  - DOMAIN-SUFFIX,r2---sn-un57sn7y.googlevideo.com
-  - DOMAIN-SUFFIX,rr2---sn-npoe7ndl.googlevideo.com
-  - DOMAIN-SUFFIX,r5---sn-npoe7nes.googlevideo.com
-  - DOMAIN-SUFFIX,rr4---sn-npoldn7z.googlevideo.com
-  - DOMAIN-SUFFIX,rr3---sn-npoeener.googlevideo.com
-  - DOMAIN-SUFFIX,rr1---sn-npoeens7.googlevideo.com
-  - DOMAIN-SUFFIX,rr4---sn-npoldne7.googlevideo.com
-  - DOMAIN-SUFFIX,rr2---sn-npoldn7z.googlevideo.com
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;online-shop&quot;&gt;Online Shop&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;payload:
-
-  # &amp;gt; SHOPEE
-  - DOMAIN-KEYWORD,shopee
-  - DOMAIN-KEYWORD,shopemobile
-  
-  # &amp;gt; LAZADA
-  - DOMAIN-KEYWORD,lazada
-  
-  # &amp;gt; BUKALAPAK
-  - DOMAIN-KEYWORD,bukalapak
-  
-  # &amp;gt; TOKOPEDIA
-  - DOMAIN-KEYWORD,tokopedia
-  
-  # &amp;gt; ALIDNS
-  - DOMAIN-KEYWORD,alicdn
-  - DOMAIN-KEYWORD,alibaba
-  
-  # &amp;gt; AMAZON
-  - DOMAIN-KEYWORD,amazon
-  
-  # &amp;gt; GOJEK dan GRAB
-  - DOMAIN-KEYWORD,gojek
-  - DOMAIN-KEYWORD,grab
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;bank&quot;&gt;Bank&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;payload:
-
-  # &amp;gt; BRI
-  - DOMAIN-KEYWORD,bri
-  
-  # &amp;gt; BNI
-  - DOMAIN-KEYWORD,bni
-
-  # &amp;gt; BCA
-  - DOMAIN-KEYWORD,bca
-  - DOMAIN-KEYWORD,klikbca
-
-  # &amp;gt; MANDIRI
-  - DOMAIN-KEYWORD,mandiri
-
-  # &amp;gt; LINKAJA
-  - DOMAIN-KEYWORD,linkaja
-
-  # &amp;gt; PAYPAL
-  - DOMAIN-KEYWORD,paypal
-
-  # &amp;gt; DANA
-  - DOMAIN-KEYWORD,dana
-  
-  # &amp;gt; GOPAY
-  - DOMAIN-KEYWORD,gopay
-  
-  # &amp;gt; INDODAX
-  - DOMAIN-KEYWORD,indodax
-
-  # &amp;gt; BITCOIN
-  - DOMAIN-KEYWORD,bitcoin
-  - DOMAIN-KEYWORD,etherium
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;port-simaster&quot;&gt;Port Simaster&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;payload:
-  
-  # &amp;gt; GLOBAL
-  - DOMAIN-KEYWORD,akamai
-  - DOMAIN-KEYWORD,aex
-  - DOMAIN-KEYWORD,bibox
-  - DOMAIN-KEYWORD,binance
-  - DOMAIN-KEYWORD,bitcointalk
-  - DOMAIN-KEYWORD,bitfinex
-  - DOMAIN-KEYWORD,bithumb
-  - DOMAIN-KEYWORD,bitmex
-  - DOMAIN-KEYWORD,bitstamp
-  - DOMAIN-KEYWORD,bittrex
-  - DOMAIN-KEYWORD,bybit
-  - DOMAIN-KEYWORD,coinbase
-  - DOMAIN-KEYWORD,coincheck
-  - DOMAIN-KEYWORD,coingecko
-  - DOMAIN-KEYWORD,coinmarketcap
-  - DOMAIN-KEYWORD,coinone
-  - DOMAIN-KEYWORD,ftx
-  - DOMAIN-KEYWORD,gate
-  - DOMAIN-KEYWORD,gemini
-  - DOMAIN-KEYWORD,huobi
-  - DOMAIN-KEYWORD,korbit
-  - DOMAIN-KEYWORD,kraken
-  - DOMAIN-KEYWORD,kucoin
-  - DOMAIN-KEYWORD,liquid
-  - DOMAIN-KEYWORD,okex
-  - DOMAIN-KEYWORD,poloniex
-  - DOMAIN-KEYWORD,uniswap
-  - DOMAIN-KEYWORD,zb
-  - DOMAIN-KEYWORD,discord
-  - DOMAIN-KEYWORD,discordapp
-  - DOMAIN-KEYWORD,dropbox
-  - DOMAIN-KEYWORD,dropboxapi
-  - DOMAIN-KEYWORD,dropboxusercontent
-  - DOMAIN-KEYWORD,github
-  - DOMAIN-KEYWORD,githubusercontent
-  - DOMAIN-KEYWORD,appspot
-  - DOMAIN-KEYWORD,blogger
-  - DOMAIN-KEYWORD,getoutline
-  - DOMAIN-KEYWORD,xn--ngstr-lra8j
-  - DOMAIN-KEYWORD,google
-  - DOMAIN-KEYWORD,blogspot
-  - DOMAIN-KEYWORD,aka
-  - DOMAIN-KEYWORD,onedrive
-  - DOMAIN-KEYWORD,mediaservices
-  - DOMAIN-KEYWORD,xboxlive
-  - DOMAIN-KEYWORD,msecnd
-  - DOMAIN-KEYWORD,nyt
-  - DOMAIN-KEYWORD,nytchina
-  - DOMAIN-KEYWORD,nytcn
-  - DOMAIN-KEYWORD,nytco
-  - DOMAIN-KEYWORD,nytimes
-  - DOMAIN-KEYWORD,nytimg
-  - DOMAIN-KEYWORD,nytlog
-  - DOMAIN-KEYWORD,nytstyle
-  - DOMAIN-KEYWORD,pinterest
-  - DOMAIN-KEYWORD,pixiv
-  - DOMAIN-KEYWORD,pximg
-  - DOMAIN-KEYWORD,redd
-  - DOMAIN-KEYWORD,reddit
-  - DOMAIN-KEYWORD,redditmedia
-  - DOMAIN-KEYWORD,wikileaks
-  - DOMAIN-KEYWORD,wikimapia
-  - DOMAIN-KEYWORD,wikimedia
-  - DOMAIN-KEYWORD,wikinews
-  - DOMAIN-KEYWORD,wikipedia
-  - DOMAIN-KEYWORD,wikiquote
-  - DOMAIN-KEYWORD,4shared
-  - DOMAIN-KEYWORD,9cache
-  - DOMAIN-KEYWORD,9gag
-  - DOMAIN-KEYWORD,abc
-  - DOMAIN-KEYWORD,abebooks
-  - DOMAIN-KEYWORD,ao3
-  - DOMAIN-KEYWORD,apigee
-  - DOMAIN-KEYWORD,apbo
-  - DOMAIN-KEYWORD,apk-dl
-  - DOMAIN-KEYWORD,apkfind
-  - DOMAIN-KEYWORD,apkmirror
-  - DOMAIN-KEYWORD,apkmonk
-  - DOMAIN-KEYWORD,apkpure
-  - DOMAIN-KEYWORD,aptoide
-  - DOMAIN-KEYWORD,archive
-  - DOMAIN-KEYWORD,archiveofourown
-  - DOMAIN-KEYWORD,arte
-  - DOMAIN-KEYWORD,artstan
-  - DOMAIN-KEYWORD,arukas
-  - DOMAIN-KEYWORD,ask
-  - DOMAIN-KEYWORD,avg
-  - DOMAIN-KEYWORD,avgle
-  - DOMAIN-KEYWORD,badoo
-  - DOMAIN-KEYWORD,bandcamp
-  - DOMAIN-KEYWORD,bandwagonhost
-  - DOMAIN-KEYWORD,bangkokpost
-  - DOMAIN-KEYWORD,bbc
-  - DOMAIN-KEYWORD,behance
-  - DOMAIN-KEYWORD,biggo
-  - DOMAIN-KEYWORD,bit
-  - DOMAIN-KEYWORD,bloglovin
-  - DOMAIN-KEYWORD,bloomberg
-  - DOMAIN-KEYWORD,blubrry
-  - DOMAIN-KEYWORD,book
-  - DOMAIN-KEYWORD,booklive
-  - DOMAIN-KEYWORD,books
-  - DOMAIN-KEYWORD,boslife
-  - DOMAIN-KEYWORD,box
-  - DOMAIN-KEYWORD,brave
-  - DOMAIN-KEYWORD,businessinsider
-  - DOMAIN-KEYWORD,buzzfeed
-  - DOMAIN-KEYWORD,bwh1
-  - DOMAIN-KEYWORD,castbox
-  - DOMAIN-KEYWORD,cbc
-  - DOMAIN-KEYWORD,cdw
-  - DOMAIN-KEYWORD,change
-  - DOMAIN-KEYWORD,channelnewsasia
-  - DOMAIN-KEYWORD,ck101
-  - DOMAIN-KEYWORD,clanproject
-  - DOMAIN-KEYWORD,cloudcone
-  - DOMAIN-KEYWORD,clubhouseapi
-  - DOMAIN-KEYWORD,clyp
-  - DOMAIN-KEYWORD,cna
-  - DOMAIN-KEYWORD,paritech
-  - DOMAIN-KEYWORD,conoha
-  - DOMAIN-KEYWORD,crucial
-  - DOMAIN-KEYWORD,cts
-  - DOMAIN-KEYWORD,cw
-  - DOMAIN-KEYWORD,cyberctm
-  - DOMAIN-KEYWORD,cyclingnews
-  - DOMAIN-KEYWORD,dailymon
-  - DOMAIN-KEYWORD,dailyview
-  - DOMAIN-KEYWORD,dandanzan
-  - DOMAIN-KEYWORD,daum
-  - DOMAIN-KEYWORD,daumcdn
-  - DOMAIN-KEYWORD,dcard
-  - DOMAIN-KEYWORD,deadline
-  - DOMAIN-KEYWORD,deepdiscount
-  - DOMAIN-KEYWORD,depositphotos
-  - DOMAIN-KEYWORD,deviantart
-  - DOMAIN-KEYWORD,disconnect
-  - DOMAIN-KEYWORD,disqus
-  - DOMAIN-KEYWORD,dlercloud
-  - DOMAIN-KEYWORD,dmhy
-  - DOMAIN-KEYWORD,dns2go
-  - DOMAIN-KEYWORD,dowjones
-  - DOMAIN-KEYWORD,duckduckgo
-  - DOMAIN-KEYWORD,duyaoss
-  - DOMAIN-KEYWORD,dw
-  - DOMAIN-KEYWORD,dynu
-  - DOMAIN-KEYWORD,earthcam
-  - DOMAIN-KEYWORD,ebookservice
-  - DOMAIN-KEYWORD,economist
-  - DOMAIN-KEYWORD,edgecastcdn
-  - DOMAIN-KEYWORD,edx-cdn
-  - DOMAIN-KEYWORD,elpais
-  - DOMAIN-KEYWORD,enanyang
-  - DOMAIN-KEYWORD,encyclopedia
-  - DOMAIN-KEYWORD,esoir
-  - DOMAIN-KEYWORD,etherscan
-  - DOMAIN-KEYWORD,euronews
-  - DOMAIN-KEYWORD,evozi
-  - DOMAIN-KEYWORD,exblog
-  - DOMAIN-KEYWORD,feeder
-  - DOMAIN-KEYWORD,feedly
-  - DOMAIN-KEYWORD,feedx
-  - DOMAIN-KEYWORD,firech
-  - DOMAIN-KEYWORD,flickr
-  - DOMAIN-KEYWORD,flipboard
-  - DOMAIN-KEYWORD,flitto
-  - DOMAIN-KEYWORD,foreignpolicy
-  - DOMAIN-KEYWORD,fortawesome
-  - DOMAIN-KEYWORD,freetls
-  - DOMAIN-KEYWORD,friday
-  - DOMAIN-KEYWORD,ft
-  - DOMAIN-KEYWORD,ftchinese
-  - DOMAIN-KEYWORD,ftimg
-  - DOMAIN-KEYWORD,genius
-  - DOMAIN-KEYWORD,getlantern
-  - DOMAIN-KEYWORD,getsync
-  - DOMAIN-KEYWORD,globalvoices
-  - DOMAIN-KEYWORD,goo
-  - DOMAIN-KEYWORD,goodreads
-  - DOMAIN-KEYWORD,gravatar
-  - DOMAIN-KEYWORD,greatfire
-  - DOMAIN-KEYWORD,gumroad
-  - DOMAIN-KEYWORD,heroku
-  - DOMAIN-KEYWORD,hightail
-  - DOMAIN-KEYWORD,hk01
-  - DOMAIN-KEYWORD,hkbf
-  - DOMAIN-KEYWORD,hkbookcity
-  - DOMAIN-KEYWORD,hkej
-  - DOMAIN-KEYWORD,hket
-  - DOMAIN-KEYWORD,hootsuite
-  - DOMAIN-KEYWORD,hudson
-  - DOMAIN-KEYWORD,huffpost
-  - DOMAIN-KEYWORD,hyread
-  - DOMAIN-KEYWORD,ibtimes
-  - DOMAIN-KEYWORD,i-cable
-  - DOMAIN-KEYWORD,icij
-  - DOMAIN-KEYWORD,icoco
-  - DOMAIN-KEYWORD,imgur
-  - DOMAIN-KEYWORD,independent
-  - DOMAIN-KEYWORD,initiummall
-  - DOMAIN-KEYWORD,inoreader
-  - DOMAIN-KEYWORD,insecam
-  - DOMAIN-KEYWORD,ipfs
-  - DOMAIN-KEYWORD,issuu
-  - DOMAIN-KEYWORD,istockphoto
-  - DOMAIN-KEYWORD,japantimes
-  - DOMAIN-KEYWORD,jiji
-  - DOMAIN-KEYWORD,jinx
-  - DOMAIN-KEYWORD,jkforum
-  - DOMAIN-KEYWORD,joinclubhouse
-  - DOMAIN-KEYWORD,joinmastodon
-  - DOMAIN-KEYWORD,justmysocks
-  - DOMAIN-KEYWORD,justpaste
-  - DOMAIN-KEYWORD,kadokawa
-  - DOMAIN-KEYWORD,kakao
-  - DOMAIN-KEYWORD,kakaocorp
-  - DOMAIN-KEYWORD,kik
-  - DOMAIN-KEYWORD,kingkong
-  - DOMAIN-KEYWORD,knowyourmeme
-  - DOMAIN-KEYWORD,kobo
-  - DOMAIN-KEYWORD,kobobooks
-  - DOMAIN-KEYWORD,kodingen
-  - DOMAIN-KEYWORD,lemonde
-  - DOMAIN-KEYWORD,lepoint
-  - DOMAIN-KEYWORD,lihkg
-  - DOMAIN-KEYWORD,limbopro
-  - DOMAIN-KEYWORD,listennotes
-  - DOMAIN-KEYWORD,livestream
-  - DOMAIN-KEYWORD,logimg
-  - DOMAIN-KEYWORD,logmein
-  - DOMAIN-KEYWORD,mail
-  - DOMAIN-KEYWORD,mailchimp
-  - DOMAIN-KEYWORD,marc
-  - DOMAIN-KEYWORD,matters
-  - DOMAIN-KEYWORD,maying
-  - DOMAIN-KEYWORD,medium
-  - DOMAIN-KEYWORD,mega
-  - DOMAIN-KEYWORD,mergersandinquisins
-  - DOMAIN-KEYWORD,mingpao
-  - DOMAIN-KEYWORD,mixi
-  - DOMAIN-KEYWORD,mixlr
-  - DOMAIN-KEYWORD,mobile01
-  - DOMAIN-KEYWORD,mubi
-  - DOMAIN-KEYWORD,myspace
-  - DOMAIN-KEYWORD,myspacecdn
-  - DOMAIN-KEYWORD,nanyang
-  - DOMAIN-KEYWORD,nanalinterest
-  - DOMAIN-KEYWORD,naver
-  - DOMAIN-KEYWORD,nbcnews
-  - DOMAIN-KEYWORD,ndr
-  - DOMAIN-KEYWORD,neowin
-  - DOMAIN-KEYWORD,newstapa
-  - DOMAIN-KEYWORD,nexitally
-  - DOMAIN-KEYWORD,nhk
-  - DOMAIN-KEYWORD,nii
-  - DOMAIN-KEYWORD,nikkei
-  - DOMAIN-KEYWORD,nitter
-  - DOMAIN-KEYWORD,nofile
-  - DOMAIN-KEYWORD,non
-  - DOMAIN-KEYWORD,now
-  - DOMAIN-KEYWORD,nrk
-  - DOMAIN-KEYWORD,nuget
-  - DOMAIN-KEYWORD,nyaa
-  - DOMAIN-KEYWORD,ok
-  - DOMAIN-KEYWORD,on
-  - DOMAIN-KEYWORD,orientaldaily
-  - DOMAIN-KEYWORD,overcast
-  - DOMAIN-KEYWORD,paltalk
-  - DOMAIN-KEYWORD,parsevideo
-  - DOMAIN-KEYWORD,pawoo
-  - DOMAIN-KEYWORD,pbxes
-  - DOMAIN-KEYWORD,pcdvd
-  - DOMAIN-KEYWORD,pchome
-  - DOMAIN-KEYWORD,pcloud
-  - DOMAIN-KEYWORD,peing
-  - DOMAIN-KEYWORD,picic
-  - DOMAIN-KEYWORD,pinimg
-  - DOMAIN-KEYWORD,player
-  - DOMAIN-KEYWORD,plurk
-  - DOMAIN-KEYWORD,po18
-  - DOMAIN-KEYWORD,potato
-  - DOMAIN-KEYWORD,potatso
-  - DOMAIN-KEYWORD,prism-break
-  - DOMAIN-KEYWORD,proxifier
-  - DOMAIN-KEYWORD,pt
-  - DOMAIN-KEYWORD,pts
-  - DOMAIN-KEYWORD,pubu
-  - DOMAIN-KEYWORD,pubu
-  - DOMAIN-KEYWORD,pureapk
-  - DOMAIN-KEYWORD,quora
-  - DOMAIN-KEYWORD,quoracdn
-  - DOMAIN-KEYWORD,qz
-  - DOMAIN-KEYWORD,garden
-  - DOMAIN-KEYWORD,rakuten
-  - DOMAIN-KEYWORD,rarbgprx
-  - DOMAIN-KEYWORD,reabble
-  - DOMAIN-KEYWORD,readingtimes
-  - DOMAIN-KEYWORD,readmoo
-  - DOMAIN-KEYWORD,redbubble
-  - DOMAIN-KEYWORD,resi
-  - DOMAIN-KEYWORD,reuters
-  - DOMAIN-KEYWORD,reutersmedia
-  - DOMAIN-KEYWORD,rfi
-  - DOMAIN-KEYWORD,roadshow
-  - DOMAIN-KEYWORD,rsshub
-  - DOMAIN-KEYWORD,scmp
-  - DOMAIN-KEYWORD,scribd
-  - DOMAIN-KEYWORD,seatguru
-  - DOMAIN-KEYWORD,shadowsocks
-  - DOMAIN-KEYWORD,shindanmaker
-  - DOMAIN-KEYWORD,signal
-  - DOMAIN-KEYWORD,sina
-  - DOMAIN-KEYWORD,slideshare
-  - DOMAIN-KEYWORD,softfamous
-  - DOMAIN-KEYWORD,spiegel
-  - DOMAIN-KEYWORD,startpage
-  - DOMAIN-KEYWORD,steamunity
-  - DOMAIN-KEYWORD,steemit
-  - DOMAIN-KEYWORD,steemitwallet
-  - DOMAIN-KEYWORD,straitstimes
-  - DOMAIN-KEYWORD,streamable
-  - DOMAIN-KEYWORD,streema
-  - DOMAIN-KEYWORD,substack
-  - DOMAIN-KEYWORD,t66y
-  - DOMAIN-KEYWORD,tapatalk
-  - DOMAIN-KEYWORD,teco-hk
-  - DOMAIN-KEYWORD,teco-mo
-  - DOMAIN-KEYWORD,teddysun
-  - DOMAIN-KEYWORD,textnow
-  - DOMAIN-KEYWORD,theguardian
-  - DOMAIN-KEYWORD,theinitium
-  - DOMAIN-KEYWORD,themoviedb
-  - DOMAIN-KEYWORD,thetvdb
-  - DOMAIN-KEYWORD,time
-  - DOMAIN-KEYWORD,tineye
-  - DOMAIN-KEYWORD,tiny
-  - DOMAIN-KEYWORD,tinyurl
-  - DOMAIN-KEYWORD,torproject
-  - DOMAIN-KEYWORD,tradingview
-  - DOMAIN-KEYWORD,tumblr
-  - DOMAIN-KEYWORD,turbobit
-  - DOMAIN-KEYWORD,tutanota
-  - DOMAIN-KEYWORD,tvboxnow
-  - DOMAIN-KEYWORD,udn
-  - DOMAIN-KEYWORD,unseen
-  - DOMAIN-KEYWORD,upmedia
-  - DOMAIN-KEYWORD,uptodown
-  - DOMAIN-KEYWORD,urbandicnary
-  - DOMAIN-KEYWORD,ustream
-  - DOMAIN-KEYWORD,uwants
-  - DOMAIN-KEYWORD,v2ex
-  - DOMAIN-KEYWORD,v2fly
-  - DOMAIN-KEYWORD,v2ray
-  - DOMAIN-KEYWORD,viber
-  - DOMAIN-KEYWORD,videopress
-  - DOMAIN-KEYWORD,vimeo
-  - DOMAIN-KEYWORD,voachinese
-  - DOMAIN-KEYWORD,voanews
-  - DOMAIN-KEYWORD,voxer
-  - DOMAIN-KEYWORD,vzw
-  - DOMAIN-KEYWORD,w3schools
-  - DOMAIN-KEYWORD,washingtonpost
-  - DOMAIN-KEYWORD,wattpad
-  - DOMAIN-KEYWORD,whoer
-  - DOMAIN-KEYWORD,wikiwand
-  - DOMAIN-KEYWORD,winudf
-  - DOMAIN-KEYWORD,wire
-  - DOMAIN-KEYWORD,wn
-  - DOMAIN-KEYWORD,wordpress
-  - DOMAIN-KEYWORD,worldcat
-  - DOMAIN-KEYWORD,wsj
-  - DOMAIN-KEYWORD,wsj
-  - DOMAIN-KEYWORD,xhamster
-  - DOMAIN-KEYWORD,xn--90wwvt03e
-  - DOMAIN-KEYWORD,xn--i2ru8q2qg
-  - DOMAIN-KEYWORD,xnxx
-  - DOMAIN-KEYWORD,xvideos
-  - DOMAIN-KEYWORD,yadi
-  - DOMAIN-KEYWORD,yahoo
-  - DOMAIN-KEYWORD,yandex
-  - DOMAIN-KEYWORD,binator
-  - DOMAIN-KEYWORD,yesasia
-  - DOMAIN-KEYWORD,yes-news
-  - DOMAIN-KEYWORD,yomiuri
-  - DOMAIN-KEYWORD,you-get
-  - DOMAIN-KEYWORD,zaobao
-  - DOMAIN-KEYWORD,zello
-  - DOMAIN-KEYWORD,zer
-  - DOMAIN-KEYWORD,z-lib
-  - DOMAIN-KEYWORD,zoom
-  - DOMAIN-KEYWORD,tvbs
-  - DOMAIN-KEYWORD,pubnubapi
-  - DOMAIN-KEYWORD,letsencrypt
-  - DOMAIN-KEYWORD,weibo
-  - DOMAIN-KEYWORD,edu
-  - DOMAIN-KEYWORD,gov
-  - DOMAIN-KEYWORD,mil
-  - DOMAIN-KEYWORD,abc
-  - DOMAIN-KEYWORD,advertisemunity
-  - DOMAIN-KEYWORD,ampproject
-  - DOMAIN-KEYWORD,android
-  - DOMAIN-KEYWORD,androidify
-  - DOMAIN-KEYWORD,autodraw
-  - DOMAIN-KEYWORD,capitalg
-  - DOMAIN-KEYWORD,certificate-transparency
-  - DOMAIN-KEYWORD,chrome
-  - DOMAIN-KEYWORD,chromeexperiments
-  - DOMAIN-KEYWORD,chromestatus
-  - DOMAIN-KEYWORD,chromium
-  - DOMAIN-KEYWORD,creativelab5
-  - DOMAIN-KEYWORD,debug
-  - DOMAIN-KEYWORD,deepmind
-  - DOMAIN-KEYWORD,dialogflow
-  - DOMAIN-KEYWORD,firebase
-  - DOMAIN-KEYWORD,getmdl
-  - DOMAIN-KEYWORD,ggpht
-  - DOMAIN-KEYWORD,gmail
-  - DOMAIN-KEYWORD,gmodules
-  - DOMAIN-KEYWORD,godoc
-  - DOMAIN-KEYWORD,gstatic
-  - DOMAIN-KEYWORD,gwtproject
-  - DOMAIN-KEYWORD,itasoftware
-  - DOMAIN-KEYWORD,madewithcode
-  - DOMAIN-KEYWORD,material
-  - DOMAIN-KEYWORD,page
-  - DOMAIN-KEYWORD,polymer-project
-  - DOMAIN-KEYWORD,recaptcha
-  - DOMAIN-KEYWORD,shattered
-  - DOMAIN-KEYWORD,synergyse
-  - DOMAIN-KEYWORD,telephony
-  - DOMAIN-KEYWORD,tensorflow
-  - DOMAIN-KEYWORD,tfhub
-  - DOMAIN-KEYWORD,tiltbrush
-  - DOMAIN-KEYWORD,waveprotocol
-  - DOMAIN-KEYWORD,waymo
-  - DOMAIN-KEYWORD,webmproject
-  - DOMAIN-KEYWORD,webrtc
-  - DOMAIN-KEYWORD,whatbrowser
-  - DOMAIN-KEYWORD,widevine
-  - DOMAIN-KEYWORD,company
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;download-file&quot;&gt;Download File&lt;/h2&gt;
-
-Untuk mendapatkan file backup ini, anda bisa langsung menuju &lt;a href=&quot;https://ouo.io/j6WdUJr&quot;&gt;disini&lt;/a&gt;.
-
-&lt;h2 id=&quot;cara-upload-backup&quot;&gt;Cara Upload Backup&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Login &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openwrt&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Masuk ke &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Clash&lt;/code&gt; di openwrt.&lt;/li&gt;
-  &lt;li&gt;Menuju Tab &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Config Manage&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Pada kotak kecil pilih &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Backup File&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Lalu masukkan file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;backup-simaster-25juli2024.gz&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Tekan &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Upload&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Edit akun anda di menu &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Config Editor&lt;/code&gt; pada bagian folder &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Proxy_Provider&lt;/code&gt; dan edit file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;account-master1.yaml&lt;/code&gt; dan &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;account-master2.yaml&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Untuk menentukan antar interface, anda edit di folder &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Config&lt;/code&gt; lalu edit file &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Simaster-V2.yaml&lt;/code&gt; pada bagian &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;proxy-group&lt;/code&gt; lalu ubah &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;interface-name:&lt;/code&gt; sesuai dengan interface modem yang anda miliki.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Wed, 05 Oct 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/10/05/backup-openclash-simaster/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/10/05/backup-openclash-simaster/</guid>
-        
-        <category>Backup</category>
+        <category>channel</category>
         
         
-        <category>Clash</category>
+        <category>Youtube</category>
         
       </item>
     
       <item>
-        <title>Install Docker and CCminer Openwrt</title>
+        <title>Cara upload video di Youtube</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#step-1&quot; id=&quot;markdown-toc-step-1&quot;&gt;step 1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#step-2&quot; id=&quot;markdown-toc-step-2&quot;&gt;step 2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#step-3&quot; id=&quot;markdown-toc-step-3&quot;&gt;step 3&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#step-4&quot; id=&quot;markdown-toc-step-4&quot;&gt;step 4&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#step-5&quot; id=&quot;markdown-toc-step-5&quot;&gt;step 5&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#step-6&quot; id=&quot;markdown-toc-step-6&quot;&gt;step 6&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-masuk-ke-akun-youtube&quot; id=&quot;markdown-toc-1-masuk-ke-akun-youtube&quot;&gt;1. &lt;strong&gt;Masuk ke Akun YouTube&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-klik-ikon-kamera-dengan-tanda-plus&quot; id=&quot;markdown-toc-2-klik-ikon-kamera-dengan-tanda-plus&quot;&gt;2. &lt;strong&gt;Klik Ikon Kamera dengan Tanda Plus&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-pilih-video-yang-akan-diunggah&quot; id=&quot;markdown-toc-3-pilih-video-yang-akan-diunggah&quot;&gt;3. &lt;strong&gt;Pilih Video yang Akan Diunggah&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-isi-detail-video&quot; id=&quot;markdown-toc-4-isi-detail-video&quot;&gt;4. &lt;strong&gt;Isi Detail Video&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-pengaturan-video&quot; id=&quot;markdown-toc-5-pengaturan-video&quot;&gt;5. &lt;strong&gt;Pengaturan Video&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-pengaturan-lanjutan-opsional&quot; id=&quot;markdown-toc-6-pengaturan-lanjutan-opsional&quot;&gt;6. &lt;strong&gt;Pengaturan Lanjutan (Opsional)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-pilih-visibilitas&quot; id=&quot;markdown-toc-7-pilih-visibilitas&quot;&gt;7. &lt;strong&gt;Pilih Visibilitas&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-klik-publish-terbitkan&quot; id=&quot;markdown-toc-8-klik-publish-terbitkan&quot;&gt;8. &lt;strong&gt;Klik “Publish” (Terbitkan)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#9-video-diunggah&quot; id=&quot;markdown-toc-9-video-diunggah&quot;&gt;9. &lt;strong&gt;Video Diunggah&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;step-1&quot;&gt;step 1&lt;/h2&gt;
+Langkah-langkah untuk mengunggah (upload) video di YouTube:
 
-go to terminal, copy and paste
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;opkg update &amp;amp;&amp;amp; opkg install docker dockerd docker-compose luci-app-dockerman.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;step-2&quot;&gt;step 2&lt;/h2&gt;
-
-got to interface and check interface docker to firewall docker check.
-
-&lt;h2 id=&quot;step-3&quot;&gt;step 3&lt;/h2&gt;
-
-go to docker hub and click search andarezta and go to tags to copy A53 pull command.
-
-&lt;h2 id=&quot;step-4&quot;&gt;step 4&lt;/h2&gt;
-
-go to terminal openwrt and paste pull command, please wait download and extract image to docker
-
-&lt;h2 id=&quot;step-5&quot;&gt;step 5&lt;/h2&gt;
-
-go to docker container and add. create name, port, image to andarezta and insert command:
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run andarezta/andarezta-ccminer -a verus -o stratum+tcp://ap.luckpool.net:3956 -u (your wallet).(name rig) -p x -t 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-save configuration
-
-&lt;h2 id=&quot;step-6&quot;&gt;step 6&lt;/h2&gt;
-
-select container and start, go to edit and logs for watch proccess.
-
-create ewallet &lt;a href=&quot;https://play.google.com/store/apps/details?id=org.autonomoussoftwarefoundation.verusmobile.android&quot;&gt;verus mobile&lt;/a&gt;.
-</description>
-        <pubDate>Tue, 04 Oct 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/10/04/install-docker-and-ccminer-opemwrt/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/10/04/install-docker-and-ccminer-opemwrt/</guid>
-        
-        <category>Mining</category>
-        
-        <category>Docker</category>
-        
-        
-        <category>Linux</category>
-        
-      </item>
-    
-      <item>
-        <title>Install Duino Coin in Termux</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#tahap-install&quot; id=&quot;markdown-toc-tahap-install&quot;&gt;Tahap install&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-Dengan doino coin, kita bisa menambah cuan secara recehan. Akan tetapi kalau kita rutin mengerjakannya akan membuah hasil yang kita inginkan.
-
-&lt;h2 id=&quot;tahap-install&quot;&gt;Tahap install&lt;/h2&gt;
-
-Update termux
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apt-get update &amp;amp;&amp;amp; apt-get upgrade -y
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-Install wget, proot, git
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apt-get install wget proot git -y
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-Ambil data ke folder cd ~
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/MFDGaming/ubuntu-in-termux.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-Pergi ke script folder
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd ubuntu-in-termux
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-Berikan izin eksekusi
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod +x ubuntu.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-Install ubuntu
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./ubuntu.sh -y
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-Jalankan ubuntu
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./startubuntu.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-bahan pelengkap doino coin
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install python3 python3-dev python3-pip
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-download file doino coin
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget https://github.com/revoxhere/duino-coin/archive/refs/tags/4.1.zip
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-ekstrak file
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;unzip 4.1.zip
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-masuk folder doino coin
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd duino-coin-4.1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-jalankan miner
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 PC_Miner.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-Ini di lakukan jika tidak bisa berjalan maka di perlukan pelengkap di bawah ini.
-
-py-cpuinfo
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 -m pip install py-cpuinfo
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-colorama
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 -m pip install colorama
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-requests
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 -m pip install requests
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-pyserial
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 -m pip install pyserial
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-pypresence
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 -m pip install pypresence
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-psutil
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 -m pip install psutil
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-Begitulah cara installasi Doino Coin di Termux
-</description>
-        <pubDate>Mon, 03 Oct 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/10/03/install-duino-coin-in-termux/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/10/03/install-duino-coin-in-termux/</guid>
-        
-        <category>Mining</category>
-        
-        
-        <category>Linux</category>
-        
-      </item>
-    
-      <item>
-        <title>Mining Verus</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#solo-versus-tambang-pool&quot; id=&quot;markdown-toc-solo-versus-tambang-pool&quot;&gt;Solo versus Tambang Pool&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#tambang-solo&quot; id=&quot;markdown-toc-tambang-solo&quot;&gt;Tambang Solo&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#tambang-pool&quot; id=&quot;markdown-toc-tambang-pool&quot;&gt;Tambang Pool&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#perangkat-yang-cocok&quot; id=&quot;markdown-toc-perangkat-yang-cocok&quot;&gt;Perangkat yang Cocok&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#perangkat-lunak-penambangan&quot; id=&quot;markdown-toc-perangkat-lunak-penambangan&quot;&gt;Perangkat Lunak Penambangan&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#️-cpu&quot; id=&quot;markdown-toc-️-cpu&quot;&gt;🖥️ CPU&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ccminer&quot; id=&quot;markdown-toc-ccminer&quot;&gt;CCminer&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#-mobile&quot; id=&quot;markdown-toc--mobile&quot;&gt;📱 Mobile&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#gpu&quot; id=&quot;markdown-toc-gpu&quot;&gt;GPU&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#penambangan-pool&quot; id=&quot;markdown-toc-penambangan-pool&quot;&gt;Penambangan Pool&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;img src=&quot;https://raw.githubusercontent.com/VerusCoin/Media-Assets/master/png/VerusLogo3x.png&quot; alt=&quot;verus mining&quot; /&gt;
-
-Tutorial ini di khususkan untuk penggemar hobi &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;miners&lt;/code&gt; dimanapun berada.
-
-Mining verus pada saat ini sudah banyak di minati para miners. Karena harga coin saat ini sudah sangat melambung tinggi yaitu &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rp 20.000,-&lt;/code&gt;.
-
-Ada banyak type perangkat yang bisa digunakan, anda bisa memilih type apa saja perangkat yang anda punya.
-
-&lt;h2 id=&quot;solo-versus-tambang-pool&quot;&gt;Solo versus Tambang Pool&lt;/h2&gt;
-
-&lt;h3 id=&quot;tambang-solo&quot;&gt;Tambang Solo&lt;/h3&gt;
-
-Tambang &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;solo&lt;/code&gt; melalui Verus &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Desktop&lt;/code&gt; untuk menerima hadiah blok penuh. Bergantung pada hashrate, mungkin diperlukan beberapa saat sebelum memenangkan satu blok. Tidak diperlukan perangkat lunak tambahan untuk memulai.
-
-&lt;h3 id=&quot;tambang-pool&quot;&gt;Tambang Pool&lt;/h3&gt;
-
-Berpartisipasilah dalam penambangan &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pool&lt;/code&gt; untuk menerima hadiah reguler. Anda perlu menyiapkan beberapa hal sebelum dapat memulai.
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt;Tambang Solo&lt;/th&gt;
-      &lt;th&gt;Tambang Pool&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Full Node&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;Iya&lt;/td&gt;
-      &lt;td&gt;Tidak&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Reward Reguler&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;Tidak&lt;/td&gt;
-      &lt;td&gt;Iya&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Setup Difficulty&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;easy&lt;/td&gt;
-      &lt;td&gt;intermediate&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;perangkat-yang-cocok&quot;&gt;Perangkat yang Cocok&lt;/h2&gt;
-
-Tambang &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Verus&lt;/code&gt; dengan berbagai perangkat. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Indikasi&lt;/code&gt; profitabilitas berarti penggunaan &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;listrik&lt;/code&gt; vs &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hashrate&lt;/code&gt;.
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Perangkat&lt;/th&gt;
-      &lt;th&gt;Indikasi Profitabilitas&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;CPU (Processor)&lt;/td&gt;
-      &lt;td&gt;Tinggi&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;GPU (graphic Card)&lt;/td&gt;
-      &lt;td&gt;Sedang&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Mobile&lt;/td&gt;
-      &lt;td&gt;Tinggi&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ARM (bukan RP4)&lt;/td&gt;
-      &lt;td&gt;Tinggi&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;FPGA&lt;/td&gt;
-      &lt;td&gt;Tidak Memungkinkan&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ASIC&lt;/td&gt;
-      &lt;td&gt;Tidak Memungkinkan&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-Perbandingan Hashrate&lt;br /&gt;&lt;br /&gt;Bandingkan hashrate dari perangkat yang berbeda. Melihat &lt;a href=&quot;https://docs.google.com/spreadsheets/d/1RrSYJDV0Mjj3X-myMC3aQDGkcipivxHsD7ZxJ3r5f_A/edit#gid=10943314&quot;&gt;Hashrates yang Dilaporkan Komunitas&lt;/a&gt;
-
-&lt;h2 id=&quot;perangkat-lunak-penambangan&quot;&gt;Perangkat Lunak Penambangan&lt;/h2&gt;
-
-Butuh bantuan dengan penambangan? ⛏️&lt;br /&gt;&lt;br /&gt;&lt;a href=&quot;https://www.verus.io/discord&quot;&gt;Buka saluran #mining Verus Discord. Masyarakat dengan senang hati membantu&lt;/a&gt;
-
-&lt;h3 id=&quot;️-cpu&quot;&gt;🖥️ CPU&lt;/h3&gt;
-
-Perangkat lunak untuk ditambang dengan CPU (prosesor).
-
-&lt;h3 id=&quot;ccminer&quot;&gt;CCminer&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;OS&lt;/th&gt;
-      &lt;th&gt;Nama&lt;/th&gt;
-      &lt;th&gt;Versi&lt;/th&gt;
-      &lt;th&gt;Download&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Windows&lt;/td&gt;
-      &lt;td&gt;CCminer&lt;/td&gt;
-      &lt;td&gt;v3.8.3a&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://ouo.io/ihGggg&quot;&gt;Download&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;macOS (Apple silicon)&lt;/td&gt;
-      &lt;td&gt;CCminer&lt;/td&gt;
-      &lt;td&gt;–&lt;/td&gt;
-      &lt;td&gt;belum tersedia&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Linux&lt;/td&gt;
-      &lt;td&gt;CCminer&lt;/td&gt;
-      &lt;td&gt;v3.8.3a&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://ouo.io/7Qb90l&quot;&gt;Download&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ARM&lt;/td&gt;
-      &lt;td&gt;CCminer&lt;/td&gt;
-      &lt;td&gt;v3.8.3a&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://ouo.io/7Qb90l&quot;&gt;Download&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;-mobile&quot;&gt;📱 Mobile&lt;/h3&gt;
-
-Mulailah menambang dengan ponsel Anda.
-
-VerusMiner &lt;a href=&quot;https://ouo.io/G256YZ&quot;&gt;Download&lt;/a&gt;.
-
-&lt;h3 id=&quot;gpu&quot;&gt;GPU&lt;/h3&gt;
-
-Belum ada perangkat lunak.
-
-&lt;h2 id=&quot;penambangan-pool&quot;&gt;Penambangan Pool&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Nama Pool&lt;/th&gt;
-      &lt;th&gt;Biaya %&lt;/th&gt;
-      &lt;th&gt;Dukungan penggabungan-penambangan&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://pool.verus.io/&quot;&gt;Verus Pool&lt;/a&gt; Biaya yang disumbangkan ke Verus Coin Foundation&lt;/td&gt;
-      &lt;td&gt;5%&lt;/td&gt;
-      &lt;td&gt;✅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://luckpool.net/verus/&quot;&gt;LuckPool&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;1%&lt;/td&gt;
-      &lt;td&gt;✅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://verus.aninterestinghole.xyz/&quot;&gt;An Interesting Hole&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;1%&lt;/td&gt;
-      &lt;td&gt;✅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://verus.farm/&quot;&gt;Verus Farm&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;0.3%&lt;/td&gt;
-      &lt;td&gt;✅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://paddypool.net/&quot;&gt;Paddy Pool&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;1%&lt;/td&gt;
-      &lt;td&gt;✅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://vrsc.ciscotech.dk/&quot;&gt;CiscoTech&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;1%&lt;/td&gt;
-      &lt;td&gt;✅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://veruscoin.cedric-crispin.com/&quot;&gt;Cedric CRISPIN&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;0.1%&lt;/td&gt;
-      &lt;td&gt;❌&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://zergpool.com/&quot;&gt;ZergPool&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;0.5%&lt;/td&gt;
-      &lt;td&gt;❌&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://wattpool.net/ui/verus/stats&quot;&gt;Wattpool&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;0.5%&lt;/td&gt;
-      &lt;td&gt;❌&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://zeusminingpool.com/#vrsc1&quot;&gt;Zeus Mining Pool&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;1%&lt;/td&gt;
-      &lt;td&gt;❌&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://vipor.net/&quot;&gt;Vipor.net&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;0.8%&lt;/td&gt;
-      &lt;td&gt;❌&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://cloudiko.io/&quot;&gt;Cloudiko.io&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;0.75%&lt;/td&gt;
-      &lt;td&gt;❌&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://fastpool.xyz/grafana/d/vrsc-pool/&quot;&gt;Fastpool.xyz&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;0.5%&lt;/td&gt;
-      &lt;td&gt;❌&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        <pubDate>Sun, 02 Oct 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/10/02/mining-verus/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/10/02/mining-verus/</guid>
-        
-        <category>Mining</category>
-        
-        
-        <category>Linux</category>
-        
-      </item>
-    
-      <item>
-        <title>Install Mining Verus ARM</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#informasi-umum-penting&quot; id=&quot;markdown-toc-informasi-umum-penting&quot;&gt;Informasi Umum Penting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#prosedur&quot; id=&quot;markdown-toc-prosedur&quot;&gt;Prosedur:&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;img src=&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfdrIFY4c0FJHoy-IijdQ88inENufgm6kui8s3SiS2HVwv_By-xnfIE00&amp;amp;s=10&quot; alt=&quot;Ccminer Verus&quot; /&gt;
-
-Bacalah secara menyeluruh sebelum menggunakan
-
-&lt;h2 id=&quot;informasi-umum-penting&quot;&gt;Informasi Umum Penting&lt;/h2&gt;
-
-Panduan ini ditujukan untuk distribusi Linux berbasis Debian.
-
-Jika Anda menggunakan jenis distribusi yang berbeda (misalnya berbasis RPM, seperti CentOS), Anda perlu menginstal dependensi menggunakan prosedur yang sesuai dengan distribusi spesifik Anda.
-
-Ada 3 cabang aktif di repo ccminer github:
+&lt;h2 id=&quot;1-masuk-ke-akun-youtube&quot;&gt;1. &lt;strong&gt;Masuk ke Akun YouTube&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ARM&lt;/code&gt; (untuk chip ARM 64bit dengan intrinsik AES).&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Verus2.2&lt;/code&gt; (untuk chip ARM 64bit dengan intrinsik AES).&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Verus2.2gpu&lt;/code&gt; (GPUs).&lt;/li&gt;
+  &lt;li&gt;Buka &lt;a href=&quot;https://www.youtube.com&quot;&gt;www.youtube.com&lt;/a&gt; di browser Anda.&lt;/li&gt;
+  &lt;li&gt;Klik &lt;strong&gt;“Sign In”&lt;/strong&gt; (Masuk) di pojok kanan atas dan masukkan akun Google Anda.&lt;/li&gt;
 &lt;/ul&gt;
 
-Ganti ARM pada baris &lt;strong&gt;git clone&lt;/strong&gt; di bawah dengan nama cabang di atas yang ingin Anda gunakan.
+&lt;h2 id=&quot;2-klik-ikon-kamera-dengan-tanda-plus&quot;&gt;2. &lt;strong&gt;Klik Ikon Kamera dengan Tanda Plus&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;h2 id=&quot;prosedur&quot;&gt;Prosedur:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Di pojok kanan atas halaman YouTube, ada ikon kamera dengan tanda plus (ikon ini disebut &lt;strong&gt;“Create”&lt;/strong&gt; atau &lt;strong&gt;“Buat”&lt;/strong&gt;).&lt;/li&gt;
+  &lt;li&gt;Klik ikon tersebut, lalu pilih &lt;strong&gt;“Upload video”&lt;/strong&gt; (Unggah video) dari menu dropdown.&lt;/li&gt;
+&lt;/ul&gt;
 
-Instal dependensi (khusus untuk distribusi berbasis Debian).
+&lt;h2 id=&quot;3-pilih-video-yang-akan-diunggah&quot;&gt;3. &lt;strong&gt;Pilih Video yang Akan Diunggah&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Setelah itu, Anda akan diarahkan ke halaman YouTube Studio.&lt;/li&gt;
+  &lt;li&gt;Klik tombol &lt;strong&gt;“Select Files”&lt;/strong&gt; (Pilih File) atau tarik dan letakkan video dari komputer Anda ke area unggahan.&lt;/li&gt;
+&lt;/ul&gt;
 
-Untuk kompilasi GPU-miner diperlukan sumber tambahan (Tidak diperlukan untuk CPU atau ARM):
+&lt;h2 id=&quot;4-isi-detail-video&quot;&gt;4. &lt;strong&gt;Isi Detail Video&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run
-sudo sh cuda_10.2.89_440.33.01_linux.run
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Judul&lt;/strong&gt;: Masukkan judul yang menarik untuk video Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Deskripsi&lt;/strong&gt;: Tulis deskripsi yang jelas dan relevan tentang isi video.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Thumbnail&lt;/strong&gt;: YouTube akan secara otomatis membuat thumbnail, tetapi Anda juga bisa mengunggah thumbnail kustom jika ingin.&lt;/li&gt;
+&lt;/ul&gt;
 
-Unduh sumbernya dan kompilasi:
+&lt;h2 id=&quot;5-pengaturan-video&quot;&gt;5. &lt;strong&gt;Pengaturan Video&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git
-cd ccminer
-chmod +x build.sh
-chmod +x configure.sh
-chmod +x autogen.sh
-./build.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Playlist&lt;/strong&gt;: Jika Anda ingin menambahkan video ke dalam playlist tertentu, Anda bisa melakukannya di bagian ini.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Audiens&lt;/strong&gt;: Pilih apakah video ini untuk anak-anak atau bukan. YouTube perlu tahu audiens target untuk video Anda karena peraturan COPPA (Children’s Online Privacy Protection Act).&lt;/li&gt;
+&lt;/ul&gt;
 
-Buat perintah di luar dengan:
+&lt;h2 id=&quot;6-pengaturan-lanjutan-opsional&quot;&gt;6. &lt;strong&gt;Pengaturan Lanjutan (Opsional)&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nano autorun.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Anda juga bisa menambahkan tag, kategori video, dan memilih apakah komentar diaktifkan atau dinonaktifkan.&lt;/li&gt;
+&lt;/ul&gt;
 
-Dan akhirnya memulai penambang (Ubah kumpulan, alamat &amp;amp; nama pekerja sesuai keinginan Anda:
+&lt;h2 id=&quot;7-pilih-visibilitas&quot;&gt;7. &lt;strong&gt;Pilih Visibilitas&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/root/ccminer-ARM/ccminer -a verus -o stratum+tcp://pool.verus.io:9999 -u ewallet-verus-anda.namaperangkat -p x -t 4
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Public&lt;/strong&gt;: Semua orang bisa melihat video Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Unlisted&lt;/strong&gt;: Hanya orang yang memiliki tautan yang bisa menonton video Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Private&lt;/strong&gt;: Hanya Anda yang bisa menonton video.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scheduled&lt;/strong&gt;: Anda bisa menjadwalkan kapan video akan dipublikasikan.&lt;/li&gt;
+&lt;/ul&gt;
 
-Simpan dengan &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CTRL&lt;/code&gt; + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;X&lt;/code&gt; lalu &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enter&lt;/code&gt;.
+&lt;h2 id=&quot;8-klik-publish-terbitkan&quot;&gt;8. &lt;strong&gt;Klik “Publish” (Terbitkan)&lt;/strong&gt;&lt;/h2&gt;
 
-buat &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;crontab -e&lt;/code&gt; lalu pilih &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nano&lt;/code&gt;
+&lt;ul&gt;
+  &lt;li&gt;Setelah semua pengaturan sudah diisi, klik &lt;strong&gt;“Publish”&lt;/strong&gt; (Terbitkan) jika ingin langsung mengunggahnya, atau jadwalkan kapan video akan tayang.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@reboot bash /root/ccminer/autorun.sh &amp;gt; /root/ccminer/miner.log 2&amp;gt;&amp;amp;1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;9-video-diunggah&quot;&gt;9. &lt;strong&gt;Video Diunggah&lt;/strong&gt;&lt;/h2&gt;
 
-Simpan dengan &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CTRL&lt;/code&gt; + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;X&lt;/code&gt; lalu &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enter&lt;/code&gt;.
+&lt;ul&gt;
+  &lt;li&gt;Tunggu hingga video selesai diunggah dan diproses oleh YouTube.&lt;/li&gt;
+  &lt;li&gt;Setelah selesai, Anda bisa membagikan tautan video atau menambahkan video ke playlist Anda.&lt;/li&gt;
+&lt;/ul&gt;
 
-Sekarang anda hanya melakukan perintah &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reboot&lt;/code&gt;.
+Sekarang video Anda sudah diunggah dan siap ditonton di YouTube!
+</description>
+        <pubDate>Wed, 05 Oct 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/10/05/cara-upload-video-di-youtube/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/05/cara-upload-video-di-youtube/</guid>
+        
+        <category>Video</category>
+        
+        
+        <category>Youtube</category>
+        
+      </item>
+    
+      <item>
+        <title>Optimasi SEO Youtube</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-penelitian-kata-kunci-keyword-research&quot; id=&quot;markdown-toc-1-penelitian-kata-kunci-keyword-research&quot;&gt;1. &lt;strong&gt;Penelitian Kata Kunci (Keyword Research)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-optimasi-judul-video&quot; id=&quot;markdown-toc-2-optimasi-judul-video&quot;&gt;2. &lt;strong&gt;Optimasi Judul Video&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-optimasi-deskripsi-video&quot; id=&quot;markdown-toc-3-optimasi-deskripsi-video&quot;&gt;3. &lt;strong&gt;Optimasi Deskripsi Video&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-penggunaan-tag-video-yang-tepat&quot; id=&quot;markdown-toc-4-penggunaan-tag-video-yang-tepat&quot;&gt;4. &lt;strong&gt;Penggunaan Tag Video yang Tepat&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-thumbnail-kustom-yang-menarik&quot; id=&quot;markdown-toc-5-thumbnail-kustom-yang-menarik&quot;&gt;5. &lt;strong&gt;Thumbnail Kustom yang Menarik&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-subtitles-dan-closed-captions&quot; id=&quot;markdown-toc-6-subtitles-dan-closed-captions&quot;&gt;6. &lt;strong&gt;Subtitles dan Closed Captions&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-playlist-yang-terorganisir&quot; id=&quot;markdown-toc-7-playlist-yang-terorganisir&quot;&gt;7. &lt;strong&gt;Playlist yang Terorganisir&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-interaksi-pengguna-user-engagement&quot; id=&quot;markdown-toc-8-interaksi-pengguna-user-engagement&quot;&gt;8. &lt;strong&gt;Interaksi Pengguna (User Engagement)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#9-watch-time-dan-retention-rate&quot; id=&quot;markdown-toc-9-watch-time-dan-retention-rate&quot;&gt;9. &lt;strong&gt;Watch Time dan Retention Rate&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#10-promosikan-video-di-media-sosial-dan-website&quot; id=&quot;markdown-toc-10-promosikan-video-di-media-sosial-dan-website&quot;&gt;10. &lt;strong&gt;Promosikan Video di Media Sosial dan Website&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#11-analisis-dan-perbaiki-kinerja&quot; id=&quot;markdown-toc-11-analisis-dan-perbaiki-kinerja&quot;&gt;11. &lt;strong&gt;Analisis dan Perbaiki Kinerja&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+Optimasi SEO di YouTube sangat penting untuk membantu video Anda mendapatkan lebih banyak penonton. Berikut adalah langkah-langkah &lt;strong&gt;optimasi SEO YouTube&lt;/strong&gt; yang bisa Anda ikuti:
+
+&lt;h2 id=&quot;1-penelitian-kata-kunci-keyword-research&quot;&gt;1. &lt;strong&gt;Penelitian Kata Kunci (Keyword Research)&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Cari Kata Kunci yang Relevan&lt;/strong&gt;: Gunakan alat seperti &lt;strong&gt;Google Trends&lt;/strong&gt;, &lt;strong&gt;TubeBuddy&lt;/strong&gt;, atau &lt;strong&gt;Ubersuggest&lt;/strong&gt; untuk menemukan kata kunci yang relevan dengan niche Anda dan memiliki volume pencarian tinggi.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Perhatikan Saran Otomatis di YouTube&lt;/strong&gt;: Ketik kata kunci utama Anda di bilah pencarian YouTube, dan lihat saran yang muncul. Ini menunjukkan kata kunci yang sering dicari oleh pengguna.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Analisis Kompetitor&lt;/strong&gt;: Lihat video dengan topik serupa dan perhatikan judul, deskripsi, dan tag yang mereka gunakan.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-optimasi-judul-video&quot;&gt;2. &lt;strong&gt;Optimasi Judul Video&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Masukkan Kata Kunci Utama&lt;/strong&gt;: Pastikan kata kunci utama Anda ada di judul. Judul yang SEO-friendly harus deskriptif, menarik, dan relevan.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gunakan Judul Menarik&lt;/strong&gt;: Selain kata kunci, buat judul yang menarik perhatian dan membuat orang penasaran untuk mengklik video Anda. Misalnya, gunakan angka, ajakan bertindak, atau janji solusi.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Jaga Panjang Judul&lt;/strong&gt;: Usahakan judul tidak lebih dari 60 karakter agar tidak terpotong di hasil pencarian.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-optimasi-deskripsi-video&quot;&gt;3. &lt;strong&gt;Optimasi Deskripsi Video&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Kata Kunci di Awal Deskripsi&lt;/strong&gt;: Letakkan kata kunci utama di awal deskripsi. YouTube membaca 100-150 karakter pertama untuk SEO.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Buat Deskripsi yang Mendetail&lt;/strong&gt;: Tulis deskripsi minimal 200-300 kata tentang isi video Anda. Sebutkan kata kunci utama beberapa kali, tetapi tetap natural.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tambahkan Tautan dan Call-to-Action&lt;/strong&gt;: Sertakan tautan ke video terkait, channel Anda, atau situs web. Anda juga bisa mendorong penonton untuk like, subscribe, atau menonton video lain.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-penggunaan-tag-video-yang-tepat&quot;&gt;4. &lt;strong&gt;Penggunaan Tag Video yang Tepat&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Tag dengan Kata Kunci Utama&lt;/strong&gt;: Masukkan kata kunci utama Anda sebagai tag pertama. Ini membantu YouTube memahami topik video Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gunakan Tag Relevan&lt;/strong&gt;: Tambahkan tag yang relevan dengan topik video Anda. Anda juga bisa melihat tag yang digunakan oleh video kompetitor dengan ekstensi browser seperti &lt;strong&gt;TubeBuddy&lt;/strong&gt; atau &lt;strong&gt;VidIQ&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Hindari Over Tagging&lt;/strong&gt;: Jangan menambahkan terlalu banyak tag yang tidak relevan, karena ini dapat mengurangi efektivitas SEO Anda.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-thumbnail-kustom-yang-menarik&quot;&gt;5. &lt;strong&gt;Thumbnail Kustom yang Menarik&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Gunakan Thumbnail yang Jelas dan Menarik&lt;/strong&gt;: Thumbnail yang menarik meningkatkan kemungkinan video Anda diklik. Pastikan resolusi thumbnail tinggi, dengan warna kontras, teks singkat, dan gambar yang mencolok.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Sertakan Elemen Visual yang Relevan&lt;/strong&gt;: Jika memungkinkan, tambahkan teks pada thumbnail yang menjelaskan poin utama video.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-subtitles-dan-closed-captions&quot;&gt;6. &lt;strong&gt;Subtitles dan Closed Captions&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Unggah Subtitle&lt;/strong&gt;: Menambahkan subtitle tidak hanya membantu penonton yang memiliki masalah pendengaran tetapi juga membantu SEO. YouTube dapat membaca teks dalam subtitle dan meningkatkan ranking video Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Closed Captions&lt;/strong&gt;: Aktifkan closed captions (CC) otomatis atau unggah subtitle manual untuk membantu meningkatkan aksesibilitas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-playlist-yang-terorganisir&quot;&gt;7. &lt;strong&gt;Playlist yang Terorganisir&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Buat Playlist yang Relevan&lt;/strong&gt;: Mengorganisir video Anda ke dalam playlist dengan topik yang relevan dapat meningkatkan SEO channel Anda secara keseluruhan.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Optimasi Judul dan Deskripsi Playlist&lt;/strong&gt;: Sama seperti video, optimasi playlist dengan kata kunci yang relevan di judul dan deskripsi juga penting untuk SEO.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;8-interaksi-pengguna-user-engagement&quot;&gt;8. &lt;strong&gt;Interaksi Pengguna (User Engagement)&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Ajakan untuk Subscribe, Like, dan Comment&lt;/strong&gt;: Minta penonton untuk berinteraksi dengan video Anda. Video yang memiliki banyak like, komentar, dan waktu tonton cenderung mendapat peringkat lebih tinggi.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Respon Komentar&lt;/strong&gt;: Terlibat aktif dengan komentar di video Anda untuk meningkatkan interaksi.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;9-watch-time-dan-retention-rate&quot;&gt;9. &lt;strong&gt;Watch Time dan Retention Rate&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Buat Konten Berkualitas&lt;/strong&gt;: Video dengan watch time tinggi (penonton menonton hingga akhir) akan mendapatkan peringkat lebih tinggi.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gunakan Teaser di Awal Video&lt;/strong&gt;: Buat pengenalan yang menarik untuk membuat penonton tertarik menonton hingga akhir.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;10-promosikan-video-di-media-sosial-dan-website&quot;&gt;10. &lt;strong&gt;Promosikan Video di Media Sosial dan Website&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Sebarkan Video di Platform Lain&lt;/strong&gt;: Bagikan video di media sosial seperti Facebook, Twitter, Instagram, dan komunitas online untuk meningkatkan views dan engagement.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Sematkan Video di Blog atau Website&lt;/strong&gt;: Jika Anda memiliki blog atau situs web, sematkan video di sana untuk meningkatkan visibilitas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;11-analisis-dan-perbaiki-kinerja&quot;&gt;11. &lt;strong&gt;Analisis dan Perbaiki Kinerja&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Gunakan YouTube Analytics&lt;/strong&gt;: Periksa data performa video Anda melalui YouTube Analytics untuk melihat metrik seperti CTR (Click-Through Rate), watch time, dan sumber traffic.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Perbaiki Konten yang Tidak Optimal&lt;/strong&gt;: Berdasarkan data, Anda bisa mengubah thumbnail, judul, atau deskripsi untuk meningkatkan SEO dan performa video.&lt;/li&gt;
+&lt;/ul&gt;
+
+Dengan menerapkan langkah-langkah di atas, video Anda akan lebih mudah ditemukan di pencarian YouTube dan dapat menarik lebih banyak penonton.
+</description>
+        <pubDate>Tue, 04 Oct 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/10/04/optimasi-seo-youtube/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/04/optimasi-seo-youtube/</guid>
+        
+        <category>SEO</category>
+        
+        
+        <category>Youtube</category>
+        
+      </item>
+    
+      <item>
+        <title>Cara kejar jam tayang youtube</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-buat-konten-berkualitas-dan-relevan&quot; id=&quot;markdown-toc-1-buat-konten-berkualitas-dan-relevan&quot;&gt;1. &lt;strong&gt;Buat Konten Berkualitas dan Relevan&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-upload-video-yang-lebih-panjang-tapi-tetap-menarik&quot; id=&quot;markdown-toc-2-upload-video-yang-lebih-panjang-tapi-tetap-menarik&quot;&gt;2. &lt;strong&gt;Upload Video yang Lebih Panjang (Tapi Tetap Menarik)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-optimasi-seo-untuk-menarik-penonton-baru&quot; id=&quot;markdown-toc-3-optimasi-seo-untuk-menarik-penonton-baru&quot;&gt;3. &lt;strong&gt;Optimasi SEO untuk Menarik Penonton Baru&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-promosikan-video-di-media-sosial&quot; id=&quot;markdown-toc-4-promosikan-video-di-media-sosial&quot;&gt;4. &lt;strong&gt;Promosikan Video di Media Sosial&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-buat-playlist-yang-menarik&quot; id=&quot;markdown-toc-5-buat-playlist-yang-menarik&quot;&gt;5. &lt;strong&gt;Buat Playlist yang Menarik&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-gunakan-call-to-action-cta&quot; id=&quot;markdown-toc-6-gunakan-call-to-action-cta&quot;&gt;6. &lt;strong&gt;Gunakan Call-to-Action (CTA)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-perhatikan-waktu-tayang-upload-schedule&quot; id=&quot;markdown-toc-7-perhatikan-waktu-tayang-upload-schedule&quot;&gt;7. &lt;strong&gt;Perhatikan Waktu Tayang (Upload Schedule)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-kolaborasi-dengan-youtuber-lain&quot; id=&quot;markdown-toc-8-kolaborasi-dengan-youtuber-lain&quot;&gt;8. &lt;strong&gt;Kolaborasi dengan YouTuber Lain&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#9-buat-konten-series-atau-video-berseri&quot; id=&quot;markdown-toc-9-buat-konten-series-atau-video-berseri&quot;&gt;9. &lt;strong&gt;Buat Konten Series atau Video Berseri&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#10-gunakan-youtube-live&quot; id=&quot;markdown-toc-10-gunakan-youtube-live&quot;&gt;10. &lt;strong&gt;Gunakan YouTube Live&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#11-promosikan-video-lama&quot; id=&quot;markdown-toc-11-promosikan-video-lama&quot;&gt;11. &lt;strong&gt;Promosikan Video Lama&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#12-perhatikan-retensi-penonton&quot; id=&quot;markdown-toc-12-perhatikan-retensi-penonton&quot;&gt;12. &lt;strong&gt;Perhatikan Retensi Penonton&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+Mencapai 4000 jam tayang di YouTube adalah salah satu syarat untuk memonetisasi channel Anda melalui Program Partner YouTube. Mencapai target ini membutuhkan strategi yang terfokus pada konten berkualitas, optimasi SEO, dan interaksi dengan penonton. Berikut beberapa cara untuk membantu Anda mengejar 4000 jam tayang:
+
+&lt;h2 id=&quot;1-buat-konten-berkualitas-dan-relevan&quot;&gt;1. &lt;strong&gt;Buat Konten Berkualitas dan Relevan&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Konten yang Memecahkan Masalah&lt;/strong&gt;: Buat video yang menjawab pertanyaan atau menyelesaikan masalah yang sering dicari orang di niche Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Video yang Informatif dan Menarik&lt;/strong&gt;: Buat konten yang bermanfaat, informatif, atau menghibur sehingga penonton betah menonton sampai selesai. Semakin lama penonton menonton, semakin tinggi watch time Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Konten Evergreen&lt;/strong&gt;: Buat video yang relevan untuk waktu yang lama (evergreen content), yang dapat terus mendapatkan views dan watch time di masa depan.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-upload-video-yang-lebih-panjang-tapi-tetap-menarik&quot;&gt;2. &lt;strong&gt;Upload Video yang Lebih Panjang (Tapi Tetap Menarik)&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Durasi Video Optimal&lt;/strong&gt;: Video yang lebih panjang (misalnya 10–20 menit) cenderung memberikan lebih banyak waktu tonton, selama video tersebut tetap menarik dan tidak membosankan.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pentingnya Retensi Penonton&lt;/strong&gt;: Meski video lebih panjang, pastikan Anda mempertahankan retensi penonton. Buat hook di awal video agar penonton tertarik menonton sampai akhir.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-optimasi-seo-untuk-menarik-penonton-baru&quot;&gt;3. &lt;strong&gt;Optimasi SEO untuk Menarik Penonton Baru&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Penelitian Kata Kunci&lt;/strong&gt;: Gunakan kata kunci yang sering dicari di YouTube. Ini membantu video Anda lebih mudah ditemukan oleh penonton baru.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Thumbnail dan Judul yang Menarik&lt;/strong&gt;: Buat thumbnail yang menarik perhatian dan judul yang mengundang rasa penasaran, sehingga meningkatkan CTR (Click-Through Rate).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Deskripsi yang Informasional&lt;/strong&gt;: Isi deskripsi dengan kata kunci relevan, serta jelaskan secara singkat tentang isi video.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-promosikan-video-di-media-sosial&quot;&gt;4. &lt;strong&gt;Promosikan Video di Media Sosial&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Bagikan di Semua Platform&lt;/strong&gt;: Sebarkan video Anda di Facebook, Twitter, Instagram, atau grup online yang sesuai dengan niche video Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gunakan Blog atau Website&lt;/strong&gt;: Jika Anda memiliki blog atau website, sematkan video di artikel untuk mendapatkan lebih banyak views dan waktu tonton dari audiens di luar YouTube.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-buat-playlist-yang-menarik&quot;&gt;5. &lt;strong&gt;Buat Playlist yang Menarik&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Playlist Relevan&lt;/strong&gt;: Gabungkan video Anda dalam playlist sesuai kategori atau topik tertentu. Ini membantu penonton menemukan video lain di channel Anda dan meningkatkan durasi tonton secara kumulatif.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Auto-Play Video di Playlist&lt;/strong&gt;: Playlist memungkinkan video berikutnya diputar otomatis, sehingga meningkatkan waktu tonton secara keseluruhan.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-gunakan-call-to-action-cta&quot;&gt;6. &lt;strong&gt;Gunakan Call-to-Action (CTA)&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Minta Penonton Menonton Video Lain&lt;/strong&gt;: Di akhir video, dorong penonton untuk menonton video lain di channel Anda. Anda bisa menggunakan end screen untuk memberikan rekomendasi video.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pinned Comment&lt;/strong&gt;: Di bagian komentar, Anda bisa mempromosikan video lain yang relevan atau playlist yang berisi video-video terbaik Anda.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-perhatikan-waktu-tayang-upload-schedule&quot;&gt;7. &lt;strong&gt;Perhatikan Waktu Tayang (Upload Schedule)&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Konsistensi Upload&lt;/strong&gt;: Konsisten mengunggah video secara teratur akan membuat penonton setia kembali menonton video baru Anda. Misalnya, unggah 1–2 kali seminggu di hari yang sama.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Prime Time&lt;/strong&gt;: Coba upload video di waktu ketika audiens Anda cenderung aktif. Anda bisa menggunakan YouTube Analytics untuk mengetahui kapan penonton Anda paling sering online.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;8-kolaborasi-dengan-youtuber-lain&quot;&gt;8. &lt;strong&gt;Kolaborasi dengan YouTuber Lain&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Kolaborasi dengan Channel Sejenis&lt;/strong&gt;: Ajak YouTuber lain untuk berkolaborasi. Ini membantu menjangkau audiens baru yang mungkin belum mengenal channel Anda dan meningkatkan waktu tonton dari penonton mereka.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Shoutout atau Video Tamu&lt;/strong&gt;: Tampilkan YouTuber lain di video Anda atau sebaliknya, untuk menarik penonton baru dari channel mereka.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;9-buat-konten-series-atau-video-berseri&quot;&gt;9. &lt;strong&gt;Buat Konten Series atau Video Berseri&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Konten Serial&lt;/strong&gt;: Buat konten dalam bentuk seri (series), di mana penonton perlu menonton video sebelumnya atau video berikutnya untuk memahami konten secara lengkap.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Dukung Penonton Menonton Lanjutan&lt;/strong&gt;: Di akhir video, arahkan penonton untuk menonton episode berikutnya di playlist, ini akan meningkatkan jumlah waktu tonton secara signifikan.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;10-gunakan-youtube-live&quot;&gt;10. &lt;strong&gt;Gunakan YouTube Live&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Streaming Live&lt;/strong&gt;: Mengadakan sesi live streaming memungkinkan Anda untuk mendapatkan jam tayang lebih cepat, karena penonton biasanya menonton live streaming lebih lama dibandingkan video biasa.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Interaksi Langsung&lt;/strong&gt;: Saat live streaming, Anda bisa berinteraksi dengan penonton secara langsung, meningkatkan keterlibatan dan loyalitas mereka pada channel Anda.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;11-promosikan-video-lama&quot;&gt;11. &lt;strong&gt;Promosikan Video Lama&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Revitalisasi Konten Lama&lt;/strong&gt;: Jika Anda sudah memiliki banyak video, coba untuk mempromosikan ulang video lama yang relevan dengan topik yang sedang tren.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Update Judul, Thumbnail, atau Deskripsi&lt;/strong&gt;: Kadang dengan memperbarui elemen ini, video lama bisa mendapatkan traction baru dan meningkatkan waktu tonton.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;12-perhatikan-retensi-penonton&quot;&gt;12. &lt;strong&gt;Perhatikan Retensi Penonton&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Fokus pada 15 Detik Pertama&lt;/strong&gt;: Buat hook yang kuat dalam 15 detik pertama video untuk memastikan penonton tertarik dan tetap menonton.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Kurangi Bounce Rate&lt;/strong&gt;: Hindari pengantar yang terlalu panjang atau tidak relevan yang bisa membuat penonton cepat meninggalkan video.&lt;/li&gt;
+&lt;/ul&gt;
+
+Dengan menerapkan strategi-strategi ini secara konsisten, Anda bisa mempercepat peningkatan &lt;strong&gt;watch time&lt;/strong&gt; dan mencapai 4000 jam tayang untuk memonetisasi channel YouTube Anda.
+</description>
+        <pubDate>Mon, 03 Oct 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/10/03/cara-kejar-jam-tayang-youtube/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/03/cara-kejar-jam-tayang-youtube/</guid>
+        
+        <category>SEO</category>
+        
+        
+        <category>Youtube</category>
+        
+      </item>
+    
+      <item>
+        <title>Monetisasi Youtube</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-memenuhi-persyaratan-program-partner-youtube&quot; id=&quot;markdown-toc-1-memenuhi-persyaratan-program-partner-youtube&quot;&gt;1. &lt;strong&gt;Memenuhi Persyaratan Program Partner YouTube&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-mendaftar-ke-program-partner-youtube&quot; id=&quot;markdown-toc-2-mendaftar-ke-program-partner-youtube&quot;&gt;2. &lt;strong&gt;Mendaftar ke Program Partner YouTube&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-buat-atau-hubungkan-akun-adsense&quot; id=&quot;markdown-toc-3-buat-atau-hubungkan-akun-adsense&quot;&gt;3. &lt;strong&gt;Buat atau Hubungkan Akun AdSense&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-youtube-akan-meninjau-channel-anda&quot; id=&quot;markdown-toc-4-youtube-akan-meninjau-channel-anda&quot;&gt;4. &lt;strong&gt;YouTube Akan Meninjau Channel Anda&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-aktifkan-monetisasi-di-video&quot; id=&quot;markdown-toc-5-aktifkan-monetisasi-di-video&quot;&gt;5. &lt;strong&gt;Aktifkan Monetisasi di Video&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-monetisasi-dengan-fitur-lain&quot; id=&quot;markdown-toc-6-monetisasi-dengan-fitur-lain&quot;&gt;6. &lt;strong&gt;Monetisasi dengan Fitur Lain&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-pantau-pendapatan-dengan-youtube-analytics&quot; id=&quot;markdown-toc-7-pantau-pendapatan-dengan-youtube-analytics&quot;&gt;7. &lt;strong&gt;Pantau Pendapatan dengan YouTube Analytics&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-mengelola-pembayaran-dari-adsense&quot; id=&quot;markdown-toc-8-mengelola-pembayaran-dari-adsense&quot;&gt;8. &lt;strong&gt;Mengelola Pembayaran dari AdSense&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#9-membuat-konten-yang-aman-untuk-monetisasi&quot; id=&quot;markdown-toc-9-membuat-konten-yang-aman-untuk-monetisasi&quot;&gt;9. &lt;strong&gt;Membuat Konten yang Aman untuk Monetisasi&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#10-pertimbangkan-strategi-lain-untuk-menghasilkan-uang&quot; id=&quot;markdown-toc-10-pertimbangkan-strategi-lain-untuk-menghasilkan-uang&quot;&gt;10. &lt;strong&gt;Pertimbangkan Strategi Lain untuk Menghasilkan Uang&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+Monetisasi YouTube memungkinkan kreator mendapatkan penghasilan dari video yang diunggah melalui iklan, keanggotaan, sponsor, dan metode lainnya. Untuk mulai menghasilkan uang dari YouTube, ada beberapa syarat dan proses yang harus Anda ikuti. Berikut adalah langkah-langkah &lt;strong&gt;monetisasi YouTube&lt;/strong&gt;:
+
+&lt;h2 id=&quot;1-memenuhi-persyaratan-program-partner-youtube&quot;&gt;1. &lt;strong&gt;Memenuhi Persyaratan Program Partner YouTube&lt;/strong&gt;&lt;/h2&gt;
+
+Sebelum dapat mengaktifkan monetisasi, Anda perlu memenuhi syarat minimum untuk bergabung dalam &lt;strong&gt;YouTube Partner Program (YPP)&lt;/strong&gt;:
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Memiliki setidaknya 1000 subscriber&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mencapai 4000 jam waktu tonton (watch time) dalam 12 bulan terakhir&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mengaktifkan verifikasi 2 langkah di akun Google Anda&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tidak memiliki pelanggaran Pedoman Komunitas YouTube yang berat&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-mendaftar-ke-program-partner-youtube&quot;&gt;2. &lt;strong&gt;Mendaftar ke Program Partner YouTube&lt;/strong&gt;&lt;/h2&gt;
+
+Setelah memenuhi syarat, Anda dapat mendaftar untuk bergabung dengan Program Partner YouTube:
+
+&lt;blockquote&gt;
+  &lt;strong&gt;Buka YouTube Studio&lt;/strong&gt;:
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Klik foto profil Anda di pojok kanan atas, lalu pilih &lt;strong&gt;YouTube Studio&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;strong&gt;Buka Menu Monetisasi&lt;/strong&gt;:
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Di menu sebelah kiri, klik &lt;strong&gt;Monetisasi&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Di sana Anda akan melihat opsi untuk &lt;strong&gt;mendaftar&lt;/strong&gt; jika sudah memenuhi syarat.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;strong&gt;Setujui Persyaratan Program Partner&lt;/strong&gt;:
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ikuti langkah-langkah untuk menyetujui syarat dan ketentuan Program Partner YouTube.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-buat-atau-hubungkan-akun-adsense&quot;&gt;3. &lt;strong&gt;Buat atau Hubungkan Akun AdSense&lt;/strong&gt;&lt;/h2&gt;
+
+Untuk menerima pembayaran dari iklan, Anda perlu membuat atau menghubungkan akun &lt;strong&gt;Google AdSense&lt;/strong&gt;. Langkah-langkahnya:
+&lt;ul&gt;
+  &lt;li&gt;Setelah menyetujui persyaratan YPP, YouTube akan meminta Anda untuk membuat akun AdSense atau menghubungkan akun yang sudah ada.&lt;/li&gt;
+  &lt;li&gt;Pastikan semua informasi pembayaran sudah benar, seperti alamat dan nama penerima pembayaran.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-youtube-akan-meninjau-channel-anda&quot;&gt;4. &lt;strong&gt;YouTube Akan Meninjau Channel Anda&lt;/strong&gt;&lt;/h2&gt;
+
+Setelah mendaftar dan menghubungkan AdSense, YouTube akan meninjau channel Anda. Proses ini bisa memakan waktu beberapa minggu. Mereka akan memeriksa apakah channel Anda mematuhi semua pedoman komunitas dan kebijakan monetisasi YouTube, termasuk:
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Konten Asli&lt;/strong&gt;: Video harus merupakan karya asli Anda dan tidak melanggar hak cipta.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Kepatuhan terhadap Pedoman&lt;/strong&gt;: Pastikan channel Anda tidak melanggar pedoman komunitas YouTube.&lt;/li&gt;
+&lt;/ul&gt;
+
+Jika ditolak, YouTube akan memberi tahu Anda alasan penolakan, dan Anda bisa memperbaiki masalah yang ada lalu mengajukan ulang setelah 30 hari.
+
+&lt;h2 id=&quot;5-aktifkan-monetisasi-di-video&quot;&gt;5. &lt;strong&gt;Aktifkan Monetisasi di Video&lt;/strong&gt;&lt;/h2&gt;
+
+Setelah channel Anda diterima ke dalam Program Partner YouTube, Anda bisa mengaktifkan iklan pada video Anda:
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Buka YouTube Studio&lt;/strong&gt; dan pilih &lt;strong&gt;Content&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Klik video yang ingin Anda monetisasi.&lt;/li&gt;
+  &lt;li&gt;Di bagian &lt;strong&gt;Monetization&lt;/strong&gt; (Monetisasi), aktifkan iklan pada video tersebut.&lt;/li&gt;
+  &lt;li&gt;Anda bisa memilih jenis iklan yang ingin ditampilkan, seperti iklan skippable, non-skippable, bumper ads, atau overlay ads.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-monetisasi-dengan-fitur-lain&quot;&gt;6. &lt;strong&gt;Monetisasi dengan Fitur Lain&lt;/strong&gt;&lt;/h2&gt;
+
+Setelah Anda diterima dalam Program Partner YouTube, Anda dapat memanfaatkan berbagai fitur monetisasi, selain iklan:
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Super Chat dan Super Stickers&lt;/strong&gt;: Penonton dapat membeli Super Chat atau Super Stickers selama live streaming untuk menyoroti komentar mereka.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Membership Channel (Keanggotaan Channel)&lt;/strong&gt;: Anda bisa menawarkan keanggotaan berbayar kepada penggemar, di mana mereka mendapatkan konten eksklusif atau manfaat khusus.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pendapatan YouTube Premium&lt;/strong&gt;: Jika ada pengguna YouTube Premium yang menonton video Anda, Anda akan menerima bagian dari biaya langganan mereka.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Merchandise Shelf&lt;/strong&gt;: Jika Anda memiliki produk fisik, Anda bisa menautkan toko merchandise di bawah video Anda.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-pantau-pendapatan-dengan-youtube-analytics&quot;&gt;7. &lt;strong&gt;Pantau Pendapatan dengan YouTube Analytics&lt;/strong&gt;&lt;/h2&gt;
+
+Setelah mengaktifkan monetisasi, Anda bisa memantau penghasilan Anda melalui &lt;strong&gt;YouTube Studio&lt;/strong&gt;:
+
+&lt;ul&gt;
+  &lt;li&gt;Masuk ke &lt;strong&gt;YouTube Studio&lt;/strong&gt;, dan klik tab &lt;strong&gt;Analytics&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Di sana, Anda akan melihat laporan penghasilan Anda, termasuk &lt;strong&gt;Revenue Reports&lt;/strong&gt; yang memberikan informasi tentang sumber pendapatan, seperti iklan, keanggotaan, dan lainnya.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;8-mengelola-pembayaran-dari-adsense&quot;&gt;8. &lt;strong&gt;Mengelola Pembayaran dari AdSense&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pembayaran dari YouTube akan dikirim ke akun AdSense Anda setelah saldo mencapai minimal &lt;strong&gt;$100&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Pembayaran biasanya dilakukan setiap bulan, dan Anda bisa memilih metode pembayaran yang sesuai seperti transfer bank atau cek.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;9-membuat-konten-yang-aman-untuk-monetisasi&quot;&gt;9. &lt;strong&gt;Membuat Konten yang Aman untuk Monetisasi&lt;/strong&gt;&lt;/h2&gt;
+
+Untuk menjaga monetisasi tetap aktif, pastikan konten Anda aman bagi pengiklan. Hindari hal-hal seperti:
+
+&lt;ul&gt;
+  &lt;li&gt;Konten yang melanggar hak cipta.&lt;/li&gt;
+  &lt;li&gt;Konten yang berisi kekerasan, ujaran kebencian, atau perilaku tidak pantas.&lt;/li&gt;
+  &lt;li&gt;Konten dewasa atau konten sensitif.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;10-pertimbangkan-strategi-lain-untuk-menghasilkan-uang&quot;&gt;10. &lt;strong&gt;Pertimbangkan Strategi Lain untuk Menghasilkan Uang&lt;/strong&gt;&lt;/h2&gt;
+
+Selain iklan dan fitur monetisasi YouTube, pertimbangkan metode lain untuk menghasilkan uang dari channel Anda:
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Sponsorship&lt;/strong&gt;: Dapatkan kesepakatan dengan merek atau perusahaan untuk menampilkan produk mereka di video Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Affiliate Marketing&lt;/strong&gt;: Promosikan produk dari program afiliasi dan dapatkan komisi dari setiap penjualan yang dihasilkan melalui tautan afiliasi Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Penjualan Produk Digital atau Fisik&lt;/strong&gt;: Jual kursus online, e-book, atau merchandise langsung ke audiens Anda.&lt;/li&gt;
+&lt;/ul&gt;
+
+Dengan mengikuti langkah-langkah di atas dan terus mengembangkan channel Anda, Anda bisa mulai mendapatkan penghasilan dari konten yang Anda buat di YouTube.
+</description>
+        <pubDate>Sun, 02 Oct 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/10/02/monetisasi-youtube/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/02/monetisasi-youtube/</guid>
+        
+        <category>Monetisasi</category>
+        
+        
+        <category>Youtube</category>
+        
+      </item>
+    
+      <item>
+        <title>Mencari kata kunci video youtube</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-gunakan-fitur-auto-complete-youtube&quot; id=&quot;markdown-toc-1-gunakan-fitur-auto-complete-youtube&quot;&gt;1. &lt;strong&gt;Gunakan Fitur Auto-Complete YouTube&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-gunakan-alat-penelitian-kata-kunci-keyword-tools&quot; id=&quot;markdown-toc-2-gunakan-alat-penelitian-kata-kunci-keyword-tools&quot;&gt;2. &lt;strong&gt;Gunakan Alat Penelitian Kata Kunci (Keyword Tools)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-analisis-kompetitor&quot; id=&quot;markdown-toc-3-analisis-kompetitor&quot;&gt;3. &lt;strong&gt;Analisis Kompetitor&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-gunakan-google-search&quot; id=&quot;markdown-toc-4-gunakan-google-search&quot;&gt;4. &lt;strong&gt;Gunakan Google Search&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-periksa-analisis-youtube-studio&quot; id=&quot;markdown-toc-5-periksa-analisis-youtube-studio&quot;&gt;5. &lt;strong&gt;Periksa Analisis YouTube Studio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-perhatikan-tren-di-media-sosial&quot; id=&quot;markdown-toc-6-perhatikan-tren-di-media-sosial&quot;&gt;6. &lt;strong&gt;Perhatikan Tren di Media Sosial&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-long-tail-keywords-kata-kunci-spesifik&quot; id=&quot;markdown-toc-7-long-tail-keywords-kata-kunci-spesifik&quot;&gt;7. &lt;strong&gt;Long-Tail Keywords (Kata Kunci Spesifik)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-cek-volume-pencarian-dan-kompetisi&quot; id=&quot;markdown-toc-8-cek-volume-pencarian-dan-kompetisi&quot;&gt;8. &lt;strong&gt;Cek Volume Pencarian dan Kompetisi&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#9-gunakan-lsi-latent-semantic-indexing-keywords&quot; id=&quot;markdown-toc-9-gunakan-lsi-latent-semantic-indexing-keywords&quot;&gt;9. &lt;strong&gt;Gunakan LSI (Latent Semantic Indexing) Keywords&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#10-gunakan-youtube-suggest&quot; id=&quot;markdown-toc-10-gunakan-youtube-suggest&quot;&gt;10. &lt;strong&gt;Gunakan YouTube Suggest&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#contoh-proses-penelitian-kata-kunci&quot; id=&quot;markdown-toc-contoh-proses-penelitian-kata-kunci&quot;&gt;Contoh Proses Penelitian Kata Kunci:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+Mencari kata kunci yang tepat untuk video YouTube sangat penting untuk meningkatkan visibilitas dan menarik penonton. Berikut ini beberapa langkah efektif untuk menemukan &lt;strong&gt;kata kunci yang relevan&lt;/strong&gt; untuk video YouTube Anda:
+
+&lt;h2 id=&quot;1-gunakan-fitur-auto-complete-youtube&quot;&gt;1. &lt;strong&gt;Gunakan Fitur Auto-Complete YouTube&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Langsung di YouTube&lt;/strong&gt;: Ketik kata atau frasa yang berhubungan dengan topik video Anda di bilah pencarian YouTube. YouTube akan memberikan saran otomatis berupa kata kunci yang sering dicari orang. Ini adalah cara sederhana untuk menemukan kata kunci populer.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Contoh&lt;/strong&gt;: Jika Anda mengetik “tutorial makeup”, YouTube mungkin menyarankan “tutorial makeup natural”, “tutorial makeup simple”, dll. Ini adalah ide-ide kata kunci yang bisa Anda gunakan.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-gunakan-alat-penelitian-kata-kunci-keyword-tools&quot;&gt;2. &lt;strong&gt;Gunakan Alat Penelitian Kata Kunci (Keyword Tools)&lt;/strong&gt;&lt;/h2&gt;
+
+Ada berbagai alat yang dapat membantu Anda menemukan kata kunci YouTube:
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Google Trends&lt;/strong&gt;: Gunakan &lt;a href=&quot;https://trends.google.com&quot;&gt;Google Trends&lt;/a&gt; untuk mengetahui tren pencarian dan popularitas kata kunci tertentu di YouTube. Pilih &lt;strong&gt;pencarian YouTube&lt;/strong&gt; pada menu filter.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;TubeBuddy&lt;/strong&gt;: TubeBuddy adalah ekstensi browser yang sangat membantu untuk melakukan riset kata kunci YouTube. Fitur &lt;strong&gt;Keyword Explorer&lt;/strong&gt; di TubeBuddy menunjukkan volume pencarian, kompetisi, dan saran kata kunci.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;VidIQ&lt;/strong&gt;: Seperti TubeBuddy, &lt;strong&gt;VidIQ&lt;/strong&gt; juga menyediakan alat analisis kata kunci. Anda bisa melihat volume pencarian kata kunci, tingkat persaingan, dan kata kunci terkait.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ubersuggest&lt;/strong&gt;: Anda juga bisa menggunakan &lt;a href=&quot;https://neilpatel.com/ubersuggest/&quot;&gt;Ubersuggest&lt;/a&gt; untuk menemukan kata kunci populer yang sering dicari dan relevan dengan topik video.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-analisis-kompetitor&quot;&gt;3. &lt;strong&gt;Analisis Kompetitor&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Lihat Video dengan Topik Serupa&lt;/strong&gt;: Cari video yang mirip dengan topik yang Anda buat, lalu analisis kata kunci yang mereka gunakan. Anda bisa melihat dari judul, deskripsi, dan tag video tersebut.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ekstensi Browser (TubeBuddy atau VidIQ)&lt;/strong&gt;: Gunakan TubeBuddy atau VidIQ untuk melihat &lt;strong&gt;tag&lt;/strong&gt; yang digunakan pada video kompetitor Anda. Anda bisa mendapatkan inspirasi kata kunci dari sana dan mengadaptasikannya untuk video Anda.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-gunakan-google-search&quot;&gt;4. &lt;strong&gt;Gunakan Google Search&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Terkait Pencarian di Google&lt;/strong&gt;: Karena YouTube dan Google terintegrasi, Anda bisa melakukan riset kata kunci melalui Google. Ketik topik utama Anda di Google dan lihat bagian bawah hasil pencarian, di mana ada “Pencarian terkait”. Ini adalah ide kata kunci yang juga bisa dicari di YouTube.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Menggunakan Google Keyword Planner&lt;/strong&gt;: Meskipun alat ini lebih difokuskan untuk Google Ads, Anda bisa mendapatkan ide kata kunci yang juga berlaku untuk YouTube.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-periksa-analisis-youtube-studio&quot;&gt;5. &lt;strong&gt;Periksa Analisis YouTube Studio&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;YouTube Analytics&lt;/strong&gt;: Buka YouTube Studio, lalu pergi ke &lt;strong&gt;Analytics&lt;/strong&gt;. Pada bagian &lt;strong&gt;Sumber Traffic&lt;/strong&gt; (Traffic Source), Anda akan melihat &lt;strong&gt;sumber pencarian YouTube&lt;/strong&gt; yang menunjukkan kata kunci apa yang sudah membawa penonton ke video Anda.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Optimalkan Konten Berdasarkan Hasil&lt;/strong&gt;: Jika ada kata kunci tertentu yang mendatangkan banyak penonton, pertimbangkan untuk membuat lebih banyak konten yang terkait dengan kata kunci tersebut.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-perhatikan-tren-di-media-sosial&quot;&gt;6. &lt;strong&gt;Perhatikan Tren di Media Sosial&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Pantau Hashtag Populer&lt;/strong&gt;: Di platform seperti Twitter, TikTok, atau Instagram, Anda bisa melihat hashtag atau tren topik yang sedang viral. Anda bisa memanfaatkan tren ini untuk membuat video yang relevan dan menggunakan kata kunci yang sesuai.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Forum Online dan Komunitas&lt;/strong&gt;: Lihat forum seperti Reddit atau Quora untuk menemukan apa yang banyak dibicarakan terkait niche Anda. Kata kunci ini bisa membantu Anda dalam mengarahkan konten yang sesuai minat audiens.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-long-tail-keywords-kata-kunci-spesifik&quot;&gt;7. &lt;strong&gt;Long-Tail Keywords (Kata Kunci Spesifik)&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Gunakan Kata Kunci Panjang&lt;/strong&gt;: Long-tail keywords adalah frasa pencarian yang lebih spesifik dan biasanya memiliki persaingan lebih rendah. Misalnya, alih-alih hanya menargetkan “kue coklat”, Anda bisa menargetkan “cara membuat kue coklat lembut tanpa oven”.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Lebih Mudah Bersaing&lt;/strong&gt;: Kata kunci spesifik ini mungkin memiliki volume pencarian lebih rendah, tetapi cenderung memiliki penonton yang lebih tertarget dan loyal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;8-cek-volume-pencarian-dan-kompetisi&quot;&gt;8. &lt;strong&gt;Cek Volume Pencarian dan Kompetisi&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Periksa Volume Pencarian&lt;/strong&gt;: Pastikan kata kunci yang Anda pilih memiliki volume pencarian yang cukup. Gunakan alat seperti TubeBuddy atau VidIQ untuk melihat apakah kata kunci tersebut sering dicari.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Analisis Tingkat Kompetisi&lt;/strong&gt;: Hindari kata kunci dengan tingkat kompetisi yang terlalu tinggi, terutama jika channel Anda masih baru. Fokuslah pada kata kunci dengan kompetisi rendah hingga menengah.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;9-gunakan-lsi-latent-semantic-indexing-keywords&quot;&gt;9. &lt;strong&gt;Gunakan LSI (Latent Semantic Indexing) Keywords&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Kata Kunci yang Berkaitan&lt;/strong&gt;: LSI keywords adalah kata kunci yang terkait erat dengan kata kunci utama Anda. Misalnya, jika Anda menargetkan “cara menanam tanaman hias”, kata kunci LSI mungkin berupa “perawatan tanaman hias” atau “jenis tanaman hias yang mudah dirawat.”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tambahkan Variasi Kata Kunci&lt;/strong&gt;: Gunakan LSI keywords di deskripsi dan tag video untuk memperluas jangkauan tanpa kehilangan fokus topik.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;10-gunakan-youtube-suggest&quot;&gt;10. &lt;strong&gt;Gunakan YouTube Suggest&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ketika Anda mengetik kata kunci di bilah pencarian YouTube, YouTube Suggest akan menampilkan prediksi pencarian berdasarkan tren pencarian pengguna. Ini memberi Anda wawasan tentang apa yang sering dicari oleh penonton.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;contoh-proses-penelitian-kata-kunci&quot;&gt;Contoh Proses Penelitian Kata Kunci:&lt;/h2&gt;
+Misalkan Anda ingin membuat video tentang &lt;strong&gt;“cara memulai bisnis online”&lt;/strong&gt;.
+
+&lt;ol&gt;
+  &lt;li&gt;Buka YouTube dan ketik “cara memulai bisnis” di bilah pencarian. Lihat kata kunci yang disarankan seperti “cara memulai bisnis online tanpa modal” atau “cara memulai bisnis online dari rumah”.&lt;/li&gt;
+  &lt;li&gt;Gunakan TubeBuddy untuk menganalisis &lt;strong&gt;volume pencarian&lt;/strong&gt; dan &lt;strong&gt;kompetisi&lt;/strong&gt; dari kata kunci tersebut.&lt;/li&gt;
+  &lt;li&gt;Periksa video kompetitor yang populer dengan topik serupa. Lihat &lt;strong&gt;tag&lt;/strong&gt; yang mereka gunakan untuk mendapatkan ide tambahan.&lt;/li&gt;
+  &lt;li&gt;Periksa &lt;strong&gt;Google Trends&lt;/strong&gt; untuk melihat apakah pencarian tentang “bisnis online” sedang meningkat atau menurun.&lt;/li&gt;
+  &lt;li&gt;Setelah mengidentifikasi kata kunci yang tepat, masukkan kata kunci tersebut di &lt;strong&gt;judul&lt;/strong&gt;, &lt;strong&gt;deskripsi&lt;/strong&gt;, dan &lt;strong&gt;tag&lt;/strong&gt; video Anda.&lt;/li&gt;
+&lt;/ol&gt;
+
+Dengan strategi riset kata kunci yang tepat, Anda dapat meningkatkan peluang video Anda muncul di hasil pencarian YouTube, serta menarik lebih banyak penonton.
 </description>
         <pubDate>Sat, 01 Oct 2022 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2022/10/01/install-mining-verus-arm/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022/10/01/install-mining-verus-arm/</guid>
+        <link>http://localhost:4000/2022/10/01/mencari-kata-kunci-video-youtube/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/01/mencari-kata-kunci-video-youtube/</guid>
         
-        <category>Mining</category>
+        <category>SEO</category>
         
         
-        <category>Linux</category>
+        <category>Youtube</category>
         
       </item>
     
