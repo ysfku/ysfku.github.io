@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>Three.js 之 18 使用 Blender 设计和导出模型</title>
+    <meta name="description" content="本系列为 Three.js journey 教程学习笔记。使用 Blender 设计和导出模型有很多 3D 建模的软件，比如 Cinema 4D、Maya、3DS Max、Blender、ZBrush 等。本节课我们将学习 Blender 因为它是免费的，并且性能也还不错。本节课学习完成后，你并不会成为 Blen...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2022/08/21/three-custom-model/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>Three.js 之 18 使用 Blender 设计和导出模型</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2022-08-21
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#Three.js" title="Category: Three.js" rel="category">Three.js</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a-->
+        <a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a>&nbsp;
+    
+        <!--a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a-->
+        <a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#blender-的界面与基本操作" id="markdown-toc-blender-的界面与基本操作">Blender 的界面与基本操作</a>    <ul>
+      <li><a href="#改变区域" id="markdown-toc-改变区域">改变区域</a></li>
+      <li><a href="#划分与合并区域" id="markdown-toc-划分与合并区域">划分与合并区域</a></li>
+      <li><a href="#快捷键" id="markdown-toc-快捷键">快捷键</a>        <ul>
+          <li><a href="#旋转视角" id="markdown-toc-旋转视角">旋转视角</a></li>
+          <li><a href="#视角平移" id="markdown-toc-视角平移">视角平移</a></li>
+          <li><a href="#视角缩放" id="markdown-toc-视角缩放">视角缩放</a></li>
+          <li><a href="#自由视角移动" id="markdown-toc-自由视角移动">自由视角移动</a></li>
+          <li><a href="#正交或景深视角切换" id="markdown-toc-正交或景深视角切换">正交或景深视角切换</a></li>
+          <li><a href="#坐标轴视角" id="markdown-toc-坐标轴视角">坐标轴视角</a></li>
+          <li><a href="#相机视角" id="markdown-toc-相机视角">相机视角</a></li>
+          <li><a href="#reset" id="markdown-toc-reset">reset</a></li>
+          <li><a href="#聚焦" id="markdown-toc-聚焦">聚焦</a></li>
+          <li><a href="#选择" id="markdown-toc-选择">选择</a></li>
+        </ul>
+      </li>
+      <li><a href="#创建物体与相关操作" id="markdown-toc-创建物体与相关操作">创建物体与相关操作</a>        <ul>
+          <li><a href="#删除物体" id="markdown-toc-删除物体">删除物体</a></li>
+          <li><a href="#创建物体" id="markdown-toc-创建物体">创建物体</a></li>
+          <li><a href="#隐藏物体" id="markdown-toc-隐藏物体">隐藏物体</a></li>
+          <li><a href="#物体变换" id="markdown-toc-物体变换">物体变换</a></li>
+          <li><a href="#改变模式与编辑模式" id="markdown-toc-改变模式与编辑模式">改变模式与编辑模式</a></li>
+        </ul>
+      </li>
+      <li><a href="#shading-渲染着色" id="markdown-toc-shading-渲染着色">Shading 渲染着色</a></li>
+      <li><a href="#properties-属性区域" id="markdown-toc-properties-属性区域">Properties 属性区域</a></li>
+      <li><a href="#搜索" id="markdown-toc-搜索">搜索</a></li>
+      <li><a href="#保存预设状态" id="markdown-toc-保存预设状态">保存预设状态</a></li>
+    </ul>
+  </li>
+  <li><a href="#汉堡模型制作" id="markdown-toc-汉堡模型制作">汉堡模型制作</a>    <ul>
+      <li><a href="#单位统一" id="markdown-toc-单位统一">单位统一</a></li>
+      <li><a href="#汉堡底部的面包" id="markdown-toc-汉堡底部的面包">汉堡底部的面包</a></li>
+      <li><a href="#肉饼制作" id="markdown-toc-肉饼制作">肉饼制作</a></li>
+      <li><a href="#芝士片" id="markdown-toc-芝士片">芝士片</a></li>
+      <li><a href="#上层面包" id="markdown-toc-上层面包">上层面包</a></li>
+      <li><a href="#材质" id="markdown-toc-材质">材质</a></li>
+      <li><a href="#导出模型" id="markdown-toc-导出模型">导出模型</a></li>
+    </ul>
+  </li>
+  <li><a href="#threejs-中渲染" id="markdown-toc-threejs-中渲染">Three.js 中渲染</a></li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p>本系列为 <a href="https://threejs-journey.com/">Three.js journey</a> 教程学习笔记。</p>
+
+<p>使用 Blender 设计和导出模型</p>
+
+<p>有很多 3D 建模的软件，比如 Cinema 4D、Maya、3DS Max、Blender、ZBrush 等。本节课我们将学习 Blender 因为它是免费的，并且性能也还不错。</p>
+
+<p>本节课学习完成后，你并不会成为 Blender 的专家，因为它需要更多完整的课程才能熟练。我们只是学习的软件的入门，以便能够应对更多地简单模型。熟悉一个模型的制作以及它是如何被导出并导入到 WebGL 中去的。</p>
+
+<h1 id="blender-的界面与基本操作">Blender 的界面与基本操作</h1>
+
+<p>如下图，就是 Blender 的界面，由多个区域组成。</p>
+
+<ul>
+  <li>3D viewport</li>
+  <li>Timeline</li>
+  <li>OutLiner</li>
+  <li>Properties</li>
+</ul>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01GanMJs1bJOpCM23LW_!!6000000003444-2-tps-1832-1142.png" alt="" /></p>
+
+<h2 id="改变区域">改变区域</h2>
+
+<p>可以点击左上角的下拉菜单，修改。如下图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01c2hvl11SjCaxhOOvg_!!6000000002282-2-tps-784-424.png" alt="" /></p>
+
+<h2 id="划分与合并区域">划分与合并区域</h2>
+
+<p>可以将鼠标移动至区域的左上角，成为十字的时候，可以划分和合并区域，如下图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN0157RqaW22HYrRKhz51_!!6000000007095-1-tps-1131-542.gif" alt="" /></p>
+
+<h2 id="快捷键">快捷键</h2>
+
+<p>Blender 的优势之一是它的快捷方式。 它们有很多，一旦你掌握了基础知识，你就会非常有效率</p>
+
+<p>对于 Blender 的操作，这里建议使用鼠标，而非触摸板，因为我们会用到很多鼠标滚轮的点击。</p>
+
+<h3 id="旋转视角">旋转视角</h3>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01C30VKB1gFnn87ItDV_!!6000000004113-2-tps-1920-1080.png" alt="" /></p>
+
+<p>按住滚轮中键，移动鼠标</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01b1RQXO1LdylfiGL6H_!!6000000001323-1-tps-974-534.gif" alt="" /></p>
+
+<h3 id="视角平移">视角平移</h3>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01EyeSSF1Er4mkeXlPt_!!6000000000404-2-tps-1920-1080.png" alt="" /></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN019u6QSn1bUOKWzLDPm_!!6000000003468-2-tps-1920-1080.png" alt="" /></p>
+
+<p>按住 <code class="language-plaintext highlighter-rouge">shift</code> 同时按住鼠标中键可以进行视角平移</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01vSjQjq1ErXBGPAv7u_!!6000000000405-1-tps-974-534.gif" alt="" /></p>
+
+<h3 id="视角缩放">视角缩放</h3>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01RPBg8K26MpsyBBXcZ_!!6000000007648-2-tps-1920-1080.png" alt="" /></p>
+
+<p>鼠标滚轮旋转控制视角缩放</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01YWSKo21Ty98SO0a5K_!!6000000002450-1-tps-719-459.gif" alt="" /></p>
+
+<p>需要注意的是，我们使用滚轮的缩放是不会超过物体中心的，如果想要超过中心，可以使用快捷键 <code class="language-plaintext highlighter-rouge">shift+ctrl+滚轮中键点击移动鼠标</code>。如下图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01VvyfH91GcXRftQFoG_!!6000000000643-1-tps-719-459.gif" alt="" /></p>
+
+<h3 id="自由视角移动">自由视角移动</h3>
+
+<p>使用自由视角移动，我们要进入 Walk mode。进入这个模式的快捷键是 <code class="language-plaintext highlighter-rouge">shift + back quote</code> 数字 1 旁边的点，然后可以用 wasd 或方向键控制前后左右平移，用鼠标控制视角，类似 FPS 游戏视角。效果如下：</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN014qzuem1pTO58yKs3O_!!6000000005361-1-tps-719-459.gif" alt="" /></p>
+
+<h3 id="正交或景深视角切换">正交或景深视角切换</h3>
+
+<p>小键盘数字键 5 可以快速切换。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01HGoFsE1R8jRF0kMCi_!!6000000002067-1-tps-792-459.gif" alt="" /></p>
+
+<h3 id="坐标轴视角">坐标轴视角</h3>
+
+<p>小键盘数字键 1、3、7 分别为 x、y、z 轴视角，效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01yR0yEq1LDPnWTF8NV_!!6000000001265-1-tps-792-459.gif" alt="" /></p>
+
+<h3 id="相机视角">相机视角</h3>
+
+<p>小键盘数字 0 可以快速切换场景中的相机视角</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01FOwR3T1Xw5p1R301f_!!6000000002987-1-tps-792-459.gif" alt="" /></p>
+
+<h3 id="reset">reset</h3>
+
+<p>有时可能视角移动找不到场景了，这一使用快捷键 <code class="language-plaintext highlighter-rouge">shift + c</code> 回到主场景。如下图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01YxYkQw1RmZtjbOcdH_!!6000000002154-1-tps-792-459.gif" alt="" /></p>
+
+<h3 id="聚焦">聚焦</h3>
+
+<p>我们如果想聚焦到一个对象上，可以使用小键盘数字键 <code class="language-plaintext highlighter-rouge">.</code>。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01rCE40Z1QexhCLQbTg_!!6000000002002-1-tps-827-490.gif" alt="" /></p>
+
+<p>如果想聚焦到一个对象上，同时又隐藏其他对象，可以使用小键盘 <code class="language-plaintext highlighter-rouge">/</code></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01AyGhn01iVwzPDOuef_!!6000000004419-1-tps-827-490.gif" alt="" /></p>
+
+<h3 id="选择">选择</h3>
+
+<ul>
+  <li>使用 <code class="language-plaintext highlighter-rouge">shift + 鼠标左键</code> 可以多选对象。</li>
+  <li>使用 <code class="language-plaintext highlighter-rouge">cmd + z</code> 可以撤销选择</li>
+  <li>使用 <code class="language-plaintext highlighter-rouge">A</code> 可以全选</li>
+  <li>使用 <code class="language-plaintext highlighter-rouge">双击 A</code> 可以全不选</li>
+  <li>使用 <code class="language-plaintext highlighter-rouge">B</code> 可以划区域选择</li>
+  <li>使用 <code class="language-plaintext highlighter-rouge">C</code> 可以类似笔刷选择，同时可以使用鼠标滚轮控制笔刷区域大小</li>
+</ul>
+
+<p>这里举例快捷键 <code class="language-plaintext highlighter-rouge">B</code> + <code class="language-plaintext highlighter-rouge">双击 A</code>，先选中2个对象，再取消所有选择</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01cmvV9i1nRtYkUuowf_!!6000000005087-1-tps-827-490.gif" alt="" /></p>
+
+<h2 id="创建物体与相关操作">创建物体与相关操作</h2>
+
+<p>我们来创建物体，实际操作一下。其中也有非常多的快捷键。</p>
+
+<p>创建物体之前我们先学会删除物体</p>
+
+<h3 id="删除物体">删除物体</h3>
+
+<p>快捷键 <code class="language-plaintext highlighter-rouge">X</code>，选中物体，然后使用快捷键 X 进行删除操作，如下图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01upJyWz1oY8Zis6rWJ_!!6000000005236-1-tps-827-490.gif" alt="" /></p>
+
+<h3 id="创建物体">创建物体</h3>
+
+<p>快捷键 <code class="language-plaintext highlighter-rouge">shift + A</code> 出现菜单，通过菜单创建物体</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01N9j3Yv22ln0C4a1MD_!!6000000007161-1-tps-827-490.gif" alt="" /></p>
+
+<p>创建好物体后，有个菜单可以控制物体的面数等信息。如果它消失了可以按快捷键 <code class="language-plaintext highlighter-rouge">F9</code> 重新打开。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01JZgvKB1kPCNe6r3zu_!!6000000004675-2-tps-762-470.png" alt="" /></p>
+
+<h3 id="隐藏物体">隐藏物体</h3>
+
+<ul>
+  <li>选中一个物体，按 <code class="language-plaintext highlighter-rouge">H</code> 进行隐藏</li>
+  <li>重新展示隐藏的物体可以按 <code class="language-plaintext highlighter-rouge">Alt + H</code></li>
+  <li>隐藏非选中的物体，按 <code class="language-plaintext highlighter-rouge">shift + H</code></li>
+</ul>
+
+<h3 id="物体变换">物体变换</h3>
+
+<ul>
+  <li>使用快捷键 <code class="language-plaintext highlighter-rouge">G</code> 进行位置变换，变换后鼠标右击取消，左击确认。</li>
+  <li>使用快捷键 <code class="language-plaintext highlighter-rouge">R</code> 进行旋转</li>
+  <li>使用快捷键 <code class="language-plaintext highlighter-rouge">S</code> 进行缩放</li>
+</ul>
+
+<p>如果使用了变换快捷键，然后再按 X、Y、Z 就可以进行轴向上的变换操作</p>
+
+<p>如下图，位置变换展示，先按 G 再按 x</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01cD8guE1bqNL4uNWXl_!!6000000003516-1-tps-827-490.gif" alt="" /></p>
+
+<h3 id="改变模式与编辑模式">改变模式与编辑模式</h3>
+
+<p>目前我们使用的是物体模式（Object Mode）我们可以改变模式方便其他操作</p>
+
+<p>快捷键 <code class="language-plaintext highlighter-rouge">shift + tab</code></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01lUH4981DaIf5yiVI1_!!6000000000232-2-tps-683-446.png" alt="" /></p>
+
+<p>可以看到有以下多种模式，我们接下来会用到编辑模式，我们先来讲一下</p>
+
+<p>进入 Edit Mode 后，我们可以修改顶点、线和面，同时也可以使用 <code class="language-plaintext highlighter-rouge">G、R、S</code> 这些快捷键进行编辑。</p>
+
+<p>下图的操作是，按 <code class="language-plaintext highlighter-rouge">shift + tab</code> 进入 edit mode，默认选中了点操作，我们选一个顶点，按 <code class="language-plaintext highlighter-rouge">G</code> 再按 <code class="language-plaintext highlighter-rouge">X</code>，将其按照 X 轴进行移动操作。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01cbv7gZ1wwQV9wDKq3_!!6000000006372-1-tps-827-490.gif" alt="" /></p>
+
+<h2 id="shading-渲染着色">Shading 渲染着色</h2>
+
+<p>我们可以使用快捷键 Z 选择不同的渲染着色方式</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01Fm4KdX23BtZtHGth9_!!6000000007218-2-tps-1020-568.png" alt="" /></p>
+
+<ul>
+  <li>Solid: The default with the same material for every objects.</li>
+  <li>Material: Like the Solid shading, but with a preview of the materials and their textures.</li>
+  <li>Wireframe: All the geometries are in wireframe.</li>
+  <li>Renderer: Low quality render —it’s the most realistic but the least performant.</li>
+</ul>
+
+<p>例如在 renderer shading 模式下的效果，可以看到光和影</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01SUHQRT1ftMO2869Aq_!!6000000004064-1-tps-827-490.gif" alt="" /></p>
+
+<h2 id="properties-属性区域">Properties 属性区域</h2>
+
+<p>右下角的区域就是 Properties 区域。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01Zg31NI1dv4dU0UsWs_!!6000000003797-2-tps-286-412.png" alt="" /></p>
+
+<p>可以看到左侧的图标中间是有比较大的间距的，上面的那些是与场景相关的。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01QC23V225errUpu0Bk_!!6000000007552-2-tps-98-374.png" alt="" /></p>
+
+<p>上面的几个图标中第2个icon，是可以选择渲染引擎的。</p>
+
+<p>默认是 Eevee</p>
+
+<p>3个引擎的区别和特点分别是：</p>
+
+<ul>
+  <li>Eevee: A real-time render engine. It uses the GPU just like Three.js, it’s very performant, but it has limitations like realism, light bounce, reflection, and refraction.</li>
+  <li>Workbench: A legacy render engine that we don’t use a lot anymore. Its performance is pretty good, but the result isn’t very realistic.</li>
+  <li>Cycles: A raytracing engine. It’s very realistic. It handles light bounce, deep reflection, deep refraction, and many other features, but it’s very sluggish, and you might end up waiting hours or even days to render your scene.</li>
+</ul>
+
+<p>默认的 Eevee 是一个实时渲染引擎。如果想渲染场景，可以按 F12 通过场景中的相机进行渲染。</p>
+
+<p>下图为用 Cycles 这个光追引擎进行渲染的几个物体，非常漂亮，可以看到红色的反光效果，这就是光追效果的魅力。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01ehlwOT1v6Nszz5HqG_!!6000000006123-2-tps-1920-1080.png" alt="" /></p>
+
+<p>下面的这些是与选中的对象物体相关</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01Kesx0n1qvc6hXCdaM_!!6000000005558-2-tps-112-498.png" alt="" /></p>
+
+<p>对象相关的我们暂时需要关注第1、2个，以及倒数第2个。分别是物体属性、Modifier 属性，和材质。</p>
+
+<p>材质中的 <code class="language-plaintext highlighter-rouge">Principled BSDF</code> 就是使用了 PBR 原则的属性，和 Three.js 中的 MeshStandardMaterial 相同。</p>
+
+<h2 id="搜索">搜索</h2>
+
+<p>快捷键 <code class="language-plaintext highlighter-rouge">F3</code>，可以打开搜索框，可以输入关键字进行提示。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01r80Udh1zhGEnlHDv5_!!6000000006745-2-tps-967-507.png" alt="" /></p>
+
+<h2 id="保存预设状态">保存预设状态</h2>
+
+<p>我们将场景清空，保留一个立方体和点光源。将下面的两个视图分别改为Z和Y轴视角。并且渲染为 wireframe。然后保存预设 <code class="language-plaintext highlighter-rouge">File &gt; Defaults &gt; Save Startup File</code>。再次打开时就是这个界面模式了。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01KemDV922uwvGUzYHp_!!6000000007181-2-tps-1831-1114.png" alt="" /></p>
+
+<h1 id="汉堡模型制作">汉堡模型制作</h1>
+
+<p>接下来我们将开始汉堡模型的制作，并且最终我们会将其导入到 Three.js 中。</p>
+
+<h2 id="单位统一">单位统一</h2>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01OTEjlx1IIVLr1q4Mg_!!6000000000870-2-tps-374-172.png" alt="" /></p>
+
+<p>默认单位是 m，对于制作一个汉堡来说就太奇怪了，所以我们索性就将单位设置为 none。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01XpCJem1lwvA15OKd9_!!6000000004884-2-tps-373-403.png" alt="" /></p>
+
+<p>汉堡的直径大概是 10 cm，我们就制作一个直径大概在 10 个单位的汉堡吧。</p>
+
+<h2 id="汉堡底部的面包">汉堡底部的面包</h2>
+
+<p>首先我们创建一个尺寸大约为10的立方体。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01qOBc2e1GpovlRJwoN_!!6000000000672-2-tps-1831-1114.png" alt="" /></p>
+
+<p>使用 Subdivision Surface 将立方体细分面，如下图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01m9Fn5S1d8z3BW96A8_!!6000000003692-2-tps-1535-825.png" alt="" /></p>
+
+<p>我们可以在物体上右击，再点击 Shade Smooth 将物体的面变得光滑。</p>
+
+<p>然后再进入编辑模式，将立方体上表面进行移动。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01Ie2ytq1XK4wvll1sV_!!6000000002904-2-tps-1238-756.png" alt="" /></p>
+
+<p>再按 <code class="language-plaintext highlighter-rouge">Ctrl + R</code> 来增加循环边（loop cut 环切)</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01avRcxT1Yv0V6lWGyn_!!6000000003120-2-tps-1266-823.png" alt="" /></p>
+
+<p>我们可以再次使用增加循环边，是面包底部更平坦</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01Rh3LTv1GL8OTl4p6B_!!6000000000605-2-tps-1078-452.png" alt="" /></p>
+
+<p>保存后，我们会发现，会有2个文件同时存在，一个是后缀名为 blend 另一个是 blend1，这是因为1结尾是的备份，如果有问题，你可以将 blend1 文件改名为 blend 继续使用。</p>
+
+<h2 id="肉饼制作">肉饼制作</h2>
+
+<p>我们可以复制一个汉堡底部面包，然后再经过调整，得到一个肉饼！</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01lL1src1XNHip7KaCY_!!6000000002911-2-tps-1213-753.png" alt="" /></p>
+
+<h2 id="芝士片">芝士片</h2>
+
+<p>我们使用 plane 几何体制作芝士片</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01xP14r029tlCdSltxk_!!6000000008126-2-tps-1181-724.png" alt="" /></p>
+
+<p>现在看起来还太假，我们需要为它增加曲线弧度和厚度。</p>
+
+<p>编辑模式，选择芝士片的面，右击，选择 Subdivide</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01Wc26c121TBI9NkrME_!!6000000006985-2-tps-700-510.png" alt="" /></p>
+
+<p>Number of Cut 可以设置为 12</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01SbeiFr22i7paGxsXL_!!6000000007153-2-tps-1235-683.png" alt="" /></p>
+
+<p>在编辑模式下，选择 Proportional Editing（成比例编辑），可以移动一组点，让芝士看起来更真实</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01naJ8G61YO1z2MIfLd_!!6000000003048-2-tps-773-579.png" alt="" /></p>
+
+<p>回到 Object 模式，我们可以在芝士上右击，选择 Smooth</p>
+
+<p>接下来需要增加一些厚度，选择 solidify</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01BbKrTJ1z7XLMoatl9_!!6000000006667-2-tps-1434-702.png" alt="" /></p>
+
+<p>可以看到芝士的已经有了厚度，我们想让边缘更锋利一些，可以选择 Object Data Properties 里的 Normals 的 auto smooth 角度修改</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01Na0eWS1ltFzXHNxkT_!!6000000004876-2-tps-1633-820.png" alt="" /></p>
+
+<p>我们可以复制2层肉饼和芝士，并稍微旋转一下，效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01056MGH1zo8B0d0SU7_!!6000000006760-2-tps-1286-633.png" alt="" /></p>
+
+<h2 id="上层面包">上层面包</h2>
+
+<p>我们将下层面包复制一个，并旋转。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01AT79j01avaEEyb5OJ_!!6000000003392-2-tps-790-409.png" alt="" /></p>
+
+<h2 id="材质">材质</h2>
+
+<p>可以再撒点芝麻增加一些材质。我们给汉堡增加颜色，并将面包和肉饼的粗糙度调整到最大，芝士的粗糙度相对低一些。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01IpOF5v1KDaKR47gnU_!!6000000001130-2-tps-1302-824.png" alt="" /></p>
+
+<p>Blender 自带的渲染效果如下：</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01slwSna1P94VIQOd7j_!!6000000001797-2-tps-1920-1080.png" alt="" /></p>
+
+<h2 id="导出模型">导出模型</h2>
+
+<p>File &gt; Export &gt; glTF 2.0 (.glb/.gltf)</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01kZcQTf1YGFFcaJ0Fm_!!6000000003031-2-tps-948-604.png" alt="" /></p>
+
+<p>导出配置如下设置</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01vxrB3L1i7DbQhbEq2_!!6000000004365-2-tps-346-716.png" alt="" /></p>
+
+<h1 id="threejs-中渲染">Three.js 中渲染</h1>
+
+<p>使用上一节学习的导入模型渲染，效果如下：</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01Byp1xO1Bx5887ToQR_!!6000000000011-2-tps-1256-680.png" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/24-customModelsWithBlender/">demo 链接</a></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/24-customModelsWithBlender">demo 源码</a></p>
+
+<p>看起来颜色和 Blender 里渲染的不太一样，我们下一节会详细讲讲如何做到真实渲染。</p>
+<h1 id="小结">小结</h1>
+
+<p>本节学习了 Blender 的快捷键和基本操作，并制作了一个汉堡模型，导出模型，导入到 Three.js 中渲染。下一节将学习什么是真实渲染。</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <h2 id="similar_posts">Artikel lainnya dari Three.js</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2022/10/09/three-realistic-render/">Three.js 之 19 realistic render 真实渲染
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2022/08/09/three-import-model/">Three.js 之 17 Import Model 导入模型</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2022/10/01/mencari-kata-kunci-video-youtube/">Mencari kata kunci video youtube</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2022/08/21/three-custom-model/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2022/08/21/three-custom-model/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Artikel lainnya</a></li>
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>

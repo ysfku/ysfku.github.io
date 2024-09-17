@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>Three.js 之 10 Shadow 投影</title>
+    <meta name="description" content="本系列为 Three.js journey 教程学习笔记。Shadows 影我们已经学习了光，现在想要增加一些影。几何体的背光面确实是暗的，这被称为 core shadow，我们缺失的是 drop shadow (投影)，物体投射到其他物体上的影子。投影对于实时3D渲染来说比较挑战性能，开发者需要寻找各种 tri...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2022/06/12/three-shadow/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>Three.js 之 10 Shadow 投影</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2022-06-12
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#Three.js" title="Category: Three.js" rel="category">Three.js</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a-->
+        <a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a>&nbsp;
+    
+        <!--a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a-->
+        <a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#threejs-中的投影" id="markdown-toc-threejs-中的投影">Three.js 中的投影</a>    <ul>
+      <li><a href="#原理" id="markdown-toc-原理">原理</a></li>
+      <li><a href="#准备" id="markdown-toc-准备">准备</a></li>
+      <li><a href="#开启投影" id="markdown-toc-开启投影">开启投影</a></li>
+      <li><a href="#shadow-map-的优化" id="markdown-toc-shadow-map-的优化">Shadow map 的优化</a>        <ul>
+          <li><a href="#渲染尺寸" id="markdown-toc-渲染尺寸">渲染尺寸</a></li>
+          <li><a href="#near-and-far" id="markdown-toc-near-and-far">Near and far</a></li>
+          <li><a href="#shadow-camera-尺寸" id="markdown-toc-shadow-camera-尺寸">shadow camera 尺寸</a></li>
+          <li><a href="#blur-模糊" id="markdown-toc-blur-模糊">Blur 模糊</a></li>
+          <li><a href="#投影算法" id="markdown-toc-投影算法">投影算法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#spotlight-聚光灯下的投影" id="markdown-toc-spotlight-聚光灯下的投影">SpotLight 聚光灯下的投影</a></li>
+  <li><a href="#pointlight-下的投影效果" id="markdown-toc-pointlight-下的投影效果">PointLight 下的投影效果</a></li>
+  <li><a href="#烘焙投影baking-shadow" id="markdown-toc-烘焙投影baking-shadow">烘焙投影(Baking Shadow)</a></li>
+  <li><a href="#自行绘制模拟投影" id="markdown-toc-自行绘制模拟投影">自行绘制模拟投影</a></li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p>本系列为 <a href="https://threejs-journey.com/">Three.js journey</a> 教程学习笔记。</p>
+
+<p>Shadows 影</p>
+
+<p>我们已经学习了光，现在想要增加一些影。几何体的背光面确实是暗的，这被称为 core shadow，我们缺失的是 drop shadow (投影)，物体投射到其他物体上的影子。</p>
+
+<p>投影对于实时3D渲染来说比较挑战性能，开发者需要寻找各种 trick 的方案来合理的实现投影。</p>
+
+<p>我们本节将学习 Three.js 内置的投影、烘焙投影（Baking Shadow）、自己绘制等方式。</p>
+
+<h1 id="threejs-中的投影">Three.js 中的投影</h1>
+
+<h2 id="原理">原理</h2>
+
+<p>这里先简单讲一下投影的工作原理，不做深入研究。</p>
+
+<p>在执行渲染的时候，Three.js 将先渲染每个光支持的投影，这些渲染器将模拟光看到的样子（假设光源处有个相机），在这个过程中，MeshDepthMaterial 将替代所有的其他材质进行渲染。这个渲染的结果被存为一种 Texture 并且被称为 shadow maps，下面这个示例很好的展示了这一过程。<a href="https://threejs.org/examples/webgl_shadowmap_viewer.html">https://threejs.org/examples/webgl_shadowmap_viewer.html</a></p>
+
+<p>我们不能直接看到这个 shadow maps，但它用于其他几何体上接受投影和发射投影。</p>
+
+<h2 id="准备">准备</h2>
+
+<p>先绘制一个平面和一个球，用作产生投影的物体。并添加环境光和平行光。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">THREE</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./style.css</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OrbitControls</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/controls/OrbitControls</span><span class="dl">'</span>
+<span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">dat</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">lil-gui</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">stats</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/stats</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">listenResize</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/utils</span><span class="dl">'</span>
+
+<span class="c1">// Canvas</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mainCanvas</span><span class="dl">'</span><span class="p">)</span> <span class="nx">as</span> <span class="nx">HTMLCanvasElement</span>
+
+<span class="c1">// Scene</span>
+<span class="kd">const</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Scene</span><span class="p">()</span>
+
+<span class="cm">/**
+ * Objects
+ */</span>
+<span class="c1">// Material</span>
+<span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshStandardMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">metalness</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">roughness</span> <span class="o">=</span> <span class="mf">0.4</span>
+
+<span class="c1">// Objects</span>
+<span class="kd">const</span> <span class="nx">sphere</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">SphereGeometry</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span> <span class="nx">material</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">plane</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PlaneGeometry</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="nx">material</span><span class="p">)</span>
+<span class="nx">plane</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nx">plane</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.65</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">sphere</span><span class="p">,</span> <span class="nx">plane</span><span class="p">)</span>
+
+<span class="cm">/**
+ * Lights
+ */</span>
+<span class="kd">const</span> <span class="nx">ambientLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">AmbientLight</span><span class="p">(</span><span class="dl">'</span><span class="s1">#ffffff</span><span class="dl">'</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">ambientLight</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">directionalLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">DirectionalLight</span><span class="p">(</span><span class="dl">'</span><span class="s1">#ffffaa</span><span class="dl">'</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="nx">directionalLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionalLight</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">directionalLightHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">DirectionalLightHelper</span><span class="p">(</span><span class="nx">directionalLight</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionalLightHelper</span><span class="p">)</span>
+
+<span class="c1">// Size</span>
+<span class="kd">const</span> <span class="nx">sizes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">width</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
+  <span class="na">height</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1">// Camera</span>
+<span class="kd">const</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PerspectiveCamera</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">controls</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OrbitControls</span><span class="p">(</span><span class="nx">camera</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">)</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">enableDamping</span> <span class="o">=</span> <span class="kc">true</span>
+
+<span class="c1">// Renderer</span>
+<span class="kd">const</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">WebGLRenderer</span><span class="p">({</span>
+  <span class="nx">canvas</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setSize</span><span class="p">(</span><span class="nx">sizes</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setPixelRatio</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="nf">listenResize</span><span class="p">(</span><span class="nx">sizes</span><span class="p">,</span> <span class="nx">camera</span><span class="p">,</span> <span class="nx">renderer</span><span class="p">)</span>
+
+
+<span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+
+  <span class="nx">controls</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">tick</span><span class="p">()</span>
+
+<span class="cm">/**
+ * Debug
+ */</span>
+<span class="kd">const</span> <span class="nx">gui</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">dat</span><span class="p">.</span><span class="nc">GUI</span><span class="p">()</span>
+
+<span class="kd">const</span> <span class="nx">meshFolder</span> <span class="o">=</span> <span class="nx">gui</span><span class="p">.</span><span class="nf">addFolder</span><span class="p">(</span><span class="dl">'</span><span class="s1">Mesh</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">meshFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">material</span><span class="p">,</span> <span class="dl">'</span><span class="s1">metalness</span><span class="dl">'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+<span class="nx">meshFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">material</span><span class="p">,</span> <span class="dl">'</span><span class="s1">roughness</span><span class="dl">'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+<span class="nx">meshFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">material</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wireframe</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">ambientLightFolder</span> <span class="o">=</span> <span class="nx">gui</span><span class="p">.</span><span class="nf">addFolder</span><span class="p">(</span><span class="dl">'</span><span class="s1">AmbientLight</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">ambientLightFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">ambientLight</span><span class="p">,</span> <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">).</span><span class="nf">listen</span><span class="p">()</span>
+<span class="nx">ambientLightFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">ambientLight</span><span class="p">,</span> <span class="dl">'</span><span class="s1">intensity</span><span class="dl">'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">directionalLightFolder</span> <span class="o">=</span> <span class="nx">gui</span><span class="p">.</span><span class="nf">addFolder</span><span class="p">(</span><span class="dl">'</span><span class="s1">DirectionalLight</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">directionalLightFolder</span>
+  <span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionalLight</span><span class="p">,</span> <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">onChange</span><span class="p">((</span><span class="nx">visible</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">directionalLightHelper</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="nx">visible</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nf">listen</span><span class="p">()</span>
+<span class="nx">directionalLightFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionalLightHelper</span><span class="p">,</span> <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">).</span><span class="nf">name</span><span class="p">(</span><span class="dl">'</span><span class="s1">helper visible</span><span class="dl">'</span><span class="p">).</span><span class="nf">listen</span><span class="p">()</span>
+<span class="nx">directionalLightFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionalLight</span><span class="p">,</span> <span class="dl">'</span><span class="s1">intensity</span><span class="dl">'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">)</span>
+
+
+<span class="kd">const</span> <span class="nx">guiObj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nf">turnOffAllLights</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">ambientLight</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="nx">directionalLight</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="nx">directionalLightHelper</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="nf">turnOnAllLights</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">ambientLight</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="nx">directionalLight</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="nx">directionalLightHelper</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01o4S31T1PbT34Yp8y5_!!6000000001859-2-tps-1134-438.png" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/16-shadows/">demo 链接</a></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01fTsl611huqtZPmhaw_!!6000000004338-2-tps-200-200.png" alt="" /></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/16-shadows">demo 源码</a></p>
+
+<h2 id="开启投影">开启投影</h2>
+
+<p>首先，需要在 renderer 上开启 shadowMap</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">renderer</span><span class="p">.</span><span class="nx">shadowMap</span><span class="p">.</span><span class="nx">enabled</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p>然后在几何体上开启发射投影和接受投影</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sphere</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">...</span>
+<span class="nx">plane</span><span class="p">.</span><span class="nx">receiveShadow</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p>最后在光照上增加发射投影的属性</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">directionalLight</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p>需要注意的时，仅在以下3种光照中可以发射投影</p>
+
+<ul>
+  <li>PointLight</li>
+  <li>DirectionalLight</li>
+  <li>SpotLight</li>
+</ul>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN012UdgOw1SohKwm3yda_!!6000000002294-2-tps-1135-437.png" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/16-shadows/">demo 链接</a></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01fTsl611huqtZPmhaw_!!6000000004338-2-tps-200-200.png" alt="" /></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/16-shadows">demo 源码</a></p>
+
+<h2 id="shadow-map-的优化">Shadow map 的优化</h2>
+
+<h3 id="渲染尺寸">渲染尺寸</h3>
+
+<p>打印 <code class="language-plaintext highlighter-rouge">directionalLight.shadow</code> 属性观察，可以看到</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01A8VkQ51fg4szdZ6v3_!!6000000004035-2-tps-1085-319.png" alt="" /></p>
+
+<p>可以看到 shadow 各种属性。</p>
+
+<p>放大观察投影，可以看到边缘类似马赛克的样子。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01RMgbSu1xequdhMCWY_!!6000000006469-2-tps-1139-442.png" alt="" /></p>
+
+<p>使用 shadow.mapSize 设置更大尺寸，可以让投影贴图清晰度更高，看起来投影效果更好。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">mapSize</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">mapSize</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mi">1024</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01btbOt81H1GonnENWL_!!6000000000697-2-tps-1139-439.png" alt="" /></p>
+
+<h3 id="near-and-far">Near and far</h3>
+
+<p>因为 Three.js 是使用相机来渲染 shadow maps 的，所以相机里的属性在这里也同样适用。因此我们也要设置 <code class="language-plaintext highlighter-rouge">near</code> 和 <code class="language-plaintext highlighter-rouge">far</code> 属性，虽然不能提高渲染的效果或性能，但它能修复看不到阴影或阴影突然被裁剪的错误。</p>
+
+<p>为了更清晰的看到 Camera 效果，我们使用 Helper</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">directionalLightCameraHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">CameraHelper</span><span class="p">(</span><span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionalLightCameraHelper</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN012OtzXj2346pavznmH_!!6000000007201-2-tps-1132-440.png" alt="" /></p>
+
+<p>添加属性后</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">near</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">far</span> <span class="o">=</span> <span class="mi">6</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01eP1mry1I8QclwivDh_!!6000000000848-2-tps-1120-429.png" alt="" /></p>
+
+<h3 id="shadow-camera-尺寸">shadow camera 尺寸</h3>
+
+<p>目前看，camera 的尺寸也太大，因为我们使用的平行光，所以相机也是正交相机，可以直接设置相机范围尺寸。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">right</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">bottom</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01cAa8dD1PE6qYVlWVa_!!6000000001808-2-tps-1134-435.png" alt="" /></p>
+
+<h3 id="blur-模糊">Blur 模糊</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">directionalLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">radius</span> <span class="o">=</span> <span class="mi">10</span>
+</code></pre></div></div>
+
+<h3 id="投影算法">投影算法</h3>
+
+<ul>
+  <li>BasicShadowMap 能够给出没有经过过滤的阴影映射 —— 速度最快，但质量最差。</li>
+  <li>PCFShadowMap 为默认值，使用Percentage-Closer Filtering (PCF)算法来过滤阴影映射。</li>
+  <li>PCFSoftShadowMap 和PCFShadowMap一样使用 Percentage-Closer Filtering (PCF) 算法过滤阴影映射，但在使用低分辨率阴影图时具有更好的软阴影。</li>
+  <li>VSMShadowMap 使用Variance Shadow Map (VSM)算法来过滤阴影映射。当使用VSMShadowMap时，所有阴影接收者也将会投射阴影。</li>
+</ul>
+
+<p>改变投影算法可以使用如下代码</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">renderer</span><span class="p">.</span><span class="nx">shadowMap</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PCFSoftShadowMap</span>
+</code></pre></div></div>
+
+<p>需要注意的是 THREE.PCFSoftShadowMap 不支持 radius</p>
+
+<h1 id="spotlight-聚光灯下的投影">SpotLight 聚光灯下的投影</h1>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">spotLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">SpotLight</span><span class="p">(</span><span class="mh">0x78ff00</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nx">spotLight</span><span class="p">.</span><span class="nx">distance</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nx">spotLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">spotLight</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">spotLight</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">spotLightHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">SpotLightHelper</span><span class="p">(</span><span class="nx">spotLight</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">spotLightHelper</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">spotLightCameraHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">CameraHelper</span><span class="p">(</span><span class="nx">spotLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">spotLightCameraHelper</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01KaU5xL1ar0FvrvB1w_!!6000000003382-2-tps-1134-560.png" alt="" /></p>
+
+<p>同样我们可以使用 shadow.mapSize 带来更好质量的投影</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">spotLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">mapSize</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>正因为我们使用的聚光灯，其投影相机为透视相机。我们可以改变其属性</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">spotLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">fov</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nx">spotLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">near</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nx">spotLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">far</span> <span class="o">=</span> <span class="mi">6</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01yyLFJr1XgyjiXU2YC_!!6000000002954-2-tps-1135-564.png" alt="" /></p>
+
+<p>移除 Helper 效果</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN010fyJdG1tnJlfcfVtD_!!6000000005946-2-tps-1134-566.png" alt="" /></p>
+
+<h1 id="pointlight-下的投影效果">PointLight 下的投影效果</h1>
+
+<p>添加点光源与相应的 Helper</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pointLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PointLight</span><span class="p">(</span><span class="mh">0xff9000</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">pointLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nx">pointLight</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">pointLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">radius</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">pointLight</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">pointLightHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PointLightHelper</span><span class="p">(</span><span class="nx">pointLight</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">pointLightHelper</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">pointLightCameraHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">CameraHelper</span><span class="p">(</span><span class="nx">pointLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">pointLightCameraHelper</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN013vy0yg1R0UIk22lWy_!!6000000002049-2-tps-1130-562.png" alt="" /></p>
+
+<p>可以看到 Helper 也是投影相机，但是只有向下的，这是因为点光源的 ShadowMap 投影相机是6个面的，可以认为是个立方体，camera helper 展示的是最后一个相机的渲染。</p>
+
+<p>同样我们可以设置一些其他属性</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pointLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">mapSize</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="nx">pointLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">mapSize</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mi">1024</span>
+
+<span class="nx">pointLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">near</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="nx">pointLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">far</span> <span class="o">=</span> <span class="mi">5</span>
+</code></pre></div></div>
+
+<p>最终整体效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN019aJP5A1lANAA0LOIH_!!6000000004778-2-tps-1137-568.png" alt="" /></p>
+
+<p>移除 Helper 后</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01DmZEQt1InBsGJ7GL8_!!6000000000937-2-tps-1133-564.png" alt="" /></p>
+
+<p>添加一点自动旋转</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01lqxrjJ1qKW0ztioCK_!!6000000005477-1-tps-480-240.gif" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/16-shadows/">demo 链接</a></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01fTsl611huqtZPmhaw_!!6000000004338-2-tps-200-200.png" alt="" /></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/16-shadows">demo 源码</a></p>
+
+<h1 id="烘焙投影baking-shadow">烘焙投影(Baking Shadow)</h1>
+
+<p>如果场景物体简单，Three.js 内置的投影非常好用，但是可能会比较复杂。另一个好的方案是 baked shadow 烘焙投影。我们之前讲过 baking light，而 baking shadow 与之类似。shadow 被集成在纹理中，直接贴图到材质中使用。</p>
+
+<p>我们使用这样的一张贴图放在平面上</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN018blFUo1KE2iHhNFGn_!!6000000001131-0-tps-1024-1024.jpg" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Texture</span>
+<span class="kd">const</span> <span class="nx">textureLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">TextureLoader</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">bakedShadow</span> <span class="o">=</span> <span class="nx">textureLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/textures/bakedShadow.jpg</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="p">...</span>
+
+<span class="kd">const</span> <span class="nx">plane</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PlaneGeometry</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">({</span>
+  <span class="na">map</span><span class="p">:</span> <span class="nx">bakedShadow</span><span class="p">,</span>
+<span class="p">}))</span>
+</code></pre></div></div>
+
+<p>显而易见，这么做的缺点是投影的固定的，不能随着物体或光照的移动而实时渲染。对于固定的物体来说是没有问题的。</p>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01V4w91v1gQnHYqrawN_!!6000000004137-2-tps-1132-617.png" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/16-shadows-baking/">demo 链接</a></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01I475cZ1idHJV93We0_!!6000000004435-2-tps-200-200.png" alt="" /></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/16-shadows-baking">demo 源码</a></p>
+
+<h1 id="自行绘制模拟投影">自行绘制模拟投影</h1>
+
+<p>另一种方式就是自行绘制一个投影平面，跟随物体一起运动，这里举个例子</p>
+
+<p>首先将之前修改过的底面阴影纹理移除，在增加一个平面，赋材质投影 alpha 贴图(黑色部分透明渲染)。贴图如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01zqoKTn1JJFbHKRZkH_!!6000000001007-0-tps-512-512.jpg" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Texture</span>
+<span class="kd">const</span> <span class="nx">textureLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">TextureLoader</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">simpleShadow</span> <span class="o">=</span> <span class="nx">textureLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/textures/simpleShadow.jpg</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="p">...</span>
+
+<span class="kd">const</span> <span class="nx">shadowPlane</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PlaneGeometry</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">({</span>
+    <span class="na">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#000000</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">transparent</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">alphaMap</span><span class="p">:</span> <span class="nx">simpleShadow</span><span class="p">,</span>
+  <span class="p">}),</span>
+<span class="p">)</span>
+
+<span class="nx">shadowPlane</span><span class="p">.</span><span class="nf">rotateX</span><span class="p">(</span><span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">shadowPlane</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">plane</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="mf">0.01</span>
+
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">sphere</span><span class="p">,</span> <span class="nx">plane</span><span class="p">,</span> <span class="nx">shadowPlane</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01FogtRW1WAAksJ6TP6_!!6000000002747-2-tps-1131-584.png" alt="" /></p>
+
+<p>接下来我们增加一些运动，并设置光影平面跟随小球运动</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Clock</span>
+<span class="kd">const</span> <span class="nx">clock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Clock</span><span class="p">()</span>
+
+<span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+  <span class="kd">const</span> <span class="nx">elapsedTime</span> <span class="o">=</span> <span class="nx">clock</span><span class="p">.</span><span class="nf">getElapsedTime</span><span class="p">()</span>
+
+  <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="nx">elapsedTime</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.5</span>
+  <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="nx">elapsedTime</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.5</span>
+  <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="nx">elapsedTime</span> <span class="o">*</span> <span class="mf">2.5</span><span class="p">))</span>
+
+  <span class="nx">shadowPlane</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span>
+  <span class="nx">shadowPlane</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span>
+  <span class="nx">shadowPlane</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">opacity</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.6</span>
+
+  <span class="nx">controls</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01Jaa9yA1Np5b6mSjCb_!!6000000001618-1-tps-500-277.gif" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/16-shadows-baking-simulation/">demo 链接</a></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01lXa7ZJ1ks3JwuWmiW_!!6000000004738-2-tps-200-200.png" alt="" /></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/16-shadows-baking-simulation">demo 源码</a></p>
+
+<h1 id="小结">小结</h1>
+
+<p>本节学习了投影的 3 种方式，怎么使用还是要看具体场景。但原则就是开销越小越好，可以混合使用这 3 种投影技术</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <h2 id="similar_posts">Artikel lainnya dari Three.js</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2022/10/09/three-realistic-render/">Three.js 之 19 realistic render 真实渲染
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2022/06/06/three-light-copy/">Three.js 之 9 Light 光</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2022/06/19/three-haunted-house/">Three.js 之 11 Haunted House 恐怖鬼屋</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2022/06/12/three-shadow/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2022/06/12/three-shadow/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Artikel lainnya</a></li>
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>

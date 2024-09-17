@@ -2,37 +2,10 @@
 layout: default
 ---
 
-      <!--Table Start-->
-      <div class="container-fluid">
-        <table id="example" class="table">
-            <thead>
-                <tr>
-                    <th>Nama File</th>
-                    <th>Kategori</th>
-                    <th>Data File</th>
-                    <th>Link</th>
-                </tr>
-            </thead>
-            <tbody>
-          <!--For loop that iterates over markdown frontmatter in _databases folder-->
-          {% for database in site.databases %}
-          <tr>
-            <td>{{ database.Name }}</td>
-            <td>{{ database.Kategori }}</td>
-            <td>{{ database.Data }}</td>
-            <td><a href="{{ database.Link }}"><button type="button" class="btn btn-success">Download</button></a></td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </section>
-  
-      <script>
-          new DataTable('#example', {
-      search: {
-          return: true
-      }
-  });
-      </script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-      <script type='text/javascript' src='//nothingelbowsigns.com/21/bc/e3/21bce31c0e94727d1db90f35f9e27654.js'></script>
+<div class="page clearfix" post>
+    <div class="left">
+        <h1>{{page.title}}</h1>
+        <hr>
+        {{content}}
+    </div>
+</div>

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>React Hooks 系列之5 useCallback</title>
+    <meta name="description" content="掌握 React Hooks api 将更好的帮助你在工作中使用，对 React 的掌握更上一层楼。本系列将使用大量实例代码和效果展示，非常易于初学者和复习使用。在我们开始深入学习 useCallback 前，先回顾一下性能优化相关的内容，这将有助于我们理解什么是 useCallback，为什么使用它，以及怎么使...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2020/05/18/react-hooks5-useCallback/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>React Hooks 系列之5 useCallback</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2020-05-18
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#JavaScript" title="Category: JavaScript" rel="category">JavaScript</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#React" title="Tag: React" rel="tag">React</a-->
+        <a href="/tag/#React" title="Tag: React" rel="tag">React</a>&nbsp;
+    
+        <!--a href="/tag/#hooks" title="Tag: hooks" rel="tag">hooks</a-->
+        <a href="/tag/#hooks" title="Tag: hooks" rel="tag">hooks</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#组件多次被复用的场景" id="markdown-toc-组件多次被复用的场景">组件多次被复用的场景</a></li>
+  <li><a href="#使用-reactmemo-优化" id="markdown-toc-使用-reactmemo-优化">使用 React.memo 优化</a></li>
+  <li><a href="#usecallback" id="markdown-toc-usecallback">useCallback</a>    <ul>
+      <li><a href="#什么是-usecallback" id="markdown-toc-什么是-usecallback">什么是 useCallback</a></li>
+      <li><a href="#如何使用-usecallback" id="markdown-toc-如何使用-usecallback">如何使用 useCallback</a></li>
+    </ul>
+  </li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p>掌握 React Hooks api 将更好的帮助你在工作中使用，对 React 的掌握更上一层楼。本系列将使用大量实例代码和效果展示，非常易于初学者和复习使用。</p>
+
+<p>在我们开始深入学习 useCallback 前，先回顾一下性能优化相关的内容，这将有助于我们理解什么是 useCallback，为什么使用它，以及怎么使用它。</p>
+
+<p>依然先从一个组件多次被复用的代码场景看起。</p>
+
+<h2 id="组件多次被复用的场景">组件多次被复用的场景</h2>
+
+<p>有如下的，组件树结构。ParentWrap 包含 Title 组件、2次使用 Count 组件、2次使用 Button 组件。</p>
+
+<p>点击 Button，对应的 Count 分别会增加。</p>
+
+<p><img src="https://gw.alicdn.com/tfs/TB1e0AVGpT7gK0jSZFpXXaTkpXa-1270-595.png" alt="" /></p>
+
+<p>App.tsx</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span>
+
+<span class="k">import</span> <span class="nx">ParentComponent</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/26ParentComponenet</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"App"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">ParentComponent</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span>
+</code></pre></div></div>
+
+<p>ParentComponent.tsx</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Title</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./26Title</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Count</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./26Count</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Button</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./26Button</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nf">ParentComponenet</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">age</span><span class="p">,</span> <span class="nx">setAge</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="mi">29</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">salary</span><span class="p">,</span> <span class="nx">setSalary</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="mi">50000</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">incrementAge</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">setAge</span><span class="p">(</span><span class="nx">age</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="kd">const</span> <span class="nx">incrementSalary</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">setSalary</span><span class="p">(</span><span class="nx">salary</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Title</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Count</span>
+        <span class="na">text</span><span class="p">=</span><span class="s">"Age"</span>
+        <span class="na">count</span><span class="p">=</span><span class="si">{</span><span class="nx">age</span><span class="si">}</span>
+      <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Button</span>
+        <span class="na">handleClick</span><span class="p">=</span><span class="si">{</span><span class="nx">incrementAge</span><span class="si">}</span>
+      <span class="p">&gt;</span>Increment age<span class="p">&lt;/</span><span class="nc">Button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Count</span>
+        <span class="na">text</span><span class="p">=</span><span class="s">"Salary"</span>
+        <span class="na">count</span><span class="p">=</span><span class="si">{</span><span class="nx">salary</span><span class="si">}</span>
+      <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Button</span>
+        <span class="na">handleClick</span><span class="p">=</span><span class="si">{</span><span class="nx">incrementSalary</span><span class="si">}</span>
+      <span class="p">&gt;</span>Increment salary<span class="p">&lt;/</span><span class="nc">Button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">ParentComponenet</span>
+</code></pre></div></div>
+
+<p>Title.tsx</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nf">Title</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Rendering Title</span><span class="dl">'</span><span class="p">)</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>useCallback<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Title</span>
+</code></pre></div></div>
+
+<p>Count.tsx</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nf">Count</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">text</span><span class="p">:</span> <span class="nx">string</span>
+  <span class="nx">count</span><span class="p">:</span> <span class="nx">number</span>
+<span class="p">})</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Rendering </span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span> - <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">count</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Count</span>
+</code></pre></div></div>
+
+<p>Button.tsx</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nf">Button</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">handleClick</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span>
+  <span class="nx">children</span><span class="p">:</span> <span class="nx">string</span>
+<span class="p">})</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Rendering button</span><span class="dl">'</span><span class="p">,</span> <span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">)</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">handleClick</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Button</span>
+</code></pre></div></div>
+
+<p>当然，我们可以将所有的 jsx 代码写在一起，我们这么组织代码的主要原因是让大家理解 react 中的性能优化，以及如何使用 useCallback api 进行性能优化。</p>
+
+<p>页面展示效果如下</p>
+
+<p><img src="https://gw.alicdn.com/tfs/TB1PhFeGO_1gK0jSZFqXXcpaXXa-702-606.gif" alt="" /></p>
+
+<p>而我们要关注到的是性能问题，可以在 console 中看到，每次点击时，看到以下日志：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rendering Title
+Rendering Age
+Rendering button Increment age
+Rendering Salary
+Rendering button Increment salary
+</code></pre></div></div>
+
+<p>每次状态改变都触发了所有组件的 rerender，这个示例比较简单，但是假如未来遇到20、30、甚至50个组件 rerender 的时候，就一定要考虑到性能问题了。下面讲讲在这个示例中怎么进行优化。</p>
+
+<h2 id="使用-reactmemo-优化">使用 React.memo 优化</h2>
+
+<p>在本例中，我们当然希望点击增加年龄的按钮时，只有关于年龄的 Count 和 Button 进行 rerender，而其他组件不发生 rerender，点击增加 salary 时也一样。如何才能做到呢？答案是 <code class="language-plaintext highlighter-rouge">React.memo</code>。</p>
+
+<p>我们给 Title.tsx, Count.tsx, Button.tsx 添加 <code class="language-plaintext highlighter-rouge">React.memo()</code>，代码如下：</p>
+
+<p>Title.tsx</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nf">Title</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Rendering Title</span><span class="dl">'</span><span class="p">)</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>useCallback<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">React</span><span class="p">.</span><span class="nf">memo</span><span class="p">(</span><span class="nx">Title</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>Count.tsx</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nf">Count</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">text</span><span class="p">:</span> <span class="nx">string</span>
+  <span class="nx">count</span><span class="p">:</span> <span class="nx">number</span>
+<span class="p">})</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Rendering </span><span class="p">${</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span> - <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">count</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">React</span><span class="p">.</span><span class="nf">memo</span><span class="p">(</span><span class="nx">Count</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Button.tsx</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nf">Button</span><span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">handleClick</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span>
+  <span class="nx">children</span><span class="p">:</span> <span class="nx">string</span>
+<span class="p">})</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Rendering button</span><span class="dl">'</span><span class="p">,</span> <span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">)</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">handleClick</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">React</span><span class="p">.</span><span class="nf">memo</span><span class="p">(</span><span class="nx">Button</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<p><img src="https://gw.alicdn.com/tfs/TB18aNkGKL2gK0jSZFmXXc7iXXa-702-606.gif" alt="" /></p>
+
+<blockquote>
+  <p>React.memo 为高阶组件。它与 React.PureComponent 非常相似，但只适用于函数组件，而不适用 class 组件。</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nf">memo</span><span class="p">(</span><span class="kd">function</span> <span class="nf">MyComponent</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/* 使用 props 渲染 */</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>如果你的函数组件在给定相同 props 的情况下渲染相同的结果，那么你可以通过将其包装在 React.memo 中调用，以此通过记忆组件渲染结果的方式来提高组件的性能表现。这意味着在这种情况下，React 将跳过渲染组件的操作并直接复用最近一次渲染的结果。</p>
+
+  <p>React.memo 仅检查 props 变更。如果函数组件被 React.memo 包裹，且其实现中拥有 useState 或 useContext 的 Hook，当 context 发生变化时，它仍会重新渲染。</p>
+
+  <p>默认情况下其只会对复杂对象做浅层对比，如果你想要控制对比过程，那么请将自定义的比较函数通过第二个参数传入来实现。</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">MyComponent</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/* 使用 props 渲染 */</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nf">areEqual</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">nextProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/*
+  如果把 nextProps 传入 render 方法的返回结果与
+  将 prevProps 传入 render 方法的返回结果一致则返回 true，
+  否则返回 false
+  */</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">React</span><span class="p">.</span><span class="nf">memo</span><span class="p">(</span><span class="nx">MyComponent</span><span class="p">,</span> <span class="nx">areEqual</span><span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>此方法仅作为性能优化的方式而存在。但请不要依赖它来“阻止”渲染，因为这会产生 bug。</p>
+</blockquote>
+
+<p>但是，使用了 React.memo 后，我们看到点击增加年龄的按钮时，日志变为了</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rendering Age
+Rendering button Increment age
+Rendering button Increment salary
+</code></pre></div></div>
+
+<p>依然有不相关的 rerender <code class="language-plaintext highlighter-rouge">Rendering button Increment salary</code>，我们来分析一下。</p>
+
+<p>在 ParentComponenet.tsx 中，我们看到点击 Increment age 按钮时，导致了 state 变化，ParentComponenet 进行了 rerender。<code class="language-plaintext highlighter-rouge">&lt;Title /&gt;</code> 没有传入属性，React.memo 判断出不需要 rerender，但是 Increment salary 按钮上的属性 incrementSalary 方法，实际上被重新创建了，导致了这个 Button 传入的 props 发生了变化，因此 React.memo 没有阻止 rerender。点击按钮 Increment salary 导致的相同的现象也是同理。那么如何解决呢？答案是使用 useCallback hook。</p>
+
+<h2 id="usecallback">useCallback</h2>
+
+<h3 id="什么是-usecallback">什么是 useCallback</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">memoizedCallback</span> <span class="o">=</span> <span class="nf">useCallback</span><span class="p">(</span>
+  <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">doSomething</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">],</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>返回一个 memoized 回调函数。</p>
+
+  <p>把内联回调函数及依赖项数组作为参数传入 <code class="language-plaintext highlighter-rouge">useCallback</code>，它将返回该回调函数的 memoized 版本，该回调函数仅在某个依赖项改变时才会更新。当你把回调函数传递给经过优化的并使用引用相等性去避免非必要渲染（例如 shouldComponentUpdate）的子组件时，它将非常有用。</p>
+</blockquote>
+
+<p>类比到我们的例子中，useCallback 会缓存我们的 <code class="language-plaintext highlighter-rouge">incrementSalary()</code> 如果 salary 没有变化，直接返回缓存的值，如果 salary 发生变化，也就是 useCallback 的依赖发生变化，那么一个新的方法将被返回。</p>
+
+<p>这就可以帮助我们解决只依赖某个变量的子组件避免不必要的 render 问题。</p>
+
+<h3 id="如何使用-usecallback">如何使用 useCallback</h3>
+
+<p>步骤如下：</p>
+
+<ol>
+  <li>import useCallback</li>
+  <li>调用 useCallback</li>
+</ol>
+
+<p>我们将 ParentComponenet.tsx 中的 incrementAge 和 incrementSalary 使用 useCallback 改写如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">incrementAge</span> <span class="o">=</span> <span class="nf">useCallback</span><span class="p">(</span>
+  <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">setAge</span><span class="p">(</span><span class="nx">age</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">[</span><span class="nx">age</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">incrementSalary</span> <span class="o">=</span> <span class="nf">useCallback</span><span class="p">(</span>
+  <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">setSalary</span><span class="p">(</span><span class="nx">salary</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">[</span><span class="nx">salary</span><span class="p">],</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/tfs/TB1iQVkGLb2gK0jSZK9XXaEgFXa-702-411.gif" alt="" /></p>
+
+<p>可以看到，已经达到了我们的目的，点击 Increment age 时，salary 的按钮组件也没有 rerender。至此，我们已经完成了所有的性能优化。</p>
+
+<h2 id="小结">小结</h2>
+
+<p>本章我们从一个组件多次被复用的的例子说起，一步一步对其进行性能优化，核心是阻止不必要的 rerender。</p>
+
+<p>学习使用了 React.memo 在 props 或 state 没有变化时，阻止组件的 rerender。</p>
+
+<p>学习了什么是 useCallback，如何使用 useCallback 缓存一个方法，只依赖某几个变量变化才更新，避免了每次传递给子组件的 props 都被更新，最终也是阻止了子组件不必要的 rerender。</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2020/05/13/react-hooks4-useReducer/">React Hooks 系列之4 useReducer</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2020/05/19/react-hooks6-useMemo/">React Hooks 系列之6 useMemo</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2020/05/18/react-hooks5-useCallback/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2020/05/18/react-hooks5-useCallback/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>

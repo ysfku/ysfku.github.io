@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>Three.js 之 7 Materials 材质</title>
+    <meta name="description" content="本系列为 Three.js journey 教程学习笔记。Materials 材质Materials 是用来给几何体的每个可见像素上色的。其中的算法程序成为 shaders。我们暂时不学习如何写 shaders，我们先使用内置的 materials，具体可以参考文档 Material">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2022/05/25/three-material/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>Three.js 之 7 Materials 材质</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2022-05-25
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#Three.js" title="Category: Three.js" rel="category">Three.js</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a-->
+        <a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a>&nbsp;
+    
+        <!--a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a-->
+        <a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#meshbasicmaterial-基础网格材质" id="markdown-toc-meshbasicmaterial-基础网格材质">MeshBasicMaterial 基础网格材质</a>    <ul>
+      <li><a href="#map-颜色贴图" id="markdown-toc-map-颜色贴图">map 颜色贴图</a></li>
+      <li><a href="#color" id="markdown-toc-color">color</a></li>
+      <li><a href="#wireframe" id="markdown-toc-wireframe">wireframe</a></li>
+      <li><a href="#opacity-and-transparent" id="markdown-toc-opacity-and-transparent">opacity and transparent</a></li>
+      <li><a href="#alphamap" id="markdown-toc-alphamap">alphaMap</a></li>
+      <li><a href="#side" id="markdown-toc-side">side</a></li>
+    </ul>
+  </li>
+  <li><a href="#meshnormalmaterial-法线网格材质" id="markdown-toc-meshnormalmaterial-法线网格材质">MeshNormalMaterial 法线网格材质</a>    <ul>
+      <li><a href="#flatshading" id="markdown-toc-flatshading">flatShading</a></li>
+    </ul>
+  </li>
+  <li><a href="#meshmatcapmaterial" id="markdown-toc-meshmatcapmaterial">MeshMatcapMaterial</a></li>
+  <li><a href="#meshdepthmaterial-深度网格材质" id="markdown-toc-meshdepthmaterial-深度网格材质">MeshDepthMaterial 深度网格材质</a></li>
+  <li><a href="#加一点光" id="markdown-toc-加一点光">加一点光</a></li>
+  <li><a href="#meshlambertmateriallambert网格材质" id="markdown-toc-meshlambertmateriallambert网格材质">MeshLambertMaterial(Lambert网格材质)</a></li>
+  <li><a href="#meshphongmaterialphong网格材质" id="markdown-toc-meshphongmaterialphong网格材质">MeshPhongMaterial(Phong网格材质)</a></li>
+  <li><a href="#meshtoonmaterial" id="markdown-toc-meshtoonmaterial">MeshToonMaterial</a></li>
+  <li><a href="#meshstandardmaterial标准网格材质" id="markdown-toc-meshstandardmaterial标准网格材质">MeshStandardMaterial(标准网格材质)</a>    <ul>
+      <li><a href="#metalness--float" id="markdown-toc-metalness--float"><code class="language-plaintext highlighter-rouge">.metalness : Float</code></a></li>
+      <li><a href="#roughness--float" id="markdown-toc-roughness--float"><code class="language-plaintext highlighter-rouge">.roughness : Float</code></a></li>
+      <li><a href="#map--texture" id="markdown-toc-map--texture"><code class="language-plaintext highlighter-rouge">.map : Texture</code></a></li>
+      <li><a href="#aomap--texture" id="markdown-toc-aomap--texture"><code class="language-plaintext highlighter-rouge">.aoMap : Texture</code></a></li>
+      <li><a href="#aomapintensity--float" id="markdown-toc-aomapintensity--float"><code class="language-plaintext highlighter-rouge">.aoMapIntensity : Float</code></a></li>
+      <li><a href="#displacementmap--texture" id="markdown-toc-displacementmap--texture"><code class="language-plaintext highlighter-rouge">.displacementMap : Texture</code></a></li>
+      <li><a href="#displacementscale--float" id="markdown-toc-displacementscale--float"><code class="language-plaintext highlighter-rouge">.displacementScale : Float</code></a></li>
+      <li><a href="#metalnessmap--texture" id="markdown-toc-metalnessmap--texture"><code class="language-plaintext highlighter-rouge">.metalnessMap : Texture</code></a></li>
+      <li><a href="#roughnessmap--texture" id="markdown-toc-roughnessmap--texture"><code class="language-plaintext highlighter-rouge">.roughnessMap : Texture</code></a></li>
+      <li><a href="#normalmap--texture" id="markdown-toc-normalmap--texture"><code class="language-plaintext highlighter-rouge">.normalMap : Texture</code></a></li>
+      <li><a href="#normalscale--vector2" id="markdown-toc-normalscale--vector2"><code class="language-plaintext highlighter-rouge">.normalScale : Vector2</code></a></li>
+      <li><a href="#alphamap--texture" id="markdown-toc-alphamap--texture"><code class="language-plaintext highlighter-rouge">.alphaMap : Texture</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#meshphysicalmaterial-物理网格材质" id="markdown-toc-meshphysicalmaterial-物理网格材质">MeshPhysicalMaterial 物理网格材质</a></li>
+  <li><a href="#pointsmaterial" id="markdown-toc-pointsmaterial">PointsMaterial</a></li>
+  <li><a href="#shadermaterial-and-rawshadermaterial" id="markdown-toc-shadermaterial-and-rawshadermaterial">ShaderMaterial and RawShaderMaterial</a></li>
+  <li><a href="#environment-map" id="markdown-toc-environment-map">Environment map</a>    <ul>
+      <li><a href="#在哪寻找环境贴图" id="markdown-toc-在哪寻找环境贴图">在哪寻找环境贴图</a></li>
+    </ul>
+  </li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p>本系列为 <a href="https://threejs-journey.com/">Three.js journey</a> 教程学习笔记。</p>
+
+<p>Materials 材质</p>
+
+<p>Materials 是用来给几何体的每个可见像素上色的。其中的算法程序成为 shaders。我们暂时不学习如何写 shaders，我们先使用内置的 materials，具体可以参考文档 <a href="https://threejs.org/docs/index.html#api/zh/materials/Material">Material</a></p>
+
+<h1 id="meshbasicmaterial-基础网格材质">MeshBasicMaterial 基础网格材质</h1>
+
+<p>一个以简单着色（平面或线框）方式来绘制几何体的材质。</p>
+
+<p>这种材质不受光照的影响。</p>
+
+<h2 id="map-颜色贴图">map 颜色贴图</h2>
+
+<p>先将上节中学到的 Texture 载入</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">textureLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">TextureLoader</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">doorColorTexture</span> <span class="o">=</span> <span class="nx">textureLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/textures/door/color.jpg</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>map 颜色贴图，用于添加纹理贴图, 纹理添加可以使用2种方式。</p>
+
+<p>直接在构造函数中传入</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">({</span>
+  <span class="na">map</span><span class="p">:</span> <span class="nx">doorColorTexture</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>后续修改属性</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">map</span> <span class="o">=</span> <span class="nx">doorColorTexture</span>
+</code></pre></div></div>
+
+<p>效果相同，如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01EIJhbO1sc2OJLjuGX_!!6000000005786-1-tps-895-395.gif" alt="" /></p>
+
+<h2 id="color">color</h2>
+
+<p>材质的颜色(Color)，默认值为白色 (0xffffff)。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span><span class="dl">'</span><span class="s1">#ff0fff</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01JY3bwE1c8ElabE1JE_!!6000000003555-1-tps-895-395.gif" alt="" /></p>
+
+<p>详见 <a href="https://threejs.org/docs/index.html#api/zh/math/Color">Color 类的文档</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//empty constructor - will default white</span>
+<span class="kd">const</span> <span class="nx">color1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">();</span>
+
+<span class="c1">//Hexadecimal color (recommended)</span>
+<span class="kd">const</span> <span class="nx">color2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span> <span class="mh">0xff0000</span> <span class="p">);</span>
+
+<span class="c1">//RGB string</span>
+<span class="kd">const</span> <span class="nx">color3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span><span class="dl">"</span><span class="s2">rgb(255, 0, 0)</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">color4</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span><span class="dl">"</span><span class="s2">rgb(100%, 0%, 0%)</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">//X11 color name - all 140 color names are supported.</span>
+<span class="c1">//Note the lack of CamelCase in the name</span>
+<span class="kd">const</span> <span class="nx">color5</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span> <span class="dl">'</span><span class="s1">skyblue</span><span class="dl">'</span> <span class="p">);</span>
+
+<span class="c1">//HSL string</span>
+<span class="kd">const</span> <span class="nx">color6</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span><span class="dl">"</span><span class="s2">hsl(0, 100%, 50%)</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">//Separate RGB values between 0 and 1</span>
+<span class="kd">const</span> <span class="nx">color7</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<p>如果结合 texture 和 color 将会叠加，效果如下</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">map</span> <span class="o">=</span> <span class="nx">doorColorTexture</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span><span class="dl">'</span><span class="s1">#009688</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01Aaph1923mXF6Le0j5_!!6000000007298-1-tps-895-395.gif" alt="" /></p>
+
+<h2 id="wireframe">wireframe</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">wireframe</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN014lNc6N1uNV3BnUbPQ_!!6000000006025-1-tps-895-395.gif" alt="" /></p>
+
+<h2 id="opacity-and-transparent">opacity and transparent</h2>
+
+<p>.opacity : Float</p>
+
+<p>值为在 0.0 - 1.0 的范围内的浮点数，表明材质的透明度。值 0.0 表示完全透明，1.0 表示完全不透明。
+如果材质的 transparet 属性未设置为 true，则材质将保持完全不透明，此值仅影响其颜色。 默认值为 1.0。</p>
+
+<p>.transparent : Boolean</p>
+
+<p>定义此材质是否透明。这对渲染有影响，因为透明对象需要特殊处理，并在非透明对象之后渲染。
+设置为true时，通过设置材质的opacity属性来控制材质透明的程度。
+默认值为false。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">transparent</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">opacity</span> <span class="o">=</span> <span class="mf">0.5</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01P2YeKs2ABAEd0Av0x_!!6000000008164-1-tps-895-395.gif" alt="" /></p>
+
+<h2 id="alphamap">alphaMap</h2>
+
+<p>.alphaMap : Texture</p>
+
+<p>alpha贴图是一张灰度纹理，用于控制整个表面的不透明度。（黑色：完全透明；白色：完全不透明）。 默认值为 null。</p>
+
+<p>仅使用纹理的颜色，忽略alpha通道（如果存在）。 对于RGB和RGBA纹理，WebGL渲染器在采样此纹理时将使用绿色通道， 因为在DXT压缩和未压缩RGB 565格式中为绿色提供了额外的精度。 Luminance-only以及luminance/alpha纹理也仍然有效。</p>
+
+<p>doorAlphaTexture 图片为</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01vVMzQS1nXOICRA86A_!!6000000005099-0-tps-1024-1024.jpg" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">map</span> <span class="o">=</span> <span class="nx">doorColorTexture</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">transparent</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">alphaMap</span> <span class="o">=</span> <span class="nx">doorAlphaTexture</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01IeBxoc1iID5NsHiLA_!!6000000004389-1-tps-895-395.gif" alt="" /></p>
+
+<p>可以看到 alphaMap 的黑色部分叠加到 map 上的的纹理部分透明了。</p>
+
+<h2 id="side">side</h2>
+
+<p>定义将要渲染哪一面 - 正面，背面或两者。 默认为 THREE.FrontSide。其他选项有 THREE.BackSide 和 THREE.DoubleSide。</p>
+
+<p>如果要将相机放在一个立方体内，看其内部，如现在比较流行的3d看房，那么就需要将其设置为 THREE.BackSide。</p>
+
+<p>要注意的是，THREE.DoubleSide 尽量不要使用，因为会给 GPU 带来更多大压力</p>
+
+<p>demo 上设置 THREE.DoubleSide 效果如下，可以看到门的背面也被附上了纹理</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01Kst8ld1EMOECj1S6b_!!6000000000337-1-tps-895-395.gif" alt="" /></p>
+
+<h1 id="meshnormalmaterial-法线网格材质">MeshNormalMaterial 法线网格材质</h1>
+
+<p>一种把法向量映射到 RGB 颜色的材质。详见文档 <a href="https://threejs.org/docs/index.html#api/zh/materials/MeshNormalMaterial">MeshNormalMaterial</a></p>
+
+<p>法向量 总是从物体的外表面向外辐射。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshNormalMaterial</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN014hqBUH1tRKkc8poyO_!!6000000005898-2-tps-1128-597.png" alt="" /></p>
+
+<p>我们打印球体的属性，可以看到法向量变量</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">sphere</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">attributes</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01hI4jd81olsRBfWpOt_!!6000000005266-2-tps-1032-279.png" alt="" /></p>
+
+<p>下图为法线 normal 的示例</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN017kkSFl29YgxyZsLbu_!!6000000008080-2-tps-720-460.png" alt="" /></p>
+
+<p>法线可以用于光照、反射、折射等，所以 MeshNormalMaterial 材质自身也具有一定的光学特性。</p>
+
+<p>与 MeshBasicMaterial 类似也具有 wireframe, transparent, opacity, side 属性。不过还拥有一个 flatShading 属性</p>
+
+<h2 id="flatshading">flatShading</h2>
+
+<p>定义材质是否使用平面着色进行渲染。默认值为 false。设置为 true 后，一位置顶点之间由平面连接，不会再进行顶点之间的法线插值了，效果如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshNormalMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">flatShading</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01rNR9xs1JSPVw44jSA_!!6000000001027-1-tps-895-395.gif" alt="" /></p>
+
+<p>MeshNormalMaterial 通常用于 debug 法线。</p>
+
+<h1 id="meshmatcapmaterial">MeshMatcapMaterial</h1>
+
+<p>MeshMatcapMaterial 由一个材质捕捉（MatCap，或光照球（Lit Sphere））纹理所定义，其编码了材质的颜色与明暗。</p>
+
+<p>由于mapcap图像文件编码了烘焙过的光照，因此MeshMatcapMaterial 不对灯光作出反应。它将会投射阴影到一个接受阴影的物体上(and shadow clipping works)，但不会产生自身阴影或是接受阴影。</p>
+
+<p>参考文档 <a href="https://threejs.org/docs/index.html#api/zh/materials/MeshMatcapMaterial">MeshMatcapMaterial</a></p>
+
+<p>我们使用这样的纹理测试</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01U9kza21cuKM3JdVGN_!!6000000003660-2-tps-256-256.png" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">matcapTexture</span> <span class="o">=</span> <span class="nx">textureLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/textures/matcaps/1.png</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshMatcapMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">matcap</span> <span class="o">=</span> <span class="nx">matcapTexture</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01Qbdy4e27nghWSaFBe_!!6000000007842-1-tps-895-395.gif" alt="" /></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01jKScC81JBSrSeNroX_!!6000000000990-2-tps-256-256.png" alt="" /></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN017uombI1yuFq6ydjO5_!!6000000006638-1-tps-895-395.gif" alt="" /></p>
+
+<p>在这里可以找到非常多的 matcap 纹理素材 <a href="https://github.com/nidorx/matcaps">https://github.com/nidorx/matcaps</a></p>
+
+<h1 id="meshdepthmaterial-深度网格材质">MeshDepthMaterial 深度网格材质</h1>
+
+<p>一种按深度绘制几何体的材质。深度基于相机远近平面。白色最近，黑色最远。详见文档 <a href="https://threejs.org/docs/index.html#api/zh/materials/MeshDepthMaterial">MeshDepthMaterial</a></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshDepthMaterial</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01bZRuMr1ddDAYYEo3L_!!6000000003758-2-tps-1121-593.png" alt="" /></p>
+
+<p>这个材质可以被用来创建雾中在环境等场景</p>
+
+<h1 id="加一点光">加一点光</h1>
+
+<p>接下来的材质都具有光学特性，所以我们加一些光照，后续会详细讲解光照</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Lights
+ */</span>
+<span class="kd">const</span> <span class="nx">ambientLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">AmbientLight</span><span class="p">(</span><span class="dl">'</span><span class="s1">#ffffff</span><span class="dl">'</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">ambientLight</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">pointLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PointLight</span><span class="p">(</span><span class="dl">'</span><span class="s1">#ffffff</span><span class="dl">'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nx">pointLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nx">pointLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nx">pointLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">pointLight</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="meshlambertmateriallambert网格材质">MeshLambertMaterial(Lambert网格材质)</h1>
+
+<p><a href="https://threejs.org/docs/index.html#api/zh/materials/MeshLambertMaterial">MeshLambertMaterial</a></p>
+
+<p>一种非光泽表面的材质，没有镜面高光。</p>
+
+<p>该材质使用基于非物理的 Lambertian 模型来计算反射率。 这可以很好地模拟一些表面（例如未经处理的木材或石材），但不能模拟具有镜面高光的光泽表面（例如涂漆木材）。</p>
+
+<p>使用 Gouraud 着色模型计算着色。这将计算每个顶点的着色（即在vertex shader中）并在多边形的面上插入结果。</p>
+
+<p>由于反射率和光照模型的简单性，MeshLambertMaterial 是所有受光照材质中性能最好的，但是其牺牲了精度，离近看可以看到一些奇怪的纹理。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshDepthMaterial</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01A8qYLB1GztcqB5t2m_!!6000000000694-1-tps-822-452.gif" alt="" /></p>
+
+<h1 id="meshphongmaterialphong网格材质">MeshPhongMaterial(Phong网格材质)</h1>
+
+<p>MeshPhongMaterial 与 MeshLambertMaterial 相似。但表面奇怪的纹理有所减少，并且可以在几何体表面看到光的反射。</p>
+
+<p>一种用于具有镜面高光的光泽表面的材质。可<a href="https://threejs.org/docs/index.html#api/zh/materials/MeshPhongMaterial">参考文档</a>。</p>
+
+<p>该材质使用非物理的Blinn-Phong模型来计算反射率。 与MeshLambertMaterial中使用的Lambertian模型不同，该材质可以模拟具有镜面高光的光泽表面（例如涂漆木材）且精度更高。</p>
+
+<p>使用Phong着色模型计算着色时，会计算每个像素的阴影（在fragment shader， AKA pixel shader中），与MeshLambertMaterial使用的Gouraud模型相比，该模型的结果更准确，但代价是牺牲一些性能。 MeshStandardMaterial和MeshPhysicalMaterial也使用这个着色模型。</p>
+
+<p>MeshPhongMaterial 的性能会稍差与 MeshLambertMaterial，但是影响并不大。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshLambertMaterial</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01Kqv97h1Gn4XIodpoV_!!6000000000666-1-tps-822-452.gif" alt="" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">.shininess : Float</code></p>
+
+<p>.specular 高亮的程度，越高的值越闪亮。默认值为 30。</p>
+
+<p><code class="language-plaintext highlighter-rouge">.specular : Color</code></p>
+
+<p>材质的高光颜色。默认值为0x111111（深灰色）的颜色Color。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshPhongMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">shininess</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">specular</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span><span class="dl">'</span><span class="s1">#00ff00</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN012LYmuq1CaTAhXUXnP_!!6000000000097-1-tps-822-452.gif" alt="" /></p>
+
+<h1 id="meshtoonmaterial">MeshToonMaterial</h1>
+
+<p>卡通风格</p>
+
+<p>MeshToonMaterial 的属性与 MeshLambertMaterial 类似，不过是卡通风格</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN010qnJSH1PGOozmS9Pq_!!6000000001813-2-tps-1123-595.png" alt="" /></p>
+
+<p>默认是2个颜色阶梯（一个是阴影，一个是高亮）。如果想增加更多颜色阶梯，可以使用 gradientMap 和增加一个纹理</p>
+
+<p>如下图，是一个 3*1 px 的非常小的灰阶图片</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01ota0oH1s9BRNxJtrC_!!6000000005723-0-tps-3-1.jpg" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">gradientTexture</span> <span class="o">=</span> <span class="nx">textureLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/textures/gradients/3.jpg</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshToonMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">gradientMap</span> <span class="o">=</span> <span class="nx">gradientTexture</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01MiQKNz1FchxRC9b0V_!!6000000000508-2-tps-1124-587.png" alt="" /></p>
+
+<p>由于提供的纹理图片太小，放大滤镜算法需要重新指定，这样就可以看到 3 色灰阶了</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">gradientTexture</span> <span class="o">=</span> <span class="nx">textureLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/textures/gradients/3.jpg</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">gradientTexture</span><span class="p">.</span><span class="nx">magFilter</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">NearestFilter</span>
+<span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshToonMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">gradientMap</span> <span class="o">=</span> <span class="nx">gradientTexture</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01Kj7XHI1vQ4tecLBKI_!!6000000006166-2-tps-1128-584.png" alt="" /></p>
+
+<p>同样我们可以使用 5 色灰阶。如下图，是一个 5*1 px 的非常小的灰阶图片</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01F7YGkN1oskNXgfyNr_!!6000000005281-0-tps-5-1.jpg" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">gradientTexture</span> <span class="o">=</span> <span class="nx">textureLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/textures/gradients/5.jpg</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">gradientTexture</span><span class="p">.</span><span class="nx">magFilter</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">NearestFilter</span>
+<span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshToonMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">gradientMap</span> <span class="o">=</span> <span class="nx">gradientTexture</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01nZbH2u1a6kFPkn7x3_!!6000000003281-2-tps-1125-593.png" alt="" /></p>
+
+<h1 id="meshstandardmaterial标准网格材质">MeshStandardMaterial(标准网格材质)</h1>
+
+<p><a href="https://threejs.org/docs/index.html#api/zh/materials/MeshStandardMaterial">MeshStandardMaterial</a> 是基于物理渲染的（physically based rendering, PBR）。它支持光效，并有一个更拟真的算法，支持了更多参数如粗糙度、金属性。</p>
+
+<p>之所以是 Standard 因为 PBR 已经在很多软件、引擎和库里成为一种标准。</p>
+
+<p>这种方法与旧方法的不同之处在于，不使用近似值来表示光与表面的相互作用，而是使用物理上正确的模型。 我们的想法是，不是在特定照明下调整材质以使其看起来很好，而是可以创建一种材质，能够“正确”地应对所有光照场景。</p>
+
+<p>在实践中，该材质提供了比MeshLambertMaterial 或MeshPhongMaterial 更精确和逼真的结果，代价是计算成本更高。</p>
+
+<p>计算着色的方式与MeshPhongMaterial相同，都使用Phong着色模型， 这会计算每个像素的阴影（即在fragment shader， AKA pixel shader中）， 与MeshLambertMaterial使用的Gouraud模型相比，该模型的结果更准确，但代价是牺牲一些性能。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshStandardMaterial</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01hETBw51dYdDBMwuS9_!!6000000003748-2-tps-1128-594.png" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshStandardMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">metalness</span> <span class="o">=</span> <span class="mf">0.45</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">roughness</span> <span class="o">=</span> <span class="mf">0.65</span>
+</code></pre></div></div>
+
+<h2 id="metalness--float"><code class="language-plaintext highlighter-rouge">.metalness : Float</code></h2>
+
+<p>材质与金属的相似度。非金属材质，如木材或石材，使用0.0，金属使用1.0，通常没有中间值。 默认值为0.0。0.0到1.0之间的值可用于生锈金属的外观。如果还提供了metalnessMap，则两个值相乘。</p>
+
+<h2 id="roughness--float"><code class="language-plaintext highlighter-rouge">.roughness : Float</code></h2>
+
+<p>材质的粗糙程度。0.0表示平滑的镜面反射，1.0表示完全漫反射。默认值为1.0。如果还提供roughnessMap，则两个值相乘。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01kdGrqa20osQ8WbbQo_!!6000000006897-2-tps-1126-588.png" alt="" /></p>
+
+<p>Add a debug UI</p>
+
+<p>这次选用 lil-gui 作为 debug UI，可以查看其官网了解用法 <a href="https://lil-gui.georgealways.com/">lil-gui</a>。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">dat</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">lil-gui</span><span class="dl">'</span>
+
+<span class="p">...</span>
+
+<span class="kd">const</span> <span class="nx">gui</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">dat</span><span class="p">.</span><span class="nc">GUI</span><span class="p">()</span>
+
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">material</span><span class="p">,</span> <span class="dl">'</span><span class="s1">metalness</span><span class="dl">'</span><span class="p">).</span><span class="nf">min</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">max</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">step</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">material</span><span class="p">,</span> <span class="dl">'</span><span class="s1">roughness</span><span class="dl">'</span><span class="p">).</span><span class="nf">min</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">max</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">step</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01iRMKLS1iwVwVmg7iD_!!6000000004477-2-tps-267-87.png" alt="" /></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01lBE1fX1lwv91vKGzR_!!6000000004884-1-tps-1125-443.gif" alt="" /></p>
+
+<h2 id="map--texture"><code class="language-plaintext highlighter-rouge">.map : Texture</code></h2>
+
+<p>颜色贴图。默认为null。纹理贴图颜色由漫反射颜色.color调节。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">material</span><span class="p">.</span><span class="nx">map</span> <span class="o">=</span> <span class="nx">doorColorTexture</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01zpU6Jw1exC4GIyjDd_!!6000000003937-2-tps-1121-555.png" alt="" /></p>
+
+<h2 id="aomap--texture"><code class="language-plaintext highlighter-rouge">.aoMap : Texture</code></h2>
+
+<p>ambient occlusion map，该纹理的红色通道用作环境遮挡贴图。默认值为null。aoMap需要第二组UV。</p>
+
+<p>我们先为3个几何体添加第二组 uv 属性</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sphere</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">uv2</span><span class="dl">'</span><span class="p">,</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BufferAttribute</span><span class="p">(</span><span class="nx">sphere</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">uv</span><span class="p">.</span><span class="nx">array</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nx">plane</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">uv2</span><span class="dl">'</span><span class="p">,</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BufferAttribute</span><span class="p">(</span><span class="nx">plane</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">uv</span><span class="p">.</span><span class="nx">array</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nx">torus</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">uv2</span><span class="dl">'</span><span class="p">,</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BufferAttribute</span><span class="p">(</span><span class="nx">torus</span><span class="p">.</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">uv</span><span class="p">.</span><span class="nx">array</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">sphere</span><span class="p">.</span><span class="nx">geometry</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01bCUpOo1UZFCMtC0WP_!!6000000002531-2-tps-938-312.png" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">material</span><span class="p">.</span><span class="nx">aoMap</span> <span class="o">=</span> <span class="nx">doorAmbientOcclusionTexture</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">aoMapIntensity</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>这里使用的 ao 纹理贴图 (doorAmbientOcclusionTexture) 为</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01lGpRzm1UulodEbFzy_!!6000000002578-0-tps-1024-1024.jpg" alt="" /></p>
+
+<h2 id="aomapintensity--float"><code class="language-plaintext highlighter-rouge">.aoMapIntensity : Float</code></h2>
+
+<p>环境遮挡效果的强度。默认值为1。零是不遮挡效果。</p>
+
+<p>增加一个 debug 项 aoMapIntensity，可以更直观的看到阴影效果强度。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">material</span><span class="p">,</span> <span class="dl">'</span><span class="s1">aoMapIntensity</span><span class="dl">'</span><span class="p">).</span><span class="nf">min</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">max</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">step</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01SAvBiq1F7Z1eMWA3D_!!6000000000440-1-tps-1125-504.gif" alt="" /></p>
+
+<h2 id="displacementmap--texture"><code class="language-plaintext highlighter-rouge">.displacementMap : Texture</code></h2>
+
+<p>位移贴图会影响网格顶点的位置，与仅影响材质的光照和阴影的其他贴图不同，移位的顶点可以投射阴影，阻挡其他对象， 以及充当真实的几何体。位移纹理是指：网格的所有顶点被映射为图像中每个像素的值（白色是最高的），并且被重定位。</p>
+
+<p>我们 displacementMap 使用的 doorHeightTexture 贴图如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01G079ye1mhdXdGwprp_!!6000000004986-0-tps-1024-1024.jpg" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">material</span><span class="p">.</span><span class="nx">displacementMap</span> <span class="o">=</span> <span class="nx">doorHeightTexture</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01tnmlYP1N9rwfsQJoh_!!6000000001528-2-tps-1140-549.png" alt="" /></p>
+
+<p>看起来很糟糕，因为我们的几何体顶点太少导致，并且 displacementMap 默认位移太大导致的。</p>
+
+<h2 id="displacementscale--float"><code class="language-plaintext highlighter-rouge">.displacementScale : Float</code></h2>
+
+<p>位移贴图对网格的影响程度（黑色是无位移，白色是最大位移）。如果没有设置位移贴图，则不会应用此值。默认值为1。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">material</span><span class="p">.</span><span class="nx">displacementScale</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="kd">const</span> <span class="nx">sphere</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">SphereGeometry</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span> <span class="nx">material</span><span class="p">)</span>
+<span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">plane</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PlaneGeometry</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="nx">material</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">torus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">TorusGeometry</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="nx">material</span><span class="p">)</span>
+<span class="nx">torus</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">material</span><span class="p">,</span> <span class="dl">'</span><span class="s1">displacementScale</span><span class="dl">'</span><span class="p">).</span><span class="nf">min</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">max</span><span class="p">(</span><span class="mf">0.1</span><span class="p">).</span><span class="nf">step</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>可以看到位移贴图的效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01qJcNGT1W0YQtbE6PG_!!6000000002726-1-tps-1125-504.gif" alt="" /></p>
+
+<h2 id="metalnessmap--texture"><code class="language-plaintext highlighter-rouge">.metalnessMap : Texture</code></h2>
+
+<p>该纹理的蓝色通道用于改变材质的金属度。</p>
+
+<h2 id="roughnessmap--texture"><code class="language-plaintext highlighter-rouge">.roughnessMap : Texture</code></h2>
+
+<p>该纹理的绿色通道用于改变材质的粗糙度。</p>
+
+<p>使用 metalnessMap 和 roughnessMap 代替 metalness roughness</p>
+
+<p>metalness.jpg</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01dFaCfK269YNjppqGN_!!6000000007619-0-tps-1024-1024.jpg" alt="" /></p>
+
+<p>roughness.jpg</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN018ailjB1YUtuQbZ40j_!!6000000003063-0-tps-1024-1024.jpg" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">material</span><span class="p">.</span><span class="nx">metalnessMap</span> <span class="o">=</span> <span class="nx">doorMetalnessTexture</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">roughnessMap</span> <span class="o">=</span> <span class="nx">doorRoughnessTexture</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01wMzdrV1CgQK4JV5bU_!!6000000000110-2-tps-1130-495.png" alt="" /></p>
+
+<p>看起来反射有些奇怪，这是因为之前设置的 <code class="language-plaintext highlighter-rouge">metalness</code> 和 <code class="language-plaintext highlighter-rouge">roughness</code> 属性依然生效，我们需要将这2 个属性值设置为默认值</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">material</span><span class="p">.</span><span class="nx">metalnessMap</span> <span class="o">=</span> <span class="nx">doorMetalnessTexture</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">roughnessMap</span> <span class="o">=</span> <span class="nx">doorRoughnessTexture</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">metalness</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">roughness</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01qBttNh1TuwLaCH5UL_!!6000000002443-2-tps-1135-498.png" alt="" /></p>
+
+<h2 id="normalmap--texture"><code class="language-plaintext highlighter-rouge">.normalMap : Texture</code></h2>
+
+<p>用于创建法线贴图的纹理。RGB值会影响每个像素片段的曲面法线，并更改颜色照亮的方式。法线贴图不会改变曲面的实际形状，只会改变光照。</p>
+
+<p>使用如下的法线贴图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01Rly6mW1EoKOUa2lSD_!!6000000000398-0-tps-1024-1024.jpg" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">material</span><span class="p">.</span><span class="nx">normalMap</span> <span class="o">=</span> <span class="nx">doorNormalTexture</span>
+</code></pre></div></div>
+
+<p>效果如下，可以看出材质表面光照效果已经不是平面了，光照射时可以明显的看到法线起伏的效果</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01i0kcRy1X2DU42gGKc_!!6000000002865-2-tps-2480-1326.png" alt="" /></p>
+
+<h2 id="normalscale--vector2"><code class="language-plaintext highlighter-rouge">.normalScale : Vector2</code></h2>
+
+<p>法线贴图对材质的影响程度。典型范围是0-1。默认值是Vector2设置为（1,1）。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">material</span><span class="p">.</span><span class="nx">normalMap</span> <span class="o">=</span> <span class="nx">doorNormalTexture</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">normalScale</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="alphamap--texture"><code class="language-plaintext highlighter-rouge">.alphaMap : Texture</code></h2>
+
+<p>alpha贴图是一张灰度纹理，用于控制整个表面的不透明度。（黑色：完全透明；白色：完全不透明）。 默认值为null。</p>
+
+<p>我们使用 alphaMap 图片为</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01TXzNdh1fx1XRRjYea_!!6000000004072-0-tps-1024-1024.jpg" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">material</span><span class="p">.</span><span class="nx">alphaMap</span> <span class="o">=</span> <span class="nx">doorAlphaTexture</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">transparent</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01cDcI4G24zBnxAOmZ0_!!6000000007461-2-tps-1130-554.png" alt="" /></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01yY9rnf24ihY1P5DYr_!!6000000007425-2-tps-1134-547.png" alt="" /></p>
+
+<p>至此我们就得到了一个很精致好看的门，MeshStandardMaterial 的属性基本也学习的差不多了。</p>
+
+<p>demo 和源码</p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/12-materials/">demo 链接</a></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/12-materials">demo 源码</a></p>
+
+<h1 id="meshphysicalmaterial-物理网格材质">MeshPhysicalMaterial 物理网格材质</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Material → MeshStandardMaterial →</code></p>
+
+<p>详见文档 <a href="https://threejs.org/docs/index.html#api/zh/materials/MeshPhysicalMaterial">MeshPhysicalMaterial</a></p>
+
+<p>MeshStandardMaterial 的扩展，提供了更高级的基于物理的渲染属性：</p>
+
+<ul>
+  <li>
+    <p>Clearcoat: 有些类似于车漆，碳纤，被水打湿的表面的材质需要在面上再增加一个透明的，具有一定反光特性的面。而且这个面说不定有一定的起伏与粗糙度。Clearcoat 可以在不需要重新创建一个透明的面的情况下做到类似的效果。</p>
+  </li>
+  <li>
+    <p>基于物理的透明度:.opacity属性有一些限制:在透明度比较高的时候，反射也随之减少。使用基于物理的透光性.transmission属性可以让一些很薄的透明表面，例如玻璃，变得更真实一些。</p>
+  </li>
+  <li>
+    <p>高级光线反射: 为非金属材质提供了更多更灵活的光线反射。</p>
+  </li>
+</ul>
+
+<h1 id="pointsmaterial">PointsMaterial</h1>
+
+<p>用于粒子效果，后续会深入学习粒子特效</p>
+
+<h1 id="shadermaterial-and-rawshadermaterial">ShaderMaterial and RawShaderMaterial</h1>
+
+<p>在创建自己的 materials 时使用，后续会深入学习。用于创建 shaders</p>
+
+<h1 id="environment-map">Environment map</h1>
+
+<p>环境贴图，在几何体上用于反射出周围环境的一种纹理贴图。</p>
+
+<p>使用 6 张图片，形成一个立方体，所以我们需要使用 <a href="https://threejs.org/docs/index.html#api/zh/loaders/CubeTextureLoader">CubeTextureLoader</a> 来加载</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01NkGTiA29ee7PPx9wS_!!6000000008093-2-tps-666-150.png" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">envMapTexture</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">CubeTextureLoader</span><span class="p">()</span>
+  <span class="p">.</span><span class="nf">setPath</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/textures/environmentMaps/0/</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">load</span><span class="p">([</span><span class="dl">'</span><span class="s1">px.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">nx.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">py.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ny.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">pz.jpg</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">nz.jpg</span><span class="dl">'</span><span class="p">])</span>
+
+<span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshStandardMaterial</span><span class="p">()</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">metalness</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">roughness</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="nx">material</span><span class="p">.</span><span class="nx">envMap</span> <span class="o">=</span> <span class="nx">envMapTexture</span>
+</code></pre></div></div>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01XjtBjn1EsuLwASvAX_!!6000000000408-1-tps-1125-504.gif" alt="" /></p>
+
+<p>可以调节 metalness 和 roughness 观察变化。能够看到反射的不同效果。</p>
+
+<p>demo 和源码</p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/12-materialsEnvironmentMap/">demo 链接</a></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/12-materialsEnvironmentMap">demo 源码</a></p>
+
+<h2 id="在哪寻找环境贴图">在哪寻找环境贴图</h2>
+
+<p>有个很好的网站 <a href="https://polyhaven.com/">https://polyhaven.com/</a> HDRIHaven 是免费的并且使用了 <a href="https://polyhaven.com/license">CC0 license</a></p>
+
+<p>下载了 hdr 图片文件后，可以在 <a href="https://matheowis.github.io/HDRI-to-CubeMap/">https://matheowis.github.io/HDRI-to-CubeMap/</a> 在线转换为6张 cube map 图片。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01ZRLUvn1WwijV0eJbg_!!6000000002853-2-tps-1131-483.png" alt="" /></p>
+
+<h1 id="小结">小结</h1>
+
+<p>本节我们研究了 Three.js 中的基础材质、法线材质、MatCap 材质、Depth 深度材质，以及与光相关的 Lambert/Phong/Toon/Standard/Physical Material。剩下了后续粒子动效和 Shader 会细讲的 2 个材质。最后又学习了环境贴图，模拟物体金属反光的效果。</p>
+
+<p>下一节将学习 3D 文字。</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <h2 id="similar_posts">Artikel lainnya dari Three.js</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2022/10/09/three-realistic-render/">Three.js 之 19 realistic render 真实渲染
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2022/05/23/three-textures/">Three.js 之 6 Texture 纹理</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2022/06/01/three-3dText/">Three.js 之 8 炫酷的 3D Text</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2022/05/25/three-material/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2022/05/25/three-material/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Artikel lainnya</a></li>
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>

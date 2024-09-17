@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>队列在前端弹窗中的应用</title>
+    <meta name="description" content="前端开发中，如果遇到复杂的交互逻辑，数据结构的知识将帮助你理清思路，抽象逻辑，完成稳定可靠的逻辑代码。本文就讲讲我在开发弹窗时加入的队列数据结构，也许有人疑问弹窗不是很简单吗，还需要引入队列？其实在复杂交互中，特别是互动类的界面中，很容易就会有超过 10 个弹窗对话框，万一同时被触发时，逻辑就会混乱，我们希望一个...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2019/07/18/dialog-queue/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>队列在前端弹窗中的应用</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2019-07-18
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#JavaScript" title="Category: JavaScript" rel="category">JavaScript</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#dialog" title="Tag: dialog" rel="tag">dialog</a-->
+        <a href="/tag/#dialog" title="Tag: dialog" rel="tag">dialog</a>&nbsp;
+    
+        <!--a href="/tag/#queue" title="Tag: queue" rel="tag">queue</a-->
+        <a href="/tag/#queue" title="Tag: queue" rel="tag">queue</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#什么是队列" id="markdown-toc-什么是队列">什么是队列</a></li>
+  <li><a href="#javascript-实现队列" id="markdown-toc-javascript-实现队列">JavaScript 实现队列</a></li>
+  <li><a href="#对话框弹窗dialog与队列的结合" id="markdown-toc-对话框弹窗dialog与队列的结合">对话框弹窗（Dialog）与队列的结合</a></li>
+  <li><a href="#toast-与队列的结合" id="markdown-toc-toast-与队列的结合">Toast 与队列的结合</a></li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p><img src="https://gw.alicdn.com/tfs/TB1rgXfXYY1gK0jSZTEXXXDQVXa-700-404.png" alt="" /></p>
+
+<p>前端开发中，如果遇到复杂的交互逻辑，数据结构的知识将帮助你理清思路，抽象逻辑，完成稳定可靠的逻辑代码。</p>
+
+<p>本文就讲讲我在开发弹窗时加入的队列数据结构，也许有人疑问弹窗不是很简单吗，还需要引入队列？其实在复杂交互中，特别是互动类的界面中，很容易就会有超过 10 个弹窗对话框，万一同时被触发时，逻辑就会混乱，我们希望一个接一个的方式弹出，这里就需要队列了。</p>
+
+<h2 id="什么是队列">什么是队列</h2>
+
+<p><img src="https://gw.alicdn.com/tfs/TB1y4MYXND1gK0jSZFKXXcJrVXa-406-274.png" alt="" /></p>
+
+<p><strong>队列（Queue）</strong> 是先进先出（FIFO, First-In-First-Out）的线性表。在具体应用中通常用链表或者数组来实现。队列只允许在尾部进行插入操作（入队 enqueue），在头部进行删除操作（出队 dequeue）。队列的操作方式和堆栈类似，唯一的区别在于队列只允许新数据在后端进行添加。上图清晰的描述了队列的特性。</p>
+
+<h2 id="javascript-实现队列">JavaScript 实现队列</h2>
+
+<p>一个队列数据结构要包含以下 api</p>
+
+<ul>
+  <li>入队</li>
+  <li>出队</li>
+  <li>获取头部元素</li>
+  <li>获取尾部元素</li>
+  <li>队列是否为空</li>
+</ul>
+
+<p>使用 JavaScript/TypeScript 数组可以模拟出这些 api，代码如下</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Queue</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">dataStore</span><span class="p">:</span> <span class="kr">any</span><span class="p">[]</span>
+
+  <span class="nf">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataStore</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="nf">enqueue</span><span class="p">(</span><span class="nx">e</span><span class="p">:</span> <span class="kr">any</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataStore</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="nf">dequeue</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dataStore</span><span class="p">.</span><span class="nf">shift</span><span class="p">()</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="nf">front</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataStore</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="nf">back</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataStore</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">dataStore</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="nf">isEmpty</span><span class="p">():</span> <span class="nx">boolean</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dataStore</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">dataStore</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Queue</span>
+</code></pre></div></div>
+
+<p>可以写些测试用例来验证这个队列的功能，保证我们的队列运行正常</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Queue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Queues</span><span class="dl">'</span>
+
+<span class="nf">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">Queue</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">q</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Queue</span><span class="p">()</span>
+  <span class="nx">q</span><span class="p">.</span><span class="nf">enqueue</span><span class="p">(</span><span class="mi">1123</span><span class="p">)</span>
+  <span class="nx">q</span><span class="p">.</span><span class="nf">enqueue</span><span class="p">(</span><span class="dl">'</span><span class="s1">chuanshi</span><span class="dl">'</span><span class="p">)</span>
+  <span class="nx">q</span><span class="p">.</span><span class="nf">enqueue</span><span class="p">(</span><span class="dl">'</span><span class="s1">666</span><span class="dl">'</span><span class="p">)</span>
+  <span class="nf">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">queue</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nf">toString</span><span class="p">()).</span><span class="nf">toBe</span><span class="p">(</span><span class="dl">'</span><span class="s1">1123,chuanshi,666</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">q</span><span class="p">.</span><span class="nf">dequeue</span><span class="p">()</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nf">toString</span><span class="p">()).</span><span class="nf">toBe</span><span class="p">(</span><span class="dl">'</span><span class="s1">chuanshi,666</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nf">front</span><span class="p">()).</span><span class="nf">toBe</span><span class="p">(</span><span class="dl">'</span><span class="s1">chuanshi</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nf">back</span><span class="p">()).</span><span class="nf">toBe</span><span class="p">(</span><span class="dl">'</span><span class="s1">666</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nf">isEmpty</span><span class="p">()).</span><span class="nf">toBe</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+    <span class="nx">q</span><span class="p">.</span><span class="nf">dequeue</span><span class="p">()</span>
+    <span class="nx">q</span><span class="p">.</span><span class="nf">dequeue</span><span class="p">()</span>
+    <span class="nf">expect</span><span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nf">isEmpty</span><span class="p">()).</span><span class="nf">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>这样我们就得到了一个队列的数据结构。</p>
+
+<h2 id="对话框弹窗dialog与队列的结合">对话框弹窗（Dialog）与队列的结合</h2>
+
+<p>弹窗被触发唤起会有以下3种情况：</p>
+<ol>
+  <li>同一时间段只有一个 Dialog 被触发</li>
+  <li>同一时间段有2个 Dialog 同时被触发</li>
+  <li>Dialog 正在展示时，又触发了另一个 Dialog</li>
+</ol>
+
+<p>为了满足以上3种情况，需要在主线程和弹窗展示之间加一个队列控制逻辑，它们的时序图如下：</p>
+
+<!-- ![](https://gw.alicdn.com/tfs/TB124dgXYr1gK0jSZR0XXbP8XXa-333-313.svg)
+
+![](https://gw.alicdn.com/tfs/TB1zk4gXYj1gK0jSZFOXXc7GpXa-411-526.svg)
+
+![](https://gw.alicdn.com/tfs/TB1QIhfX7T2gK0jSZPcXXcKkpXa-411-526.svg) -->
+
+<pre><code class="language-plantuml">title 队列弹窗逻辑之1个弹窗
+
+right footer by Chuanshi 20190712
+
+skinparam activityBackgroundColor #efefef
+skinparam activityBorderColor #454545
+skinparam activityArrowColor #666666
+skinparam style strictuml
+
+participant DialogA order 10
+participant Main order 1
+participant QueueCtrl order 2
+
+activate Main
+
+Main -&gt; QueueCtrl: showDialogA
+activate QueueCtrl
+QueueCtrl -&gt; QueueCtrl: enqueue eventA
+
+QueueCtrl -&gt; DialogA: show
+activate DialogA
+DialogA -&gt; DialogA: showing
+DialogA -&gt; QueueCtrl: close
+deactivate DialogA
+QueueCtrl -&gt; QueueCtrl: dequeue eventA
+</code></pre>
+
+<pre><code class="language-plantuml">title 队列弹窗逻辑之2个弹窗同时被触发
+
+right footer by Chuanshi 20190712
+
+skinparam activityBackgroundColor #efefef
+skinparam activityBorderColor #454545
+skinparam activityArrowColor #666666
+skinparam style strictuml
+
+participant DialogA order 20
+participant DialogB order 30
+participant Main order 1
+participant QueueCtrl order 2
+
+activate Main
+
+Main -&gt; QueueCtrl: showDialogA
+activate QueueCtrl
+QueueCtrl -&gt; QueueCtrl: enqueue eventA
+Main -&gt; QueueCtrl: showDialogB
+QueueCtrl -&gt; QueueCtrl: enqueue eventB
+
+QueueCtrl -&gt; DialogA: show
+activate DialogA
+DialogA -&gt; DialogA: showing
+DialogA -&gt; QueueCtrl: close
+deactivate DialogA
+QueueCtrl -&gt; QueueCtrl: dequeue eventA
+
+QueueCtrl -&gt; DialogB: show
+activate DialogB
+DialogB -&gt; DialogB: showing
+DialogB -&gt; QueueCtrl: close
+deactivate DialogB
+QueueCtrl -&gt; QueueCtrl: dequeue eventB
+</code></pre>
+
+<pre><code class="language-plantuml">title 队列弹窗逻辑之1个正在展示时又触发另一个弹窗
+
+right footer by Chuanshi 20190712
+
+skinparam activityBackgroundColor #efefef
+skinparam activityBorderColor #454545
+skinparam activityArrowColor #666666
+skinparam style strictuml
+
+participant DialogA order 20
+participant DialogB order 30
+participant Main order 1
+participant QueueCtrl order 2
+
+activate Main
+
+Main -&gt; QueueCtrl: showDialogA
+activate QueueCtrl
+QueueCtrl -&gt; QueueCtrl: enqueue eventA
+QueueCtrl -&gt; DialogA: show
+activate DialogA
+DialogA -&gt; DialogA: showing
+Main -&gt; QueueCtrl: showDialogB
+QueueCtrl -&gt; QueueCtrl: enqueue eventB
+DialogA -&gt; QueueCtrl: close
+deactivate DialogA
+QueueCtrl -&gt; QueueCtrl: dequeue eventA
+QueueCtrl -&gt; DialogB: show
+activate DialogB
+DialogB -&gt; DialogB: showing
+DialogB -&gt; QueueCtrl: close
+deactivate DialogB
+QueueCtrl -&gt; QueueCtrl: dequeue eventB
+</code></pre>
+
+<p>上述时序图清晰的表达了弹窗触发的各种情况，那么起到关键作用的队列控制（QueueCtrl）部分应该如何编写呢？其实也很简单，它的逻辑如下：</p>
+
+<!-- ![](https://gw.alicdn.com/tfs/TB1q6NfX.T1gK0jSZFrXXcNCXXa-274-420.svg) -->
+
+<pre><code class="language-plantuml">
+skinparam activityBackgroundColor #efefef
+skinparam activityBorderColor #454545
+skinparam activityArrowColor #666666
+skinparam style strictuml
+
+title 队列弹窗逻辑活动图
+
+right footer by Chuanshi 20190712
+
+start
+fork
+  :元素入队;
+fork again
+while (队列为空?) is (false)
+  :队首弹窗触发;
+  :队首弹窗关闭;
+  :队首元素出队;
+endwhile (true)
+endfork
+stop
+</code></pre>
+
+<p>当空队列的第一个元素入队后，上图的右侧循环部分开始启动，同时依然可以有元素入队，直到右侧循环逻辑将队列所有元素出队后，整个活动停止。</p>
+
+<p>核心代码如下：</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Queue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Queues</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Queue</span><span class="p">()</span> <span class="c1">// 实例化上文写好的队列类</span>
+
+<span class="cm">/**
+ * 将弹窗事件名推入队列
+ */</span>
+<span class="kd">const</span> <span class="nx">push</span> <span class="o">=</span> <span class="p">(</span><span class="nx">eventName</span><span class="p">:</span> <span class="nx">globalEventName</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nf">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nx">queue</span><span class="p">.</span><span class="nf">enqueue</span><span class="p">(</span><span class="nx">eventName</span><span class="p">)</span>
+    <span class="nf">openDialog</span><span class="p">()</span> <span class="c1">// 启动出队逻辑</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">queue</span><span class="p">.</span><span class="nf">enqueue</span><span class="p">(</span><span class="nx">eventName</span><span class="p">)</span> <span class="c1">// 循环中依然可以同时入队新的元素</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/**
+ * 打开弹窗，递归，循环出队
+ */</span>
+<span class="kd">const</span> <span class="nx">openDialog</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// 打开弹窗</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nf">dispatchEvent</span><span class="p">(</span><span class="k">new</span> <span class="nc">Event</span><span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nf">front</span><span class="p">()))</span>
+
+  <span class="c1">// 监听弹窗关闭</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">queue</span><span class="p">.</span><span class="nf">front</span><span class="p">()}</span><span class="s2">Close`</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">queue</span><span class="p">.</span><span class="nf">dequeue</span><span class="p">()</span> <span class="c1">// 出队</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">queue</span><span class="p">.</span><span class="nf">isEmpty</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// 队列不为空时，递归</span>
+      <span class="nf">openDialog</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">push</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>只需要调用 <code class="language-plaintext highlighter-rouge">push()</code> 就可以达到我们的目的，可以看到使用队列这种数据结构，不到20行代码，非常简洁优雅的解决了这个问题！</p>
+
+<h2 id="toast-与队列的结合">Toast 与队列的结合</h2>
+
+<p>与 Dialog 类似，为了避免多次触发导致的 Toast 堆叠，把每一个要弹出的 Toast 内容入队，每个 Toast 完成时，出队，并递归调用展示，直到队列内容为空。这里不展开说明了。</p>
+
+<h2 id="小结">小结</h2>
+
+<p>当然上面的需求不使用队列也可以实现，但是队列数据结构的意义在于可以让整个实现更加规范化、抽象化且易于维护。</p>
+
+<p>熟练掌握数据结构的知识，可以让开发的过程中思路更加清晰，代码抽象化程度更高，更加合理的组织代码，提高开发效率。当遇到棘手的问题时，可以多思考一些数据结构中的知识点，说不定可以达到事半功倍的效果呢！</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2018/10/10/vscode-plugin-schedule/">vscode 插件 markdown-schedule-snippet</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2020/03/01/react-hooks1-useState/">React Hooks 系列之1 useState</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2019/07/18/dialog-queue/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2019/07/18/dialog-queue/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>

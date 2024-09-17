@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>Three.js 之 8 炫酷的 3D Text</title>
+    <meta name="description" content="本系列为 Three.js journey 教程学习笔记。本节将学习 3D Text，并做一个炫酷的 3D Text 展示页面。我们将使用 TextGeometry 文本缓冲几何体来实现。">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2022/06/01/three-3dText/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>Three.js 之 8 炫酷的 3D Text</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2022-06-01
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#Three.js" title="Category: Three.js" rel="category">Three.js</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a-->
+        <a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a>&nbsp;
+    
+        <!--a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a-->
+        <a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#typeface-font" id="markdown-toc-typeface-font">typeface font</a></li>
+  <li><a href="#load-the-font" id="markdown-toc-load-the-font">Load the font</a></li>
+  <li><a href="#create-textgeometry" id="markdown-toc-create-textgeometry">Create TextGeometry</a>    <ul>
+      <li><a href="#center-the-text" id="markdown-toc-center-the-text">Center the text</a></li>
+    </ul>
+  </li>
+  <li><a href="#add-a-matcap-material" id="markdown-toc-add-a-matcap-material">Add a matcap material</a></li>
+  <li><a href="#add-objects" id="markdown-toc-add-objects">Add objects</a></li>
+  <li><a href="#animation" id="markdown-toc-animation">Animation</a></li>
+  <li><a href="#gui-controls" id="markdown-toc-gui-controls">GUI controls</a></li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p>本系列为 <a href="https://threejs-journey.com/">Three.js journey</a> 教程学习笔记。</p>
+
+<p>本节将学习 3D Text，并做一个炫酷的 3D Text 展示页面。我们将使用 <a href="https://threejs.org/docs/#examples/zh/geometries/TextGeometry">TextGeometry</a> 文本缓冲几何体来实现。</p>
+
+<h1 id="typeface-font">typeface font</h1>
+
+<p>Three.js 内置了 <a href="https://threejs.org/docs/#examples/zh/loaders/FontLoader">FontLoader</a> 来加载 json 格式字体。可以使用 <a href="http://gero3.github.io/facetype.js/">facetype.js</a> 在线转换 json 字体。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN016uvJVz1aMm75D04iV_!!6000000003316-2-tps-1786-1226.png" alt="" /></p>
+
+<h1 id="load-the-font">Load the font</h1>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">FontLoader</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/loaders/FontLoader</span><span class="dl">'</span>
+<span class="p">...</span>
+<span class="c1">// Load font</span>
+<span class="kd">const</span> <span class="nx">fontLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FontLoader</span><span class="p">()</span>
+<span class="nx">fontLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/fonts/Fira Code Medium_Regular.json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="c1">// onLoad回调</span>
+  <span class="p">(</span><span class="nx">font</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">loaded</span><span class="dl">'</span><span class="p">,</span> <span class="nx">font</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01rCmHeR1uKkg3Q7pMr_!!6000000006019-2-tps-948-304.png" alt="" /></p>
+
+<p>加载成功。接下来我们需要在成功回调里继续完成代码</p>
+
+<h1 id="create-textgeometry">Create TextGeometry</h1>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Load font</span>
+<span class="kd">const</span> <span class="nx">fontLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FontLoader</span><span class="p">()</span>
+<span class="nx">fontLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/fonts/Fira Code Medium_Regular.json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="c1">// onLoad回调</span>
+  <span class="p">(</span><span class="nx">font</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">loaded</span><span class="dl">'</span><span class="p">,</span> <span class="nx">font</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">textGeometry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TextGeometry</span><span class="p">(</span><span class="dl">"</span><span class="s2">Joe CS's three.js world!</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">font</span><span class="p">,</span>
+      <span class="na">size</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+      <span class="na">height</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+      <span class="na">curveSegments</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="na">bevelEnabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">bevelThickness</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
+      <span class="na">bevelSize</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+      <span class="na">bevelOffset</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="na">bevelSegments</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="p">})</span>
+
+    <span class="kd">const</span> <span class="nx">textMaterial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">()</span>
+    <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="nx">textGeometry</span><span class="p">,</span> <span class="nx">textMaterial</span><span class="p">)</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01biVOtn29Rp1n3h48P_!!6000000008065-2-tps-1135-545.png" alt="" /></p>
+
+<p>可以看到文字并没有在中间位置，我们需要居中展示</p>
+
+<h2 id="center-the-text">Center the text</h2>
+
+<p>居中的方式是计算几何体的立方体边界，再进行位移。</p>
+
+<p>使用 BoxHelper 可以观察 bounding box</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">box</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BoxHelper</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="mh">0xffff00</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">box</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN013nOpwF21AP2YBRYLA_!!6000000006944-2-tps-1136-548.png" alt="" /></p>
+
+<p>于是我们使用 <code class="language-plaintext highlighter-rouge">computeBoundingBox</code> 获取 box 的尺寸，再进行位移，代码如下</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">textGeometry</span><span class="p">.</span><span class="nf">computeBoundingBox</span><span class="p">()</span> <span class="c1">// 计算 box 边界</span>
+<span class="k">if </span><span class="p">(</span><span class="nx">textGeometry</span><span class="p">.</span><span class="nx">boundingBox</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">textGeometry</span><span class="p">.</span><span class="nf">translate</span><span class="p">(</span>
+    <span class="o">-</span><span class="nx">textGeometry</span><span class="p">.</span><span class="nx">boundingBox</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">x</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="c1">// Subtract bevel size</span>
+    <span class="o">-</span><span class="nx">textGeometry</span><span class="p">.</span><span class="nx">boundingBox</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">y</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="c1">// Subtract bevel size</span>
+    <span class="o">-</span><span class="nx">textGeometry</span><span class="p">.</span><span class="nx">boundingBox</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">z</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="c1">// Subtract bevel thickness</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>可以看到完成了居中展示</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01TPMEqk29MmfsMFA5z_!!6000000008054-2-tps-1120-522.png" alt="" /></p>
+
+<p>当然还可以直接使用</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">textGeometry</span><span class="p">.</span><span class="nf">center</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>完整代码如下</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">THREE</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./style.css</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OrbitControls</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/controls/OrbitControls</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FontLoader</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/loaders/FontLoader</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">TextGeometry</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/geometries/TextGeometry</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">stats</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/stats</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">listenResize</span><span class="p">,</span> <span class="nx">dbClkfullScreen</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/utils</span><span class="dl">'</span>
+
+<span class="c1">// Canvas</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mainCanvas</span><span class="dl">'</span><span class="p">)</span> <span class="nx">as</span> <span class="nx">HTMLCanvasElement</span>
+
+<span class="c1">// Scene</span>
+<span class="kd">const</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Scene</span><span class="p">()</span>
+
+<span class="c1">// Load font</span>
+<span class="kd">const</span> <span class="nx">fontLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FontLoader</span><span class="p">()</span>
+<span class="nx">fontLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/fonts/Fira Code Medium_Regular.json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="c1">// onLoad回调</span>
+  <span class="p">(</span><span class="nx">font</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">loaded</span><span class="dl">'</span><span class="p">,</span> <span class="nx">font</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">textGeometry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TextGeometry</span><span class="p">(</span><span class="dl">"</span><span class="s2">Joe CS's world!</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">font</span><span class="p">,</span>
+      <span class="na">size</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+      <span class="na">height</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+      <span class="na">curveSegments</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="na">bevelEnabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">bevelThickness</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
+      <span class="na">bevelSize</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+      <span class="na">bevelOffset</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="na">bevelSegments</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="p">})</span>
+
+    <span class="kd">const</span> <span class="nx">textMaterial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">()</span>
+    <span class="nx">textMaterial</span><span class="p">.</span><span class="nx">wireframe</span> <span class="o">=</span> <span class="kc">true</span>
+
+    <span class="nx">textGeometry</span><span class="p">.</span><span class="nf">center</span><span class="p">()</span> <span class="c1">// 居中</span>
+
+    <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="nx">textGeometry</span><span class="p">,</span> <span class="nx">textMaterial</span><span class="p">)</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span>
+
+    <span class="kd">const</span> <span class="nx">box</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BoxHelper</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="mh">0xffff00</span><span class="p">)</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">box</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+
+<span class="c1">// Size</span>
+<span class="kd">const</span> <span class="nx">sizes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">width</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
+  <span class="na">height</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1">// Camera</span>
+<span class="kd">const</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PerspectiveCamera</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">controls</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OrbitControls</span><span class="p">(</span><span class="nx">camera</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">)</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">enableDamping</span> <span class="o">=</span> <span class="kc">true</span>
+
+<span class="c1">// Renderer</span>
+<span class="kd">const</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">WebGLRenderer</span><span class="p">({</span>
+  <span class="nx">canvas</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setSize</span><span class="p">(</span><span class="nx">sizes</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setPixelRatio</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="nf">dbClkfullScreen</span><span class="p">(</span><span class="nx">canvas</span><span class="p">)</span>
+<span class="nf">listenResize</span><span class="p">(</span><span class="nx">sizes</span><span class="p">,</span> <span class="nx">camera</span><span class="p">,</span> <span class="nx">renderer</span><span class="p">)</span>
+
+<span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+
+  <span class="nx">controls</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">tick</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN010Gstck1gOxhLBcgWc_!!6000000004133-2-tps-1127-545.png" alt="" /></p>
+
+<h1 id="add-a-matcap-material">Add a matcap material</h1>
+
+<p>可以在 <a href="https://github.com/nidorx/matcaps">https://github.com/nidorx/matcaps</a> 这里找到需要的纹理素材，如果商用，请确保版权。不需要特别高分辨率，256*256 足矣。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">textureLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">TextureLoader</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">matcapTexture</span> <span class="o">=</span> <span class="nx">textureLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/textures/matcaps/1.png</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">textMaterial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshMatcapMaterial</span><span class="p">()</span>
+<span class="nx">textMaterial</span><span class="p">.</span><span class="nx">matcap</span> <span class="o">=</span> <span class="nx">matcapTexture</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01RMYToA24DYcAi1BDR_!!6000000007357-2-tps-1135-559.png" alt="" /></p>
+
+<h1 id="add-objects">Add objects</h1>
+
+<p>我们在添加一些几何体悬浮在周围。可以在 for 循环中创建各种几何体。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">donutGeometry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">TorusGeometry</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">boxGeometry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BoxGeometry</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span>
+
+<span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">mesh</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">mesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="nx">boxGeometry</span><span class="p">,</span> <span class="nx">material</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">mesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="nx">donutGeometry</span><span class="p">,</span> <span class="nx">material</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span>
+    <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
+  <span class="p">)</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nf">setRotationFromEuler</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Euler</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">(),</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">(),</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">())</span>
+  <span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">radomeScale</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="mf">0.5</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">radomeScale</span><span class="p">,</span> <span class="nx">radomeScale</span><span class="p">,</span> <span class="nx">radomeScale</span><span class="p">)</span>
+  <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">mesh</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01gSCTYV1tqWXNMjCc1_!!6000000005953-2-tps-1126-681.png" alt="" /></p>
+
+<h1 id="animation">Animation</h1>
+
+<p>可以直接使用 OrbitControls 进行旋转</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">OrbitControls</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/controls/OrbitControls</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p>添加如下代码</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">controls</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OrbitControls</span><span class="p">(</span><span class="nx">camera</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">)</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">enableDamping</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">autoRotate</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">autoRotateSpeed</span> <span class="o">=</span> <span class="mf">0.4</span>
+</code></pre></div></div>
+
+<p>别忘了在 <code class="language-plaintext highlighter-rouge">requestAnimationFrame</code> 中 update</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+
+  <span class="nx">controls</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">tick</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h1 id="gui-controls">GUI controls</h1>
+
+<p>使用前面学到的 <code class="language-plaintext highlighter-rouge">lil-gui</code> 增加一些控制项，配置背景色</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01VQZYZs1ExUJefsIRz_!!6000000000418-2-tps-249-197.png" alt="" /></p>
+
+<p>最终效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01MmCpPO1itlZIJnK0t_!!6000000004471-2-tps-1126-681.png" alt="" /></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01eODF1g1ucc7fuUjXY_!!6000000006058-1-tps-1008-464.gif" alt="" /></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN013zENey1TXa95mkCWj_!!6000000002392-2-tps-200-200.png" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/13-3DText/">demo 链接</a></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/13-3DText">demo 源码</a></p>
+
+<h1 id="小结">小结</h1>
+
+<p>本节我们算是做了第一个小作品。学习了 3D 文字，运用了之前学得材质、纹理、控制器等。keep going!</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <h2 id="similar_posts">Artikel lainnya dari Three.js</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2022/10/09/three-realistic-render/">Three.js 之 19 realistic render 真实渲染
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2022/05/25/three-material/">Three.js 之 7 Materials 材质</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2022/06/06/three-light-copy/">Three.js 之 9 Light 光</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2022/06/01/three-3dText/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2022/06/01/three-3dText/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Artikel lainnya</a></li>
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>

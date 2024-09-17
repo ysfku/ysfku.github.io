@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>摩天轮动画的实现揭秘</title>
+    <meta name="description" content="摩天轮动画的实现揭秘恰好近期业务上开发了类似这样的摩天轮动画，我将其中的实现原理分享给大家。摩天轮动画主要分为 2 部分，一个是摩天轮上每个房间位置布局，另一个就是旋转动画了。">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2022/10/15/ferris-wheel/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>摩天轮动画的实现揭秘</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2022-10-15
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#JavaScript" title="Category: JavaScript" rel="category">JavaScript</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#Animation" title="Tag: Animation" rel="tag">Animation</a-->
+        <a href="/tag/#Animation" title="Tag: Animation" rel="tag">Animation</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#摩天轮布局" id="markdown-toc-摩天轮布局">摩天轮布局</a></li>
+  <li><a href="#摩天轮旋转动画" id="markdown-toc-摩天轮旋转动画">摩天轮旋转动画</a></li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p>摩天轮动画的实现揭秘</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01WMJfsa23yty2Z4YOn_!!6000000007325-1-tps-600-329.gif" alt="" /></p>
+
+<p>恰好近期业务上开发了类似这样的摩天轮动画，我将其中的实现原理分享给大家。摩天轮动画主要分为 2 部分，一个是摩天轮上每个房间位置布局，另一个就是旋转动画了。</p>
+
+<h1 id="摩天轮布局">摩天轮布局</h1>
+
+<p>我们需要将每个车厢均匀的布局在一个圆环上，这需要一些三角函数的知识。</p>
+
+<p>以圆心为原点，半径为r，则正多边形的第1个顶点坐标为 <code class="language-plaintext highlighter-rouge">(rcosθ, rsinθ)</code>，其中 <code class="language-plaintext highlighter-rouge">θ</code> 可以看做是 <code class="language-plaintext highlighter-rouge">360/多边形边数</code>。第2个顶点坐标为 <code class="language-plaintext highlighter-rouge">(rcos2θ, rsin2θ)</code>，如下图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01vucWNA1GKg0lvyXPs_!!6000000000604-2-tps-807-585.png" alt="" /></p>
+
+<p>还需要注意 JavaScript 使用弧度制，而非角度，因此我们需要转换一下</p>
+
+<p><code class="language-plaintext highlighter-rouge">degree2Radian.ts</code></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * 角度转为弧度
+ * @param radius 角度
+ * @returns 弧度
+ */</span>
+<span class="kd">const</span> <span class="nx">getRadian</span> <span class="o">=</span> <span class="p">(</span><span class="nx">radius</span><span class="p">:</span> <span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">)</span> <span class="o">/</span> <span class="mi">180</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">getRadian</span>
+</code></pre></div></div>
+
+<p>各个顶点坐标定位如下</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">degree2Radian</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./degree2Radian</span><span class="dl">'</span>
+
+<span class="cm">/**
+ * 获取位置
+ * @param r 半径
+ * @param count 个数
+ */</span>
+<span class="kd">const</span> <span class="nx">getPos</span> <span class="o">=</span> <span class="p">(</span><span class="nx">r</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">count</span><span class="p">:</span> <span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">angleRadian</span> <span class="o">=</span> <span class="nf">degree2Radian</span><span class="p">(</span><span class="mi">360</span> <span class="o">/</span> <span class="nx">count</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="na">res</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+    <span class="na">x</span><span class="p">:</span> <span class="nx">number</span>
+    <span class="na">y</span><span class="p">:</span> <span class="nx">number</span>
+  <span class="p">}</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">count</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nf">push</span><span class="p">({</span>
+      <span class="na">x</span><span class="p">:</span> <span class="nx">r</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="nx">angleRadian</span> <span class="o">*</span> <span class="nx">i</span><span class="p">),</span>
+      <span class="na">y</span><span class="p">:</span> <span class="nx">r</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="nx">angleRadian</span> <span class="o">*</span> <span class="nx">i</span><span class="p">),</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">getPos</span>
+</code></pre></div></div>
+
+<p>我们尝试使用其渲染一下</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">ferris</span><span class="si">}</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">wheel</span><span class="si">}</span> <span class="na">ref</span><span class="p">=</span><span class="si">{</span><span class="nx">wheelDomRef</span><span class="si">}</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">roomsArea</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="si">{</span>
+        <span class="nf">getPos</span><span class="p">(</span><span class="mi">202</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">).</span><span class="nf">map</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+          <span class="p">&lt;</span><span class="nt">div</span>
+            <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">index</span><span class="si">}</span>
+            <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="s2">`</span><span class="p">${</span><span class="nx">styles</span><span class="p">.</span><span class="nx">room</span><span class="p">}</span><span class="s2"> wheelRooms`</span><span class="si">}</span>
+            <span class="na">style</span><span class="p">=</span><span class="si">{</span><span class="p">{</span>
+              <span class="na">top</span><span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">y</span><span class="p">}</span><span class="s2">px`</span><span class="p">,</span>
+              <span class="na">left</span><span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="mi">20</span><span class="p">}</span><span class="s2">px`</span><span class="p">,</span>
+            <span class="p">}</span><span class="si">}</span>
+          <span class="p">/&gt;</span>
+        <span class="p">))</span>
+      <span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="si">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">bottom</span><span class="si">}</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>注意 left 值，我们减去了自身宽度的一半保证居中</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01Whjysk1U1oJbwgmcm_!!6000000002458-2-tps-756-420.png" alt="" /></p>
+
+<p>我们可以通过控制 UI 来设置多个车厢，验证没有问题。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01YbapA224kX9sxhCZh_!!6000000007429-1-tps-600-354.gif" alt="" /></p>
+
+<h1 id="摩天轮旋转动画">摩天轮旋转动画</h1>
+
+<p>接下来我们看看动画部分，这里动画的可以拆解为2部分，一个是主轮的旋转，另一个是周围的车厢要同步反向旋转。如下图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01cMfM4F1yTEVAdKWjz_!!6000000006579-2-tps-538-549.png" alt="" /></p>
+
+<p>这里我们使用 anime.js 这个动画库来实现</p>
+
+<p>使用 anime 动画库的原因是：</p>
+<ul>
+  <li>代码简洁，api完善，便于控制暂停播放</li>
+  <li>时间线 api，保证2部分动画同步</li>
+  <li>适配高刷屏，不会出现倍速问题</li>
+  <li>anime.js 很小，17k，gzip后8.2k</li>
+</ul>
+
+<p>核心代码如下，可以看到代码真的非常简洁。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">timeline</span> <span class="o">=</span> <span class="nx">anime</span><span class="p">.</span><span class="nf">timeline</span><span class="p">({</span>
+  <span class="na">easing</span><span class="p">:</span> <span class="dl">'</span><span class="s1">linear</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">duration</span><span class="p">:</span> <span class="mi">8000</span><span class="p">,</span>
+  <span class="na">loop</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">autoplay</span><span class="p">:</span> <span class="nx">autoPlay</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">timeline</span>
+  <span class="p">.</span><span class="nf">add</span><span class="p">({</span>
+    <span class="na">targets</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">wheelDom</span><span class="p">,</span>
+    <span class="na">rotate</span><span class="p">:</span> <span class="mi">360</span><span class="p">,</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nf">add</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="na">targets</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">roomsDoms</span><span class="p">,</span>
+      <span class="na">rotate</span><span class="p">:</span> <span class="o">-</span><span class="mi">360</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="mi">0</span><span class="p">,</span>
+  <span class="p">)</span>
+</code></pre></div></div>
+
+<p>我们使用了时间线 api，将大轮和车厢进行相反方向旋转。</p>
+
+<p>并且要注意，要设置车厢的顶部中间为旋转圆心，有一种悬吊的感觉。</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transform-origin</span><span class="o">:</span> <span class="nt">top</span> <span class="nt">center</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>再添加一些动画播放控制的功能，stop、play、reverse、reset 等，在生产环境中可能会有用，例如在页面滚动到可视区外，或页面上有弹窗弹出时，我们可以暂停动画以提升页面运行时的性能。</p>
+
+<p>最终 demo</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01vMIISX1GHvdQCHvsB_!!6000000000598-1-tps-500-281.gif" alt="" /></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01g3TIqr1SEySyIIqeC_!!6000000002216-2-tps-200-200.png" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/demos/#/FerrisWheel">demo 链接</a></p>
+
+<p><a href="https://github.com/Gaohaoyang/demos/tree/main/src/FerrisWheel">demo 源码</a></p>
+
+<p>最后附一张生产环境的引用截图，很不错吧~</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01yfrf7X1yNHM49XI9g_!!6000000006566-1-tps-320-398.gif" alt="" /></p>
+
+<h1 id="小结">小结</h1>
+
+<p>本文主要分析了如何开发一个摩天轮动画，包含摩天轮车厢的布局和旋转动画部分，复习了一点点三角函数的知识，创作出了非常棒的动画效果~</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2022/10/09/three-realistic-render/">Three.js 之 19 realistic render 真实渲染</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2023/04/08/chatGPT/">科学上网注册与使用 ChatGPT</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2022/10/15/ferris-wheel/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2022/10/15/ferris-wheel/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>

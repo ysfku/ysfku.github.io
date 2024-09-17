@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>Three.js 之 19 realistic render 真实渲染</title>
+    <meta name="description" content="本系列为 Three.js journey 教程学习笔记。我们上一节最后将汉堡模型导入到了 Three.js 的场景中了，但是颜色效果很奇怪。为了让它渲染的更真实，我们需要做一些额外的操作，接下来就一起看看吧~">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2022/10/09/three-realistic-render/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>Three.js 之 19 realistic render 真实渲染</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2022-10-09
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#Three.js" title="Category: Three.js" rel="category">Three.js</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a-->
+        <a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a>&nbsp;
+    
+        <!--a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a-->
+        <a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#模型导入" id="markdown-toc-模型导入">模型导入</a></li>
+  <li><a href="#真实渲染优化" id="markdown-toc-真实渲染优化">真实渲染优化</a>    <ul>
+      <li><a href="#physicallycorrectlights-物理上正确的光照模式" id="markdown-toc-physicallycorrectlights-物理上正确的光照模式">physicallyCorrectLights 物理上正确的光照模式</a></li>
+      <li><a href="#环境贴图" id="markdown-toc-环境贴图">环境贴图</a></li>
+      <li><a href="#renderer-渲染器相关拟真优化" id="markdown-toc-renderer-渲染器相关拟真优化">Renderer 渲染器相关拟真优化</a>        <ul>
+          <li><a href="#outputencoding-渲染器的输出编码" id="markdown-toc-outputencoding-渲染器的输出编码">outputEncoding 渲染器的输出编码</a></li>
+          <li><a href="#textures-encoding" id="markdown-toc-textures-encoding">Textures encoding</a></li>
+          <li><a href="#tonemapping-色调映射" id="markdown-toc-tonemapping-色调映射">toneMapping 色调映射</a></li>
+          <li><a href="#tonemappingexposure-色调映射的曝光级别" id="markdown-toc-tonemappingexposure-色调映射的曝光级别">toneMappingExposure 色调映射的曝光级别</a></li>
+          <li><a href="#anti-aliasing-抗锯齿" id="markdown-toc-anti-aliasing-抗锯齿">Anti Aliasing 抗锯齿</a></li>
+        </ul>
+      </li>
+      <li><a href="#shadows-影" id="markdown-toc-shadows-影">Shadows 影</a></li>
+      <li><a href="#最终微调" id="markdown-toc-最终微调">最终微调</a></li>
+    </ul>
+  </li>
+  <li><a href="#汉堡模型" id="markdown-toc-汉堡模型">汉堡模型</a></li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p>本系列为 <a href="https://threejs-journey.com/">Three.js journey</a> 教程学习笔记。</p>
+
+<p>我们上一节最后将汉堡模型导入到了 Three.js 的场景中了，但是颜色效果很奇怪。为了让它渲染的更真实，我们需要做一些额外的操作，接下来就一起看看吧~</p>
+
+<p>我们导入复杂一点模型进行展示，我们导入之前了解过的飞行员头盔。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01U8hkPS23CLz1bMesk_!!6000000007219-2-tps-130-130.png" alt="" /></p>
+
+<h1 id="模型导入">模型导入</h1>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">GLTFLoader</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/loaders/GLTFLoader</span><span class="dl">'</span>
+
+<span class="c1">// ...</span>
+
+<span class="cm">/**
+ * Loaders
+ */</span>
+<span class="kd">const</span> <span class="nx">gltfLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GLTFLoader</span><span class="p">()</span>
+
+<span class="c1">// ...</span>
+
+<span class="cm">/**
+ * Models
+ */</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/models/FlightHelmet/glTF/FlightHelmet.gltf</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+  <span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>再加一些灯光</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">directionLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">DirectionalLight</span><span class="p">(</span><span class="dl">'</span><span class="s1">#ffffff</span><span class="dl">'</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.25</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionLight</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01UWgK3n1OIOy7M3p9I_!!6000000001682-2-tps-1089-1308.png" width="400px" /></p>
+
+<h1 id="真实渲染优化">真实渲染优化</h1>
+
+<p>接下来我们做一些真实渲染的优化操作</p>
+
+<h2 id="physicallycorrectlights-物理上正确的光照模式">physicallyCorrectLights 物理上正确的光照模式</h2>
+
+<p>我们将切换到使用物理正确的照明强度计算。物理正确的照明与基于物理的渲染不是一回事，但是，将两者同时使用以便给我们一个完整的物理准确的场景是有意义的。</p>
+
+<p>物理正确的照明意味着使用真实世界的物理方程计算光线如何随着距离光源（衰减）而衰减。这是相当简单的计算，你可以在任何物理教科书找到这些方程。</p>
+
+<p>另一方面，基于物理的渲染涉及以物理正确的方式计算光线与表面的反应。这些方程要复杂得多。幸运的是，我们不必完全理解原理就可以使用它们！</p>
+
+<p>只需要如下设置</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">renderer</span><span class="p">.</span><span class="nx">physicallyCorrectLights</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<!-- 背后本质是通过乘以 π 将 luminous intensity(发光强度) 转化为了 luminous power(f发光功率) -->
+
+<p>效果如下
+physicallyCorrectLights false | physicallyCorrectLights true
+— | —
+<img src="https://gw.alicdn.com/imgextra/i3/O1CN01j2Q1Pa1a3ztqRGX2G_!!6000000003275-2-tps-1125-2436.png" width="300px" /> | <img src="https://gw.alicdn.com/imgextra/i1/O1CN012Q3zXa1hTpY91nPvn_!!6000000004279-2-tps-1125-2436.png" width="300px" /></p>
+
+<h2 id="环境贴图">环境贴图</h2>
+
+<p>目前我们只有微弱的平行光，所以可能看不到阴影里的内容。我们现在加一些环境贴图看看效果。</p>
+
+<p>我们添加如下效果的环境贴图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01WHVNSw1uptdSV1SwA_!!6000000006087-2-tps-1229-922.png" width="700px" /></p>
+
+<p>并环境贴图添加至场景中</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Loaders
+ */</span>
+<span class="kd">const</span> <span class="nx">cubeTextureLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">CubeTextureLoader</span><span class="p">()</span>
+
+<span class="cm">/**
+ * Environment map
+ */</span>
+<span class="kd">const</span> <span class="nx">environmentMap</span> <span class="o">=</span> <span class="nx">cubeTextureLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">([</span>
+  <span class="dl">'</span><span class="s1">../assets/textures/environmentMaps/3/px.jpg</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">../assets/textures/environmentMaps/3/nx.jpg</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">../assets/textures/environmentMaps/3/py.jpg</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">../assets/textures/environmentMaps/3/ny.jpg</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">../assets/textures/environmentMaps/3/pz.jpg</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">../assets/textures/environmentMaps/3/nz.jpg</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">])</span>
+
+<span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="nx">environmentMap</span> <span class="c1">// 将环境贴图添加至场景中</span>
+</code></pre></div></div>
+
+<p>遍历模型中的 Mesh，并添加材质的环境贴图，将环境贴图强度设置为 2.5</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">debugObject</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">envMapIntensity</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="cm">/**
+ * Update all materials
+ */</span>
+<span class="kd">const</span> <span class="nx">updateAllMaterials</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">scene</span><span class="p">.</span><span class="nf">traverse</span><span class="p">((</span><span class="nx">child</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">child</span> <span class="k">instanceof</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span> <span class="o">&amp;&amp;</span> <span class="nx">child</span><span class="p">.</span><span class="nx">material</span> <span class="k">instanceof</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshStandardMaterial</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span>
+      <span class="nx">child</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">envMap</span> <span class="o">=</span> <span class="nx">environmentMap</span>
+      <span class="nx">child</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">envMapIntensity</span> <span class="o">=</span> <span class="nx">debugObject</span><span class="p">.</span><span class="nx">envMapIntensity</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">debugObject</span><span class="p">,</span> <span class="dl">'</span><span class="s1">envMapIntensity</span><span class="dl">'</span><span class="p">).</span><span class="nf">min</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">max</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="nf">step</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">onChange</span><span class="p">(</span><span class="nx">updateAllMaterials</span><span class="p">)</span>
+
+<span class="cm">/**
+ * Models
+ */</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/models/FlightHelmet/glTF/FlightHelmet.gltf</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+  <span class="nf">updateAllMaterials</span><span class="p">()</span>
+<span class="p">})</span>
+
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>无环境贴图</th>
+      <th>有环境贴图</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://gw.alicdn.com/imgextra/i1/O1CN012Q3zXa1hTpY91nPvn_!!6000000004279-2-tps-1125-2436.png" width="300px" /></td>
+      <td><img src="https://gw.alicdn.com/imgextra/i3/O1CN01aHYoHk1PyMs9ycfro_!!6000000001909-2-tps-1125-2436.png" width="300px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="renderer-渲染器相关拟真优化">Renderer 渲染器相关拟真优化</h2>
+
+<p>物体现在越来越真实，但还是有些不自然，我们需要处理一下颜色相关的部分，可以控制 WebGLRenderer 的一些属性实现。</p>
+
+<h3 id="outputencoding-渲染器的输出编码">outputEncoding 渲染器的输出编码</h3>
+
+<p><code class="language-plaintext highlighter-rouge">.outputEncoding : number</code></p>
+
+<p>定义渲染器的输出编码。默认为 <code class="language-plaintext highlighter-rouge">THREE.LinearEncoding</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>THREE.LinearEncoding
+THREE.sRGBEncoding
+THREE.BasicDepthPacking
+THREE.RGBADepthPacking
+</code></pre></div></div>
+
+<p>这些常量用于纹理的encoding属性。</p>
+
+<p>推荐使用的是 sRGBEncoding</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">renderer</span><span class="p">.</span><span class="nx">outputEncoding</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">sRGBEncoding</span>
+</code></pre></div></div>
+
+<p>对比效果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>outputEncoding LinearEncoding</th>
+      <th>outputEncoding sRGBEncoding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://gw.alicdn.com/imgextra/i3/O1CN01aHYoHk1PyMs9ycfro_!!6000000001909-2-tps-1125-2436.png" width="300px" /></td>
+      <td><img src="https://gw.alicdn.com/imgextra/i1/O1CN01eUlWY01MbyfDrWlc8_!!6000000001454-2-tps-1125-2436.png" width="300px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>可以看出纹理变得更加明亮了，这些纹理也会影响环境贴图。</p>
+
+<p>另一个可以调整的值是 THREE.GammaEncoding。这种编码的优点是可以让你使用一个叫做 gammaFactor 的值，它的作用有点像亮度，但我们不会使用这个。</p>
+
+<p>Gamma 编码是一种存储颜色的方法，同时根据人眼敏感度优化存储明暗值的方式。当我们使用 sRGBEncoding 时，就像使用 GammaEncoding 一样，默认 gamma 因子为 2.2，这是常用值。</p>
+
+<p>虽然有些人可能认为 GammaEncoding 比 sRGBEncoding 更好，因为我们可以控制更暗或更亮场景的 gamma 因子，但这在物理上看起来并不正确，我们稍后会看到如何以更好的方式管理“亮度”。</p>
+
+<p>相关资料可参考</p>
+<ul>
+  <li><a href="https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/">https://www.donmccurdy.com/2020/06/17/color-management-in-threejs/</a></li>
+  <li><a href="https://medium.com/game-dev-daily/the-srgb-learning-curve-773b7f68cf7a">https://medium.com/game-dev-daily/the-srgb-learning-curve-773b7f68cf7a</a></li>
+</ul>
+
+<h3 id="textures-encoding">Textures encoding</h3>
+
+<p>环境贴图颜色现在是不太正确的。它们看起来是灰色的，并且淡化了。即使效果看起来很不错，但保留正确的颜色更令人满意。</p>
+
+<p>原因是我们的渲染器 outputEncoding 是 THREE.sRGBEncoding，而环境贴图纹理默认是 THREE.LinearEncoding。</p>
+
+<p>规则很简单。我们可以直接看到的所有纹理，比如地图，应该是 THREE.sRGBEncoding 作为编码，所有其他的纹理，比如 normalMap，应该是 THREE.LinearEncoding。</p>
+
+<p>我们可以将 environmentMap 纹理编码改成 THREE.sRGBEncoding：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">environmentMap</span><span class="p">.</span><span class="nx">encoding</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">sRGBEncoding</span>
+</code></pre></div></div>
+
+<p>但是模型纹理呢？幸运的是，GLTFLoader 实现了这个规则，从它加载的所有纹理都会自动进行正确的编码。</p>
+
+<p>对比如下</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>environmentMap.encoding  LinearEncoding</th>
+      <th>environmentMap.encoding sRGBEncoding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://gw.alicdn.com/imgextra/i1/O1CN01eUlWY01MbyfDrWlc8_!!6000000001454-2-tps-1125-2436.png" width="300px" /></td>
+      <td><img src="https://gw.alicdn.com/imgextra/i1/O1CN01hliATr1BzN7a2AwN1_!!6000000000016-2-tps-1125-2436.png" width="300px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tonemapping-色调映射">toneMapping 色调映射</h3>
+
+<p><code class="language-plaintext highlighter-rouge">.toneMapping : Constant</code></p>
+
+<p>默认是 NoToneMapping。查看 Renderer constants 以获取其它备选项</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>THREE.NoToneMapping
+THREE.LinearToneMapping
+THREE.ReinhardToneMapping
+THREE.CineonToneMapping
+THREE.ACESFilmicToneMapping
+</code></pre></div></div>
+
+<p>这些常量定义了 WebGLRenderer 中 toneMapping 的属性。这个属性用于在普通计算机显示器或者移动设备屏幕等低动态范围介质上，模拟、逼近高动态范围（HDR）效果。</p>
+
+<p>这里我们先使用 ReinhardToneMapping</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>toneMapping NoToneMapping</th>
+      <th>toneMapping ReinhardToneMapping</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://gw.alicdn.com/imgextra/i1/O1CN01hliATr1BzN7a2AwN1_!!6000000000016-2-tps-1125-2436.png" width="300px" /></td>
+      <td><img src="https://gw.alicdn.com/imgextra/i3/O1CN01ZAftt51r8RCxq4dn9_!!6000000005586-2-tps-1125-2436.png" width="300px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tonemappingexposure-色调映射的曝光级别">toneMappingExposure 色调映射的曝光级别</h3>
+
+<p>我们还可以更改色调映射曝光。你可以看到我们让多少光进入，算法会按照自己的方式处理它。</p>
+
+<p><code class="language-plaintext highlighter-rouge">.toneMappingExposure : Number</code></p>
+
+<p>色调映射的曝光级别。默认是1</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">renderer</span><span class="p">.</span><span class="nx">toneMappingExposure</span> <span class="o">=</span> <span class="mf">2.5</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>toneMappingExposure 1</th>
+      <th>toneMappingExposure 2.5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://gw.alicdn.com/imgextra/i3/O1CN01ZAftt51r8RCxq4dn9_!!6000000005586-2-tps-1125-2436.png" width="300px" /></td>
+      <td><img src="https://gw.alicdn.com/imgextra/i3/O1CN01JF2Iu81PDeTbEnsKZ_!!6000000001807-2-tps-1125-2436.png" width="300px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="anti-aliasing-抗锯齿">Anti Aliasing 抗锯齿</h3>
+
+<p>我们仔细观察，会在某些特定的角度看到阶梯状的锯齿，通常出现在几何图形的边缘。</p>
+
+<p>这是一个众所周知的问题。当一个像素的渲染发生时，会检查该像素中正在渲染什么几何图形，并计算颜色，最后，该颜色出现在屏幕上。但是几何边缘通常不会与屏幕像素的垂直线和水平线完全对齐，这就是为什么你会看到这个锯齿状的阶梯。</p>
+
+<p>有很多方法可以解决这个问题，开发人员多年来一直在努力解决这个问题。</p>
+
+<p>一个简单的解决方案是增加我们渲染的分辨率。当调整到正常大小时，每个像素颜色将自动从渲染的 4 个像素中取平均值。</p>
+
+<p>这种解决方案称为超采样 (SSAA) 或全屏采样 (FSAA)，它是最简单且更高效的解决方案。不过，这意味着要渲染 4 倍以上的像素，这可能会导致性能问题。</p>
+
+<p>另一种解决方案称为多重采样 (MSAA)。同样，这个方法是为每个像素渲染多个值（通常是 4 个），就像超级采样一样，但只在几何体的边缘上。然后对像素的值进行平均以获得最终的像素值。</p>
+
+<p>最新的 GPU 可以执行这种多重采样抗锯齿，Three.js 会自动处理设置。我们只需要在实例化期间将 antialias 属性更改为 true</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Renderer</span>
+<span class="kd">const</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">WebGLRenderer</span><span class="p">({</span>
+  <span class="nx">canvas</span><span class="p">,</span>
+  <span class="na">antialias</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>锯齿消失了。放大观察会更加明显。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>antialias false</th>
+      <th>antialias true</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://gw.alicdn.com/imgextra/i3/O1CN01JF2Iu81PDeTbEnsKZ_!!6000000001807-2-tps-1125-2436.png" width="300px" /></td>
+      <td><img src="https://gw.alicdn.com/imgextra/i4/O1CN011ocjd71s2JWpvlETh_!!6000000005708-2-tps-1125-2436.png" width="300px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>局部放大</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>antialias false</th>
+      <th>antialias true</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://gw.alicdn.com/imgextra/i2/O1CN01ylYR2N25bChoKbko7_!!6000000007544-2-tps-339-339.png" width="339px" /></td>
+      <td><img src="https://gw.alicdn.com/imgextra/i2/O1CN01lPd58w23UfpHm0IGc_!!6000000007259-2-tps-339-339.png" width="339px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>使用抗锯齿会消耗一些资源。像素比（pixel ratio）大于 1 的屏幕实际上并不需要抗锯齿。比较好的方法是只为像素比大于 2 的屏幕激活它。我们将在以后的学习中看到如何实现它，以及其他优化。</p>
+
+<h2 id="shadows-影">Shadows 影</h2>
+
+<p>最后我们再添加一些光影效果。我们之前在已经学习过了。</p>
+
+<p>首先将 WebGLRenderer 的 shadow 打开</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">renderer</span><span class="p">.</span><span class="nx">shadowMap</span><span class="p">.</span><span class="nx">enabled</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nx">shadowMap</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PCFSoftShadowMap</span>
+</code></pre></div></div>
+
+<p>打开平行光发射投影</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">directionLight</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p>添加 CameraHelper 观察一下光照范围是否将物体全部包裹住</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">directionalLightCameraHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">CameraHelper</span><span class="p">(</span><span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionalLightCameraHelper</span><span class="p">)</span>
+
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">far</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">mapSize</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">.mapSize : Vector2</code> 一个 Vector2 定义阴影贴图的宽度和高度。</p>
+
+<p>较高的值会以计算时间为代价提供更好的阴影质量。值必须是 2 的幂，最大为给定设备的 <code class="language-plaintext highlighter-rouge">WebGLRenderer.capabilities.maxTextureSize</code>，尽管宽度和高度不必相同（例如，(512, 1024) 是有效的）。 默认值为(512, 512)。</p>
+
+<p>由于我们需要逼真和精确的阴影，并且因为我们只有一盏灯，我们可以将阴影贴图的大小增加到 1024x1024，而不必担心帧率下降。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01OILgXL1PoIA6fkYax_!!6000000001887-2-tps-763-805.png" width="400px" /></p>
+
+<p>最后，我们可以激活模型所有网格上的阴影。由于我们已经在 updateAllMaterials 函数中遍历模型，让我们简单地激活所有 children 的 castShadow 和 receiveShadow</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Update all materials
+ */</span>
+<span class="kd">const</span> <span class="nx">updateAllMaterials</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">scene</span><span class="p">.</span><span class="nf">traverse</span><span class="p">((</span><span class="nx">child</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">child</span> <span class="k">instanceof</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span> <span class="o">&amp;&amp;</span> <span class="nx">child</span><span class="p">.</span><span class="nx">material</span> <span class="k">instanceof</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshStandardMaterial</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// ...</span>
+      <span class="nx">child</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+      <span class="nx">child</span><span class="p">.</span><span class="nx">receiveShadow</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>no shadow</th>
+      <th>shadow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://gw.alicdn.com/imgextra/i4/O1CN011ocjd71s2JWpvlETh_!!6000000005708-2-tps-1125-2436.png" width="300px" /></td>
+      <td><img src="https://gw.alicdn.com/imgextra/i4/O1CN013pBPL01XVWrOIZ3Ui_!!6000000002929-2-tps-1125-2436.png" width="300px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="最终微调">最终微调</h2>
+
+<p>现在我们已经准备就绪，我们可以调整值，确保 directionalLight 对应于环境贴图中的灯光，尝试其他环境贴图，测试不同的色调映射，添加动画等。</p>
+
+<p>这些由你个人决定。花点时间，查看渲染，环顾四周，因为您需要现实生活中的标记，确保您的屏幕颜色良好，也可以问问周围的朋友建议，直到一切都正确设置。</p>
+
+<p>这里我调整了环境贴图的强度和光照强度，看起来和环境融合会更真实一些</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>光照调整前</th>
+      <th>光照调整后</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://gw.alicdn.com/imgextra/i4/O1CN013pBPL01XVWrOIZ3Ui_!!6000000002929-2-tps-1125-2436.png" width="300px" /></td>
+      <td><img src="https://gw.alicdn.com/imgextra/i1/O1CN01r1gBJe1yvd3Z7inzX_!!6000000006641-2-tps-1125-2436.png" width="300px" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>最终对比过程</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01Ww0nWf1vntWNoZwVf_!!6000000006218-2-tps-2250-1949.png" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/25-realisticRender/">demo 链接</a></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/25-realisticRender">demo 源码</a></p>
+
+<h1 id="汉堡模型">汉堡模型</h1>
+
+<p>还记得上一节我们做的汉堡模型吗？我们也将它重新渲染一下看看效果。</p>
+
+<p>导入并渲染后发现表面有一些小条纹，这被称为 shadow acne（阴影粉刺 or 阴影痤疮）</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01uAveqz1FPstdmmYK9_!!6000000000480-2-tps-374-402.png" alt="" /></p>
+
+<p>这是因为在计算表面是否在阴影中时，出于精确原因，阴影粉刺可能会出现在光滑和平坦的表面上。 这里发生的事情是汉堡包在它自己的表面上投下了阴影。我们可以使用以下2个属性解决问题</p>
+
+<p><code class="language-plaintext highlighter-rouge">.bias : Float</code> 用于平面</p>
+
+<p>阴影贴图偏差，在确定曲面是否在阴影中时，从标准化深度添加或减去多少。
+默认值为0.此处非常小的调整（大约0.0001）可能有助于减少阴影中的伪影</p>
+
+<p><code class="language-plaintext highlighter-rouge">.normalBias : Float</code> 用于曲面</p>
+
+<p>定义用于查询阴影贴图的位置沿对象法线偏移多少。 默认值为 0。增加此值可用于减少阴影粉刺，尤其是在光线以浅角度照射到几何体上的大型场景中。 代价是阴影可能会出现扭曲。</p>
+
+<p>我们添加如下代码</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">normalBias</span> <span class="o">=</span> <span class="mf">0.05</span>
+</code></pre></div></div>
+
+<p>最终效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01P3VIFK1hpMAIHdT9h_!!6000000004326-2-tps-1125-2436.png" width="400px" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/25-realisticRenderBurger/">demo 链接</a></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/25-realisticRenderBurger">demo 源码</a></p>
+
+<p>与上一节的汉堡对比，就会发现之前的很丑毫无胃口，哈哈哈</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01Byp1xO1Bx5887ToQR_!!6000000000011-2-tps-1256-680.png" width="600px" /></p>
+
+<h1 id="小结">小结</h1>
+
+<p>本节学习了如何让模型更加真实的渲染。通过添加环境贴图、renderer 拟真优化等方式完成。通过 physicallyCorrectLights, environmentMap, outputEncoding, textures encoding, toneMapping, toneMappingExposure, antialias, Shadows 等让渲染显得更加真实。</p>
+
+<p>让物体在3D空间中更加真实的渲染非常酷。虽然我们做了很多努力，但有时看上去还是不够真实，任重道远。</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <h2 id="similar_posts">Artikel lainnya dari Three.js</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2022/08/21/three-custom-model/">Three.js 之 18 使用 Blender 设计和导出模型
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2022/10/06/membuat-channel-youtube/">Membuat Channel Youtube</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2022/10/15/ferris-wheel/">摩天轮动画的实现揭秘</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2022/10/09/three-realistic-render/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2022/10/09/three-realistic-render/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Artikel lainnya</a></li>
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>

@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>Three.js 之 2 Camera 相机</title>
+    <meta name="description" content="本系列为 Three.js journey 教程学习笔记。Camera 相机查看 Three.js 的文档，可以看到 Camera 是一个抽象类，一般不直接使用，其他类型的 Camera 实现了这个抽象类。有  ArrayCamera 包含着一组子摄像机，常用于多人同屏的渲染，更好地提升VR场景的渲染性能  St...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2022/05/16/three-camera/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>Three.js 之 2 Camera 相机</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2022-05-16
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#Three.js" title="Category: Three.js" rel="category">Three.js</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a-->
+        <a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a>&nbsp;
+    
+        <!--a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a-->
+        <a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#perspectivecamera-透视相机" id="markdown-toc-perspectivecamera-透视相机">PerspectiveCamera 透视相机</a></li>
+  <li><a href="#orthographiccamera-正交相机" id="markdown-toc-orthographiccamera-正交相机">OrthographicCamera 正交相机</a></li>
+  <li><a href="#相机控制" id="markdown-toc-相机控制">相机控制</a></li>
+  <li><a href="#threejs-内置的控制器" id="markdown-toc-threejs-内置的控制器">Three.js 内置的控制器</a></li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p>本系列为 <a href="https://threejs-journey.com/">Three.js journey</a> 教程学习笔记。</p>
+
+<p>Camera 相机</p>
+
+<p>查看 Three.js 的文档，可以看到 <a href="https://threejs.org/docs/index.html#api/en/cameras/Camera">Camera</a> 是一个抽象类，一般不直接使用，其他类型的 Camera 实现了这个抽象类。有</p>
+
+<ul>
+  <li>ArrayCamera 包含着一组子摄像机，常用于多人同屏的渲染，更好地提升VR场景的渲染性能</li>
+  <li>StereoCamera 双透视摄像机（立体相机），常用于创建 3D 立体影像，比如 3D 电影之类或 VR</li>
+  <li>CubeCamera 有6个渲染，分别是立方体的6个面，常用于渲染环境、反光等</li>
+  <li>OrthographicCamera 正交相机，在这种投影模式下，无论物体距离相机距离远或者近，在最终渲染的图片中物体的大小都保持不变。这对于渲染2D场景或者UI元素是非常有用的。</li>
+  <li>PerspectiveCamera 透视相机，这一投影模式被用来模拟人眼所看到的景象，它是3D场景的渲染中使用得最普遍的投影模式。</li>
+</ul>
+
+<h1 id="perspectivecamera-透视相机">PerspectiveCamera 透视相机</h1>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PerspectiveCamera</span><span class="p">(</span><span class="nx">fov</span> <span class="p">:</span> <span class="nb">Number</span><span class="p">,</span> <span class="nx">aspect</span> <span class="p">:</span> <span class="nb">Number</span><span class="p">,</span> <span class="nx">near</span> <span class="p">:</span> <span class="nb">Number</span><span class="p">,</span> <span class="nx">far</span> <span class="p">:</span> <span class="nb">Number</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>fov — 摄像机视锥体垂直视野角度</li>
+  <li>aspect — 摄像机视锥体长宽比</li>
+  <li>near — 摄像机视锥体近端面</li>
+  <li>far — 摄像机视锥体远端面</li>
+</ul>
+
+<p>这些参数一起定义了摄像机的 viewing frustum（视锥体）。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01PyRDNn1oe5asMv6pZ_!!6000000005249-2-tps-700-304.png" alt="" /></p>
+
+<p>透视图中，灰色的部分是视锥体，是可能被渲染的物体所在的区域。fov 是视锥体竖直方向上的张角（是角度制而非弧度制），如侧视图所示。</p>
+
+<p>aspect 等于 width / height，是照相机水平方向和竖直方向长度的比值，通常设为 Canvas 的横纵比例。</p>
+
+<p>near 和 far 分别是照相机到视锥体最近、最远的距离，均为正值，且 fa r应大于 near。</p>
+
+<p>但请注意，不要将 near 和 far 设置为比较极端的数值，如 0.0001 和 99999，这可能引起 bug，让 threejs 无法分辨物体的前后，导致闪动</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">THREE</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three</span><span class="dl">'</span>
+<span class="c1">// Canvas</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mainCanvas</span><span class="dl">'</span><span class="p">)</span> <span class="nx">as</span> <span class="nx">HTMLCanvasElement</span>
+
+<span class="c1">// Scene</span>
+<span class="kd">const</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Scene</span><span class="p">()</span>
+
+<span class="c1">// Object</span>
+<span class="kd">const</span> <span class="nx">cube</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BoxGeometry</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">({</span>
+    <span class="na">color</span><span class="p">:</span> <span class="mh">0x607d8b</span><span class="p">,</span>
+  <span class="p">}),</span>
+<span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">cube</span><span class="p">)</span>
+
+<span class="c1">// Camera</span>
+<span class="kd">const</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PerspectiveCamera</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">/</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nx">camera</span><span class="p">.</span><span class="nf">lookAt</span><span class="p">(</span><span class="nx">cube</span><span class="p">.</span><span class="nx">position</span><span class="p">)</span>
+
+<span class="c1">// Renderer</span>
+<span class="kd">const</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">WebGLRenderer</span><span class="p">({</span>
+  <span class="nx">canvas</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setSize</span><span class="p">(</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">)</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01eebvAJ26keSOXhdcV_!!6000000007700-2-tps-762-559.png" alt="" /></p>
+
+<h1 id="orthographiccamera-正交相机">OrthographicCamera 正交相机</h1>
+
+<p>构造函数</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OrthographicCamera( left : Number, right : Number, top : Number, bottom : Number, near : Number, far : Number )
+</code></pre></div></div>
+
+<ul>
+  <li>left — 摄像机视锥体左侧面。</li>
+  <li>right — 摄像机视锥体右侧面。</li>
+  <li>top — 摄像机视锥体上侧面。</li>
+  <li>bottom — 摄像机视锥体下侧面。</li>
+  <li>near — 摄像机视锥体近端面。</li>
+  <li>far — 摄像机视锥体远端面。</li>
+</ul>
+
+<p>这些参数一起定义了摄像机的 viewing frustum（视锥体），下图灰色部分为 frustum，只有在视景体内部（下图中的灰色部分）的物体才可能显示在屏幕上，而视景体外的物体会在显示之前被裁减掉。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01hD4lrM1H1GhifTQiH_!!6000000000697-2-tps-700-632.png" alt="" /></p>
+
+<p>为了保持照相机的横竖比例，需要保证 <code class="language-plaintext highlighter-rouge">(right - left)</code> 与 <code class="language-plaintext highlighter-rouge">(top - bottom)</code> 的比例与 Canvas 宽度与高度的比例一致。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">THREE</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">stats</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/stats</span><span class="dl">'</span>
+
+<span class="c1">// Canvas</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mainCanvas</span><span class="dl">'</span><span class="p">)</span> <span class="nx">as</span> <span class="nx">HTMLCanvasElement</span>
+
+<span class="c1">// Scene</span>
+<span class="kd">const</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Scene</span><span class="p">()</span>
+
+<span class="c1">// Object</span>
+<span class="kd">const</span> <span class="nx">cube</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BoxGeometry</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">({</span>
+    <span class="na">color</span><span class="p">:</span> <span class="mh">0x607d8b</span><span class="p">,</span>
+  <span class="p">}),</span>
+<span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">cube</span><span class="p">)</span>
+
+<span class="c1">// Camera</span>
+<span class="kd">const</span> <span class="nx">aspectRatio</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">/</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientHeight</span>
+<span class="kd">const</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">OrthographicCamera</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="nx">aspectRatio</span><span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="nx">aspectRatio</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">camera</span><span class="p">.</span><span class="nf">lookAt</span><span class="p">(</span><span class="nx">cube</span><span class="p">.</span><span class="nx">position</span><span class="p">)</span>
+
+<span class="c1">// Renderer</span>
+<span class="kd">const</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">WebGLRenderer</span><span class="p">({</span>
+  <span class="nx">canvas</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setSize</span><span class="p">(</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">)</span>
+
+<span class="c1">// Clock</span>
+<span class="kd">const</span> <span class="nx">clock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Clock</span><span class="p">()</span>
+
+<span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+
+  <span class="kd">const</span> <span class="nx">delta</span> <span class="o">=</span> <span class="nx">clock</span><span class="p">.</span><span class="nf">getDelta</span><span class="p">()</span>
+
+  <span class="nx">cube</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">*</span> <span class="nx">delta</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">tick</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>效果如下：</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01uwTnlt1jGCy7GzaiV_!!6000000004520-1-tps-774-559.gif" alt="" /></p>
+
+<h1 id="相机控制">相机控制</h1>
+
+<p>尝试用鼠标控制相机的位置，首先创建一个监听 mousemove 的事件工具函数</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">captureMouse</span> <span class="o">=</span> <span class="p">(</span><span class="nx">element</span><span class="p">:</span> <span class="nx">HTMLElement</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="na">mouse</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">x</span><span class="p">:</span> <span class="nx">number</span>
+    <span class="na">y</span><span class="p">:</span> <span class="nx">number</span>
+    <span class="na">event</span><span class="p">:</span> <span class="nx">MouseEvent</span> <span class="o">|</span> <span class="kc">null</span>
+  <span class="p">}</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">event</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="p">}</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">offsetLeft</span><span class="p">,</span> <span class="nx">offsetTop</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">element</span>
+
+  <span class="nx">element</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">mousemove</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">x</span>
+    <span class="kd">let</span> <span class="nx">y</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageX</span>
+    <span class="nx">y</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pageY</span>
+    <span class="nx">x</span> <span class="o">-=</span> <span class="nx">offsetLeft</span>
+    <span class="nx">y</span> <span class="o">-=</span> <span class="nx">offsetTop</span>
+    <span class="nx">mouse</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span>
+    <span class="nx">mouse</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span>
+    <span class="nx">mouse</span><span class="p">.</span><span class="nx">event</span> <span class="o">=</span> <span class="nx">e</span>
+  <span class="p">})</span>
+  <span class="k">return</span> <span class="nx">mouse</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>引入到画布中</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">THREE</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">stats</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/stats</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">captureMouse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/utils</span><span class="dl">'</span>
+
+<span class="c1">// Canvas</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mainCanvas</span><span class="dl">'</span><span class="p">)</span> <span class="nx">as</span> <span class="nx">HTMLCanvasElement</span>
+
+<span class="c1">// Scene</span>
+<span class="kd">const</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Scene</span><span class="p">()</span>
+
+<span class="c1">// Object</span>
+<span class="kd">const</span> <span class="nx">cube</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BoxGeometry</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">({</span>
+    <span class="na">color</span><span class="p">:</span> <span class="mh">0x607d8b</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">cube</span><span class="p">)</span>
+
+<span class="c1">// Camera</span>
+<span class="kd">const</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PerspectiveCamera</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">/</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1">// Renderer</span>
+<span class="kd">const</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">WebGLRenderer</span><span class="p">({</span>
+  <span class="nx">canvas</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setSize</span><span class="p">(</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">)</span>
+
+<span class="c1">// mouse postion</span>
+<span class="kd">const</span> <span class="nx">mouse</span> <span class="o">=</span> <span class="nf">captureMouse</span><span class="p">(</span><span class="nx">canvas</span><span class="p">)</span>
+
+<span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+
+  <span class="c1">// Uppdate camera</span>
+  <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="p">(</span><span class="nx">mouse</span><span class="p">.</span><span class="nx">x</span> <span class="o">/</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+  <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="nx">mouse</span><span class="p">.</span><span class="nx">y</span> <span class="o">/</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">tick</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01arzuIS1KGKgQ7jXoq_!!6000000001136-1-tps-774-559.gif" alt="" /></p>
+
+<p>如果设置了 <code class="language-plaintext highlighter-rouge">camera.lookAt(cube.position)</code> 则效果如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+
+  <span class="c1">// Uppdate camera</span>
+  <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="p">(</span><span class="nx">mouse</span><span class="p">.</span><span class="nx">x</span> <span class="o">/</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+  <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="nx">mouse</span><span class="p">.</span><span class="nx">y</span> <span class="o">/</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+  <span class="nx">camera</span><span class="p">.</span><span class="nf">lookAt</span><span class="p">(</span><span class="nx">cube</span><span class="p">.</span><span class="nx">position</span><span class="p">)</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01tcaVl51ENJ19aFmxS_!!6000000000339-1-tps-774-559.gif" alt="" /></p>
+
+<p>看起来有点复杂，幸运的是 Three.js 内置了一些控制器</p>
+
+<h1 id="threejs-内置的控制器">Three.js 内置的控制器</h1>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">FlyControls</code> 启用了一种类似于数字内容创建工具（例如Blender）中飞行模式的导航方式。 你可以在3D空间中任意变换摄像机，并且无任何限制（例如，专注于一个特定的目标）。</li>
+  <li><code class="language-plaintext highlighter-rouge">FirstPersonControls</code> 该类是 FlyControls 的另一个实现。</li>
+  <li><code class="language-plaintext highlighter-rouge">PointerLockControls</code> 该类的实现是基于Pointer Lock API的。 对于第一人称3D游戏来说， PointerLockControls 是一个非常完美的选择。</li>
+  <li><code class="language-plaintext highlighter-rouge">OrbitControls</code> （轨道控制器）可以使得相机围绕目标进行轨道运动。</li>
+  <li><code class="language-plaintext highlighter-rouge">TrackballControls</code> 与 OrbitControls 相类似。然而，它不能恒定保持摄像机的up向量。 这意味着，如果摄像机绕过“北极”和“南极”，则不会翻转以保持“右侧朝上”。</li>
+  <li><code class="language-plaintext highlighter-rouge">TransformControls</code> 该类可提供一种类似于在数字内容创建工具（例如Blender）中对模型进行交互的方式，来在3D空间中变换物体。 和其他控制器不同的是，变换控制器不倾向于对场景摄像机的变换进行改变。</li>
+  <li><code class="language-plaintext highlighter-rouge">DragControls</code> 该类被用于提供一个拖放交互。</li>
+</ul>
+
+<p>接下来我们使用 OrbitControls</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">THREE</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OrbitControls</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/controls/OrbitControls</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">stats</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/stats</span><span class="dl">'</span>
+
+<span class="c1">// Canvas</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mainCanvas</span><span class="dl">'</span><span class="p">)</span> <span class="nx">as</span> <span class="nx">HTMLCanvasElement</span>
+
+<span class="c1">// Scene</span>
+<span class="kd">const</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Scene</span><span class="p">()</span>
+
+<span class="c1">// Object</span>
+<span class="kd">const</span> <span class="nx">cube</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BoxGeometry</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshBasicMaterial</span><span class="p">({</span>
+    <span class="na">color</span><span class="p">:</span> <span class="mh">0x607d8b</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">cube</span><span class="p">)</span>
+
+<span class="c1">// Camera</span>
+<span class="kd">const</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PerspectiveCamera</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">/</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">controls</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OrbitControls</span><span class="p">(</span><span class="nx">camera</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">)</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">enableDamping</span> <span class="o">=</span> <span class="kc">true</span>
+
+<span class="c1">// Renderer</span>
+<span class="kd">const</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">WebGLRenderer</span><span class="p">({</span>
+  <span class="nx">canvas</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setSize</span><span class="p">(</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">)</span>
+
+<span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+
+  <span class="nx">controls</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">tick</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>其中设置了 enableDamping 开启阻尼，需要在 requestAnimationFrame update controls</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">controls</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OrbitControls</span><span class="p">(</span><span class="nx">camera</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">)</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">enableDamping</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN012ZXoZ31bYyGoroKdJ_!!6000000003478-1-tps-774-559.gif" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/07-camera/">demo 链接</a></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/07-camera">demo 源码</a></p>
+
+<h1 id="小结">小结</h1>
+
+<p>我们已经学习了相机的概念和相机的一些控制器，什么时候使用内置控制器也取决于你的项目场景，不过内置的控制器已经能满足绝大部分场景了。</p>
+
+<p>下一节将讲讲全屏和窗口大小。</p>
+
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <h2 id="similar_posts">Artikel lainnya dari Three.js</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2022/10/09/three-realistic-render/">Three.js 之 19 realistic render 真实渲染
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2022/05/13/three-animation/">Three.js 之 1 Animation 动画</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2022/05/20/three-fullscreen/">Three.js 之 3 画布与全屏</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2022/05/16/three-camera/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2022/05/16/three-camera/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Artikel lainnya</a></li>
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>

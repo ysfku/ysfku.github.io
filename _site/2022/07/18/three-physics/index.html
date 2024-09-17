@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>Three.js 之 16 Physics 物理引擎</title>
+    <meta name="description" content="本系列为 Three.js journey 教程学习笔记。physics 物理引擎在 WebGL 里使用物理引擎是非常棒的一种体验，人们会非常享受与这些物体产生物理效果，例如重力、弹性、加速度、摩擦力、碰撞等。有很多方式实现物理效果，并且取决于项目中想怎么使用。如果只是简单物理效果，可以使用数学（三角函数）和 R...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2022/07/18/three-physics/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>Three.js 之 16 Physics 物理引擎</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2022-07-18
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#Three.js" title="Category: Three.js" rel="category">Three.js</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a-->
+        <a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a>&nbsp;
+    
+        <!--a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a-->
+        <a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#物理引擎与-threejs-之间的结合" id="markdown-toc-物理引擎与-threejs-之间的结合">物理引擎与 Three.js 之间的结合</a></li>
+  <li><a href="#物理引擎库" id="markdown-toc-物理引擎库">物理引擎库</a>    <ul>
+      <li><a href="#3d-物理引擎" id="markdown-toc-3d-物理引擎">3d 物理引擎</a></li>
+      <li><a href="#2d-物理引擎" id="markdown-toc-2d-物理引擎">2d 物理引擎</a></li>
+    </ul>
+  </li>
+  <li><a href="#import-cannonjs" id="markdown-toc-import-cannonjs">Import Cannon.js</a>    <ul>
+      <li><a href="#准备工作" id="markdown-toc-准备工作">准备工作</a></li>
+      <li><a href="#接入物理引擎" id="markdown-toc-接入物理引擎">接入物理引擎</a></li>
+      <li><a href="#与-threejs-的场景相结合" id="markdown-toc-与-threejs-的场景相结合">与 Three.js 的场景相结合</a></li>
+      <li><a href="#增加地板碰撞" id="markdown-toc-增加地板碰撞">增加地板碰撞</a></li>
+      <li><a href="#碰撞材质" id="markdown-toc-碰撞材质">碰撞材质</a></li>
+    </ul>
+  </li>
+  <li><a href="#cannon-es" id="markdown-toc-cannon-es">Cannon-es</a></li>
+  <li><a href="#施加外力-apply-forces" id="markdown-toc-施加外力-apply-forces">施加外力 Apply Forces</a></li>
+  <li><a href="#处理多个物体" id="markdown-toc-处理多个物体">处理多个物体</a></li>
+  <li><a href="#增加立方体" id="markdown-toc-增加立方体">增加立方体</a></li>
+  <li><a href="#性能优化" id="markdown-toc-性能优化">性能优化</a>    <ul>
+      <li><a href="#碰撞检测-collision-detection-中的宽相-broadphase" id="markdown-toc-碰撞检测-collision-detection-中的宽相-broadphase">碰撞检测 collision detection 中的宽相 Broadphase</a></li>
+      <li><a href="#sleep" id="markdown-toc-sleep">Sleep</a></li>
+    </ul>
+  </li>
+  <li><a href="#events-事件" id="markdown-toc-events-事件">Events 事件</a></li>
+  <li><a href="#移除物体" id="markdown-toc-移除物体">移除物体</a></li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p>本系列为 <a href="https://threejs-journey.com/">Three.js journey</a> 教程学习笔记。</p>
+
+<p>physics 物理引擎</p>
+
+<p>在 WebGL 里使用物理引擎是非常棒的一种体验，人们会非常享受与这些物体产生物理效果，例如重力、弹性、加速度、摩擦力、碰撞等。有很多方式实现物理效果，并且取决于项目中想怎么使用。如果只是简单物理效果，可以使用数学（三角函数）和 Raycaster 来实现，但复杂效果，还是非常建议送一个物理引擎相关的库。</p>
+
+<h1 id="物理引擎与-threejs-之间的结合">物理引擎与 Three.js 之间的结合</h1>
+
+<p>Three.js 创建了一个 3d 世界，我们再通过物理引擎创建一个<strong>物理世界</strong>，在物理世界中存在着纯物理体系（牛顿力学、万有引力、胡克弹性定律等），然后将物理世界中的几何体运动每帧坐标映射到 Three.js 3d 世界中，就可以进行实现物理效果的运动了。</p>
+
+<p>其复杂点在于如何组织代码。接下来我们就从最简单的开始学起。</p>
+
+<h1 id="物理引擎库">物理引擎库</h1>
+
+<p>关于物理引擎有非常多的库。首先要选择是需要一个 3d 还是 2d 的物理引擎库。你可能会认为既然使用了 Three.js 那一定是 3d 库了，那你就错了，如果你要表现的物理场景只需要在二维平面上展示（例如3d场景中有个电视在播放一些物理效果，或者你需要开发台球游戏），那么当然是选择 2d 的物理引擎，其性能会远好于 3d 引擎。</p>
+
+<p>接下来就介绍几个物理引擎。</p>
+
+<h2 id="3d-物理引擎">3d 物理引擎</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Ammo.js</th>
+      <th>Cannon.js</th>
+      <th>Oimo.js</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>web site</td>
+      <td><a href="https://github.com/kripken/ammo.js/">Ammo.js</a></td>
+      <td><a href="https://schteppe.github.io/cannon.js/">Cannon.js</a></td>
+      <td><a href="https://lo-th.github.io/Oimo.js/#basic">Oimo.js</a></td>
+    </tr>
+    <tr>
+      <td>docs</td>
+      <td>none</td>
+      <td><a href="https://github.com/schteppe/cannon.js">link</a></td>
+      <td><a href="http://lo-th.github.io/Oimo.js/docs.html">link</a></td>
+    </tr>
+    <tr>
+      <td>light or heavy</td>
+      <td>A little heavy</td>
+      <td>Lighter than Ammo.js</td>
+      <td>Lighter than Ammo.js</td>
+    </tr>
+    <tr>
+      <td>maintain</td>
+      <td>Still updated by a community</td>
+      <td>Mostly maintained by one developer</td>
+      <td>Mostly maintained by one developer</td>
+    </tr>
+    <tr>
+      <td>others</td>
+      <td>Bullet 物理引擎转换而来</td>
+      <td>There is a maintained fork, cannon-es 由开源社区维护</td>
+      <td>Hasn’t been updated for 2 years</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="2d-物理引擎">2d 物理引擎</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Matter.js</th>
+      <th>P2.js</th>
+      <th>Planck.js</th>
+      <th>Box2d.js</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>web site</td>
+      <td><a href="https://brm.io/matter-js/">link</a></td>
+      <td><a href="https://schteppe.github.io/p2.js/">link</a></td>
+      <td><a href="https://piqnt.com/planck.js/">link</a></td>
+      <td><a href="http://kripken.github.io/box2d.js/demo/webgl/box2d.html">link</a></td>
+    </tr>
+    <tr>
+      <td>docs</td>
+      <td><a href="https://brm.io/matter-js/docs/">link</a></td>
+      <td><a href="http://schteppe.github.io/p2.js/docs/">link</a></td>
+      <td><a href="https://github.com/shakiba/planck.js/tree/master/docs">link</a></td>
+      <td>none</td>
+    </tr>
+    <tr>
+      <td>maintain</td>
+      <td>Mostly maintained by one developer</td>
+      <td>Mostly maintained by one developer</td>
+      <td>Mostly maintained by one developer</td>
+      <td>Mostly maintained by one developer</td>
+    </tr>
+    <tr>
+      <td>update</td>
+      <td>Still kind of updated</td>
+      <td>Hasn’t been update for 2 years</td>
+      <td>Still updated nowadays</td>
+      <td>Still updated nowadays</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>本节课我们暂时不会使用 2d 物理引擎，但是用2d引擎的代码与3d会非常相似，主要的区别是少了一个坐标轴。</p>
+
+<p>接下来我们就以 Cannon.js 为例进行学习。</p>
+
+<h1 id="import-cannonjs">Import Cannon.js</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i <span class="nt">-S</span> cannon
+npm i <span class="nt">-D</span> @types/cannon
+</code></pre></div></div>
+
+<p>因为我使用 ts 开发，所以也安装了它的类型</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">CANNON</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">cannon</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h2 id="准备工作">准备工作</h2>
+
+<p>我们创建一个平面和一个小球，并增加光影，后续将结合物理引擎将小球抛落。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">THREE</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./style.css</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OrbitControls</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/controls/OrbitControls</span><span class="dl">'</span>
+<span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">dat</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">lil-gui</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">stats</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/stats</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">listenResize</span><span class="p">,</span> <span class="nx">dbClkfullScreen</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/utils</span><span class="dl">'</span>
+
+<span class="c1">// Canvas</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mainCanvas</span><span class="dl">'</span><span class="p">)</span> <span class="nx">as</span> <span class="nx">HTMLCanvasElement</span>
+
+<span class="c1">// Scene</span>
+<span class="kd">const</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Scene</span><span class="p">()</span>
+
+<span class="c1">// Size</span>
+<span class="kd">const</span> <span class="nx">sizes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">width</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
+  <span class="na">height</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1">// Camera</span>
+<span class="kd">const</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PerspectiveCamera</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="c1">// Controls</span>
+<span class="kd">const</span> <span class="nx">controls</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OrbitControls</span><span class="p">(</span><span class="nx">camera</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">)</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">enableDamping</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">zoomSpeed</span> <span class="o">=</span> <span class="mf">0.3</span>
+
+<span class="cm">/**
+ * Objects
+ */</span>
+<span class="c1">// material</span>
+<span class="kd">const</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshStandardMaterial</span><span class="p">()</span>
+
+<span class="c1">// sphere</span>
+<span class="kd">const</span> <span class="nx">sphere</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">SphereGeometry</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="nx">material</span><span class="p">)</span>
+<span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">setY</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">sphere</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">sphere</span><span class="p">)</span>
+
+<span class="c1">// plane</span>
+<span class="kd">const</span> <span class="nx">plane</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PlaneGeometry</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="nx">material</span><span class="p">)</span>
+<span class="nx">plane</span><span class="p">.</span><span class="nf">rotateX</span><span class="p">(</span><span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">plane</span><span class="p">.</span><span class="nx">receiveShadow</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">plane</span><span class="p">)</span>
+
+<span class="cm">/**
+ * Light
+ */</span>
+<span class="kd">const</span> <span class="nx">directionLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">DirectionalLight</span><span class="p">()</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">ambientLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">AmbientLight</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span><span class="dl">'</span><span class="s1">#ffffff</span><span class="dl">'</span><span class="p">),</span> <span class="mf">0.3</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">ambientLight</span><span class="p">,</span> <span class="nx">directionLight</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">directionLightHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">DirectionalLightHelper</span><span class="p">(</span><span class="nx">directionLight</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">directionLightHelper</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionLightHelper</span><span class="p">)</span>
+
+<span class="c1">// Renderer</span>
+<span class="kd">const</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">WebGLRenderer</span><span class="p">({</span>
+  <span class="nx">canvas</span><span class="p">,</span>
+  <span class="c1">// antialias: true,</span>
+<span class="p">})</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setSize</span><span class="p">(</span><span class="nx">sizes</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setPixelRatio</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nx">shadowMap</span><span class="p">.</span><span class="nx">enabled</span> <span class="o">=</span> <span class="kc">true</span>
+
+<span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+  <span class="nx">controls</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">tick</span><span class="p">()</span>
+
+<span class="nf">listenResize</span><span class="p">(</span><span class="nx">sizes</span><span class="p">,</span> <span class="nx">camera</span><span class="p">,</span> <span class="nx">renderer</span><span class="p">)</span>
+<span class="nf">dbClkfullScreen</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">)</span>
+
+<span class="cm">/**
+ * Debug
+ */</span>
+<span class="kd">const</span> <span class="nx">gui</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">dat</span><span class="p">.</span><span class="nc">GUI</span><span class="p">()</span>
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">controls</span><span class="p">,</span> <span class="dl">'</span><span class="s1">autoRotate</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">controls</span><span class="p">,</span> <span class="dl">'</span><span class="s1">autoRotateSpeed</span><span class="dl">'</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">material</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wireframe</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionLightHelper</span><span class="p">,</span> <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">).</span><span class="nf">name</span><span class="p">(</span><span class="dl">'</span><span class="s1">directionLightHelper visible</span><span class="dl">'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN019gu0Pt1dAMENm85xm_!!6000000003695-2-tps-1131-612.png" alt="" /></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01hObfxn1wAnJ6Vp0MN_!!6000000006268-1-tps-1129-595.gif" alt="" /></p>
+
+<h2 id="接入物理引擎">接入物理引擎</h2>
+
+<p>创建物理引擎世界，并将设置地球的重力加速度</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Physics
+ */</span>
+<span class="kd">const</span> <span class="nx">world</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">World</span><span class="p">()</span>
+<span class="nx">world</span><span class="p">.</span><span class="nx">gravity</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.82</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>创建物体</p>
+
+<p>因为在场景中已经有了一个球体，现在我们需要在 Cannon.js 的 world 中也创建一个球体。</p>
+
+<p>我们需要使用其 <a href="http://schteppe.github.io/cannon.js/docs/classes/Body.html">Body</a> 类，它可以自由落体并和其他 body 进行碰撞。</p>
+
+<p>在创建 body 之前，我们要先定义一个 shape。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sphereShape</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Sphere</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">sphereBody</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Body</span><span class="p">({</span>
+  <span class="na">mass</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="na">position</span><span class="p">:</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Vec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+  <span class="na">shape</span><span class="p">:</span> <span class="nx">sphereShape</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="nx">world</span><span class="p">.</span><span class="nf">addBody</span><span class="p">(</span><span class="nx">sphereBody</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>什么都没有发生。接下来我们需要将 Cannon.js 的世界与 Three.js 的场景相结合</p>
+
+<h2 id="与-threejs-的场景相结合">与 Three.js 的场景相结合</h2>
+
+<p>首先我们为了获取 deltaTime，在 requestAnimationFrame 增加如下逻辑。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">clock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Clock</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nx">oldElapsedTime</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+  <span class="nx">controls</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+
+  <span class="kd">const</span> <span class="nx">elapsedTime</span> <span class="o">=</span> <span class="nx">clock</span><span class="p">.</span><span class="nf">getElapsedTime</span><span class="p">()</span>
+  <span class="kd">const</span> <span class="nx">deltaTime</span> <span class="o">=</span> <span class="nx">elapsedTime</span> <span class="o">-</span> <span class="nx">oldElapsedTime</span>
+  <span class="nx">oldElapsedTime</span> <span class="o">=</span> <span class="nx">elapsedTime</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">deltaTime</span><span class="p">)</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">tick</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>为了更新物体位置，我们要使用 step() 函数。其背后的逻辑稍有复杂，本文不详细深究，详情可以查看<a href="https://gafferongames.com/post/fix_your_timestep/">这篇文章 Fix Your Timestep!</a>。</p>
+
+<p>我们设置 cannon world 的 step 函数，并将 Three.js 的小球与 Cannon.js 中的小球位置关联</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+
+  <span class="nx">world</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">60</span><span class="p">,</span> <span class="nx">deltaTime</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+  <span class="c1">// @ts-ignore</span>
+  <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="nx">sphereBody</span><span class="p">.</span><span class="nx">position</span><span class="p">)</span>
+
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>注意这里2个库的 vector3 类型不完全相同，我们暂时使用 @ts-ignore 忽视掉 ts 报错。效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01pFSQ861KExVlfeo3c_!!6000000001133-1-tps-1129-595.gif" alt="" /></p>
+
+<p>可以看到小球已经进行自由落体了！</p>
+
+<h2 id="增加地板碰撞">增加地板碰撞</h2>
+
+<p>首先增加地板的 Body</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// floor</span>
+<span class="kd">const</span> <span class="nx">floorShape</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Plane</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">floorBody</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Body</span><span class="p">()</span>
+<span class="nx">floorBody</span><span class="p">.</span><span class="nx">mass</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nx">floorBody</span><span class="p">.</span><span class="nf">addShape</span><span class="p">(</span><span class="nx">floorShape</span><span class="p">)</span>
+<span class="nx">world</span><span class="p">.</span><span class="nf">addBody</span><span class="p">(</span><span class="nx">floorBody</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>mass 为 0 表示固定在这里。</p>
+
+<p>然后还要将地板的位置进行旋转。在 Cannon 中没有旋转的 api，必须使用四元数进行操作。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">floorBody</span><span class="p">.</span><span class="nx">quaternion</span><span class="p">.</span><span class="nf">setFromAxisAngle</span><span class="p">(</span><span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Vec3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>对 floorBody 的四元数 quaternion 设置角度，第一个入参为所延的轴向，第二个参数为旋转的角度。效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01qZHezB1wiEDt8kbat_!!6000000006341-1-tps-1129-595.gif" alt="" /></p>
+
+<h2 id="碰撞材质">碰撞材质</h2>
+
+<p>看到上述的 demo 小球碰撞到平面后就几乎静止了，接下来我们深入研究一下碰撞材质的问题，可以让小球进行弹跳。</p>
+
+<p>我们需要创建2个物体个字的材质，以及这2个物体材质之间的弹性摩擦关系。其实核心在于材质之间的关系。所以我们甚至可以只创建一种默认材质，并定义好其关系即可。</p>
+
+<p><code class="language-plaintext highlighter-rouge">ContactMaterial</code> 的第三个参数中 friction 表示摩擦力，restitution 为弹性，1 为回弹到原始位置。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">defaultMaterial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Material</span><span class="p">(</span><span class="dl">'</span><span class="s1">default</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">defaultContactMaterial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">ContactMaterial</span><span class="p">(</span><span class="nx">defaultMaterial</span><span class="p">,</span> <span class="nx">defaultMaterial</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">friction</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+  <span class="na">restitution</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="nx">world</span><span class="p">.</span><span class="nf">addContactMaterial</span><span class="p">(</span><span class="nx">defaultContactMaterial</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>别忘了将其加入到 world 中。然后给2个物体赋予默认材质</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sphereBody</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Body</span><span class="p">({</span>
+  <span class="na">mass</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="na">position</span><span class="p">:</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Vec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+  <span class="na">shape</span><span class="p">:</span> <span class="nx">sphereShape</span><span class="p">,</span>
+  <span class="na">material</span><span class="p">:</span> <span class="nx">defaultMaterial</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">floorBody</span><span class="p">.</span><span class="nx">material</span> <span class="o">=</span> <span class="nx">defaultMaterial</span>
+</code></pre></div></div>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01cUFA5x1U8gEpCxQww_!!6000000002473-1-tps-1129-595.gif" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/22-physics/">demo 链接</a></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01e7WHXK1ExUKE6Tcaw_!!6000000000418-2-tps-200-200.png" alt="" /></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/22-physics">demo 源码</a></p>
+
+<h1 id="cannon-es">Cannon-es</h1>
+
+<p>cannon.js 开发的时间比较早，使用的是 JavaScript 实现，且几乎没有更新，而 cannon-es 是 fork 了原有的 cannon 并且使用 ts 实现，另外文档也看着比较清晰。接下来我们就用 cannon-es.js 修改上述的 demo。</p>
+
+<p>文档 <a href="https://pmndrs.github.io/cannon-es/docs/">https://pmndrs.github.io/cannon-es/docs/</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i <span class="nt">-S</span> cannon-es
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">CANNON</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">cannon-es</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p>比较方便的是我们可以使用这个方法</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">world</span><span class="p">.</span><span class="nf">fixedStep</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>来替换 <code class="language-plaintext highlighter-rouge">world.step()</code> 其内部处理了每帧 step 的逻辑。</p>
+
+<p>并且可以加入 <code class="language-plaintext highlighter-rouge">cannon-es-debugger</code> 来展示模型的物理世界的轮廓</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// cannonDebugger</span>
+<span class="kd">const</span> <span class="nx">cannonMeshes</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="kd">const</span> <span class="nx">cannonDebugger</span> <span class="o">=</span> <span class="nc">CannonDebugger</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">world</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nf">onInit</span><span class="p">(</span><span class="nx">body</span><span class="p">,</span> <span class="nx">mesh</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">mesh</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="nx">cannonMeshes</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">mesh</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">})</span>
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">guiObj</span><span class="p">,</span> <span class="dl">'</span><span class="s1">CannonDebugger</span><span class="dl">'</span><span class="p">).</span><span class="nf">name</span><span class="p">(</span><span class="dl">'</span><span class="s1">CannonDebugger mesh visible</span><span class="dl">'</span><span class="p">).</span><span class="nf">onChange</span><span class="p">((</span><span class="nx">value</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">cannonMeshes</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">})</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">cannonMeshes</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">item</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01ZElB441biabW85Nme_!!6000000003499-1-tps-1129-595.gif" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/22-physics-cannon-es/">demo 链接</a></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01vbsfp11L4Fs1UYhIy_!!6000000001245-2-tps-200-200.png" alt="" /></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/22-physics-cannon-es">demo 源码</a></p>
+
+<h1 id="施加外力-apply-forces">施加外力 Apply Forces</h1>
+
+<ul>
+  <li>applyForce 施加作用力。可以用作风吹动树叶，或推倒多米诺骨牌或愤怒的小鸟的受力</li>
+  <li>applyImpulse 施加冲量。这个冲量是瞬间的，例如射出去的子弹。</li>
+  <li>applyLocalForce 同 applyForce，不过是在物体的内部施力，对刚体的局部点施力。</li>
+  <li>applyLocalImpulse 同 applyImpulse，不过是在物体的内部施加冲量，对刚体的局部点施加冲量。</li>
+</ul>
+
+<p>例如我们增加如下代码</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sphereBody</span><span class="p">.</span><span class="nf">applyForce</span><span class="p">(</span><span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Vec3</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Vec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN013X111s1pWaqmWq5Ph_!!6000000005368-1-tps-1129-595.gif" alt="" /></p>
+
+<h1 id="处理多个物体">处理多个物体</h1>
+
+<p>处理1个或2个物体相对简单，但如果处理非常多的物体是可能就会比较麻烦了。我们创建一个物体生成的函数进行处理。</p>
+
+<p>首先我们将之前的球体先移除掉。并创建一个函数 createSphere 用于同时创建 Three.js 中的小球和 Cannon 中的小球</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">createSphere</span> <span class="o">=</span> <span class="p">(</span><span class="nx">radius</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">position</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Three.js mesh</span>
+  <span class="kd">const</span> <span class="nx">mesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">SphereGeometry</span><span class="p">(</span><span class="nx">radius</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshStandardMaterial</span><span class="p">(),</span>
+  <span class="p">)</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span>
+  <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">mesh</span><span class="p">)</span>
+
+  <span class="c1">// Cannon body</span>
+  <span class="kd">const</span> <span class="nx">shape</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Sphere</span><span class="p">(</span><span class="nx">radius</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Body</span><span class="p">({</span>
+    <span class="na">mass</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">shape</span><span class="p">,</span>
+    <span class="na">material</span><span class="p">:</span> <span class="nx">defaultMaterial</span><span class="p">,</span>
+  <span class="p">})</span>
+  <span class="c1">// @ts-ignore</span>
+  <span class="nx">body</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span>
+  <span class="nx">world</span><span class="p">.</span><span class="nf">addBody</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">createSphere</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>可以看到小球静止在空中，这是因为我们还没有在 requestAnimationFrame 添加更新位置的逻辑</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01aBhKgf1CQOTOOn0ug_!!6000000000075-2-tps-1137-617.png" alt="" /></p>
+
+<p>先不着急，我们将一组需要更新的对象放入一个数组中</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">objectsToUpdate</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+  <span class="na">mesh</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nx">Body</span>
+<span class="p">}</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="kd">const</span> <span class="nx">createSphere</span> <span class="o">=</span> <span class="p">(</span><span class="nx">radius</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">position</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+  <span class="nx">objectsToUpdate</span><span class="p">.</span><span class="nf">push</span><span class="p">({</span>
+    <span class="nx">mesh</span><span class="p">,</span>
+    <span class="nx">body</span><span class="p">,</span>
+  <span class="p">})</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="nx">guiObj</span><span class="p">.</span><span class="nx">createSphere</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nf">createSphere</span><span class="p">(</span>
+    <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">(),</span>
+    <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Vector3</span><span class="p">((</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span><span class="p">),</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>可以通过 debug gui 控制增加小球了，效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN018rXccc1i3YQVn09rv_!!6000000004357-1-tps-1129-595.gif" alt="" /></p>
+
+<p>还可以通过 debugger 观察物体的轮廓</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01k65v7S1o5k0oINl5i_!!6000000005174-1-tps-1129-595.gif" alt="" /></p>
+
+<p>为了提升性能，可以考虑将几何体只创建一个，如果传入不同半径，则使用 scale 方法进行修改</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sphereGeometry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">SphereGeometry</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">createSphere</span> <span class="o">=</span> <span class="p">(</span><span class="nx">radius</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">position</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Three.js mesh</span>
+  <span class="kd">const</span> <span class="nx">mesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="nx">sphereGeometry</span><span class="p">,</span> <span class="nx">material</span><span class="p">)</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span>
+  <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">mesh</span><span class="p">)</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="增加立方体">增加立方体</h1>
+
+<p>与增加球体类似</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Boxes</span>
+<span class="kd">const</span> <span class="nx">boxGeometry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">BoxGeometry</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">createBoxes</span> <span class="o">=</span> <span class="p">(</span><span class="nx">width</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">height</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">depth</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">position</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Three.js mesh</span>
+  <span class="kd">const</span> <span class="nx">mesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span><span class="nx">boxGeometry</span><span class="p">,</span> <span class="nx">material</span><span class="p">)</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">,</span> <span class="nx">depth</span><span class="p">)</span>
+  <span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span>
+  <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">mesh</span><span class="p">)</span>
+
+  <span class="c1">// Cannon body</span>
+  <span class="kd">const</span> <span class="nx">shape</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Box</span><span class="p">(</span><span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Vec3</span><span class="p">(</span><span class="nx">width</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nx">height</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nx">depth</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">))</span>
+  <span class="kd">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">Body</span><span class="p">({</span>
+    <span class="na">mass</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">shape</span><span class="p">,</span>
+    <span class="na">material</span><span class="p">:</span> <span class="nx">defaultMaterial</span><span class="p">,</span>
+  <span class="p">})</span>
+  <span class="c1">// @ts-ignore</span>
+  <span class="nx">body</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span>
+  <span class="nx">world</span><span class="p">.</span><span class="nf">addBody</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+  <span class="nx">objectsToUpdate</span><span class="p">.</span><span class="nf">push</span><span class="p">({</span>
+    <span class="nx">mesh</span><span class="p">,</span>
+    <span class="nx">body</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+<span class="nx">guiObj</span><span class="p">.</span><span class="nx">createBox</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nf">createBoxes</span><span class="p">(</span>
+    <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">(),</span>
+    <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">(),</span>
+    <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">(),</span>
+    <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Vector3</span><span class="p">((</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span><span class="p">),</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>另外别忘了需要在 requestAnimationFrame 中增加四元数（quaternion）的同步，主要是为了立方体的旋转。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+  <span class="nx">objectsToUpdate</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">object</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// @ts-ignore</span>
+    <span class="nx">object</span><span class="p">.</span><span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">position</span><span class="p">)</span>
+    <span class="c1">// @ts-ignore</span>
+    <span class="nx">object</span><span class="p">.</span><span class="nx">mesh</span><span class="p">.</span><span class="nx">quaternion</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">quaternion</span><span class="p">)</span>
+  <span class="p">})</span>
+
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01OosA481x3IRHsU9XS_!!6000000006387-1-tps-1129-518.gif" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/22-physics-multi/">demo 链接</a></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01qK8IGV1Xq8fZ7wU10_!!6000000002974-2-tps-200-200.png" alt="" /></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/22-physics-multi">demo 源码</a></p>
+
+<h1 id="性能优化">性能优化</h1>
+
+<h2 id="碰撞检测-collision-detection-中的宽相-broadphase">碰撞检测 collision detection 中的宽相 Broadphase</h2>
+
+<p>检测物体之间碰撞，每次每个物体互相检查是一个非常消耗性能的场景。这就需要宽相（Broadphase）了，它通过负责的算法在检测碰撞之前，将物体分类，如果2个物体相距太远，根本不会发生碰撞，它们可能就不在同一个分类里，计算机也不需要进行碰撞计算检测。</p>
+
+<ul>
+  <li><a href="https://pmndrs.github.io/cannon-es/docs/classes/NaiveBroadphase.html">NaiveBroadphase</a> Cannon 默认的算法。检测物体碰撞时，一个基础的方式是检测每个物体是否与其他每个物体发生了碰撞</li>
+  <li><a href="https://pmndrs.github.io/cannon-es/docs/classes/GridBroadphase.html">GridBroadphase</a> 网格检测。轴对齐的均匀网格 Broadphase。将空间划分为网格，网格内进行检测。</li>
+  <li><a href="https://pmndrs.github.io/cannon-es/docs/classes/SAPBroadphase.html">SAPBroadphase(Sweep-and-Prune)</a> 扫描-剪枝算法，性能最好。背后算法太过复杂，后续如果我有时间和精力，会单独写一篇关于碰撞检测的专题文章。</li>
+</ul>
+
+<p>默认为 NaiveBroadphase，建议替换为 SAPBroadphase</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">world</span><span class="p">.</span><span class="nx">broadphase</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nc">SAPBroadphase</span><span class="p">(</span><span class="nx">world</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="sleep">Sleep</h2>
+
+<p>虽然我们使用了 Broadphase 算法来优化了物体的碰撞检测，但是仍然是对所有物体进行了检测。我们可以使用一个特性叫 sleep。当物体的速度非常非常满的时候，肉眼已经无法察觉其在运动，那么就可以让这个物体 sleep，不参与碰撞检测，直到它被外力击中或其他物体碰撞到它。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">world</span><span class="p">.</span><span class="nx">allowSleep</span> <span class="o">=</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<h1 id="events-事件">Events 事件</h1>
+
+<p>我们可以监听 Body 上的事件。如果需要在碰撞时发出声音这将非常有用。可以监听的事件有 ‘collide’, ‘sleep’ or ‘wakeup’ 等</p>
+
+<p>我们首先增加音频</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Sounds
+ */</span>
+<span class="kd">const</span> <span class="nx">hitSound</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Audio</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/sounds/hit.mp3</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">playHitSound</span> <span class="o">=</span> <span class="p">(</span><span class="nx">collision</span><span class="p">:</span> <span class="p">{</span> <span class="nl">contact</span><span class="p">:</span> <span class="nx">CANNON</span><span class="p">.</span><span class="nx">ContactEquation</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">impactStrength</span> <span class="o">=</span> <span class="nx">collision</span><span class="p">.</span><span class="nx">contact</span><span class="p">.</span><span class="nf">getImpactVelocityAlongNormal</span><span class="p">()</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">impactStrength</span> <span class="o">&gt;</span> <span class="mf">1.5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">hitSound</span><span class="p">.</span><span class="nx">volume</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span>
+    <span class="nx">hitSound</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nx">hitSound</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>注意这里 impactStrength 碰撞力度我们设置了个阈值，太低时不发出声音。并将每次发声时间都归零。</p>
+
+<p>再在创建球和立方体的地方增加监听</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">body</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">collide</span><span class="dl">'</span><span class="p">,</span> <span class="nx">playHitSound</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>如果你打开电脑或手机的的声音，效果很好。</p>
+
+<h1 id="移除物体">移除物体</h1>
+
+<p>增加 reset 方法</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">guiObj</span><span class="p">.</span><span class="nx">reset</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">objectsToUpdate</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">object</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Remove body</span>
+    <span class="nx">object</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nf">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">collide</span><span class="dl">'</span><span class="p">,</span> <span class="nx">playHitSound</span><span class="p">)</span>
+    <span class="nx">world</span><span class="p">.</span><span class="nf">removeBody</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span>
+    <span class="c1">// Remove mesh</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">mesh</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="nx">objectsToUpdate</span><span class="p">.</span><span class="nf">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">objectsToUpdate</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// ...</span>
+
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">guiObj</span><span class="p">,</span> <span class="dl">'</span><span class="s1">reset</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>可以方便的移除物体</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01NBPNLH1U2Gh8giXsc_!!6000000002459-1-tps-1129-456.gif" alt="" /></p>
+
+<h1 id="小结">小结</h1>
+
+<p>本节学习了物理引擎。了解了常见的3d和2d物理引擎，并对 Cannon 做了深入学习。学习了如何将物理世界与 Three.js 场景相结合。学习了物理引擎中的材质，以及2种材质发生关系时的配置。又学习了物理引擎中施加外力，碰撞检测。以及相应的性能优化。并监听了碰撞事件，并增加了声音效果。最后增加了移除物体的 reset 按钮。学习了非常多的内容。但针对物理引擎还仅仅是皮毛。后续小伙伴们可以深入研究学习物理引擎的其他能力，并可以看看 <a href="https://pmndrs.github.io/cannon-es/">Cannon 官网的各种 demo</a>。加油！</p>
+
+<p>下一节将学习如何导入一个3d模型。</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <h2 id="similar_posts">Artikel lainnya dari Three.js</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2022/10/09/three-realistic-render/">Three.js 之 19 realistic render 真实渲染
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2022/07/10/three-scroll-animation/">Three.js 之 15 Scroll based animation 基于页面滚动的动画</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2022/08/09/three-import-model/">Three.js 之 17 Import Model 导入模型</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2022/07/18/three-physics/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2022/07/18/three-physics/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Artikel lainnya</a></li>
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>

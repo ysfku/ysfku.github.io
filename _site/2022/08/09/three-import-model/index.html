@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-adsense-account" content="ca-pub-9139027259917346">
+
+    <title>Three.js 之 17 Import Model 导入模型</title>
+    <meta name="description" content="本系列为 Three.js journey 教程学习笔记。导入模型Three.js 提供了很多原始模型，但如果我们需要更复杂的模型，最好使用 3D 软件建模，然后导入到场景中。本节我们就来学学如何导入一个做好的 3D 模型。">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="stylesheet" href="/css/custom.css ">
+    <link rel="canonical" href="http://localhost:4000/2022/08/09/three-import-model/">
+    <link rel="alternate" type="application/rss+xml" title="MWNS" href="http://localhost:4000/feed.xml ">
+    
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/fc-5.0.1/fh-4.0.1/kt-2.12.1/r-3.0.2/sc-2.4.3/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9139027259917346"
+     crossorigin="anonymous"></script>
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">MWNS</a>
+        <small>Master Wifi Network Solution</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Beranda
+                    </a>
+                </li>
+
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-user-circle-o"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/disclaimer/">
+                        
+                            <i class="fa fa-warning"></i>Disclaimer
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/dokumentasi/">
+                        
+                            <i class="fa fa-book"></i>Dokumentasi
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/files/">
+                        
+                            <i class="fa fa-download"></i>File
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/privacy-policy/">
+                        
+                            <i class="fa fa-warning"></i>Privacy Policy
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/videos/">
+                        
+                            <i class="fa fa-video-camera"></i>Video
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>Three.js 之 17 Import Model 导入模型</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2022-08-09
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>HyG
+                
+            </div>
+
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#Three.js" title="Category: Three.js" rel="category">Three.js</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a-->
+        <a href="/tag/#Three.js" title="Tag: Three.js" rel="tag">Three.js</a>&nbsp;
+    
+        <!--a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a-->
+        <a href="/tag/#WebGL" title="Tag: WebGL" rel="tag">WebGL</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#3d-模型的各种格式" id="markdown-toc-3d-模型的各种格式">3D 模型的各种格式</a>    <ul>
+      <li><a href="#gltf" id="markdown-toc-gltf">GLTF</a></li>
+      <li><a href="#寻找一个模型" id="markdown-toc-寻找一个模型">寻找一个模型</a></li>
+      <li><a href="#gltf-formats" id="markdown-toc-gltf-formats">GLTF formats</a>        <ul>
+          <li><a href="#gltf-1" id="markdown-toc-gltf-1">glTF</a></li>
+          <li><a href="#gltf-binary" id="markdown-toc-gltf-binary">glTF-Binary</a></li>
+          <li><a href="#gltf-draco" id="markdown-toc-gltf-draco">glTF-Draco</a></li>
+          <li><a href="#gltf-embedded" id="markdown-toc-gltf-embedded">glTF-Embedded</a></li>
+        </ul>
+      </li>
+      <li><a href="#选择合适的模型格式" id="markdown-toc-选择合适的模型格式">选择合适的模型格式</a></li>
+    </ul>
+  </li>
+  <li><a href="#导入模型的实践" id="markdown-toc-导入模型的实践">导入模型的实践</a>    <ul>
+      <li><a href="#准备" id="markdown-toc-准备">准备</a></li>
+      <li><a href="#导入模型" id="markdown-toc-导入模型">导入模型</a></li>
+      <li><a href="#添加到场景" id="markdown-toc-添加到场景">添加到场景</a></li>
+      <li><a href="#draco-压缩" id="markdown-toc-draco-压缩">Draco 压缩</a>        <ul>
+          <li><a href="#什么时候选择使用-draco-压缩模型" id="markdown-toc-什么时候选择使用-draco-压缩模型">什么时候选择使用 Draco 压缩模型？</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#动画" id="markdown-toc-动画">动画</a>    <ul>
+      <li><a href="#载入一个有动画的-demo" id="markdown-toc-载入一个有动画的-demo">载入一个有动画的 demo</a>        <ul>
+          <li><a href="#动画控制" id="markdown-toc-动画控制">动画控制</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#threejs-editor" id="markdown-toc-threejs-editor">Three.js Editor</a></li>
+  <li><a href="#小结" id="markdown-toc-小结">小结</a></li>
+</ul>
+
+<p>本系列为 <a href="https://threejs-journey.com/">Three.js journey</a> 教程学习笔记。</p>
+
+<p>导入模型</p>
+
+<p>Three.js 提供了很多原始模型，但如果我们需要更复杂的模型，最好使用 3D 软件建模，然后导入到场景中。本节我们就来学学如何导入一个做好的 3D 模型。</p>
+
+<h1 id="3d-模型的各种格式">3D 模型的各种格式</h1>
+
+<p>3D 模型有各种各样的格式，详情可参考维基百科<a href="https://en.wikipedia.org/wiki/List_of_file_formats#3D_graphics">List_of_file_formats#3D_graphics</a>。这些格式各有特点。接下来我们列举一些比较常见和流行的。</p>
+
+<ul>
+  <li>OBJ</li>
+  <li>FBX</li>
+  <li>STL</li>
+  <li>PLY</li>
+  <li>COLLADA</li>
+  <li>3DS</li>
+  <li>GLTF</li>
+</ul>
+
+<p>我们不会关心所有的模型。因为 GLTF 模型已经逐渐变为标准，并且能应对绝大部分你遇到的场景。</p>
+
+<h2 id="gltf">GLTF</h2>
+
+<p>GLTF 是 GL Transmission Format 的缩写。由 Khronos Group 创造（他们还创造了 OpenGL, WebGL, Vulkan, Collada 并且有很多成员在 AMD / ATI, Nvidia, Apple, id Software, Google, Nintendo, etc 公司 ）。</p>
+
+<p>GLTF 在近些年已经变得越来越流行。它可以支持各种数据集，你可以在其格式中使用几何体和材质，同时也可以包含相机、光照、场景、动画、骨骼等。同时支持各种文件格式，例如 json、二进制 binary、embed texture 嵌入纹理等。</p>
+
+<p>GLTF 已经成为了实时渲染的标准，并且也正在成为大部分3D软件、游戏引擎和库的标准模型。这意味着你可以轻松的在各个环境中熟练使用它。</p>
+
+<p>但这并不是说 GLTF 可以覆盖所有场景，如果你仅仅是需要一个几何体，那么可以选择 OBJ、FBX、STL 或 PLY 格式。</p>
+
+<h2 id="寻找一个模型">寻找一个模型</h2>
+
+<p>我们后续会学习在 Blender 中创建模型，但现在我们先寻找一个创建好的模型。我们可以在 GLTF 团队的示例中看到各种各样的模型。链接为 <a href="https://github.com/KhronosGroup/glTF-Sample-Models">glTF Sample Models</a>。首先我们动一个简单的小黄鸭模型作为示例开始入手。</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01CqdnOI1K8XyHllUQy_!!6000000001119-2-tps-128-127.png" alt="" /></p>
+
+<h2 id="gltf-formats">GLTF formats</h2>
+
+<p>虽然 GLTF 就是一种格式，但是其内部包含了其他格式。我们会发现有很多文件夹，如下图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01TXu1zf1w4qAHacufz_!!6000000006255-2-tps-244-407.png" alt="" /></p>
+
+<p>我们来说说这些都是什么</p>
+
+<ul>
+  <li>glTF</li>
+  <li>glTF-Binary</li>
+  <li>glTF-Draco</li>
+  <li>glTF-Embedded</li>
+</ul>
+
+<h3 id="gltf-1">glTF</h3>
+
+<p>glTF 是默认格式。<code class="language-plaintext highlighter-rouge">Duck.gltf</code> 是一个 JSON 文件。包含了各种信息，包含相机、光照、场景、材质等，但没有几何体或纹理贴图。<code class="language-plaintext highlighter-rouge">Duck0.bin</code> 是一个二进制文件。通常包含了几何体和UV贴图坐标、法线坐标等。<code class="language-plaintext highlighter-rouge">DuckCM.png</code> 是鸭子的纹理贴图。</p>
+
+<p>当我们载入 <code class="language-plaintext highlighter-rouge">Duck.gltf</code> 时，它会自动载入其他两个文件。</p>
+
+<h3 id="gltf-binary">glTF-Binary</h3>
+
+<p>包含了所有上述的数据，是个二进制文件，不能直接打开。</p>
+
+<p>这个文件格式会更轻量化一些，只有一个文件，也易于载入。但不太方便修改内部的数据。例如你想修改纹理贴图，换一张更压缩的贴图时，就会比较麻烦，因为这些数据都是被集合在了一起，同一个二进制文件中。</p>
+
+<h3 id="gltf-draco">glTF-Draco</h3>
+
+<p>有点像说的第一个格式，不过使用了 <a href="https://github.com/google/draco">Draco algorithm</a> 来压缩几何体的数据。如果你对比 <code class="language-plaintext highlighter-rouge">.bin</code> 文件的大小，你就会发现这个会更小一点。</p>
+
+<h3 id="gltf-embedded">glTF-Embedded</h3>
+
+<p>这个格式有点像 <code class="language-plaintext highlighter-rouge">glTF-Binary</code> 因为也是只有一个文件。但这个文件是一个 JSON 因此你可以在编辑器里打开。</p>
+
+<h2 id="选择合适的模型格式">选择合适的模型格式</h2>
+
+<p>根据不同场景做出不同的选择才是最优方案。</p>
+
+<p>如果你想修改 textures 或导出的光线坐标，最好选择第一个默认的 <code class="language-plaintext highlighter-rouge">glTF</code>。它还具有分别加载不同文件的优势，从而提高了加载速度。</p>
+
+<p>如果想要每个模型一个文件，并且不关心模型内的素材修改，那么二进制 <code class="language-plaintext highlighter-rouge">glTF-Binary</code> 更适合。</p>
+
+<p>在这两种情况下，您都必须决定是否要使用 Draco 压缩，但我们稍后会介绍这部分。</p>
+
+<h1 id="导入模型的实践">导入模型的实践</h1>
+
+<h2 id="准备">准备</h2>
+
+<p>我们准备一个空白的平面、环境光和平行光。初始代码如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">THREE</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./style.css</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OrbitControls</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/controls/OrbitControls</span><span class="dl">'</span>
+<span class="k">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">dat</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">lil-gui</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">stats</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/stats</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">listenResize</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../common/utils</span><span class="dl">'</span>
+
+<span class="c1">// Canvas</span>
+<span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mainCanvas</span><span class="dl">'</span><span class="p">)</span> <span class="nx">as</span> <span class="nx">HTMLCanvasElement</span>
+
+<span class="c1">// Scene</span>
+<span class="kd">const</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Scene</span><span class="p">()</span>
+
+<span class="c1">// Gui</span>
+<span class="kd">const</span> <span class="nx">gui</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">dat</span><span class="p">.</span><span class="nc">GUI</span><span class="p">()</span>
+
+<span class="c1">// Size</span>
+<span class="kd">const</span> <span class="nx">sizes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">width</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
+  <span class="na">height</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1">// Camera</span>
+<span class="kd">const</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PerspectiveCamera</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="c1">// Controls</span>
+<span class="kd">const</span> <span class="nx">controls</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OrbitControls</span><span class="p">(</span><span class="nx">camera</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">)</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">enableDamping</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">zoomSpeed</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="cm">/**
+ * Objects
+ */</span>
+<span class="c1">// plane</span>
+<span class="kd">const</span> <span class="nx">plane</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Mesh</span><span class="p">(</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">PlaneGeometry</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+  <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">MeshStandardMaterial</span><span class="p">({</span>
+    <span class="na">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#607D8B</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="p">)</span>
+<span class="nx">plane</span><span class="p">.</span><span class="nf">rotateX</span><span class="p">(</span><span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">plane</span><span class="p">.</span><span class="nx">receiveShadow</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">plane</span><span class="p">)</span>
+
+<span class="cm">/**
+ * Light
+ */</span>
+<span class="kd">const</span> <span class="nx">directionLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">DirectionalLight</span><span class="p">()</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">castShadow</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">near</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">far</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">right</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">bottom</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+<span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+
+<span class="kd">const</span> <span class="nx">directionLightHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">DirectionalLightHelper</span><span class="p">(</span><span class="nx">directionLight</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">directionLightHelper</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionLightHelper</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">directionalLightCameraHelper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">CameraHelper</span><span class="p">(</span><span class="nx">directionLight</span><span class="p">.</span><span class="nx">shadow</span><span class="p">.</span><span class="nx">camera</span><span class="p">)</span>
+<span class="nx">directionalLightCameraHelper</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionalLightCameraHelper</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">ambientLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">AmbientLight</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Color</span><span class="p">(</span><span class="dl">'</span><span class="s1">#ffffff</span><span class="dl">'</span><span class="p">),</span> <span class="mf">0.3</span><span class="p">)</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">ambientLight</span><span class="p">,</span> <span class="nx">directionLight</span><span class="p">)</span>
+
+<span class="c1">// Renderer</span>
+<span class="kd">const</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">WebGLRenderer</span><span class="p">({</span>
+  <span class="nx">canvas</span><span class="p">,</span>
+  <span class="na">antialias</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setSize</span><span class="p">(</span><span class="nx">sizes</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">sizes</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nf">setPixelRatio</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">devicePixelRatio</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nx">renderer</span><span class="p">.</span><span class="nx">shadowMap</span><span class="p">.</span><span class="nx">enabled</span> <span class="o">=</span> <span class="kc">true</span>
+
+<span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+  <span class="nx">controls</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">tick</span><span class="p">()</span>
+
+<span class="nf">listenResize</span><span class="p">(</span><span class="nx">sizes</span><span class="p">,</span> <span class="nx">camera</span><span class="p">,</span> <span class="nx">renderer</span><span class="p">)</span>
+
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionLightHelper</span><span class="p">,</span> <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">).</span><span class="nf">name</span><span class="p">(</span><span class="dl">'</span><span class="s1">lightHelper visible</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">directionalLightCameraHelper</span><span class="p">,</span> <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">).</span><span class="nf">name</span><span class="p">(</span><span class="dl">'</span><span class="s1">lightCameraHelper visible</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">gui</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">controls</span><span class="p">,</span> <span class="dl">'</span><span class="s1">autoRotate</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01nCqAPO1KaU84OB2OY_!!6000000001180-2-tps-1136-506.png" alt="" /></p>
+
+<h2 id="导入模型">导入模型</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">GLTFLoader</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">three/examples/jsm/loaders/GLTFLoader</span><span class="dl">'</span>
+
+<span class="c1">// ...</span>
+
+<span class="cm">/**
+ * Models
+ */</span>
+<span class="kd">const</span> <span class="nx">gltfLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GLTFLoader</span><span class="p">()</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/models/Duck/glTF/Duck.gltf</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">gltf</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">progress</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">progress</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">progress</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01AXF6JY1gXfEnFkxbh_!!6000000004152-2-tps-1135-303.png" alt="" /></p>
+
+<p>可以看到模型已经被正常载入，接下来让我们将它添加到场景中吧</p>
+
+<h2 id="添加到场景">添加到场景</h2>
+
+<p>可以看到导入的模型 scene 的目录结构大致如下，可以看到除了模型之外还有很多其他的对象。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>THREE.Group: scene
+└───Array: children
+    └───THREE.Object3D
+        └───Array: children
+            ├───THREE.PerspectiveCamera
+            └───THREE.Mesh
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN018EyQkf1cG1WKLVvyW_!!6000000003572-2-tps-1143-634.png" alt="" /></p>
+
+<p>我们有以下几种方式将模型添加到场景</p>
+
+<ul>
+  <li>将模型的整个 scene 添加到我们的场景里。虽然它的名字是 scene，实际上是一个 Three.Group</li>
+  <li>将 scene 下的 children 添加到我们自己的 scene 中，并忽略用不到的 PerspectiveCamera</li>
+  <li>过滤 children 的内容，移除掉不需要的对象，如 PerspectiveCamera</li>
+  <li>仅添加 Mesh 到场景里，但有可能会有错误的缩放、位置、角度等问题</li>
+  <li>打开 3D 软件将 PerspectiveCamera 移除，再重新导出模型</li>
+</ul>
+
+<p>因为我们的模型很简单，因此我们可以将其返回的 scene.children[0] 整体添加到我们的 Three 场景中（即上述的第二种方式）。代码如下</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Models
+ */</span>
+<span class="kd">const</span> <span class="nx">gltfLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GLTFLoader</span><span class="p">()</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/models/Duck/glTF/Duck.gltf</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">gltf</span><span class="p">)</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">progress</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">progress</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">progress</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01WbG8eC270DwcYIqga_!!6000000007734-2-tps-845-560.png" alt="" /></p>
+
+<p>我们也可以尝试其他的格式导入，除了 Draco 压缩格式外，其他都生效了，效果如上图。Draco 我们后续会说的，它需要一个特殊的 loader。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Models
+ */</span>
+<span class="kd">const</span> <span class="nx">gltfLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GLTFLoader</span><span class="p">()</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="c1">// '../assets/models/Duck/glTF/Duck.gltf',</span>
+  <span class="c1">// '../assets/models/Duck/glTF-Binary/Duck.glb',</span>
+  <span class="dl">'</span><span class="s1">../assets/models/Duck/glTF-Embedded/Duck.gltf</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">gltf</span><span class="p">)</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">progress</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">progress</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">progress</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>接下来我们导入 <code class="language-plaintext highlighter-rouge">FlightHelmet</code> 飞行员头盔模型</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Models
+ */</span>
+<span class="kd">const</span> <span class="nx">gltfLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GLTFLoader</span><span class="p">()</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/models/FlightHelmet/glTF/FlightHelmet.gltf</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">gltf</span><span class="p">)</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">progress</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">progress</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">progress</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>可以看到只导入了模型的一部分</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN012mY73N1qmSBR0KBro_!!6000000005538-2-tps-840-415.png" alt="" /></p>
+
+<p>这是因为这个模型被拆成了多个部分，如果想要完整导入，我们需要添加它的父节点，同时再修改一下缩放比例</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01kBLQq11pwhQU0VF9v_!!6000000005425-2-tps-851-357.png" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Models
+ */</span>
+<span class="kd">const</span> <span class="nx">gltfLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GLTFLoader</span><span class="p">()</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/models/FlightHelmet/glTF/FlightHelmet.gltf</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">gltf</span><span class="p">)</span>
+    <span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">progress</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">progress</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">progress</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01LnDxD61Ul9VsMWeWP_!!6000000002557-2-tps-846-561.png" alt="" /></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01aLEVD71Yz83o2qYra_!!6000000003129-1-tps-593-424.gif" alt="" /></p>
+
+<h2 id="draco-压缩">Draco 压缩</h2>
+
+<ul>
+  <li>Draco 压缩可以比默认的模型 size 更小</li>
+  <li>压缩被应用在了 buffer data 中，尤其是几何体部分</li>
+  <li>Draco 不是 glTF 特有的，但是 glTF 和 Draco 同时流行起来，所以 glTF 导出器实现了 Draco 的导出</li>
+  <li>Google 创造的开源压缩算法</li>
+  <li>Draco 的解压器也有 Web Assembly 的实现版本，这意味着可以多线程解压 Draco 模型（worker 线程中完成），得到更好的性能</li>
+</ul>
+
+<p>我们需要 DracoLoader 来载入这个特殊的压缩模型。同时需要指定包含 WASM/JS decoder 的路径。指定 decoder 的路径时，我们要将 node_modules 里的 draco 文件夹复制到我们的服务路径上。这个路径是 <code class="language-plaintext highlighter-rouge">node_modules/three/examples/js/libs/draco</code>。</p>
+
+<p>代码如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Models
+ */</span>
+<span class="kd">const</span> <span class="nx">gltfLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GLTFLoader</span><span class="p">()</span>
+<span class="c1">// draco</span>
+<span class="c1">// Optional: Provide a DRACOLoader instance to decode compressed mesh data</span>
+<span class="kd">const</span> <span class="nx">dracoLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DRACOLoader</span><span class="p">()</span>
+<span class="c1">// Specify path to a folder containing WASM/JS decoding libraries.</span>
+<span class="nx">dracoLoader</span><span class="p">.</span><span class="nf">setDecoderPath</span><span class="p">(</span><span class="dl">'</span><span class="s1">../assets/draco/</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// Optional: Pre-fetch Draco WASM/JS module.</span>
+<span class="nx">dracoLoader</span><span class="p">.</span><span class="nf">preload</span><span class="p">()</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">setDRACOLoader</span><span class="p">(</span><span class="nx">dracoLoader</span><span class="p">)</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/models/Duck/glTF-Draco/Duck.gltf</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">gltf</span><span class="p">)</span>
+    <span class="c1">// gltf.scene.scale.set(10, 10, 10)</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">progress</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">progress</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">progress</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01xeQydZ20BwlvMtNou_!!6000000006812-2-tps-1138-601.png" alt="" /></p>
+
+<p>再增加影子效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i4/O1CN01ICudIQ1cw9xRo88Xj_!!6000000003664-1-tps-716-299.gif" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/23-importModels/">demo 链接</a></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN0186MCQf1PgVPiAE08x_!!6000000001870-2-tps-200-200.png" alt="" /></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/23-importModels">demo 源码</a></p>
+
+<h3 id="什么时候选择使用-draco-压缩模型">什么时候选择使用 Draco 压缩模型？</h3>
+
+<p>虽然看起来 Draco 压缩是双赢的局面，但事实并非如此。确实，它会让几何图形更轻轻量化，但首先必须加载 DRACOLoader 类和解码器。其次，计算机需要花费时间和资源来解码压缩文件，这可能会导致体验开始时出现短暂的冻结，即使我们使用的是 worker 和 Web Assembly 代码。</p>
+
+<p>所以必须适应并决定最佳解决方案是什么。如果你只有一个几何尺寸为 100kB 的模型，可能不需要 Draco。但是，如果你有许多 MB 的模型要加载并且不关心体验开始时的一些冻结，你可能需要 Draco 压缩。</p>
+
+<h1 id="动画">动画</h1>
+
+<p>如开头我们所述，glTF 模型是支持动画的，并且 Three.js 也可以处理这些动画。</p>
+
+<h2 id="载入一个有动画的-demo">载入一个有动画的 demo</h2>
+
+<p>我们使用 Fox 狐狸模型，这个模型包含了一些动画能力</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01qoRVgZ1IneHTHI0UU_!!6000000000938-0-tps-130-130.jpg" alt="" /></p>
+
+<p>先将模型载入，并控制一下缩放比例</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Models
+ */</span>
+<span class="kd">const</span> <span class="nx">gltfLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GLTFLoader</span><span class="p">()</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/models/Fox/glTF/Fox.gltf</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">)</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">progress</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">progress</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">progress</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01UhE9ds1UPctbOlniA_!!6000000002510-2-tps-1129-552.png" alt="" /></p>
+
+<h3 id="动画控制">动画控制</h3>
+
+<p>我们可以看到模型里返回了3个 AnimationClip 类型的对象</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN014D2NQP27kwLNT705m_!!6000000007836-2-tps-989-259.png" alt="" /></p>
+
+<p>想要使用这些动画片段，我们需要使用 <a href="https://threejs.org/docs/#api/zh/animation/AnimationMixer">AnimationMixer</a>，一个 AnimationMixer 可以包含一个或多个动画片段。</p>
+
+<p>通过 AnimationMixer 载入动画片段，并在 tick 中每帧进行 update。代码如下</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Models
+ */</span>
+<span class="kd">let</span> <span class="nx">mixer</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">AnimationMixer</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="kd">const</span> <span class="nx">gltfLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GLTFLoader</span><span class="p">()</span>
+<span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/models/Fox/glTF/Fox.gltf</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">gltf</span><span class="p">)</span>
+    <span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">)</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">)</span>
+
+    <span class="nx">mixer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">AnimationMixer</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="nx">mixer</span><span class="p">.</span><span class="nf">clipAction</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">animations</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nx">action</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">progress</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">progress</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">progress</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+
+<span class="c1">// ...</span>
+
+<span class="c1">// Animations</span>
+<span class="kd">const</span> <span class="nx">clock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">Clock</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nx">previousTime</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+  <span class="nx">controls</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+
+  <span class="kd">const</span> <span class="nx">elapsedTime</span> <span class="o">=</span> <span class="nx">clock</span><span class="p">.</span><span class="nf">getElapsedTime</span><span class="p">()</span>
+  <span class="kd">const</span> <span class="nx">deltaTime</span> <span class="o">=</span> <span class="nx">elapsedTime</span> <span class="o">-</span> <span class="nx">previousTime</span>
+  <span class="nx">previousTime</span> <span class="o">=</span> <span class="nx">elapsedTime</span>
+
+  <span class="c1">// update mixer</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">mixer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">mixer</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="nx">deltaTime</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">tick</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN018RRzd51bnAZKuh6Ce_!!6000000003509-1-tps-716-261.gif" alt="" /></p>
+
+<p>我们尝试再复杂一点，让狐狸从巡视状态转变为走路状态，再从走路状态转变为奔跑。</p>
+
+<p>在模型载入时将所有的动画全部开启，并将不需要的动画的权重 weight 先降为 0，在点击 GUI 按钮后，再进行权重过渡。代码如下</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">gltfLoader</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">../assets/models/Fox/glTF/Fox.gltf</span><span class="dl">'</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">gltf</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="c1">// Animations</span>
+    <span class="nx">mixer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">AnimationMixer</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">scene</span><span class="p">)</span>
+    <span class="nx">actionSurvey</span> <span class="o">=</span> <span class="nx">mixer</span><span class="p">.</span><span class="nf">clipAction</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">animations</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nx">actionWalk</span> <span class="o">=</span> <span class="nx">mixer</span><span class="p">.</span><span class="nf">clipAction</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">animations</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nx">actionRun</span> <span class="o">=</span> <span class="nx">mixer</span><span class="p">.</span><span class="nf">clipAction</span><span class="p">(</span><span class="nx">gltf</span><span class="p">.</span><span class="nx">animations</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nx">actionWalk</span><span class="p">.</span><span class="nf">setEffectiveWeight</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nx">actionRun</span><span class="p">.</span><span class="nf">setEffectiveWeight</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nx">actionSurvey</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+    <span class="nx">actionWalk</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+    <span class="nx">actionRun</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+
+    <span class="nf">createGUIPanel</span><span class="p">()</span> <span class="c1">// 创建 GUI 面板</span>
+    <span class="c1">//...</span>
+  <span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>在创建GUI面板函数 createGUIPanel 中，实现点击按钮过渡效果。</p>
+
+<p>我们实现4个按钮，<code class="language-plaintext highlighter-rouge">surveyToWalk</code>, <code class="language-plaintext highlighter-rouge">walkToRun</code>, <code class="language-plaintext highlighter-rouge">runToWalk</code>, <code class="language-plaintext highlighter-rouge">walkToSurvey</code> 过渡这3个动画。过渡的过程核心就是修改动画的权重 weight，代码如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">createGUIPanel</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+
+  <span class="kd">const</span> <span class="nx">executeCrossFade</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="na">startAction</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">AnimationAction</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="na">endAction</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">AnimationAction</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nx">duration</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">startAction</span> <span class="o">||</span> <span class="o">!</span><span class="nx">endAction</span><span class="p">)</span> <span class="k">return</span>
+    <span class="nx">endAction</span><span class="p">.</span><span class="nx">enabled</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="nx">endAction</span><span class="p">.</span><span class="nx">time</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nx">endAction</span><span class="p">.</span><span class="nf">setEffectiveTimeScale</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nx">endAction</span><span class="p">.</span><span class="nf">setEffectiveWeight</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nx">startAction</span><span class="p">.</span><span class="nf">crossFadeTo</span><span class="p">(</span><span class="nx">endAction</span><span class="p">,</span> <span class="nx">duration</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">guiObj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">surveyToWalk</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">executeCrossFade</span><span class="p">(</span><span class="nx">actionSurvey</span><span class="p">,</span> <span class="nx">actionWalk</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="na">walkToRun</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">executeCrossFade</span><span class="p">(</span><span class="nx">actionWalk</span><span class="p">,</span> <span class="nx">actionRun</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="na">runToWalk</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">executeCrossFade</span><span class="p">(</span><span class="nx">actionRun</span><span class="p">,</span> <span class="nx">actionWalk</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="na">walkToSurvey</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">executeCrossFade</span><span class="p">(</span><span class="nx">actionWalk</span><span class="p">,</span> <span class="nx">actionSurvey</span><span class="p">)</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">animationFolder</span> <span class="o">=</span> <span class="nx">gui</span><span class="p">.</span><span class="nf">addFolder</span><span class="p">(</span><span class="dl">'</span><span class="s1">Animation</span><span class="dl">'</span><span class="p">)</span>
+  <span class="nx">animationFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">guiObj</span><span class="p">,</span> <span class="dl">'</span><span class="s1">surveyToWalk</span><span class="dl">'</span><span class="p">)</span>
+  <span class="nx">animationFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">guiObj</span><span class="p">,</span> <span class="dl">'</span><span class="s1">walkToRun</span><span class="dl">'</span><span class="p">)</span>
+  <span class="nx">animationFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">guiObj</span><span class="p">,</span> <span class="dl">'</span><span class="s1">runToWalk</span><span class="dl">'</span><span class="p">)</span>
+  <span class="nx">animationFolder</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">guiObj</span><span class="p">,</span> <span class="dl">'</span><span class="s1">walkToSurvey</span><span class="dl">'</span><span class="p">)</span>
+
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>同时在 tick 函数中，我们将动画过渡过程中，按钮置灰，避免动画错乱。同时将不可能的过渡状态也置灰处理。代码如下</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">tick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">begin</span><span class="p">()</span>
+  <span class="nx">controls</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+
+  <span class="kd">const</span> <span class="nx">elapsedTime</span> <span class="o">=</span> <span class="nx">clock</span><span class="p">.</span><span class="nf">getElapsedTime</span><span class="p">()</span>
+  <span class="kd">const</span> <span class="nx">deltaTime</span> <span class="o">=</span> <span class="nx">elapsedTime</span> <span class="o">-</span> <span class="nx">previousTime</span>
+  <span class="nx">previousTime</span> <span class="o">=</span> <span class="nx">elapsedTime</span>
+
+  <span class="c1">// update mixer</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">mixer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">mixer</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="nx">deltaTime</span><span class="p">)</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">actionSurvey</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">surveyWeight</span> <span class="o">=</span> <span class="nx">actionSurvey</span><span class="p">.</span><span class="nf">getEffectiveWeight</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">actionWalk</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">walkWeight</span> <span class="o">=</span> <span class="nx">actionWalk</span><span class="p">.</span><span class="nf">getEffectiveWeight</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">actionRun</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">runWeight</span> <span class="o">=</span> <span class="nx">actionRun</span><span class="p">.</span><span class="nf">getEffectiveWeight</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">animationFolder</span> <span class="o">=</span> <span class="nx">gui</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="nx">as</span> <span class="nx">dat</span><span class="p">.</span><span class="nx">GUI</span>
+    <span class="p">(</span><span class="nx">animationFolder</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="nx">as</span> <span class="nx">dat</span><span class="p">.</span><span class="nx">Controller</span><span class="p">).</span><span class="nf">disable</span><span class="p">(</span><span class="nx">surveyWeight</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">(</span><span class="nx">animationFolder</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="nx">as</span> <span class="nx">dat</span><span class="p">.</span><span class="nx">Controller</span><span class="p">).</span><span class="nf">disable</span><span class="p">(</span><span class="nx">walkWeight</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">(</span><span class="nx">animationFolder</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="nx">as</span> <span class="nx">dat</span><span class="p">.</span><span class="nx">Controller</span><span class="p">).</span><span class="nf">disable</span><span class="p">(</span><span class="nx">runWeight</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">(</span><span class="nx">animationFolder</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="nx">as</span> <span class="nx">dat</span><span class="p">.</span><span class="nx">Controller</span><span class="p">).</span><span class="nf">disable</span><span class="p">(</span><span class="nx">walkWeight</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Render</span>
+  <span class="nx">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">)</span>
+  <span class="nx">stats</span><span class="p">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="nf">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01xwNK5p26wYmDiDAKw_!!6000000007726-2-tps-1139-472.png" alt="" /></p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01GdP6QR1g2yhbflAfX_!!6000000004085-1-tps-816-397.gif" alt="" /></p>
+
+<p>在线 <a href="https://gaohaoyang.github.io/threeJourney/23-importModelsAnimation/">demo 链接</a></p>
+
+<p>可扫码访问</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01J1lx7p1NERv65tDjx_!!6000000001538-2-tps-200-200.png" alt="" /></p>
+
+<p><a href="https://github.com/Gaohaoyang/threeJourney/tree/main/src/23-importModelsAnimation">demo 源码</a></p>
+
+<h1 id="threejs-editor">Three.js Editor</h1>
+
+<p>最后在说一下 Three.js 在线编辑器。我们在日常想载入一个新的模型时，有时为了方便预览，可以使用这个在线编辑器。</p>
+
+<p>我们必须使用单个文件的模型，例如二进制或 embed 文件，我们直接将文件拖入编辑器，就可以看到了，再添加环境光和平行光，如下图</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN011wbkGn1UNKv0GmeRW_!!6000000002505-2-tps-1137-545.png" alt="" /></p>
+
+<p>如果我们要测试动画，可以在节点上添加脚本，例如我们在 Scene 上添加脚本，先选中右上角</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01oQpdRU1SvZHv6GJLM_!!6000000002309-2-tps-396-187.png" alt="" /></p>
+
+<p>下面的 script 里可以编写代码</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN013ycOE11WG7uhMY9qJ_!!6000000002760-2-tps-326-132.png" alt="" /></p>
+
+<p>编写如下代码</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i2/O1CN01pvYaOV2399COdD4uT_!!6000000007212-2-tps-1142-598.png" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">scene</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">fox</span> <span class="o">=</span> <span class="nx">scene</span><span class="p">.</span><span class="nx">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="kd">const</span> <span class="nx">mixer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nc">AnimationMixer</span><span class="p">(</span><span class="nx">fox</span><span class="p">)</span>
+<span class="nx">actionRun</span> <span class="o">=</span> <span class="nx">mixer</span><span class="p">.</span><span class="nf">clipAction</span><span class="p">(</span><span class="nx">fox</span><span class="p">.</span><span class="nx">animations</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nx">actionRun</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+
+<span class="kd">function</span> <span class="nf">update</span><span class="p">(</span> <span class="nx">event</span> <span class="p">)</span> <span class="p">{</span>
+	<span class="k">if </span><span class="p">(</span><span class="nx">mixer</span><span class="p">)</span> <span class="p">{</span>
+    	<span class="nx">mixer</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">delta</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>点击菜单栏的 play 就可以预览了，同时此时的 chrome devTools 也是有效的，可以便于调试。效果如下</p>
+
+<p><img src="https://gw.alicdn.com/imgextra/i1/O1CN01a1OBnD20TLpD2cHcM_!!6000000006850-1-tps-1131-542.gif" alt="" /></p>
+
+<h1 id="小结">小结</h1>
+
+<p>本节我们学习了 3D 模型相关内容，学习了 3D 模型的各种格式，学会了如何导入一个模型，以及 Draco 压缩模型的特点。学习了如何使用模型内置的动画。最后学习了 Three.js 在线编辑器的使用。接下来我们将学习了解 Blender 是使用。</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <h2 id="similar_posts">Artikel lainnya dari Three.js</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2022/10/09/three-realistic-render/">Three.js 之 19 realistic render 真实渲染
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>Artikel sebelumnya:</strong> <a href="/2022/07/18/three-physics/">Three.js 之 16 Physics 物理引擎</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>Artikel selanjutnya:</strong> <a href="/2022/08/21/three-custom-model/">Three.js 之 18 使用 Blender 设计和导出模型</a></p>
+        
+    </div>
+</div>
+
+            <div class='ignielDonasi'>
+      <div class='ignielDonasi-judul'>&nbsp; Support MWNS</div>
+      <div class='ignielDonasi-isi'>
+    
+        <!-- Saweria -->
+        <a href='https://saweria.co/yusuftutorial' rel='nofollow noopener' target='_blank' title='Donasi via Saweria'>
+          <img alt='Saweria' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwmwjOYbtIh-peG5_26BFtFgRCBDPsoahSni6qPXWG43SRR04BBCMerSyUX8FCQp1upj4RuziDAwy19L_toRpnQaI61tzPKokNB8ixuyb06Ron2eK6qUXzwbmYQs4UcmYNp311k2-hkxO4lBZB6jBsyzno3xqQK5lxWF1itFn9oSgvsKPpWMdLVKgLhg/s0/saweria-igniel.png' title='Saweria'/>
+          <span>Donasi via Saweria</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Trakteer -->
+        <a href='https://trakteer.id/yusuftutorialchannel/tip' rel='nofollow noopener' target='_blank' title='Donasi via Trakteer'>
+          <img alt='Trakteer' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieH10_JoSMU6bR0eymYzdd72g0uFT1CccEli9AytGV94ybITvbRlRfB4xQwAtvht6vNvrl5OU80ocHiHYj36pvxdxdJHtPsh1bBujNTW0SrzlyxqCkIzHjTU1Ofvnlxu2QPnEPtd1aGNwgbDeU8AAkFk5kqatpTf1QxysTl_k-Y8P7EQN-Abo3L-cNww/s0/trakteer-igniel.png' title='Trakteer'/>
+          <span>Donasi via Trakteer</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- PayPal -->
+        <a href='https://www.paypal.com/paypalme/myarachma92' rel='nofollow noopener' target='_blank' title='PayPal'>
+          <img alt='PayPal' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinNIOXLJCc6D1GehU8N254ogghPzS8IqveB06Jnf-Bd4iGBOdEsBna59Yhjz4ROsOXZyuZDX7eHtSfCJtHL8GF9X3A2OgCRosEvHSglei048KzAvgKykqELWtg8SbVqjHURZZ6BjLl5dMU-rscVoJkDfe8Rfo0U8pLjaUETvlDauwQn6LfHV2Mbhd-7g/s0/paypal-igniel.png' title='PayPal'/>
+          <span>Donasi via PayPal</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- Buy Me A Coffee -->
+        <a href='https://www.buymeacoffee.com/myarachma9m' rel='nofollow noopener' target='_blank' title='Buy Me A Coffee'>
+          <img alt='Buy Me A Coffee' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOtz7jVrpYsRfjwZ8qbqeD-w0DPoW-lMuHEUkHx3M1_KtvKizO3DGRh32Ns2fc1TiwNTj8GSUp1Z8ABMu2A2iQtpRmxWyrlUQ9sMriF8i3RoCXKwUULop6QyS-bMNQ3QMtsG9INwzCqqpXr_1FDShUR9xO1ATJv0lnPbTe3qfwyWzjSaFyLYv7NjVS8g/s0/bmac-igniel.png' title='Buy Me A Coffee'/>
+          <span>Buy Me A Coffee</span>
+          <svg viewBox='0 0 24 24'><path d='M13 11L21.2 2.80005'/><path d='M22 6.8V2H17.2'/><path d='M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13'/></svg>
+        </a>
+    
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='Dana dan Shopeepay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>Dana & Shopeepay</span>
+            <i>087764241047</i>
+          </div>
+        </a>
+
+        <!-- e-Wallet-Dana -->
+        <a href='#' onclick='return false;' title='OVO dan Gopay'>
+          <svg viewBox='0 0 24 24'><path d='M18.04 13.55C17.62 13.96 17.38 14.55 17.44 15.18C17.53 16.26 18.52 17.05 19.6 17.05H21.5V18.24C21.5 20.31 19.81 22 17.74 22H6.26C4.19 22 2.5 20.31 2.5 18.24V11.51C2.5 9.44001 4.19 7.75 6.26 7.75H17.74C19.81 7.75 21.5 9.44001 21.5 11.51V12.95H19.48C18.92 12.95 18.41 13.17 18.04 13.55Z'/><path d='M2.5 12.4101V7.8401C2.5 6.6501 3.23 5.59006 4.34 5.17006L12.28 2.17006C13.52 1.70006 14.85 2.62009 14.85 3.95009V7.75008'/><path d='M22.5588 13.9702V16.0302C22.5588 16.5802 22.1188 17.0302 21.5588 17.0502H19.5988C18.5188 17.0502 17.5288 16.2602 17.4388 15.1802C17.3788 14.5502 17.6188 13.9602 18.0388 13.5502C18.4088 13.1702 18.9188 12.9502 19.4788 12.9502H21.5588C22.1188 12.9702 22.5588 13.4202 22.5588 13.9702Z'/><path d='M7 12H14'/></svg>
+          <div class='wallet'>
+            <span>OVO & GoPay</span>
+            <i>087714249731</i>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <h2 id="comments">Komentar</h2>
+        
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4000/2022/08/09/three-import-model/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4000/2022/08/09/three-import-model/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//masterwifinetworksolution.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Daftar Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Artikel lainnya</a></li>
+                    
+                    <li><a href="#comments">Komentar</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             MWNS adalah website resmi dari channel youtube Master Wifi Network Solution 
+        </p>
+        <br>
+        <p class="contact">
+            Kontak kami: 
+            <a href="mailto:myarachma92@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="https://github.com/masterwifinetworksolution" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="http://facebook.com/muhammadyusuf1992" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>  
+            <a href="https://youtube.com/@masterwifinetworksolution" title="Youtube"><i class="fa fa-youtube"></i></a>  
+            <a href="https://t.me/masterwifinetworksolution" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>  
+            <a href="https://wa.me/6287764241047" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>   
+            <a href="https://m.me/muhammadyusuf1992" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> 
+        </p>
+        <br>
+        <p class="power">
+            <span>
+                &copy; 2018-2024 <a href="/">MWNS</a>.
+            </span>
+            <span>
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+    
+          <script>
+          new DataTable('#example', {
+      search: {
+          return: true
+      }
+  });
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+
+</html>
