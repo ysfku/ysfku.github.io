@@ -8,19 +8,22 @@
 # Site settings
 title: MWNS
 brief-intro: Master Wifi Network Solution
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://masterwifinetworksolution.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
 # other links
-email: myarachma@gmail.com
-github_username:  masterwifinetworksolution
+twitter_username:
 facebook_username: muhammadyusuf1992
+github_username:  masterwifinetworksolution
+email: myarachma92@gmail.com
 youtube_username: masterwifinetworksolution
-telegram_username: +HUPmiH4JI0AwZDVl
+telegram_username: masterwifinetworksolution
 whatsapp_username: 6287764241047
-description_footer: MWNS adalah website resmi dari channel youtube Master Wifi Network Solution.
+messenger_username: muhammadyusuf1992
+
+description_footer: MWNS adalah website resmi dari channel youtube Master Wifi Network Solution
 
 # comments
 # two ways to comment, only choose one, and use your own short name
@@ -33,7 +36,7 @@ disqus_shortname: masterwifinetworksolution
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
 baidu_tongji_id: 
-google_analytics_id: UA-72449510-4 # google 分析追踪id
+google_analytics_id:  # google 分析追踪id
 
 # Build settings
 markdown: kramdown
@@ -58,6 +61,3 @@ paginate: 10
 
 plugins:
   - jekyll-paginate
-
-collections:
-  databases:

@@ -4,8 +4,8 @@ layout: default
 
 <div class="page clearfix" index>
     <div class="left">
-        <h1>Website Official Youtube</h1>
-        <small>Konten edukasi saya ada disini.</small>
+        <h1>Welcome to Master Wifi Network Solution</h1>
+        <small>Semua tutorial dan edukasi ada disini</small>
         <hr>
         <ul>
             {% for post in paginator.posts %}
@@ -34,10 +34,10 @@ layout: default
                     </div>
                 </div>
                 <div class="excerpt">
-                    {{ post.excerpt | truncatewords: 60 }}
+                    {{post.excerpt}}
                 </div>
                 <div class="read-all">
-                    <a  href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-newspaper-o"></i>Read All</a>
+                    <a  href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-newspaper-o"></i>Selengkapnya</a>
                 </div>
                 <hr>
               </li>
@@ -71,7 +71,7 @@ layout: default
             <div class="side">
                 <div>
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    Recent Posts
+                    Tutorial Lainnya
                 </div>
                 <ul class="content-ul" recent>
                     {% for post in site.posts offset: 0 limit: 10  %}
@@ -84,7 +84,7 @@ layout: default
             <div class="side ">
                 <div>
                     <i class="fa fa-th-list"></i>
-                    Categories
+                    Katergori
                 </div>
                 <ul class="content-ul" cate>
                     {% for category in site.categories %}

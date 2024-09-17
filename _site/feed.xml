@@ -5,9 +5,89 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Sep 2024 18:55:35 +0800</pubDate>
-    <lastBuildDate>Tue, 17 Sep 2024 18:55:35 +0800</lastBuildDate>
+    <pubDate>Wed, 18 Sep 2024 00:40:26 +0800</pubDate>
+    <lastBuildDate>Wed, 18 Sep 2024 00:40:26 +0800</lastBuildDate>
     <generator>Jekyll v4.3.3</generator>
+    
+      <item>
+        <title>Wellcome To Master Wifi Network Solution</title>
+        <description>blog, jekyll, website, youtube</description>
+        <pubDate>Tue, 10 Sep 2024 23:14:54 +0800</pubDate>
+        <link>http://localhost:4000/2024/09/10/welcome-to-masterwifinetworksolution/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/09/10/welcome-to-masterwifinetworksolution/</guid>
+        
+        <category>blog</category>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+      <item>
+        <title>科学上网注册与使用 ChatGPT</title>
+        <description>
+手把手教你如何在国内科学注册chatGPT
+
+流程比较简单，主要分以下3步：
+
+&lt;ul&gt;
+  &lt;li&gt;科学上网&lt;/li&gt;
+  &lt;li&gt;注册ChatGPT&lt;/li&gt;
+  &lt;li&gt;手机号接收验证码&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 08 Apr 2023 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2023/04/08/chatGPT/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/04/08/chatGPT/</guid>
+        
+        <category>AI</category>
+        
+        <category>科学上网</category>
+        
+        
+        <category>AI</category>
+        
+      </item>
+    
+      <item>
+        <title>摩天轮动画的实现揭秘</title>
+        <description>
+摩天轮动画的实现揭秘
+
+&lt;img src=&quot;https://gw.alicdn.com/imgextra/i2/O1CN01WMJfsa23yty2Z4YOn_!!6000000007325-1-tps-600-329.gif&quot; alt=&quot;&quot; /&gt;
+
+恰好近期业务上开发了类似这样的摩天轮动画，我将其中的实现原理分享给大家。摩天轮动画主要分为 2 部分，一个是摩天轮上每个房间位置布局，另一个就是旋转动画了。
+</description>
+        <pubDate>Sat, 15 Oct 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/10/15/ferris-wheel/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/15/ferris-wheel/</guid>
+        
+        <category>Animation</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>Three.js 之 19 realistic render 真实渲染</title>
+        <description>
+本系列为 &lt;a href=&quot;https://threejs-journey.com/&quot;&gt;Three.js journey&lt;/a&gt; 教程学习笔记。
+
+我们上一节最后将汉堡模型导入到了 Three.js 的场景中了，但是颜色效果很奇怪。为了让它渲染的更真实，我们需要做一些额外的操作，接下来就一起看看吧~
+</description>
+        <pubDate>Sun, 09 Oct 2022 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2022/10/09/three-realistic-render/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022/10/09/three-realistic-render/</guid>
+        
+        <category>Three.js</category>
+        
+        <category>WebGL</category>
+        
+        
+        <category>Three.js</category>
+        
+      </item>
     
       <item>
         <title>Membuat Channel Youtube</title>

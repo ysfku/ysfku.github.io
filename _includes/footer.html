@@ -6,17 +6,24 @@
         <p class="description">
             {% if site.description_footer %} {{site.description_footer}} {% endif %}
         </p>
+        <br>
         <p class="contact">
-            Ikuti saya : {% if site.email %}
-            <a href="mailto:{{site.email}}" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a> {% endif %} {% if site.github_username %} <a href="https://github.com/{{site.github_username}}" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a> {% endif %} {% if site.facebook_username %} <a href="https://www.facebook.com/{{site.facebook_username}}" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a> {% endif %} {% if site.youtube_username %} <a href="https://youtube.com/@{{youtube_username}}" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a> {% endif %} {% if site.telegram_username %} <a href="https://t.me/{{site.telegram_username}}" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a> {% endif %} {% if site.whatsapp_username %} <a href="https://wa.me/{{site.whatsapp_username}}" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> {% endif %}
+            Kontak kami: {% if site.email %}
+            <a href="mailto:{{site.email}}" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a> {% endif %} {% if site.github_username %}
+            <a href="https://github.com/{{site.github_username}}" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a> {% endif %} {% if site.facebook_username %}
+            <a href="http://facebook.com/{{site.facebook_username}}" title="Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a> {% endif %} {% if site.youtube_username %}
+            <a href="https://youtube.com/@{{site.youtube_username}}" title="Youtube"><i class="fa fa-youtube"></i></a> {% endif %} {% if site.telegram_username %}
+            <a href="https://t.me/{{site.telegram_username}}" title="Telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a> {% endif %} {% if site.whatsapp_username %}
+            <a href="https://wa.me/{{site.whatsapp_username}}" title="Whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> {% endif %}  {% if site.messenger_username %}
+            <a href="https://m.me/{{site.messenger_username}}" title="Messenger"><i class="fa fa-messenger" aria-hidden="true"></i></a> {% endif %}
         </p>
-        <p><span><a href="/disclaimer/">Disclaimer</a></span> - <span><a href="/privacy-policy/">Privacy Policy</a></span></p>
+        <br>
         <p class="power">
             <span>
-                Copyright © 2018-2024 <a href="/">{{ site.title }}</a>
-            </span><br>
+                &copy; 2018-2024 <a href="/">{{ site.title }}</a>.
+            </span>
             <span>
-                Powered By <a href="https://youtube.com/@masterwifinetworksolution">Muhammad Yusuf</a>.
+                Di dukung oleh <a href="https://youtube.com/@masterwifinetworksolution">Master Wifi Network Solution</a>.
             </span>
         </p>
     </div>
