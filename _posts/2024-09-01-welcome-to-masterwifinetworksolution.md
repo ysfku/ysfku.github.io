@@ -1,47 +1,33 @@
 ---
 layout: post
-title:  "Wellcome To Master Wifi Network Solution"
-categories: blog
-tags: blog
+title:  "Selamat datang di blog saya"
+categories: Blog
+tags: Blog
 author: Muhammad Yusuf
-excerpt: Adapun berkaitan dalam website ini, saya sudah sudah berpegang teguh untuk menjalankan progres ini yang dimana bisa membantu channel youitube saya untuk bisa memberikan edukasi secara tertulis pada website ini.
-mathjax: false
+excerpt: memulai karer channel `Youtube` dan `Blog` ini bertepatan pada tanggal kelahiran saya dan memulai nya karer ini pada tahun 2018 yang lalu.
 ---
 
 * content
 {:toc}
 
-Selamat datang di website resmi channel youtube `Master Wifi Network Solution`
+Selamat datang di `Master Wifi Network Solution`, solusi internet untuk anda.
 
-## Perkenalan
+Pada pertama saya kali ini, saya hanya akan memperkenalkan diri saya kepada anda semua para `Subscriber` dan para pembaca di blog ini.
 
-Pada post pertama ini, izinkan saya untuk memperkenalkan diri terlebih dahulu agar kita saling mengenal satu sama lainnya. Dan bagi anda ingin memperkenalkan diri, silahkan berikan komentar pada bawah halaman post ini.
+Perkenalkan, nama saya `Muhammad Yusuf` kelahiran asal `Kecamatan Gambut` di propinsi `Kalimantan Selatan`.
 
-```yaml
-Nama      : Muhammad yusuf
-Kelahiran : Gambut
-Kecamatan : Gambut
-Kelurahan : gambut
-Kabupaten : Banjar
-Propinsi  : Kalimantan Selatan
-```
+Saya memulai karer channel `Youtube` dan `Blog` ini bertepatan pada tanggal kelahiran saya dan memulai nya karer ini pada tahun 2018 yang lalu.
 
-## Motivasi
+Dulu awalnya saya hanya iseng saja sambil belajar sama para pendahulu yang sudah lama bergelut di bidang jaringan telekomunikasi dan informatika.
 
-Saya jadi membuat webiste dengan tujuan untuk berbagi pengalaman saya dalam bidang teknologi, jaringan internet, dan telekomunikasi.
+Karena saya hanya seorang yang hanyalah lulusan `Madrasah Tsanawiyah` ya sekelas `Sekolah Mengenah Pertama` atau SMP.
 
-## Visi dan Misi
+Jadi saya tidak mampu untuk melanjutkan sekolah lagi ke pendidikan yang lebih tinggi yang saya harapkan selama ini. Yaitu, sekolah di SMK bagian TIKOM dan bahkan kalo bisa lanjut lagi mau ke jurusan IT biar saya bisa membahagiakan orang tua.
 
-Adapun berkaitan dalam website ini, saya sudah sudah berpegang teguh untuk menjalankan progres ini yang dimana bisa membantu channel youitube saya untuk bisa memberikan edukasi secara tertulis pada website ini.
+Namun apa lah daya dikarenakan dulu sektor keuangan yang tidak mencukupi dan hidup yang pas-pasan menjadikan saya untuk mengurungkan impian saya dan hanya belajar secara otodidak saja.
 
-### Visi
+Dengan belajar kesana kemari dan dari sosial media hingga ke banyak channel youtube yang ada di `Indonesia` hingga keluar `Mancanegara`.
 
-1. Membangun komunitas yang lebih solid dan bisa saling berbagi pengalaman
-1. Membuka wawasan yang baru agar bisa berkembang kini dan kemudian hari
-1. Menjadikan website ini sebagai pedoman untuk wadah sebuah ilmu pengetahuan
+Dan hingga sampai saat ini saya selalu belajar dan belajar tiada henti dan tanpa berpuas hati dan selalu haus akan ilmu pengetahuan.
 
-### Misi
-
-1. Memberikan edukasi secara menyeluruh kepada pembaca website ini
-1. Menyediakan kebutuhan berupa file dan lainnya
-1. Membuat pregress dan experiment yang terbarukan dari seluruh developer yang ada
+Jadi, bagi anda para pembaca di blog ini. Saya harapkan untuk lebih tekun dan giat lagi melebihi saya sendiri pada bidang ini di dalam blog dan channel yoututube saya.
