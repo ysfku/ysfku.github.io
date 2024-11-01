@@ -1,11 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
 title: MWNS
 brief-intro: Master Wifi Network Solution
 baseurl: "/" # the subpath of your site, e.g. /blog
@@ -26,17 +18,12 @@ messenger_username: muhammadyusuf1992
 description_footer: MWNS adalah website resmi dari channel youtube Master Wifi Network Solution
 
 # comments
-# two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name
 duoshuo_shortname: #hygblog
 disqus_shortname: masterwifinetworksolution
 
-# statistic analysis 统计代码
-# 百度统计 id，将统计代码替换为自己的百度统计id，即
-# hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
-# xxxxx字符串
+# statistic analysis
 baidu_tongji_id: 
-google_analytics_id:  # google 分析追踪id
+google_analytics_id:  # google id
 
 # Build settings
 markdown: kramdown
