@@ -37,12 +37,12 @@ type: page
             <h2 id="{{category | first}}">{{category | first}}</h2>
                 {% for docs in category  %}
                     {% for doc in docs %}
-                        {% if doc.url %}
+                        {% if docs.url %}
                         <li>
                             <time>
-                            {{ doc.date | date:"%F" }} {{ doc.date | date: "%a" }}.
+                            {{ docs.date | date:"%F" }} {{ docs.date | date: "%a" }}.
                             </time>
-                            <a class="title" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+                            <a class="title" href="{{ docs.url | prepend: site.baseurl }}">{{ docs.title }}</a>
 
                             {% include category.html %}
                             {% include tag.html %}
