@@ -28,6 +28,19 @@ type: page
                         </li>
                         {% endif %}
                     {% endfor %}
+                    {% for doc in docs %}
+                        {% if doc.url %}
+                        <li>
+                            <time>
+                            {{ doc.date | date:"%F" }} {{ doc.date | date: "%a" }}.
+                            </time>
+                            <a class="title" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+
+                            {% include category.html %}
+                            {% include tag.html %}
+                        </li>
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
             {% endfor %}
         </ul>
