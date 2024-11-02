@@ -8,7 +8,7 @@ layout: default
         <div class="label">
 
             <div class="label-card">
-                <i class="fa fa-calendar"></i>{{ page.date | date: "%F" }}
+                {% if page.date %}<i class="fa fa-calendar"></i>{{ page.date | date: "%F" }} {% endif %}
             </div>
 
             <div class="label-card">

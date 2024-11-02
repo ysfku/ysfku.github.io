@@ -8,16 +8,16 @@ layout: default
         <div class="label">
 
             <div class="label-card">
-                {% if page.date %}<i class="fa fa-calendar"></i>{{ docs.date | date: "%F" }}
+                {% if doc.date %}<i class="fa fa-calendar"></i>{{ docs.date | date: "%F" }} {% endif %}
             </div>
 
             <div class="label-card">
-                {% if page.author %}<i class="fa fa-user"></i>{{ docs.author }}
+                {% if doc.author %}<i class="fa fa-user"></i>{{ docs.author }}
                 {% endif %}
             </div>
 
             <div class="label-card">
-                {% if page.meta %}<i class="fa fa-key"></i>{{ docs.meta }}  {% endif %}
+                {% if doc.meta %}<i class="fa fa-key"></i>{{ docs.meta }}  {% endif %}
             </div>
 
             <div class="label-card">
