@@ -51,5 +51,4 @@ plugins:
 
 collections:
   databases:
-  document:
-  openclash:
+  documents:
