@@ -1,6 +1,7 @@
 ---
 layout: document
 title: Config
+date: 2024-10-30
 permalink: /openclash-config/
 author: Muhammad Yusuf
 categories: openclash

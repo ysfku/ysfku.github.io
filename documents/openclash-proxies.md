@@ -1,6 +1,7 @@
 ---
 layout: document
 title: Proxies
+date: 2024-10-30
 permalink: /openclash-proxies/
 author: Muhammad Yusuf
 categories: openclash
