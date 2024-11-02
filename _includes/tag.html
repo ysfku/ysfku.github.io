@@ -8,6 +8,11 @@
         <!--a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag | cgi_escape }}" title="Tag: {{ tag }}" rel="tag">{{ tag | join: "/" }}</a-->
         <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag }}" title="Tag: {{ tag }}" rel="tag">{{ tag | join: "/" }}</a>{% unless forloop.last %}&nbsp;{% endunless %}
     {% endfor %}
+  {% else %}
+    {% for tag in document.tags %}
+        <!--a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag | cgi_escape }}" title="Tag: {{ tag }}" rel="tag">{{ tag | join: "/" }}</a-->
+        <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag }}" title="Tag: {{ tag }}" rel="tag">{{ tag | join: "/" }}</a>{% unless forloop.last %}&nbsp;{% endunless %}
+    {% endfor %}
   {% endif %}
 {% endcapture %}
 <!-- <span class="point">•</span> -->

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: document
 title: Config
 permalink: /openclash-config/
 author: Muhammad Yusuf
