@@ -3,11 +3,13 @@
     {% for category in post.categories %}
         <a href="{{ root_url }}/{{ site.category_dir }}#{{ category }}" title="Category: {{ category }}" rel="category">{{ category | join: "/" }}</a>{% unless forloop.last %}&nbsp;{% endunless %}
     {% endfor %}
-  {% else %}
+  {% endif %}
+  {% if page %}
     {% for category in page.categories %}
         <a href="{{ root_url }}/{{ site.category_dir }}#{{ category }}" title="Category: {{ category }}" rel="category">{{ category | join: "/" }}</a>{% unless forloop.last %}&nbsp;{% endunless %}
     {% endfor %}
-  {% else %}
+  {% endif %}
+  {% if document %}
     {% for category in document.categories %}
         <a href="{{ root_url }}/{{ site.category_dir }}#{{ category }}" title="Category: {{ category }}" rel="category">{{ category | join: "/" }}</a>{% unless forloop.last %}&nbsp;{% endunless %}
     {% endfor %}
