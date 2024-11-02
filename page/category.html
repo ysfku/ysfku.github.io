@@ -28,6 +28,14 @@ type: page
                         </li>
                         {% endif %}
                     {% endfor %}
+                {% endfor %}
+            {% endfor %}
+        </ul>
+        <hr>
+        <ul>
+            {% for category in site.categories %}
+            <h2 id="{{category | first}}">{{category | first}}</h2>
+                {% for docs in category  %}
                     {% for doc in docs %}
                         {% if doc.url %}
                         <li>
