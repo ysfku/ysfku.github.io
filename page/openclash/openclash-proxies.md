@@ -2,6 +2,9 @@
 layout: page
 title: Proxies
 permalink: /openclash-proxies/
+author: Muhammad Yusuf
+categories: openclash
+tags: proxies
 ---
 
 * content

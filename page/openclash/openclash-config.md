@@ -2,6 +2,9 @@
 layout: page
 title: Config
 permalink: /openclash-config/
+author: Muhammad Yusuf
+categories: openclash
+tags: config
 ---
 
 * content
