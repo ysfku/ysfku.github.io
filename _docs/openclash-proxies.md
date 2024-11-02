@@ -1,5 +1,5 @@
 ---
-layout: document
+layout: doc
 title: Proxies
 date: 2024-10-30
 permalink: /openclash-proxies/

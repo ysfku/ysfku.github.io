@@ -4,20 +4,20 @@ layout: default
 
 <div class="page clearfix" post>
     <div class="left">
-        <h1>{{page.title}}</h1>
+        <h1>{{ posts.title }}</h1>
         <div class="label">
 
             <div class="label-card">
-                <i class="fa fa-calendar"></i>{{ page.date | date: "%F" }}
+                <i class="fa fa-calendar"></i>{{ posts.date | date: "%F" }}
             </div>
 
             <div class="label-card">
-                {% if page.author %}<i class="fa fa-user"></i>{{ page.author }}
+                {% if posts.author %}<i class="fa fa-user"></i>{{ posts.author }}
                 {% endif %}
             </div>
 
             <div class="label-card">
-                {% if page.meta %}<i class="fa fa-key"></i>{{ page.meta }}  {% endif %}
+                {% if posts.meta %}<i class="fa fa-key"></i>{{ posts.meta }}  {% endif %}
             </div>
 
             <div class="label-card">
