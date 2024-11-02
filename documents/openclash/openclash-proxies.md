@@ -5,7 +5,6 @@ permalink: /openclash-proxies/
 author: Muhammad Yusuf
 categories: openclash
 tags: proxies
-type: document
 ---
 
 * content

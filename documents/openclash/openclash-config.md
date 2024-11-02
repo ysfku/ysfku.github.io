@@ -5,7 +5,6 @@ permalink: /openclash-config/
 author: Muhammad Yusuf
 categories: openclash
 tags: config
-type: document
 ---
 
 * content
