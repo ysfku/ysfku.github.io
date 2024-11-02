@@ -9,8 +9,8 @@
         <a href="{{ root_url }}/{{ site.category_dir }}#{{ category }}" title="Category: {{ category }}" rel="category">{{ category | join: "/" }}</a>{% unless forloop.last %}&nbsp;{% endunless %}
     {% endfor %}
   {% endif %}
-  {% if document %}
-    {% for category in document.categories %}
+  {% if doc %}
+    {% for category in doc.categories %}
         <a href="{{ root_url }}/{{ site.category_dir }}#{{ category }}" title="Category: {{ category }}" rel="category">{{ category | join: "/" }}</a>{% unless forloop.last %}&nbsp;{% endunless %}
     {% endfor %}
   {% endif %}
