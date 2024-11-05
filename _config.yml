@@ -1,0 +1,94 @@
+repository: tomjoht/documentation-theme-jekyll
+output: web
+topnav_title: Master Wifi Network Solution
+site_title: Master Wifi Network Solution
+company_name: Copyright Master Wifi Network Solution
+github_editme_path: masterwifinetworksolution/masterwifinetworksolution.github.io/blob/main/
+# gitlab_editme_path: masterwifinetworksolution/masterwifinetworksolution.github.io/blob/main/
+
+google_analytics: 
+host: 127.0.0.1
+port: 4000
+
+exclude:
+  - .idea/
+  - .gitignore
+  - vendor
+
+feedback_subject_line: Master Wifi Network Solution
+feedback_email: myarachma92@gmail.com
+# feedback_disable: true
+# feedback_text: "Need help?"
+# feedback_link: "http://helpy.io/"
+
+highlighter: rouge
+markdown: kramdown
+
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
+
+collections:
+  tooltips:
+    output: false
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+      sidebar: halaman-utama
+      topnav: topnav
+
+  -
+    scope:
+      path: ""
+      type: "tooltips"
+    values:
+      layout: "page"
+      search: true
+      tooltip: true
+
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      search: true
+      sidebar: kategori-artikel
+      topnav: topnav
+
+sidebars:
+- kategori-artikel
+- halaman-utama
+- openclash
+- clashforandroid
+- clashformagisk
+- clashforwindows
+- clashforlinux
+- openwrt
+- mikrotik
+- modem
+- router
+- antena
+- aplikasi
+- product1_sidebar
+- product2_sidebar
+- other
+
+description: "Blog ini didirikan oleh seorang youtuber Master Wifi Network Solution pada tahun 2018 yang lalu."
+# url: https://masterwifinetworksolution.github.io
+# baseurl: /
+
+plugins:
+  - jekyll-seo-tag
+
+github: [metadata]
