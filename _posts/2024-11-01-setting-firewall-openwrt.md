@@ -1,7 +1,7 @@
 ---
 title: "Panduan Lengkap Setting Firewall OpenWRT"
 categories: openwrt
-permalink: cara-install-tailscale-di-openwrt.html
+permalink: setting-firewall-openwrt.html
 tags: [koneksi]
 sidebar: kategori-artikel
 toc: true
