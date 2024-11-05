@@ -85,8 +85,8 @@ sidebars:
 - other
 
 description: "Blog ini didirikan oleh seorang youtuber Master Wifi Network Solution pada tahun 2018 yang lalu."
-# url: https://masterwifinetworksolution.github.io
-# baseurl: /
+url: https://masterwifinetworksolution.github.io
+baseurl: /
 
 plugins:
   - jekyll-seo-tag
