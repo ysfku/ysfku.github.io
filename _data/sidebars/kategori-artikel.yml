@@ -1,0 +1,98 @@
+entries:
+- title: sidebar
+  product: Catalog Tutorials
+  version: 1.0
+  folders:
+
+  - title: Beranda Utama
+    output: web, pdf
+    folderitems:
+
+    - title: Wellcome To My Simaster
+      url: /index.html
+      output: web, pdf
+      type: homepage
+
+    - title: Disclaimer
+      url: /disclaimer.html
+      output: web
+
+    - title: Privacy Policy
+      url: /privacy-policy.html
+      output: web
+
+    - title: About
+      url: /about.html
+      output: web
+
+    - title: Donate
+      url: /donate.html
+      output: web
+
+  - title: Kategori Artikel
+    output: web
+    folderitems:
+
+    - title: Blog
+      url: /tag_blog.html
+      output: web
+
+    - title: SEO
+      url: /tag_seo.html
+      output: web
+
+    - title: Monetisasi
+      url: /tag_monetisasi.html
+      output: web
+
+    - title: Zerotier
+      url: /tag_zerotier.html
+      output: web
+
+    - title: Tailscale
+      url: /tag_tailscale.html
+      output: web
+
+    - title: Openclash
+      url: /tag_openclash.html
+      output: web
+
+    - title: Clash For Android
+      url: /tag_clashforandroid.html
+      output: web
+
+    - title: Clash For Magisk
+      url: /tag_clashformagisk.html
+      output: web
+
+    - title: Clash For Windows
+      url: /tag_clashforwindows.html
+      output: web
+
+    - title: Clash For Linux
+      url: /tag_clashforlinux.html
+      output: web
+
+    - title: Openwrt
+      url: /tag_openwrt.html
+      output: web
+
+    - title: Mikrotik
+      url: /tag_mikrotik.html
+      output: web
+
+    - title: Modem
+      url: /tag_modem.html
+      output: web
+
+    - title: Router
+      url: /tag_router.html
+      output: web
+
+    - title: Antena
+      url: /tag_antena.html
+      output: web
+
+    - title: Aplikasi
+      url: /tag_aplikasi.html
+      output: web

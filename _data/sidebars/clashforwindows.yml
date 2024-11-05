@@ -1,0 +1,92 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Clash For Windows
+  version: 1.0
+  folders:
+
+  - title: Beranda Utama
+    output: web, pdf
+    folderitems:
+
+    - title: Wellcome To My Simaster
+      url: /index.html
+      output: web, pdf
+      type: homepage
+
+    - title: Disclaimer
+      url: /disclaimer.html
+      output: web, pdf
+
+    - title: Privacy Policy
+      url: /privacy-policy.html
+      output: web, pdf
+
+    - title: About
+      url: /about.html
+      output: web, pdf
+
+    - title: Donate
+      url: /donate.html
+      output: web, pdf
+
+  - title: Toturial
+    output: web, pdf
+    folderitems:
+
+    - title: clashforwindows
+      url: /clashforwindows.html
+      output: web, pdf
+
+    - title: Installasi
+      url: /install-clashforwindows.html
+      output: web, pdf
+
+    - title: Setting Global
+      url: /globalsetting-clashforwindows.html
+      output: web, pdf
+
+    - title: Proxies
+      url: /proxies-clashforwindows.html
+      output: web, pdf
+
+    - title: Proxy Provider
+      url: /proxy-provider-clashforwindows.html
+      output: web, pdf
+
+    - title: Proxy Groups
+      url: /proxy-group-clashforwindows.html
+      output: web, pdf
+    
+    - title: Rule
+      url: /rule-clashforwindows.html
+      output: web, pdf
+    
+    - title: Rule Provier
+      url: /rule-provider-clashforwindows.html
+      output: web, pdf
+    
+    - title: Script
+      url: /script-clashforwindows.html
+      output: web, pdf
+    
+    - title: Ruleset
+      url: /ruleset-clashforwindows.html
+      output: web, pdf
+    
+    - title: TUN
+      url: /tun-clashforwindows.html
+      output: web, pdf
+    
+    - title: DNS
+      url: /dns-clashforwindows.html
+      output: web, pdf
+    
+    - title: Web UI
+      url: /webui-clashforwindows.html
+      output: web, pdf
+    
+    - title: Konfigurasi
+      url: /config-clashforwindows.html
+      output: web, pdf

@@ -1,0 +1,32 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+topnav:
+- title: Topnav
+  items:
+    - title: Youtube
+      external_url: https://youtube.com/@masterwifinetworksolution
+    - title: News
+      url: /news
+
+#Topnav dropdowns
+topnav_dropdowns:
+- title: Topnav dropdowns
+  folders:
+    - title: Contact
+      folderitems:
+        - title: Whatsapp
+          external_url: https://wa.me/6287764241047
+        - title: Telegram
+          external_url: https://t.me/masterwifinetworksolution
+        - title: Messenger
+          external_url: https://m.me/muhammadyusuf1992
+        - title: Email
+          external_url: mailto:myarachma92@gmail.com
+    - title: Other
+      folderitems:
+        - title: Group Facebook
+          external_url: https://facebook.com/openclashpasswallindonesia
+        - title: Group Telegram
+          external_url: https://t.me/+HUPmiH4JI0AwZDVI
+        - title: SHOP
+          external_url: https://shpe.site/tokobeberkah
