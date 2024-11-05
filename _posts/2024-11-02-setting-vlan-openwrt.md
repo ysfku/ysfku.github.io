@@ -1,5 +1,5 @@
 ---
-title: "Panduan Lengkap Setting Vlan OpenWRT"
+title: "Setting Vlan OpenWRT"
 categories: openwrt
 permalink: setting-vlan-openwrt.html
 tags: [koneksi]

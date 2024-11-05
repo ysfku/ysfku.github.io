@@ -1,5 +1,5 @@
 ---
-title: "Panduan Lengkap Setting Firewall OpenWRT"
+title: "Setting Firewall OpenWRT"
 categories: openwrt
 permalink: setting-firewall-openwrt.html
 tags: [koneksi]
