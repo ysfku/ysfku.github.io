@@ -55,28 +55,26 @@ $(function() {
 
 // Jalur untuk copy semua code
 
-const copyButtonLabel = "Copy Code";
+var codeBlocks = document.querySelectorAll('pre.highlight');
 
-// use a class selector if available
-let blocks = document.querySelectorAll("pre");
+codeBlocks.forEach(function (codeBlock) {
+  var copyButton = document.createElement('button');
+  copyButton.className = 'copy';
+  copyButton.type = 'button';
+  copyButton.ariaLabel = 'Copy code to clipboard';
+  copyButton.innerText = 'Copy';
 
-blocks.forEach((block) => {
-  // only add button if browser supports Clipboard API
-  if (navigator.clipboard) {
-    let button = document.createElement("button");
+  codeBlock.append(copyButton);
 
-    button.innerText = copyButtonLabel;
-    block.appendChild(button);
+  copyButton.addEventListener('click', function () {
+    var code = codeBlock.querySelector('code').innerText.trim();
+    window.navigator.clipboard.writeText(code);
 
-    button.addEventListener("click", async () => {
-      await copyCode(block);
-    });
-  }
+    copyButton.innerText = 'Copied';
+    var fourSeconds = 4000;
+
+    setTimeout(function () {
+      copyButton.innerText = 'Copy';
+    }, fourSeconds);
+  });
 });
-
-async function copyCode(block) {
-  let code = block.querySelector("code");
-  let text = code.innerText;
-
-  await navigator.clipboard.writeText(text);
-}
