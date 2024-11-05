@@ -551,10 +551,10 @@ hr.faded {
 }
 
 hr.shaded {
-    height: 12px;
+    height: 1px;
     border: 0;
     margin-top: 70px;
-    background: white;
+    background: #555;
     width: 100%;
     margin-bottom: 10px;
 }
