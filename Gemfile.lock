@@ -270,6 +270,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-seo-tag
   wdm (>= 0.1.0)
   webrick (~> 1.9)
 
