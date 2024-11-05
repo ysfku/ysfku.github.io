@@ -1,5 +1,5 @@
 ---
-title: "Panduan Lengkap Setting Firewall OpenWRT"
+title: "Panduan Lengkap Setting Vlan OpenWRT"
 categories: openwrt
 permalink: setting-vlan-openwrt.html
 tags: [koneksi]
