@@ -49,17 +49,13 @@ Buka browser dan masukkan alamat IP router Anda untuk masuk ke antarmuka web Ope
 - **Buka Terminal atau SSH**: Akses router Anda melalui terminal atau SSH.
 - **Perintah Instalasi**: Gunakan perintah berikut untuk menginstal Tailscale:
 
-```bash
-opkg update && opkg install tailscale
-```
+<pre><code class="language-bash">opkg update && opkg install tailscale</code></pre>
 
 ### 3. Konfigurasi Tailscale
 
 - **Jalankan Tailscale**: Setelah instalasi, jalankan Tailscale dengan perintah:
 
-```bash
-tailscale up
-```
+<pre><code class="language-bash">tailscale up</code></pre>
   
 - **Autentikasi Akun**: Ikuti instruksi untuk masuk ke akun Tailscale Anda.
 
@@ -67,9 +63,7 @@ tailscale up
 
 - **Cek Status**: Gunakan perintah:
   
-```bash
-tailscale status
-```
+<pre><code class="language-bash">tailscale status</code></pre>
 
 untuk memastikan Tailscale berjalan dengan baik.
 

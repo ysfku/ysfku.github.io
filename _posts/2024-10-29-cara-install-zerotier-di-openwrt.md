@@ -20,10 +20,7 @@ Sebelum memulai instalasi, pastikan Anda memiliki akses ke router `OpenWRT` Anda
 1. Update dan Instalasi Paket
 Pertama, Anda perlu memperbarui daftar paket di `OpenWRT` dan menginstal paket `ZeroTier`. Buka terminal SSH dan masukkan perintah berikut:
 
-```yaml
-opkg update
-opkg install zerotier
-```
+<pre><code class="language-bash">opkg update && opkg install zerotier</code></pre>
 
 Perintah ini akan memperbarui daftar paket dan menginstal `ZeroTier` di router Anda.
 
@@ -31,11 +28,10 @@ Perintah ini akan memperbarui daftar paket dan menginstal `ZeroTier` di router A
 
 Setelah instalasi selesai, Anda perlu mengaktifkan dan mengonfigurasi `ZeroTier`. Masukkan perintah berikut untuk mengaktifkan ZeroTier:
 
-```yaml
-uci set zerotier.global.enabled='1'
+<pre><code class="language-bash">uci set zerotier.global.enabled='1'
 uci commit zerotier
 /etc/init.d/zerotier start
-```
+</code></pre>
 
 Perintah ini akan mengaktifkan `ZeroTier` dan memulai layanan.
 
@@ -47,9 +43,7 @@ Selanjutnya, buka situs web `ZeroTier` dan masuk ke akun Anda. Buat jaringan bar
 
 Kembali ke `terminal SSH` dan masukkan perintah berikut untuk menghubungkan router ke jaringan ZeroTier:
 
-```yaml
-zerotier-cli join <Network ID>
-```
+<pre><code class="language-bash">zerotier-cli join <Network ID></code></pre>
 
 Gantilah `<Network ID>` dengan Network ID yang Anda dapatkan dari situs web `ZeroTier`. Perintah ini akan menghubungkan router Anda ke jaringan `virtual`.
 
@@ -57,9 +51,7 @@ Gantilah `<Network ID>` dengan Network ID yang Anda dapatkan dari situs web `Zer
 
 Untuk memastikan bahwa router Anda telah terhubung ke jaringan `ZeroTier`, masukkan perintah berikut:
 
-```yaml
-zerotier-cli listnetworks
-```
+<pre><code class="language-bash">zerotier-cli listnetworks</code></pre>
 
 Anda akan melihat daftar jaringan yang terhubung, termasuk jaringan `ZeroTier` yang baru saja Anda tambahkan.
 
