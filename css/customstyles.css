@@ -767,6 +767,23 @@ pre {
     margin: 25px 0px;
 }
 
+pre.highlight.highlight {
+    border-left: 15px solid #35383c;
+    color: #c1c2c3;
+    overflow: auto;
+    white-space: pre;
+    word-wrap: normal;
+}
+
+pre.highlight.highlight, pre.highlight.highlight code {
+    background-color: #222;
+    font-size: 18px;
+}
+
+blockquote, dl, figure, form, ol, p, pre, table, ul {
+    margin-bottom: 2.5rem;
+}
+
 #json-box-container pre {
     margin: 0px;
 }
