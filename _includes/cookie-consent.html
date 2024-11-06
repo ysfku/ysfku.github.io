@@ -57,9 +57,6 @@
     }
 
     if (readCookie('cookie-notice-dismissed') == 'true') {
-        {% include ga.js %}
-        {% include chatbutton.js %}
-    } else {
         document.getElementById('cookie-notice').style.display = 'block';
     }
     document.getElementById('cookie-notice-accept').addEventListener("click", function () {

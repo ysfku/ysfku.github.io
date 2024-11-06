@@ -6,7 +6,7 @@ company_name: Copyright Master Wifi Network Solution
 github_editme_path: masterwifinetworksolution/masterwifinetworksolution.github.io/blob/main/
 # gitlab_editme_path: masterwifinetworksolution/masterwifinetworksolution.github.io/blob/main/
 
-google_analytics: 
+google_analytics:
 host: 127.0.0.1
 port: 4000
 
@@ -74,10 +74,11 @@ sidebars:
 - other
 
 description: "Blog ini didirikan oleh seorang youtuber Master Wifi Network Solution pada tahun 2018 yang lalu."
-url: https://masterwifinetworksolution.github.io
-baseurl: /
+
+url: "https://masterwifinetworksolution.github.io"
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 github: [metadata]

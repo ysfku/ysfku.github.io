@@ -223,6 +223,8 @@ GEM
     nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    nokogiri (1.13.9-x64-mingw-ucrt)
+      racc (~> 1.4)
     octokit (4.21.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -267,12 +269,15 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw-ucrt
 
 DEPENDENCIES
   github-pages
+  jekyll-feed
   jekyll-seo-tag
+  jekyll-sitemap
   wdm (>= 0.1.0)
   webrick (~> 1.9)
 
 BUNDLED WITH
-   2.1.4
+   2.5.23

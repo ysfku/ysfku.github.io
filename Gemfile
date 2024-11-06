@@ -11,3 +11,7 @@ gem 'wdm', '>= 0.1.0'
 gem "webrick", "~> 1.9"
 
 gem 'jekyll-seo-tag'
+
+gem 'jekyll-sitemap'
+
+gem 'jekyll-feed'
