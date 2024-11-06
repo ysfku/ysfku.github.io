@@ -2,15 +2,36 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-adsense-account" content="ca-pub-1794381705838564">
-<meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+<meta name="description"
+  content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
 <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
 <title>{{ page.title }} | {{ site.site_title }}</title>
-<link rel="stylesheet" href="{{ "css/syntax.css" }}">
+<link rel="stylesheet" href="{{ " css/syntax.css" }}">
 {% seo %}
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-<link
-rel="stylesheet"
-  type="text/css"
+
+<!-- Facebook integration -->
+<meta property="og:title" content="{{ page.title }}" />
+{% if page.image %}
+<meta property="og:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}" />{% endif %}
+<meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}" />
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:description"
+  content="{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}" />
+
+<!-- Twitter integration -->
+<meta name="twitter:card" content="summary">
+{% if site.twitter_url %}
+<meta name="twitter:site" content="{{ site.twitter_url }}">{% endif %}
+<meta name="twitter:title" content="{{ page.title }}" />
+{% if page.image %}
+<meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />{% endif %}
+<meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+<meta name="twitter:description"
+  content="{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}" />
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+<link rel="stylesheet" type="text/css"
   href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
 <link rel="stylesheet" href="css/modern-business.css">
@@ -24,30 +45,25 @@ rel="stylesheet"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="{{ "js/jquery.navgoco.min.js" }}"></script>
+<script src="{{ " js/jquery.navgoco.min.js" }}"></script>
 
 
 <!-- Latest compiled and minified JavaScript -->
-<script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- Anchor.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
-<script src="{{ "js/toc.js" }}"></script>
-<script src="{{ "js/customscripts.js" }}"></script>
-<script
-  async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1794381705838564"
+<script src="{{ " js/toc.js" }}"></script>
+<script src="{{ " js/customscripts.js" }}"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1794381705838564"
   crossorigin="anonymous"></script>
 
-<link rel="shortcut icon" href="{{ "images/favicon.ico"  }}"><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<link rel="shortcut icon" href="{{ " images/favicon.ico" }}">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]--><link
-rel="alternate"
-  type="application/rss+xml"
-  title="{{ site.title }}"
-  href="{{ "/feed.xml" | prepend: site.url }}"> {% comment %} Copyright 2021 Google LLC {% endcomment %}
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend: site.url }}">
+{% comment %} Copyright 2021 Google LLC {% endcomment %}
