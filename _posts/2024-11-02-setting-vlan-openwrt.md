@@ -2,7 +2,7 @@
 title: "Setting Vlan OpenWRT"
 categories: openwrt
 permalink: setting-vlan-openwrt.html
-tags: [koneksi]
+tags: [openwrt]
 sidebar: kategori-artikel
 toc: true
 ---

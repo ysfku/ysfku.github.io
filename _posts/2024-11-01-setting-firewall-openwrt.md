@@ -2,7 +2,7 @@
 title: "Setting Firewall OpenWRT"
 categories: openwrt
 permalink: setting-firewall-openwrt.html
-tags: [koneksi]
+tags: [openwrt]
 sidebar: kategori-artikel
 toc: true
 ---

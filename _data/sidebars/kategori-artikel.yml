@@ -29,70 +29,87 @@ entries:
       url: /donate.html
       output: web
 
-  - title: Kategori Artikel
+  - title: Blog
     output: web
     folderitems:
 
     - title: Blog
-      url: /tag_blog.html
+      url: /blog.html
+      output: web
+    
+    - title: Blog Arvhive
+      url: /blog_archive.html
       output: web
 
-    - title: SEO
-      url: /tag_seo.html
+  - title: Blog
+    output: web
+    folderitems:
+
+    - title: Blog
+      url: /blog.html
+      output: web
+    
+    - title: Blog Arvhive
+      url: /blog_archive.html
       output: web
 
-    - title: Monetisasi
-      url: /tag_monetisasi.html
-      output: web
+      subfolders:
+      - title: Kategori Artikel
+        output: web
+        subfolderitems:
 
-    - title: Zerotier
-      url: /tag_zerotier.html
-      output: web
+        - title: Blog
+          url: /tag_blog.html
+          output: web
 
-    - title: Tailscale
-      url: /tag_tailscale.html
-      output: web
+        - title: SEO
+          url: /tag_seo.html
+          output: web
 
-    - title: Openclash
-      url: /tag_openclash.html
-      output: web
+        - title: Monetisasi
+          url: /tag_monetisasi.html
+          output: web
 
-    - title: Clash For Android
-      url: /tag_clashforandroid.html
-      output: web
+        - title: Openclash
+          url: /tag_openclash.html
+          output: web
 
-    - title: Clash For Magisk
-      url: /tag_clashformagisk.html
-      output: web
+        - title: Clash For Android
+          url: /tag_clashforandroid.html
+          output: web
 
-    - title: Clash For Windows
-      url: /tag_clashforwindows.html
-      output: web
+        - title: Clash For Magisk
+          url: /tag_clashformagisk.html
+          output: web
 
-    - title: Clash For Linux
-      url: /tag_clashforlinux.html
-      output: web
+        - title: Clash For Windows
+          url: /tag_clashforwindows.html
+          output: web
 
-    - title: Openwrt
-      url: /tag_openwrt.html
-      output: web
+        - title: Clash For Linux
+          url: /tag_clashforlinux.html
+          output: web
 
-    - title: Mikrotik
-      url: /tag_mikrotik.html
-      output: web
+        - title: Openwrt
+          url: /tag_openwrt.html
+          output: web
 
-    - title: Modem
-      url: /tag_modem.html
-      output: web
+        - title: Mikrotik
+          url: /tag_mikrotik.html
+          output: web
 
-    - title: Router
-      url: /tag_router.html
-      output: web
+        - title: Modem
+          url: /tag_modem.html
+          output: web
 
-    - title: Antena
-      url: /tag_antena.html
-      output: web
+        - title: Router
+          url: /tag_router.html
+          output: web
 
-    - title: Aplikasi
-      url: /tag_aplikasi.html
-      output: web
+        - title: Antena
+          url: /tag_antena.html
+          output: web
+
+        - title: Aplikasi
+          url: /tag_aplikasi.html
+          output: web

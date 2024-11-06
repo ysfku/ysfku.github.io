@@ -2,7 +2,7 @@
 title: "Cara Install Tailscale di OpenWrt"
 categories: openwrt
 permalink: cara-install-tailscale-di-openwrt.html
-tags: [tailscale]
+tags: [openwrt]
 sidebar: kategori-artikel
 toc: true
 ---

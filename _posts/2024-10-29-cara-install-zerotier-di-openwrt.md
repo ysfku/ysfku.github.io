@@ -2,7 +2,7 @@
 title:  "Cara Install ZeroTier di OpenWRT"
 categories: openwrt
 permalink: cara-install-zerotier-di-openwrt.html
-tags: [zerotier]
+tags: [openwrt]
 sidebar: kategori-artikel
 toc: true
 ---

@@ -6,385 +6,220 @@ entries:
   version: 1.0
   folders:
 
-  - title:
-    output: pdf
-    type: frontmatter
-    folderitems:
-    - title:
-      url: /titlepage.html
-      output: pdf
-      type: frontmatter
-    - title:
-      url: /tocpage.html
-      output: pdf
-      type: frontmatter
-
   - title: Beranda Utama
-    output: web, pdf
+    output: web
     folderitems:
 
     - title: Wellcome To My Simaster
       url: /index.html
-      output: web, pdf
+      output: web
       type: homepage
 
     - title: Disclaimer
       url: /disclaimer.html
-      output: web, pdf
+      output: web
 
     - title: Privacy Policy
       url: /privacy-policy.html
-      output: web, pdf
+      output: web
 
     - title: About
       url: /about.html
-      output: web, pdf
+      output: web
 
     - title: Donate
       url: /donate.html
-      output: web, pdf
+      output: web
 
-  - title: Documentation & Files
-    output: web, pdf
+  - title: Documentation
+    output: web
     folderitems:
 
     - title: Openclash
       url: /openclash.html
-      output: web, pdf
-    
-      subfolders:
-      - title:  File Openclash
-        output: web
-        subfolderitems:
-
-        - title: Backup Openclash
-          url: /backup-openclash.html
-          output: web
+      output: web
 
     - title: Clash For Android
       url: /clashforandroid.html
-      output: web, pdf
-
-      subfolders:
-      - title: File Clash For Android
-        output: web
-        subfolderitems:
-
-        - title: Backup Clash For Android
-          url: /backup-clashforandroid.html
-          output: web
+      output: web
     
     - title: Clash For Magisk
       url: /clashformagisk.html
-      output: web, pdf
-
-      subfolders:
-      - title: File Clash For Magisk
-        output: web
-        subfolderitems:
-
-        - title: Backup Clash For Magisk
-          url: /backup-clashformagisk.html
-          output: web
+      output: web
     
     - title: Clash For Windows
       url: /clashforwindows.html
-      output: web, pdf
-
-      subfolders:
-      - title: File Clash For Windows
-        output: web
-        subfolderitems:
-
-        - title: Backup Clash For Windows
-          url: /backup-clashforwindows.html
-          output: web
+      output: web
     
     - title: Clash For Linux
       url: /clashforlinux.html
-      output: web, pdf
-
-      subfolders:
-      - title: File Clash For Linux
-        output: web
-        subfolderitems:
-
-        - title: Backup Clash For Linux
-          url: /backup-clashforlinux.html
-          output: web
+      output: web
     
     - title: Armbian
       url: /armbian.html
-      output: web, pdf
+      output: web
     
     - title: Passwall
       url: /passwall.html
-      output: web, pdf
+      output: web
     
     - title: OpenWRT
       url: /openwrt.html
-      output: web, pdf
+      output: web
     
     - title: Mikrotik
       url: /mikrotik.html
-      output: web, pdf
+      output: web
     
     - title: Huawei
       url: /huawei.html
-      output: web, pdf
+      output: web
     
     - title: TP Link
       url: /tplink.html
-      output: web, pdf
+      output: web
     
     - title: Tenda
       url: /tenda.html
-      output: web, pdf
+      output: web
     
     - title: Totolink
       url: /totolink.html
-      output: web, pdf
+      output: web
     
     - title: Ubiquity
       url: /ubiquity.html
-      output: web, pdf
+      output: web
 
-  - title: Installation
-    output: web, pdf
-    folderitems:
-
-    - title: About Ruby, Gems, Bundler, etc.
-      url: /mydoc_about_ruby_gems_etc.html
-      output: web, pdf
-
-    - title: Install Jekyll on Mac
-      url: /mydoc_install_jekyll_on_mac.html
-      output: web, pdf
-
-    - title: Install Jekyll on Windows
-      url: /mydoc_install_jekyll_on_windows.html
-      output: web, pdf
-
-  - title: Authoring
-    output: web, pdf
-
-    folderitems:
-    - title: Pages
-      url: /mydoc_pages.html
-      output: web, pdf
-
-    - title: Posts
-      url: /mydoc_posts.html
-      output: web, pdf
-
-    - title: Lists
-      url: /mydoc_lists.html
-      output: web, pdf
-
-    - title: Conditional logic
-      url: /mydoc_conditional_logic.html
-      output: web, pdf
-
-    - title: Content reuse
-      url: /mydoc_content_reuse.html
-      output: web, pdf
-
-    - title: Collections
-      url: /mydoc_collections.html
-      output: web, pdf
-
-    - title: WebStorm editor tips
-      url: /mydoc_webstorm_text_editor.html
-      output: web, pdf
-
-    - title: Atom editor tips
-      url: /mydoc_atom_text_editor.html
-      output: web, pdf
-
-  - title: Navigation
-    output: web, pdf
-
-    folderitems:
-    - title: Sidebar navigation
-      url: /mydoc_sidebar_navigation.html
-      output: web, pdf
-
-    - title: YAML tutorial in the context of Jekyll
-      url: /mydoc_yaml_tutorial.html
-      output: web, pdf
-
-    - title: Tags
-      url: /mydoc_tags.html
-      output: web, pdf
-
-    - title: Series
-      url: /mydoc_series.html
-      output: web, pdf
-
-  - title: Formatting
-    output: web, pdf
-
-    folderitems:
-    - title: Tooltips
-      url: /mydoc_adding_tooltips.html
-      output: web, pdf
-
-    - title: Alerts
-      url: /mydoc_alerts.html
-      output: web, pdf
-
-    - title: Icons
-      url: /mydoc_icons.html
-      output: web, pdf
-
-    - title: Images
-      url: /mydoc_images.html
-      output: web, pdf
-
-    - title: Code samples
-      url: /mydoc_code_samples.html
-      output: web, pdf
-
-    - title: Labels
-      url: /mydoc_labels.html
-      output: web, pdf
-
-    - title: Links
-      url: /mydoc_hyperlinks.html
-      output: web, pdf
-
-    - title: Navtabs
-      url: /mydoc_navtabs.html
-      output: web, pdf
-
-    - title: Tables
-      url: /mydoc_tables.html
-      output: web, pdf
-
-    - title: Syntax highlighting
-      url: /mydoc_syntax_highlighting.html
-      output: web, pdf
-
-    - title: Workflow maps
-      url: /mydoc_workflow_maps.html
-      output: web, pdf
-
-  - title: Handling reviews
-    output: web, pdf
-
-    folderitems:
-    - title: Commenting on files
-      url: /mydoc_commenting_on_files.html
-      output: web, pdf
-
-#    - title: Git collaboration
-#      url: /mydoc_git_collaboration
-#      output: web, pdf
-
-  - title: Publishing
-    output: web, pdf
-
-    folderitems:
-    - title: Build arguments
-      url: /mydoc_build_arguments.html
-      output: web, pdf
-
-    - title: Themes
-      url: /mydoc_themes.html
-      output: web, pdf
-
-    - title: Generating PDFs
-      url: /mydoc_generating_pdfs.html
-      output: web, pdf
-
-    - title: Help APIs and UI tooltips
-      url: /mydoc_help_api.html
-      output: web, pdf
-
-    - title: Search configuration
-      url: /mydoc_search_configuration.html
-      output: web, pdf
-
-    - title: iTerm profiles
-      url: /mydoc_iterm_profiles.html
-      output: web, pdf
-
-    - title: Pushing builds to server
-      url: /mydoc_push_build_to_server.html
-      output: web, pdf
-
-    - title: Publishing on Github Pages
-      url: /mydoc_publishing_github_pages.html
-      output: web, pdf
-
-  - title: Special layouts
-    output: web, pdf
-
-    folderitems:
-    - title: Knowledge-base layout
-      url: /mydoc_kb_layout.html
-      output: web, pdf
-
-    - title: Glossary layout
-      url: /mydoc_glossary.html
-      output: web, pdf
-
-    - title: FAQ layout
-      url: /mydoc_faq_layout.html
-      output: web, pdf
-
-    - title: Shuffle layout
-      url: /mydoc_shuffle.html
-      output: web, pdf
-
-  - title: Troubleshooting
-    output: web, pdf
-
-    folderitems:
-
-    - title: Troubleshooting
-      url: /mydoc_troubleshooting.html
-      output: web, pdf
-
-  - title: Tag archives
+  - title: Files
     output: web
     folderitems:
 
-    - title: Tag archives overview
-      url: /mydoc_tag_archives_overview.html
+    - title: Openclash
+      url: /file-openclash.html
+      output: web
+
+    - title: Clash For Android
+      url: /file-clashforandroid.html
+      output: web
+    
+    - title: Clash For Magisk
+      url: /file-clashformagisk.html
+      output: web
+    
+    - title: Clash For Windows
+      url: /file-clashforwindows.html
+      output: web
+    
+    - title: Clash For Linux
+      url: /file-clashforlinux.html
+      output: web
+    
+    - title: Armbian
+      url: /file-armbian.html
+      output: web
+    
+    - title: Passwall
+      url: /file-passwall.html
+      output: web
+    
+    - title: OpenWRT
+      url: /file-openwrt.html
+      output: web
+    
+    - title: Mikrotik
+      url: /file-mikrotik.html
+      output: web
+    
+    - title: Huawei
+      url: /file-huawei.html
+      output: web
+    
+    - title: TP Link
+      url: /file-tplink.html
+      output: web
+    
+    - title: Tenda
+      url: /file-tenda.html
+      output: web
+    
+    - title: Totolink
+      url: /file-totolink.html
+      output: web
+    
+    - title: Ubiquity
+      url: /file-ubiquity.html
+      output: web
+
+  - title: Blog
+    output: web
+    folderitems:
+
+    - title: Blog
+      url: /blog.html
+      output: web
+    
+    - title: Blog Arvhive
+      url: /blog_archive.html
       output: web
 
       subfolders:
-      - title: Tag archive pages
+      - title: Kategori Artikel
         output: web
         subfolderitems:
 
-        - title: Formatting pages
-          url: /tag_formatting.html
+        - title: Blog
+          url: /tag_blog.html
           output: web
 
-        - title: Navigation pages
-          url: /tag_navigation.html
+        - title: SEO
+          url: /tag_seo.html
           output: web
 
-        - title: Content types pages
-          url: /tag_content_types.html
+        - title: Monetisasi
+          url: /tag_monetisasi.html
           output: web
 
-        - title: Publishing pages
-          url: /tag_publishing.html
+        - title: Openclash
+          url: /tag_openclash.html
           output: web
 
-        - title: Special layout pages
-          url: /tag_special_layouts.html
+        - title: Clash For Android
+          url: /tag_clashforandroid.html
           output: web
 
-        - title: Collaboration pages
-          url: /tag_collaboration.html
+        - title: Clash For Magisk
+          url: /tag_clashformagisk.html
           output: web
 
-        - title: Troubleshooting pages
-          url: /tag_troubleshooting.html
+        - title: Clash For Windows
+          url: /tag_clashforwindows.html
           output: web
 
-# Copyright 2021 Google LLC
+        - title: Clash For Linux
+          url: /tag_clashforlinux.html
+          output: web
+
+        - title: Openwrt
+          url: /tag_openwrt.html
+          output: web
+
+        - title: Mikrotik
+          url: /tag_mikrotik.html
+          output: web
+
+        - title: Modem
+          url: /tag_modem.html
+          output: web
+
+        - title: Router
+          url: /tag_router.html
+          output: web
+
+        - title: Antena
+          url: /tag_antena.html
+          output: web
+
+        - title: Aplikasi
+          url: /tag_aplikasi.html
+          output: web
