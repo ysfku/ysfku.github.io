@@ -6,6 +6,7 @@ summary: "Kami berdedikasi untuk memberikan solusi terbaik dalam hal pemasangan,
 sidebar: halaman-utama
 permalink: about.html
 folder: halaman_utama
+comments: false
 ---
 
 ## Tentang Master Wifi Network Solution

@@ -3,7 +3,7 @@ title: "Daftar List clashformagisk"
 tagName: clashformagisk
 search: exclude
 permalink: tag_clashformagisk.html
-sidebar: clashformagisk
+sidebar: kategori-artikel
 folder: tags
 ---
 {% include taglogic.html %}

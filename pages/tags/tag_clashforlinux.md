@@ -3,7 +3,7 @@ title: "Daftar List clashforlinux"
 tagName: clashforlinux
 search: exclude
 permalink: tag_clashforlinux.html
-sidebar: clashforlinux
+sidebar: kategori-artikel
 folder: tags
 ---
 {% include taglogic.html %}

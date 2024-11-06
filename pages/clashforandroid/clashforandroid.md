@@ -3,7 +3,7 @@ title: Clash For Android
 tags: [clashforandroid]
 keywords: clashforandroid, tutorial
 summary: "Tutorial clash untuk android."
-sidebar: clashforandroid
+sidebar: kategori-artikel
 permalink: clashforandroid.html
 folder: clashforandroid
 ---

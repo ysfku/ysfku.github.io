@@ -6,6 +6,7 @@ summary: "privasi pengunjung kami adalah prioritas utama. Kebijakan privasi ini 
 sidebar: halaman-utama
 permalink: privacy-policy.html
 folder: halaman_utama
+comments: false
 ---
 
 ## Kebijakan Privasi

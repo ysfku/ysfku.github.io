@@ -3,7 +3,7 @@ title: "Daftar List Mikrotik"
 tagName: mikrotik
 search: exclude
 permalink: tag_mikrotik.html
-sidebar: mikrotik
+sidebar: kategori-artikel
 folder: tags
 ---
 {% include taglogic.html %}

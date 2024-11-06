@@ -1,6 +1,6 @@
 entries:
 - title: sidebar
-  product: Kategories Article
+  product: Blog Simaster
   version: 
   folders:
 
@@ -27,6 +27,18 @@ entries:
 
     - title: Donate
       url: /donate.html
+      output: web
+
+  - title: Blog
+    output: web
+    folderitems:
+
+    - title: Blog
+      url: /blog.html
+      output: web
+    
+    - title: Blog Arvhive
+      url: /blog_archive.html
       output: web
 
   - title: Kategori Artikel

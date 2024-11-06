@@ -5,6 +5,7 @@ tags: [halaman-utama]
 sidebar: halaman-utama
 permalink: index.html
 summary: Blog ini didedikasikan untuk semua hal yang berkaitan dengan jaringan wifi, mulai dari dasar-dasar koneksi internet hingga solusi canggih untuk meningkatkan performa jaringan Anda.
+comments: false
 ---
 
 {% include note.html content="Bantu dan dukung channel youtube kami di <a href='https://youtube.com/@masterwifinetworksolution?sub_confirmation=1'>Master Wifi Network Silution</a>. Dan jika anda berkenan ingin berbagi kepada kami. Anda bisa donasikan kepada kami melalui <a href='/donate.html'>disini</a>. Ingin beli peralatan jaringan internet anda ?. Anda bisa bisa masuk ke <a href='https://shpe.site/tokobeberkah'>Toko Shop</a> kami." %}

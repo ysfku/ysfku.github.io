@@ -41,7 +41,6 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      comments: true
       search: true
       sidebar: halaman-utama
       topnav: topnav
@@ -69,17 +68,7 @@ defaults:
 sidebars:
 - kategori-artikel
 - halaman-utama
-- openclash
-- clashforandroid
-- clashformagisk
-- clashforwindows
-- clashforlinux
-- openwrt
-- mikrotik
-- modem
-- router
-- antena
-- aplikasi
+- blog
 - product1_sidebar
 - product2_sidebar
 - other

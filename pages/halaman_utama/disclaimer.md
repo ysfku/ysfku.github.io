@@ -6,6 +6,7 @@ summary: "Dengan mengakses dan menggunakan blog ini, Anda dianggap telah memaham
 sidebar: halaman-utama
 permalink: disclaimer.html
 folder: halaman_utama
+comments: false
 ---
 
 Selamat datang di blog Master Wifi Network Solution. Dengan mengakses dan menggunakan blog ini, Anda dianggap telah memahami dan menyetujui seluruh syarat dan ketentuan yang berlaku.

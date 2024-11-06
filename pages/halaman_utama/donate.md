@@ -6,6 +6,7 @@ summary: "Ingin mendukung kami, anda dapat memberikan donasi melalui berbagai pl
 sidebar: halaman-utama
 permalink: donate.html
 folder: halaman_utama
+comments: false
 ---
 
 ## Dukung Kami
