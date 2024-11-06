@@ -160,7 +160,7 @@ entries:
       output: web
     
     - title: Blog Arvhive
-      url: /blog_archive.html
+      url: /blog-archive.html
       output: web
 
       subfolders:

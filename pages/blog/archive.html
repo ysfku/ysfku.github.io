@@ -1,0 +1,27 @@
+---
+title: Archive
+sidebar: kategori-artikel
+keywords: news, blog, updates, release notes, announcements
+permalink: archive.html
+toc: false
+comments: false
+folder: blog
+---
+
+<table>
+    <thead>
+        <tr>
+            <th>Tags</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for page in site.pages %}
+        <tr>
+            <td>{% for tag in page.tags %}<a href="{{ " tag_" | append: tag | append: ".html" }}">{{tag}}</a>{% unless
+                forloop.last %}, {% endunless%}{% endfor %}</td>
+            <td><a href="{{ page.url | remove: " /" }}">{{page.title}}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
