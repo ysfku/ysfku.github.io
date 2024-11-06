@@ -41,18 +41,6 @@ entries:
       url: /blog_archive.html
       output: web
 
-  - title: Blog
-    output: web
-    folderitems:
-
-    - title: Blog
-      url: /blog.html
-      output: web
-    
-    - title: Blog Arvhive
-      url: /blog_archive.html
-      output: web
-
       subfolders:
       - title: Kategori Artikel
         output: web

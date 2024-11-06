@@ -3,15 +3,21 @@
 topnav:
 - title: Topnav
   items:
-    - title: Youtube
-      external_url: https://youtube.com/@masterwifinetworksolution
-    - title: News
-      url: /news
+    - title: Donate
+      url: /donate
 
 #Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
+    - title: Follow Me
+      folderitems:
+        - title: Facebook
+          external_url: https://facebook.com/muhammadyusuf1992
+        - title: Youtube
+          external_url: https://youtube.com/@masterwifinetworksolution?sub_confirmation=1
+        - title: Github
+          external_url: https://github.com/masterwifinetworksolution
     - title: Contact
       folderitems:
         - title: Whatsapp
