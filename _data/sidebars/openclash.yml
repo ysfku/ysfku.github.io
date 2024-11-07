@@ -1,0 +1,90 @@
+entries:
+- title: sidebar
+  product: Openclash
+  version: 
+  folders:
+
+  - title: Beranda Utama
+    output: web, pdf
+    folderitems:
+
+    - title: Wellcome To My Simaster
+      url: /index.html
+      output: web, pdf
+      type: homepage
+
+    - title: Disclaimer
+      url: /disclaimer.html
+      output: web
+
+    - title: Privacy Policy
+      url: /privacy-policy.html
+      output: web
+
+    - title: About
+      url: /about.html
+      output: web
+
+    - title: Donate
+      url: /donate.html
+      output: web
+
+  - title: Documentation Openclash
+    output: web
+    folderitems:
+
+    - title: Install
+      url: /openclash.html
+      output: web
+
+    - title: Global Setting
+      url: /global-setting-openclash.html
+      output: web
+
+    - title: Configuration
+      url: /configuration-openclash.html
+      output: web
+
+    - title: Proxies
+      url: /proxies-openclash.html
+      output: web
+
+    - title: Proxy Provider
+      url: /proxy-provider-openclash.html
+      output: web
+
+    - title: Proxy group
+      url: /proxy-group-openclash.html
+      output: web
+
+    - title: Rule
+      url: /rule-openclash.html
+      output: web
+
+    - title: Rule Provider
+      url: /rule-provider-openclash.html
+      output: web
+
+    - title: Script
+      url: /script-openclash.html
+      output: web
+
+    - title: Ruleset
+      url: /ruleset-openclash.html
+      output: web
+
+    - title: Tun
+      url: /tun-openclash.html
+      output: web
+
+    - title: Web UI
+      url: /webui-openclash.html
+      output: web
+
+    - title: Meta
+      url: /meta-openclash.html
+      output: web
+
+    - title: Backup And Restore
+      url: /backup-restore-openclash.html
+      output: web
