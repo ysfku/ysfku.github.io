@@ -1,5 +1,5 @@
 ---
-title: Cara Install OpenClash di OpenWrt
+title: Install OpenClash
 tags: [openclash]
 keywords: openclash, tutorial
 summary: "Langkah-langkah install openclash untuk openwrt."
@@ -8,49 +8,65 @@ permalink: openclash.html
 folder: openclash
 ---
 
-## Pengenalan
+## Pendahuluan
 
-OpenClash adalah salah satu alat terbaik untuk mengelola proxy di router OpenWrt. Dengan OpenClash, Anda dapat mengatur trafik internet melalui berbagai jenis proxy seperti Shadowsocks, V2Ray, dan lain-lain. Artikel ini akan membahas secara mendetail cara mengatur setting global di OpenClash untuk memastikan jaringan Anda berjalan dengan optimal.
+OpenClash adalah salah satu plugin populer untuk OpenWRT yang memungkinkan pengguna untuk mengelola koneksi internet mereka dengan lebih fleksibel. Dengan OpenClash, Anda dapat mengatur berbagai jenis proxy dan meningkatkan keamanan serta privasi jaringan Anda. Artikel ini akan memberikan panduan langkah demi langkah untuk menginstal OpenClash di router OpenWRT Anda.
 
-## Mengapa Menggunakan OpenClash?
+### Persiapan Awal
 
-OpenClash menyediakan fleksibilitas dan kontrol yang lebih baik atas bagaimana trafik internet Anda dikelola. Berikut adalah beberapa manfaat menggunakan OpenClash:
-- **Keamanan**: Melindungi data Anda dari pengintai dan peretas.
-- **Kecepatan**: Mengoptimalkan kecepatan internet dengan memilih server proxy tercepat.
-- **Fleksibilitas**: Mendukung berbagai jenis proxy dan aturan routing yang dapat disesuaikan.
+Sebelum memulai instalasi, pastikan router Anda sudah terpasang OpenWRT versi terbaru. Anda bisa mengunduh firmware OpenWRT dari situs resmi dan mengikuti panduan instalasi yang tersedia. Pastikan juga Anda memiliki akses ke antarmuka Luci dan terminal SSH.
 
-## Persiapan
+### Instalasi Paket yang Diperlukan
 
-Sebelum memulai pengaturan, pastikan Anda sudah menginstal OpenClash di router OpenWrt Anda. Jika belum, berikut adalah langkah-langkah dasar untuk instalasinya:
+Untuk menginstal OpenClash, Anda perlu menginstal beberapa paket tambahan. Buka terminal SSH dan masukkan perintah berikut untuk memperbarui daftar paket dan menginstal paket yang diperlukan:
 
-### 1. Menambahkan Custom Feeds
-
-Tambahkan custom feeds ke OpenWrt untuk mengunduh OpenClash:
 ```sh
+#iptables
 opkg update
-opkg add https://github.com/helmiau/openwrt-config/raw/main/others/openclash-for-openwrt-setup.md
+opkg install coreutils-nohup bash iptables dnsmasq-full curl ca-certificates ipset ip-full iptables-mod-tproxy iptables-mod-extra libcap libcap-bin ruby ruby-yaml kmod-tun kmod-inet-diag unzip luci-compat luci luci-base
 ```
 
-### 2. Menginstal Paket-paket yang Diperlukan
-
-Instal paket-paket yang diperlukan untuk OpenClash:
+atau
 
 ```sh
-opkg install iptables dnsmasq-full coreutils coreutils-nohup bash curl ca-certificates ipset ip-full iptables-mod-tproxy iptables-mod-extra libcap libcap-bin ruby ruby-yaml kmod-tun luci-base iptables jsonfilter luci-compat
+#nftables
+opkg update
+opkg install coreutils-nohup bash dnsmasq-full curl ca-certificates ipset ip-full libcap libcap-bin ruby ruby-yaml kmod-tun kmod-inet-diag unzip kmod-nft-tproxy luci-compat luci luci-base
 ```
 
-### 3. Mengunduh OpenClash
+### Unduh dan Instal OpenClash
 
-Unduh dan instal OpenClash:
+Setelah paket-paket yang diperlukan terinstal, langkah berikutnya adalah mengunduh dan menginstal OpenClash. Anda bisa mengunduh paket OpenClash dari [SINI](https://github.com/vernesong/OpenClash/releases/download/v0.46.033-beta/luci-app-openclash_0.46.033-beta_all.ipk) dan mentransfernya di router menggunakan SCP atau WinSCP atau FileManager dengan masuk ke folder root. Setelah itu, instal paket dengan perintah berikut:
 
 ```sh
-opkg install openclash
+cd /root && opkg install *.ipk
 ```
 
-## Mengakses OpenClash
+### Konfigurasi OpenClash
+Setelah instalasi selesai, buka antarmuka Luci dan navigasikan ke menu **Services > OpenClash**. Di sini, Anda bisa mengatur konfigurasi sesuai kebutuhan Anda. Anda dapat menambahkan file konfigurasi, mengatur proxy, dan menyesuaikan pengaturan lainnya.
 
-Setelah instalasi selesai, buka antarmuka web OpenWrt Anda dan navigasikan ke **Services > OpenClash**. Di sini, Anda akan melihat berbagai tab dan opsi untuk mengkonfigurasi OpenClash.
+### Memperbarui dan Mengaktifkan OpenClash
+Pastikan untuk memperbarui OpenClash ke versi terbaru dan aktifkan layanan ini. Anda bisa melakukannya melalui antarmuka Luci atau dengan perintah terminal berikut:
 
-Dengan mengikuti langkah-langkah di atas, Anda seharusnya dapat menginstal dan mengkonfigurasi OpenClash di OpenWrt dengan mudah. Jika Anda mengalami kesulitan atau memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami melalui kontak kami di navigasi.
+```sh
+/etc/init.d/openclash start
+```
+
+### Mengatur Proxy dan Konfigurasi Lainnya
+
+OpenClash memungkinkan Anda untuk mengatur berbagai jenis proxy seperti Shadowsocks, V2Ray, dan Trojan. Anda bisa mengunduh file konfigurasi dari penyedia layanan proxy Anda dan mengunggahnya ke OpenClash melalui antarmuka Luci. Pastikan untuk mengatur aturan firewall yang sesuai untuk mengarahkan lalu lintas melalui proxy yang Anda pilih.
+
+### Mengoptimalkan Kinerja OpenClash
+Untuk memastikan OpenClash berjalan dengan optimal, Anda bisa melakukan beberapa penyesuaian tambahan. Misalnya, Anda bisa mengatur DNS untuk menggunakan server DNS yang lebih cepat dan aman. Anda juga bisa mengaktifkan fitur seperti DNS over HTTPS (DoH) untuk meningkatkan privasi.
+
+### Pemecahan Masalah
+
+Jika Anda mengalami masalah selama instalasi atau konfigurasi, berikut adalah beberapa langkah pemecahan masalah yang bisa Anda coba:
+
+- **Periksa Log**: Buka log OpenClash di antarmuka Luci untuk melihat pesan kesalahan dan informasi lainnya.
+- **Perbarui Paket**: Pastikan semua paket yang diperlukan sudah diperbarui ke versi terbaru.
+- **Reset Konfigurasi**: Jika masalah berlanjut, Anda bisa mencoba mereset konfigurasi OpenClash dan memulai dari awal.
+
+Dengan mengikuti langkah-langkah di atas, Anda seharusnya sudah bisa menginstal dan mengkonfigurasi OpenClash di router OpenWRT Anda. OpenClash memberikan fleksibilitas dan kontrol yang lebih besar atas koneksi internet Anda, memungkinkan Anda untuk mengatur proxy dan meningkatkan keamanan serta privasi jaringan Anda.
 
 {% include links.html %}

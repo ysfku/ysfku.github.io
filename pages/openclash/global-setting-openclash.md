@@ -8,94 +8,112 @@ permalink: global-setting-openclash.html
 folder: openclash
 ---
 
+OpenClash adalah salah satu plugin yang sangat berguna untuk OpenWRT, memungkinkan pengguna untuk mengelola koneksi internet mereka dengan lebih fleksibel dan aman. Dalam panduan ini, kita akan membahas langkah-langkah pengaturan umum OpenClash, mulai dari instalasi hingga konfigurasi lanjutan.
 
-## Setting Global di OpenClash
+## Konfigurasi Dasar
 
-Bagian ini akan menjelaskan langkah-langkah rinci untuk mengatur setting global di OpenClash.
+Setelah instalasi, langkah berikutnya adalah konfigurasi dasar OpenClash:
 
-### 1. Mengatur Global Mode
+1. **Akses LuCI**: Buka antarmuka LuCI melalui browser Anda.
+1. **Navigasi ke OpenClash**: Pergi ke `Services` > `OpenClash`.
+1. **Mulai OpenClash**: Klik `Enable` untuk memulai OpenClash.
 
-Pada tab **Global Settings**, Anda akan menemukan opsi untuk mode global. Mode ini menentukan bagaimana trafik internet dialirkan melalui proxy. Ada beberapa mode yang bisa dipilih, namun yang paling umum digunakan adalah:
+## Pengaturan Modem/WAN
 
-- **Mode Redir-Host**: Mode ini cocok untuk kebanyakan pengguna karena menawarkan kompatibilitas yang tinggi dan performa yang baik.
-- **Mode TUN**: Mode ini digunakan jika Anda memerlukan fitur tambahan seperti UDP relay. Mode ini dapat membantu dalam situasi di mana protokol tertentu membutuhkan dukungan UDP.
+### Menentukan Interface Modem/WAN
 
-### 2. Konfigurasi Proxy Group
+Untuk menentukan interface-name modem/WAN, ikuti langkah berikut:
 
-Setelah menentukan mode global, langkah berikutnya adalah mengkonfigurasi Proxy Group. Proxy Group memungkinkan Anda mengelola beberapa server proxy secara bersamaan, yang sangat berguna untuk failover dan load balancing.
+1. **Buka LuCI**: Akses `Network` > `Interfaces`.
+2. **Identifikasi Interface**: Cari interface yang sesuai dengan modem/WAN Anda. Misalnya:
 
-- **Menambahkan Proxy**: Klik `Add` di bagian `Proxys` untuk menambahkan server proxy baru. Anda bisa mengimpor URL SS/SSR/VMESS/TROJAN atau mengisi manual informasi seperti alamat server, port, dan jenis proxy.
-  
+- WAN A: `eth1`
+- WAN B: `wlan0`
+- WAN C: `eth2`
+
+### Konfigurasi Multi-WAN
+
+Jika Anda menggunakan lebih dari satu modem/WAN, Anda dapat mengkonfigurasi Multi-WAN:
+
+1. **Tambah Interface**: Tambahkan interface baru di `Network` > `Interfaces`.
+1. **Konfigurasi Load Balancing**: Atur load balancing untuk mendistribusikan trafik internet.
+
+## Pengaturan Proxy
+
+### Menambahkan Proxy Provider
+
+OpenClash mendukung berbagai jenis proxy seperti Shadowsocks, Vmess, Trojan, dan lain-lain. Berikut cara menambahkannya:
+
+1. **Buka OpenClash**: Pergi ke `Services` > `OpenClash` > `Proxy Provider`.
+2. **Tambah Proxy**: Klik `Add` dan masukkan detail proxy Anda, seperti:
+
 ```yaml
-- name: "Proxy 1"
+- name: "shadowsocks"
   type: ss
-  server: server1.example.com
-  port: 8388
+  server: aaa.bbb.ccc.ddd
+  port: 34963
   cipher: chacha20-ietf-poly1305
-  password: your_password
+  password: passwordss
+  udp: true
 ```
 
-- **Membuat Proxy Group**: Buat grup proxy untuk mengelola beberapa proxy secara bersamaan. Pilih jenis grup seperti `Fallback`, `Load Balancing`, atau `URL-Test`.
+### Mengatur Rules
+
+Atur rules untuk menentukan bagaimana trafik internet dialihkan melalui proxy:
+
+1. **Buka Rules**: Pergi ke `Services` > `OpenClash` > `Rules`.
+1. **Tambah Rule**: Klik `Add` dan masukkan aturan yang diinginkan, seperti:
 
 ```yaml
-proxy-groups:
-- name: "Proxy Group"
-  type: select
-  proxies:
-  - "Proxy 1"
-  - "Proxy 2"
+- DOMAIN-SUFFIX,google.com,Proxy
+- DOMAIN-SUFFIX,facebook.com,Direct
 ```
 
-### 3. Mengatur Rules
+## Pengaturan DNS
 
-Pada tab **Rules**, Anda dapat menetapkan aturan untuk mengarahkan trafik tertentu melalui proxy yang berbeda. Aturan ini dapat didasarkan pada berbagai kriteria seperti nama domain, alamat IP, atau lokasi geografis.
+### Mode DNS
 
-- **Domain Suffix**: Aturan ini digunakan untuk mengarahkan trafik berdasarkan nama domain. Misalnya, Anda bisa mengarahkan semua trafik ke *.google.com melalui server proxy tertentu.
+OpenClash menyediakan beberapa mode DNS, seperti Fake-IP dan Redir-Host. Pilih mode yang sesuai dengan kebutuhan Anda:
 
-```yaml
-rules:
-- DOMAIN-SUFFIX,google.com,Proxy Group
-```
+1. **Fake-IP Mode**: Mengembalikan alamat IP palsu untuk mempercepat respon DNS.
+1. **Redir-Host Mode**: Menggunakan DNS asli untuk kompatibilitas yang lebih baik.
 
-- **GeoIP**: Aturan ini mengarahkan trafik berdasarkan lokasi geografis IP. Misalnya, Anda bisa mengarahkan semua trafik dari China melalui server proxy tertentu.
+### Konfigurasi DNS
 
-```yaml
-rules:
-- GEOIP,CN,Proxy Group
-```
+Untuk mengkonfigurasi DNS, ikuti langkah berikut:
 
-## Mengoptimalkan Pengaturan
-Selain pengaturan dasar di atas, ada beberapa opsi tambahan yang dapat Anda konfigurasikan untuk mengoptimalkan performa OpenClash:
-
-- **Optimasi DNS**: Pastikan Anda menggunakan server DNS yang cepat dan aman. Anda bisa mengatur server DNS di tab **DNS Settings**.
+1. **Buka DNS Settings**: Pergi ke `Services` > `OpenClash` > `DNS Settings`.
+1. **Atur DNS**: Masukkan server DNS yang diinginkan, seperti:
 
 ```yaml
-dns:
-  enable: true
-  listen: 0.0.0.0:53
-  enhanced-mode: redir-host
   nameserver:
-  - 1.1.1.1
   - 8.8.8.8
+  - 8.8.4.4
 ```
 
-- **Cache Optimasi**: Aktifkan cache untuk mengurangi beban pada server DNS dan meningkatkan kecepatan akses.
-  
-```yaml
-dns:
-  cache: true
-```
+## Pengaturan Lanjutan
+
+### GEOIP Update
+Untuk memastikan OpenClash dapat memfilter trafik berdasarkan lokasi geografis, lakukan update GEOIP:
+
+1. **Buka GEOIP Update**: Pergi ke `Services` > `OpenClash` > `GEOIP Update`.
+1. **Update GEOIP**: Klik `Update` untuk memperbarui database GEOIP.
+
+### Manage Config
+Anda dapat mengimpor dan mengelola konfigurasi OpenClash dengan mudah:
+
+1. **Import Config**: Pergi ke `Services` > `OpenClash` > `Manage Config`.
+1. **Tambah Config**: Klik `Import` dan pilih file konfigurasi yang diinginkan.
 
 ## Troubleshooting
 
-Jika Anda mengalami masalah saat menggunakan OpenClash, berikut adalah beberapa langkah pemecahan masalah yang dapat Anda coba:
+### Masalah Umum
+Jika Anda mengalami masalah, berikut beberapa langkah troubleshooting:
 
-- **Cek Log OpenClash**: Buka tab **Logs** di OpenClash untuk melihat log dan mencari tahu apa yang salah.
-- **Verifikasi Konfigurasi**: Pastikan semua pengaturan dan informasi server proxy sudah benar dan sesuai.
-- **Periksa Koneksi Internet**: Pastikan koneksi internet Anda stabil dan tidak ada masalah dengan ISP Anda.
+1. **Cek Log**: Periksa log OpenClash di `Services` > `OpenClash` > `Log`.
+1. **Restart OpenClash**: Coba restart OpenClash untuk memperbaiki masalah sementara.
 
-Dengan mengikuti panduan ini, Anda seharusnya dapat mengatur setting global di OpenClash dengan mudah dan memastikan bahwa jaringan Anda berjalan dengan optimal. OpenClash adalah alat yang sangat kuat dan fleksibel, dan dengan konfigurasi yang tepat, Anda dapat meningkatkan keamanan, kecepatan, dan stabilitas koneksi internet Anda.
-
-Jika Anda memiliki pertanyaan lebih lanjut atau mengalami kesulitan, jangan ragu untuk menghubungi kami melalui menu navigasi. Kami siap membantu Anda untuk memastikan pengalaman internet yang lebih baik.
+### Dukungan Komunitas
+Jika Anda membutuhkan bantuan lebih lanjut, bergabunglah dengan komunitas OpenClash di menu navigasi kami bagian other.
 
 {% include links.html %}
