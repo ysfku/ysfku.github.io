@@ -30,7 +30,7 @@
 <meta name="twitter:description"
   content="{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}" />
 
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ " /sitemap.xml" | prepend: site.url }}" />
 <link rel="stylesheet" type="text/css"
   href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->

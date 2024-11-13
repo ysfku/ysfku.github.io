@@ -20,27 +20,27 @@ Sebelum memulai instalasi, pastikan router Anda sudah terpasang OpenWRT versi te
 
 Untuk menginstal OpenClash, Anda perlu menginstal beberapa paket tambahan. Buka terminal SSH dan masukkan perintah berikut untuk memperbarui daftar paket dan menginstal paket yang diperlukan:
 
-```sh
+{% pre label="sh" %}
 #iptables
 opkg update
 opkg install coreutils-nohup bash iptables dnsmasq-full curl ca-certificates ipset ip-full iptables-mod-tproxy iptables-mod-extra libcap libcap-bin ruby ruby-yaml kmod-tun kmod-inet-diag unzip luci-compat luci luci-base
-```
+{% endpre %}
 
 atau
 
-```sh
+{% pre label="sh" %}
 #nftables
 opkg update
 opkg install coreutils-nohup bash dnsmasq-full curl ca-certificates ipset ip-full libcap libcap-bin ruby ruby-yaml kmod-tun kmod-inet-diag unzip kmod-nft-tproxy luci-compat luci luci-base
-```
+{% endpre %}
 
 ### Unduh dan Instal OpenClash
 
 Setelah paket-paket yang diperlukan terinstal, langkah berikutnya adalah mengunduh dan menginstal OpenClash. Anda bisa mengunduh paket OpenClash dari [SINI](https://github.com/vernesong/OpenClash/releases/download/v0.46.033-beta/luci-app-openclash_0.46.033-beta_all.ipk) dan mentransfernya di router menggunakan SCP atau WinSCP atau FileManager dengan masuk ke folder root. Setelah itu, instal paket dengan perintah berikut:
 
-```sh
+{% pre label="sh" %}
 cd /root && opkg install *.ipk
-```
+{% endpre %}
 
 ### Konfigurasi OpenClash
 Setelah instalasi selesai, buka antarmuka Luci dan navigasikan ke menu **Services > OpenClash**. Di sini, Anda bisa mengatur konfigurasi sesuai kebutuhan Anda. Anda dapat menambahkan file konfigurasi, mengatur proxy, dan menyesuaikan pengaturan lainnya.
@@ -48,9 +48,9 @@ Setelah instalasi selesai, buka antarmuka Luci dan navigasikan ke menu **Service
 ### Memperbarui dan Mengaktifkan OpenClash
 Pastikan untuk memperbarui OpenClash ke versi terbaru dan aktifkan layanan ini. Anda bisa melakukannya melalui antarmuka Luci atau dengan perintah terminal berikut:
 
-```sh
+{% pre label="sh" %}
 /etc/init.d/openclash start
-```
+{% endpre %}
 
 ### Mengatur Proxy dan Konfigurasi Lainnya
 

@@ -75,6 +75,19 @@ sidebars:
 - product2_sidebar
 - other
 
+pre:
+  class: bg_yellow
+  clear: true
+  dark: true
+  dedent: true
+  highlight: 'Error:.*'
+  label: Shell
+  copyButton: true
+  number: true
+  style: 'font-face: courier'
+  wrapper_class: rounded shadow
+  wrapper_style: 'padding: 2em; border: thin green dashed;'
+
 description: "Blog ini didirikan oleh seorang youtuber Master Wifi Network Solution pada tahun 2018 yang lalu."
 
 url: "https://masterwifinetworksolution.github.io"
