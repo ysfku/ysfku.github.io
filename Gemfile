@@ -6,7 +6,9 @@ gem 'github-pages', group: :jekyll_plugins
 # to publich without github page
 #gem "jekyll"
 
-gem 'jekyll_pre'
+group :jekyll_plugins do
+  gem 'jekyll_pre'
+end
 
 gem 'wdm', '>= 0.1.0'
 
