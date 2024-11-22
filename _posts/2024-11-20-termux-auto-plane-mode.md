@@ -22,7 +22,7 @@ Ikuti tahapan demi tahapan yang akan saya jelaskan secara detail dan saya harap 
 
 ## Installasi
 
-1. Silahkan kumpulkan bahan yang sudah saya siapkan untuk anda semua. yang pertama adalah [Termux](https://f-droid.org/repo/com.termux_1020.apk), lalu yang kedua [Termux Boot](https://f-droid.org/repo/com.termux.boot_1000.apk), dan yang ketiga adalah script [Auto Plane Mode](https://github.com/masterwifinetworksolution/termux-auto-planemode/archive/refs/heads/main.zip).
+1. Silahkan kumpulkan bahan yang sudah saya siapkan untuk anda semua. yang pertama adalah [Termux](https://f-droid.org/repo/com.termux_1020.apk), lalu yang kedua [Termux Boot](https://f-droid.org/repo/com.termux.boot_1000.apk), dan yang ketiga adalah script [Auto Plane Mode](https://github.com/masterwifinetworksolution/termux-auto-planemode/releases/download/v1/termux-auto-planemode-main.zip).
 2. Install `Termux`, `Termux Boot`, dan `File Manager Root`.
 3. Berikan akses izin di `Magisk` untuk `Termux`, `Termux Boot`, dan `File Manager Root` anda.
 4. Silahkan buka terlebih dahulu `Termux` lalu masuk pengaturan dengan menekan tombol gear atau icon setting dan aktifkan semua yang ada disana. Kemudian berikan perintah:
