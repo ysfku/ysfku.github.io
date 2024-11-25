@@ -1,21 +1,9 @@
 source "https://rubygems.org"
 
-# to publish on github page
-gem 'github-pages', group: :jekyll_plugins
-
-# to publich without github page
-#gem "jekyll"
-
-group :jekyll_plugins do
-  gem 'jekyll_pre'
-end
-
-gem 'wdm', '>= 0.1.0'
-
-gem "webrick", "~> 1.9"
-
-gem 'jekyll-seo-tag'
-
-gem 'jekyll-sitemap'
-
-gem 'jekyll-feed'
+gem 'jekyll', '~> 4.0'
+gem 'jekyll-feed', '~> 0.12'
+gem 'jekyll-seo-tag', '~> 2.6'
+gem 'jekyll-paginate', '~> 1.1'
+gem 'jekyll-sitemap', '~> 1.4'
+gem 'jekyll-toc', '~> 0.15'
+gem 'jekyll-reading-time'

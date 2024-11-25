@@ -1,0 +1,43 @@
+---
+layout: page
+title: Files
+permalink: /files.html
+---
+<hr>
+<div class="container">
+  <table id="fileTable" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>File Name</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Example File 1</td>
+        <td><a href="https://example.com/file1.pdf" class="btn btn-primary" target="_blank">Download</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Example File 2</td>
+        <td><a href="https://example.com/file2.pdf" class="btn btn-primary" target="_blank">Download</a></td>
+      </tr>
+      <!-- Tambahkan lebih banyak baris file di sini -->
+    </tbody>
+  </table>
+</div>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#fileTable').DataTable();
+  });
+</script>

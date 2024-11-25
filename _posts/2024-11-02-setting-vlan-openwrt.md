@@ -1,10 +1,9 @@
 ---
+layout: post
 title: "Setting Vlan OpenWRT"
-categories: openwrt
-permalink: setting-vlan-openwrt.html
-tags: [openwrt]
-sidebar: kategori-artikel
-toc: true
+date: 2024-11-02 05:46:00 +0800
+categories: [openwrt]
+reading_time: 3
 ---
 
 Virtual Local Area Network (VLAN) adalah fitur jaringan yang memungkinkan Anda untuk memisahkan jaringan fisik menjadi beberapa segmen logis. Dengan menggunakan VLAN, Anda dapat meningkatkan keamanan dan manajemen jaringan Anda. Dalam artikel ini, kita akan membahas cara mengatur VLAN di OpenWRT, termasuk langkah-langkah rinci dan manfaat dari penggunaan VLAN.

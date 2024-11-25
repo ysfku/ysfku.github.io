@@ -1,0 +1,106 @@
+.toc-panel {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.toc-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.toc-list-item {
+  margin: 5px 0;
+}
+
+.toc-link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* Font dan warna teks konten */
+body {
+    font-family: 'Nico Moji', sans-serif;
+    color: #333; /* Warna teks utama */
+    background-color: #f0f0f0; /* Warna abu-abu */
+}
+
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nico Moji', sans-serif;
+    color: #0f9696; /* Warna cerah untuk judul */
+    text-shadow: 1px 1px 3px #000000; /* Bayangan teks */
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: darkgreen; /* Warna teks paragraf */
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+/* Tautan URL */
+a {
+    color: red; /* Warna biru untuk tautan */
+    text-decoration: none;
+    transition: color 0.1s ease, text-shadow 0.1s ease;
+}
+
+a:hover, a:focus {
+    color: #ff1493; /* Warna saat tautan di-hover */
+    text-shadow: 1px 1px 3px #000000; /* Efek bayangan saat di-hover */
+}
+
+/* Teks warna-warni */
+.rainbow-text {
+    font-weight: bold;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/* pre code copy */
+  .code-container {
+    margin-bottom: 20px;
+    background-color: grey;
+  }
+  .code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: dark;
+    color: #ffffff;
+    padding: 10px;
+  }
+  .language-label {
+    font-weight: bold;
+  }
+  .copy-btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .copy-btn:hover {
+    background-color: #0056b3;
+  }
+  .code-block {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }

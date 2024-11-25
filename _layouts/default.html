@@ -1,113 +1,106 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    {% include head.html %}
-    <script>
-        $(document).ready(function () {
-            // Initialize navgoco with default options
-            $("#mysidebar").navgoco({
-                caretHtml: '',
-                accordion: true,
-                openClass: 'active', // open
-                save: false, // leave false or nav highlighting doesn't work right
-                cookie: {
-                    name: 'navgoco',
-                    expires: false,
-                    path: '/'
-                },
-                slide: {
-                    duration: 400,
-                    easing: 'swing'
-                }
-            });
-
-            $("#collapseAll").click(function (e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', false);
-            });
-
-            $("#expandAll").click(function (e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', true);
-            });
-
-        });
-
-    </script>
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
-    <script>
-        $(document).ready(function () {
-            $("#tg-sb-link").click(function () {
-                $("#tg-sb-sidebar").toggle();
-                $("#tg-sb-content").toggleClass('col-md-9');
-                $("#tg-sb-content").toggleClass('col-md-12');
-                $("#tg-sb-icon").toggleClass('fa-toggle-on');
-                $("#tg-sb-icon").toggleClass('fa-toggle-off');
-            });
-        });
-    </script>
-    {% if page.datatable == true %}
-    <!-- Include the standard DataTables bits -->
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
-    <!-- First, this walks through the tables that occur between ...-begin
-         and ...-end and add the "datatable" class to them.
-         Then it invokes DataTable's standard initializer
-         Credit here: http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
-      -->
-    <script>
-        $(document).ready(function () {
-            $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
-            $('table.display').DataTable({
-                paging: true,
-                stateSave: true,
-                searching: true
-            });
-        });
-    </script>
-    {% endif %}
-
-</head>
-
+<!doctype html>
+<html lang="en">
+{% include head.html %}
 <body>
-    {% include topnav.html %}
-    <!-- Page Content -->
-    <div class="container">
-        <div id="main">
-            <!-- Content Row -->
-            <div class="row">
-                {% assign content_col_size = "col-md-12" %}
-                {% unless page.hide_sidebar %}
-                <!-- Sidebar Column -->
-                <div class="col-md-3" id="tg-sb-sidebar">
-                    {% include sidebar.html %}
-                </div>
-                {% assign content_col_size = "col-md-9" %}
-                {% endunless %}
+  {% include header.html %}
+  <div class="container">
+    <div class="row">
+      <main role="main" class="col-md-9 mr-sm-auto col-lg-10 px-md-4">
+        {{ content }}
+      </main>
 
-                <!-- Content Column -->
-                <div class="{{content_col_size}}" id="tg-sb-content">
-                    {{content}}
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <div class="card-header">
+            Recent Posts
+          </div>
+          <ul class="list-group list-group-flush">
+            {% assign sorted_posts = site.posts | sort: 'views' | reverse %} {% for post in sorted_posts limit: 5 %}
+            <li class="list-group-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
         </div>
-        <!-- /#main -->
+      </nav>
     </div>
+  </div>
+  {% include footer.html %}
 
-    {% include copycode.html %}
+<!-- code adsense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-</body>
-{% if site.google_analytics %}
-{% include google_analytics.html %}
-{% endif %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+<script>
+  const posts = [
+    { title: 'Selamat Datang di Master Wifi Network Solution', url: '/announcement/2024/11/25/wellcome-to-masterwifinetworksolution/' },
+    { title: '5 Tips Ampuh untuk Meningkatkan Kecepatan WiFi di Rumah Anda', url: '/tips/wifi/teknologi/2024/11/23/cara-ampuh-titik/' },
+    { title: 'About Page', url: '/about/' },
+    { title: 'Categories Page', url: '/categories/' },
+    // Tambahkan semua posting dan halaman dengan judul dan URL mereka di sini
+  ];
+
+  function searchPosts() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const results = posts.filter(post => post.title.toLowerCase().includes(query));
+    const resultsContainer = document.getElementById('search-results');
+
+    resultsContainer.innerHTML = '';
+
+    if (results.length > 0) {
+      results.forEach(result => {
+        const resultItem = document.createElement('div');
+        resultItem.innerHTML = `<a href="${result.url}">${result.title}</a>`;
+        resultsContainer.appendChild(resultItem);
+      });
+    } else {
+      resultsContainer.innerHTML = '<div>No results found</div>';
+    }
+  }
+</script>
+
+    <script>
+        function playVideo(videoId) {
+            var player = document.getElementById('player');
+            player.src = 'https://www.youtube.com/embed/' + videoId;
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("Gpr-CVHpfLTtQT4ED990N"); // Ganti YOUR_USER_ID dengan Public Key dari EmailJS
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Cegah form dari submit secara tradisional
+
+    // Kirim form dengan EmailJS
+    emailjs.sendForm('service_xbgrl3a', 'template_rp3ha8z', this)
+      .then(function(response) {
+        alert('SUCCESS!', response.status, response.text);
+        document.getElementById('contact-form').reset(); // Kosongkan form
+      }, function(error) {
+        alert('FAILED...', error);
+      });
+  });
+</script>
+
+
+<!-- Copy Code -->
+<script>
+  function copyCode(button) {
+    const codeBlock = button.parentElement.nextElementSibling;
+    const textArea = document.createElement('textarea');
+    textArea.value = codeBlock.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Code copied to clipboard');
+  }
+</script>
+
+  </body>
 </html>
-
-{% comment %} Copyright 2021 Google LLC {% endcomment %}

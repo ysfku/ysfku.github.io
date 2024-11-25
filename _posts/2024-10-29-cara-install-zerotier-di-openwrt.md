@@ -1,10 +1,10 @@
 ---
-title:  "Cara Install ZeroTier di OpenWRT"
-categories: openwrt
-permalink: cara-install-zerotier-di-openwrt.html
-tags: [openwrt]
-sidebar: kategori-artikel
-toc: true
+layout: post
+ttitle:  "Cara Install ZeroTier di OpenWRT"
+date: 2024-10-29 05:46:00 +0800
+categories: [openwrt]
+reading_time: 3
+image: 
 ---
 
 ## Pendahuluan
@@ -20,9 +20,7 @@ Sebelum memulai instalasi, pastikan Anda memiliki akses ke router `OpenWRT` Anda
 1. Update dan Instalasi Paket
 Pertama, Anda perlu memperbarui daftar paket di `OpenWRT` dan menginstal paket `ZeroTier`. Buka terminal SSH dan masukkan perintah berikut:
 
-```bash
-opkg update && opkg install zerotier
-```
+{% include coding.html language="Bash" code="opkg update && opkg install zerotier" %}
 
 Perintah ini akan memperbarui daftar paket dan menginstal `ZeroTier` di router Anda.
 
@@ -30,11 +28,9 @@ Perintah ini akan memperbarui daftar paket dan menginstal `ZeroTier` di router A
 
 Setelah instalasi selesai, Anda perlu mengaktifkan dan mengonfigurasi `ZeroTier`. Masukkan perintah berikut untuk mengaktifkan ZeroTier:
 
-```bash
-uci set zerotier.global.enabled='1'
+{% include coding.html language="Bash" code="uci set zerotier.global.enabled='1'
 uci commit zerotier
-/etc/init.d/zerotier start
-```
+/etc/init.d/zerotier start" %}
 
 Perintah ini akan mengaktifkan `ZeroTier` dan memulai layanan.
 
@@ -46,9 +42,7 @@ Selanjutnya, buka situs web `ZeroTier` dan masuk ke akun Anda. Buat jaringan bar
 
 Kembali ke `terminal SSH` dan masukkan perintah berikut untuk menghubungkan router ke jaringan ZeroTier:
 
-```bash
-zerotier-cli join <Network ID>
-```
+{% include coding.html language="Bash" code="zerotier-cli join <Network ID>" %}
 
 Gantilah `<Network ID>` dengan Network ID yang Anda dapatkan dari situs web `ZeroTier`. Perintah ini akan menghubungkan router Anda ke jaringan `virtual`.
 
@@ -56,9 +50,7 @@ Gantilah `<Network ID>` dengan Network ID yang Anda dapatkan dari situs web `Zer
 
 Untuk memastikan bahwa router Anda telah terhubung ke jaringan `ZeroTier`, masukkan perintah berikut:
 
-```bash
-zerotier-cli listnetworks
-```
+{% include coding.html language="Bash" code="zerotier-cli listnetworks" %}
 
 Anda akan melihat daftar jaringan yang terhubung, termasuk jaringan `ZeroTier` yang baru saja Anda tambahkan.
 
@@ -73,5 +65,3 @@ Menggunakan `ZeroTier` di `OpenWRT` memiliki beberapa keuntungan, antara lain:
 - `Keamanan`: ZeroTier menggunakan enkripsi end-to-end untuk melindungi data Anda.
 - `Kemudahan Akses`: Anda dapat mengakses perangkat di jaringan ZeroTier dari mana saja, selama Anda memiliki koneksi internet.
 - `Fleksibilitas`: ZeroTier mendukung berbagai platform, termasuk Windows, macOS, Linux, Android, dan iOS.
-
-{% include links.html %}

@@ -1,10 +1,9 @@
 ---
+layout: post
 title: "Setting Firewall OpenWRT"
-categories: openwrt
-permalink: setting-firewall-openwrt.html
-tags: [openwrt]
-sidebar: kategori-artikel
-toc: true
+date: 2024-11-01 05:46:00 +0800
+categories: [openwrt]
+reading_time: 3
 ---
 
 OpenWRT adalah firmware open-source yang memberi Anda kendali penuh atas router Anda, memungkinkan Anda untuk menyesuaikan dan mengoptimalkan berbagai fungsi jaringan. Salah satu fitur penting yang ditawarkan oleh OpenWRT adalah firewall, yang melindungi jaringan Anda dari ancaman eksternal dan memastikan keamanan data. Dalam artikel ini, kami akan menjelaskan cara mengatur firewall di OpenWRT untuk meningkatkan keamanan jaringan Anda.
@@ -55,13 +54,12 @@ Port forwarding memungkinkan layanan di jaringan lokal Anda untuk diakses dari l
 
 Untuk konfigurasi yang lebih mendetail, Anda dapat menggunakan tab **Custom Rules** untuk menambahkan aturan firewall menggunakan bahasa iptables. Misalnya:
 
-```sh
+{% include coding.html language="Bash" code="
 # Blokir semua lalu lintas dari IP tertentu
 iptables -A INPUT -s 192.168.1.100 -j DROP
 
 # Izinkan hanya akses SSH dari jaringan lokal
-iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT
-```
+iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT" %}
 
 Tambahkan aturan di atas sesuai kebutuhan dan simpan perubahan Anda.
 

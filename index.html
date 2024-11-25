@@ -1,0 +1,59 @@
+---
+layout: default
+title: Home
+---
+
+{% include iklan.html %}
+
+<div class="featured-posts">
+  {% for post in paginator.posts %}
+  <div class="card mb-3">
+    <img class="card-img-top" src="{{ post.image | default: '/assets/images/banner.jpg' }}" alt="{{ post.title }}">
+    <div class="card-body">
+      <h5 class="card-title"><a href="{{ post.url }}" class="card-link">{{ post.title }}</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        {{ post.date | date: '%Y/%m/%d' }} 
+        • {{ post.reading_time }} min read
+        • <a href="/profile.html">{{ post.author }}</a>
+      </h6>
+      <p class="card-text">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+      <a href="{{ post.url }}" class="card-link">Selengkapnya</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Paginasi Bootstrap -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% if paginator.previous_page %}
+      <li class="page-item">
+        <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <span class="page-link" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </span>
+      </li>
+    {% endif %}
+
+    {% if paginator.next_page %}
+      <li class="page-item">
+        <a class="page-link" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <span class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </span>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+
+{% include iklan.html %}

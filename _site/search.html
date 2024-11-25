@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-adsense-account" content="ca-pub-1794381705838564">
+  <title>search - Master Wifi Network Solution</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="wifi, network, openwrt, mikrotik, modem, router, aplikasi, antena, jasa pasang wifi, jasa remote wifi">
+  <meta name="author" content="">
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nico+Moji&display=swap" rel="stylesheet">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1794381705838564"
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Master Wifi Network Solution</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/categories/">Categories</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          About
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/profile/">Profile</a>
+          <a class="dropdown-item" href="/contact/">Contact</a>
+          <a class="dropdown-item" href="/disclaimer/">Disclaimer</a>
+          <a class="dropdown-item" href="/privacy-policy/">Privacy Policy</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Docs
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/videos/">Videos</a>
+          <a class="dropdown-item" href="/files/">Files</a>
+          <a class="dropdown-item" href="/scripts/">Scripts</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/donate/">Donate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/search.html">Search</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class="container">
+    <div class="row">
+      <main role="main" class="col-md-9 mr-sm-auto col-lg-10 px-md-4">
+          <!-- Isi halaman tambahan bisa ditambahkan di sini jika diperlukan -->
+
+<div class="container">
+  <h1>Search</h1>
+  <form class="form-inline my-2 my-lg-0">
+    <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" oninput="searchPosts()">
+  </form>
+  <div id="search-results" class="table-responsive"></div>
+</div>
+
+<script>
+  const posts = [
+    
+      { title: 'Selamat Datang di Master Wifi Network Solution', url: '/announcement/wellcome-to-masterwifinetworksolution/' },
+    
+      { title: 'Termux Auto Plane Mode', url: '/android/termux-auto-plane-mode/' },
+    
+      { title: 'Membuat konfigurasi CFM Simaster Meta', url: '/clash%20for%20magisk/konfigurasi-cfm-simaster-meta/' },
+    
+      { title: 'Setting Vlan OpenWRT', url: '/openwrt/setting-vlan-openwrt/' },
+    
+      { title: 'Setting Firewall OpenWRT', url: '/openwrt/setting-firewall-openwrt/' },
+    
+      { title: 'Cara Install Tailscale di OpenWrt', url: '/openwrt/cara-install-tailscale-di-openwrt/' },
+    
+      { title: 'Cara Install Zerotier Di Openwrt', url: '/openwrt/cara-install-zerotier-di-openwrt/' },
+    
+      { title: 'Penempatan Iklan Google AdSense di Blog', url: '/monetisasi/pasang-iklan-blog/' },
+    
+      { title: 'Menambahkan Ads.txt di Blog', url: '/monetisasi/cara-pasang-ads-txt-blog/' },
+    
+      { title: '10 Cara Ampuh Menambah Views YouTube dengan Cepat dan Efektif', url: '/youtube/10cara-ampuh-menambah-views-youtube/' },
+    
+      { title: 'Cara Monetisasi di YouTube', url: '/monetisasi/monetisasi-youtube/' },
+    
+      { title: 'Cara Kejar 4000 Jam Tayang di YouTube', url: '/monetisasi/cara-kejar-jam-tayang-youtube/' },
+    
+      { title: 'Kata Kunci untuk Video YouTube yang Efektif', url: '/seo/mencari-kata-kunci-video-youtube/' },
+    
+      { title: 'Cara Optimasi SEO YouTube', url: '/seo/optimasi-seo-youtube/' },
+    
+      { title: 'Cara Upload Video yang Benar di YouTube', url: '/seo/cara-upload-video-di-youtube/' },
+    
+      { title: 'Membuat Channel YouTube yang Sukses', url: '/seo/membuat-channel-youtube/' },
+    
+    
+      { title: 'Categories', url: '/categories/' },
+    
+      { title: 'Contact Us', url: '/contact.html' },
+    
+      { title: 'Disclaimer', url: '/disclaimer.html' },
+    
+      { title: 'Donate', url: '/donate.html' },
+    
+      { title: '', url: '/feed.xml' },
+    
+      { title: 'Files', url: '/files.html' },
+    
+      { title: 'Home', url: '/' },
+    
+      { title: 'Privacy Policy', url: '/privacy-policy.html' },
+    
+      { title: 'Master Wifi Network Solution', url: '/profile.html' },
+    
+      { title: 'Dokumentasi Script Simaster', url: '/scripts.html' },
+    
+      { title: 'search', url: '/search.html' },
+    
+      { title: 'Videos', url: '/videos.html' },
+    
+      { title: 'Wifi', url: '/categories/wifi/' },
+    
+      { title: 'Home', url: '/page/2/' },
+    
+      { title: 'Home', url: '/page/3/' },
+    
+      { title: '', url: '/sitemap.xml' },
+    
+      { title: '', url: '/robots.txt' },
+    
+  ];
+
+  function searchPosts() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const resultsContainer = document.getElementById('search-results');
+
+    resultsContainer.innerHTML = '';
+
+    if (query.trim() === '') {
+      // If search input is empty, clear the results
+      resultsContainer.innerHTML = '';
+    } else {
+      const results = posts.filter(post => post.title.toLowerCase().includes(query));
+
+      if (results.length > 0) {
+        let table = `
+          <table class="table table-striped">
+            <thead style="background-color: #006400; color: #FFFFFF;">
+              <tr>
+                <th>Title</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+        results.forEach(result => {
+          table += `
+            <tr style="background-color: #90EE90;">
+              <td><a href="${result.url}">${result.title}</a></td>
+            </tr>
+          `;
+        });
+        table += '</tbody></table>';
+        resultsContainer.innerHTML = table;
+      } else {
+        resultsContainer.innerHTML = '<div>No results found</div>';
+      }
+    }
+  }
+</script>
+
+      </main>
+
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <div class="card-header">
+            Recent Posts
+          </div>
+          <ul class="list-group list-group-flush">
+             
+            <li class="list-group-item"><a href="/seo/membuat-channel-youtube/">Membuat Channel YouTube yang Sukses</a></li>
+            
+            <li class="list-group-item"><a href="/seo/cara-upload-video-di-youtube/">Cara Upload Video yang Benar di YouTube</a></li>
+            
+            <li class="list-group-item"><a href="/seo/optimasi-seo-youtube/">Cara Optimasi SEO YouTube</a></li>
+            
+            <li class="list-group-item"><a href="/seo/mencari-kata-kunci-video-youtube/">Kata Kunci untuk Video YouTube yang Efektif</a></li>
+            
+            <li class="list-group-item"><a href="/monetisasi/cara-kejar-jam-tayang-youtube/">Cara Kejar 4000 Jam Tayang di YouTube</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">© 2024 <a href="/">Master Wifi Network Solution</a>. All rights reserved.</span>
+  </div>
+</footer>
+
+
+<!-- code adsense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script>
+  const posts = [
+    { title: 'Selamat Datang di Master Wifi Network Solution', url: '/announcement/2024/11/25/wellcome-to-masterwifinetworksolution/' },
+    { title: '5 Tips Ampuh untuk Meningkatkan Kecepatan WiFi di Rumah Anda', url: '/tips/wifi/teknologi/2024/11/23/cara-ampuh-titik/' },
+    { title: 'About Page', url: '/about/' },
+    { title: 'Categories Page', url: '/categories/' },
+    // Tambahkan semua posting dan halaman dengan judul dan URL mereka di sini
+  ];
+
+  function searchPosts() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const results = posts.filter(post => post.title.toLowerCase().includes(query));
+    const resultsContainer = document.getElementById('search-results');
+
+    resultsContainer.innerHTML = '';
+
+    if (results.length > 0) {
+      results.forEach(result => {
+        const resultItem = document.createElement('div');
+        resultItem.innerHTML = `<a href="${result.url}">${result.title}</a>`;
+        resultsContainer.appendChild(resultItem);
+      });
+    } else {
+      resultsContainer.innerHTML = '<div>No results found</div>';
+    }
+  }
+</script>
+
+    <script>
+        function playVideo(videoId) {
+            var player = document.getElementById('player');
+            player.src = 'https://www.youtube.com/embed/' + videoId;
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("Gpr-CVHpfLTtQT4ED990N"); // Ganti YOUR_USER_ID dengan Public Key dari EmailJS
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Cegah form dari submit secara tradisional
+
+    // Kirim form dengan EmailJS
+    emailjs.sendForm('service_xbgrl3a', 'template_rp3ha8z', this)
+      .then(function(response) {
+        alert('SUCCESS!', response.status, response.text);
+        document.getElementById('contact-form').reset(); // Kosongkan form
+      }, function(error) {
+        alert('FAILED...', error);
+      });
+  });
+</script>
+
+
+<!-- Copy Code -->
+<script>
+  function copyCode(button) {
+    const codeBlock = button.parentElement.nextElementSibling;
+    const textArea = document.createElement('textarea');
+    textArea.value = codeBlock.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Code copied to clipboard');
+  }
+</script>
+
+  </body>
+</html>

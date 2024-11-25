@@ -1,0 +1,120 @@
+---
+layout: page
+title: Dokumentasi Script Simaster
+permalink: /scripts.html
+---
+<hr>
+<div class="container">
+  
+  <div class="code-container">
+    <div class="code-header">
+      <span class="language-label">MikroTik</span>
+      <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+    </div>
+    <pre class="code-block">
+/ip firewall filter add chain=forward action=accept src-address=192.168.1.0/24 dst-address=192.168.2.0/24
+/ip dhcp-server add address-pool=pool1 disabled=no
+/ip dhcp-server network add address=192.168.1.0/24 gateway=192.168.1.1
+
+# Backup konfigurasi
+/system backup save name=mybackup
+
+# Reboot otomatis setiap hari pada jam 3 pagi
+/system scheduler add name=reboot_schedule interval=1d start-time=03:00:00 on-event="/system reboot"
+
+# Blokir akses ke situs tertentu
+/ip firewall layer7-protocol add name=block_site regexp="^.+(example.com|example.net|example.org).*\$"
+/ip firewall filter add chain=forward protocol=tcp layer7-protocol=block_site action=drop
+
+# Pembatasan bandwidth
+/queue simple add name=queue1 max-limit=2M/2M target=192.168.1.0/24
+    </pre>
+  </div>
+  
+  <div class="code-container">
+    <div class="code-header">
+      <span class="language-label">OpenWrt</span>
+      <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+    </div>
+    <pre class="code-block">
+#!/bin/sh
+uci set network.lan.proto='static'
+uci set network.lan.ipaddr='192.168.1.1'
+uci set network.lan.netmask='255.255.255.0'
+uci commit network
+/etc/init.d/network restart
+
+# Tambah firewall rule
+uci add firewall rule
+uci set firewall.@rule[-1].name='Allow-SSH'
+uci set firewall.@rule[-1].src='wan'
+uci set firewall.@rule[-1].proto='tcp'
+uci set firewall.@rule[-1].dest_port='22'
+uci set firewall.@rule[-1].target='ACCEPT'
+uci commit firewall
+/etc/init.d/firewall restart
+
+# Monitoring jaringan
+opkg update
+opkg install vnstat
+/etc/init.d/vnstat enable
+/etc/init.d/vnstat start
+
+# Update firmware
+sysupgrade -v http://downloads.openwrt.org/releases/[version]/targets/[target]/openwrt-[version]-[target]-squashfs-sysupgrade.bin
+    </pre>
+  </div>
+  
+  <div class="code-container">
+    <div class="code-header">
+      <span class="language-label">Modem</span>
+      <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+    </div>
+    <pre class="code-block">
+# Script untuk reset modem
+echo 'ATZ' > /dev/ttyUSB0
+sleep 5
+echo 'AT+CGDCONT=1,"IP","123.456.789.0"' > /dev/ttyUSB0
+sleep 2
+echo 'ATD*99#' > /dev/ttyUSB0
+
+# Script untuk cek sinyal
+echo 'AT+CSQ' > /dev/ttyUSB0
+
+# Script untuk konfigurasi modem
+echo 'AT+CMGF=1' > /dev/ttyUSB0
+echo 'AT+CSCS="GSM"' > /dev/ttyUSB0
+echo 'AT+CMGS="12345"' > /dev/ttyUSB0
+sleep 1
+echo -ne 'Message body\x1A' > /dev/ttyUSB0
+    </pre>
+  </div>
+
+  <div class="code-container">
+    <div class="code-header">
+      <span class="language-label">Router</span>
+      <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+    </div>
+    <pre class="code-block">
+# Script untuk mengubah kebijakan firewall
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -j DROP
+
+# NAT konfigurasi
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+iptables -A FORWARD -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+# Membuat backup konfigurasi
+tar -cvzf /root/backup_$(date +%Y%m%d).tar.gz /etc/
+
+# Scheduling otomatis restart
+echo "0 3 * * * /sbin/reboot" >> /etc/crontabs/root
+
+# Update firmware router
+sysupgrade -v http://downloads.router-firmware.org/releases/[version]/targets/[target]/router-[version]-[target]-squashfs-sysupgrade.bin
+    </pre>
+  </div>
+
+  <p>Halaman ini berisikan kumpulan script yang dapat digunakan untuk berbagai konfigurasi dan operasional perangkat jaringan Anda. Sesuaikan script di atas dengan kebutuhan dan kondisi jaringan Anda. Untuk bantuan lebih lanjut, jangan ragu untuk menghubungi kami melalui email di <a href="mailto:myarachma92@gmail.com">myarachma92@gmail.com</a>.</p>
+</div>

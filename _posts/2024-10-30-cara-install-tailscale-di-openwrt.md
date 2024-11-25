@@ -1,13 +1,11 @@
 ---
+layout: post
 title: "Cara Install Tailscale di OpenWrt"
-categories: openwrt
-permalink: cara-install-tailscale-di-openwrt.html
-tags: [openwrt]
-sidebar: kategori-artikel
-toc: true
+date: 2024-10-30 05:46:00 +0800
+categories: [openwrt]
+reading_time: 3
+image: /assets/images/install-tailscale-openwrt.jpg
 ---
-
-![install tailscale openwrt](/images/install-tailscale-openwrt.jpg)
 
 ## Pendahuluan
 
@@ -49,17 +47,13 @@ Buka browser dan masukkan alamat IP router Anda untuk masuk ke antarmuka web Ope
 - **Buka Terminal atau SSH**: Akses router Anda melalui terminal atau SSH.
 - **Perintah Instalasi**: Gunakan perintah berikut untuk menginstal Tailscale:
 
-```bash
-opkg update && opkg install tailscale
-```
+{% include coding.html language="Bash" code="opkg update && opkg install tailscale" %}
 
 ### 3. Konfigurasi Tailscale
 
 - **Jalankan Tailscale**: Setelah instalasi, jalankan Tailscale dengan perintah:
 
-```bash
-tailscale up
-```
+{% include coding.html language="Bash" code="tailscale up" %}
   
 - **Autentikasi Akun**: Ikuti instruksi untuk masuk ke akun Tailscale Anda.
 
@@ -67,9 +61,7 @@ tailscale up
 
 - **Cek Status**: Gunakan perintah:
   
-```bash
-tailscale status
-```
+{% include coding.html language="Bash" code="tailscale status" %}
 
 untuk memastikan Tailscale berjalan dengan baik.
 
@@ -89,5 +81,3 @@ Jika masih menghadapi masalah, kunjungi forum OpenWrt atau Tailscale untuk bantu
 ## Penutup
 
 Menggunakan Tailscale di OpenWrt menawarkan berbagai manfaat, termasuk kemudahan akses dan keamanan tinggi. Dengan mengikuti langkah-langkah di atas, Anda dapat dengan mudah mengatur dan mengkonfigurasi jaringan VPN yang aman dan efisien.
-
-{% include links.html %}

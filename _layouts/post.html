@@ -1,54 +1,51 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
 
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-        <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date
-                | date: "%b %-d, %Y" }}</time> {% if page.author %}<span itemprop="author" itemscope
-                itemtype="https://schema.org/Person"><span itemprop="name">/ {{ page.author }}</span></span>{% endif
-            %}{% if page.tags != null %}/
-            {% assign projectTags = site.data.tags.allowed-tags %}
-            {% for tag in page.tags %}
-            {% if projectTags contains tag %}
-            <a href="{{ " tag_" | append: tag | append: ".html" }}">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
-            {% endif %}
-            {% endfor %}
-            {% endif %}
+<div class="container">
+  <div class="post-content">
+    <h3>{{ page.title }}</h3>
+    <p>
+      {{ page.date | date: "%B %d, %Y" }} -
+      Kategori: 
+      {% for category in page.categories %}
+        <a href="{{ site.baseurl }}/categories/{{ category | downcase }}/">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
+      {% endfor %}
+      • {{ page.reading_time }} min read
+      • <a href="/author.html#{{ page.author }}">{{ page.author }}</a>
+    </p>
+  </div>
+  
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">Home</a></li>
+      {% for category in page.categories %}
+        <li class="breadcrumb-item"><a href="{{ site.baseurl }}/categories/{{ category | downcase }}/">{{ category }}</a></li>
+      {% endfor %}
+      <li class="breadcrumb-item active" aria-current="page"><a href="{{ page.url }}">{{ page.title }}</a></li>
+    </ol>
+  </nav>
 
-        </p>
+  <!-- Place ToC here -->
+  <div class="toc-panel">
+    <nav class="toc">
+      {% include toc.html html=content %}
+    </nav>
+  </div>
+  
+  {% include iklan.html %}
 
+  <div class="post-content">
+    <div>
+      {% if page.image %}
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="img-responsive">
+      {% else %}
+        <img src="{{ site.baseurl }}/assets/images/banner.jpg" alt="Banner Image" class="img-responsive">
+      {% endif %}
 
-    </header>
-
-    <div class="post-content" itemprop="articleBody">
-
-        {% if page.summary %}
-        <div class="summary">{{page.summary}}</div>
-        {% endif %}
-
-        {% unless page.toc == false %}
-        {% include toc.html %}
-        {% endunless %}
-
-        {% if site.github_editme_path %}<a target="_blank" rel="noopener"
-            href="https://github.com/{{site.github_editme_path}}{{page.path}}" class="btn btn-default githubEditButton"
-            role="button"><i class="fa fa-github fa-lg"></i> Edit cepat</a>{% endif %} &nbsp; {% if page.tags != null
-        %}<b>Label: </b>{% assign projectTags = site.data.tags.allowed-tags %}{% for tag in page.tags %}{% if
-        projectTags
-        contains tag %} <a href="{{ " tag_" | append: tag | append: ".html" }}"
-            class="btn btn-default navbar-btn cursorNorm" role="button">{{page.tagName}}{{tag}}</a>{% endif %}{% endfor
-        %}{%
-        endif %}
-
-        {{ content }}
+      {{ content }}
+      {% include iklan.html %}
+      {% include comments.html %}
     </div>
-
-</article>
-
-{% include commento.html %}
-
-{{site.data.alerts.hr_shaded}}
-
-{% include footer.html %}
+  </div>
+</div>
