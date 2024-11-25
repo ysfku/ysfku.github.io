@@ -10,7 +10,7 @@ CFM Simaster Meta sangat `compatible` untuk anda yang suka streaming, sosial med
 
 ## Cara penggunaan
 
-1. download file hanya di [SINI](https://github.com/masterwifinetworksolution/clash-cfm/archive/refs/heads/main.zip).
+1. download file hanya di [SINI](https://github.com/masterwifinetworksolution/clash-cfm/releases/download/v1/clash-cfm-main.zip).
 2. Extract file.
 3. Masukkkan semua isi folder dari `clash-cfm-master` ke dalam folder `/data/clash` dalam hp kalian yang sudah root `magisk`.
 4. Pastikan kalian sudah pasang module `clash for magisk` terbaru yaitu versi 3.0 dan aplikasi `Clash For Magisk` versi `1.6.4` sebelum melanjutkan tata cara penggunaan No.3.

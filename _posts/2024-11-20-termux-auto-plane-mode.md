@@ -21,12 +21,22 @@ Ikuti tahapan demi tahapan yang akan saya jelaskan secara detail dan saya harap 
 
 ## Installasi
 
+<<<<<<< HEAD
 1. Silahkan kumpulkan bahan yang sudah saya siapkan untuk anda semua. yang pertama adalah [Termux](https://f-droid.org/repo/com.termux_1020.apk), lalu yang kedua [Termux Boot](https://f-droid.org/repo/com.termux.boot_1000.apk), dan yang ketiga adalah script [Auto Plane Mode](https://github.com/masterwifinetworksolution/termux-auto-planemode/archive/refs/heads/main.zip).
+=======
+1. Silahkan kumpulkan bahan yang sudah saya siapkan untuk anda semua. yang pertama adalah [Termux](https://f-droid.org/repo/com.termux_1020.apk), lalu yang kedua [Termux Boot](https://f-droid.org/repo/com.termux.boot_1000.apk), dan yang ketiga adalah script [Auto Plane Mode](https://github.com/masterwifinetworksolution/termux-auto-planemode/releases/download/v1/termux-auto-planemode-main.zip).
+>>>>>>> origin/main
 2. Install `Termux`, `Termux Boot`, dan `File Manager Root`.
 3. Berikan akses izin di `Magisk` untuk `Termux`, `Termux Boot`, dan `File Manager Root` anda.
 4. Silahkan buka terlebih dahulu `Termux` lalu masuk pengaturan dengan menekan tombol gear atau icon setting dan aktifkan semua yang ada disana. Kemudian berikan perintah:
 
+<<<<<<< HEAD
 {% include coding.html language="Bash" code="termux-setup-storage" %}
+=======
+```
+termux-setup-storage
+```
+>>>>>>> origin/main
 
 Kemudian berikan akses izin agar nanti bisa masuk ke folder memori internal di android anda.
 
@@ -37,9 +47,17 @@ Kemudian berikan akses izin agar nanti bisa masuk ke folder memori internal di a
 9. Kemudian untuk file yang terakhir kita taruh saja di dalam folder `/data/data/com.termux/files/home/.termux/boot`.
 10. Berikan permission dulu untuk semua file yang ada di memori internal anda lewat termux.
 
+<<<<<<< HEAD
 {% include coding.html language="Bash" code="chmod +x /storage/emulated/0/ping_loop.sh
 chmod +x /data/data/com.termux/files/home/.termux/boot/start_termux.sh
 chmod +x /data/data/com.termux/files/home/autostart.sh" %}
+=======
+```
+chmod +x /storage/emulated/0/ping_loop.sh
+chmod +x /data/data/com.termux/files/home/.termux/boot/start_termux.sh
+chmod +x /data/data/com.termux/files/home/autostart.sh
+```
+>>>>>>> origin/main
 
 11. Setelah memberikan izin akses permission. Anda bisa mengedit ping host sesuai bug andalan yang anda gunakan sehari-hari.
 12. Untuk mengubah ping host, anda bisa masuk ke file `ping_loop.sh` di line 11 dan line 35.
