@@ -35,7 +35,7 @@ title: Home
     {% if paginator.previous_page %}
       <li class="page-item">
         <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
+          <span aria-hidden="true">&laquo; Previous</span>
         </a>
       </li>
     {% else %}
@@ -49,7 +49,7 @@ title: Home
     {% if paginator.next_page %}
       <li class="page-item">
         <a class="page-link" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
+          <span aria-hidden="true">Next &raquo;</span>
         </a>
       </li>
     {% else %}
