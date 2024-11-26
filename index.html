@@ -5,10 +5,25 @@ title: Home
 
 {% include iklan.html %}
 
+<!-- Card khusus untuk post "Selamat Datang di Master Wifi Network Solution" -->
+<div class="card mb-4">
+  <img class="card-img-top" src="{{ post.image | default: '/assets/images/banner.jpg' }}" alt="Selamat Datang di Master Wifi Network Solution">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title"><a href="/announcement/wellcome-to-masterwifinetworksolution/" class="card-link">Selamat Datang di Master Wifi Network Solution</a></h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      2024/11/25 • 5 min read • <a href="/profile.html">Author Name</a>
+      • <span id="page-views">Loading views...</span>
+    </h6>
+    <p class="card-text flex-grow-1">Excerpt of the welcome post...</p>
+    <a href="/announcement/2024/11/25/wellcome-to-masterwifinetworksolution/" class="btn btn-primary mt-auto">Selengkapnya</a>
+  </div>
+</div>
+
 <!-- Untuk featured posts dalam grid -->
 <div class="featured-posts">
   <div class="row">
     {% for post in paginator.posts %}
+    {% unless post.title == "Selamat Datang di Master Wifi Network Solution" %}
     <div class="col-md-4 mb-4 d-flex align-items-stretch">
       <div class="card h-100">
         <img class="card-img-top" src="{{ post.image | default: '/assets/images/banner.jpg' }}" alt="{{ post.title }}">
@@ -25,6 +40,7 @@ title: Home
         </div>
       </div>
     </div>
+    {% endunless %}
     {% endfor %}
   </div>
 </div>
