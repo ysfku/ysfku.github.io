@@ -7,10 +7,21 @@ layout: none
     <title>{{ site.title }}</title>
     <link>{{ site.url }}</link>
     <description>{{ site.description }}</description>
-    <item>
-      <title>{{ page.title }}</title>
-      <link>{{ page.url | prepend: site.baseurl }}</link>
-      <description>{{ page.excerpt | strip_html | xml_escape }}</description>
-    </item>
+    {% for post in site.posts %}
+      <item>
+        <title>{{ post.title }}</title>
+        <link>{{ post.url | absolute_url }}</link>
+        <description>{{ post.excerpt | strip_html | xml_escape }}</description>
+      </item>
+    {% endfor %}
+    {% for page in site.pages %}
+      {% unless page.title == nil %}
+        <item>
+          <title>{{ page.title }}</title>
+          <link>{{ page.url | absolute_url }}</link>
+          <description>{{ page.excerpt | strip_html | xml_escape }}</description>
+        </item>
+      {% endunless %}
+    {% endfor %}
   </channel>
 </rss>
