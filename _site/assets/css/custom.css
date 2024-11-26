@@ -26,6 +26,9 @@
         color: #333; /* Warna teks utama */
         background-color: #f0f0f0; /* Warna abu-abu */
         line-height: 1.6;
+        padding-top: 50px; /* Sesuaikan nilai ini sesuai dengan tinggi navbar Anda */
+}
+
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -139,4 +142,10 @@
 
 #mainNavbar .dropdown-menu {
   z-index: 1050; /* Lebih tinggi dari navbar untuk memastikan dropdown tampil di depan */
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }

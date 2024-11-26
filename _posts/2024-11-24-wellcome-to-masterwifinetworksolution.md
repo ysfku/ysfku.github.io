@@ -3,7 +3,6 @@ layout: post
 title: "Selamat Datang di Master Wifi Network Solution"
 date: 2024-11-25 05:46:00 +0800
 categories: [announcement]
-reading_time: 1
 ---
 
 {% include alert-info.html message="Bantu dan dukung channel youtube kami di <a href='https://youtube.com/@masterwifinetworksolution?sub_confirmation=1'>Master Wifi Network Silution</a>. Dan jika anda berkenan ingin berbagi kepada kami. Anda bisa donasikan kepada kami melalui <a href='/donate.html'>disini</a>. Ingin beli peralatan jaringan internet anda ?. Anda bisa bisa masuk ke <a href='https://shpe.site/tokobeberkah'>Toko Shop</a> kami." %}

@@ -3,7 +3,6 @@ layout: post
 title:  "Penempatan Iklan Google AdSense di Blog"
 date: 2024-09-10 05:46:00 +0800
 categories: [monetisasi]
-reading_time: 5
 image: /assets/images/pasangiklanblog.jpg
 ---
 

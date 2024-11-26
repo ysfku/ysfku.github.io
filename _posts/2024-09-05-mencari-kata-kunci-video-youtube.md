@@ -3,7 +3,6 @@ layout: post
 title: "Kata Kunci untuk Video YouTube yang Efektif"
 date: 2024-09-05 05:46:00 +0800
 categories: [seo]
-reading_time: 5
 image: /assets/images/mencarikatakunciyoutube.jpg
 ---
 

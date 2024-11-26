@@ -3,7 +3,6 @@ layout: post
 title: "Cara Kejar 4000 Jam Tayang di YouTube"
 date: 2024-09-06 05:46:00 +0800
 categories: [monetisasi]
-reading_time: 5
 image: /assets/images/4000jamtayang.jpg
 ---
 

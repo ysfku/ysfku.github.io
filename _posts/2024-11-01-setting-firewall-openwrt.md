@@ -3,7 +3,6 @@ layout: post
 title: "Setting Firewall OpenWRT"
 date: 2024-11-01 05:46:00 +0800
 categories: [openwrt]
-reading_time: 3
 ---
 
 OpenWRT adalah firmware open-source yang memberi Anda kendali penuh atas router Anda, memungkinkan Anda untuk menyesuaikan dan mengoptimalkan berbagai fungsi jaringan. Salah satu fitur penting yang ditawarkan oleh OpenWRT adalah firewall, yang melindungi jaringan Anda dari ancaman eksternal dan memastikan keamanan data. Dalam artikel ini, kami akan menjelaskan cara mengatur firewall di OpenWRT untuk meningkatkan keamanan jaringan Anda.

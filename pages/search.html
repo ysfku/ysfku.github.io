@@ -6,58 +6,58 @@ permalink: /search.html
 
 <!-- Isi halaman tambahan bisa ditambahkan di sini jika diperlukan -->
 
-<div class="container">
-  <h1>Search</h1>
-  <form class="form-inline my-2 my-lg-0">
-    <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" oninput="searchPosts()">
-  </form>
-  <div id="search-results" class="table-responsive"></div>
+<div class="container mt-5">
+    <form class="form-inline my-2 my-lg-0 mb-4">
+        <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" oninput="searchPosts()">
+    </form>
+
+    <table id="search-table" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody id="search-results">
+            <!-- Results will be populated here by JavaScript -->
+        </tbody>
+    </table>
 </div>
 
 <script>
-  const posts = [
-    {% for post in site.posts %}
-      { title: '{{ post.title }}', url: '{{ post.url }}' },
-    {% endfor %}
-    {% for page in site.pages %}
-      { title: '{{ page.title }}', url: '{{ page.url }}' },
-    {% endfor %}
-  ];
+    const posts = [
+        {% for post in site.posts %}
+            { title: '{{ post.title }}', url: '{{ post.url }}', type: 'Post' },
+        {% endfor %}
+        {% for page in site.pages %}
+            { title: '{{ page.title }}', url: '{{ page.url }}', type: 'Page' },
+        {% endfor %}
+    ];
 
-  function searchPosts() {
-    const query = document.getElementById('search-input').value.toLowerCase();
-    const resultsContainer = document.getElementById('search-results');
+    function searchPosts() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+        const resultsContainer = document.getElementById('search-results');
 
-    resultsContainer.innerHTML = '';
+        resultsContainer.innerHTML = '';
 
-    if (query.trim() === '') {
-      // If search input is empty, clear the results
-      resultsContainer.innerHTML = '';
-    } else {
-      const results = posts.filter(post => post.title.toLowerCase().includes(query));
+        if (query.trim() === '') {
+            resultsContainer.innerHTML = '';
+        } else {
+            const results = posts.filter(post => post.title.toLowerCase().includes(query));
 
-      if (results.length > 0) {
-        let table = `
-          <table class="table table-striped">
-            <thead style="background-color: #006400; color: #FFFFFF;">
-              <tr>
-                <th>Title</th>
-              </tr>
-            </thead>
-            <tbody>
-        `;
-        results.forEach(result => {
-          table += `
-            <tr style="background-color: #90EE90;">
-              <td><a href="${result.url}">${result.title}</a></td>
-            </tr>
-          `;
-        });
-        table += '</tbody></table>';
-        resultsContainer.innerHTML = table;
-      } else {
-        resultsContainer.innerHTML = '<div>No results found</div>';
-      }
+            if (results.length > 0) {
+                results.forEach(result => {
+                    const row = `
+                        <tr>
+                            <td><a href="${result.url}">${result.title}</a></td>
+                            <td>${result.type}</td>
+                        </tr>
+                    `;
+                    resultsContainer.insertAdjacentHTML('beforeend', row);
+                });
+            } else {
+                resultsContainer.innerHTML = '<tr><td colspan="2">No results found</td></tr>';
+            }
+        }
     }
-  }
 </script>

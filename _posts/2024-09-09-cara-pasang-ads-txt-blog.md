@@ -3,7 +3,6 @@ layout: post
 title:  "Menambahkan Ads.txt di Blog"
 date: 2024-09-09 05:46:00 +0800
 categories: [monetisasi]
-reading_time: 5
 image: /assets/images/pasangadstxt.jpg
 ---
 

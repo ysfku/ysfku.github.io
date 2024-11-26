@@ -3,7 +3,6 @@ layout: post
 title: "Cara Optimasi SEO YouTube"
 date: 2024-09-04 05:46:00 +0800
 categories: [seo]
-reading_time: 5
 image: /assets/images/optimasiseoyoutube.jpg
 ---
 

@@ -3,7 +3,6 @@ layout: post
 title: "Cara Upload Video yang Benar di YouTube"
 date: 2024-09-03 05:46:00 +0800
 categories: [seo]
-reading_time: 5
 image: /assets/images/carauploadvideoyoutube.jpg
 ---
 

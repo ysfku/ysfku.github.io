@@ -3,7 +3,6 @@ layout: post
 title: "Membuat konfigurasi CFM Simaster Meta"
 date: 2024-11-18 05:46:00 +0800
 categories: [clash for magisk]
-reading_time: 3
 ---
 
 CFM Simaster Meta sangat `compatible` untuk anda yang suka streaming, sosial media, gamer, dan juga berbisnis melalui browsing andalan kalian.

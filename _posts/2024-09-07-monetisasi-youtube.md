@@ -3,7 +3,6 @@ layout: post
 title: "Cara Monetisasi di YouTube"
 date: 2024-09-07 05:46:00 +0800
 categories: [monetisasi]
-reading_time: 5
 image: /assets/images/monetisasiyoutube.jpg
 ---
 

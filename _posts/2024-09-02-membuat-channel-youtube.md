@@ -3,7 +3,6 @@ layout: post
 title: "Membuat Channel YouTube yang Sukses"
 date: 2024-09-03 05:46:00 +0800
 categories: [seo]
-reading_time: 5
 image: /assets/images/membuatchannelyoutube.jpg
 ---
 

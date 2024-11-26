@@ -3,7 +3,6 @@ layout: post
 title: "10 Cara Ampuh Menambah Views YouTube dengan Cepat dan Efektif"
 date: 2024-09-08 05:46:00 +0800
 categories: [youtube]
-reading_time: 5
 image: /assets/images/menambahviewsyoutube.jpg
 ---
 

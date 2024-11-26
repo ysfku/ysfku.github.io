@@ -14,7 +14,7 @@ title: Home
       Update: 2024/11/25
     </h6>
     <h6 class="card-subtitle mb-2 text-muted">
-      Durasi baca: 5 min read
+      Durasi baca: 2 menit
     </h6>
     <h6 class="card-subtitle mb-2 text-muted">
       Penulis: <a href="/profile.html">Muhammad Yusuf</a>
@@ -37,7 +37,9 @@ title: Home
             Update: {{ post.date | date: '%Y/%m/%d' }}
           </h6>
           <h6 class="card-subtitle mb-2 text-muted">
-            Durasi baca: {{ post.reading_time }} min read
+            {% assign words = post.content | number_of_words %}
+            {% assign reading_time = words | divided_by:200 %}
+            Durasi baca: {{ reading_time | ceil }} menit
           </h6>
           <h6 class="card-subtitle mb-2 text-muted">
             Penulis: <a href="/profile.html">{{ post.author }}</a>

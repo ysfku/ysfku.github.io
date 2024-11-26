@@ -35,7 +35,7 @@
 </head>
 
 <body>
-  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <a class="navbar-brand ms-3" href="/">Master Wifi Network Solution</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 5px;">
     <span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@
         <a class="nav-link" href="/">Home <span class="visually-hidden">(current)</span></a>
       </li>
       <li class="nav-item ms-4 me-4">
-        <a class="nav-link" href="/categories/">Categories</a>
+        <a class="nav-link" href="/sitemap/">Sitemap</a>
       </li>
       <li class="nav-item dropdown ms-4 me-4">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,8 +66,8 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownDocs">
           <li><a class="dropdown-item" href="/videos.html">Videos</a></li>
-          <li><a class="dropdown-item" href="/files.html">Files</a></li>
-          <li><a class="dropdown-item" href="/scripts.html">Scripts</a></li>
+          <li><a class="dropdown-item" href="/files/">Files</a></li>
+          <li><a class="dropdown-item" href="/documentation.html">Documentation</a></li>
         </ul>
       </li>
       <li class="nav-item ms-4 me-4">
@@ -85,120 +85,120 @@
       <main role="main" class="col-md-8 col-lg-9 px-md-4">
           <!-- Isi halaman tambahan bisa ditambahkan di sini jika diperlukan -->
 
-<div class="container">
-  <h1>Search</h1>
-  <form class="form-inline my-2 my-lg-0">
-    <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" oninput="searchPosts()">
-  </form>
-  <div id="search-results" class="table-responsive"></div>
+<div class="container mt-5">
+    <form class="form-inline my-2 my-lg-0 mb-4">
+        <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" oninput="searchPosts()">
+    </form>
+
+    <table id="search-table" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody id="search-results">
+            <!-- Results will be populated here by JavaScript -->
+        </tbody>
+    </table>
 </div>
 
 <script>
-  const posts = [
-    
-      { title: 'Selamat Datang di Master Wifi Network Solution', url: '/announcement/wellcome-to-masterwifinetworksolution/' },
-    
-      { title: 'Termux Auto Plane Mode', url: '/android/termux-auto-plane-mode/' },
-    
-      { title: 'Membuat konfigurasi CFM Simaster Meta', url: '/clash%20for%20magisk/konfigurasi-cfm-simaster-meta/' },
-    
-      { title: 'Setting Vlan OpenWRT', url: '/openwrt/setting-vlan-openwrt/' },
-    
-      { title: 'Setting Firewall OpenWRT', url: '/openwrt/setting-firewall-openwrt/' },
-    
-      { title: 'Cara Install Tailscale di OpenWrt', url: '/openwrt/cara-install-tailscale-di-openwrt/' },
-    
-      { title: 'Cara Install Zerotier Di Openwrt', url: '/openwrt/cara-install-zerotier-di-openwrt/' },
-    
-      { title: 'Penempatan Iklan Google AdSense di Blog', url: '/monetisasi/pasang-iklan-blog/' },
-    
-      { title: 'Menambahkan Ads.txt di Blog', url: '/monetisasi/cara-pasang-ads-txt-blog/' },
-    
-      { title: '10 Cara Ampuh Menambah Views YouTube dengan Cepat dan Efektif', url: '/youtube/10cara-ampuh-menambah-views-youtube/' },
-    
-      { title: 'Cara Monetisasi di YouTube', url: '/monetisasi/monetisasi-youtube/' },
-    
-      { title: 'Cara Kejar 4000 Jam Tayang di YouTube', url: '/monetisasi/cara-kejar-jam-tayang-youtube/' },
-    
-      { title: 'Kata Kunci untuk Video YouTube yang Efektif', url: '/seo/mencari-kata-kunci-video-youtube/' },
-    
-      { title: 'Cara Optimasi SEO YouTube', url: '/seo/optimasi-seo-youtube/' },
-    
-      { title: 'Cara Upload Video yang Benar di YouTube', url: '/seo/cara-upload-video-di-youtube/' },
-    
-      { title: 'Membuat Channel YouTube yang Sukses', url: '/seo/membuat-channel-youtube/' },
-    
-    
-      { title: 'Categories', url: '/categories/' },
-    
-      { title: 'Contact Us', url: '/contact.html' },
-    
-      { title: 'Disclaimer', url: '/disclaimer.html' },
-    
-      { title: 'Donate', url: '/donate.html' },
-    
-      { title: '', url: '/feed.xml' },
-    
-      { title: 'Files', url: '/files.html' },
-    
-      { title: 'Home', url: '/' },
-    
-      { title: 'Privacy Policy', url: '/privacy-policy.html' },
-    
-      { title: 'Master Wifi Network Solution', url: '/profile.html' },
-    
-      { title: 'Dokumentasi Script Simaster', url: '/scripts.html' },
-    
-      { title: 'search', url: '/search.html' },
-    
-      { title: 'Videos', url: '/videos.html' },
-    
-      { title: 'Home', url: '/page/2/' },
-    
-      { title: 'Home', url: '/page/3/' },
-    
-      { title: '', url: '/sitemap.xml' },
-    
-      { title: '', url: '/robots.txt' },
-    
-  ];
+    const posts = [
+        
+            { title: 'Selamat Datang di Master Wifi Network Solution', url: '/announcement/wellcome-to-masterwifinetworksolution/', type: 'Post' },
+        
+            { title: 'Termux Auto Plane Mode', url: '/android/termux-auto-plane-mode/', type: 'Post' },
+        
+            { title: 'Membuat konfigurasi CFM Simaster Meta', url: '/clash%20for%20magisk/konfigurasi-cfm-simaster-meta/', type: 'Post' },
+        
+            { title: 'Setting Vlan OpenWRT', url: '/openwrt/setting-vlan-openwrt/', type: 'Post' },
+        
+            { title: 'Setting Firewall OpenWRT', url: '/openwrt/setting-firewall-openwrt/', type: 'Post' },
+        
+            { title: 'Cara Install Tailscale di OpenWrt', url: '/openwrt/cara-install-tailscale-di-openwrt/', type: 'Post' },
+        
+            { title: 'Cara Install Zerotier Di Openwrt', url: '/openwrt/cara-install-zerotier-di-openwrt/', type: 'Post' },
+        
+            { title: 'Penempatan Iklan Google AdSense di Blog', url: '/monetisasi/pasang-iklan-blog/', type: 'Post' },
+        
+            { title: 'Menambahkan Ads.txt di Blog', url: '/monetisasi/cara-pasang-ads-txt-blog/', type: 'Post' },
+        
+            { title: '10 Cara Ampuh Menambah Views YouTube dengan Cepat dan Efektif', url: '/youtube/10cara-ampuh-menambah-views-youtube/', type: 'Post' },
+        
+            { title: 'Cara Monetisasi di YouTube', url: '/monetisasi/monetisasi-youtube/', type: 'Post' },
+        
+            { title: 'Cara Kejar 4000 Jam Tayang di YouTube', url: '/monetisasi/cara-kejar-jam-tayang-youtube/', type: 'Post' },
+        
+            { title: 'Kata Kunci untuk Video YouTube yang Efektif', url: '/seo/mencari-kata-kunci-video-youtube/', type: 'Post' },
+        
+            { title: 'Cara Optimasi SEO YouTube', url: '/seo/optimasi-seo-youtube/', type: 'Post' },
+        
+            { title: 'Cara Upload Video yang Benar di YouTube', url: '/seo/cara-upload-video-di-youtube/', type: 'Post' },
+        
+            { title: 'Membuat Channel YouTube yang Sukses', url: '/seo/membuat-channel-youtube/', type: 'Post' },
+        
+        
+            { title: 'Contact Us', url: '/contact.html', type: 'Page' },
+        
+            { title: 'Disclaimer', url: '/disclaimer.html', type: 'Page' },
+        
+            { title: 'Dokumentasi Script Simaster', url: '/documentation.html', type: 'Page' },
+        
+            { title: 'Donate', url: '/donate.html', type: 'Page' },
+        
+            { title: '', url: '/feed.xml', type: 'Page' },
+        
+            { title: 'Files', url: '/files/', type: 'Page' },
+        
+            { title: 'Home', url: '/', type: 'Page' },
+        
+            { title: 'Privacy Policy', url: '/privacy-policy.html', type: 'Page' },
+        
+            { title: 'Master Wifi Network Solution', url: '/profile.html', type: 'Page' },
+        
+            { title: 'search', url: '/search.html', type: 'Page' },
+        
+            { title: 'Sitemap', url: '/sitemap/', type: 'Page' },
+        
+            { title: 'Videos', url: '/videos.html', type: 'Page' },
+        
+            { title: 'Home', url: '/page/2/', type: 'Page' },
+        
+            { title: 'Home', url: '/page/3/', type: 'Page' },
+        
+            { title: '', url: '/sitemap.xml', type: 'Page' },
+        
+            { title: '', url: '/robots.txt', type: 'Page' },
+        
+    ];
 
-  function searchPosts() {
-    const query = document.getElementById('search-input').value.toLowerCase();
-    const resultsContainer = document.getElementById('search-results');
+    function searchPosts() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+        const resultsContainer = document.getElementById('search-results');
 
-    resultsContainer.innerHTML = '';
+        resultsContainer.innerHTML = '';
 
-    if (query.trim() === '') {
-      // If search input is empty, clear the results
-      resultsContainer.innerHTML = '';
-    } else {
-      const results = posts.filter(post => post.title.toLowerCase().includes(query));
+        if (query.trim() === '') {
+            resultsContainer.innerHTML = '';
+        } else {
+            const results = posts.filter(post => post.title.toLowerCase().includes(query));
 
-      if (results.length > 0) {
-        let table = `
-          <table class="table table-striped">
-            <thead style="background-color: #006400; color: #FFFFFF;">
-              <tr>
-                <th>Title</th>
-              </tr>
-            </thead>
-            <tbody>
-        `;
-        results.forEach(result => {
-          table += `
-            <tr style="background-color: #90EE90;">
-              <td><a href="${result.url}">${result.title}</a></td>
-            </tr>
-          `;
-        });
-        table += '</tbody></table>';
-        resultsContainer.innerHTML = table;
-      } else {
-        resultsContainer.innerHTML = '<div>No results found</div>';
-      }
+            if (results.length > 0) {
+                results.forEach(result => {
+                    const row = `
+                        <tr>
+                            <td><a href="${result.url}">${result.title}</a></td>
+                            <td>${result.type}</td>
+                        </tr>
+                    `;
+                    resultsContainer.insertAdjacentHTML('beforeend', row);
+                });
+            } else {
+                resultsContainer.innerHTML = '<tr><td colspan="2">No results found</td></tr>';
+            }
+        }
     }
-  }
 </script>
 
       </main>
@@ -389,6 +389,10 @@
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
 <script>
 new DataTable('#example');
+</script>
+
+<script>
+new DataTable('#dockku');
 </script>
 
 <!-- Custom scripts for your site -->
