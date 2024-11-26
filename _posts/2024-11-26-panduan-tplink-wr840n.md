@@ -5,7 +5,7 @@ date: 2024-11-26
 categories: [teknologi, tutorial, jaringan]
 ---
 
-Menggunakan router TP-Link WR840N dengan benar adalah langkah penting untuk memastikan jaringan internet Anda berjalan lancar. Artikel ini akan mengulas langkah demi langkah tata cara penggunaan router TP-Link WR840N, dari pemasangan hingga pengaturan, dengan bahasa yang mudah dipahami oleh orang awam. Artikel ini dirancang untuk tidak terkena pengecekan plagiarisme dan memiliki panjang sekitar 3000 kata.
+Menggunakan router TP-Link WR840N dengan benar adalah langkah penting untuk memastikan jaringan internet Anda berjalan lancar. Artikel ini akan mengulas langkah demi langkah tata cara penggunaan router TP-Link WR840N, dari pemasangan hingga pengaturan, dengan bahasa yang mudah dipahami oleh orang awam.
 
 ## Langkah 1: Mengenal Router TP-Link WR840N
 
