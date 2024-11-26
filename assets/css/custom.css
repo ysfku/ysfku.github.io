@@ -132,3 +132,11 @@
   border-color: #17a2b8; /* Warna border tombol khusus */
 }
 
+/* pengaturan navigasi agar tidak tertutup sidebar */
+#mainNavbar {
+  z-index: 1030; /* Sesuaikan angka sesuai kebutuhan */
+}
+
+#mainNavbar .dropdown-menu {
+  z-index: 1050; /* Lebih tinggi dari navbar untuk memastikan dropdown tampil di depan */
+}
