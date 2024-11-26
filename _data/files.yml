@@ -1,6 +1,17 @@
-- status: nonaktif
-  file_name: Example File 1
-  url: https://example.com/file1.pdf
-- status: nonaktif
-  file_name: Example File 2
-  url: https://example.com/file2.pdf
+- name: "Tiger Nixon"
+  position: "System Architect"
+  office: "Edinburgh"
+  start_date: "2011-04-25"
+  salary: 320800
+
+- name: "Garrett Winters"
+  position: "Accountant"
+  office: "Tokyo"
+  start_date: "2011-07-25"
+  salary: 170750
+
+- name: "Ashton Cox"
+  position: "Junior Technical Author"
+  office: "San Francisco"
+  start_date: "2009-01-12"
+  salary: 86000

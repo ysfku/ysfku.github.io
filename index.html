@@ -6,16 +6,20 @@ title: Home
 {% include iklan.html %}
 
 <!-- Card khusus untuk post "Selamat Datang di Master Wifi Network Solution" -->
-<div class="card mb-4">
+<div class="card mb-4 custom-background">
   <img class="card-img-top" src="{{ post.image | default: '/assets/images/banner.jpg' }}" alt="Selamat Datang di Master Wifi Network Solution">
   <div class="card-body d-flex flex-column">
     <h5 class="card-title"><a href="/announcement/wellcome-to-masterwifinetworksolution/" class="card-link">Selamat Datang di Master Wifi Network Solution</a></h5>
     <h6 class="card-subtitle mb-2 text-muted">
-      2024/11/25 • 5 min read • <a href="/profile.html">Author Name</a>
-      • <span id="page-views">Loading views...</span>
+      Update: 2024/11/25
     </h6>
-    <p class="card-text flex-grow-1">Excerpt of the welcome post...</p>
-    <a href="/announcement/2024/11/25/wellcome-to-masterwifinetworksolution/" class="btn btn-primary mt-auto">Selengkapnya</a>
+    <h6 class="card-subtitle mb-2 text-muted">
+      Durasi baca: 5 min read
+    </h6>
+    <h6 class="card-subtitle mb-2 text-muted">
+      Penulis: <a href="/profile.html">Muhammad Yusuf</a>
+    </h6>
+    <a href="/announcement/wellcome-to-masterwifinetworksolution/" class="btn btn-success mt-auto">Lihat Artikel</a>
   </div>
 </div>
 
@@ -25,18 +29,20 @@ title: Home
     {% for post in paginator.posts %}
     {% unless post.title == "Selamat Datang di Master Wifi Network Solution" %}
     <div class="col-md-4 mb-4 d-flex align-items-stretch">
-      <div class="card h-100">
+      <div class="card h-100 grid-background">
         <img class="card-img-top" src="{{ post.image | default: '/assets/images/banner.jpg' }}" alt="{{ post.title }}">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title"><a href="{{ post.url }}" class="card-link">{{ post.title }}</a></h5>
           <h6 class="card-subtitle mb-2 text-muted">
-            {{ post.date | date: '%Y/%m/%d' }} 
-            • {{ post.reading_time }} min read
-            • <a href="/profile.html">{{ post.author }}</a>
-            • <span id="page-views">Loading views...</span>
+            Update: {{ post.date | date: '%Y/%m/%d' }}
           </h6>
-          <p class="card-text flex-grow-1">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-          <a href="{{ post.url }}" class="btn btn-primary mt-auto">Selengkapnya</a>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Durasi baca: {{ post.reading_time }} min read
+          </h6>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Penulis: <a href="/profile.html">{{ post.author }}</a>
+          </h6>
+          <a href="{{ post.url }}" class="btn btn-success mt-auto">Lihat Artikel</a>
         </div>
       </div>
     </div>

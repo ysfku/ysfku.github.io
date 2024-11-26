@@ -2,33 +2,29 @@
 layout: default
 ---
 
-<div class="container">
+<div class="container mt-4">
   <div class="post-content">
-    <h3>{{ page.title }}</h3>
-    <p>
-      {{ page.date | date: "%B %d, %Y" }} -
-      Kategori: 
-      {% for category in page.categories %}
-        <a href="{{ site.baseurl }}/categories/{{ category | downcase }}/">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
-      {% endfor %}
-      • {{ page.reading_time }} min read
-      • <small id="page-views">Loading views...</small>
-      • <a href="/author.html#{{ page.author }}">{{ page.author }}</a>
-    </p>
+    <nav aria-label="breadcrumb" class="bg-info p-3 rounded">
+      <h6 class="card-subtitle mb-2 text-muted">Judul: <b>{{ page.title }}</b></h6>
+      <h6 class="card-subtitle mb-2 text-muted">Update: {{ page.date | date: '%Y/%m/%d' }}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">{% for category in page.categories %}
+          Category: <a href="{{ site.baseurl }}/categories/{{ category | downcase }}/">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
+        {% endfor %}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Durasi baca: {{ page.reading_time }} min read</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Penulis: <a href="/profile.html">{{ page.author }}</a></h6>
+
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">Home</a></li>
+        {% for category in page.categories %}
+          <li class="breadcrumb-item"><a href="{{ site.baseurl }}/categories/{{ category | downcase }}/">{{ category }}</a></li>
+        {% endfor %}
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+      </ol>
+    </nav>
   </div>
-  
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">Home</a></li>
-      {% for category in page.categories %}
-        <li class="breadcrumb-item"><a href="{{ site.baseurl }}/categories/{{ category | downcase }}/">{{ category }}</a></li>
-      {% endfor %}
-      <li class="breadcrumb-item active" aria-current="page"><a href="{{ page.url }}">{{ page.title }}</a></li>
-    </ol>
-  </nav>
 
   <!-- Place ToC here -->
-  <div class="toc-panel">
+  <div class="toc-panel bg-secondary">
     <nav class="toc">
       {% include toc.html html=content %}
     </nav>
@@ -39,9 +35,9 @@ layout: default
   <div class="post-content">
     <div>
       {% if page.image %}
-        <img src="{{ page.image }}" alt="{{ page.title }}" class="img-responsive">
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="img-fluid" style="margin-bottom: 20px;">
       {% else %}
-        <img src="{{ site.baseurl }}/assets/images/banner.jpg" alt="Banner Image" class="img-responsive">
+        <img src="{{ site.baseurl }}/assets/images/banner.jpg" alt="Banner Image" class="img-fluid" style="margin-bottom: 20px;">
       {% endif %}
 
       {{ content }}

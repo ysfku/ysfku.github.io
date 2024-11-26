@@ -1,42 +1,42 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">{{ site.title }}</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand ms-3" href="/">{{ site.title }}</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 5px;">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+    <ul class="navbar-nav ms-auto me-3">
+      <li class="nav-item active ms-4 me-4">
+        <a class="nav-link" href="/">Home <span class="visually-hidden">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ms-4 me-4">
         <a class="nav-link" href="/categories/">Categories</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown ms-4 me-4">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           About
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/profile.html">Profile</a>
-          <a class="dropdown-item" href="/contact.html">Contact</a>
-          <a class="dropdown-item" href="/disclaimer.html">Disclaimer</a>
-          <a class="dropdown-item" href="/privacy-policy.html">Privacy Policy</a>
-        </div>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/profile.html">Profile</a></li>
+          <li><a class="dropdown-item" href="/contact.html">Contact</a></li>
+          <li><a class="dropdown-item" href="/disclaimer.html">Disclaimer</a></li>
+          <li><a class="dropdown-item" href="/privacy-policy.html">Privacy Policy</a></li>
+        </ul>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown ms-4 me-4">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDocs" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Docs
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/videos.html">Videos</a>
-          <a class="dropdown-item" href="/files.html">Files</a>
-          <a class="dropdown-item" href="/scripts.html">Scripts</a>
-        </div>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownDocs">
+          <li><a class="dropdown-item" href="/videos.html">Videos</a></li>
+          <li><a class="dropdown-item" href="/files.html">Files</a></li>
+          <li><a class="dropdown-item" href="/scripts.html">Scripts</a></li>
+        </ul>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ms-4 me-4">
         <a class="nav-link" href="/donate.html">Donate</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ms-4 me-4">
         <a class="nav-link" href="/search.html">Search</a>
       </li>
     </ul>

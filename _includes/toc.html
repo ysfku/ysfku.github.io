@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Table of Contents</h3>
+        <h3 class="panel-title text-light">Daftar Isi Konten</h3>
     </div>
     <div class="panel-body">
         <ul class="list-group">
@@ -22,8 +22,8 @@
                         {% else %}
                             </li>
                         {% endif %}
-                        <li class="list-group-item">
-                            <a href="#{{ itemId }}">{{ headerContent }}</a>
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#{{ itemId }}">{{ headerContent }}</a>
                         {% assign lastLevel = currLevel %}
                     {% endif %}
                 {% endif %}
