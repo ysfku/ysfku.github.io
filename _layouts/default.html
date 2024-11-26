@@ -55,6 +55,7 @@
       </nav>
     </div>
   </div>
+  
   {% include footer.html %}
   
 <!-- code adsense -->
@@ -95,27 +96,27 @@
 </script>
 
 <script>
-  // Fungsi untuk mengambil jumlah pengunjung dari Google Analytics
-  function fetchAnalyticsData(callback) {
-    gtag('event', 'page_view', {
-      'event_callback': function() {
-        // Mengambil data dari Google Analytics API atau dari localStorage sebagai contoh
-        var totalVisitors = localStorage.getItem('totalVisitors') || 0;
-        var todayVisitors = localStorage.getItem('todayVisitors') || 0;
-        var countryVisitors = localStorage.getItem('countryVisitors') || 'N/A';
-        callback(totalVisitors, todayVisitors, countryVisitors);
-      }
-    });
-  }
+  // Fungsi untuk menyimpan data pengunjung ke localStorage (contoh sederhana)
+  function incrementVisitorCount() {
+    let totalVisitors = localStorage.getItem('totalVisitors') || 0;
+    let todayVisitors = localStorage.getItem('todayVisitors') || 0;
+    const lastVisit = localStorage.getItem('lastVisit') || new Date().toISOString();
 
-  // Menampilkan data pengunjung di elemen dengan id "analytics-data"
-  document.addEventListener('DOMContentLoaded', function() {
-    fetchAnalyticsData(function(total, today, country) {
-      document.getElementById('total-visitors').textContent = total + ' total visitors';
-      document.getElementById('today-visitors').textContent = today + ' visitors today';
-      document.getElementById('country-visitors').textContent = 'Visitors from: ' + country;
-    });
-  });
+    // Jika hari baru, reset pengunjung hari ini
+    if (new Date(lastVisit).toDateString() !== new Date().toDateString()) {
+      todayVisitors = 0;
+    }
+
+    totalVisitors++;
+    todayVisitors++;
+    localStorage.setItem('totalVisitors', totalVisitors);
+    localStorage.setItem('todayVisitors', todayVisitors);
+    localStorage.setItem('lastVisit', new Date().toISOString());
+
+    document.getElementById('total-visitors').textContent = totalVisitors + ' total visitors';
+    document.getElementById('today-visitors').textContent = todayVisitors + ' visitors today';
+    document.getElementById('country-visitors').textContent = 'Visitors from: ' + 'N/A';
+  }
 </script>
 
 <script>
