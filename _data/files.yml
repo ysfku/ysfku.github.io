@@ -1,0 +1,6 @@
+- status: nonaktif
+  file_name: Example File 1
+  url: https://example.com/file1.pdf
+- status: nonaktif
+  file_name: Example File 2
+  url: https://example.com/file2.pdf

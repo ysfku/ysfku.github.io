@@ -12,6 +12,20 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/custom.css">
   <link href="https://fonts.googleapis.com/css2?family=Nico+Moji&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+  
+  <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXX-Y');
+</script>
+<!-- End Google Analytics -->
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1794381705838564"
   crossorigin="anonymous"></script>
@@ -62,51 +76,192 @@
   </div>
 </nav>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <main role="main" class="col-md-9 mr-sm-auto col-lg-10 px-md-4">
+      <main role="main" class="col-md-8 col-lg-9 px-md-4">
         <div class="container mt-4">
   <div class="row">
-            <div class="col-md-4 mb-4">
-  <div class="card">
-    <img src="https://i.ytimg.com/vi_webp/TOG-bocz8F8/hqdefault.webp" class="card-img-top" alt="Thumbnail 1">
-    <div class="card-body">
-      <p class="card-text"><a href="https://m.youtube.com/watch?v=TOG-bocz8F8" target="_blank">Mengatasi mac clone pada router tenda</a></p>
+            <section class="my-5">
+  <div class="container">
+    <h2 class="title mb-4">Videos</h2>
+    <div class="row">
+      <div class="col-md-8">
+        <div id="video_player" class="embed-responsive embed-responsive-16by9">
+          <iframe id="main-Video" class="embed-responsive-item" src="https://www.youtube.com/embed/TOG-bocz8F8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="playlistBx border p-3">
+          <h5 class="AllLessons"></h5>
+          <ul class="list-group" id="playlist"></ul>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="col-md-4 mb-4">
-  <div class="card">
-    <img src="https://i.ytimg.com/vi_webp/R8gq5lr_haQ/hqdefault.webp" class="card-img-top" alt="Thumbnail 2">
-    <div class="card-body">
-      <p class="card-text"><a href="https://m.youtube.com/watch?v=R8gq5lr_haQ&t=225s" target="_blank">Mengatasi mac clone pada router tenda</a></p>
-    </div>
-  </div>
-</div> 
+<script>
+let allVideos = [
+   { name: "Cara limit bandwidth di router Tenda", src: "https://www.youtube.com/embed/TOG-bocz8F8", id: "vid_1" },
+   { name: "Cara mengatasi router Tenda tidak tersambung internet", src: "https://www.youtube.com/embed/R8gq5lr_haQ", id: "vid_2" },
+   { name: "VPNBypass OpenWRT install dan konfigurasi", src: "https://www.youtube.com/embed/y7Li7qFC31M", id: "vid_3" },
+   { name: "Mengatasi WiFi tidak bisa konek ke STB OpenWRT", src: "https://www.youtube.com/embed/tr2adr_ZkMI", id: "vid_4" },
+   { name: "Mengatasi DHCP, DNS, update list, install IPK yang gagal di OpenWRT", src: "https://www.youtube.com/embed/kAn6duWkDEs", id: "vid_5" },
+   { name: "Install firmware OpenWRT di Android dengan OTG", src: "https://www.youtube.com/embed/1v9QHP_-zpo", id: "vid_6" },
+   { name: "FIX - Setting VPNBypass OpenWRT", src: "https://www.youtube.com/embed/L_H49lIOJG8", id: "vid_7" },
+   { name: "DNSMasq Full untuk VPNBypass OpenWRT", src: "https://www.youtube.com/embed/n4mHyrdK39U", id: "vid_8" },
+   { name: "Mengatasi tidak koneksi hotspot dan internet di OpenWRT", src: "https://www.youtube.com/embed/B1o-JnWWrWg", id: "vid_9" },
+   { name: "Koneksi internet OpenWRT terputus? Watchcat saja", src: "https://www.youtube.com/embed/toHGTmHCrYE", id: "vid_10" },
+   { name: "Install ZeroTier remote OpenWRT via Android", src: "https://www.youtube.com/embed/KM444TuMWrI", id: "vid_11" },
+   { name: "Setting ZTE F609 sebagai bridge akses point STB OpenWRT", src: "https://www.youtube.com/embed/5ypncHC-LUo", id: "vid_12" },
+   { name: "Mengatasi WAN IP koneksi dan klien di OpenWRT", src: "https://www.youtube.com/embed/byubft70FW4", id: "vid_13" },
+   { name: "Auto rekonek libernet jadikan internet anti bengong", src: "https://www.youtube.com/embed/AugiRksTLAU", id: "vid_14" },
+   { name: "Cara remote Tenda N301 langsung dari server OpenWRT", src: "https://www.youtube.com/embed/X_YJSF7_2iY", id: "vid_15" },
+   { name: "Memasang antena bekas Tenda dan kipas untuk STB OpenWRT", src: "https://www.youtube.com/embed/uIRHnQgovb0", id: "vid_16" },
+];
+
+const mainVideo = document.querySelector('#main-Video');
+const playlist = document.getElementById('playlist');
+const AllLessons = document.querySelector('.AllLessons');
+const videoTitle = document.querySelector('.title');
+
+AllLessons.innerHTML = `${allVideos.length} Daftar Video`;
+
+let videoIndex = 1;
+window.addEventListener('load', () => {
+   loadVideo(videoIndex);
+   playingNow();
+});
+
+function loadVideo(indexNumb) {
+   mainVideo.src = allVideos[indexNumb - 1].src;
+   videoTitle.innerHTML = `${indexNumb}. ${allVideos[indexNumb - 1].name}`;
+}
+
+for (let i = 0; i < allVideos.length; i++) {
+   let liTag = `<li class="list-group-item" li-index="${i + 1}">
+      <div class="row">
+         <span>${i + 1}. ${allVideos[i].name}</span>
+      </div>
+   </li>`;
+   playlist.insertAdjacentHTML('beforeend', liTag);
+}
+
+const allLiTags = playlist.querySelectorAll('li');
+function playingNow() {
+   for (let j = 0; j < allVideos.length; j++) {
+      allLiTags[j].classList.remove('active');
+      if (allLiTags[j].getAttribute('li-index') == videoIndex) {
+         allLiTags[j].classList.add('active');
+      }
+      allLiTags[j].setAttribute("onclick", "clicked(this)");
+   }
+}
+
+function clicked(element) {
+   videoIndex = element.getAttribute('li-index');
+   loadVideo(videoIndex);
+   playingNow();
+}
+</script>
+
+<style>
+section {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.playlistBx {
+    border: 2px solid green;
+    overflow-y: auto;
+    height: 315px; /* Match the video player height */
+}
+.AllLessons {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.list-group-item.active {
+    background-color: #1d3541;
+    border-color: #1d3541;
+    color: white;
+}
+</style>
+ 
  <!-- Tambahkan video lainnya sesuai kebutuhan -->
   </div>
 </div>
       </main>
 
-      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <nav id="sidebar" class="col-md-4 col-lg-3 d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
-          <div class="card-header">
-            Recent Posts
-          </div>
-          <ul class="list-group list-group-flush">
-             
-            <li class="list-group-item"><a href="/seo/membuat-channel-youtube/">Membuat Channel YouTube yang Sukses</a></li>
-            
-            <li class="list-group-item"><a href="/seo/cara-upload-video-di-youtube/">Cara Upload Video yang Benar di YouTube</a></li>
-            
-            <li class="list-group-item"><a href="/seo/optimasi-seo-youtube/">Cara Optimasi SEO YouTube</a></li>
-            
-            <li class="list-group-item"><a href="/seo/mencari-kata-kunci-video-youtube/">Kata Kunci untuk Video YouTube yang Efektif</a></li>
-            
-            <li class="list-group-item"><a href="/monetisasi/cara-kejar-jam-tayang-youtube/">Cara Kejar 4000 Jam Tayang di YouTube</a></li>
-            
-          </ul>
+          <!-- Untuk recent posts di sidebar -->
+<div class="card-header">
+  Recent Posts
+</div>
+<ul class="list-group list-group-flush">
+  
+  
+  <li class="list-group-item">
+    <span class="badge badge-primary">1</span>
+    <a href="/seo/membuat-channel-youtube/">Membuat Channel YouTube yang Sukses</a>
+    <span class="badge badge-info float-right"> views</span>
+  </li>
+  
+  <li class="list-group-item">
+    <span class="badge badge-primary">2</span>
+    <a href="/seo/cara-upload-video-di-youtube/">Cara Upload Video yang Benar di YouTube</a>
+    <span class="badge badge-info float-right"> views</span>
+  </li>
+  
+  <li class="list-group-item">
+    <span class="badge badge-primary">3</span>
+    <a href="/seo/optimasi-seo-youtube/">Cara Optimasi SEO YouTube</a>
+    <span class="badge badge-info float-right"> views</span>
+  </li>
+  
+  <li class="list-group-item">
+    <span class="badge badge-primary">4</span>
+    <a href="/seo/mencari-kata-kunci-video-youtube/">Kata Kunci untuk Video YouTube yang Efektif</a>
+    <span class="badge badge-info float-right"> views</span>
+  </li>
+  
+  <li class="list-group-item">
+    <span class="badge badge-primary">5</span>
+    <a href="/monetisasi/cara-kejar-jam-tayang-youtube/">Cara Kejar 4000 Jam Tayang di YouTube</a>
+    <span class="badge badge-info float-right"> views</span>
+  </li>
+  
+  <li class="list-group-item">
+    <span class="badge badge-primary">6</span>
+    <a href="/monetisasi/monetisasi-youtube/">Cara Monetisasi di YouTube</a>
+    <span class="badge badge-info float-right"> views</span>
+  </li>
+  
+  <li class="list-group-item">
+    <span class="badge badge-primary">7</span>
+    <a href="/youtube/10cara-ampuh-menambah-views-youtube/">10 Cara Ampuh Menambah Views YouTube dengan Cepat dan Efektif</a>
+    <span class="badge badge-info float-right"> views</span>
+  </li>
+  
+</ul>
+
+          
+          <div class="card">
+  <div class="card-header">
+    Top 5 Repository Simaster
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><a href="https://github.com/masterwifinetworksolution/file">file</a></li>
+    <li class="list-group-item"><a href="https://github.com/masterwifinetworksolution/clash">Konfigurasi Clash</a></li>
+    <li class="list-group-item"><a href="https://github.com/masterwifinetworksolution/linux-armbian-server">Linux Armbian Server</a></li>
+    <li class="list-group-item"><a href="https://github.com/masterwifinetworksolution/clash-cfm">clash cfm</a></li>
+    <li class="list-group-item"><a href="https://github.com/masterwifinetworksolution/termux-auto-planemode">termux-auto-planemode</a></li>
+  </ul>
+</div>
+
         </div>
       </nav>
     </div>
@@ -117,10 +272,8 @@
   </div>
 </footer>
 
-
 <!-- code adsense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -193,6 +346,38 @@
     document.body.removeChild(textArea);
     alert('Code copied to clipboard');
   }
+</script>
+
+<!-- datatables -->
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#fileTable').DataTable();
+  });
+</script>
+
+<!-- analytic -->
+<script>
+  // Fungsi untuk mengambil jumlah tampilan halaman dari Google Analytics
+  function fetchPageViews(url, callback) {
+    gtag('event', 'page_view', {
+      'event_callback': function() {
+        var pageViews = localStorage.getItem(url) || 0;
+        callback(pageViews);
+      }
+    });
+  }
+
+  // Menampilkan jumlah tampilan halaman di elemen dengan id "page-views"
+  document.addEventListener('DOMContentLoaded', function() {
+    var url = window.location.pathname;
+    fetchPageViews(url, function(pageViews) {
+      document.getElementById('page-views').textContent = pageViews + ' views';
+    });
+  });
 </script>
 
   </body>

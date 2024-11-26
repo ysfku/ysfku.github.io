@@ -12,6 +12,7 @@ layout: default
         <a href="{{ site.baseurl }}/categories/{{ category | downcase }}/">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
       {% endfor %}
       • {{ page.reading_time }} min read
+      • <small id="page-views">Loading views...</small>
       • <a href="/author.html#{{ page.author }}">{{ page.author }}</a>
     </p>
   </div>
