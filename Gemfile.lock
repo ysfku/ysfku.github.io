@@ -70,6 +70,8 @@ GEM
       jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
+    jekyll-time-to-read (0.1.2)
+      jekyll
     jekyll-toc (0.19.0)
       jekyll (>= 3.9)
       nokogiri (~> 1.12)
@@ -198,6 +200,7 @@ DEPENDENCIES
   jekyll-reading-time
   jekyll-seo-tag (~> 2.6)
   jekyll-sitemap (~> 1.4)
+  jekyll-time-to-read
   jekyll-toc (~> 0.15)
 
 BUNDLED WITH

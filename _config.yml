@@ -4,13 +4,11 @@ description: >- # Deskripsi situs
   Master Wifi Network Solution adalah tempat solusi koneksi jaringan anda.
 url: "https://masterwifinetworksolution.github.io"
 baseurl: ""
-# Konfigurasi tambahan
 markdown: kramdown
 permalink: /:categories/:title/
 paginate: 6
 paginate_path: "/page/:num/"
 
-# Kumpulan Data
 collections:
   posts:
     output: true
@@ -31,7 +29,6 @@ defaults:
       author: "Muhammad Yusuf"
       comments: false
 
-# Daftar plugin yang digunakan
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -41,7 +38,6 @@ plugins:
   - jekyll-reading-time
   - jekyll-time-to-read
 
-# Konfigurasi untuk Table of Contents
 toc:
   min_level: 2
   max_level: 6
@@ -53,13 +49,11 @@ toc:
   heading_levels: [2, 3, 4, 5, 6]
   exclude_from_toc: []
 
-# Konfigurasi untuk folder assets
 assets:
   css: "/assets/css"
 
-# Konfigurasi untuk data files dan data documentation
 data_files:
   - files
-  
+
 data_documentation:
   - documentation
