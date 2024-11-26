@@ -4,23 +4,23 @@ title: Files
 permalink: /files.html
 ---
 <hr>
-<div class="container">
-  <table id="fileTable" class="table table-striped table-bordered" style="width:100%">
-    <thead>
-      <tr>
-        <th>Status</th>
-        <th>File Name</th>
-        <th>URL</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for file in site.data.files %}
-      <tr>
-        <td>{{ file.status }}</td>
-        <td>{{ file.file_name }}</td>
-        <td><a href="{{ file.url }}" class="btn btn-primary" target="_blank">Download</a></td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+  <div class="container">
+    <table id="fileTable" class="table table-striped table-bordered" style="width:100%">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>File Name</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for file in site.data.files %}
+        <tr>
+          <td>{{ file.status }}</td>
+          <td>{{ file.file_name }}</td>
+          <td><a href="{{ file.url }}" class="btn btn-primary" target="_blank">Download</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
