@@ -2,13 +2,32 @@
 layout: none
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   {% for post in site.posts %}
     <url>
       <loc>{{ post.url | absolute_url }}</loc>
       <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
+      {% if post.image %}
+        <image:image>
+          <image:loc>{{ post.image | absolute_url }}</image:loc>
+          <image:caption>{{ post.title }}</image:caption>
+          <image:title>{{ post.title }}</image:title>
+        </image:image>
+      {% endif %}
+      {% if post.video %}
+        <video:video>
+          <video:content_loc>{{ post.video | absolute_url }}</video:content_loc>
+          <video:title>{{ post.title }}</video:title>
+          <video:description>{{ post.excerpt | strip_html | xml_escape }}</video:description>
+          <video:publication_date>{{ post.date | date_to_xmlschema }}</video:publication_date>
+        </video:video>
+      {% endif %}
     </url>
   {% endfor %}
   {% for page in site.pages %}
