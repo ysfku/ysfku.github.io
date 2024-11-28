@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://masterwifinetworksolution.github.io/sitemap.xml

@@ -1,0 +1,23 @@
+---
+layout: marketplaces
+title: Routers
+---
+
+<div class="container" style="margin-top: 20px;">
+  <div class="row">
+    {% for product in site.data.products %}
+      {% if product.category == "routers" %}
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="{% if product.image %}{{ product.image }}{% else %}/assets/images/banner.jpg{% endif %}" alt="{{ product.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">Harga: {{ product.price }}</p>
+              <a href="{{ product.affiliate_link }}" class="btn btn-primary" target="_blank">Lihat Produk</a>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

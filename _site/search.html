@@ -9,27 +9,26 @@
   <meta name="keywords" content="wifi, network, openwrt, mikrotik, modem, router, aplikasi, antena, jasa pasang wifi, jasa remote wifi">
   <meta name="author" content="">
   <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="Master Wifi Network Solution" href="/feed.xml">
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
-  <!-- fontawesome -->
+  <!-- FontAwesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  
   <link rel="stylesheet" href="/assets/css/custom.css">
   <link href="https://fonts.googleapis.com/css2?family=Nico+Moji&display=swap" rel="stylesheet">
-  
-  <!-- adsense -->
+  <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1794381705838564" crossorigin="anonymous"></script>
-  
   <!-- Google Analytics 4 -->
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW998S2190"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-FW998S2190');
   </script>
 </head>
@@ -71,6 +70,9 @@
         </ul>
       </li>
       <li class="nav-item ms-4 me-4">
+        <a class="nav-link" href="/marketplace/">Marketplace</a>
+      </li>
+      <li class="nav-item ms-4 me-4">
         <a class="nav-link" href="/donate.html">Donate</a>
       </li>
       <li class="nav-item ms-4 me-4">
@@ -106,6 +108,14 @@
 <script>
     const posts = [
         
+            { title: 'Panduan Lengkap Penggunaan Router TP-Link WR840N', url: '/panduan/panduan-tplink-wr840n/', type: 'Post' },
+        
+            { title: 'Panduan Lengkap Penggunaan TP-Link CPE220', url: '/panduan/panduan-penggunaan-tplink-cpe220/', type: 'Post' },
+        
+            { title: 'Panduan Lengkap Menggunakan PowerBeam M2 400', url: '/panduan/panduan-penggunaan-powerbeam-m2-400/', type: 'Post' },
+        
+            { title: 'Panduan Lengkap Penggunaan Tenda O3 Router Outdoor', url: '/panduan/panduan-lengkap-penggunaan-tenda-o3-router-outdoor/', type: 'Post' },
+        
             { title: 'Selamat Datang di Master Wifi Network Solution', url: '/announcement/wellcome-to-masterwifinetworksolution/', type: 'Post' },
         
             { title: 'Termux Auto Plane Mode', url: '/android/termux-auto-plane-mode/', type: 'Post' },
@@ -139,6 +149,14 @@
             { title: 'Membuat Channel YouTube yang Sukses', url: '/seo/membuat-channel-youtube/', type: 'Post' },
         
         
+            { title: 'android', url: '/categories/android/', type: 'Page' },
+        
+            { title: 'announcement', url: '/categories/announcement/', type: 'Page' },
+        
+            { title: 'Antena', url: '/produk/antena/', type: 'Page' },
+        
+            { title: 'clash for magisk', url: '/categories/clash-for-magisk/', type: 'Page' },
+        
             { title: 'Contact Us', url: '/contact.html', type: 'Page' },
         
             { title: 'Disclaimer', url: '/disclaimer.html', type: 'Page' },
@@ -153,21 +171,39 @@
         
             { title: 'Home', url: '/', type: 'Page' },
         
+            { title: 'Marketplace', url: '/marketplace/', type: 'Page' },
+        
+            { title: 'Modem', url: '/produk/modem/', type: 'Page' },
+        
+            { title: 'monetisasi', url: '/categories/monetisasi/', type: 'Page' },
+        
+            { title: 'openwrt', url: '/categories/openwrt/', type: 'Page' },
+        
+            { title: 'panduan', url: '/categories/panduan/', type: 'Page' },
+        
             { title: 'Privacy Policy', url: '/privacy-policy.html', type: 'Page' },
         
             { title: 'Master Wifi Network Solution', url: '/profile.html', type: 'Page' },
         
+            { title: 'Routers', url: '/produk/routers/', type: 'Page' },
+        
             { title: 'search', url: '/search.html', type: 'Page' },
+        
+            { title: 'seo', url: '/categories/seo/', type: 'Page' },
         
             { title: 'Sitemap', url: '/sitemap/', type: 'Page' },
         
+            { title: '', url: '/sitemap.xml', type: 'Page' },
+        
             { title: 'Videos', url: '/videos.html', type: 'Page' },
+        
+            { title: 'youtube', url: '/categories/youtube/', type: 'Page' },
         
             { title: 'Home', url: '/page/2/', type: 'Page' },
         
             { title: 'Home', url: '/page/3/', type: 'Page' },
         
-            { title: '', url: '/sitemap.xml', type: 'Page' },
+            { title: 'Home', url: '/page/4/', type: 'Page' },
         
             { title: '', url: '/robots.txt', type: 'Page' },
         
@@ -204,110 +240,128 @@
       </main>
 
       <nav id="sidebar" class="col-md-4 col-lg-3 d-md-block bg-light sidebar">
-        <div class="sticky-top"> <!-- Mengganti sidebar-sticky dengan sticky-top -->
+  <div class="sticky-top">
+    <!-- statistic -->
+    <div class="card mb-3">
+      <div class="card-header">
+        Visitor Statistics
+      </div>
+      <div class="card-body">
+        <a href="http://s01.flagcounter.com/more/Bn">
+          <img src="https://s01.flagcounter.com/count2/Bn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_30/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
+        </a>
+      </div>
+    </div>
 
-          <!-- Menambahkan total pengunjung, pengunjung hari ini, dan negara pengunjung -->
-          <div class="card mb-3">
-            <div class="card-header">
-              Visitor Statistics
-            </div>
-            <div class="card-body">
-              <a href="http://s01.flagcounter.com/more/Bn"><img src="https://s01.flagcounter.com/count2/Bn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_30/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-            </div>
-          </div>
+    <!-- accordion sidebar group -->
+    <div class="accordion accordion-flush" id="accordionFlushExample">
 
-          <!-- Untuk recent posts di sidebar -->
-          <div class="card mb-3">
-            <div class="card-header">
-              Recent Posts
-            </div>
-            <ul class="list-group list-group-flush">
-              
-              
+      <!-- Recent posts -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Recent Posts
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <ul class="list-group list-group-flush">
+            
+            
               <li class="list-group-item">
                 <span class="badge bg-primary">1</span>
-                <a href="/seo/membuat-channel-youtube/">Membuat Channel YouTube yang Sukses</a>
+                  <a href="/seo/membuat-channel-youtube/">Membuat Channel YouTube yang Sukses</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
-              
+            
               <li class="list-group-item">
                 <span class="badge bg-primary">2</span>
-                <a href="/seo/cara-upload-video-di-youtube/">Cara Upload Video yang Benar di YouTube</a>
+                  <a href="/seo/cara-upload-video-di-youtube/">Cara Upload Video yang Benar di YouTube</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
-              
+            
               <li class="list-group-item">
                 <span class="badge bg-primary">3</span>
-                <a href="/seo/optimasi-seo-youtube/">Cara Optimasi SEO YouTube</a>
+                  <a href="/seo/optimasi-seo-youtube/">Cara Optimasi SEO YouTube</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
-              
+            
               <li class="list-group-item">
                 <span class="badge bg-primary">4</span>
-                <a href="/seo/mencari-kata-kunci-video-youtube/">Kata Kunci untuk Video YouTube yang Efektif</a>
+                  <a href="/seo/mencari-kata-kunci-video-youtube/">Kata Kunci untuk Video YouTube yang Efektif</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
-              
+            
               <li class="list-group-item">
                 <span class="badge bg-primary">5</span>
-                <a href="/monetisasi/cara-kejar-jam-tayang-youtube/">Cara Kejar 4000 Jam Tayang di YouTube</a>
+                  <a href="/monetisasi/cara-kejar-jam-tayang-youtube/">Cara Kejar 4000 Jam Tayang di YouTube</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
-              
+            
               <li class="list-group-item">
                 <span class="badge bg-primary">6</span>
-                <a href="/monetisasi/monetisasi-youtube/">Cara Monetisasi di YouTube</a>
+                  <a href="/monetisasi/monetisasi-youtube/">Cara Monetisasi di YouTube</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
-              
+            
               <li class="list-group-item">
                 <span class="badge bg-primary">7</span>
-                <a href="/youtube/10cara-ampuh-menambah-views-youtube/">10 Cara Ampuh Menambah Views YouTube dengan Cepat dan Efektif</a>
+                  <a href="/youtube/10cara-ampuh-menambah-views-youtube/">10 Cara Ampuh Menambah Views YouTube dengan Cepat dan Efektif</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
-              
-            </ul>
-          </div>
+            
+          </ul>
+        </div>
+      </div>
 
-          <!-- Untuk Top 5 Repository Simaster di sidebar -->
-          <div class="card">
-            <div class="card-header">
-              Top 5 Repository Simaster
-            </div>
+      <!-- Repository Simaster -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Repository Simaster
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
             <ul class="list-group list-group-flush">
               
               
               
-              <li class="list-group-item">
-                <span class="badge bg-primary">1</span>
-                <a href="https://github.com/masterwifinetworksolution/file">file</a>
-              </li>
+                <li class="list-group-item">
+                  <span class="badge bg-primary">1</span>
+                  <a href="https://github.com/masterwifinetworksolution/file">file</a>
+                </li>
               
-              <li class="list-group-item">
-                <span class="badge bg-primary">2</span>
-                <a href="https://github.com/masterwifinetworksolution/clash">Konfigurasi Clash</a>
-              </li>
+                <li class="list-group-item">
+                  <span class="badge bg-primary">2</span>
+                  <a href="https://github.com/masterwifinetworksolution/clash">Konfigurasi Clash</a>
+                </li>
               
-              <li class="list-group-item">
-                <span class="badge bg-primary">3</span>
-                <a href="https://github.com/masterwifinetworksolution/linux-armbian-server">Linux Armbian Server</a>
-              </li>
+                <li class="list-group-item">
+                  <span class="badge bg-primary">3</span>
+                  <a href="https://github.com/masterwifinetworksolution/linux-armbian-server">Linux Armbian Server</a>
+                </li>
               
-              <li class="list-group-item">
-                <span class="badge bg-primary">4</span>
-                <a href="https://github.com/masterwifinetworksolution/clash-cfm">clash cfm</a>
-              </li>
+                <li class="list-group-item">
+                  <span class="badge bg-primary">4</span>
+                  <a href="https://github.com/masterwifinetworksolution/clash-cfm">clash cfm</a>
+                </li>
               
-              <li class="list-group-item">
-                <span class="badge bg-primary">5</span>
-                <a href="https://github.com/masterwifinetworksolution/termux-auto-planemode">termux-auto-planemode</a>
-              </li>
+                <li class="list-group-item">
+                  <span class="badge bg-primary">5</span>
+                  <a href="https://github.com/masterwifinetworksolution/termux-auto-planemode">termux-auto-planemode</a>
+                </li>
               
             </ul>
           </div>
-          
         </div>
-      </nav>
+      </div>
+
+      <!-- Kategori Post -->
+
+    </div>
+  </div>
+</nav>
+
     </div>
   </div>
   
@@ -326,18 +380,18 @@
           <li><a href="/carrier.html" class="text-light">Jobs & Karir</a></li>
         </ul>
       </div>
-      <div class="col-md-3">
-        <h5>Produk & Layanan</h5>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-light">Routers</a></li>
-          <li><a href="#" class="text-light">Modem</a></li>
-          <li><a href="#" class="text-light">Antena</a></li>
-          <li><a href="#" class="text-light">Asessoris</a></li>
-          <li><a href="#" class="text-light">Set Top Box</a></li>
-          <li><a href="#" class="text-light">Mikrotik</a></li>
-          <li><a href="#" class="text-light">Login Pages</a></li>
-        </ul>
-      </div>
+    <div class="col-md-3">
+      <h5>Produk & Layanan</h5>
+      <ul class="list-unstyled">
+        <li><a href="/produk/routers" class="text-light">Routers</a></li>
+        <li><a href="/produk/modem" class="text-light">Modem</a></li>
+        <li><a href="/produk/antena" class="text-light">Antena</a></li>
+        <li><a href="/produk/asessoris" class="text-light">Asessoris</a></li>
+        <li><a href="/produk/set-top-box" class="text-light">Set Top Box</a></li>
+        <li><a href="/produk/mikrotik" class="text-light">Mikrotik</a></li>
+        <li><a href="/produk/login-pages" class="text-light">Login Pages</a></li>
+      </ul>
+    </div>   
       <div class="col-md-3">
         <h5>Link Partner</h5>
         <ul class="list-unstyled">
@@ -387,6 +441,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
 <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+
 <script>
 new DataTable('#example');
 </script>

@@ -1,0 +1,66 @@
+<nav id="sidebar" class="col-md-4 col-lg-3 d-md-block bg-light sidebar">
+  <div class="sticky-top">
+    <!-- statistic -->
+    <div class="card mb-3">
+      <div class="card-header">
+        Visitor Statistics
+      </div>
+      <div class="card-body">
+        <a href="http://s01.flagcounter.com/more/Bn">
+          <img src="https://s01.flagcounter.com/count2/Bn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_30/viewers_3/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
+        </a>
+      </div>
+    </div>
+
+    <!-- accordion sidebar group -->
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+
+      <!-- Recent posts -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Recent Posts
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <ul class="list-group list-group-flush">
+            {% assign sorted_posts = site.posts | sort: 'views' | reverse %}
+            {% for post in sorted_posts limit: 7 %}
+              <li class="list-group-item">
+                <span class="badge bg-primary">{{ forloop.index }}</span>
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                <span class="badge bg-info float-end">{{ post.views }} views</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Repository Simaster -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Repository Simaster
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <ul class="list-group list-group-flush">
+              {% assign repositories = "file|Konfigurasi Clash|Linux Armbian Server|clash cfm|termux-auto-planemode" | split: "|" %}
+              {% assign repo_links = "https://github.com/masterwifinetworksolution/file|https://github.com/masterwifinetworksolution/clash|https://github.com/masterwifinetworksolution/linux-armbian-server|https://github.com/masterwifinetworksolution/clash-cfm|https://github.com/masterwifinetworksolution/termux-auto-planemode" | split: "|" %}
+              {% for repo in repositories %}
+                <li class="list-group-item">
+                  <span class="badge bg-primary">{{ forloop.index }}</span>
+                  <a href="{{ repo_links[forloop.index0] }}">{{ repo }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kategori Post -->
+
+    </div>
+  </div>
+</nav>

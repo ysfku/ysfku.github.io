@@ -1,0 +1,17 @@
+- image: 
+  name: Produk 1
+  price: Rp100.000
+  affiliate_link: https://shopee.co.id/produk1
+  category: routers
+
+- image: 
+  name: Produk 2
+  price: Rp200.000
+  affiliate_link: https://shopee.co.id/produk2
+  category: modem
+
+- image: 
+  name: Produk 3
+  price: Rp300.000
+  affiliate_link: https://shopee.co.id/produk3
+  category: antena

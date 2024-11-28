@@ -1,0 +1,55 @@
+---
+layout: default
+title: Marketplace
+---
+
+<div class="container">
+  <div class="row mb-4 mt-4">
+    <div class="col-12">
+      <h5>Kategori Produk & Layanan</h5>
+      <div id="productListCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner text-center">
+          {% assign categories = site.data.products | map: "category" | uniq %}
+          {% for category in categories %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="card">
+              <img class="card-img-top" src="/assets/images/banner.jpg" alt="{{ category | capitalize }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ category | capitalize }}</h5>
+                <a href="/produk/{{ category }}" class="btn btn-primary">Lihat Kategori Produk</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#productListCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productListCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12">
+      <h5>Daftar Produk</h5>
+      <div class="row">
+        {% for product in site.data.products %}
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="{{ product.image | default: '/assets/images/banner.jpg' }}" alt="{{ product.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">Harga: {{ product.price }}</p>
+              <a href="{{ product.affiliate_link }}" class="btn btn-primary" target="_blank">Lihat Produk</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
