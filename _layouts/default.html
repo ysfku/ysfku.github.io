@@ -12,10 +12,7 @@
       {% include sidebar.html %}
     </div>
   </div>
-  
- <div id="adblock-message" style="display:none;">
-   <p>Please disable your adblocker to support us!</p>
- </div>
+
   
   {% include footer.html %}
   {% include javascript.html %}
@@ -47,13 +44,13 @@
     }
   </style>
 
-<script>
- document.addEventListener('DOMContentLoaded', function () {
-    if (typeof adblock === 'undefined') {
-        document.getElementById('adblock-message').style.display = 'block';
+
+ <style>
+    #content {
+        display: none;
     }
-});
- </script>
+</style>
+
 
 </body>
 </html>

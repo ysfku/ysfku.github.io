@@ -1,10 +1,10 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '~> 4.0'
-gem 'jekyll-feed', '~> 0.12'
-gem 'jekyll-seo-tag', '~> 2.6'
-gem 'jekyll-paginate', '~> 1.1'
-gem 'jekyll-sitemap', '~> 1.4'
-gem 'jekyll-toc', '~> 0.15'
+gem 'jekyll'
+gem 'jekyll-feed'
+gem 'jekyll-seo-tag'
+gem 'jekyll-paginate'
+gem 'jekyll-sitemap'
+gem 'jekyll-toc'
 gem 'jekyll-reading-time'
 gem 'jekyll-time-to-read'
