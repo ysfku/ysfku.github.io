@@ -31,18 +31,10 @@
     gtag('js', new Date());
     gtag('config', 'G-FW998S2190');
   </script>
-  
-<style>
-    #content {
-        display: true;
-    }
-</style>
 
-  
 </head>
 
 <body>
-<div id="content">
   <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <a class="navbar-brand ms-3" href="/">Master Wifi Network Solution</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 5px;">
@@ -161,6 +153,27 @@
 
 </div>
       </main>
+      
+      <script type="text/javascript">
+    var adBlockEnabled = false;
+    (function() {
+        var testAd = document.createElement('div');
+        testAd.innerHTML = '&nbsp;';
+        testAd.className = 'adsbox';
+        document.body.appendChild(testAd);
+        window.setTimeout(function() {
+            if (testAd.offsetHeight === 0) {
+                adBlockEnabled = true;
+            }
+            testAd.remove();
+            if (adBlockEnabled) {
+                document.body.innerHTML = "<h1>AdBlock Detected</h1><p>Please disable your ad blocker to view this site.</p>";
+            } else {
+                console.log("No AdBlock detected");
+            }
+        }, 5000);
+    })();
+    </script>
 
       <nav id="sidebar" class="col-md-4 col-lg-3 d-md-block bg-light sidebar">
   <div class="sticky-top">
@@ -287,7 +300,6 @@
 
     </div>
   </div>
-
   
   <footer class="footer mt-auto py-3 bg-dark text-light">
   <div class="container">
@@ -358,7 +370,10 @@
 </footer>
 
   <!-- Anti Adblock JS -->
-<script src="/assets/js/anti-adblock.js"></script>
+<script type="text/javascript">
+!function(a){var b,c=function(a){this.name="blockAdBlock",this.version="3.2.1",this.revision="r20190917",this.message={blocked:"adblocker detected",not_blocked:"adblocker not detected",init:"blockAdBlock initialized",error:"blockAdBlock error"},this.timers={s:0,m:0},this.remove={from:null,timeout:null},this.elements={from:null},this.detected=!1,"undefined"!=typeof a&&this.setOptions(a),this.create();var b=this;setTimeout(function(){return a(!0),!1},1)};a.blockAdBlock=new c}(window);
+</script>
+<script src="/assets/js/adblock-check.js"></script>
 
 <!-- code adsense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -498,6 +513,5 @@ new DataTable('#dockku');
       margin-right: 10px; /* Menambahkan margin kanan untuk memindahkan ikon menu ke pinggir */
     }
   </style>
-</div>
 </body>
 </html>

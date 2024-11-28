@@ -59,3 +59,7 @@ data_files:
 
 data_documentation:
   - documentation
+
+include:
+  - assets
+
