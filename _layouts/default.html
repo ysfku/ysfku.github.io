@@ -8,32 +8,35 @@
       <main role="main" class="col-md-8 col-lg-9 px-md-4">
         {{ content }}
       </main>
-      
-      <script type="text/javascript">
-    var adBlockEnabled = false;
-    (function() {
-        var testAd = document.createElement('div');
-        testAd.innerHTML = '&nbsp;';
-        testAd.className = 'adsbox';
-        document.body.appendChild(testAd);
-        window.setTimeout(function() {
-            if (testAd.offsetHeight === 0) {
-                adBlockEnabled = true;
-            }
-            testAd.remove();
-            if (adBlockEnabled) {
-                document.body.innerHTML = "<h1>AdBlock Detected</h1><p>Please disable your ad blocker to view this site.</p>";
-            } else {
-                console.log("No AdBlock detected");
-            }
-        }, 5000);
-    })();
-    </script>
 
-      {% include sidebar.html %}
+      <aside class="col-md-4 col-lg-3 px-md-4">
+        {% include sidebar.html %}
+      </aside>
+
+      <script type="text/javascript">
+        var adBlockEnabled = false;
+        (function() {
+            var testAd = document.createElement('div');
+            testAd.innerHTML = '&nbsp;';
+            testAd.className = 'adsbox';
+            document.body.appendChild(testAd);
+            window.setTimeout(function() {
+                if (testAd.offsetHeight === 0) {
+                    adBlockEnabled = true;
+                }
+                testAd.remove();
+                if (adBlockEnabled) {
+                    document.body.innerHTML = "<h1>AdBlock Detected</h1><p>Please disable your ad blocker to view this site.</p>";
+                } else {
+                    console.log("No AdBlock detected");
+                }
+            }, 5000);
+        })();
+      </script>
+
     </div>
   </div>
-  
+
   {% include footer.html %}
   {% include javascript.html %}
 
@@ -61,6 +64,16 @@
   <style>
     .menu-icon {
       margin-right: 10px; /* Menambahkan margin kanan untuk memindahkan ikon menu ke pinggir */
+    }
+
+    /* Pastikan konten dan sidebar tidak tertutup oleh navigasi */
+    @media (min-width: 768px) {
+      main {
+        margin-top: 60px; /* Sesuaikan tinggi sesuai dengan tinggi navigasi */
+      }
+      aside {
+        margin-top: 60px; /* Sesuaikan tinggi sesuai dengan tinggi navigasi */
+      }
     }
   </style>
 </body>

@@ -37,17 +37,25 @@ title: Marketplace
     <div class="col-12">
       <h5>Daftar Produk</h5>
       <div class="row">
-        {% for product in site.data.products %}
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <img class="card-img-top" src="{{ product.image | default: '/assets/images/banner.jpg' }}" alt="{{ product.name }}">
-            <div class="card-body">
-              <h5 class="card-title">{{ product.name }}</h5>
-              <p class="card-text">Harga: {{ product.price }}</p>
-              <a href="{{ product.affiliate_link }}" class="btn btn-primary" target="_blank">Lihat Produk</a>
+        {% assign products = site.data.products | group_by: "category" %}
+        {% for category in products %}
+          <div class="col-12">
+            <h6>{{ category.name | capitalize }}</h6>
+            <div class="row">
+              {% for product in category.items limit: 6 %}
+              <div class="col-md-4">
+                <div class="card mb-4">
+                  <img class="card-img-top" src="{{ product.image | default: '/assets/images/banner.jpg' }}" alt="{{ product.name }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">Harga: {{ product.price }}</p>
+                    <a href="{{ product.affiliate_link }}" class="btn btn-primary" target="_blank">Lihat Produk</a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
             </div>
           </div>
-        </div>
         {% endfor %}
       </div>
     </div>
