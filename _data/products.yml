@@ -1,13 +1,19 @@
-- image: 
-  name: Produk 1
-  price: Rp100.000
-  affiliate_link: https://shopee.co.id/produk1
+- image: https://down-cvs-id.img.susercontent.com/id-11134207-7ras8-m2m14s4csapr65.webp
+  name: TP-Link Archer C54 AC120
+  price: Rp291.000
+  affiliate_link: https://s.shopee.co.id/4pytE2Q2FB
+  category: routers
+
+- image: https://down-cvs-id.img.susercontent.com/id-11134207-7rasm-m2m14s4cmofz2d.webp
+  name: TP-Link Archer A6 AC1200
+  price: Rp579.000
+  affiliate_link: https://s.shopee.co.id/AA0PZzskt3
   category: routers
 
 - image: 
   name: Produk 2
-  price: Rp200.000
-  affiliate_link: https://shopee.co.id/produk2
+  price: Rp300.000
+  affiliate_link: https://shopee.co.id/produk3
   category: modem
 
 - image: 
