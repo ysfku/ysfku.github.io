@@ -114,3 +114,36 @@ new DataTable('#dockku');
     alert('Code copied to clipboard');
   }
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    if (!localStorage.getItem('tosAccepted')) {
+      document.getElementById('tosPanel').style.display = 'block';
+    }
+  });
+
+  function closeTosPanel() {
+    document.getElementById('tosPanel').style.display = 'none';
+  }
+
+  function acceptTos() {
+    localStorage.setItem('tosAccepted', 'true');
+    document.getElementById('tosPanel').style.display = 'none';
+  }
+
+  function showPrivacyPolicy() {
+    document.getElementById('privacyPolicyPanel').style.display = 'block';
+  }
+
+  function closePrivacyPolicyPanel() {
+    document.getElementById('privacyPolicyPanel').style.display = 'none';
+  }
+
+  function showDisclaimer() {
+    document.getElementById('disclaimerPanel').style.display = 'block';
+  }
+
+  function closeDisclaimerPanel() {
+    document.getElementById('disclaimerPanel').style.display = 'none';
+  }
+</script>

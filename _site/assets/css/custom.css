@@ -1,3 +1,20 @@
+.menu-icon {
+      margin-right: 10px; /* Menambahkan margin kanan untuk memindahkan ikon menu ke pinggir */
+    }
+
+    /* Pastikan konten dan sidebar tidak tertutup oleh navigasi */
+    @media (min-width: 768px) {
+      main {
+        margin-top: 60px; /* Sesuaikan tinggi sesuai dengan tinggi navigasi */
+      }
+      aside {
+        margin-top: 60px; /* Sesuaikan tinggi sesuai dengan tinggi navigasi */
+      }
+      #sidebar {
+        width: 100%; /* Atur lebar penuh sidebar */
+      }
+    }
+    
     .toc-panel {
       margin-bottom: 20px;
       padding: 15px;
@@ -148,4 +165,39 @@
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.tos-panel {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  overflow: auto;
+  background-color: rgb(255,255,255);
+  border: 1px solid #888;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.tos-content {
+  padding: 20px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

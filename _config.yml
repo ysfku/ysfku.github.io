@@ -53,6 +53,7 @@ toc:
 
 assets:
   css: "/assets/css"
+  js: "/assets/js"
 
 data_files:
   - files
@@ -62,4 +63,3 @@ data_documentation:
 
 include:
   - assets
-
