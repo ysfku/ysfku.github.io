@@ -1,4 +1,4 @@
 ---
 layout: category
-title: openwrt
+title: pengaturan
 ---
