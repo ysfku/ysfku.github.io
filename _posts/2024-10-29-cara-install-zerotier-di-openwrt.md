@@ -41,9 +41,9 @@ Selanjutnya, buka situs web `ZeroTier` dan masuk ke akun Anda. Buat jaringan bar
 
 Kembali ke `terminal SSH` dan masukkan perintah berikut untuk menghubungkan router ke jaringan ZeroTier:
 
-{% include coding.html language="Bash" code="zerotier-cli join <Network ID>" %}
+{% include coding.html language="Bash" code="zerotier-cli join (Network ID)" %}
 
-Gantilah `<Network ID>` dengan Network ID yang Anda dapatkan dari situs web `ZeroTier`. Perintah ini akan menghubungkan router Anda ke jaringan `virtual`.
+Gantilah `(Network ID)` dengan Network ID yang Anda dapatkan dari situs web `ZeroTier`. Perintah ini akan menghubungkan router Anda ke jaringan `virtual`.
 
 5. Verifikasi Koneksi
 

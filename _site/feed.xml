@@ -146,15 +146,17 @@ Kembali ke terminal SSH dan masukkan perintah berikut untuk menghubungkan router
     Copy
   
   
-zerotier-cli join 
-  &amp;lt;/pre&amp;gt;
-&amp;lt;/div&amp;gt;
+zerotier-cli join (Network ID)
+  
 
-Gantilah `` dengan Network ID yang Anda dapatkan dari situs web `ZeroTier`. Perintah ini akan menghubungkan router Anda ke jaringan `virtual`.
 
-5. Verifikasi Koneksi
+Gantilah (Network ID) dengan Network ID yang Anda dapatkan dari situs web ZeroTier. Perintah ini akan menghubungkan router Anda ke jaringan virtual.
 
-Untuk memastikan bahwa router Anda telah terhubung ke jaringan `ZeroTier`, masukkan perintah berikut:
+
+  Verifikasi Koneksi
+
+
+Untuk memastikan bahwa router Anda telah terhubung ke jaringan ZeroTier, masukkan perintah berikut:
 
 
   
@@ -166,19 +168,20 @@ zerotier-cli listnetworks
   
 
 
-Anda akan melihat daftar jaringan yang terhubung, termasuk jaringan `ZeroTier` yang baru saja Anda tambahkan.
+Anda akan melihat daftar jaringan yang terhubung, termasuk jaringan ZeroTier yang baru saja Anda tambahkan.
 
-## Menghubungkan Perangkat Lain
+Menghubungkan Perangkat Lain
 
-Setelah router Anda terhubung ke jaringan `ZeroTier`, Anda dapat menghubungkan perangkat lain seperti komputer, smartphone, atau perangkat IoT. Instal aplikasi `ZeroTier` di perangkat tersebut dan gunakan `Network ID` yang sama untuk bergabung ke jaringan.
+Setelah router Anda terhubung ke jaringan ZeroTier, Anda dapat menghubungkan perangkat lain seperti komputer, smartphone, atau perangkat IoT. Instal aplikasi ZeroTier di perangkat tersebut dan gunakan Network ID yang sama untuk bergabung ke jaringan.
 
-## Keuntungan Menggunakan ZeroTier di OpenWRT
+Keuntungan Menggunakan ZeroTier di OpenWRT
 
-Menggunakan `ZeroTier` di `OpenWRT` memiliki beberapa keuntungan, antara lain:
+Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
 
-- `Keamanan`: ZeroTier menggunakan enkripsi end-to-end untuk melindungi data Anda.
-- `Kemudahan Akses`: Anda dapat mengakses perangkat di jaringan ZeroTier dari mana saja, selama Anda memiliki koneksi internet.
-- `Fleksibilitas`: ZeroTier mendukung berbagai platform, termasuk Windows, macOS, Linux, Android, dan iOS.
+
+  Keamanan: ZeroTier menggunakan enkripsi end-to-end untuk melindungi data Anda.
+  Kemudahan Akses: Anda dapat mengakses perangkat di jaringan ZeroTier dari mana saja, selama Anda memiliki koneksi internet.
+  Fleksibilitas: ZeroTier mendukung berbagai platform, termasuk Windows, macOS, Linux, Android, dan iOS.
 
 </description>
       </item>
