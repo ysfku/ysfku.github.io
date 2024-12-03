@@ -2,7 +2,7 @@
 layout: post
 title: "Panduan Lengkap Penggunaan Tenda O3 Router Outdoor"
 date: 2024-11-26
-categories: [panduan]
+categories: [pengaturan]
 ---
 
 ## Pengantar

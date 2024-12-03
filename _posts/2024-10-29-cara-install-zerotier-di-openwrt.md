@@ -2,7 +2,7 @@
 layout: post
 ttitle:  "Cara Install ZeroTier di OpenWRT"
 date: 2024-10-29 05:46:00 +0800
-categories: [openwrt]
+categories: [tutorial]
 image: 
 ---
 
