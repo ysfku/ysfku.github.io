@@ -6,29 +6,36 @@
     <description>Master Wifi Network Solution adalah tempat solusi koneksi jaringan anda.</description>
     
       <item>
+        <title>Cara Menghilangkan Virus Komputer</title>
+        <link>http://localhost:4000/keamanan/cara-menghilangkan-virus-komputer/</link>
+        <description>Virus komputer merupakan ancaman nyata bagi perangkat Anda.
+</description>
+      </item>
+    
+      <item>
         <title>Panduan Lengkap Penggunaan Router TP-Link WR840N</title>
-        <link>http://localhost:4000/panduan/panduan-tplink-wr840n/</link>
+        <link>http://localhost:4000/pengaturan/panduan-tplink-wr840n/</link>
         <description>Menggunakan router TP-Link WR840N dengan benar adalah langkah penting untuk memastikan jaringan internet Anda berjalan lancar. Artikel ini akan mengulas langkah demi langkah tata cara penggunaan router TP-Link WR840N, dari pemasangan hingga pengaturan, dengan bahasa yang mudah dipahami oleh orang awam.
 </description>
       </item>
     
       <item>
         <title>Panduan Lengkap Penggunaan TP-Link CPE220</title>
-        <link>http://localhost:4000/panduan/panduan-penggunaan-tplink-cpe220/</link>
+        <link>http://localhost:4000/pengaturan/panduan-penggunaan-tplink-cpe220/</link>
         <description>TP-Link CPE220 adalah perangkat yang dirancang untuk memperluas jangkauan jaringan Wi-Fi. Dalam postingan ini, kita akan membahas cara penggunaan TP-Link CPE220 secara detail, langkah demi langkah.
 </description>
       </item>
     
       <item>
         <title>Panduan Lengkap Menggunakan PowerBeam M2 400</title>
-        <link>http://localhost:4000/panduan/panduan-penggunaan-powerbeam-m2-400/</link>
+        <link>http://localhost:4000/pengaturan/panduan-penggunaan-powerbeam-m2-400/</link>
         <description>PowerBeam M2 400 adalah salah satu perangkat wireless bridge yang menawarkan performa tinggi dengan jangkauan yang luas. Perangkat ini sangat cocok digunakan untuk menyambungkan jaringan di lokasi yang berjauhan seperti antar gedung atau di area yang luas. Dalam panduan ini, kita akan mengulas cara penggunaan PowerBeam M2 400 secara mendetail.
 </description>
       </item>
     
       <item>
         <title>Panduan Lengkap Penggunaan Tenda O3 Router Outdoor</title>
-        <link>http://localhost:4000/panduan/panduan-lengkap-penggunaan-tenda-o3-router-outdoor/</link>
+        <link>http://localhost:4000/pengaturan/panduan-lengkap-penggunaan-tenda-o3-router-outdoor/</link>
         <description>Pengantar
 </description>
       </item>
@@ -59,28 +66,28 @@
     
       <item>
         <title>Setting Vlan OpenWRT</title>
-        <link>http://localhost:4000/openwrt/setting-vlan-openwrt/</link>
+        <link>http://localhost:4000/pengaturan/setting-vlan-openwrt/</link>
         <description>Virtual Local Area Network (VLAN) adalah fitur jaringan yang memungkinkan Anda untuk memisahkan jaringan fisik menjadi beberapa segmen logis. Dengan menggunakan VLAN, Anda dapat meningkatkan keamanan dan manajemen jaringan Anda. Dalam artikel ini, kita akan membahas cara mengatur VLAN di OpenWRT, termasuk langkah-langkah rinci dan manfaat dari penggunaan VLAN.
 </description>
       </item>
     
       <item>
         <title>Setting Firewall OpenWRT</title>
-        <link>http://localhost:4000/openwrt/setting-firewall-openwrt/</link>
+        <link>http://localhost:4000/pengaturan/setting-firewall-openwrt/</link>
         <description>OpenWRT adalah firmware open-source yang memberi Anda kendali penuh atas router Anda, memungkinkan Anda untuk menyesuaikan dan mengoptimalkan berbagai fungsi jaringan. Salah satu fitur penting yang ditawarkan oleh OpenWRT adalah firewall, yang melindungi jaringan Anda dari ancaman eksternal dan memastikan keamanan data. Dalam artikel ini, kami akan menjelaskan cara mengatur firewall di OpenWRT untuk meningkatkan keamanan jaringan Anda.
 </description>
       </item>
     
       <item>
         <title>Cara Install Tailscale di OpenWrt</title>
-        <link>http://localhost:4000/openwrt/cara-install-tailscale-di-openwrt/</link>
+        <link>http://localhost:4000/tutorial/cara-install-tailscale-di-openwrt/</link>
         <description>Pendahuluan
 </description>
       </item>
     
       <item>
         <title>Cara Install Zerotier Di Openwrt</title>
-        <link>http://localhost:4000/openwrt/cara-install-zerotier-di-openwrt/</link>
+        <link>http://localhost:4000/tutorial/cara-install-zerotier-di-openwrt/</link>
         <description>Pendahuluan
 
 Artikel ini akan membahas langkah-langkah untuk menginstal ZeroTier di OpenWRT, sebuah sistem operasi berbasis Linux yang dirancang untuk router.
@@ -186,69 +193,6 @@ Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
 </description>
       </item>
     
-      <item>
-        <title>Penempatan Iklan Google AdSense di Blog</title>
-        <link>http://localhost:4000/monetisasi/pasang-iklan-blog/</link>
-        <description>Monetisasi blog adalah salah satu cara yang paling efektif untuk menghasilkan pendapatan dari konten yang Anda buat. Salah satu cara paling populer untuk melakukannya adalah melalui Google AdSense. Dengan AdSense, Anda dapat menampilkan iklan di blog Anda dan mendapatkan penghasilan setiap kali pengunjung mengklik iklan tersebut. Dalam artikel ini, kita akan membahas secara mendetail langkah-langkah untuk menempatkan iklan Google AdSense di blog Anda.
-</description>
-      </item>
-    
-      <item>
-        <title>Menambahkan Ads.txt di Blog</title>
-        <link>http://localhost:4000/monetisasi/cara-pasang-ads-txt-blog/</link>
-        <description>Di era digital yang semakin berkembang, monetisasi blog menjadi salah satu cara yang populer untuk mendapatkan penghasilan. Salah satu langkah penting dalam proses monetisasi adalah memastikan bahwa Anda memiliki file ads.txt yang tepat. Ads.txt adalah singkatan dari “Authorized Digital Sellers” dan merupakan sebuah file teks yang membantu meningkatkan transparansi dalam ekosistem periklanan digital. Dalam artikel ini, kita akan membahas secara mendalam tentang apa itu ads.txt, mengapa penting, dan bagaimana cara menambahkannya ke blog Anda.
-</description>
-      </item>
-    
-      <item>
-        <title>10 Cara Ampuh Menambah Views YouTube dengan Cepat dan Efektif</title>
-        <link>http://localhost:4000/youtube/10cara-ampuh-menambah-views-youtube/</link>
-        <description>YouTube adalah platform video terbesar di dunia, dengan lebih dari 2 miliar pengguna aktif setiap bulannya. Membuat video yang menarik dan bermanfaat adalah langkah awal yang baik, tetapi mendapatkan views yang banyak adalah tantangan tersendiri. Dalam artikel ini, kami akan membahas 10 cara ampuh untuk menambah views YouTube Anda dengan cepat dan efektif.
-</description>
-      </item>
-    
-      <item>
-        <title>Cara Monetisasi di YouTube</title>
-        <link>http://localhost:4000/monetisasi/monetisasi-youtube/</link>
-        <description>YouTube telah menjadi salah satu platform paling populer bagi kreator untuk berbagi konten dan mendapatkan penghasilan. Monetisasi di YouTube memberikan kesempatan bagi Anda untuk mendapatkan uang dari video yang Anda buat. Namun, sebelum Anda dapat mulai menghasilkan uang, ada beberapa langkah yang perlu diikuti dan syarat yang harus dipenuhi. Dalam artikel ini, kita akan membahas cara monetisasi di YouTube secara lengkap, mulai dari persyaratan hingga strategi untuk meningkatkan pendapatan Anda.
-</description>
-      </item>
-    
-      <item>
-        <title>Cara Kejar 4000 Jam Tayang di YouTube</title>
-        <link>http://localhost:4000/monetisasi/cara-kejar-jam-tayang-youtube/</link>
-        <description>Menjadi kreator konten di YouTube adalah impian banyak orang, terutama dengan peluang monetisasi yang ditawarkan oleh platform ini. Namun, untuk memenuhi syarat monetisasi, Anda perlu mendapatkan 4000 jam tayang dalam 12 bulan terakhir. Meskipun tampak menantang, mencapai angka tersebut bukanlah hal yang tidak mungkin. Dalam artikel ini, kita akan membahas berbagai strategi dan tips yang dapat membantu Anda mengejar 4000 jam tayang di YouTube.
-</description>
-      </item>
-    
-      <item>
-        <title>Kata Kunci untuk Video YouTube yang Efektif</title>
-        <link>http://localhost:4000/seo/mencari-kata-kunci-video-youtube/</link>
-        <description>YouTube adalah platform video terbesar di dunia, dengan lebih dari 2 miliar pengguna aktif setiap bulannya. Dengan banyaknya konten yang diunggah setiap hari, penting bagi Anda untuk memahami cara mencari kata kunci yang tepat agar video Anda dapat ditemukan dan menarik perhatian audiens. Dalam panduan ini, kita akan membahas langkah demi langkah cara mencari kata kunci yang efektif untuk video YouTube Anda.
-</description>
-      </item>
-    
-      <item>
-        <title>Cara Optimasi SEO YouTube</title>
-        <link>http://localhost:4000/seo/optimasi-seo-youtube/</link>
-        <description>YouTube adalah platform berbagi video terbesar di dunia, dengan lebih dari dua miliar pengguna aktif setiap bulan. Dengan jumlah yang begitu besar, pasti ada banyak konten yang bersaing untuk mendapatkan perhatian pemirsa. Agar video Anda dapat ditemukan di antara lautan konten tersebut, penting untuk memahami dan menerapkan teknik optimasi SEO (Search Engine Optimization) khusus untuk YouTube. Dalam artikel ini, kita akan membahas berbagai strategi untuk meningkatkan visibilitas video Anda di YouTube.
-</description>
-      </item>
-    
-      <item>
-        <title>Cara Upload Video yang Benar di YouTube</title>
-        <link>http://localhost:4000/seo/cara-upload-video-di-youtube/</link>
-        <description>YouTube adalah salah satu platform berbagi video terbesar di dunia, dengan miliaran pengguna yang aktif setiap hari. Jika Anda ingin berbagi konten, tutorial, atau bahkan vlog pribadi, mengupload video di YouTube adalah langkah yang tepat. Namun, untuk memastikan video Anda menjangkau audiens yang lebih luas, ada beberapa langkah dan tips yang perlu diikuti. Dalam artikel ini, kita akan membahas cara upload video yang benar di YouTube, mulai dari persiapan hingga langkah-langkah teknis.
-</description>
-      </item>
-    
-      <item>
-        <title>Membuat Channel YouTube yang Sukses</title>
-        <link>http://localhost:4000/seo/membuat-channel-youtube/</link>
-        <description>YouTube telah menjadi salah satu platform berbagi video terbesar dan paling berpengaruh di dunia. Dengan lebih dari 2 miliar pengguna aktif setiap bulannya, membuat channel YouTube bukan hanya sekadar hobi, tetapi juga bisa menjadi peluang karier yang menguntungkan. Jika Anda berminat untuk memulai channel YouTube, panduan ini akan membantu Anda melalui langkah-langkah penting dalam prosesnya.
-</description>
-      </item>
-    
     
       
         <item>
@@ -334,6 +278,14 @@ Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
     
       
         <item>
+          <title>keamanan</title>
+          <link>http://localhost:4000/categories/keamanan/</link>
+          <description></description>
+        </item>
+      
+    
+      
+        <item>
           <title>Marketplace</title>
           <link>http://localhost:4000/marketplace/</link>
           <description></description>
@@ -350,24 +302,16 @@ Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
     
       
         <item>
-          <title>monetisasi</title>
-          <link>http://localhost:4000/categories/monetisasi/</link>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
-          <title>openwrt</title>
-          <link>http://localhost:4000/categories/openwrt/</link>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
           <title>panduan</title>
           <link>http://localhost:4000/categories/panduan/</link>
+          <description></description>
+        </item>
+      
+    
+      
+        <item>
+          <title>pengaturan</title>
+          <link>http://localhost:4000/categories/pengaturan/</link>
           <description></description>
         </item>
       
@@ -406,20 +350,20 @@ Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
     
       
         <item>
-          <title>seo</title>
-          <link>http://localhost:4000/categories/seo/</link>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
           <title>Sitemap</title>
           <link>http://localhost:4000/sitemap/</link>
           <description></description>
         </item>
       
     
+      
+    
+      
+        <item>
+          <title>tutorial</title>
+          <link>http://localhost:4000/categories/tutorial/</link>
+          <description></description>
+        </item>
       
     
       
@@ -432,32 +376,8 @@ Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
     
       
         <item>
-          <title>youtube</title>
-          <link>http://localhost:4000/categories/youtube/</link>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
           <title>Home</title>
           <link>http://localhost:4000/page/2/</link>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Home</title>
-          <link>http://localhost:4000/page/3/</link>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Home</title>
-          <link>http://localhost:4000/page/4/</link>
           <description></description>
         </item>
       

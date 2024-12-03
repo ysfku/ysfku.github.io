@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="YOUR_TRANSLATE_PROJECT_ID">
   <meta name="google-adsense-account" content="ca-pub-1794381705838564">
-  <title>android - Master Wifi Network Solution</title>
-  <meta name="description" content="">
+  <title>Cara Install Tailscale di OpenWrt - Master Wifi Network Solution</title>
+  <meta name="description" content="Pendahuluan">
   <meta name="keywords" content="wifi, network, openwrt, mikrotik, modem, router, aplikasi, antena, jasa pasang wifi, jasa remote wifi">
   <meta name="author" content="">
   <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
@@ -88,31 +88,496 @@
   <div class="container-fluid">
     <div class="row">
       <main role="main" class="col-md-8 col-lg-9 px-md-4">
-        <style>
-  .category-content {
-    margin-top: 20px; /* Menyesuaikan dengan tinggi navigasi Anda */
-  }
-  .category-header {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    font-size: 1.25rem; /* Ukuran font lebih kecil */
-  }
-  .category-header h1 {
-    margin: 0;
-    font-size: 1.5rem; /* Mengurangi ukuran font header */
-  }
-</style>
+        <div class="container mt-4">
+  <div class="post-content">
+    <nav aria-label="breadcrumb" class="bg-info p-3 rounded">
+      <h6 class="card-subtitle mb-2 text-muted">Judul: <b>Cara Install Tailscale di OpenWrt</b></h6>
+      <h6 class="card-subtitle mb-2 text-muted">Update: 2024/10/30</h6>
+      <h6 class="card-subtitle mb-2 text-muted">
+        
+          Category: <a href="/categories/tutorial/">tutorial</a>
+        
+      </h6>
+      
+       <!-- Asumsi kecepatan baca 200 kata per menit -->
+      <h6 class="card-subtitle mb-2 text-muted">Durasi baca: 1 menit</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Penulis: <a href="/profile.html">Muhammad Yusuf</a></h6>
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        
+          <li class="breadcrumb-item"><a href="/categories/tutorial/">tutorial</a></li>
+        
+        <li class="breadcrumb-item active" aria-current="page">Cara Install Tailscale di OpenWrt</li>
+      </ol>
+    </nav>
+  </div>
 
-<div class="category-content">
-  <header class="category-header">
-    <h1>Posts in category: android</h1>
-  </header>
+  <!-- Place ToC here -->
+  <div class="toc-panel bg-secondary">
+    <nav class="toc">
+      <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title text-light">Daftar Isi Konten</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            
+            
+            
+            
 
-  <ol class="list-group list-group-numbered">
-    
-  </ol>
+            
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#pendahuluan">Pendahuluan</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#apa-itu-tailscale?">Apa itu Tailscale?</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#definisi-dan-fungsi">Definisi dan Fungsi</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#keunggulan-tailscale">Keunggulan Tailscale</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#persiapan-sebelum-instalasi">Persiapan Sebelum Instalasi</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#persyaratan-sistem">Persyaratan Sistem</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#langkah-langkah-awal">Langkah-langkah Awal</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#langkah-langkah-instalasi-tailscale-di-openwrt">Langkah-langkah Instalasi Tailscale di OpenWrt</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#1-akses-antarmuka-web-openwrt">1. Akses Antarmuka Web OpenWrt</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#2-instalasi-paket-tailscale">2. Instalasi Paket Tailscale</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#3-konfigurasi-tailscale">3. Konfigurasi Tailscale</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#4-verifikasi-koneksi">4. Verifikasi Koneksi</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#troubleshooting">Troubleshooting</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#masalah-umum-dan-solusi">Masalah Umum dan Solusi</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#bantuan-lebih-lanjut">Bantuan Lebih Lanjut</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#penutup">Penutup</a>
+                        
+                    
+                
+            
+            
+        </ul>
+    </div>
+</div>
+
+    </nav>
+  </div>
+
+  <!-- Advertisement card -->
+  <div class="card mt-4">
+    <div class="card-header">
+      <h5>Iklan</h5>
+    </div>
+    <div class="card-body">
+      <div class="adsense">
+
+<!-- Respondsive -->
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-1794381705838564"
+    data-ad-slot="5202041315"
+    data-ad-format="auto"
+    data-full-width-responsive="true">
+  </ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</div>
+    </div>
+  </div>
+
+  <div class="post-content mt-4">
+    <div>
+      
+        <img src="/assets/images/install-tailscale-openwrt.jpg" alt="Cara Install Tailscale di OpenWrt" class="img-fluid" style="margin-bottom: 20px;">
+      
+      <h2 id="pendahuluan">Pendahuluan</h2>
+
+<p>OpenWrt adalah sistem operasi berbasis Linux yang dirancang khusus untuk router. Dengan OpenWrt, pengguna dapat meningkatkan fungsi router mereka dengan berbagai aplikasi tambahan. Salah satu aplikasi yang berguna adalah Tailscale, yang memungkinkan jaringan mesh VPN yang mudah diatur dan aman.</p>
+
+<h2 id="apa-itu-tailscale">Apa itu Tailscale?</h2>
+
+<h3 id="definisi-dan-fungsi">Definisi dan Fungsi</h3>
+
+<p>Tailscale adalah solusi VPN yang menggunakan WireGuard untuk membuat jaringan mesh yang aman antara perangkat. Ini mempermudah koneksi antar perangkat dalam jaringan pribadi, baik untuk penggunaan pribadi maupun profesional.</p>
+
+<h3 id="keunggulan-tailscale">Keunggulan Tailscale</h3>
+
+<ul>
+  <li><strong>Kemudahan Instalasi dan Konfigurasi</strong>: Tidak memerlukan keahlian teknis tinggi.</li>
+  <li><strong>Keamanan Tinggi</strong>: Menggunakan protokol WireGuard.</li>
+  <li><strong>Fleksibilitas</strong>: Dapat digunakan pada berbagai perangkat dan sistem operasi.</li>
+</ul>
+
+<h2 id="persiapan-sebelum-instalasi">Persiapan Sebelum Instalasi</h2>
+
+<h3 id="persyaratan-sistem">Persyaratan Sistem</h3>
+
+<ul>
+  <li>Router dengan OpenWrt terinstal.</li>
+  <li>Koneksi internet aktif.</li>
+  <li>Akses ke antarmuka web OpenWrt.</li>
+</ul>
+
+<h3 id="langkah-langkah-awal">Langkah-langkah Awal</h3>
+
+<ul>
+  <li><strong>Perbarui OpenWrt</strong>: Pastikan OpenWrt Anda dalam versi terbaru.</li>
+  <li><strong>Cadangkan Konfigurasi Router</strong>: Sebagai langkah pencegahan, selalu lakukan backup konfigurasi sebelum mengubah apapun.</li>
+</ul>
+
+<h2 id="langkah-langkah-instalasi-tailscale-di-openwrt">Langkah-langkah Instalasi Tailscale di OpenWrt</h2>
+
+<h3 id="1-akses-antarmuka-web-openwrt">1. Akses Antarmuka Web OpenWrt</h3>
+
+<p>Buka browser dan masukkan alamat IP router Anda untuk masuk ke antarmuka web OpenWrt.</p>
+
+<h3 id="2-instalasi-paket-tailscale">2. Instalasi Paket Tailscale</h3>
+
+<ul>
+  <li><strong>Buka Terminal atau SSH</strong>: Akses router Anda melalui terminal atau SSH.</li>
+  <li><strong>Perintah Instalasi</strong>: Gunakan perintah berikut untuk menginstal Tailscale:</li>
+</ul>
+
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">Bash</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+opkg update &amp;&amp; opkg install tailscale
+  </pre>
+</div>
+
+<h3 id="3-konfigurasi-tailscale">3. Konfigurasi Tailscale</h3>
+
+<ul>
+  <li><strong>Jalankan Tailscale</strong>: Setelah instalasi, jalankan Tailscale dengan perintah:</li>
+</ul>
+
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">Bash</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+tailscale up
+  </pre>
+</div>
+
+<ul>
+  <li><strong>Autentikasi Akun</strong>: Ikuti instruksi untuk masuk ke akun Tailscale Anda.</li>
+</ul>
+
+<h3 id="4-verifikasi-koneksi">4. Verifikasi Koneksi</h3>
+
+<ul>
+  <li><strong>Cek Status</strong>: Gunakan perintah:</li>
+</ul>
+
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">Bash</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+tailscale status
+  </pre>
+</div>
+
+<p>untuk memastikan Tailscale berjalan dengan baik.</p>
+
+<ul>
+  <li><strong>Uji Koneksi</strong>: Cobalah menghubungkan perangkat lain ke jaringan Tailscale Anda.</li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="masalah-umum-dan-solusi">Masalah Umum dan Solusi</h3>
+
+<ul>
+  <li><strong>Instalasi Gagal</strong>: Pastikan router Anda memiliki ruang penyimpanan yang cukup dan koneksi internet stabil.</li>
+  <li><strong>Koneksi Terputus</strong>: Cek pengaturan jaringan dan pastikan tidak ada konflik IP.</li>
+</ul>
+
+<h3 id="bantuan-lebih-lanjut">Bantuan Lebih Lanjut</h3>
+
+<p>Jika masih menghadapi masalah, kunjungi forum OpenWrt atau Tailscale untuk bantuan lebih lanjut.</p>
+
+<h2 id="penutup">Penutup</h2>
+
+<p>Menggunakan Tailscale di OpenWrt menawarkan berbagai manfaat, termasuk kemudahan akses dan keamanan tinggi. Dengan mengikuti langkah-langkah di atas, Anda dapat dengan mudah mengatur dan mengkonfigurasi jaringan VPN yang aman dan efisien.</p>
+
+    </div>
+  </div>
+  
+  <!-- Advertisement card -->
+  <div class="card mt-4">
+    <div class="card-header">
+      <h5>Iklan</h5>
+    </div>
+    <div class="card-body">
+      <div class="adsense">
+
+<!-- Respondsive -->
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-1794381705838564"
+    data-ad-slot="5202041315"
+    data-ad-format="auto"
+    data-full-width-responsive="true">
+  </ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</div>
+    </div>
+  </div>
+  
+  <!-- Share buttons -->
+  <div class="card mt-4">
+    <div class="card-header">
+      <h5>Bagikan Post Simaster</h5>
+    </div>
+    <div class="card-body">
+      <div class="share-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=/tutorial/cara-install-tailscale-di-openwrt/" target="_blank" class="btn btn-primary"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.x.com/intent/tweet?url=/tutorial/cara-install-tailscale-di-openwrt/" target="_blank" class="btn btn-info"><i class="fab fa-xing"></i></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=/tutorial/cara-install-tailscale-di-openwrt/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/?text=/tutorial/cara-install-tailscale-di-openwrt/" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://telegram.me/share/url?url=/tutorial/cara-install-tailscale-di-openwrt/" target="_blank" class="btn btn-primary"><i class="fab fa-telegram-plane"></i></a>
+        <a href="mailto:?subject=Cara Install Tailscale di OpenWrt&body=/tutorial/cara-install-tailscale-di-openwrt/" target="_blank" class="btn btn-danger"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comments card -->
+  <div class="card mt-4 mb-4">
+    <div class="card-header">
+      <h5>Komentar</h5>
+    </div>
+    <div class="card-body">
+      
+<div id="comments"></div>
+<script src="https://giscus.app/client.js"
+        data-repo="masterwifinetworksolution/masterwifinetworksolution.github.io"
+        data-repo-id="R_kgDOMwuNZw"
+        data-category="Q&A"
+        data-category-id="DIC_kwDOMwuNZ84Cj-9m"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="dark"
+        data-lang="id"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
+  </div>
+
 </div>
 
       </main>

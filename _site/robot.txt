@@ -1,3 +1,4 @@
 User-agent: *
-Allow: /
-Sitemap: https://masterwifinetworksolution.github.io/sitemap.xml
+Disallow: /assets/
+
+Sitemap: https://masterwifinetworksolution.github.io/feed.xml
