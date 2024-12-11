@@ -14,9 +14,13 @@ GEM
     eventmachine (1.2.7)
     facets (3.1.0)
     ffi (1.17.0)
+    ffi (1.17.0-x64-mingw-ucrt)
     ffi (1.17.0-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
     google-protobuf (4.29.0)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.0-x64-mingw-ucrt)
       bigdecimal
       rake (>= 13)
     google-protobuf (4.29.0-x86_64-linux)
@@ -86,6 +90,8 @@ GEM
     nokogiri (1.16.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    nokogiri (1.16.7-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
     pathutil (0.16.2)
@@ -104,6 +110,8 @@ GEM
     safe_yaml (1.0.5)
     sass-embedded (1.81.1-arm-linux-androideabi)
       google-protobuf (~> 4.28)
+    sass-embedded (1.81.1-x64-mingw-ucrt)
+      google-protobuf (~> 4.28)
     sass-embedded (1.81.1-x86_64-linux-gnu)
       google-protobuf (~> 4.28)
     terminal-table (3.0.2)
@@ -113,6 +121,7 @@ GEM
 
 PLATFORMS
   arm-linux-androideabi
+  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES

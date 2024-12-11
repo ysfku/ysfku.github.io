@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="YOUR_TRANSLATE_PROJECT_ID">
   <meta name="google-adsense-account" content="ca-pub-1794381705838564">
-  <title>Panduan Lengkap Penggunaan Router TP-Link WR840N - Master Wifi Network Solution</title>
-  <meta name="description" content="Menggunakan router TP-Link WR840N dengan benar adalah langkah penting untuk memastikan jaringan internet Anda berjalan lancar. Artikel ini akan mengulas lang...">
+  <title>Dokumentasi Clash - Master Wifi Network Solution</title>
+  <meta name="description" content="Instalasi">
   <meta name="keywords" content="wifi, network, openwrt, mikrotik, modem, router, aplikasi, antena, jasa pasang wifi, jasa remote wifi">
   <meta name="author" content="">
   <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
@@ -91,29 +91,29 @@
         <div class="container mt-4">
   <div class="post-content">
     <nav aria-label="breadcrumb" class="bg-info p-3 rounded">
-      <h6 class="card-subtitle mb-2 text-muted">Judul: <b>Panduan Lengkap Penggunaan Router TP-Link WR840N</b></h6>
-      <h6 class="card-subtitle mb-2 text-muted">Update: 2024/11/26</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Judul: <b>Dokumentasi Clash</b></h6>
+      <h6 class="card-subtitle mb-2 text-muted">Update: 2024/12/10</h6>
       <h6 class="card-subtitle mb-2 text-muted">
         
-          Category: <a href="/categories/pengaturan/">pengaturan</a>
+          Category: <a href="/categories/clash/">clash</a>
         
       </h6>
       
        <!-- Asumsi kecepatan baca 200 kata per menit -->
-      <h6 class="card-subtitle mb-2 text-muted">Durasi baca: 3 menit</h6>
-      <h6 class="card-subtitle mb-2 text-muted">Penulis: <a href="/profile.html">Muhammad Yusuf</a></h6>
+      <h6 class="card-subtitle mb-2 text-muted">Durasi baca: 2 menit</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Penulis: <a href="/profile.html"></a></h6>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         
-          <li class="breadcrumb-item"><a href="/categories/pengaturan/">pengaturan</a></li>
+          <li class="breadcrumb-item"><a href="/categories/clash/">clash</a></li>
         
-        <li class="breadcrumb-item active" aria-current="page">Panduan Lengkap Penggunaan Router TP-Link WR840N</li>
+        <li class="breadcrumb-item active" aria-current="page">Dokumentasi Clash</li>
       </ol>
     </nav>
   </div>
 
-  <!-- Place ToC here -->
-  <div class="toc-panel bg-secondary">
+  <!-- Tempatkan ToC di sini -->
+  <div class="toc-panel bg-secondary mt-4 p-3 rounded">
     <nav class="toc">
       <div class="panel panel-default">
     <div class="panel-heading">
@@ -128,7 +128,46 @@
 
             
                 
+            
+                
                     
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#instalasi">Instalasi</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#setup-dns-config">Setup DNS Config</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#akun">Akun</a>
+                        
                     
                 
             
@@ -141,7 +180,7 @@
                             <ul class="list-group">
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-1:-mengenal-router-tp-link-wr840n">Langkah 1: Mengenal Router TP-Link WR840N</a>
+                            <a class="text-warning" href="#trojan-sni">Trojan SNI</a>
                         
                     
                 
@@ -155,7 +194,7 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-2:-persiapan-awal">Langkah 2: Persiapan Awal</a>
+                            <a class="text-warning" href="#vmess-ws-cdn">Vmess WS CDN</a>
                         
                     
                 
@@ -169,7 +208,7 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-3:-pemasangan-fisik">Langkah 3: Pemasangan Fisik</a>
+                            <a class="text-warning" href="#vmess-grpc">Vmess gRPC</a>
                         
                     
                 
@@ -183,7 +222,7 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-4:-konfigurasi-router">Langkah 4: Konfigurasi Router</a>
+                            <a class="text-warning" href="#trojan-ws-cdn">Trojan WS CDN</a>
                         
                     
                 
@@ -197,7 +236,7 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-5:-pengaturan-lanjutan">Langkah 5: Pengaturan Lanjutan</a>
+                            <a class="text-warning" href="#vmess-h2">Vmess H2</a>
                         
                     
                 
@@ -211,7 +250,7 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-6:-mengecek-koneksi">Langkah 6: Mengecek Koneksi</a>
+                            <a class="text-warning" href="#shadowsocks">Shadowsocks</a>
                         
                     
                 
@@ -225,7 +264,7 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-7:-troubleshooting">Langkah 7: Troubleshooting</a>
+                            <a class="text-warning" href="#shadowsocksr">ShadowsocksR</a>
                         
                     
                 
@@ -239,7 +278,21 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#kesimpulan">Kesimpulan</a>
+                            <a class="text-warning" href="#snell">Snell</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#http">HTTP</a>
                         
                     
                 
@@ -252,7 +305,7 @@
     </nav>
   </div>
 
-  <!-- Advertisement card -->
+  <!-- Kartu iklan -->
   <div class="card mt-4">
     <div class="card-header">
       <h5>Iklan</h5>
@@ -278,78 +331,326 @@
 
   <div class="post-content mt-4">
     <div>
-      
-        <img src="/assets/images/banner.jpg" alt="Banner Image" class="img-fluid" style="margin-bottom: 20px;">
-      
-      <p>Menggunakan router TP-Link WR840N dengan benar adalah langkah penting untuk memastikan jaringan internet Anda berjalan lancar. Artikel ini akan mengulas langkah demi langkah tata cara penggunaan router TP-Link WR840N, dari pemasangan hingga pengaturan, dengan bahasa yang mudah dipahami oleh orang awam.</p>
+      <h2 id="instalasi">Instalasi</h2>
 
-<h2 id="langkah-1-mengenal-router-tp-link-wr840n">Langkah 1: Mengenal Router TP-Link WR840N</h2>
+<p>Untuk menginstal Openclash, ikuti langkah-langkah berikut:</p>
 
-<p>Router TP-Link WR840N adalah perangkat jaringan yang membantu Anda menghubungkan berbagai perangkat ke internet. Dengan desain yang sederhana dan antarmuka yang ramah pengguna, router ini ideal untuk digunakan di rumah atau kantor kecil. Fitur utama dari TP-Link WR840N meliputi kecepatan Wi-Fi hingga 300 Mbps, keamanan yang kuat, dan mudah dikonfigurasi.</p>
-
-<h2 id="langkah-2-persiapan-awal">Langkah 2: Persiapan Awal</h2>
-
-<p>Sebelum memulai pemasangan, pastikan Anda memiliki komponen berikut:</p>
 <ul>
-  <li>Router TP-Link WR840N</li>
-  <li>Kabel power</li>
-  <li>Kabel Ethernet (biasanya berwarna kuning atau abu-abu)</li>
-  <li>Manual pengguna (bisa diunduh dari situs resmi TP-Link)</li>
+  <li>Kunjungi <a href="https://github.com/vernesong/OpenClash">situs resmi Openclash</a> untuk mengunduh versi terbaru dari Openclash.</li>
+  <li>Kemudian download ipk dan taruh di folder <code class="language-plaintext highlighter-rouge">tmp</code> dan berikan perintah di terminal.</li>
 </ul>
 
-<p>Pastikan juga lokasi pemasangan sudah dipilih dengan baik, idealnya di tengah rumah untuk cakupan sinyal yang optimal.</p>
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">Bash</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+cd /tmp
+opkg update &amp;&amp; opkg install *.ipk
+  </pre>
+</div>
 
-<h2 id="langkah-3-pemasangan-fisik">Langkah 3: Pemasangan Fisik</h2>
+<h2 id="setup-dns-config">Setup DNS Config</h2>
 
-<ol>
-  <li><strong>Hubungkan Router ke Sumber Listrik</strong>: Colokkan adaptor daya ke router dan hubungkan ke stopkontak. Pastikan lampu indikator daya pada router menyala.</li>
-  <li><strong>Hubungkan Router ke Modem</strong>: Gunakan kabel Ethernet untuk menghubungkan port WAN (berwarna biru) pada router ke port LAN pada modem Anda.</li>
-  <li><strong>Hubungkan Perangkat ke Router</strong>: Anda dapat menghubungkan perangkat seperti komputer atau laptop ke router menggunakan kabel Ethernet tambahan. Gunakan salah satu port LAN (biasanya berwarna kuning) pada router.</li>
-</ol>
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">yaml</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
 
-<h2 id="langkah-4-konfigurasi-router">Langkah 4: Konfigurasi Router</h2>
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:7874
+  default-nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+  nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+    - https://dns.google/dns-query
+    - https://dns.cloudflare.com/dns-query
+    - tls://dns.google
+    - tls://dns.cloudflare
+  fallback:
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://1.1.1.1/dns-query
+    - tls://8.8.8.8:853
+    - tls://1.1.1.1:853
+    - tls://dns.cloudflare.com
+    - https://1.1.1.1/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: ID
+    ipcidr:
+      - 240.0.0.0/4
+      - 103.0.0.0/8
+      - 114.0.0.0/8
+      - 202.0.0.0/7
+      - 203.0.0.0/7
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+      - '+.githubusercontent.com'
+      - '+.kompas.com'
+      - '+.detik.com'
+      - '+.liputan6.com'
+      - '+.tempo.co'
+  fake-ip-filter:
+    - '*.lan'
+    - time.windows.com
+    - time.apple.com
+    - pool.ntp.org
+    - ntp.aliyun.com
+    - '*.local'
+    - '*.localdomain'
+    - '*.example'
+    - '*.invalid'
+  fake-ip-range: 198.18.0.1/16
 
-<ol>
-  <li><strong>Buka Browser</strong>: Nyalakan komputer Anda dan buka browser internet (seperti Chrome, Firefox, atau Edge).</li>
-  <li><strong>Akses Antarmuka Web Router</strong>: Ketikkan alamat IP router di bilah alamat browser. Alamat IP default TP-Link WR840N biasanya adalah <code class="language-plaintext highlighter-rouge">192.168.0.1</code> atau <code class="language-plaintext highlighter-rouge">tplinkwifi.net</code>.</li>
-  <li><strong>Masuk ke Akun Admin</strong>: Anda akan diminta untuk memasukkan nama pengguna dan kata sandi. Nama pengguna dan kata sandi default adalah <code class="language-plaintext highlighter-rouge">admin</code> untuk keduanya. Namun, sangat disarankan untuk menggantinya setelah login demi keamanan.</li>
-  <li><strong>Pengaturan Jaringan Nirkabel</strong>: Navigasikan ke menu pengaturan nirkabel untuk mengonfigurasi nama jaringan (SSID) dan kata sandi Wi-Fi. Pilih nama yang unik dan kata sandi yang kuat.</li>
-</ol>
+  </pre>
+</div>
 
-<h2 id="langkah-5-pengaturan-lanjutan">Langkah 5: Pengaturan Lanjutan</h2>
+<h2 id="akun">Akun</h2>
 
-<ol>
-  <li><strong>Keamanan Jaringan</strong>: Pastikan untuk mengaktifkan enkripsi WPA2 di bagian pengaturan keamanan nirkabel. Ini akan melindungi jaringan Anda dari akses yang tidak diinginkan.</li>
-  <li><strong>Parental Control</strong>: Jika Anda ingin membatasi akses internet untuk pengguna tertentu, Anda bisa menggunakan fitur parental control. Ini berguna untuk membatasi waktu dan konten yang dapat diakses oleh anak-anak.</li>
-  <li><strong>Quality of Service (QoS)</strong>: QoS memungkinkan Anda memprioritaskan bandwidth untuk aplikasi tertentu seperti streaming video atau game online. Ini memastikan pengalaman internet yang lancar dan bebas lag.</li>
-</ol>
+<h4 id="trojan-sni">Trojan SNI</h4>
 
-<h2 id="langkah-6-mengecek-koneksi">Langkah 6: Mengecek Koneksi</h2>
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">yaml</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
 
-<p>Setelah semua pengaturan selesai, pastikan untuk:</p>
-<ol>
-  <li><strong>Mengecek Koneksi Internet</strong>: Buka beberapa situs web untuk memastikan bahwa Anda terhubung ke internet.</li>
-  <li><strong>Mengecek Cakupan Wi-Fi</strong>: Berjalanlah di sekitar rumah Anda dengan perangkat yang terhubung ke Wi-Fi untuk memastikan sinyal cukup kuat di semua area.</li>
-</ol>
+proxies:
+- name: 'trojan_sni'
+  type: trojan
+  server: your_server_address
+  port: 443
+  password: your_password
+  udp: true
+  sni: your_sni
+  alpn: http/1.1
+  skip-cert-verify: true
 
-<h2 id="langkah-7-troubleshooting">Langkah 7: Troubleshooting</h2>
+  </pre>
+</div>
 
-<p>Jika mengalami masalah, berikut beberapa langkah pemecahan masalah umum:</p>
-<ol>
-  <li><strong>Reset Router</strong>: Jika router tidak merespons atau Anda lupa kata sandi, Anda dapat meresetnya ke pengaturan pabrik dengan menekan tombol reset selama 10 detik.</li>
-  <li><strong>Periksa Koneksi Kabel</strong>: Pastikan semua kabel terhubung dengan benar dan tidak ada yang longgar.</li>
-  <li><strong>Perbarui Firmware</strong>: Terkadang, memperbarui firmware router dapat memperbaiki masalah. Kunjungi situs resmi TP-Link untuk mengunduh firmware terbaru.</li>
-</ol>
+<h4 id="vmess-ws-cdn">Vmess WS CDN</h4>
 
-<h2 id="kesimpulan">Kesimpulan</h2>
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">yaml</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
 
-<p>Menggunakan router TP-Link WR840N dengan benar tidaklah sulit jika Anda mengikuti langkah-langkah yang tepat. Dari pemasangan fisik hingga konfigurasi lanjutan, setiap langkah penting untuk memastikan jaringan Anda berjalan dengan optimal. Jangan lupa untuk selalu memperbarui pengaturan keamanan dan firmware untuk menjaga kinerja dan keamanan jaringan Anda.</p>
+proxies:
+- name: 'vmess_ws_cdn'
+  type: vmess
+  server: your_server_address
+  port: 443
+  uuid: your_uuid
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /iptunnelscom
+    headers:
+      Host: domainservermu.com
+    max-early-data: 2048
+    early-data-header-name: Sec-WebSocket-Protocol
+    cdn: true
 
-<p>Dengan panduan ini, Anda harus bisa mengatur dan menggunakan router TP-Link WR840N dengan mudah.</p>
+  </pre>
+</div>
+
+<h4 id="vmess-grpc">Vmess gRPC</h4>
+
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">yaml</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+
+proxies:
+- name: 'vmess_grpc'
+  type: vmess
+  server: your_server_address
+  port: 443
+  uuid: your_uuid
+  alterId: 0
+  cipher: auto
+  network: grpc
+  grpc-opts:
+    grpc-service-name: iptunnelsvgrpc
+  tls: true
+  skip-cert-verify: true
+
+  </pre>
+</div>
+
+<h4 id="trojan-ws-cdn">Trojan WS CDN</h4>
+
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">yaml</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+
+proxies:
+- name: 'trojan_ws_cdn'
+  type: trojan
+  server: your_server_address
+  port: 443
+  password: your_password
+  network: ws
+  ws-opts:
+    path: /iptunnelstrgo
+    headers:
+      Host: domainservermu.com
+    cdn: true
+  udp: true
+  skip-cert-verify: false
+
+  </pre>
+</div>
+
+<h4 id="vmess-h2">Vmess H2</h4>
+
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">yaml</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+
+proxies:
+- name: 'vmess_h2'
+  type: vmess
+  server: your_server_address
+  port: 443
+  uuid: your_uuid
+  alterId: 0
+  cipher: auto
+  network: h2
+  tls: true
+  skip-cert-verify: true
+
+  </pre>
+</div>
+
+<h4 id="shadowsocks">Shadowsocks</h4>
+
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">yaml</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+
+proxies:
+- name: 'shadowsocks_proxy'
+  type: ss
+  server: your_server_address
+  port: 8388
+  cipher: aes-256-gcm
+  password: your_password
+  udp: true
+
+  </pre>
+</div>
+
+<h4 id="shadowsocksr">ShadowsocksR</h4>
+
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">yaml</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+
+proxies:
+- name: 'shadowsocksr_proxy'
+  type: ssr
+  server: your_server_address
+  port: 8388
+  cipher: aes-256-gcm
+  password: your_password
+  udp: true
+  level: fast
+
+  </pre>
+</div>
+
+<h4 id="snell">Snell</h4>
+
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">yaml</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+
+proxies:
+- name: 'snell_proxy'
+  type: snell
+  server: your_server_address
+  port: 443
+  uuid: your_uuid
+  cipher: auto
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /snell
+    headers:
+      Host: your_host
+
+  </pre>
+</div>
+
+<h4 id="http">HTTP</h4>
+
+<div class="code-container">
+  <div class="code-header">
+    <span class="language-label">yaml</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  <pre class="code-block">
+
+proxies:
+- name: 'http_proxy'
+  type: http
+  server: your_server_address
+  port: 8080
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /http
+    headers:
+      Host: your_host
+
+  </pre>
+</div>
 
     </div>
   </div>
-  
+
   <!-- Advertisement card -->
   <div class="card mt-4">
     <div class="card-header">
@@ -374,24 +675,24 @@
     </div>
   </div>
   
-  <!-- Share buttons -->
+  <!-- Tombol bagikan -->
   <div class="card mt-4">
     <div class="card-header">
-      <h5>Bagikan Post Simaster</h5>
+      <h5>Bagikan Dokumentasi Simaster</h5>
     </div>
     <div class="card-body">
       <div class="share-buttons">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-primary"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.x.com/intent/tweet?url=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-info"><i class="fab fa-xing"></i></a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://wa.me/?text=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://telegram.me/share/url?url=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-primary"><i class="fab fa-telegram-plane"></i></a>
-        <a href="mailto:?subject=Panduan Lengkap Penggunaan Router TP-Link WR840N&body=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-danger"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/docs/clash/" target="_blank" class="btn btn-primary"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.x.com/intent/tweet?url=http://localhost:4000/docs/clash/" target="_blank" class="btn btn-info"><i class="fab fa-xing"></i></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/docs/clash/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/?text=http://localhost:4000/docs/clash/" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://telegram.me/share/url?url=http://localhost:4000/docs/clash/" target="_blank" class="btn btn-primary"><i class="fab fa-telegram-plane"></i></a>
+        <a href="mailto:?subject=Dokumentasi Clash&body=http://localhost:4000/docs/clash/" target="_blank" class="btn btn-danger"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </div>
 
-  <!-- Comments card -->
+  <!-- Kartu komentar -->
   <div class="card mt-4 mb-4">
     <div class="card-header">
       <h5>Komentar</h5>
@@ -417,7 +718,6 @@
 
     </div>
   </div>
-
 </div>
 
       </main>

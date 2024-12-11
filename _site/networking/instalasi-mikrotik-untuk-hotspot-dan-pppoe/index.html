@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="YOUR_TRANSLATE_PROJECT_ID">
   <meta name="google-adsense-account" content="ca-pub-1794381705838564">
-  <title>Panduan Lengkap Penggunaan Router TP-Link WR840N - Master Wifi Network Solution</title>
-  <meta name="description" content="Menggunakan router TP-Link WR840N dengan benar adalah langkah penting untuk memastikan jaringan internet Anda berjalan lancar. Artikel ini akan mengulas lang...">
+  <title>Instalasi Mikrotik untuk Hotspot dan PPPoE - Master Wifi Network Solution</title>
+  <meta name="description" content="Pendahuluan">
   <meta name="keywords" content="wifi, network, openwrt, mikrotik, modem, router, aplikasi, antena, jasa pasang wifi, jasa remote wifi">
   <meta name="author" content="">
   <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
@@ -91,23 +91,23 @@
         <div class="container mt-4">
   <div class="post-content">
     <nav aria-label="breadcrumb" class="bg-info p-3 rounded">
-      <h6 class="card-subtitle mb-2 text-muted">Judul: <b>Panduan Lengkap Penggunaan Router TP-Link WR840N</b></h6>
-      <h6 class="card-subtitle mb-2 text-muted">Update: 2024/11/26</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Judul: <b>Instalasi Mikrotik untuk Hotspot dan PPPoE</b></h6>
+      <h6 class="card-subtitle mb-2 text-muted">Update: 2024/12/04</h6>
       <h6 class="card-subtitle mb-2 text-muted">
         
-          Category: <a href="/categories/pengaturan/">pengaturan</a>
+          Category: <a href="/categories/networking/">networking</a>
         
       </h6>
       
        <!-- Asumsi kecepatan baca 200 kata per menit -->
-      <h6 class="card-subtitle mb-2 text-muted">Durasi baca: 3 menit</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Durasi baca: 5 menit</h6>
       <h6 class="card-subtitle mb-2 text-muted">Penulis: <a href="/profile.html">Muhammad Yusuf</a></h6>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         
-          <li class="breadcrumb-item"><a href="/categories/pengaturan/">pengaturan</a></li>
+          <li class="breadcrumb-item"><a href="/categories/networking/">networking</a></li>
         
-        <li class="breadcrumb-item active" aria-current="page">Panduan Lengkap Penggunaan Router TP-Link WR840N</li>
+        <li class="breadcrumb-item active" aria-current="page">Instalasi Mikrotik untuk Hotspot dan PPPoE</li>
       </ol>
     </nav>
   </div>
@@ -128,7 +128,18 @@
 
             
                 
+            
+                
                     
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#pendahuluan">Pendahuluan</a>
+                        
                     
                 
             
@@ -141,7 +152,7 @@
                             <ul class="list-group">
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-1:-mengenal-router-tp-link-wr840n">Langkah 1: Mengenal Router TP-Link WR840N</a>
+                            <a class="text-warning" href="#apa-itu-mikrotik?">Apa itu Mikrotik?</a>
                         
                     
                 
@@ -155,7 +166,35 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-2:-persiapan-awal">Langkah 2: Persiapan Awal</a>
+                            <a class="text-warning" href="#kegunaan-mikrotik-dalam-jaringan">Kegunaan Mikrotik dalam Jaringan</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#persiapan">Persiapan</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#perangkat-keras-dan-perangkat-lunak-yang-diperlukan">Perangkat Keras dan Perangkat Lunak yang Diperlukan</a>
                         
                     
                 
@@ -169,7 +208,7 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-3:-pemasangan-fisik">Langkah 3: Pemasangan Fisik</a>
+                            <a class="text-warning" href="#memilih-versi-routeros">Memilih Versi RouterOS</a>
                         
                     
                 
@@ -183,7 +222,35 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-4:-konfigurasi-router">Langkah 4: Konfigurasi Router</a>
+                            <a class="text-warning" href="#cara-mendapatkan-dan-menginstal-routeros">Cara Mendapatkan dan Menginstal RouterOS</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#instalasi-mikrotik">Instalasi Mikrotik</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#langkah-langkah-menginstal-routeros">Langkah-langkah Menginstal RouterOS</a>
                         
                     
                 
@@ -197,7 +264,35 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-5:-pengaturan-lanjutan">Langkah 5: Pengaturan Lanjutan</a>
+                            <a class="text-warning" href="#konfigurasi-awal-mikrotik">Konfigurasi Awal Mikrotik</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#konfigurasi-hotspot">Konfigurasi Hotspot</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#tujuan-dan-manfaat-hotspot">Tujuan dan Manfaat Hotspot</a>
                         
                     
                 
@@ -211,7 +306,7 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-6:-mengecek-koneksi">Langkah 6: Mengecek Koneksi</a>
+                            <a class="text-warning" href="#langkah-langkah-membuat-profil-hotspot">Langkah-langkah Membuat Profil Hotspot</a>
                         
                     
                 
@@ -225,7 +320,7 @@
                             </li>
                         
                         <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#langkah-7:-troubleshooting">Langkah 7: Troubleshooting</a>
+                            <a class="text-warning" href="#menambahkan-pengguna-dan-pengaturan-akses">Menambahkan Pengguna dan Pengaturan Akses</a>
                         
                     
                 
@@ -237,6 +332,146 @@
                         
                         
                             </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#kustomisasi-halaman-login">Kustomisasi Halaman Login</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#konfigurasi-pppoe">Konfigurasi PPPoE</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#pengenalan-pppoe-dan-kapan-digunakan">Pengenalan PPPoE dan Kapan Digunakan</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#langkah-langkah-membuat-server-pppoe-di-mikrotik">Langkah-langkah Membuat Server PPPoE di Mikrotik</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#menambahkan-pengguna-pppoe-dan-pengaturan">Menambahkan Pengguna PPPoE dan Pengaturan</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#monitoring-dan-maintenance">Monitoring dan Maintenance</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#cara-memonitor-kinerja-jaringan">Cara Memonitor Kinerja Jaringan</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#tips-pemeliharaan-dan-troubleshooting">Tips Pemeliharaan dan Troubleshooting</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#studi-kasus">Studi Kasus</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            <ul class="list-group">
+                        
+                        <li class="list-group-item bg-dark">
+                            <a class="text-warning" href="#contoh-penerapan-mikrotik-hotspot-dan-pppoe-di-lingkungan-nyata">Contoh Penerapan Mikrotik Hotspot dan PPPoE di Lingkungan Nyata</a>
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                        
+                        
+                            </li></ul>
                         
                         <li class="list-group-item bg-dark">
                             <a class="text-warning" href="#kesimpulan">Kesimpulan</a>
@@ -281,71 +516,212 @@
       
         <img src="/assets/images/banner.jpg" alt="Banner Image" class="img-fluid" style="margin-bottom: 20px;">
       
-      <p>Menggunakan router TP-Link WR840N dengan benar adalah langkah penting untuk memastikan jaringan internet Anda berjalan lancar. Artikel ini akan mengulas langkah demi langkah tata cara penggunaan router TP-Link WR840N, dari pemasangan hingga pengaturan, dengan bahasa yang mudah dipahami oleh orang awam.</p>
+      <h3 id="pendahuluan">Pendahuluan</h3>
 
-<h2 id="langkah-1-mengenal-router-tp-link-wr840n">Langkah 1: Mengenal Router TP-Link WR840N</h2>
+<h4 id="apa-itu-mikrotik">Apa itu Mikrotik?</h4>
 
-<p>Router TP-Link WR840N adalah perangkat jaringan yang membantu Anda menghubungkan berbagai perangkat ke internet. Dengan desain yang sederhana dan antarmuka yang ramah pengguna, router ini ideal untuk digunakan di rumah atau kantor kecil. Fitur utama dari TP-Link WR840N meliputi kecepatan Wi-Fi hingga 300 Mbps, keamanan yang kuat, dan mudah dikonfigurasi.</p>
+<p>Mikrotik adalah perusahaan yang terkenal dengan produk perangkat keras dan perangkat lunak jaringan yang andal. Salah satu produk unggulannya adalah RouterOS, sebuah sistem operasi router yang dapat mengubah komputer biasa menjadi router jaringan yang canggih. Dengan menggunakan RouterOS, pengguna dapat mengatur jaringan mereka dengan lebih fleksibel dan efisien. Mikrotik sangat populer di kalangan pengguna profesional dan juga di sektor pendidikan karena kemampuannya yang luas dan biaya yang relatif terjangkau.</p>
 
-<h2 id="langkah-2-persiapan-awal">Langkah 2: Persiapan Awal</h2>
+<h4 id="kegunaan-mikrotik-dalam-jaringan">Kegunaan Mikrotik dalam Jaringan</h4>
 
-<p>Sebelum memulai pemasangan, pastikan Anda memiliki komponen berikut:</p>
-<ul>
-  <li>Router TP-Link WR840N</li>
-  <li>Kabel power</li>
-  <li>Kabel Ethernet (biasanya berwarna kuning atau abu-abu)</li>
-  <li>Manual pengguna (bisa diunduh dari situs resmi TP-Link)</li>
-</ul>
+<p>Mikrotik digunakan secara luas untuk berbagai tujuan, termasuk routing, firewall, hotspot, PPPoE, dan banyak lagi. Dalam artikel ini, kita akan fokus pada dua penggunaan utama: hotspot dan PPPoE. Hotspot digunakan untuk menyediakan akses internet melalui jaringan WiFi publik, sementara PPPoE (Point-to-Point Protocol over Ethernet) digunakan untuk mengatur koneksi internet berbasis kabel dengan otentikasi pengguna.</p>
 
-<p>Pastikan juga lokasi pemasangan sudah dipilih dengan baik, idealnya di tengah rumah untuk cakupan sinyal yang optimal.</p>
+<h3 id="persiapan">Persiapan</h3>
 
-<h2 id="langkah-3-pemasangan-fisik">Langkah 3: Pemasangan Fisik</h2>
+<h4 id="perangkat-keras-dan-perangkat-lunak-yang-diperlukan">Perangkat Keras dan Perangkat Lunak yang Diperlukan</h4>
+
+<p>Untuk memulai instalasi Mikrotik, Anda akan memerlukan beberapa perangkat keras dan perangkat lunak:</p>
 
 <ol>
-  <li><strong>Hubungkan Router ke Sumber Listrik</strong>: Colokkan adaptor daya ke router dan hubungkan ke stopkontak. Pastikan lampu indikator daya pada router menyala.</li>
-  <li><strong>Hubungkan Router ke Modem</strong>: Gunakan kabel Ethernet untuk menghubungkan port WAN (berwarna biru) pada router ke port LAN pada modem Anda.</li>
-  <li><strong>Hubungkan Perangkat ke Router</strong>: Anda dapat menghubungkan perangkat seperti komputer atau laptop ke router menggunakan kabel Ethernet tambahan. Gunakan salah satu port LAN (biasanya berwarna kuning) pada router.</li>
+  <li><strong>Router Mikrotik</strong>: Router yang mendukung RouterOS.</li>
+  <li><strong>Komputer atau Laptop</strong>: Untuk mengonfigurasi router.</li>
+  <li><strong>Kabel Ethernet</strong>: Untuk menghubungkan perangkat ke router.</li>
+  <li><strong>Winbox</strong>: Software manajemen router Mikrotik (dapat diunduh dari situs resmi Mikrotik).</li>
+  <li><strong>RouterOS</strong>: Sistem operasi router Mikrotik (biasanya sudah terpasang pada perangkat, tapi bisa diunduh jika perlu upgrade).</li>
 </ol>
 
-<h2 id="langkah-4-konfigurasi-router">Langkah 4: Konfigurasi Router</h2>
+<h4 id="memilih-versi-routeros">Memilih Versi RouterOS</h4>
+
+<p>Versi RouterOS yang Anda pilih harus disesuaikan dengan kebutuhan dan kompatibilitas perangkat Anda. Biasanya, versi terbaru menawarkan fitur dan keamanan yang lebih baik. Anda dapat mengecek versi terbaru di situs resmi Mikrotik dan mengunduhnya jika perlu.</p>
+
+<h4 id="cara-mendapatkan-dan-menginstal-routeros">Cara Mendapatkan dan Menginstal RouterOS</h4>
+
+<p>Jika router Anda belum memiliki RouterOS atau memerlukan pembaruan, Anda dapat mengunduhnya dari situs resmi Mikrotik. Ikuti petunjuk pengunduhan dan instalasi yang disediakan.</p>
 
 <ol>
-  <li><strong>Buka Browser</strong>: Nyalakan komputer Anda dan buka browser internet (seperti Chrome, Firefox, atau Edge).</li>
-  <li><strong>Akses Antarmuka Web Router</strong>: Ketikkan alamat IP router di bilah alamat browser. Alamat IP default TP-Link WR840N biasanya adalah <code class="language-plaintext highlighter-rouge">192.168.0.1</code> atau <code class="language-plaintext highlighter-rouge">tplinkwifi.net</code>.</li>
-  <li><strong>Masuk ke Akun Admin</strong>: Anda akan diminta untuk memasukkan nama pengguna dan kata sandi. Nama pengguna dan kata sandi default adalah <code class="language-plaintext highlighter-rouge">admin</code> untuk keduanya. Namun, sangat disarankan untuk menggantinya setelah login demi keamanan.</li>
-  <li><strong>Pengaturan Jaringan Nirkabel</strong>: Navigasikan ke menu pengaturan nirkabel untuk mengonfigurasi nama jaringan (SSID) dan kata sandi Wi-Fi. Pilih nama yang unik dan kata sandi yang kuat.</li>
+  <li><strong>Mengunduh RouterOS</strong>: Kunjungi situs Mikrotik dan unduh versi terbaru dari RouterOS.</li>
+  <li><strong>Mempersiapkan Perangkat</strong>: Gunakan alat seperti Netinstall jika Anda perlu menginstal dari awal.</li>
+  <li><strong>Instalasi</strong>: Ikuti instruksi yang diberikan oleh Mikrotik untuk menginstal RouterOS ke router Anda.</li>
 </ol>
 
-<h2 id="langkah-5-pengaturan-lanjutan">Langkah 5: Pengaturan Lanjutan</h2>
+<h3 id="instalasi-mikrotik">Instalasi Mikrotik</h3>
+
+<h4 id="langkah-langkah-menginstal-routeros">Langkah-langkah Menginstal RouterOS</h4>
 
 <ol>
-  <li><strong>Keamanan Jaringan</strong>: Pastikan untuk mengaktifkan enkripsi WPA2 di bagian pengaturan keamanan nirkabel. Ini akan melindungi jaringan Anda dari akses yang tidak diinginkan.</li>
-  <li><strong>Parental Control</strong>: Jika Anda ingin membatasi akses internet untuk pengguna tertentu, Anda bisa menggunakan fitur parental control. Ini berguna untuk membatasi waktu dan konten yang dapat diakses oleh anak-anak.</li>
-  <li><strong>Quality of Service (QoS)</strong>: QoS memungkinkan Anda memprioritaskan bandwidth untuk aplikasi tertentu seperti streaming video atau game online. Ini memastikan pengalaman internet yang lancar dan bebas lag.</li>
+  <li><strong>Hubungkan Router ke Komputer</strong>: Gunakan kabel Ethernet untuk menghubungkan router ke komputer atau laptop.</li>
+  <li><strong>Akses Router melalui Winbox</strong>: Buka aplikasi Winbox, dan gunakan alamat MAC atau IP untuk mengakses router.</li>
+  <li><strong>Setelah Masuk ke Winbox</strong>: Anda akan melihat antarmuka pengguna Mikrotik. Di sini Anda bisa mulai mengkonfigurasi router sesuai kebutuhan.</li>
 </ol>
 
-<h2 id="langkah-6-mengecek-koneksi">Langkah 6: Mengecek Koneksi</h2>
+<h4 id="konfigurasi-awal-mikrotik">Konfigurasi Awal Mikrotik</h4>
 
-<p>Setelah semua pengaturan selesai, pastikan untuk:</p>
 <ol>
-  <li><strong>Mengecek Koneksi Internet</strong>: Buka beberapa situs web untuk memastikan bahwa Anda terhubung ke internet.</li>
-  <li><strong>Mengecek Cakupan Wi-Fi</strong>: Berjalanlah di sekitar rumah Anda dengan perangkat yang terhubung ke Wi-Fi untuk memastikan sinyal cukup kuat di semua area.</li>
+  <li><strong>Mengatur IP Address</strong>: Buka menu “IP” dan pilih “Addresses” untuk menetapkan alamat IP statis pada router.</li>
+  <li><strong>Menetapkan Default Gateway</strong>: Pergi ke “IP” dan pilih “Routes” untuk menetapkan default gateway.</li>
+  <li><strong>Menetapkan DNS Server</strong>: Di menu “IP” pilih “DNS” dan tambahkan server DNS.</li>
 </ol>
 
-<h2 id="langkah-7-troubleshooting">Langkah 7: Troubleshooting</h2>
+<h3 id="konfigurasi-hotspot">Konfigurasi Hotspot</h3>
 
-<p>Jika mengalami masalah, berikut beberapa langkah pemecahan masalah umum:</p>
+<h4 id="tujuan-dan-manfaat-hotspot">Tujuan dan Manfaat Hotspot</h4>
+
+<p>Hotspot memungkinkan pengguna untuk mengakses internet melalui jaringan WiFi publik. Hal ini sangat berguna di tempat umum seperti kafe, hotel, atau kampus. Dengan menggunakan Mikrotik, Anda dapat mengontrol akses pengguna, bandwidth, dan keamanan jaringan hotspot.</p>
+
+<h4 id="langkah-langkah-membuat-profil-hotspot">Langkah-langkah Membuat Profil Hotspot</h4>
+
 <ol>
-  <li><strong>Reset Router</strong>: Jika router tidak merespons atau Anda lupa kata sandi, Anda dapat meresetnya ke pengaturan pabrik dengan menekan tombol reset selama 10 detik.</li>
-  <li><strong>Periksa Koneksi Kabel</strong>: Pastikan semua kabel terhubung dengan benar dan tidak ada yang longgar.</li>
-  <li><strong>Perbarui Firmware</strong>: Terkadang, memperbarui firmware router dapat memperbaiki masalah. Kunjungi situs resmi TP-Link untuk mengunduh firmware terbaru.</li>
+  <li><strong>Membuat Hotspot Server</strong>:
+    <ul>
+      <li>Buka menu “IP” dan pilih “Hotspot”.</li>
+      <li>Klik “Hotspot Setup” dan ikuti wizard untuk mengatur hotspot.</li>
+      <li>Tentukan interface yang akan digunakan untuk hotspot.</li>
+      <li>Masukkan range IP yang akan digunakan oleh hotspot.</li>
+      <li>Tentukan SSL certificate jika diperlukan.</li>
+      <li>Selesaikan setup dengan mengikuti langkah-langkah pada wizard.</li>
+    </ul>
+  </li>
+  <li><strong>Membuat Profil Pengguna</strong>:
+    <ul>
+      <li>Di menu “Hotspot”, pilih tab “User Profiles”.</li>
+      <li>Klik “+” untuk menambahkan profil baru.</li>
+      <li>Tentukan parameter seperti rate limit, session timeout, dll.</li>
+    </ul>
+  </li>
 </ol>
 
-<h2 id="kesimpulan">Kesimpulan</h2>
+<h4 id="menambahkan-pengguna-dan-pengaturan-akses">Menambahkan Pengguna dan Pengaturan Akses</h4>
 
-<p>Menggunakan router TP-Link WR840N dengan benar tidaklah sulit jika Anda mengikuti langkah-langkah yang tepat. Dari pemasangan fisik hingga konfigurasi lanjutan, setiap langkah penting untuk memastikan jaringan Anda berjalan dengan optimal. Jangan lupa untuk selalu memperbarui pengaturan keamanan dan firmware untuk menjaga kinerja dan keamanan jaringan Anda.</p>
+<ol>
+  <li><strong>Menambahkan Pengguna Baru</strong>:
+    <ul>
+      <li>Buka tab “Users” di menu “Hotspot”.</li>
+      <li>Klik “+” untuk menambahkan pengguna baru.</li>
+      <li>Masukkan username dan password untuk pengguna baru.</li>
+      <li>Pilih profil pengguna yang sesuai.</li>
+    </ul>
+  </li>
+  <li><strong>Mengatur Akses dan Bandwidth</strong>:
+    <ul>
+      <li>Di tab “Users”, pilih pengguna yang ingin diatur.</li>
+      <li>Atur limit bandwidth dan pengaturan lainnya sesuai kebutuhan.</li>
+    </ul>
+  </li>
+</ol>
 
-<p>Dengan panduan ini, Anda harus bisa mengatur dan menggunakan router TP-Link WR840N dengan mudah.</p>
+<h4 id="kustomisasi-halaman-login">Kustomisasi Halaman Login</h4>
+
+<ol>
+  <li><strong>Mengubah Tampilan Halaman Login</strong>:
+    <ul>
+      <li>Di menu “Files”, Anda bisa mengedit file HTML yang digunakan untuk halaman login.</li>
+      <li>Upload file yang sudah dimodifikasi ke router untuk menggantikan halaman default.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="konfigurasi-pppoe">Konfigurasi PPPoE</h3>
+
+<h4 id="pengenalan-pppoe-dan-kapan-digunakan">Pengenalan PPPoE dan Kapan Digunakan</h4>
+
+<p>PPPoE (Point-to-Point Protocol over Ethernet) adalah metode yang digunakan untuk menghubungkan beberapa komputer ke internet menggunakan satu sambungan kabel melalui otentikasi. PPPoE sering digunakan oleh ISP untuk mengelola akses internet bagi pelanggan mereka.</p>
+
+<h4 id="langkah-langkah-membuat-server-pppoe-di-mikrotik">Langkah-langkah Membuat Server PPPoE di Mikrotik</h4>
+
+<ol>
+  <li><strong>Membuat PPPoE Server</strong>:
+    <ul>
+      <li>Buka menu “PPP” dan pilih tab “PPPoE Servers”.</li>
+      <li>Klik “+” untuk menambahkan server baru.</li>
+      <li>Pilih interface yang akan digunakan.</li>
+      <li>Tentukan profile yang akan digunakan.</li>
+    </ul>
+  </li>
+  <li><strong>Membuat Profile PPPoE</strong>:
+    <ul>
+      <li>Di menu “PPP”, pilih tab “Profiles”.</li>
+      <li>Klik “+” untuk menambahkan profile baru.</li>
+      <li>Tentukan parameter seperti limit bandwidth, alamat IP pool, dll.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="menambahkan-pengguna-pppoe-dan-pengaturan">Menambahkan Pengguna PPPoE dan Pengaturan</h4>
+
+<ol>
+  <li><strong>Menambahkan Pengguna Baru</strong>:
+    <ul>
+      <li>Di menu “PPP”, pilih tab “Secrets”.</li>
+      <li>Klik “+” untuk menambahkan pengguna baru.</li>
+      <li>Masukkan username, password, dan profile yang digunakan.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="monitoring-dan-maintenance">Monitoring dan Maintenance</h3>
+
+<h4 id="cara-memonitor-kinerja-jaringan">Cara Memonitor Kinerja Jaringan</h4>
+
+<ol>
+  <li><strong>Menggunakan Tools di Mikrotik</strong>:
+    <ul>
+      <li>Gunakan “Traffic Monitor” untuk memantau lalu lintas jaringan.</li>
+      <li>Gunakan “Log” untuk melihat log aktivitas dan mencari kesalahan.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="tips-pemeliharaan-dan-troubleshooting">Tips Pemeliharaan dan Troubleshooting</h4>
+
+<ol>
+  <li><strong>Pemeliharaan Berkala</strong>:
+    <ul>
+      <li>Perbarui firmware router secara berkala.</li>
+      <li>Backup konfigurasi router secara rutin.</li>
+    </ul>
+  </li>
+  <li><strong>Troubleshooting Umum</strong>:
+    <ul>
+      <li>Periksa koneksi fisik jika ada masalah koneksi.</li>
+      <li>Gunakan tools seperti “Ping” dan “Traceroute” untuk mendiagnosa masalah jaringan.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="studi-kasus">Studi Kasus</h3>
+
+<h4 id="contoh-penerapan-mikrotik-hotspot-dan-pppoe-di-lingkungan-nyata">Contoh Penerapan Mikrotik Hotspot dan PPPoE di Lingkungan Nyata</h4>
+
+<ol>
+  <li><strong>Hotspot di Kafe</strong>:
+    <ul>
+      <li>Sebuah kafe di pusat kota menggunakan Mikrotik untuk menyediakan akses internet bagi pelanggan.</li>
+      <li>Konfigurasi hotspot memungkinkan pengelola untuk mengatur bandwidth sehingga semua pelanggan mendapatkan layanan yang adil.</li>
+    </ul>
+  </li>
+  <li><strong>PPPoE di Apartemen</strong>:
+    <ul>
+      <li>Sebuah kompleks apartemen menggunakan Mikrotik dengan PPPoE untuk menyediakan akses internet bagi penghuni.</li>
+      <li>Setiap penghuni memiliki akun PPPoE sendiri, sehingga penggunaan internet dapat diatur dan dimonitor dengan mudah.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="kesimpulan">Kesimpulan</h3>
+
+<p>Instalasi dan konfigurasi Mikrotik untuk hotspot dan PPPoE dapat dilakukan dengan langkah-langkah yang sudah dijelaskan di atas. Dengan perangkat yang tepat dan pemahaman yang baik tentang kebutuhan jaringan, Mikrotik bisa menjadi solusi yang efektif dan ekonomis. Tips dan panduan dalam artikel ini diharapkan dapat membantu Anda dalam mengatur jaringan dengan lebih efisien dan aman. Jika ada pertanyaan lebih lanjut atau jika Anda memerlukan bantuan lebih dalam, jangan ragu untuk bertanya!</p>
+
+<p>Selamat mencoba! 🌐</p>
 
     </div>
   </div>
@@ -381,12 +757,12 @@
     </div>
     <div class="card-body">
       <div class="share-buttons">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-primary"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.x.com/intent/tweet?url=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-info"><i class="fab fa-xing"></i></a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://wa.me/?text=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://telegram.me/share/url?url=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-primary"><i class="fab fa-telegram-plane"></i></a>
-        <a href="mailto:?subject=Panduan Lengkap Penggunaan Router TP-Link WR840N&body=http://localhost:4000/pengaturan/panduan-tplink-wr840n/" target="_blank" class="btn btn-danger"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/networking/instalasi-mikrotik-untuk-hotspot-dan-pppoe/" target="_blank" class="btn btn-primary"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.x.com/intent/tweet?url=http://localhost:4000/networking/instalasi-mikrotik-untuk-hotspot-dan-pppoe/" target="_blank" class="btn btn-info"><i class="fab fa-xing"></i></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/networking/instalasi-mikrotik-untuk-hotspot-dan-pppoe/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/?text=http://localhost:4000/networking/instalasi-mikrotik-untuk-hotspot-dan-pppoe/" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://telegram.me/share/url?url=http://localhost:4000/networking/instalasi-mikrotik-untuk-hotspot-dan-pppoe/" target="_blank" class="btn btn-primary"><i class="fab fa-telegram-plane"></i></a>
+        <a href="mailto:?subject=Instalasi Mikrotik untuk Hotspot dan PPPoE&body=http://localhost:4000/networking/instalasi-mikrotik-untuk-hotspot-dan-pppoe/" target="_blank" class="btn btn-danger"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </div>
