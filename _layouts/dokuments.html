@@ -15,7 +15,7 @@ layout: default
       {% assign words = page.content | number_of_words %}
       {% assign reading_time = words | divided_by:200 %} <!-- Asumsi kecepatan baca 200 kata per menit -->
       <h6 class="card-subtitle mb-2 text-muted">Durasi baca: {{ reading_time | ceil }} menit</h6>
-      <h6 class="card-subtitle mb-2 text-muted">Penulis: <a href="/profile.html">{{ page.author }}</a></h6>
+      <h6 class="card-subtitle mb-2 text-muted">Penulis: <a href="/profile.html">{{ site.author }}</a></h6>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">Home</a></li>
         {% for category in page.categories %}
