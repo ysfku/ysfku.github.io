@@ -38,39 +38,72 @@
     }
 
     /* Font dan warna teks konten */
-    body {
-        font-family: 'Nico Moji', sans-serif;
-        color: #333; /* Warna teks utama */
-        background-color: #f0f0f0; /* Warna abu-abu */
-        line-height: 1.6;
-        padding-top: 50px; /* Sesuaikan nilai ini sesuai dengan tinggi navbar Anda */
+
+/* Default (light theme) */
+body[data-bs-theme='light'] h1, 
+body[data-bs-theme='light'] h2, 
+body[data-bs-theme='light'] h3, 
+body[data-bs-theme='light'] h4, 
+body[data-bs-theme='light'] h5, 
+body[data-bs-theme='light'] h6 {
+    font-family: 'Nico Moji', sans-serif;
+    color: #0f9696; /* Warna cerah untuk judul */
+    text-transform: uppercase;
+    margin-top: 20px;
 }
 
-    }
+body[data-bs-theme='light'] h1 { font-size: 1.75rem; }  /* Adjusted size */
+body[data-bs-theme='light'] h2 { font-size: 1.5rem; }  /* Adjusted size */
+body[data-bs-theme='light'] h3 { font-size: 1.25rem; }  /* Adjusted size */
+body[data-bs-theme='light'] h4 { font-size: 1rem; }  /* Adjusted size */
+body[data-bs-theme='light'] h5 { font-size: 0.875rem; }  /* Adjusted size */
+body[data-bs-theme='light'] h6 { font-size: 0.75rem; }  /* Adjusted size */
 
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Nico Moji', sans-serif;
-        color: #0f9696; /* Warna cerah untuk judul */
-        text-transform: uppercase;
-        margin-top: 20px;
-    }
+/* Dark theme */
+body[data-bs-theme='dark'] h1, 
+body[data-bs-theme='dark'] h2, 
+body[data-bs-theme='dark'] h3, 
+body[data-bs-theme='dark'] h4, 
+body[data-bs-theme='dark'] h5, 
+body[data-bs-theme='dark'] h6 {
+    font-family: 'Nico Moji', sans-serif;
+    color: #ffcc00; /* Warna cerah untuk judul pada mode gelap */
+    text-transform: uppercase;
+    margin-top: 20px;
+}
 
-    p {
-        font-size: 16px;
-        color: darkgreen; /* Warna teks paragraf */
-        background-color: transparent;
-        margin-bottom: 20px;
-    }
+body[data-bs-theme='dark'] h1 { font-size: 1.75rem; }  /* Adjusted size */
+body[data-bs-theme='dark'] h2 { font-size: 1.5rem; }  /* Adjusted size */
+body[data-bs-theme='dark'] h3 { font-size: 1.25rem; }  /* Adjusted size */
+body[data-bs-theme='dark'] h4 { font-size: 1rem; }  /* Adjusted size */
+body[data-bs-theme='dark'] h5 { font-size: 0.875rem; }  /* Adjusted size */
+body[data-bs-theme='dark'] h6 { font-size: 0.75rem; }  /* Adjusted size */
+
+/* Default (light theme) */
+body[data-bs-theme='light'] p {
+  font-size: 16px;
+  color: dark; /* Warna teks paragraf */
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+
+/* Dark theme */
+body[data-bs-theme='dark'] p {
+  font-size: 16px;
+  color: light; /* Warna teks paragraf */
+  background-color: transparent;
+  margin-bottom: 20px;
+}
 
     /* Tautan URL */
     a {
-        color: #780b60; /* Warna biru untuk tautan */
+        color: #1bd688; /* Warna biru untuk tautan */
         text-decoration: none;
         transition: color 0.1s ease, text-shadow 0.1s ease;
     }
 
     a:hover, a:focus {
-        color: #ff1493; /* Warna saat tautan di-hover */
+        color: #a5fc04; /* Warna saat tautan di-hover */
         text-shadow: 1px 1px 3px #000000; /* Efek bayangan saat di-hover */
     }
 

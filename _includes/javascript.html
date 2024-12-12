@@ -147,3 +147,170 @@ new DataTable('#dockku');
     document.getElementById('disclaimerPanel').style.display = 'none';
   }
 </script>
+
+
+<!-- ini adalah untuk light dan dark mode -->
+
+<script>
+  const toggleModeButton = document.getElementById('toggle-mode');
+  const body = document.body;
+  const iconSun = document.getElementById('icon-sun');
+  const iconMoon = document.getElementById('icon-moon');
+
+  toggleModeButton.addEventListener('click', () => {
+    const currentTheme = body.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    body.setAttribute('data-bs-theme', newTheme);
+
+    // Update Navbar, Sidebar, Main Content, Aside, Card, Card Title, and Card Subtitle classes based on the theme
+    const navbar = document.getElementById('mainNavbar');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.querySelector('main');
+    const asideContent = document.querySelector('aside');
+    const cards = document.querySelectorAll('.card');
+    const cardTitles = document.querySelectorAll('.card-title');
+    const cardSubtitles = document.querySelectorAll('.card-subtitle');
+
+    if (newTheme === 'dark') {
+      navbar.classList.remove('navbar-light', 'bg-light');
+      navbar.classList.add('navbar-dark', 'bg-dark');
+
+      sidebar.classList.remove('bg-light', 'text-dark');
+      sidebar.classList.add('bg-dark', 'text-light');
+
+      mainContent.classList.remove('bg-light', 'text-dark');
+      mainContent.classList.add('bg-dark', 'text-light');
+
+      asideContent.classList.remove('bg-light', 'text-dark');
+      asideContent.classList.add('bg-dark', 'text-light');
+
+      cards.forEach(card => {
+        card.classList.remove('bg-light', 'text-dark');
+        card.classList.add('bg-dark', 'text-light');
+      });
+
+      cardTitles.forEach(title => {
+        title.classList.add('text-light');
+        title.classList.remove('text-dark');
+      });
+
+      cardSubtitles.forEach(subtitle => {
+        subtitle.classList.add('text-light');
+        subtitle.classList.remove('text-dark');
+      });
+
+      iconSun.classList.add('d-none');
+      iconMoon.classList.remove('d-none');
+    } else {
+      navbar.classList.remove('navbar-dark', 'bg-dark');
+      navbar.classList.add('navbar-light', 'bg-light');
+
+      sidebar.classList.remove('bg-dark', 'text-light');
+      sidebar.classList.add('bg-light', 'text-dark');
+
+      mainContent.classList.remove('bg-dark', 'text-light');
+      mainContent.classList.add('bg-light', 'text-dark');
+
+      asideContent.classList.remove('bg-dark', 'text-light');
+      asideContent.classList.add('bg-light', 'text-dark');
+
+      cards.forEach(card => {
+        card.classList.remove('bg-dark', 'text-light');
+        card.classList.add('bg-light', 'text-dark');
+      });
+
+      cardTitles.forEach(title => {
+        title.classList.add('text-dark');
+        title.classList.remove('text-light');
+      });
+
+      cardSubtitles.forEach(subtitle => {
+        subtitle.classList.add('text-dark');
+        subtitle.classList.remove('text-light');
+      });
+
+      iconSun.classList.remove('d-none');
+      iconMoon.classList.add('d-none');
+    }
+
+    localStorage.setItem('theme', newTheme);
+  });
+
+  // Restore the theme from localStorage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    body.setAttribute('data-bs-theme', savedTheme);
+
+    // Update Navbar, Sidebar, Main Content, Aside, Card, Card Title, and Card Subtitle classes based on the saved theme
+    const navbar = document.getElementById('mainNavbar');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.querySelector('main');
+    const asideContent = document.querySelector('aside');
+    const cards = document.querySelectorAll('.card');
+    const cardTitles = document.querySelectorAll('.card-title');
+    const cardSubtitles = document.querySelectorAll('.card-subtitle');
+
+    if (savedTheme === 'dark') {
+      navbar.classList.remove('navbar-light', 'bg-light');
+      navbar.classList.add('navbar-dark', 'bg-dark');
+
+      sidebar.classList.remove('bg-light', 'text-dark');
+      sidebar.classList.add('bg-dark', 'text-light');
+
+      mainContent.classList.remove('bg-light', 'text-dark');
+      mainContent.classList.add('bg-dark', 'text-light');
+
+      asideContent.classList.remove('bg-light', 'text-dark');
+      asideContent.classList.add('bg-dark', 'text-light');
+
+      cards.forEach(card => {
+        card.classList.remove('bg-light', 'text-dark');
+        card.classList.add('bg-dark', 'text-light');
+      });
+
+      cardTitles.forEach(title => {
+        title.classList.add('text-light');
+        title.classList.remove('text-dark');
+      });
+
+      cardSubtitles.forEach(subtitle => {
+        subtitle.classList.add('text-light');
+        subtitle.classList.remove('text-dark');
+      });
+
+      iconSun.classList.add('d-none');
+      iconMoon.classList.remove('d-none');
+    } else {
+      navbar.classList.remove('navbar-dark', 'bg-dark');
+      navbar.classList.add('navbar-light', 'bg-light');
+
+      sidebar.classList.remove('bg-dark', 'text-light');
+      sidebar.classList.add('bg-light', 'text-dark');
+
+      mainContent.classList.remove('bg-dark', 'text-light');
+      mainContent.classList.add('bg-light', 'text-dark');
+
+      asideContent.classList.remove('bg-dark', 'text-light');
+      asideContent.classList.add('bg-light', 'text-dark');
+
+      cards.forEach(card => {
+        card.classList.remove('bg-dark', 'text-light');
+        card.classList.add('bg-light', 'text-dark');
+      });
+
+      cardTitles.forEach(title => {
+        title.classList.add('text-dark');
+        title.classList.remove('text-light');
+      });
+
+      cardSubtitles.forEach(subtitle => {
+        subtitle.classList.add('text-dark');
+        subtitle.classList.remove('text-light');
+      });
+
+      iconSun.classList.remove('d-none');
+      iconMoon.classList.add('d-none');
+    }
+  }
+</script>
+

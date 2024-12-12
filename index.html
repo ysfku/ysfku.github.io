@@ -11,7 +11,7 @@ title: Home
   <div class="card-body d-flex flex-column">
     <h5 class="card-title"><a href="/announcement/wellcome-to-masterwifinetworksolution/" class="card-link">Selamat Datang di Master Wifi Network Solution</a></h5>
     <h6 class="card-subtitle mb-2 text-muted">
-      Update: 2024/11/25
+      Update: 25 - 11 - 2024
     </h6>
     <h6 class="card-subtitle mb-2 text-muted">
       Durasi baca: 2 menit
@@ -34,7 +34,7 @@ title: Home
         <div class="card-body d-flex flex-column">
           <h5 class="card-title"><a href="{{ post.url }}" class="card-link">{{ post.title }}</a></h5>
           <h6 class="card-subtitle mb-2 text-muted">
-            Update: {{ post.date | date: '%Y/%m/%d' }}
+            Update: {{ post.date | date: '%d - %m - %Y' }}
           </h6>
           <h6 class="card-subtitle mb-2 text-muted">
             {% assign words = post.content | number_of_words %}
