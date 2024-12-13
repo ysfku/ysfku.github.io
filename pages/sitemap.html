@@ -21,7 +21,7 @@ permalink: /sitemap/
                         <tr id="category-{{ category | replace: ' ', '-' | downcase }}">
                             <td><a href="{{ post.url }}">{{ post.title }}</a></td>
                             <td>{{ category }}</td>
-                            <td>{{ post.date | date: '%B %d, %Y' }}</td>
+                            <td>{{ post.date | date: '%d %B %Y' }}</td>
                         </tr>
                     {% endif %}
                 {% endfor %}

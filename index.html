@@ -9,16 +9,16 @@ title: Home
 <div class="card mb-4 custom-background">
   <img class="card-img-top" src="{{ post.image | default: '/assets/images/banner.jpg' }}" alt="Selamat Datang di Master Wifi Network Solution">
   <div class="card-body d-flex flex-column">
-    <h5 class="card-title"><a href="/announcement/wellcome-to-masterwifinetworksolution/" class="card-link">Selamat Datang di Master Wifi Network Solution</a></h5>
-    <h6 class="card-subtitle mb-2 text-muted">
-      Update: 25 - 11 - 2024
-    </h6>
-    <h6 class="card-subtitle mb-2 text-muted">
+    <h4 class="card-title"><a href="/announcement/wellcome-to-masterwifinetworksolution/" class="card-link">Selamat Datang di Master Wifi Network Solution</a></h4>
+    <h5 class="card-subtitle mb-2 text-muted">
+      Update: 25 November 2024
+    </h5>
+    <h5 class="card-subtitle mb-2 text-muted">
       Durasi baca: 2 menit
-    </h6>
-    <h6 class="card-subtitle mb-2 text-muted">
+    </h5>
+    <h5 class="card-subtitle mb-5 text-muted">
       Penulis: <a href="/profile.html">Muhammad Yusuf</a>
-    </h6>
+    </h5>
     <a href="/announcement/wellcome-to-masterwifinetworksolution/" class="btn btn-success mt-auto">Lihat Artikel</a>
   </div>
 </div>
@@ -32,18 +32,18 @@ title: Home
       <div class="card h-100 grid-background">
         <img class="card-img-top" src="{{ post.image | default: '/assets/images/banner.jpg' }}" alt="{{ post.title }}">
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title"><a href="{{ post.url }}" class="card-link">{{ post.title }}</a></h5>
-          <h6 class="card-subtitle mb-2 text-muted">
-            Update: {{ post.date | date: '%d - %m - %Y' }}
-          </h6>
-          <h6 class="card-subtitle mb-2 text-muted">
+          <h4 class="card-title"><a href="{{ post.url }}" class="card-link">{{ post.title }}</a></h4>
+          <h5 class="card-subtitle mb-2 text-muted">
+            Update: {{ post.date | date: '%d %B %Y' }}
+          </h5>
+          <h5 class="card-subtitle mb-2 text-muted">
             {% assign words = post.content | number_of_words %}
             {% assign reading_time = words | divided_by:200 %}
             Durasi baca: {{ reading_time | ceil }} menit
-          </h6>
-          <h6 class="card-subtitle mb-2 text-muted">
+          </h5>
+          <h5 class="card-subtitle mb-2 text-muted">
             Penulis: <a href="/profile.html">{{ post.author }}</a>
-          </h6>
+          </h5>
           <a href="{{ post.url }}" class="btn btn-success mt-auto">Lihat Artikel</a>
         </div>
       </div>

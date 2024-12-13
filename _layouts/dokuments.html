@@ -5,17 +5,17 @@ layout: default
 <div class="container mt-4">
   <div class="post-content">
     <nav aria-label="breadcrumb" class="p-3 rounded">
-      <h6 class="card-subtitle mb-2">Judul: <b>{{ page.title }}</b></h6>
-      <h6 class="card-subtitle mb-2">Update: {{ page.date | date: '%d - %m - %Y' }}</h6>
-      <h6 class="card-subtitle mb-2">
+      <h3 class="card-subtitle mb-2">Judul: <b>{{ page.title }}</b></h3>
+      <h4 class="card-subtitle mb-2">Update: {{ page.date | date: '%d %B %Y' }}</h4>
+      <h4 class="card-subtitle mb-2">
         {% for category in page.categories %}
           Category: <a href="{{ site.baseurl }}/categories/{{ category | downcase }}/">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
         {% endfor %}
-      </h6>
+      </h4>
       {% assign words = page.content | number_of_words %}
       {% assign reading_time = words | divided_by:200 %} <!-- Asumsi kecepatan baca 200 kata per menit -->
-      <h6 class="card-subtitle mb-2">Durasi baca: {{ reading_time | ceil }} menit</h6>
-      <h6 class="card-subtitle mb-2">Penulis: <a href="/profile.html">{{ site.author }}</a></h6>
+      <h4 class="card-subtitle mb-2">Durasi baca: {{ reading_time | ceil }} menit</h4>
+      <h4 class="card-subtitle mb-2">Penulis: <a href="/profile.html">{{ site.author }}</a></h4>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">Home</a></li>
         {% for category in page.categories %}
