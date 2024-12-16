@@ -53,61 +53,70 @@
       margin-top: 50px; /* Atau gunakan padding-top */
     }
   </style>
-  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-flex justify-content-between">
   <a class="navbar-brand ms-3" href="/">Master Wifi Network Solution</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 5px;">
     <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="form-check form-switch ms-3">
-    <input class="form-check-input" type="checkbox" id="toggle-mode">
-    <label class="form-check-label" for="toggle-mode">
-      <i class="fas fa-sun" id="icon-sun"></i>
-      <i class="fas fa-moon d-none" id="icon-moon"></i>
-    </label>
-  </div>  
+  </button>  
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ms-auto me-3">
-      <li class="nav-item active ms-4 me-4">
+    <ul class="navbar-nav me-auto ms-3">
+      <li class="nav-item ms-4 me-4 d-flex align-items-center">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="toggle-mode" role="switch">
+          <label class="form-check-label ms-2 mb-0" for="toggle-mode">
+            <i class="fas fa-sun" id="icon-sun"></i>
+            <i class="fas fa-moon d-none" id="icon-moon"></i>
+          </label>
+        </div>
+      </li>
+      <li class="nav-item active ms-4 me-4 d-flex align-items-center">
         <a class="nav-link" href="/">Home</a>
       </li>
-      <li class="nav-item ms-4 me-4">
+      <li class="nav-item ms-4 me-4 d-flex align-items-center">
         <a class="nav-link" href="/sitemap/">Sitemap</a>
       </li>
-      <li class="nav-item dropdown ms-4 me-4">
+      <li class="nav-item dropdown ms-4 me-4 d-flex align-items-center">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          About
+        About
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li><a class="dropdown-item" href="/profile.html">Profile</a></li>
+          <li><div class="dropdown-divider"></div></li>
           <li><a class="dropdown-item" href="/contact.html">Contact</a></li>
+          <li><div class="dropdown-divider"></div></li>
+          <li><a class="dropdown-item" href="/donate.html">Donate</a></li>
+          <li><div class="dropdown-divider"></div></li>
           <li><a class="dropdown-item" href="/disclaimer.html">Disclaimer</a></li>
+          <li><div class="dropdown-divider"></div></li>
           <li><a class="dropdown-item" href="/privacy-policy.html">Privacy Policy</a></li>
         </ul>
       </li>
-      <li class="nav-item dropdown ms-4 me-4">
+      <li class="nav-item dropdown ms-4 me-4 d-flex align-items-center">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDocs" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Docs
+        Docs
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownDocs">
           <li><a class="dropdown-item" href="/videos.html">Videos</a></li>
+          <li><div class="dropdown-divider"></div></li>
           <li><a class="dropdown-item" href="/files/">Files</a></li>
+          <li><div class="dropdown-divider"></div></li>
           <li><a class="dropdown-item" href="/documentation.html">Documentation</a></li>
         </ul>
       </li>
-      <li class="nav-item ms-4 me-4">
+      <li class="nav-item ms-4 me-4 d-flex align-items-center">
         <a class="nav-link" href="/marketplace/">Marketplace</a>
       </li>
-      <li class="nav-item ms-4 me-4">
-        <a class="nav-link" href="/donate.html">Donate</a>
+      <li class="nav-item ms-4 me-4 d-flex align-items-center">
+        <a class="nav-link" href="#">APP</a>
       </li>
-      <li class="nav-item ms-4 me-4">
+      <li class="nav-item ms-4 me-4 d-flex align-items-center">
         <a class="nav-link" href="/search.html">Search</a>
       </li>
     </ul>
   </div>
 </nav>
+
 
   <div class="container-fluid">
     <div class="row">
@@ -660,7 +669,7 @@ iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT
   <div class="tos-content">
     <span class="close" onclick="closeTosPanel()">&times;</span>
     <h2>Syarat dan Ketentuan</h2>
-    <p>Terakhir diperbarui: 16 December 2024</p>
+    <p>Terakhir diperbarui: 17 December 2024</p>
     <p>Silakan baca syarat dan ketentuan layanan ini (syarat dan ketentuan layanan yang ada di <code>Privacy Policy</code> dan juga <code>Disclaimer</code>) dengan hati-hati sebelum menggunakan situs web Master Wifi Network Solution yang dioperasikan oleh Muhammad Yusuf.</p>
     <!-- Tambahkan konten syarat dan ketentuan Anda di sini -->
     
@@ -731,7 +740,7 @@ iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT
 
   <h2>Update</h2>
 
-  <p>This Privacy Policy was last updated on: 16 December 2024. Should we update, amend, or make any changes to our privacy policy, those changes will be posted here.</p>
+  <p>This Privacy Policy was last updated on: 17 December 2024. Should we update, amend, or make any changes to our privacy policy, those changes will be posted here.</p>
     <button onclick="closePrivacyPolicyPanel()">Tutup</button>
   </div>
 </div>
@@ -761,7 +770,7 @@ iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT
 
   <p>Should we update, amend or make any changes to this document, those changes will be prominently posted here.</p>
 
-  <p>Last updated: 16 December 2024</p>
+  <p>Last updated: 17 December 2024</p>
     <button onclick="closeDisclaimerPanel()">Tutup</button>
   </div>
 </div> <!-- Menyertakan file TOS di sini -->
