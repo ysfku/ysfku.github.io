@@ -219,14 +219,6 @@ Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
     
       
         <item>
-          <title>Antena</title>
-          <link>http://localhost:4000/produk/antena/</link>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
           <title>clash for magisk</title>
           <link>http://localhost:4000/categories/clash-for-magisk/</link>
           <description></description>
@@ -301,24 +293,16 @@ Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
     
       
         <item>
-          <title>Marketplace</title>
-          <link>http://localhost:4000/marketplace/</link>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
-          <title>Modem</title>
-          <link>http://localhost:4000/produk/modem/</link>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
           <title>networking</title>
           <link>http://localhost:4000/categories/networking/</link>
+          <description></description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Openwrt</title>
+          <link>http://localhost:4000/openwrt/</link>
           <description></description>
         </item>
       
@@ -357,14 +341,6 @@ Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
     
       
         <item>
-          <title>Routers</title>
-          <link>http://localhost:4000/produk/routers/</link>
-          <description></description>
-        </item>
-      
-    
-      
-        <item>
           <title>search</title>
           <link>http://localhost:4000/search.html</link>
           <description></description>
@@ -393,6 +369,14 @@ Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
         <item>
           <title>Videos</title>
           <link>http://localhost:4000/videos.html</link>
+          <description></description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Openwrt X86 64</title>
+          <link>http://localhost:4000/openwrt/x86/</link>
           <description></description>
         </item>
       

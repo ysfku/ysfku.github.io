@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-adsense-account" content="ca-pub-1794381705838564">
-  <title>Marketplace - Master Wifi Network Solution</title>
+  <title>Openwrt X86 64 - Master Wifi Network Solution</title>
   <meta name="description" content="">
   <meta name="keywords" content="wifi, network, openwrt, mikrotik, modem, router, aplikasi, antena, jasa pasang wifi, jasa remote wifi">
   <meta name="author" content="Muhammad Yusuf">
   <meta name="robots" content="index, follow">
   <meta name="google" content="notranslate">
   <meta name="google-site-verification" content="googled41425154ba52776">
-  <meta property="og:title" content="Marketplace - Master Wifi Network Solution">
+  <meta property="og:title" content="Openwrt X86 64 - Master Wifi Network Solution">
   <meta property="og:description" content="">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:4000/marketplace/">
+  <meta property="og:url" content="http://localhost:4000/openwrt/x86/">
   <meta property="og:image" content="/assets/images/banner.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@masterwifinetworksolution">
-  <meta name="twitter:title" content="Marketplace - Master Wifi Network Solution">
+  <meta name="twitter:title" content="Openwrt X86 64 - Master Wifi Network Solution">
   <meta name="twitter:description" content="">
   <meta name="twitter:image" content="/assets/images/banner.jpg">
   <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
@@ -105,7 +105,7 @@
         </ul>
       </li>
       <li class="nav-item ms-4 me-4 d-flex align-items-center">
-        <a class="nav-link" href="/marketplace/">Marketplace</a>
+        <a class="nav-link" href="/openwrt/">Openwrt</a>
       </li>
       <li class="nav-item ms-4 me-4 d-flex align-items-center">
         <a class="nav-link" href="#">APP</a>
@@ -121,278 +121,222 @@
   <div class="container-fluid">
     <div class="row">
       <main role="main" class="col-md-8 col-lg-9 px-md-4 bg-light text-dark">
-        <style>
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: orange; /* Mengubah warna ikon menjadi oranye */
-  }
-  .card-img-top {
-    object-fit: contain; /* Memastikan foto sesuai ukuran tanpa mengubah rasio aspek */
-    width: 100%; /* Lebar penuh untuk responsif */
-    height: auto; /* Tinggi otomatis sesuai dengan lebar */
-    max-height: 200px; /* Maksimum tinggi gambar diatur sesuai kebutuhan */
-  }
-  .carousel-item .card,
-  .category-panel {
-    width: 100%; /* Lebar penuh untuk responsif */
-    max-width: 90%; /* Lebar maksimum kartu dan panel kategori dalam persentase */
-    margin: auto; /* Menjaga kartu dan panel tetap di tengah */
-  }
-  .carousel-control-prev,
-  .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 5%;
-    height: auto; /* Menjaga tinggi ikon sesuai konten */
-  }
-  .carousel-control-prev {
-    left: -2%; /* Posisikan lebih dekat ke kartu */
-  }
-  .carousel-control-next {
-    right: -2%; /* Posisikan lebih dekat ke kartu */
-  }
+          <div class="main-content">
+    <style>
   .category-panel {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    margin-top: 20px; /* Jarak tambahan antara tombol dan panel kategori */
-    text-align: center;
-    color: white;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6; /* Border panel */
+    border-radius: 5px; /* Sudut membulat pada panel */
+  }
+  .category-panel:nth-child(1) {
+    background-color: #ff5722; /* Warna panel pertama */
+  }
+  .category-panel:nth-child(2) {
+    background-color: #4caf50; /* Warna panel kedua */
+  }
+  .category-panel:nth-child(3) {
+    background-color: #2196f3; /* Warna panel ketiga */
+  }
+  .category-panel:nth-child(4) {
+    background-color: #ffc107; /* Warna panel keempat */
+  }
+  .category-panel:nth-child(5) {
+    background-color: #9c27b0; /* Warna panel kelima */
+  }
+  .category-panel:nth-child(6) {
+    background-color: #795548; /* Warna panel keenam */
+  }
+  .category-title {
+    font-size: 1.25rem; /* Ukuran font nama kategori */
     font-weight: bold;
-  }
-  .category-panel:nth-child(odd) {
-    background-color: #ff5722; /* Warna panel ganjil */
-  }
-  .category-panel:nth-child(even) {
-    background-color: #4caf50; /* Warna panel genap */
+    color: #ffffff; /* Warna teks nama kategori */
   }
   .btn-category {
     padding: 5px 10px; /* Menyesuaikan ukuran tombol */
     font-size: 0.875rem; /* Mengurangi ukuran font tombol */
-    margin: 0; /* Menghapus jarak tombol */
+    color: #ffffff; /* Mengatur warna teks tombol menjadi putih */
+    background-color: #6c757d; /* Warna latar belakang tombol */
+    border: none; /* Menghapus border tombol */
   }
-  .category-title {
-    flex-grow: 1;
-    text-align: left; /* Menyelaraskan teks kategori ke kiri */
-  }
-  @media (min-width: 768px) {
-    .card-img-top {
-      max-height: 300px; /* Sesuaikan tinggi maksimum saat mode desktop */
-    }
+  .btn-category:hover {
+    background-color: #5a6268; /* Warna latar belakang tombol saat hover */
   }
 </style>
 
-<div class="container">
-  <div class="row mb-4 mt-4">
+<div class="container" style="margin-top: 20px;">
+  <!-- Panel Nama Kategori dan Tombol Kembali -->
+  <div class="row mb-4">
     <div class="col-12">
-      <h5>Kategori Produk & Layanan</h5>
-      <div id="categoryListCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner text-center">
-          
-          
-          <div class="carousel-item active">
-            <div class="card">
-              <img class="card-img-top" src="/assets/images/banner.jpg" alt="Routers">
-              <div class="card-body">
-                <h5 class="card-title">Routers</h5>
-                <a href="/produk/routers" class="btn btn-primary">Lihat Kategori Produk</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="carousel-item ">
-            <div class="card">
-              <img class="card-img-top" src="/assets/images/banner.jpg" alt="Modem">
-              <div class="card-body">
-                <h5 class="card-title">Modem</h5>
-                <a href="/produk/modem" class="btn btn-primary">Lihat Kategori Produk</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="carousel-item ">
-            <div class="card">
-              <img class="card-img-top" src="/assets/images/banner.jpg" alt="Antena">
-              <div class="card-body">
-                <h5 class="card-title">Antena</h5>
-                <a href="/produk/antena" class="btn btn-primary">Lihat Kategori Produk</a>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#categoryListCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#categoryListCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+      <div class="category-panel">
+        <span class="category-title">Openwrt X86 64</span>
+        <a href="/openwrt/" class="btn btn-secondary btn-category">Kembali ke Kategori Utama</a>
       </div>
     </div>
   </div>
-  <div class="row mt-4">
-    <div class="col-12">
-      <h5>Daftar Produk</h5>
-      <div class="row">
-        
-        
-          <div class="col-12">
-            <div class="category-panel">
-              <span class="category-title">Routers</span>
-              <a href="/produk/routers" class="btn btn-secondary btn-category">Lihat Produk Routers Selengkapnya</a>
-            </div>
-            <div id="productListCarousel-1" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                
-                <div class="carousel-item active">
-                  <div class="card mb-4 mx-auto"> <!-- Menjaga lebar yang sama dengan panel kategori -->
-                    <img class="card-img-top" src="https://down-cvs-id.img.susercontent.com/id-11134207-7ras8-m2m14s4csapr65.webp" alt="TP-Link Archer C54 AC120">
-                    <div class="card-body">
-                      <h5 class="card-title">TP-Link Archer C54 AC120</h5>
-                      <p class="card-text">Harga: Rp291.000</p>
-                      <a href="https://s.shopee.co.id/4pytE2Q2FB" class="btn btn-primary" target="_blank">Lihat Produk</a>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="carousel-item ">
-                  <div class="card mb-4 mx-auto"> <!-- Menjaga lebar yang sama dengan panel kategori -->
-                    <img class="card-img-top" src="https://down-cvs-id.img.susercontent.com/id-11134207-7rasm-m2m14s4cmofz2d.webp" alt="TP-Link Archer A6 AC1200">
-                    <div class="card-body">
-                      <h5 class="card-title">TP-Link Archer A6 AC1200</h5>
-                      <p class="card-text">Harga: Rp579.000</p>
-                      <a href="https://s.shopee.co.id/AA0PZzskt3" class="btn btn-primary" target="_blank">Lihat Produk</a>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="carousel-item ">
-                  <div class="card mb-4 mx-auto"> <!-- Menjaga lebar yang sama dengan panel kategori -->
-                    <img class="card-img-top" src="https://down-aka-sg.img.susercontent.com/id-11134207-7rash-m2m1dkgbskph03.webp" alt="TP-Link Archer C24 AC750">
-                    <div class="card-body">
-                      <h5 class="card-title">TP-Link Archer C24 AC750</h5>
-                      <p class="card-text">Harga: Rp268.000</p>
-                      <a href="https://s.shopee.co.id/9UkiohLfu9" class="btn btn-primary" target="_blank">Lihat Produk</a>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="carousel-item ">
-                  <div class="card mb-4 mx-auto"> <!-- Menjaga lebar yang sama dengan panel kategori -->
-                    <img class="card-img-top" src="https://down-aka-sg.img.susercontent.com/id-11134207-7rasi-m2nadbog2ax086.webp" alt="TP-Link Archer AX12 WiFi 6 Router AX1500">
-                    <div class="card-body">
-                      <h5 class="card-title">TP-Link Archer AX12 WiFi 6 Router AX1500</h5>
-                      <p class="card-text">Harga: Rp525.000</p>
-                      <a href="https://s.shopee.co.id/8KYlQd269G" class="btn btn-primary" target="_blank">Lihat Produk</a>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="carousel-item ">
-                  <div class="card mb-4 mx-auto"> <!-- Menjaga lebar yang sama dengan panel kategori -->
-                    <img class="card-img-top" src="https://down-aka-sg.img.susercontent.com/id-11134207-7qul4-lf58uwjr4pwh44.webp" alt="TP-Link WR840N 300Mbps Router Wireless">
-                    <div class="card-body">
-                      <h5 class="card-title">TP-Link WR840N 300Mbps Router Wireless</h5>
-                      <p class="card-text">Harga: Rp181.000</p>
-                      <a href="https://s.shopee.co.id/3AqfHKuW86" class="btn btn-primary" target="_blank">Lihat Produk</a>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="carousel-item ">
-                  <div class="card mb-4 mx-auto"> <!-- Menjaga lebar yang sama dengan panel kategori -->
-                    <img class="card-img-top" src="https://down-aka-sg.img.susercontent.com/id-11134207-7quky-ljqosg1tjupve2.webp" alt="TP-LINK TL-MR100/MR100+sim 4G LTE Router 300 Mbps Wireless">
-                    <div class="card-body">
-                      <h5 class="card-title">TP-LINK TL-MR100/MR100+sim 4G LTE Router 300 Mbps Wireless</h5>
-                      <p class="card-text">Harga: Rp659.934</p>
-                      <a href="https://s.shopee.co.id/50IJSnlayQ" class="btn btn-primary" target="_blank">Lihat Produk</a>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#productListCarousel-1" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#productListCarousel-1" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+  <div class="row">
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="sha256sums">
+            <div class="card-body">
+              <h5 class="card-title">sha256sums</h5>
+              <p class="card-text">Format: sha</p>
+              <p class="card-text">Size: 1KB</p>
+              <a href="https://drive.google.com/file/d/11uPtPWTwzEQxrZ-D-qZwh5-sw9GZ7Yz3/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
             </div>
           </div>
-        
-          <div class="col-12">
-            <div class="category-panel">
-              <span class="category-title">Modem</span>
-              <a href="/produk/modem" class="btn btn-secondary btn-category">Lihat Produk Modem Selengkapnya</a>
-            </div>
-            <div id="productListCarousel-2" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                
-                <div class="carousel-item active">
-                  <div class="card mb-4 mx-auto"> <!-- Menjaga lebar yang sama dengan panel kategori -->
-                    <img class="card-img-top" src="/assets/images/banner.jpg" alt="Produk 2">
-                    <div class="card-body">
-                      <h5 class="card-title">Produk 2</h5>
-                      <p class="card-text">Harga: Rp300.000</p>
-                      <a href="https://shopee.co.id/produk3" class="btn btn-primary" target="_blank">Lihat Produk</a>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#productListCarousel-2" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#productListCarousel-2" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+        </div>
+      
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="profiles.json">
+            <div class="card-body">
+              <h5 class="card-title">profiles.json</h5>
+              <p class="card-text">Format: json</p>
+              <p class="card-text">Size: 2KB</p>
+              <a href="https://drive.google.com/file/d/1WOFfuzFfjgZO_AirhwhgpUe2-4fIq5ls/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
             </div>
           </div>
-        
-          <div class="col-12">
-            <div class="category-panel">
-              <span class="category-title">Antena</span>
-              <a href="/produk/antena" class="btn btn-secondary btn-category">Lihat Produk Antena Selengkapnya</a>
-            </div>
-            <div id="productListCarousel-3" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                
-                <div class="carousel-item active">
-                  <div class="card mb-4 mx-auto"> <!-- Menjaga lebar yang sama dengan panel kategori -->
-                    <img class="card-img-top" src="/assets/images/banner.jpg" alt="Produk 3">
-                    <div class="card-body">
-                      <h5 class="card-title">Produk 3</h5>
-                      <p class="card-text">Harga: Rp300.000</p>
-                      <a href="https://shopee.co.id/produk3" class="btn btn-primary" target="_blank">Lihat Produk</a>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#productListCarousel-3" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#productListCarousel-3" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+        </div>
+      
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="openwrt-23.05.5-x86-64-generic.manifest">
+            <div class="card-body">
+              <h5 class="card-title">openwrt-23.05.5-x86-64-generic.manifest</h5>
+              <p class="card-text">Format: manifest</p>
+              <p class="card-text">Size: 11KB</p>
+              <a href="https://drive.google.com/file/d/1iY-XpjzdwuI6tTG0UbIJk1tBPB9rYcIr/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
             </div>
           </div>
-        
-      </div>
-    </div>
+        </div>
+      
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="openwrt-23.05.5-x86-64-generic-squashfs-rootfs.img.gz">
+            <div class="card-body">
+              <h5 class="card-title">openwrt-23.05.5-x86-64-generic-squashfs-rootfs.img.gz</h5>
+              <p class="card-text">Format: gzip</p>
+              <p class="card-text">Size: 85.7MB</p>
+              <a href="https://drive.google.com/file/d/1JQVXpJb3f0S2d5hBLn3_6loUL0gRsLXZ/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+      
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="openwrt-23.05.5-x86-64-generic-squashfs-combined.img.gz">
+            <div class="card-body">
+              <h5 class="card-title">openwrt-23.05.5-x86-64-generic-squashfs-combined.img.gz</h5>
+              <p class="card-text">Format: gzip</p>
+              <p class="card-text">Size: 91.4MB</p>
+              <a href="https://drive.google.com/file/d/16WHh0GaXlyUeLQiWPL8Uh1hI0Cr_fl84/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+      
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="openwrt-23.05.5-x86-64-generic-squashfs-combined-efi.img.gz">
+            <div class="card-body">
+              <h5 class="card-title">openwrt-23.05.5-x86-64-generic-squashfs-combined-efi.img.gz</h5>
+              <p class="card-text">Format: gzip</p>
+              <p class="card-text">Size: 91.6MB</p>
+              <a href="https://drive.google.com/file/d/1o4gcwuJ83QU13X60dfzzonLbQ2D2kmuW/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+      
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="openwrt-23.05.5-x86-64-generic-rootfs.tar.gz">
+            <div class="card-body">
+              <h5 class="card-title">openwrt-23.05.5-x86-64-generic-rootfs.tar.gz</h5>
+              <p class="card-text">Format: gzip</p>
+              <p class="card-text">Size: 106.7MB</p>
+              <a href="https://drive.google.com/file/d/1pD2lHNStmMLRsCQwEnhvRSgRp4THm42u/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+      
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="openwrt-23.05.5-x86-64-generic-kernel.bin">
+            <div class="card-body">
+              <h5 class="card-title">openwrt-23.05.5-x86-64-generic-kernel.bin</h5>
+              <p class="card-text">Format: bin</p>
+              <p class="card-text">Size: 5.4MB</p>
+              <a href="https://drive.google.com/file/d/1JjT16wLNPSNGkG4UFIWJaVERtks88uK8/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+      
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="openwrt-23.05.5-x86-64-generic-ext4-rootfs.img.gz">
+            <div class="card-body">
+              <h5 class="card-title">openwrt-23.05.5-x86-64-generic-ext4-rootfs.img.gz</h5>
+              <p class="card-text">Format: gzip</p>
+              <p class="card-text">Size: 110.5MB</p>
+              <a href="https://drive.google.com/file/d/1YAT98dJyQr316d4vbd2Rfq0ZeRGynZIL/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+      
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="openwrt-23.05.5-x86-64-generic-ext4-combined.img.gz">
+            <div class="card-body">
+              <h5 class="card-title">openwrt-23.05.5-x86-64-generic-ext4-combined.img.gz</h5>
+              <p class="card-text">Format: gzip</p>
+              <p class="card-text">Size: 114.2MB</p>
+              <a href="https://drive.google.com/file/d/1UJ_pUqV2O2-_4-q-On7_diRuc-uctUB4/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+      
+    
+      
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="/assets/images/banner.jpg" alt="openwrt-23.05.5-x86-64-generic-ext4-combined-efi.img.gz">
+            <div class="card-body">
+              <h5 class="card-title">openwrt-23.05.5-x86-64-generic-ext4-combined-efi.img.gz</h5>
+              <p class="card-text">Format: gzip</p>
+              <p class="card-text">Size: 114.4MB</p>
+              <a href="https://drive.google.com/file/d/14FrqcxUTLX1adnVzfM_jToVPeIXOgKdr/view?usp=sharing" class="btn btn-primary" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+      
+    
   </div>
 </div>
 
+  </div>
       </main>
 
       <aside class="col-md-4 col-lg-3 px-md-4 bg-light text-dark">
@@ -560,7 +504,7 @@
   <div class="tos-content">
     <span class="close" onclick="closeTosPanel()">&times;</span>
     <h2>Syarat dan Ketentuan</h2>
-    <p>Terakhir diperbarui: 17 December 2024</p>
+    <p>Terakhir diperbarui: 21 December 2024</p>
     <p>Silakan baca syarat dan ketentuan layanan ini (syarat dan ketentuan layanan yang ada di <code>Privacy Policy</code> dan juga <code>Disclaimer</code>) dengan hati-hati sebelum menggunakan situs web Master Wifi Network Solution yang dioperasikan oleh Muhammad Yusuf.</p>
     <!-- Tambahkan konten syarat dan ketentuan Anda di sini -->
     
@@ -631,7 +575,7 @@
 
   <h2>Update</h2>
 
-  <p>This Privacy Policy was last updated on: 17 December 2024. Should we update, amend, or make any changes to our privacy policy, those changes will be posted here.</p>
+  <p>This Privacy Policy was last updated on: 21 December 2024. Should we update, amend, or make any changes to our privacy policy, those changes will be posted here.</p>
     <button onclick="closePrivacyPolicyPanel()">Tutup</button>
   </div>
 </div>
@@ -661,7 +605,7 @@
 
   <p>Should we update, amend or make any changes to this document, those changes will be prominently posted here.</p>
 
-  <p>Last updated: 17 December 2024</p>
+  <p>Last updated: 21 December 2024</p>
     <button onclick="closeDisclaimerPanel()">Tutup</button>
   </div>
 </div> <!-- Menyertakan file TOS di sini -->
