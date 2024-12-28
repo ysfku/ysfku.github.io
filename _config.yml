@@ -43,6 +43,7 @@ plugins:
   - jekyll-toc
   - jekyll-reading-time
   - jekyll-time-to-read
+  - jekyll-google_search_console_verification_file
 
 toc:
   min_level: 2

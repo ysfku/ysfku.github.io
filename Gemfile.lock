@@ -43,6 +43,8 @@ GEM
       webrick (~> 1.7)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
+    jekyll-google_search_console_verification_file (1.1.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-paginate (1.1.0)
     jekyll-reading-time (0.1.0)
       jekyll
@@ -121,6 +123,7 @@ DEPENDENCIES
   google-protobuf (= 4.29.2)
   jekyll
   jekyll-feed
+  jekyll-google_search_console_verification_file
   jekyll-paginate
   jekyll-reading-time
   jekyll-seo-tag
