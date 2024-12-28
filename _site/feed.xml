@@ -1,403 +1,406 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
-  <channel>
-    <title>Master Wifi Network Solution</title>
-    <link>http://localhost:4000</link>
-    <description>Master Wifi Network Solution adalah tempat solusi koneksi jaringan anda.</description>
-    
-      <item>
-        <title>Instalasi Mikrotik untuk Hotspot dan PPPoE</title>
-        <link>http://localhost:4000/networking/instalasi-mikrotik-untuk-hotspot-dan-pppoe/</link>
-        <description>Pendahuluan
-</description>
-      </item>
-    
-      <item>
-        <title>Cara Menghilangkan Virus Komputer</title>
-        <link>http://localhost:4000/keamanan/cara-menghilangkan-virus-komputer/</link>
-        <description>Virus komputer merupakan ancaman nyata bagi perangkat Anda.
-</description>
-      </item>
-    
-      <item>
-        <title>Panduan Lengkap Penggunaan Router TP-Link WR840N</title>
-        <link>http://localhost:4000/pengaturan/panduan-tplink-wr840n/</link>
-        <description>Menggunakan router TP-Link WR840N dengan benar adalah langkah penting untuk memastikan jaringan internet Anda berjalan lancar. Artikel ini akan mengulas langkah demi langkah tata cara penggunaan router TP-Link WR840N, dari pemasangan hingga pengaturan, dengan bahasa yang mudah dipahami oleh orang awam.
-</description>
-      </item>
-    
-      <item>
-        <title>Panduan Lengkap Penggunaan TP-Link CPE220</title>
-        <link>http://localhost:4000/pengaturan/panduan-penggunaan-tplink-cpe220/</link>
-        <description>TP-Link CPE220 adalah perangkat yang dirancang untuk memperluas jangkauan jaringan Wi-Fi. Dalam postingan ini, kita akan membahas cara penggunaan TP-Link CPE220 secara detail, langkah demi langkah.
-</description>
-      </item>
-    
-      <item>
-        <title>Panduan Lengkap Menggunakan PowerBeam M2 400</title>
-        <link>http://localhost:4000/pengaturan/panduan-penggunaan-powerbeam-m2-400/</link>
-        <description>PowerBeam M2 400 adalah salah satu perangkat wireless bridge yang menawarkan performa tinggi dengan jangkauan yang luas. Perangkat ini sangat cocok digunakan untuk menyambungkan jaringan di lokasi yang berjauhan seperti antar gedung atau di area yang luas. Dalam panduan ini, kita akan mengulas cara penggunaan PowerBeam M2 400 secara mendetail.
-</description>
-      </item>
-    
-      <item>
-        <title>Panduan Lengkap Penggunaan Tenda O3 Router Outdoor</title>
-        <link>http://localhost:4000/pengaturan/panduan-lengkap-penggunaan-tenda-o3-router-outdoor/</link>
-        <description>Pengantar
-</description>
-      </item>
-    
-      <item>
-        <title>Selamat Datang di Master Wifi Network Solution</title>
-        <link>http://localhost:4000/announcement/wellcome-to-masterwifinetworksolution/</link>
-        <description>
-
-  Bantu dan dukung channel youtube kami di Master Wifi Network Silution. Dan jika anda berkenan ingin berbagi kepada kami. Anda bisa donasikan kepada kami melalui disini. Ingin beli peralatan jaringan internet anda ?. Anda bisa bisa masuk ke Toko Shop kami.
-
-</description>
-      </item>
-    
-      <item>
-        <title>Termux Auto Plane Mode</title>
-        <link>http://localhost:4000/android/termux-auto-plane-mode/</link>
-        <description>Kini Simaster telah meluncurkan terobosan terbaru bagi koneksi data anda yang sering terputus.
-</description>
-      </item>
-    
-      <item>
-        <title>Membuat konfigurasi CFM Simaster Meta</title>
-        <link>http://localhost:4000/clash%20for%20magisk/konfigurasi-cfm-simaster-meta/</link>
-        <description>CFM Simaster Meta sangat compatible untuk anda yang suka streaming, sosial media, gamer, dan juga berbisnis melalui browsing andalan kalian.
-</description>
-      </item>
-    
-      <item>
-        <title>Setting Vlan OpenWRT</title>
-        <link>http://localhost:4000/pengaturan/setting-vlan-openwrt/</link>
-        <description>Virtual Local Area Network (VLAN) adalah fitur jaringan yang memungkinkan Anda untuk memisahkan jaringan fisik menjadi beberapa segmen logis. Dengan menggunakan VLAN, Anda dapat meningkatkan keamanan dan manajemen jaringan Anda. Dalam artikel ini, kita akan membahas cara mengatur VLAN di OpenWRT, termasuk langkah-langkah rinci dan manfaat dari penggunaan VLAN.
-</description>
-      </item>
-    
-      <item>
-        <title>Setting Firewall OpenWRT</title>
-        <link>http://localhost:4000/pengaturan/setting-firewall-openwrt/</link>
-        <description>OpenWRT adalah firmware open-source yang memberi Anda kendali penuh atas router Anda, memungkinkan Anda untuk menyesuaikan dan mengoptimalkan berbagai fungsi jaringan. Salah satu fitur penting yang ditawarkan oleh OpenWRT adalah firewall, yang melindungi jaringan Anda dari ancaman eksternal dan memastikan keamanan data. Dalam artikel ini, kami akan menjelaskan cara mengatur firewall di OpenWRT untuk meningkatkan keamanan jaringan Anda.
-</description>
-      </item>
-    
-      <item>
-        <title>Cara Install Tailscale di OpenWrt</title>
-        <link>http://localhost:4000/tutorial/cara-install-tailscale-di-openwrt/</link>
-        <description>Pendahuluan
-</description>
-      </item>
-    
-      <item>
-        <title>Cara Install Zerotier Di Openwrt</title>
-        <link>http://localhost:4000/tutorial/cara-install-zerotier-di-openwrt/</link>
-        <description>Pendahuluan
-
-Artikel ini akan membahas langkah-langkah untuk menginstal ZeroTier di OpenWRT, sebuah sistem operasi berbasis Linux yang dirancang untuk router.
-
-Persiapan
-
-Sebelum memulai instalasi, pastikan Anda memiliki akses ke router OpenWRT Anda dan koneksi internet yang stabil. Anda juga perlu memiliki akun di situs web ZeroTier untuk membuat jaringan virtual.
-
-Langkah-langkah Instalasi
-
-
-  Update dan Instalasi Paket
-Pertama, Anda perlu memperbarui daftar paket di OpenWRT dan menginstal paket ZeroTier. Buka terminal SSH dan masukkan perintah berikut:
-
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-    Bash
-    Copy
+    <url>
+      <loc>http://localhost:4000/emulation/gaming/how-to-install-xbox-emulator-on-windows-android-linux/</loc>
+      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
   
+    <url>
+      <loc>http://localhost:4000/emulation/gaming/how-to-install-xbox-emulator-on-pc/</loc>
+      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
   
-opkg update &amp;amp;&amp;amp; opkg install zerotier
+    <url>
+      <loc>http://localhost:4000/emulation/gaming/how-to-install-ps5-emulator-on-pc/</loc>
+      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
   
-
-
-Perintah ini akan memperbarui daftar paket dan menginstal ZeroTier di router Anda.
-
-
-  Konfigurasi ZeroTier
-
-
-Setelah instalasi selesai, Anda perlu mengaktifkan dan mengonfigurasi ZeroTier. Masukkan perintah berikut untuk mengaktifkan ZeroTier:
-
-
+    <url>
+      <loc>http://localhost:4000/emulation/gaming/how-to-install-ps4-emulator-on-pc/</loc>
+      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
   
-    Bash
-    Copy
+    <url>
+      <loc>http://localhost:4000/emulation/gaming/how-to-install-ps3-emulator-on-pc/</loc>
+      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
   
+    <url>
+      <loc>http://localhost:4000/emulation/gaming/how-to-install-ps2-emulator-on-pc/</loc>
+      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
   
-uci set zerotier.global.enabled=&apos;1&apos;
-uci commit zerotier
-/etc/init.d/zerotier start
+    <url>
+      <loc>http://localhost:4000/emulation/gaming/how-to-install-ps1-emulator-on-pc/</loc>
+      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
   
-
-
-Perintah ini akan mengaktifkan ZeroTier dan memulai layanan.
-
-
-  Membuat Jaringan di ZeroTier
-
-
-Selanjutnya, buka situs web ZeroTier dan masuk ke akun Anda. Buat jaringan baru dan catat Network ID yang diberikan. Network ID ini akan digunakan untuk menghubungkan perangkat ke jaringan virtual Anda.
-
-
-  Menghubungkan Router ke Jaringan ZeroTier
-
-
-Kembali ke terminal SSH dan masukkan perintah berikut untuk menghubungkan router ke jaringan ZeroTier:
-
-
+    <url>
+      <loc>http://localhost:4000/networking/instalasi-mikrotik-untuk-hotspot-dan-pppoe/</loc>
+      <lastmod>2024-12-04T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
   
-    Bash
-    Copy
+    <url>
+      <loc>http://localhost:4000/keamanan/cara-menghilangkan-virus-komputer/</loc>
+      <lastmod>2024-12-03T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/pengaturan/panduan-tplink-wr840n/</loc>
+      <lastmod>2024-11-26T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/pengaturan/panduan-penggunaan-tplink-cpe220/</loc>
+      <lastmod>2024-11-26T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/pengaturan/panduan-penggunaan-powerbeam-m2-400/</loc>
+      <lastmod>2024-11-26T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/pengaturan/panduan-lengkap-penggunaan-tenda-o3-router-outdoor/</loc>
+      <lastmod>2024-11-26T00:00:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/announcement/wellcome-to-masterwifinetworksolution/</loc>
+      <lastmod>2024-11-25T05:46:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/android/termux-auto-plane-mode/</loc>
+      <lastmod>2024-11-20T05:46:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/clash%20for%20magisk/konfigurasi-cfm-simaster-meta/</loc>
+      <lastmod>2024-11-18T05:46:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/pengaturan/setting-vlan-openwrt/</loc>
+      <lastmod>2024-11-02T05:46:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/pengaturan/setting-firewall-openwrt/</loc>
+      <lastmod>2024-11-01T05:46:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/tutorial/cara-install-tailscale-di-openwrt/</loc>
+      <lastmod>2024-10-30T05:46:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/tutorial/cara-install-zerotier-di-openwrt/</loc>
+      <lastmod>2024-10-29T05:46:00+08:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
   
   
-zerotier-cli join (Network ID)
+    
+      <url>
+        <loc>http://localhost:4000/categories/android/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
   
-
-
-Gantilah (Network ID) dengan Network ID yang Anda dapatkan dari situs web ZeroTier. Perintah ini akan menghubungkan router Anda ke jaringan virtual.
-
-
-  Verifikasi Koneksi
-
-
-Untuk memastikan bahwa router Anda telah terhubung ke jaringan ZeroTier, masukkan perintah berikut:
-
-
+    
+      <url>
+        <loc>http://localhost:4000/categories/announcement/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
   
-    Bash
-    Copy
+    
+      <url>
+        <loc>http://localhost:4000/categories/clash-for-magisk/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
   
+    
+      <url>
+        <loc>http://localhost:4000/categories/clash/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
   
-zerotier-cli listnetworks
+    
+      <url>
+        <loc>http://localhost:4000/contact.html</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
   
-
-
-Anda akan melihat daftar jaringan yang terhubung, termasuk jaringan ZeroTier yang baru saja Anda tambahkan.
-
-Menghubungkan Perangkat Lain
-
-Setelah router Anda terhubung ke jaringan ZeroTier, Anda dapat menghubungkan perangkat lain seperti komputer, smartphone, atau perangkat IoT. Instal aplikasi ZeroTier di perangkat tersebut dan gunakan Network ID yang sama untuk bergabung ke jaringan.
-
-Keuntungan Menggunakan ZeroTier di OpenWRT
-
-Menggunakan ZeroTier di OpenWRT memiliki beberapa keuntungan, antara lain:
-
-
-  Keamanan: ZeroTier menggunakan enkripsi end-to-end untuk melindungi data Anda.
-  Kemudahan Akses: Anda dapat mengakses perangkat di jaringan ZeroTier dari mana saja, selama Anda memiliki koneksi internet.
-  Fleksibilitas: ZeroTier mendukung berbagai platform, termasuk Windows, macOS, Linux, Android, dan iOS.
-
-</description>
-      </item>
     
+      <url>
+        <loc>http://localhost:4000/disclaimer.html</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>android</title>
-          <link>http://localhost:4000/categories/android/</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>announcement</title>
-          <link>http://localhost:4000/categories/announcement/</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/documentation.html</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>clash for magisk</title>
-          <link>http://localhost:4000/categories/clash-for-magisk/</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>clash</title>
-          <link>http://localhost:4000/categories/clash/</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/donate.html</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>Contact</title>
-          <link>http://localhost:4000/contact.html</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>Disclaimer</title>
-          <link>http://localhost:4000/disclaimer.html</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/feed.xml</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>Dokumentasi Script Simaster</title>
-          <link>http://localhost:4000/documentation.html</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>Donate</title>
-          <link>http://localhost:4000/donate.html</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/files/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
+  
     
-      
-        <item>
-          <title>Files</title>
-          <link>http://localhost:4000/files/</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>Home</title>
-          <link>http://localhost:4000/</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>keamanan</title>
-          <link>http://localhost:4000/categories/keamanan/</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/categories/keamanan/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>networking</title>
-          <link>http://localhost:4000/categories/networking/</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>Openwrt</title>
-          <link>http://localhost:4000/openwrt/</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/marketplace/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>panduan</title>
-          <link>http://localhost:4000/categories/panduan/</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>pengaturan</title>
-          <link>http://localhost:4000/categories/pengaturan/</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/categories/networking/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>Privacy Policy</title>
-          <link>http://localhost:4000/privacy-policy.html</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>Master Wifi Network Solution</title>
-          <link>http://localhost:4000/profile.html</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/openwrt/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>search</title>
-          <link>http://localhost:4000/search.html</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>Sitemap</title>
-          <link>http://localhost:4000/sitemap/</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/categories/panduan/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
+  
     
-      
-        <item>
-          <title>tutorial</title>
-          <link>http://localhost:4000/categories/tutorial/</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/categories/pengaturan/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>Videos</title>
-          <link>http://localhost:4000/videos.html</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>Openwrt X86 64</title>
-          <link>http://localhost:4000/openwrt/x86/</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/privacy-policy.html</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
-        <item>
-          <title>Home</title>
-          <link>http://localhost:4000/page/2/</link>
-          <description></description>
-        </item>
-      
+  
     
-      
-        <item>
-          <title>Home</title>
-          <link>http://localhost:4000/page/3/</link>
-          <description></description>
-        </item>
-      
+      <url>
+        <loc>http://localhost:4000/profile.html</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
     
-      
+  
     
-  </channel>
-</rss>
+      <url>
+        <loc>http://localhost:4000/search.html</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://localhost:4000/sitemap/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://localhost:4000/sitemap.xml</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://localhost:4000/categories/tutorial/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://localhost:4000/videos.html</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://localhost:4000/openwrt/x86/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://localhost:4000/page/2/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://localhost:4000/page/3/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://localhost:4000/page/4/</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>http://localhost:4000/robots.txt</loc>
+        <lastmod></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    
+  
+</urlset>
