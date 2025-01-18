@@ -1,0 +1,6 @@
+_site
+.git
+Gemfile
+Gemfile.lock
+watch.sh
+update.sh
