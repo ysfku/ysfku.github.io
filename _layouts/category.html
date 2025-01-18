@@ -1,5 +1,6 @@
 ---
 layout: default
+category: {{ page.title }}
 ---
 
 <style>
@@ -25,44 +26,22 @@ layout: default
   </header>
 
   <ol class="list-group list-group-numbered">
-    {% for post in site.categories[page.title] %}
-      <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">
-            <a href="{{ post.url }}" class="text-decoration-none">{{ post.title }}</a>
+    {% for post in site.posts %}
+      {% if post.categories contains page.title %}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">
+              <a href="{{ post.url }}" class="text-decoration-none">{{ post.title }}</a>
+            </div>
+            <div>
+              <span class="badge text-bg-primary rounded-pill">{{ post.date | date: "%B %d, %Y" }}</span>
+              <span>by <a href="/profile.html" class="text-decoration-none">{{ post.author }}</a></span>
+            </div>
+            <p>{{ post.excerpt | strip_html | truncate: 100 }}</p> <!-- Truncate content to 100 characters -->
+            <a href="{{ post.url }}" class="btn btn-primary btn-sm mt-2">Read More</a>
           </div>
-          <div>
-            <span class="badge text-bg-primary rounded-pill">{{ post.date | date: "%B %d, %Y" }}</span>
-            <span>by <a href="/profile.html" class="text-decoration-none">{{ post.author }}</a></span>
-          </div>
-          <p>{{ post.excerpt | strip_html | truncate: 100 }}</p> <!-- Truncate content to 100 characters -->
-          <a href="{{ post.url }}" class="btn btn-primary btn-sm mt-2">Read More</a>
-        </div>
-      </li>
-    {% endfor %}
-  </ol>
-</div>
-
-<div class="category-content">
-  <header class="category-header">
-    <h1>Documents in category: {{ page.title }}</h1>
-  </header>
-
-  <ol class="list-group list-group-numbered">
-    {% for doc in site.docs %}
-      <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">
-            <a href="{{ doc.url }}" class="text-decoration-none">{{ doc.title }}</a>
-          </div>
-          <div>
-            <span class="badge text-bg-primary rounded-pill">{{ doc.date | date: "%B %d, %Y" }}</span>
-            <span>by <a href="/profile.html" class="text-decoration-none">{{ doc.author }}</a></span>
-          </div>
-          <p>{{ doc.excerpt | strip_html | truncate: 100 }}</p> <!-- Truncate content to 100 characters -->
-          <a href="{{ doc.url }}" class="btn btn-primary btn-sm mt-2">Read More</a>
-        </div>
-      </li>
+        </li>
+      {% endif %}
     {% endfor %}
   </ol>
 </div>
