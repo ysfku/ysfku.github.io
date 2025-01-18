@@ -45,6 +45,6 @@
 <body>
     <h1>Page Not Found</h1>
     <p>Sorry, but the page you were trying to view does not exist. Try searching for it or looking at the URL to see if it looks correct.</p>
-    <a href="index.html" class="btn-home">Back To Home</a>
+    <a href="index.html" class="btn-home">Kembali ke Halaman Utama</a>
 </body>
 </html>
