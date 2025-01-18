@@ -13,11 +13,6 @@ paginate_path: "/page/:num/"
 collections:
   posts:
     output: true
-  categories:
-    output: true
-  docs:
-    output: true
-    permalink: /:collection/:path/
 
 defaults:
   - scope:
@@ -67,3 +62,9 @@ data_documentation:
 
 include:
   - assets
+
+category_dir: categories
+
+exclude:
+  - _site
+  - .jekyll-cache

@@ -1,33 +1,33 @@
 ---
 layout: default
-category: {{ page.title }}
 ---
 
 <style>
   .category-content {
-    margin-top: 20px; /* Menyesuaikan dengan tinggi navigasi Anda */
+    margin-top: 20px;
   }
   .category-header {
     margin-bottom: 20px;
     padding: 10px;
     background-color: #f8f9fa;
     border-radius: 5px;
-    font-size: 1.25rem; /* Ukuran font lebih kecil */
+    font-size: 1.25rem;
   }
   .category-header h1 {
     margin: 0;
-    font-size: 1.5rem; /* Mengurangi ukuran font header */
+    font-size: 1.5rem;
   }
 </style>
 
 <div class="category-content">
   <header class="category-header">
-    <h1>Posts in category: {{ page.title }}</h1>
+    <h1>Konten dalam kategori: {{ page.category }}</h1>
   </header>
 
   <ol class="list-group list-group-numbered">
-    {% for post in site.posts %}
-      {% if post.categories contains page.title %}
+    {% assign all_posts = site.posts | uniq %}
+    {% for post in all_posts %}
+      {% if post.categories contains page.category %}
         <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
             <div class="fw-bold">
@@ -35,10 +35,10 @@ category: {{ page.title }}
             </div>
             <div>
               <span class="badge text-bg-primary rounded-pill">{{ post.date | date: "%B %d, %Y" }}</span>
-              <span>by <a href="/profile.html" class="text-decoration-none">{{ post.author }}</a></span>
+              <span>oleh <a href="/profile.html" class="text-decoration-none">{{ post.author }}</a></span>
             </div>
-            <p>{{ post.excerpt | strip_html | truncate: 100 }}</p> <!-- Truncate content to 100 characters -->
-            <a href="{{ post.url }}" class="btn btn-primary btn-sm mt-2">Read More</a>
+            <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+            <a href="{{ post.url }}" class="btn btn-primary btn-sm mt-2">Baca Selengkapnya</a>
           </div>
         </li>
       {% endif %}
