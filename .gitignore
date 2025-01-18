@@ -1,6 +1,6 @@
-_site
-.git
+_site/
+.git/
+*.orig
 Gemfile
 Gemfile.lock
-watch.sh
-update.sh
+*.sh
