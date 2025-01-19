@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Install the PPSSPP Emulator on Windows, Android, and Linux"
 date: 2024-12-27
-categories: [Emulation, Gaming]
+categories: [emulation, gaming]
 image: 
 ---
 

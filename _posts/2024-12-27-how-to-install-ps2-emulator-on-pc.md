@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Install a PS2 Emulator on PC"
 date: 2024-12-27
-categories: [Emulation, Gaming]
+categories: [emulation, gaming]
 image: 
 ---
 

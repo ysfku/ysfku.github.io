@@ -9,7 +9,7 @@ layout: default
       <h4 class="card-subtitle mb-2">Update: {{ page.date | date: '%d %B %Y' }}</h4>
       <h4 class="card-subtitle mb-2">
         {% for category in page.categories %}
-          Category: <a href="{{ site.baseurl }}/categories/{{ category | downcase }}/">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
+          Category: <a href="{{ site.baseurl }}/categories/{{ category | slugify }}/">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
         {% endfor %}
       </h4>
       {% assign words = page.content | number_of_words %}
@@ -19,7 +19,7 @@ layout: default
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">Home</a></li>
         {% for category in page.categories %}
-          <li class="breadcrumb-item"><a href="{{ site.baseurl }}/categories/{{ category | downcase }}/">{{ category }}</a></li>
+          <li class="breadcrumb-item"><a href="{{ site.baseurl }}/categories/{{ category | slugify }}/">{{ category }}</a></li>
         {% endfor %}
         <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
       </ol>

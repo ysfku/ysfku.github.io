@@ -28,10 +28,14 @@ module Jekyll
     end
 
     def write_category_page(site, dir, category)
-      index = CategoryPage.new(site, site.source, dir, category)
+     index = CategoryPage.new(site, site.source, dir, category)
       index.render(site.layouts, site.site_payload)
       index.write(site.dest)
-      site.pages << index
+     site.pages << index
+
+     # Debugging
+     puts "Written index.html in #{dir}" # Tambahkan log ini
     end
+
   end
 end

@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Install an Xbox Emulator on PC"
 date: 2024-12-27
-categories: [Emulation, Gaming]
+categories: [emulation, gaming]
 image: 
 ---
 
