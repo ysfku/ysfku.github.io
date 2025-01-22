@@ -21,7 +21,7 @@ layout: default
 
 <div class="category-content">
   <header class="category-header">
-    <h1>Konten dalam kategori: {{ page.category }}</h1>
+    <h1>Content in the category: {{ page.category }}</h1>
   </header>
 
   <ol class="list-group list-group-numbered">
@@ -38,7 +38,7 @@ layout: default
               <span>oleh <a href="/profile.html" class="text-decoration-none">{{ post.author }}</a></span>
             </div>
             <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
-            <a href="{{ post.url }}" class="btn btn-primary btn-sm mt-2">Baca Selengkapnya</a>
+            <a href="{{ post.url }}" class="btn btn-primary btn-sm mt-2">Read more</a>
           </div>
         </li>
       {% endif %}

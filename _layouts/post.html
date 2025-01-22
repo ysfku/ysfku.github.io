@@ -5,7 +5,7 @@ layout: default
 <div class="container mt-4">
   <div class="post-content">
     <nav aria-label="breadcrumb" class="p-3 rounded">
-      <h3 class="card-subtitle mb-2">Judul: <b>{{ page.title }}</b></h3>
+      <h3 class="card-subtitle mb-2">Title: <b>{{ page.title }}</b></h3>
       <h4 class="card-subtitle mb-2">Update: {{ page.date | date: '%d %B %Y' }}</h4>
       <h4 class="card-subtitle mb-2">
         {% for category in page.categories %}
@@ -14,7 +14,7 @@ layout: default
       </h4>
       {% assign words = page.content | number_of_words %}
       {% assign reading_time = words | divided_by:200 %} <!-- Asumsi kecepatan baca 200 kata per menit -->
-      <h4 class="card-subtitle mb-2">Durasi baca: {{ reading_time | ceil }} menit</h4>
+      <h4 class="card-subtitle mb-2">Reading duration: {{ reading_time | ceil }} minute</h4>
       <h4 class="card-subtitle mb-2">Penulis: <a href="/profile.html">{{ page.author }}</a></h4>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">Home</a></li>
@@ -36,7 +36,7 @@ layout: default
   <!-- Advertisement card -->
   <div class="card mt-4">
     <div class="card-header">
-      <h5>Iklan</h5>
+      <h5>Advertisement</h5>
     </div>
     <div class="card-body">
       {% include iklan.html %}
@@ -57,7 +57,7 @@ layout: default
   <!-- Advertisement card -->
   <div class="card mt-4">
     <div class="card-header">
-      <h5>Iklan</h5>
+      <h5>Advertisement</h5>
     </div>
     <div class="card-body">
       {% include iklan.html %}
@@ -67,7 +67,7 @@ layout: default
   <!-- Share buttons -->
   <div class="card mt-4">
     <div class="card-header">
-      <h5>Bagikan Post Simaster</h5>
+      <h5>Share Post Simaster</h5>
     </div>
     <div class="card-body">
       <div class="share-buttons">
@@ -84,7 +84,7 @@ layout: default
   <!-- Comments card -->
   <div class="card mt-4 mb-4">
     <div class="card-header">
-      <h5>Komentar</h5>
+      <h5>Comment</h5>
     </div>
     <div class="card-body">
       {% include comments.html %}
