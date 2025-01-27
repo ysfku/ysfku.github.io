@@ -1,6 +1,0 @@
-_site/
-.git/
-*.orig
-Gemfile
-Gemfile.lock
-*.sh
