@@ -94,7 +94,7 @@
   
     <url>
       <loc>http://localhost:4000/announcement/wellcome-to-masterwifinetworksolution/</loc>
-      <lastmod>2024-11-25T05:46:00+08:00</lastmod>
+      <lastmod>2024-11-25T13:46:00+08:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
@@ -107,7 +107,7 @@
     </url>
   
     <url>
-      <loc>http://localhost:4000/clash%20for%20magisk/konfigurasi-cfm-simaster-meta/</loc>
+      <loc>http://localhost:4000/clashformagisk/konfigurasi-cfm-simaster-meta/</loc>
       <lastmod>2024-11-18T05:46:00+08:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
@@ -280,87 +280,6 @@
     
       <url>
         <loc>http://localhost:4000/openwrt/x86/</loc>
-        <lastmod></lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:4000/categories/tutorial/</loc>
-        <lastmod></lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:4000/categories/pengaturan/</loc>
-        <lastmod></lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:4000/categories/clash%20for%20magisk/</loc>
-        <lastmod></lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:4000/categories/android/</loc>
-        <lastmod></lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:4000/categories/announcement/</loc>
-        <lastmod></lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:4000/categories/keamanan/</loc>
-        <lastmod></lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:4000/categories/networking/</loc>
-        <lastmod></lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:4000/categories/emulation/</loc>
-        <lastmod></lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:4000/categories/gaming/</loc>
         <lastmod></lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
