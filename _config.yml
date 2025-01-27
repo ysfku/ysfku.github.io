@@ -15,6 +15,7 @@ collections:
     output: true
   categories:
     output: true
+    permalink: /categories/:name/
 
 defaults:
   - scope:
