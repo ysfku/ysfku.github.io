@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Wellcome To Master Wifi Network Solution"
-date: 2024-11-25 05:46:00 +0800
+date: 2024-11-25 05:46:00
 categories: [announcement]
 ---
 
