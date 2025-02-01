@@ -28,6 +28,8 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Syntax -->
+  <link rel="stylesheet" href="/assets/css/syntax.css">
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
   <!-- FontAwesome -->
@@ -271,105 +273,103 @@
       
       <h2 id="pendahuluan">Pendahuluan</h2>
 
-<p>Artikel ini akan membahas langkah-langkah untuk menginstal <code class="language-plaintext highlighter-rouge">ZeroTier</code> di <code class="language-plaintext highlighter-rouge">OpenWRT</code>, sebuah sistem operasi berbasis <code class="language-plaintext highlighter-rouge">Linux</code> yang dirancang untuk router.</p>
+<p>Artikel ini akan membahas langkah-langkah untuk menginstal <strong>ZeroTier</strong> di <strong>OpenWRT</strong>, sebuah sistem operasi berbasis <strong>Linux</strong> yang dirancang untuk router.</p>
 
 <h2 id="persiapan">Persiapan</h2>
 
-<p>Sebelum memulai instalasi, pastikan Anda memiliki akses ke router <code class="language-plaintext highlighter-rouge">OpenWRT</code> Anda dan koneksi internet yang stabil. Anda juga perlu memiliki akun di situs web <code class="language-plaintext highlighter-rouge">ZeroTier</code> untuk membuat jaringan virtual.</p>
+<p>Sebelum memulai instalasi, pastikan Anda memiliki akses ke router <strong>OpenWRT</strong> Anda dan koneksi internet yang stabil. Anda juga perlu memiliki akun di situs web <strong>ZeroTier</strong> untuk membuat jaringan virtual.</p>
 
 <h2 id="langkah-langkah-instalasi">Langkah-langkah Instalasi</h2>
 
 <ol>
   <li>Update dan Instalasi Paket
-Pertama, Anda perlu memperbarui daftar paket di <code class="language-plaintext highlighter-rouge">OpenWRT</code> dan menginstal paket <code class="language-plaintext highlighter-rouge">ZeroTier</code>. Buka terminal SSH dan masukkan perintah berikut:</li>
+Pertama, Anda perlu memperbarui daftar paket di <strong>OpenWRT</strong> dan menginstal paket <strong>ZeroTier</strong>. Buka terminal SSH dan masukkan perintah berikut:</li>
 </ol>
 
-<div class="code-container">
-  <div class="code-header">
-    <span class="language-label">Bash</span>
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-  </div>
-  <pre class="code-block">
-opkg update &amp;&amp; opkg install zerotier
-  </pre>
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>opkg update <span class="o">&amp;&amp;</span> opkg <span class="nb">install </span>zerotier
+</pre></td></tr></tbody></table></code></pre></figure>
+
 </div>
 
-<p>Perintah ini akan memperbarui daftar paket dan menginstal <code class="language-plaintext highlighter-rouge">ZeroTier</code> di router Anda.</p>
+<p>Perintah ini akan memperbarui daftar paket dan menginstal <strong>ZeroTier</strong> di router Anda.</p>
 
 <ol>
   <li>Konfigurasi ZeroTier</li>
 </ol>
 
-<p>Setelah instalasi selesai, Anda perlu mengaktifkan dan mengonfigurasi <code class="language-plaintext highlighter-rouge">ZeroTier</code>. Masukkan perintah berikut untuk mengaktifkan ZeroTier:</p>
+<p>Setelah instalasi selesai, Anda perlu mengaktifkan dan mengonfigurasi <strong>ZeroTier</strong>. Masukkan perintah berikut untuk mengaktifkan ZeroTier:</p>
 
-<div class="code-container">
-  <div class="code-header">
-    <span class="language-label">Bash</span>
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-  </div>
-  <pre class="code-block">
-uci set zerotier.global.enabled='1'
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre>uci <span class="nb">set </span>zerotier.global.enabled<span class="o">=</span><span class="s1">'1'</span>
 uci commit zerotier
 /etc/init.d/zerotier start
-  </pre>
+</pre></td></tr></tbody></table></code></pre></figure>
+
 </div>
 
-<p>Perintah ini akan mengaktifkan <code class="language-plaintext highlighter-rouge">ZeroTier</code> dan memulai layanan.</p>
+<p>Perintah ini akan mengaktifkan <strong>ZeroTier</strong> dan memulai layanan.</p>
 
 <ol>
   <li>Membuat Jaringan di ZeroTier</li>
 </ol>
 
-<p>Selanjutnya, buka situs web <code class="language-plaintext highlighter-rouge">ZeroTier</code> dan masuk ke akun Anda. Buat jaringan baru dan catat <code class="language-plaintext highlighter-rouge">Network ID</code> yang diberikan. <code class="language-plaintext highlighter-rouge">Network ID</code> ini akan digunakan untuk menghubungkan perangkat ke jaringan <code class="language-plaintext highlighter-rouge">virtual</code> Anda.</p>
+<p>Selanjutnya, buka situs web <strong>ZeroTier</strong> dan masuk ke akun Anda. Buat jaringan baru dan catat <strong>Network ID</strong> yang diberikan. <strong>Network ID</strong> ini akan digunakan untuk menghubungkan perangkat ke jaringan <strong>virtual</strong> Anda.</p>
 
 <ol>
   <li>Menghubungkan Router ke Jaringan ZeroTier</li>
 </ol>
 
-<p>Kembali ke <code class="language-plaintext highlighter-rouge">terminal SSH</code> dan masukkan perintah berikut untuk menghubungkan router ke jaringan ZeroTier:</p>
+<p>Kembali ke <strong>terminal SSH</strong> dan masukkan perintah berikut untuk menghubungkan router ke jaringan ZeroTier:</p>
 
-<div class="code-container">
-  <div class="code-header">
-    <span class="language-label">Bash</span>
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-  </div>
-  <pre class="code-block">
-zerotier-cli join (Network ID)
-  </pre>
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>zerotier-cli <span class="nb">join</span> &lt;Network ID&gt;
+</pre></td></tr></tbody></table></code></pre></figure>
+
 </div>
 
-<p>Gantilah <code class="language-plaintext highlighter-rouge">(Network ID)</code> dengan Network ID yang Anda dapatkan dari situs web <code class="language-plaintext highlighter-rouge">ZeroTier</code>. Perintah ini akan menghubungkan router Anda ke jaringan <code class="language-plaintext highlighter-rouge">virtual</code>.</p>
+<p>Gantilah <strong>Network ID</strong> dengan Network ID yang Anda dapatkan dari situs web <strong>ZeroTier</strong>. Perintah ini akan menghubungkan router Anda ke jaringan <strong>virtual</strong>.</p>
 
 <ol>
   <li>Verifikasi Koneksi</li>
 </ol>
 
-<p>Untuk memastikan bahwa router Anda telah terhubung ke jaringan <code class="language-plaintext highlighter-rouge">ZeroTier</code>, masukkan perintah berikut:</p>
+<p>Untuk memastikan bahwa router Anda telah terhubung ke jaringan <strong>ZeroTier</strong>, masukkan perintah berikut:</p>
 
-<div class="code-container">
-  <div class="code-header">
-    <span class="language-label">Bash</span>
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-  </div>
-  <pre class="code-block">
-zerotier-cli listnetworks
-  </pre>
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>zerotier-cli listnetworks
+</pre></td></tr></tbody></table></code></pre></figure>
+
 </div>
 
-<p>Anda akan melihat daftar jaringan yang terhubung, termasuk jaringan <code class="language-plaintext highlighter-rouge">ZeroTier</code> yang baru saja Anda tambahkan.</p>
+<p>Anda akan melihat daftar jaringan yang terhubung, termasuk jaringan <strong>ZeroTier</strong> yang baru saja Anda tambahkan.</p>
 
 <h2 id="menghubungkan-perangkat-lain">Menghubungkan Perangkat Lain</h2>
 
-<p>Setelah router Anda terhubung ke jaringan <code class="language-plaintext highlighter-rouge">ZeroTier</code>, Anda dapat menghubungkan perangkat lain seperti komputer, smartphone, atau perangkat IoT. Instal aplikasi <code class="language-plaintext highlighter-rouge">ZeroTier</code> di perangkat tersebut dan gunakan <code class="language-plaintext highlighter-rouge">Network ID</code> yang sama untuk bergabung ke jaringan.</p>
+<p>Setelah router Anda terhubung ke jaringan <strong>ZeroTier</strong>, Anda dapat menghubungkan perangkat lain seperti komputer, smartphone, atau perangkat IoT. Instal aplikasi <strong>ZeroTier</strong> di perangkat tersebut dan gunakan <strong>Network ID</strong> yang sama untuk bergabung ke jaringan.</p>
 
 <h2 id="keuntungan-menggunakan-zerotier-di-openwrt">Keuntungan Menggunakan ZeroTier di OpenWRT</h2>
 
-<p>Menggunakan <code class="language-plaintext highlighter-rouge">ZeroTier</code> di <code class="language-plaintext highlighter-rouge">OpenWRT</code> memiliki beberapa keuntungan, antara lain:</p>
+<p>Menggunakan <strong>ZeroTier</strong> di <strong>OpenWRT</strong> memiliki beberapa keuntungan, antara lain:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Keamanan</code>: ZeroTier menggunakan enkripsi end-to-end untuk melindungi data Anda.</li>
-  <li><code class="language-plaintext highlighter-rouge">Kemudahan Akses</code>: Anda dapat mengakses perangkat di jaringan ZeroTier dari mana saja, selama Anda memiliki koneksi internet.</li>
-  <li><code class="language-plaintext highlighter-rouge">Fleksibilitas</code>: ZeroTier mendukung berbagai platform, termasuk Windows, macOS, Linux, Android, dan iOS.</li>
+  <li><strong>Keamanan</strong>: ZeroTier menggunakan enkripsi end-to-end untuk melindungi data Anda.</li>
+  <li><strong>Kemudahan Akses</strong>: Anda dapat mengakses perangkat di jaringan ZeroTier dari mana saja, selama Anda memiliki koneksi internet.</li>
+  <li><strong>Fleksibilitas</strong>: ZeroTier mendukung berbagai platform, termasuk Windows, macOS, Linux, Android, dan iOS.</li>
 </ul>
 
     </div>
@@ -847,7 +847,23 @@ zerotier-cli listnetworks
   }
 </style>
 
-  <!-- Anti Adblock JS -->
+  <script>
+  function copyCode(button) {
+    const codeBlock = button.nextElementSibling.querySelector('code');
+    const textArea = document.createElement('textarea');
+    textArea.value = codeBlock.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    button.innerText = 'Copied!';
+    setTimeout(() => {
+      button.innerText = 'Copy';
+    }, 2000);
+  }
+</script>
+
+<!-- Anti Adblock JS -->
 <script type="text/javascript">
 !function(a){var b,c=function(a){this.name="blockAdBlock",this.version="3.2.1",this.revision="r20190917",this.message={blocked:"adblocker detected",not_blocked:"adblocker not detected",init:"blockAdBlock initialized",error:"blockAdBlock error"},this.timers={s:0,m:0},this.remove={from:null,timeout:null},this.elements={from:null},this.detected=!1,"undefined"!=typeof a&&this.setOptions(a),this.create();var b=this;setTimeout(function(){return a(!0),!1},1)};a.blockAdBlock=new c}(window);
 </script>

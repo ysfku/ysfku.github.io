@@ -1,3 +1,50 @@
+/* Gaya untuk blok kode */
+.highlight {
+  background-color: #f6f8fa;  /* Warna background */
+  border-radius: 6px;         /* Sudut kotak yang melengkung */
+  border: 1px solid #e1e4e8;  /* Border kotak */
+  padding: 5px;              /* Padding dalam kotak */
+  overflow-x: auto;           /* Scroll horizontal jika kode terlalu panjang */
+  font-family: 'Courier New', monospace; /* Font monospace */
+  font-size: 16px;            /* Ukuran font */
+  line-height: 1.5;           /* Jarak antar baris */
+  margin-top: 15px;
+  margin-bottom: 1px;        /* Jarak dari elemen bawah */
+}
+
+/* Gaya untuk teks di dalam blok kode */
+.highlight code {
+  color: #24292e;             /* Warna teks */
+  background-color: transparent; /* Background transparan */
+  padding: 0;                 /* Hilangkan padding default */
+}
+
+/* Gaya untuk nomor baris (jika menggunakan linenos) */
+.highlight .lineno {
+  color: #6a737d;             /* Warna nomor baris */
+  padding-right: 16px;        /* Jarak antara nomor baris dan kode */
+  user-select: none;          /* Mencegah nomor baris dipilih */
+}
+
+.code-block {
+  position: relative;
+}
+.copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.copy-button:hover {
+  background: #0056b3;
+}
+
 .menu-icon {
       margin-right: 10px; /* Menambahkan margin kanan untuk memindahkan ikon menu ke pinggir */
     }
@@ -122,7 +169,7 @@ body[data-bs-theme='dark'] p {
 
     /* pre code copy */
     .code-container {
-      margin-bottom: 20px;
+      margin-bottom: 5px;
       background-color: grey;
     }
     .code-header {
@@ -136,21 +183,10 @@ body[data-bs-theme='dark'] p {
     .language-label {
       font-weight: bold;
     }
-    .copy-btn {
-      background-color: #007bff;
-      color: #ffffff;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .copy-btn:hover {
-      background-color: #0056b3;
-    }
     .code-block {
       background-color: #2d2d2d;
       color: #ffffff;
-      padding: 20px;
+      padding: 15px;
       border-radius: 5px;
       overflow-x: auto;
     }

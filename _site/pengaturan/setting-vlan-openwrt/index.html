@@ -28,6 +28,8 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Syntax -->
+  <link rel="stylesheet" href="/assets/css/syntax.css">
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
   <!-- FontAwesome -->
@@ -406,7 +408,7 @@
 
 <h4 id="1-masuk-ke-antarmuka-luci">1. Masuk ke Antarmuka LuCI</h4>
 
-<p>Buka browser web Anda dan masukkan alamat IP router Anda, biasanya <code class="language-plaintext highlighter-rouge">192.168.1.1</code>. Login menggunakan kredensial Anda.</p>
+<p>Buka browser web Anda dan masukkan alamat IP router Anda, biasanya <strong>192.168.1.1</strong> Login menggunakan kredensial Anda.</p>
 
 <h4 id="2-navigasi-ke-network-interfaces">2. Navigasi ke Network Interfaces</h4>
 
@@ -414,7 +416,7 @@
 
 <h4 id="3-tambahkan-vlan-baru">3. Tambahkan VLAN Baru</h4>
 
-<p>Untuk menambahkan VLAN baru, klik tombol <strong>Add new interface</strong>. Berikan nama untuk VLAN baru Anda, misalnya <code class="language-plaintext highlighter-rouge">VLAN10</code>, dan pilih opsi untuk membuat antarmuka baru dari <code class="language-plaintext highlighter-rouge">eth0.10</code> (di mana <code class="language-plaintext highlighter-rouge">10</code> adalah ID VLAN Anda).</p>
+<p>Untuk menambahkan VLAN baru, klik tombol <strong>Add new interface</strong>. Berikan nama untuk VLAN baru Anda, misalnya <strong>VLAN10</strong>, dan pilih opsi untuk membuat antarmuka baru dari <strong>eth0.10</strong> (di mana <strong>10</strong> adalah ID VLAN Anda).</p>
 
 <h4 id="4-konfigurasi-vlan">4. Konfigurasi VLAN</h4>
 
@@ -935,7 +937,23 @@
   }
 </style>
 
-  <!-- Anti Adblock JS -->
+  <script>
+  function copyCode(button) {
+    const codeBlock = button.nextElementSibling.querySelector('code');
+    const textArea = document.createElement('textarea');
+    textArea.value = codeBlock.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    button.innerText = 'Copied!';
+    setTimeout(() => {
+      button.innerText = 'Copy';
+    }, 2000);
+  }
+</script>
+
+<!-- Anti Adblock JS -->
 <script type="text/javascript">
 !function(a){var b,c=function(a){this.name="blockAdBlock",this.version="3.2.1",this.revision="r20190917",this.message={blocked:"adblocker detected",not_blocked:"adblocker not detected",init:"blockAdBlock initialized",error:"blockAdBlock error"},this.timers={s:0,m:0},this.remove={from:null,timeout:null},this.elements={from:null},this.detected=!1,"undefined"!=typeof a&&this.setOptions(a),this.create();var b=this;setTimeout(function(){return a(!0),!1},1)};a.blockAdBlock=new c}(window);
 </script>

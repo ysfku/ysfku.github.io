@@ -5,7 +5,6 @@ description: >- # Deskripsi situs
   Master Wifi Network Solution adalah tempat solusi koneksi jaringan anda.
 url: "https://masterwifinetworksolution.github.io"
 baseurl: ""
-markdown: kramdown
 permalink: /:categories/:title/
 paginate: 6
 paginate_path: "/page/:num/"
@@ -66,6 +65,18 @@ data_documentation:
 include:
   - assets
 
+# Konfigurasi Kramdown untuk sintaks highlighter
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'  # Kelas CSS untuk highlighter
+    span:
+      line_numbers: true    # Aktifkan nomor baris
+    block:
+      line_numbers: true    # Aktifkan nomor baris untuk blok kode
+      start_line: 1         # Mulai nomor baris dari 1
+
 # Contoh konfigurasi
 category_dir: categories
-

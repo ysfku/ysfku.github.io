@@ -28,6 +28,8 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Syntax -->
+  <link rel="stylesheet" href="/assets/css/syntax.css">
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
   <!-- FontAwesome -->
@@ -244,22 +246,22 @@
       
         <img src="/assets/images/banner.jpg" alt="Banner Image" class="img-fluid" style="margin-bottom: 20px;">
       
-      <p>CFM Simaster Meta sangat <code class="language-plaintext highlighter-rouge">compatible</code> untuk anda yang suka streaming, sosial media, gamer, dan juga berbisnis melalui browsing andalan kalian.</p>
+      <p>CFM Simaster Meta sangat <strong>compatible</strong> untuk anda yang suka streaming, sosial media, gamer, dan juga berbisnis melalui browsing andalan kalian.</p>
 
 <h2 id="cara-penggunaan">Cara penggunaan</h2>
 
 <ol>
   <li>download file hanya di <a href="/download-config-simaster-meta" target="_blank">SINI</a>.</li>
   <li>Extract file.</li>
-  <li>Masukkkan semua isi folder dari <code class="language-plaintext highlighter-rouge">clash-cfm-master</code> ke dalam folder <code class="language-plaintext highlighter-rouge">/data/clash</code> dalam hp kalian yang sudah root <code class="language-plaintext highlighter-rouge">magisk</code>.</li>
-  <li>Pastikan kalian sudah pasang module <code class="language-plaintext highlighter-rouge">clash for magisk</code> terbaru yaitu versi 3.0 dan aplikasi <code class="language-plaintext highlighter-rouge">Clash For Magisk</code> versi <code class="language-plaintext highlighter-rouge">1.6.4</code> sebelum melanjutkan tata cara penggunaan No.3.</li>
-  <li>Edit akun kalian di file <code class="language-plaintext highlighter-rouge">akun.yaml</code> di folder <code class="language-plaintext highlighter-rouge">/data/clash/assets</code>.</li>
+  <li>Masukkkan semua isi folder dari <strong>clash-cfm-master</strong> ke dalam folder <strong>/data/clash</strong> dalam hp kalian yang sudah root <strong>magisk</strong>.</li>
+  <li>Pastikan kalian sudah pasang module <strong>clash for magisk</strong> terbaru yaitu versi 3.0 dan aplikasi <strong>Clash For Magisk</strong> versi <strong>1.6.4</strong> sebelum melanjutkan tata cara penggunaan No.3.</li>
+  <li>Edit akun kalian di file <strong>akun.yaml</strong> di folder <strong>/data/clash/assets</strong>.</li>
 </ol>
 
 <h2 id="keunggulan-config-simaster-meta">Keunggulan config Simaster Meta</h2>
 
 <ul>
-  <li>Adblock mencapai <code class="language-plaintext highlighter-rouge">97%</code>.</li>
+  <li>Adblock mencapai <strong>97%</strong>.</li>
   <li>DNS Leaks murni.</li>
   <li>Bloker iklan dan bloker situs dewasa.</li>
   <li>Bisa di tethering hotspot maupun ethernet usb.</li>
@@ -757,7 +759,23 @@ Jika kalian ingin melihat semua video saya, anda bisa berkunjung ke channel yout
   }
 </style>
 
-  <!-- Anti Adblock JS -->
+  <script>
+  function copyCode(button) {
+    const codeBlock = button.nextElementSibling.querySelector('code');
+    const textArea = document.createElement('textarea');
+    textArea.value = codeBlock.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    button.innerText = 'Copied!';
+    setTimeout(() => {
+      button.innerText = 'Copy';
+    }, 2000);
+  }
+</script>
+
+<!-- Anti Adblock JS -->
 <script type="text/javascript">
 !function(a){var b,c=function(a){this.name="blockAdBlock",this.version="3.2.1",this.revision="r20190917",this.message={blocked:"adblocker detected",not_blocked:"adblocker not detected",init:"blockAdBlock initialized",error:"blockAdBlock error"},this.timers={s:0,m:0},this.remove={from:null,timeout:null},this.elements={from:null},this.detected=!1,"undefined"!=typeof a&&this.setOptions(a),this.create();var b=this;setTimeout(function(){return a(!0),!1},1)};a.blockAdBlock=new c}(window);
 </script>

@@ -2,50 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-      <loc>http://localhost:4000/emulation/gaming/how-to-install-xbox-emulator-on-windows-android-linux/</loc>
-      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
+      <loc>http://localhost:4000/linux/pengenalan-linux/</loc>
+      <lastmod>2025-02-01T00:00:00+08:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>http://localhost:4000/emulation/gaming/how-to-install-xbox-emulator-on-pc/</loc>
-      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-    </url>
-  
-    <url>
-      <loc>http://localhost:4000/emulation/gaming/how-to-install-ps5-emulator-on-pc/</loc>
-      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-    </url>
-  
-    <url>
-      <loc>http://localhost:4000/emulation/gaming/how-to-install-ps4-emulator-on-pc/</loc>
-      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-    </url>
-  
-    <url>
-      <loc>http://localhost:4000/emulation/gaming/how-to-install-ps3-emulator-on-pc/</loc>
-      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-    </url>
-  
-    <url>
-      <loc>http://localhost:4000/emulation/gaming/how-to-install-ps2-emulator-on-pc/</loc>
-      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-    </url>
-  
-    <url>
-      <loc>http://localhost:4000/emulation/gaming/how-to-install-ps1-emulator-on-pc/</loc>
-      <lastmod>2024-12-27T00:00:00+08:00</lastmod>
+      <loc>http://localhost:4000/linux/daftar-command-linux/</loc>
+      <lastmod>2025-02-01T00:00:00+08:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
@@ -334,15 +299,6 @@
     
       <url>
         <loc>http://localhost:4000/page/3/</loc>
-        <lastmod></lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-      </url>
-    
-  
-    
-      <url>
-        <loc>http://localhost:4000/page/4/</loc>
         <lastmod></lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

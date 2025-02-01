@@ -28,6 +28,8 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Syntax -->
+  <link rel="stylesheet" href="/assets/css/syntax.css">
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
   <!-- FontAwesome -->
@@ -133,7 +135,7 @@
       </h4>
       
        <!-- Asumsi kecepatan baca 200 kata per menit -->
-      <h4 class="card-subtitle mb-2">Reading duration: 2 minute</h4>
+      <h4 class="card-subtitle mb-2">Reading duration: 1 minute</h4>
       <h4 class="card-subtitle mb-2">Penulis: <a href="/profile.html">Muhammad Yusuf</a></h4>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -360,7 +362,7 @@
 
 <h3 id="konfigurasi-perangkat">Konfigurasi Perangkat</h3>
 <ol>
-  <li><strong>Akses Antarmuka Web</strong>: Buka browser dan masukkan alamat IP default CPE220 (biasanya <code class="language-plaintext highlighter-rouge">192.168.0.254</code>). Masukkan nama pengguna dan kata sandi (default: <code class="language-plaintext highlighter-rouge">admin/admin</code>).</li>
+  <li><strong>Akses Antarmuka Web</strong>: Buka browser dan masukkan alamat IP default CPE220 (biasanya <strong>192.168.0.254</strong>). Masukkan nama pengguna dan kata sandi (default: <strong>admin/admin</strong>).</li>
   <li><strong>Atur Mode Operasi</strong>: Pilih mode operasi yang sesuai dengan kebutuhan Anda (misalnya, AP, Client, atau Repeater).</li>
   <li><strong>Pengaturan Jaringan Nirkabel</strong>: Konfigurasikan SSID, keamanan jaringan, dan parameter lainnya sesuai kebutuhan Anda.</li>
   <li><strong>Simpan dan Terapkan Pengaturan</strong>: Klik “Save” atau “Apply” untuk menyimpan pengaturan dan memulai ulang perangkat jika diperlukan.</li>
@@ -859,7 +861,23 @@
   }
 </style>
 
-  <!-- Anti Adblock JS -->
+  <script>
+  function copyCode(button) {
+    const codeBlock = button.nextElementSibling.querySelector('code');
+    const textArea = document.createElement('textarea');
+    textArea.value = codeBlock.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    button.innerText = 'Copied!';
+    setTimeout(() => {
+      button.innerText = 'Copy';
+    }, 2000);
+  }
+</script>
+
+<!-- Anti Adblock JS -->
 <script type="text/javascript">
 !function(a){var b,c=function(a){this.name="blockAdBlock",this.version="3.2.1",this.revision="r20190917",this.message={blocked:"adblocker detected",not_blocked:"adblocker not detected",init:"blockAdBlock initialized",error:"blockAdBlock error"},this.timers={s:0,m:0},this.remove={from:null,timeout:null},this.elements={from:null},this.detected=!1,"undefined"!=typeof a&&this.setOptions(a),this.create();var b=this;setTimeout(function(){return a(!0),!1},1)};a.blockAdBlock=new c}(window);
 </script>

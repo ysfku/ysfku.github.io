@@ -28,6 +28,8 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Syntax -->
+  <link rel="stylesheet" href="/assets/css/syntax.css">
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
   <!-- FontAwesome -->
@@ -133,7 +135,7 @@
       </h4>
       
        <!-- Asumsi kecepatan baca 200 kata per menit -->
-      <h4 class="card-subtitle mb-2">Reading duration: 1 minute</h4>
+      <h4 class="card-subtitle mb-2">Reading duration: 2 minute</h4>
       <h4 class="card-subtitle mb-2">Penulis: <a href="/profile.html">Muhammad Yusuf</a></h4>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -471,14 +473,13 @@
   <li><strong>Perintah Instalasi</strong>: Gunakan perintah berikut untuk menginstal Tailscale:</li>
 </ul>
 
-<div class="code-container">
-  <div class="code-header">
-    <span class="language-label">Bash</span>
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-  </div>
-  <pre class="code-block">
-opkg update &amp;&amp; opkg install tailscale
-  </pre>
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>opkg update <span class="o">&amp;&amp;</span> opkg <span class="nb">install </span>tailscale
+</pre></td></tr></tbody></table></code></pre></figure>
+
 </div>
 
 <h3 id="3-konfigurasi-tailscale">3. Konfigurasi Tailscale</h3>
@@ -487,14 +488,13 @@ opkg update &amp;&amp; opkg install tailscale
   <li><strong>Jalankan Tailscale</strong>: Setelah instalasi, jalankan Tailscale dengan perintah:</li>
 </ul>
 
-<div class="code-container">
-  <div class="code-header">
-    <span class="language-label">Bash</span>
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-  </div>
-  <pre class="code-block">
-tailscale up
-  </pre>
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>tailscale up
+</pre></td></tr></tbody></table></code></pre></figure>
+
 </div>
 
 <ul>
@@ -507,14 +507,13 @@ tailscale up
   <li><strong>Cek Status</strong>: Gunakan perintah:</li>
 </ul>
 
-<div class="code-container">
-  <div class="code-header">
-    <span class="language-label">Bash</span>
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-  </div>
-  <pre class="code-block">
-tailscale status
-  </pre>
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>tailscale status
+</pre></td></tr></tbody></table></code></pre></figure>
+
 </div>
 
 <p>untuk memastikan Tailscale berjalan dengan baik.</p>
@@ -1015,7 +1014,23 @@ tailscale status
   }
 </style>
 
-  <!-- Anti Adblock JS -->
+  <script>
+  function copyCode(button) {
+    const codeBlock = button.nextElementSibling.querySelector('code');
+    const textArea = document.createElement('textarea');
+    textArea.value = codeBlock.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    button.innerText = 'Copied!';
+    setTimeout(() => {
+      button.innerText = 'Copy';
+    }, 2000);
+  }
+</script>
+
+<!-- Anti Adblock JS -->
 <script type="text/javascript">
 !function(a){var b,c=function(a){this.name="blockAdBlock",this.version="3.2.1",this.revision="r20190917",this.message={blocked:"adblocker detected",not_blocked:"adblocker not detected",init:"blockAdBlock initialized",error:"blockAdBlock error"},this.timers={s:0,m:0},this.remove={from:null,timeout:null},this.elements={from:null},this.detected=!1,"undefined"!=typeof a&&this.setOptions(a),this.create();var b=this;setTimeout(function(){return a(!0),!1},1)};a.blockAdBlock=new c}(window);
 </script>

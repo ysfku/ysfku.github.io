@@ -28,6 +28,8 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Syntax -->
+  <link rel="stylesheet" href="/assets/css/syntax.css">
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
   <!-- FontAwesome -->
@@ -144,19 +146,9 @@
 <script>
     const posts = [
         
-            { title: 'How to Install the PPSSPP Emulator on Windows, Android, and Linux', url: '/emulation/gaming/how-to-install-xbox-emulator-on-windows-android-linux/', type: 'Post' },
+            { title: 'Pengenalan Linux: Sistem Operasi Open Source yang Kuat dan Fleksibel', url: '/linux/pengenalan-linux/', type: 'Post' },
         
-            { title: 'How to Install an Xbox Emulator on PC', url: '/emulation/gaming/how-to-install-xbox-emulator-on-pc/', type: 'Post' },
-        
-            { title: 'How to Install a PS5 Emulator on PC', url: '/emulation/gaming/how-to-install-ps5-emulator-on-pc/', type: 'Post' },
-        
-            { title: 'How to Install a PS4 Emulator on PC', url: '/emulation/gaming/how-to-install-ps4-emulator-on-pc/', type: 'Post' },
-        
-            { title: 'How to Install a PS3 Emulator on PC', url: '/emulation/gaming/how-to-install-ps3-emulator-on-pc/', type: 'Post' },
-        
-            { title: 'How to Install a PS2 Emulator on PC', url: '/emulation/gaming/how-to-install-ps2-emulator-on-pc/', type: 'Post' },
-        
-            { title: 'How to Install a PS1 Emulator on PC', url: '/emulation/gaming/how-to-install-ps1-emulator-on-pc/', type: 'Post' },
+            { title: 'Daftar Command di Linux yang Wajib Diketahui', url: '/linux/daftar-command-linux/', type: 'Post' },
         
             { title: 'Instalasi Mikrotik untuk Hotspot dan PPPoE', url: '/networking/instalasi-mikrotik-untuk-hotspot-dan-pppoe/', type: 'Post' },
         
@@ -228,8 +220,6 @@
             { title: 'Home', url: '/page/2/', type: 'Page' },
         
             { title: 'Home', url: '/page/3/', type: 'Page' },
-        
-            { title: 'Home', url: '/page/4/', type: 'Page' },
         
             { title: '', url: '/robots.txt', type: 'Page' },
         
@@ -665,7 +655,23 @@
   }
 </style>
 
-  <!-- Anti Adblock JS -->
+  <script>
+  function copyCode(button) {
+    const codeBlock = button.nextElementSibling.querySelector('code');
+    const textArea = document.createElement('textarea');
+    textArea.value = codeBlock.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    button.innerText = 'Copied!';
+    setTimeout(() => {
+      button.innerText = 'Copy';
+    }, 2000);
+  }
+</script>
+
+<!-- Anti Adblock JS -->
 <script type="text/javascript">
 !function(a){var b,c=function(a){this.name="blockAdBlock",this.version="3.2.1",this.revision="r20190917",this.message={blocked:"adblocker detected",not_blocked:"adblocker not detected",init:"blockAdBlock initialized",error:"blockAdBlock error"},this.timers={s:0,m:0},this.remove={from:null,timeout:null},this.elements={from:null},this.detected=!1,"undefined"!=typeof a&&this.setOptions(a),this.create();var b=this;setTimeout(function(){return a(!0),!1},1)};a.blockAdBlock=new c}(window);
 </script>

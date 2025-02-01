@@ -28,6 +28,8 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Syntax -->
+  <link rel="stylesheet" href="/assets/css/syntax.css">
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
   <!-- FontAwesome -->
@@ -230,9 +232,9 @@
       
         <img src="/assets/images/banner.jpg" alt="Banner Image" class="img-fluid" style="margin-bottom: 20px;">
       
-      <p>Kini <code class="language-plaintext highlighter-rouge">Simaster</code> telah meluncurkan terobosan terbaru bagi <code class="language-plaintext highlighter-rouge">koneksi data</code> anda yang sering terputus.</p>
+      <p>Kini <strong>Simaster</strong> telah meluncurkan terobosan terbaru bagi <strong>koneksi data</strong> anda yang sering terputus.</p>
 
-<p>Dan script ini di khususkan bagi perangkat android anda yang sudah <code class="language-plaintext highlighter-rouge">root</code>. Entah itu yang anda gunakan <code class="language-plaintext highlighter-rouge">magisk</code> atau pun <code class="language-plaintext highlighter-rouge">supersu</code>.</p>
+<p>Dan script ini di khususkan bagi perangkat android anda yang sudah <strong>root</strong>. Entah itu yang anda gunakan <strong>magisk</strong> atau pun <strong>supersu</strong>.</p>
 
 <p>Untuk pemasangan script ini, anda hanya memerlukan 3 bahan saja.</p>
 
@@ -251,49 +253,49 @@
   <li>
     <p>Silahkan kumpulkan bahan yang sudah saya siapkan untuk anda semua. yang pertama adalah <a href="/download-termux/" target="_blank">Termux</a>, lalu yang kedua <a href="/download-termux-boot/" target="_blank">Termux Boot</a>, dan yang ketiga adalah script <a href="/download-termux-autoplane/" target="_blank">Auto Plane Mode</a>.</p>
   </li>
-  <li>Install <code class="language-plaintext highlighter-rouge">Termux</code>, <code class="language-plaintext highlighter-rouge">Termux Boot</code>, dan <code class="language-plaintext highlighter-rouge">File Manager Root</code>.</li>
-  <li>Berikan akses izin di <code class="language-plaintext highlighter-rouge">Magisk</code> untuk <code class="language-plaintext highlighter-rouge">Termux</code>, <code class="language-plaintext highlighter-rouge">Termux Boot</code>, dan <code class="language-plaintext highlighter-rouge">File Manager Root</code> anda.</li>
-  <li>Silahkan buka terlebih dahulu <code class="language-plaintext highlighter-rouge">Termux</code> lalu masuk pengaturan dengan menekan tombol gear atau icon setting dan aktifkan semua yang ada disana. Kemudian berikan perintah:</li>
+  <li>Install <strong>Termux</strong>, <strong>Termux Boot</strong>, dan <strong>File Manager Root</strong>.</li>
+  <li>Berikan akses izin di <strong>Magisk</strong> untuk <strong>Termux</strong>, <strong>Termux Boot</strong>, dan <strong>File Manager Root</strong> anda.</li>
+  <li>Silahkan buka terlebih dahulu <strong>Termux</strong> lalu masuk pengaturan dengan menekan tombol gear atau icon setting dan aktifkan semua yang ada disana. Kemudian berikan perintah:</li>
 </ol>
 
-<div class="code-container">
-  <div class="code-header">
-    <span class="language-label">Bash</span>
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-  </div>
-  <pre class="code-block">
-termux-setup-storage
-  </pre>
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>termux-setup-storage
+</pre></td></tr></tbody></table></code></pre></figure>
+
 </div>
 
 <p>Kemudian berikan akses izin agar nanti bisa masuk ke folder memori internal di android anda.</p>
 
 <ol>
-  <li>Setelah itu, silahkan masuk ke aplikasi <code class="language-plaintext highlighter-rouge">Termux Boot</code>. Nanti secara otomatis akan aktif untuk <code class="language-plaintext highlighter-rouge">crontab</code> atau <code class="language-plaintext highlighter-rouge">cronjob</code> di folder <code class="language-plaintext highlighter-rouge">/data/data/com.termux/files/home/.termux/boot</code>.</li>
-  <li>Jika sudah, kita masuk ke <code class="language-plaintext highlighter-rouge">File Manager</code> untuk ekstrak file Script <code class="language-plaintext highlighter-rouge">Termux-Auto-Planemode-master.zip</code>.</li>
-  <li>Sesudah ekstrak, masuk dan ambil beberapa file yaitu <code class="language-plaintext highlighter-rouge">ping_loop.sh</code>, <code class="language-plaintext highlighter-rouge">ping_loop.pid</code>, <code class="language-plaintext highlighter-rouge">ping_loop.log</code>, <code class="language-plaintext highlighter-rouge">network_log.txt</code>, dan <code class="language-plaintext highlighter-rouge">control_ping_loop.js</code>. Taruh di <code class="language-plaintext highlighter-rouge">/storage/emulated/0/</code> atau istilahnya memori internal anda.</li>
-  <li>Untuk file <code class="language-plaintext highlighter-rouge">autostart.sh</code> taruh di <code class="language-plaintext highlighter-rouge">/data/data/com.termux/files/home</code>.</li>
-  <li>Kemudian untuk file yang terakhir kita taruh saja di dalam folder <code class="language-plaintext highlighter-rouge">/data/data/com.termux/files/home/.termux/boot</code>.</li>
+  <li>Setelah itu, silahkan masuk ke aplikasi <strong>Termux Boot</strong>. Nanti secara otomatis akan aktif untuk <strong>crontab</strong> atau <strong>cronjob</strong> di folder <strong>/data/data/com.termux/files/home/.termux/boot</strong>.</li>
+  <li>Jika sudah, kita masuk ke <strong>File Manager</strong> untuk ekstrak file Script <strong>Termux-Auto-Planemode-master.zip</strong>.</li>
+  <li>Sesudah ekstrak, masuk dan ambil beberapa file yaitu <strong>ping_loop.sh</strong>, <strong>ping_loop.pid</strong>, <strong>ping_loop.log</strong>, <strong>network_log.txt</strong>, dan <strong>control_ping_loop.js</strong>. Taruh di <strong>/storage/emulated/0/</strong> atau istilahnya memori internal anda.</li>
+  <li>Untuk file <strong>autostart.sh</strong> taruh di <strong>/data/data/com.termux/files/home</strong>.</li>
+  <li>Kemudian untuk file yang terakhir kita taruh saja di dalam folder <strong>/data/data/com.termux/files/home/.termux/boot</strong>.</li>
   <li>Berikan permission dulu untuk semua file yang ada di memori internal anda lewat termux.</li>
 </ol>
 
-<div class="code-container">
-  <div class="code-header">
-    <span class="language-label">Bash</span>
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-  </div>
-  <pre class="code-block">
-chmod +x /storage/emulated/0/ping_loop.sh
-chmod +x /data/data/com.termux/files/home/.termux/boot/start_termux.sh
-chmod +x /data/data/com.termux/files/home/autostart.sh
-  </pre>
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nb">chmod</span> +x /storage/emulated/0/ping_loop.sh
+<span class="nb">chmod</span> +x /data/data/com.termux/files/home/.termux/boot/start_termux.sh
+<span class="nb">chmod</span> +x /data/data/com.termux/files/home/autostart.sh
+</pre></td></tr></tbody></table></code></pre></figure>
+
 </div>
 
 <ol>
   <li>Setelah memberikan izin akses permission. Anda bisa mengedit ping host sesuai bug andalan yang anda gunakan sehari-hari.</li>
-  <li>Untuk mengubah ping host, anda bisa masuk ke file <code class="language-plaintext highlighter-rouge">ping_loop.sh</code> di line 11 dan line 35.</li>
+  <li>Untuk mengubah ping host, anda bisa masuk ke file <strong>ping_loop.sh</strong> di line 11 dan line 35.</li>
   <li>langkah terakhir ini yang kita nantikan yaitu pengujian. Anda bisa reboot hp android anda melalui magisk atau langsung dari tombol hp android anda.</li>
-  <li>Jika berhasil, maka akan muncul icon termux di notif atas layar android anda dengan tulisan <code class="language-plaintext highlighter-rouge">0 sessions, 1 task</code>. Namun jika anda gagal, akan ada notifikasi log error di termux anda.</li>
+  <li>Jika berhasil, maka akan muncul icon termux di notif atas layar android anda dengan tulisan <strong>0 sessions, 1 task</strong>. Namun jika anda gagal, akan ada notifikasi log error di termux anda.</li>
 </ol>
 
 <h2 id="fungsi-script-termux-auto-planemode">Fungsi script Termux Auto Planemode</h2>
@@ -775,7 +777,23 @@ chmod +x /data/data/com.termux/files/home/autostart.sh
   }
 </style>
 
-  <!-- Anti Adblock JS -->
+  <script>
+  function copyCode(button) {
+    const codeBlock = button.nextElementSibling.querySelector('code');
+    const textArea = document.createElement('textarea');
+    textArea.value = codeBlock.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    button.innerText = 'Copied!';
+    setTimeout(() => {
+      button.innerText = 'Copy';
+    }, 2000);
+  }
+</script>
+
+<!-- Anti Adblock JS -->
 <script type="text/javascript">
 !function(a){var b,c=function(a){this.name="blockAdBlock",this.version="3.2.1",this.revision="r20190917",this.message={blocked:"adblocker detected",not_blocked:"adblocker not detected",init:"blockAdBlock initialized",error:"blockAdBlock error"},this.timers={s:0,m:0},this.remove={from:null,timeout:null},this.elements={from:null},this.detected=!1,"undefined"!=typeof a&&this.setOptions(a),this.create();var b=this;setTimeout(function(){return a(!0),!1},1)};a.blockAdBlock=new c}(window);
 </script>

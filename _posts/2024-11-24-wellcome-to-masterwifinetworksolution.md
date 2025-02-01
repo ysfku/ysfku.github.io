@@ -37,4 +37,4 @@ We are a team of network experts with years of experience in information and com
 
 We greatly appreciate feedback from our readers. Feel free to leave a comment, ask a question, or share your experience in the comments section. We will try to respond to every question and provide the assistance you need.
 
-Thank you for visiting the `Master Wifi Network Solution` blog. We hope you find the information useful and can improve your internet experience. Don't forget to follow this blog and stay updated with our latest posts. Happy reading and good luck in managing your wifi network!
+Thank you for visiting the **Master Wifi Network Solution** blog. We hope you find the information useful and can improve your internet experience. Don't forget to follow this blog and stay updated with our latest posts. Happy reading and good luck in managing your wifi network!

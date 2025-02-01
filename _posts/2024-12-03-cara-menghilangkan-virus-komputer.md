@@ -19,11 +19,11 @@ Virus seringkali menyebar melalui email, download dari situs web yang tidak aman
 
 ### Sejarah Virus Komputer
 
-Sejarah virus komputer dapat ditelusuri kembali ke tahun 1982 ketika seorang mahasiswa bernama Rich Skrenta menciptakan virus komputer pertama yang dikenal sebagai `Elk Cloner`.
+Sejarah virus komputer dapat ditelusuri kembali ke tahun 1982 ketika seorang mahasiswa bernama Rich Skrenta menciptakan virus komputer pertama yang dikenal sebagai **Elk Cloner**.
 
 Virus ini menyebar melalui floppy disk dan menyebabkan pesan puisi muncul di layar komputer yang terinfeksi.
 
-Pada tahun 1986, virus komputer pertama yang menyerang sistem IBM PC, yang dikenal sebagai "Brain," diciptakan oleh dua saudara asal Pakistan. Virus ini menyebar melalui floppy disk dan menginfeksi sektor boot komputer. Setelah itu, banyak virus komputer lainnya mulai bermunculan, seperti `Melissa`, `ILOVEYOU`, dan `Code Red`, yang menyebabkan kerusakan besar dan kehilangan data di seluruh dunia.
+Pada tahun 1986, virus komputer pertama yang menyerang sistem IBM PC, yang dikenal sebagai "Brain," diciptakan oleh dua saudara asal Pakistan. Virus ini menyebar melalui floppy disk dan menginfeksi sektor boot komputer. Setelah itu, banyak virus komputer lainnya mulai bermunculan, seperti **Melissa**, **ILOVEYOU**, dan **Code Red**, yang menyebabkan kerusakan besar dan kehilangan data di seluruh dunia.
 
 ### Tanda-tanda Komputer Terinfeksi Virus
 

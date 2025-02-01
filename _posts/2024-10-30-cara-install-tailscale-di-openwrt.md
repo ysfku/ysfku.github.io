@@ -46,13 +46,19 @@ Buka browser dan masukkan alamat IP router Anda untuk masuk ke antarmuka web Ope
 - **Buka Terminal atau SSH**: Akses router Anda melalui terminal atau SSH.
 - **Perintah Instalasi**: Gunakan perintah berikut untuk menginstal Tailscale:
 
-{% include coding.html language="Bash" code="opkg update && opkg install tailscale" %}
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+{% highlight bash linenos %}opkg update && opkg install tailscale{% endhighlight %}
+</div>
 
 ### 3. Konfigurasi Tailscale
 
 - **Jalankan Tailscale**: Setelah instalasi, jalankan Tailscale dengan perintah:
 
-{% include coding.html language="Bash" code="tailscale up" %}
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+{% highlight bash linenos %}tailscale up{% endhighlight %}
+</div>
   
 - **Autentikasi Akun**: Ikuti instruksi untuk masuk ke akun Tailscale Anda.
 
@@ -60,7 +66,10 @@ Buka browser dan masukkan alamat IP router Anda untuk masuk ke antarmuka web Ope
 
 - **Cek Status**: Gunakan perintah:
   
-{% include coding.html language="Bash" code="tailscale status" %}
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+{% highlight bash linenos %}tailscale status{% endhighlight %}
+</div>
 
 untuk memastikan Tailscale berjalan dengan baik.
 

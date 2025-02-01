@@ -18,7 +18,7 @@ Firewall bertindak sebagai pengawal jaringan Anda, mencegah akses tidak sah dan 
 
 #### 1. Masuk ke Antarmuka LuCI
 
-Langkah pertama adalah masuk ke antarmuka LuCI dari OpenWRT. Buka browser web Anda dan masukkan alamat IP router Anda, biasanya `192.168.1.1`. Login menggunakan nama pengguna dan kata sandi Anda.
+Langkah pertama adalah masuk ke antarmuka LuCI dari OpenWRT. Buka browser web Anda dan masukkan alamat IP router Anda, biasanya **192.168.1.1**. Login menggunakan nama pengguna dan kata sandi Anda.
 
 #### 2. Navigasi ke Menu Firewall
 
@@ -53,18 +53,21 @@ Port forwarding memungkinkan layanan di jaringan lokal Anda untuk diakses dari l
 
 Untuk konfigurasi yang lebih mendetail, Anda dapat menggunakan tab **Custom Rules** untuk menambahkan aturan firewall menggunakan bahasa iptables. Misalnya:
 
-{% include coding.html language="Bash" code="
+<div class="code-block">Bash
+  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+{% highlight bash linenos %}
 # Blokir semua lalu lintas dari IP tertentu
 iptables -A INPUT -s 192.168.1.100 -j DROP
 
 # Izinkan hanya akses SSH dari jaringan lokal
-iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT" %}
+iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT{% endhighlight %}
+</div>
 
 Tambahkan aturan di atas sesuai kebutuhan dan simpan perubahan Anda.
 
 ### Memantau dan Menguji Firewall
 
-Setelah mengatur firewall, penting untuk memantau kinerja dan menguji apakah aturan tersebut berfungsi sebagaimana mestinya. Anda dapat menggunakan tools seperti `ping`, `traceroute`, dan `nmap` untuk memeriksa konfigurasi firewall Anda.
+Setelah mengatur firewall, penting untuk memantau kinerja dan menguji apakah aturan tersebut berfungsi sebagaimana mestinya. Anda dapat menggunakan tools seperti **ping**, **traceroute**, dan **nmap** untuk memeriksa konfigurasi firewall Anda.
 
 ### Tips dan Trik
 

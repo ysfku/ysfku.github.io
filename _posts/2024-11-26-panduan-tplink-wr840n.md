@@ -30,8 +30,8 @@ Pastikan juga lokasi pemasangan sudah dipilih dengan baik, idealnya di tengah ru
 ## Langkah 4: Konfigurasi Router
 
 1. **Buka Browser**: Nyalakan komputer Anda dan buka browser internet (seperti Chrome, Firefox, atau Edge).
-2. **Akses Antarmuka Web Router**: Ketikkan alamat IP router di bilah alamat browser. Alamat IP default TP-Link WR840N biasanya adalah `192.168.0.1` atau `tplinkwifi.net`.
-3. **Masuk ke Akun Admin**: Anda akan diminta untuk memasukkan nama pengguna dan kata sandi. Nama pengguna dan kata sandi default adalah `admin` untuk keduanya. Namun, sangat disarankan untuk menggantinya setelah login demi keamanan.
+2. **Akses Antarmuka Web Router**: Ketikkan alamat IP router di bilah alamat browser. Alamat IP default TP-Link WR840N biasanya adalah **192.168.0.1** atau **tplinkwifi.net**.
+3. **Masuk ke Akun Admin**: Anda akan diminta untuk memasukkan nama pengguna dan kata sandi. Nama pengguna dan kata sandi default adalah **admin** untuk keduanya. Namun, sangat disarankan untuk menggantinya setelah login demi keamanan.
 4. **Pengaturan Jaringan Nirkabel**: Navigasikan ke menu pengaturan nirkabel untuk mengonfigurasi nama jaringan (SSID) dan kata sandi Wi-Fi. Pilih nama yang unik dan kata sandi yang kuat.
 
 ## Langkah 5: Pengaturan Lanjutan

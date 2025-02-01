@@ -5,19 +5,19 @@ date: 2024-11-18 05:46:00 +0800
 categories: [clashformagisk]
 ---
 
-CFM Simaster Meta sangat `compatible` untuk anda yang suka streaming, sosial media, gamer, dan juga berbisnis melalui browsing andalan kalian.
+CFM Simaster Meta sangat **compatible** untuk anda yang suka streaming, sosial media, gamer, dan juga berbisnis melalui browsing andalan kalian.
 
 ## Cara penggunaan
 
 1. download file hanya di <a href="/download-config-simaster-meta" target="_blank">SINI</a>.
 2. Extract file.
-3. Masukkkan semua isi folder dari `clash-cfm-master` ke dalam folder `/data/clash` dalam hp kalian yang sudah root `magisk`.
-4. Pastikan kalian sudah pasang module `clash for magisk` terbaru yaitu versi 3.0 dan aplikasi `Clash For Magisk` versi `1.6.4` sebelum melanjutkan tata cara penggunaan No.3.
-5. Edit akun kalian di file `akun.yaml` di folder `/data/clash/assets`.
+3. Masukkkan semua isi folder dari **clash-cfm-master** ke dalam folder **/data/clash** dalam hp kalian yang sudah root **magisk**.
+4. Pastikan kalian sudah pasang module **clash for magisk** terbaru yaitu versi 3.0 dan aplikasi **Clash For Magisk** versi **1.6.4** sebelum melanjutkan tata cara penggunaan No.3.
+5. Edit akun kalian di file **akun.yaml** di folder **/data/clash/assets**.
 
 ## Keunggulan config Simaster Meta
 
-- Adblock mencapai `97%`.
+- Adblock mencapai **97%**.
 - DNS Leaks murni.
 - Bloker iklan dan bloker situs dewasa.
 - Bisa di tethering hotspot maupun ethernet usb.

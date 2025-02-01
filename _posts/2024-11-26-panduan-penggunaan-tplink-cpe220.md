@@ -30,7 +30,7 @@ Sebelum memulai konfigurasi, pastikan Anda memiliki:
 3. **Pasang Adaptor Daya**: Sambungkan adaptor daya ke CPE220 dan colokan ke sumber listrik.
 
 ### Konfigurasi Perangkat
-1. **Akses Antarmuka Web**: Buka browser dan masukkan alamat IP default CPE220 (biasanya `192.168.0.254`). Masukkan nama pengguna dan kata sandi (default: `admin/admin`).
+1. **Akses Antarmuka Web**: Buka browser dan masukkan alamat IP default CPE220 (biasanya **192.168.0.254**). Masukkan nama pengguna dan kata sandi (default: **admin/admin**).
 2. **Atur Mode Operasi**: Pilih mode operasi yang sesuai dengan kebutuhan Anda (misalnya, AP, Client, atau Repeater).
 3. **Pengaturan Jaringan Nirkabel**: Konfigurasikan SSID, keamanan jaringan, dan parameter lainnya sesuai kebutuhan Anda.
 4. **Simpan dan Terapkan Pengaturan**: Klik "Save" atau "Apply" untuk menyimpan pengaturan dan memulai ulang perangkat jika diperlukan.

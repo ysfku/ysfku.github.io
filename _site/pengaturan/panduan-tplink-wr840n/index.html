@@ -28,6 +28,8 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Syntax -->
+  <link rel="stylesheet" href="/assets/css/syntax.css">
   <!-- DataTables CSS -->
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
   <!-- FontAwesome -->
@@ -133,7 +135,7 @@
       </h4>
       
        <!-- Asumsi kecepatan baca 200 kata per menit -->
-      <h4 class="card-subtitle mb-2">Reading duration: 3 minute</h4>
+      <h4 class="card-subtitle mb-2">Reading duration: 2 minute</h4>
       <h4 class="card-subtitle mb-2">Penulis: <a href="/profile.html">Muhammad Yusuf</a></h4>
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -344,8 +346,8 @@
 
 <ol>
   <li><strong>Buka Browser</strong>: Nyalakan komputer Anda dan buka browser internet (seperti Chrome, Firefox, atau Edge).</li>
-  <li><strong>Akses Antarmuka Web Router</strong>: Ketikkan alamat IP router di bilah alamat browser. Alamat IP default TP-Link WR840N biasanya adalah <code class="language-plaintext highlighter-rouge">192.168.0.1</code> atau <code class="language-plaintext highlighter-rouge">tplinkwifi.net</code>.</li>
-  <li><strong>Masuk ke Akun Admin</strong>: Anda akan diminta untuk memasukkan nama pengguna dan kata sandi. Nama pengguna dan kata sandi default adalah <code class="language-plaintext highlighter-rouge">admin</code> untuk keduanya. Namun, sangat disarankan untuk menggantinya setelah login demi keamanan.</li>
+  <li><strong>Akses Antarmuka Web Router</strong>: Ketikkan alamat IP router di bilah alamat browser. Alamat IP default TP-Link WR840N biasanya adalah <strong>192.168.0.1</strong> atau <strong>tplinkwifi.net</strong>.</li>
+  <li><strong>Masuk ke Akun Admin</strong>: Anda akan diminta untuk memasukkan nama pengguna dan kata sandi. Nama pengguna dan kata sandi default adalah <strong>admin</strong> untuk keduanya. Namun, sangat disarankan untuk menggantinya setelah login demi keamanan.</li>
   <li><strong>Pengaturan Jaringan Nirkabel</strong>: Navigasikan ke menu pengaturan nirkabel untuk mengonfigurasi nama jaringan (SSID) dan kata sandi Wi-Fi. Pilih nama yang unik dan kata sandi yang kuat.</li>
 </ol>
 
@@ -855,7 +857,23 @@
   }
 </style>
 
-  <!-- Anti Adblock JS -->
+  <script>
+  function copyCode(button) {
+    const codeBlock = button.nextElementSibling.querySelector('code');
+    const textArea = document.createElement('textarea');
+    textArea.value = codeBlock.innerText;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    button.innerText = 'Copied!';
+    setTimeout(() => {
+      button.innerText = 'Copy';
+    }, 2000);
+  }
+</script>
+
+<!-- Anti Adblock JS -->
 <script type="text/javascript">
 !function(a){var b,c=function(a){this.name="blockAdBlock",this.version="3.2.1",this.revision="r20190917",this.message={blocked:"adblocker detected",not_blocked:"adblocker not detected",init:"blockAdBlock initialized",error:"blockAdBlock error"},this.timers={s:0,m:0},this.remove={from:null,timeout:null},this.elements={from:null},this.detected=!1,"undefined"!=typeof a&&this.setOptions(a),this.create();var b=this;setTimeout(function(){return a(!0),!1},1)};a.blockAdBlock=new c}(window);
 </script>

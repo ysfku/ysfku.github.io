@@ -25,7 +25,7 @@ Sebelum Anda mulai, pastikan Anda memiliki akses ke antarmuka web OpenWRT (LuCI)
 
 #### 1. Masuk ke Antarmuka LuCI
 
-Buka browser web Anda dan masukkan alamat IP router Anda, biasanya `192.168.1.1`. Login menggunakan kredensial Anda.
+Buka browser web Anda dan masukkan alamat IP router Anda, biasanya **192.168.1.1** Login menggunakan kredensial Anda.
 
 #### 2. Navigasi ke Network Interfaces
 
@@ -33,7 +33,7 @@ Setelah masuk, pergi ke **Network** > **Interfaces**. Di sini, Anda akan melihat
 
 #### 3. Tambahkan VLAN Baru
 
-Untuk menambahkan VLAN baru, klik tombol **Add new interface**. Berikan nama untuk VLAN baru Anda, misalnya `VLAN10`, dan pilih opsi untuk membuat antarmuka baru dari `eth0.10` (di mana `10` adalah ID VLAN Anda).
+Untuk menambahkan VLAN baru, klik tombol **Add new interface**. Berikan nama untuk VLAN baru Anda, misalnya **VLAN10**, dan pilih opsi untuk membuat antarmuka baru dari **eth0.10** (di mana **10** adalah ID VLAN Anda).
 
 #### 4. Konfigurasi VLAN
 
