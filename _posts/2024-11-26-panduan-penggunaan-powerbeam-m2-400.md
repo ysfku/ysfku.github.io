@@ -2,7 +2,7 @@
 layout: post
 title: Panduan Lengkap Menggunakan PowerBeam M2 400
 date: 2024-11-26
-categories: [pengaturan]
+categories: [routers]
 ---
 
 PowerBeam M2 400 adalah salah satu perangkat wireless bridge yang menawarkan performa tinggi dengan jangkauan yang luas. Perangkat ini sangat cocok digunakan untuk menyambungkan jaringan di lokasi yang berjauhan seperti antar gedung atau di area yang luas. Dalam panduan ini, kita akan mengulas cara penggunaan PowerBeam M2 400 secara mendetail.

@@ -1,4 +1,4 @@
 ---
 layout: category
-title: "clashformagisk"
+title: "openwrt"
 ---

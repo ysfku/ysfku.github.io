@@ -2,7 +2,7 @@
 layout: post
 title: "Cara Install Tailscale di OpenWrt"
 date: 2024-10-30 05:46:00 +0800
-categories: [tutorial]
+categories: [openwrt]
 image: /assets/images/install-tailscale-openwrt.jpg
 ---
 
