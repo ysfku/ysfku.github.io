@@ -3,6 +3,7 @@ layout: post
 title: "Instalasi Mikrotik untuk Hotspot dan PPPoE"
 date: 2024-12-04
 categories: [mikrotik]
+image: /assets/images/hs-dan-pppoe.jpg
 ---
 
 ### Pendahuluan

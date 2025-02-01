@@ -3,7 +3,7 @@ layout: post
 title: "Daftar Command di Linux yang Wajib Diketahui"
 date: 2025-02-01
 categories: [linux]
-image: 
+image: /assets/images/command-linux.jpg
 ---
 
 Linux adalah sistem operasi yang sangat populer di kalangan pengembang, administrator sistem, dan pengguna teknologi. Salah satu alasan utama popularitasnya adalah kekuatan command-line interface (CLI) yang memungkinkan pengguna untuk melakukan berbagai tugas dengan cepat dan efisien. Dalam postingan ini, kita akan membahas daftar command Linux yang wajib diketahui, lengkap dengan penjelasan dan contoh penggunaannya.

@@ -3,6 +3,7 @@ layout: post
 title: Panduan Lengkap Penggunaan TP-Link CPE220
 date: 2024-11-26
 categories: [routers]
+image: /assets/images/setting-cpe220.jpg
 ---
 
 TP-Link CPE220 adalah perangkat yang dirancang untuk memperluas jangkauan jaringan Wi-Fi. Dalam postingan ini, kita akan membahas cara penggunaan TP-Link CPE220 secara detail, langkah demi langkah.

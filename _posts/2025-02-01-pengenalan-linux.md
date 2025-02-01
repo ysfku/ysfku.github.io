@@ -3,7 +3,7 @@ layout: post
 title:  "Pengenalan Linux: Sistem Operasi Open Source yang Kuat dan Fleksibel"
 date: 2025-02-01
 categories: [linux]
-image: 
+image: /assets/images/pengenalan-linux.jpg
 ---
 
 Linux adalah salah satu sistem operasi yang paling populer di dunia, terutama di kalangan pengembang, administrator sistem, dan pengguna yang menghargai kebebasan dan fleksibilitas. Dikembangkan sebagai alternatif open source untuk sistem operasi proprietary seperti Windows dan macOS, Linux telah berkembang menjadi platform yang kuat, aman, dan serbaguna. Artikel ini akan membahas secara mendalam tentang pengenalan Linux, sejarahnya, arsitektur, distribusi, keunggulan, serta cara memulai menggunakan Linux.

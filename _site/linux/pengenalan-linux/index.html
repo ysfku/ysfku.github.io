@@ -104,13 +104,9 @@
           <li><a class="dropdown-item" href="/files/">Files</a></li>
           <li><div class="dropdown-divider"></div></li>
           <li><a class="dropdown-item" href="/documentation.html">Documentation</a></li>
+          <li><div class="dropdown-divider"></div></li>
+          <li><a class="dropdown-item" href="/openwrt/">Firmware Openwrt</a></li>
         </ul>
-      </li>
-      <li class="nav-item ms-4 me-4 d-flex align-items-center">
-        <a class="nav-link" href="/openwrt/">Openwrt</a>
-      </li>
-      <li class="nav-item ms-4 me-4 d-flex align-items-center">
-        <a class="nav-link" href="#">APP</a>
       </li>
       <li class="nav-item ms-4 me-4 d-flex align-items-center">
         <a class="nav-link" href="/search.html">Search</a>
@@ -552,7 +548,7 @@
   <div class="post-content mt-4">
     <div>
       
-        <img src="/assets/images/banner.jpg" alt="Banner Image" class="img-fluid" style="margin-bottom: 20px;">
+        <img src="/assets/images/pengenalan-linux.jpg" alt="Pengenalan Linux: Sistem Operasi Open Source yang Kuat dan Fleksibel" class="img-fluid" style="margin-bottom: 20px;">
       
       <p>Linux adalah salah satu sistem operasi yang paling populer di dunia, terutama di kalangan pengembang, administrator sistem, dan pengguna yang menghargai kebebasan dan fleksibilitas. Dikembangkan sebagai alternatif open source untuk sistem operasi proprietary seperti Windows dan macOS, Linux telah berkembang menjadi platform yang kuat, aman, dan serbaguna. Artikel ini akan membahas secara mendalam tentang pengenalan Linux, sejarahnya, arsitektur, distribusi, keunggulan, serta cara memulai menggunakan Linux.</p>
 
@@ -582,26 +578,14 @@
 
 <h3 id="23-sistem-file">2.3 Sistem File</h3>
 
-<p>Linux menggunakan hierarki sistem file yang terstruktur. Semua file dan direktori diatur dalam struktur pohon, dengan root (<code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>/
-</pre></td></tr></tbody></table></code>) sebagai direktori paling atas. Beberapa direktori penting dalam sistem file Linux antara lain:</p>
+<p>Linux menggunakan hierarki sistem file yang terstruktur. Semua file dan direktori diatur dalam struktur pohon, dengan root (<strong>/</strong>) sebagai direktori paling atas. Beberapa direktori penting dalam sistem file Linux antara lain:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>/bin
-</pre></td></tr></tbody></table></code>: Berisi perintah-perintah dasar yang diperlukan untuk sistem.</li>
-  <li><code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>/etc
-</pre></td></tr></tbody></table></code>: Berisi file konfigurasi sistem.</li>
-  <li><code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>/home
-</pre></td></tr></tbody></table></code>: Direktori home untuk pengguna.</li>
-  <li><code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>/var
-</pre></td></tr></tbody></table></code>: Berisi file yang sering berubah, seperti log dan cache.</li>
-  <li><code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>/usr
-</pre></td></tr></tbody></table></code>: Berisi aplikasi dan file yang dapat dibagi oleh pengguna.</li>
+  <li><strong>/bin</strong>: Berisi perintah-perintah dasar yang diperlukan untuk sistem.</li>
+  <li><strong>/etc</strong>: Berisi file konfigurasi sistem.</li>
+  <li><strong>/home</strong>: Direktori home untuk pengguna.</li>
+  <li><strong>/var</strong>: Berisi file yang sering berubah, seperti log dan cache.</li>
+  <li><strong>/usr</strong>: Berisi aplikasi dan file yang dapat dibagi oleh pengguna.</li>
 </ul>
 
 <h3 id="24-desktop-environment">2.4 Desktop Environment</h3>
@@ -672,32 +656,16 @@
 <p>Meskipun Linux memiliki antarmuka grafis yang ramah pengguna, mempelajari perintah dasar terminal dapat sangat bermanfaat. Terminal memungkinkan Anda untuk melakukan tugas-tugas sistem dengan lebih efisien dan otomatis. Beberapa perintah dasar yang perlu dipelajari antara lain:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>ls
-</pre></td></tr></tbody></table></code>: Menampilkan daftar file dan direktori.</li>
-  <li><code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>cd
-</pre></td></tr></tbody></table></code>: Mengubah direktori.</li>
-  <li><code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>mkdir
-</pre></td></tr></tbody></table></code>: Membuat direktori baru.</li>
-  <li><code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>rm
-</pre></td></tr></tbody></table></code>: Menghapus file atau direktori.</li>
-  <li><code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>sudo
-</pre></td></tr></tbody></table></code>: Menjalankan perintah dengan hak akses superuser.</li>
+  <li><strong>ls</strong>: Menampilkan daftar file dan direktori.</li>
+  <li><strong>cd</strong>: Mengubah direktori.</li>
+  <li><strong>mkdir</strong>: Membuat direktori baru.</li>
+  <li><strong>rm</strong>: Menghapus file atau direktori.</li>
+  <li><strong>sudo</strong>: Menjalankan perintah dengan hak akses superuser.</li>
 </ul>
 
 <h3 id="55-menginstal-aplikasi">5.5 Menginstal Aplikasi</h3>
 
-<p>Linux memiliki manajer paket yang memudahkan pengguna untuk menginstal dan mengelola aplikasi. Misalnya, Ubuntu menggunakan <code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>apt
-</pre></td></tr></tbody></table></code>, sementara Fedora menggunakan <code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>dnf
-</pre></td></tr></tbody></table></code>. Anda dapat menginstal aplikasi dari terminal menggunakan perintah seperti <code class="language-plaintext highlighter-rouge"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>sudo apt install nama_aplikasi
-</pre></td></tr></tbody></table></code>.</p>
+<p>Linux memiliki manajer paket yang memudahkan pengguna untuk menginstal dan mengelola aplikasi. Misalnya, Ubuntu menggunakan <strong>apt</strong>, sementara Fedora menggunakan <strong>dnf</strong>. Anda dapat menginstal aplikasi dari terminal menggunakan perintah seperti <strong>sudo apt install nama_aplikasi</strong>.</p>
 
 <h2 id="6-kesimpulan">6. Kesimpulan</h2>
 
@@ -811,31 +779,31 @@
             
               <li class="list-group-item">
                 <span class="badge bg-primary">1</span>
-                <a href="/tutorial/cara-install-zerotier-di-openwrt/">Cara Install Zerotier Di Openwrt</a>
+                <a href="/openwrt/cara-install-zerotier-di-openwrt/">Cara Install Zerotier Di Openwrt</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
             
               <li class="list-group-item">
                 <span class="badge bg-primary">2</span>
-                <a href="/tutorial/cara-install-tailscale-di-openwrt/">Cara Install Tailscale di OpenWrt</a>
+                <a href="/openwrt/cara-install-tailscale-di-openwrt/">Cara Install Tailscale di OpenWrt</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
             
               <li class="list-group-item">
                 <span class="badge bg-primary">3</span>
-                <a href="/pengaturan/setting-firewall-openwrt/">Setting Firewall OpenWRT</a>
+                <a href="/openwrt/setting-firewall-openwrt/">Setting Firewall OpenWRT</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
             
               <li class="list-group-item">
                 <span class="badge bg-primary">4</span>
-                <a href="/pengaturan/setting-vlan-openwrt/">Setting Vlan OpenWRT</a>
+                <a href="/openwrt/setting-vlan-openwrt/">Setting Vlan OpenWRT</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
             
               <li class="list-group-item">
                 <span class="badge bg-primary">5</span>
-                <a href="/clashformagisk/konfigurasi-cfm-simaster-meta/">Membuat konfigurasi CFM Simaster Meta</a>
+                <a href="/android/konfigurasi-cfm-simaster-meta/">Membuat konfigurasi CFM Simaster Meta</a>
                 <span class="badge bg-info float-end"> views</span>
               </li>
             
