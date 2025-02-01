@@ -10,7 +10,7 @@ Linux adalah sistem operasi yang sangat populer di kalangan pengembang, administ
 
 ## 1. **ls** - List Directory Contents
 
-Perintah `ls` digunakan untuk menampilkan daftar file dan direktori dalam direktori saat ini.
+Perintah **ls** digunakan untuk menampilkan daftar file dan direktori dalam direktori saat ini.
 
 **Contoh:**
 
@@ -24,7 +24,7 @@ ls -a  # Menampilkan file tersembunyi{% endhighlight %}
 
 ## 2. **cd** - Change Directory
 
-Perintah `cd` digunakan untuk berpindah direktori.
+Perintah **cd** digunakan untuk berpindah direktori.
 
 **Contoh:**
 
@@ -39,7 +39,7 @@ cd ~   # Kembali ke direktori home
 
 ## 3. **pwd** - Print Working Directory
 
-Perintah `pwd` menampilkan direktori saat ini.
+Perintah **pwd** menampilkan direktori saat ini.
 
 **Contoh:**
 
@@ -52,7 +52,7 @@ pwd
 
 ## 4. **mkdir** - Make Directory
 
-Perintah `mkdir` digunakan untuk membuat direktori baru.
+Perintah **mkdir** digunakan untuk membuat direktori baru.
 
 **Contoh:**
 
@@ -66,7 +66,7 @@ mkdir -p parent/child  # Membuat direktori beserta parent-nya
 
 ## 5. **rm** - Remove
 
-Perintah `rm` digunakan untuk menghapus file atau direktori.
+Perintah **rm** digunakan untuk menghapus file atau direktori.
 
 **Contoh:**
 
@@ -80,7 +80,7 @@ rm -r folder  # Menghapus direktori secara rekursif
 
 ## 6. **cp** - Copy
 
-Perintah `cp` digunakan untuk menyalin file atau direktori.
+Perintah **cp** digunakan untuk menyalin file atau direktori.
 
 **Contoh:**
 
@@ -94,7 +94,7 @@ cp -r folder /backup/  # Menyalin direktori secara rekursif
 
 ## 7. **mv** - Move
 
-Perintah `mv` digunakan untuk memindahkan atau mengganti nama file/direktori.
+Perintah **mv** digunakan untuk memindahkan atau mengganti nama file/direktori.
 
 **Contoh:**
 
@@ -108,7 +108,7 @@ mv old_name.txt new_name.txt  # Mengganti nama file
 
 ## 8. **touch** - Create Empty File
 
-Perintah `touch` digunakan untuk membuat file kosong atau memperbarui timestamp file.
+Perintah **touch** digunakan untuk membuat file kosong atau memperbarui timestamp file.
 
 **Contoh:**
 
@@ -121,7 +121,7 @@ touch new_file.txt  # Membuat file baru
 
 ## 9. **cat** - Concatenate and Display File Content
 
-Perintah `cat` digunakan untuk menampilkan isi file.
+Perintah **cat** digunakan untuk menampilkan isi file.
 
 **Contoh:**
 
@@ -135,7 +135,7 @@ cat file1.txt file2.txt > combined.txt  # Menggabungkan dua file
 
 ## 10. **more** dan **less** - Paging File Content
 
-Perintah `more` dan `less` digunakan untuk menampilkan isi file per halaman.
+Perintah **more** dan **less** digunakan untuk menampilkan isi file per halaman.
 
 **Contoh:**
 
@@ -149,7 +149,7 @@ less long_file.txt  # Menampilkan isi file dengan navigasi yang lebih fleksibel
 
 ## 11. **grep** - Global Regular Expression Print
 
-Perintah `grep` digunakan untuk mencari teks dalam file.
+Perintah **grep** digunakan untuk mencari teks dalam file.
 
 **Contoh:**
 
@@ -163,7 +163,7 @@ grep -i "keyword" file.txt  # Mencari tanpa memperhatikan huruf besar/kecil
 
 ## 12. **find** - Search for Files
 
-Perintah `find` digunakan untuk mencari file atau direktori berdasarkan kriteria tertentu.
+Perintah **find** digunakan untuk mencari file atau direktori berdasarkan kriteria tertentu.
 
 **Contoh:**
 
@@ -177,7 +177,7 @@ find . -type d  # Mencari semua direktori di lokasi saat ini
 
 ## 13. **chmod** - Change File Mode
 
-Perintah `chmod` digunakan untuk mengubah izin file atau direktori.
+Perintah **chmod** digunakan untuk mengubah izin file atau direktori.
 
 **Contoh:**
 
@@ -191,7 +191,7 @@ chmod +x script.sh  # Menambahkan izin eksekusi
 
 ## 14. **chown** - Change File Owner
 
-Perintah `chown` digunakan untuk mengubah pemilik file atau direktori.
+Perintah **chown** digunakan untuk mengubah pemilik file atau direktori.
 
 **Contoh:**
 
@@ -204,7 +204,7 @@ chown user:group file.txt  # Mengubah pemilik dan grup file
 
 ## 15. **ps** - Process Status
 
-Perintah `ps` digunakan untuk menampilkan proses yang sedang berjalan.
+Perintah **ps** digunakan untuk menampilkan proses yang sedang berjalan.
 
 **Contoh:**
 
@@ -217,7 +217,7 @@ ps aux  # Menampilkan semua proses
 
 ## 16. **kill** - Terminate Processes
 
-Perintah `kill` digunakan untuk menghentikan proses.
+Perintah **kill** digunakan untuk menghentikan proses.
 
 **Contoh:**
 
@@ -231,7 +231,7 @@ kill -9 1234  # Memaksa menghentikan proses
 
 ## 17. **top** - Display Linux Processes
 
-Perintah `top` digunakan untuk menampilkan proses secara real-time.
+Perintah **top** digunakan untuk menampilkan proses secara real-time.
 
 **Contoh:**
 
@@ -244,7 +244,7 @@ top
 
 ## 18. **df** - Disk Free
 
-Perintah `df` digunakan untuk menampilkan penggunaan ruang disk.
+Perintah **df** digunakan untuk menampilkan penggunaan ruang disk.
 
 **Contoh:**
 
@@ -257,7 +257,7 @@ df -h  # Menampilkan penggunaan disk dalam format yang mudah dibaca
 
 ## 19. **du** - Disk Usage
 
-Perintah `du` digunakan untuk menampilkan penggunaan ruang disk oleh file dan direktori.
+Perintah **du** digunakan untuk menampilkan penggunaan ruang disk oleh file dan direktori.
 
 **Contoh:**
 
@@ -270,7 +270,7 @@ du -sh /home/user  # Menampilkan total penggunaan ruang di direktori
 
 ## 20. **tar** - Archive Files
 
-Perintah `tar` digunakan untuk membuat atau mengekstrak arsip.
+Perintah **tar** digunakan untuk membuat atau mengekstrak arsip.
 
 **Contoh:**
 
@@ -284,7 +284,7 @@ tar -xvf archive.tar  # Mengekstrak arsip
 
 ## 21. **wget** dan **curl** - Download Files
 
-Perintah `wget` dan `curl` digunakan untuk mengunduh file dari internet.
+Perintah **wget** dan **curl** digunakan untuk mengunduh file dari internet.
 
 **Contoh:**
 
@@ -298,7 +298,7 @@ curl -O https://example.com/file.zip  # Mengunduh file dengan curl
 
 ## 22. **ssh** - Secure Shell
 
-Perintah `ssh` digunakan untuk terhubung ke server remote.
+Perintah **ssh** digunakan untuk terhubung ke server remote.
 
 **Contoh:**
 
@@ -311,7 +311,7 @@ ssh user@remote_host  # Terhubung ke server remote
 
 ## 23. **scp** - Secure Copy
 
-Perintah `scp` digunakan untuk menyalin file antara lokal dan remote.
+Perintah **scp** digunakan untuk menyalin file antara lokal dan remote.
 
 **Contoh:**
 
@@ -325,7 +325,7 @@ scp user@remote_host:/path/to/file.txt .  # Menyalin file dari remote
 
 ## 24. **rsync** - Remote Sync
 
-Perintah `rsync` digunakan untuk menyinkronkan file dan direktori.
+Perintah **rsync** digunakan untuk menyinkronkan file dan direktori.
 
 **Contoh:**
 
@@ -338,7 +338,7 @@ rsync -avz /local/folder/ user@remote_host:/remote/folder/  # Sinkronisasi folde
 
 ## 25. **history** - Command History
 
-Perintah `history` digunakan untuk menampilkan riwayat perintah yang telah dijalankan.
+Perintah **history** digunakan untuk menampilkan riwayat perintah yang telah dijalankan.
 
 **Contoh:**
 
@@ -351,7 +351,7 @@ history
 
 ## 26. **man** - Manual Pages
 
-Perintah `man` digunakan untuk menampilkan dokumentasi perintah.
+Perintah **man** digunakan untuk menampilkan dokumentasi perintah.
 
 **Contoh:**
 
@@ -364,7 +364,7 @@ man ls  # Menampilkan manual untuk perintah ls
 
 ## 27. **alias** - Create Command Aliases
 
-Perintah `alias` digunakan untuk membuat alias perintah.
+Perintah **alias** digunakan untuk membuat alias perintah.
 
 **Contoh:**
 
@@ -377,7 +377,7 @@ alias ll='ls -la'  # Membuat alias ll untuk ls -la
 
 ## 28. **echo** - Display Message
 
-Perintah `echo` digunakan untuk menampilkan pesan atau variabel.
+Perintah **echo** digunakan untuk menampilkan pesan atau variabel.
 
 **Contoh:**
 
@@ -391,7 +391,7 @@ echo $HOME  # Menampilkan nilai variabel HOME
 
 ## 29. **export** - Set Environment Variables
 
-Perintah `export` digunakan untuk menetapkan variabel lingkungan.
+Perintah **export** digunakan untuk menetapkan variabel lingkungan.
 
 **Contoh:**
 
@@ -404,7 +404,7 @@ export PATH=$PATH:/new/path  # Menambahkan direktori ke PATH
 
 ## 30. **uname** - System Information
 
-Perintah `uname` digunakan untuk menampilkan informasi sistem.
+Perintah **uname** digunakan untuk menampilkan informasi sistem.
 
 **Contoh:**
 
@@ -417,4 +417,4 @@ uname -a  # Menampilkan semua informasi sistem
 
 Ini hanyalah sebagian kecil dari perintah Linux yang tersedia. Linux memiliki ratusan perintah yang dapat membantu Anda dalam berbagai tugas, mulai dari manajemen file hingga administrasi sistem. Dengan mempelajari dan menguasai perintah-perintah ini, Anda dapat meningkatkan produktivitas dan efisiensi Anda dalam menggunakan Linux.
 
-Jika Anda ingin mempelajari lebih lanjut, jangan ragu untuk menjelajahi dokumentasi resmi atau menggunakan perintah `man` untuk melihat panduan lengkap tentang perintah tertentu.
+Jika Anda ingin mempelajari lebih lanjut, jangan ragu untuk menjelajahi dokumentasi resmi atau menggunakan perintah **man** untuk melihat panduan lengkap tentang perintah tertentu.

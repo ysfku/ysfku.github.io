@@ -34,13 +34,13 @@ Shell adalah antarmuka antara pengguna dan kernel. Ia menerima perintah dari pen
 
 ### 2.3 Sistem File
 
-Linux menggunakan hierarki sistem file yang terstruktur. Semua file dan direktori diatur dalam struktur pohon, dengan root (`/`) sebagai direktori paling atas. Beberapa direktori penting dalam sistem file Linux antara lain:
+Linux menggunakan hierarki sistem file yang terstruktur. Semua file dan direktori diatur dalam struktur pohon, dengan root (**/**) sebagai direktori paling atas. Beberapa direktori penting dalam sistem file Linux antara lain:
 
-- `/bin`: Berisi perintah-perintah dasar yang diperlukan untuk sistem.
-- `/etc`: Berisi file konfigurasi sistem.
-- `/home`: Direktori home untuk pengguna.
-- `/var`: Berisi file yang sering berubah, seperti log dan cache.
-- `/usr`: Berisi aplikasi dan file yang dapat dibagi oleh pengguna.
+- **/bin**: Berisi perintah-perintah dasar yang diperlukan untuk sistem.
+- **/etc**: Berisi file konfigurasi sistem.
+- **/home**: Direktori home untuk pengguna.
+- **/var**: Berisi file yang sering berubah, seperti log dan cache.
+- **/usr**: Berisi aplikasi dan file yang dapat dibagi oleh pengguna.
 
 ### 2.4 Desktop Environment
 
@@ -107,15 +107,15 @@ Setelah instalasi selesai, Anda akan dihadapkan dengan lingkungan desktop. Jelaj
 
 Meskipun Linux memiliki antarmuka grafis yang ramah pengguna, mempelajari perintah dasar terminal dapat sangat bermanfaat. Terminal memungkinkan Anda untuk melakukan tugas-tugas sistem dengan lebih efisien dan otomatis. Beberapa perintah dasar yang perlu dipelajari antara lain:
 
-- `ls`: Menampilkan daftar file dan direktori.
-- `cd`: Mengubah direktori.
-- `mkdir`: Membuat direktori baru.
-- `rm`: Menghapus file atau direktori.
-- `sudo`: Menjalankan perintah dengan hak akses superuser.
+- **ls**: Menampilkan daftar file dan direktori.
+- **cd**: Mengubah direktori.
+- **mkdir**: Membuat direktori baru.
+- **rm**: Menghapus file atau direktori.
+- **sudo**: Menjalankan perintah dengan hak akses superuser.
 
 ### 5.5 Menginstal Aplikasi
 
-Linux memiliki manajer paket yang memudahkan pengguna untuk menginstal dan mengelola aplikasi. Misalnya, Ubuntu menggunakan `apt`, sementara Fedora menggunakan `dnf`. Anda dapat menginstal aplikasi dari terminal menggunakan perintah seperti `sudo apt install nama_aplikasi`.
+Linux memiliki manajer paket yang memudahkan pengguna untuk menginstal dan mengelola aplikasi. Misalnya, Ubuntu menggunakan **apt**, sementara Fedora menggunakan **dnf**. Anda dapat menginstal aplikasi dari terminal menggunakan perintah seperti **sudo apt install nama_aplikasi**.
 
 ## 6. Kesimpulan
 
