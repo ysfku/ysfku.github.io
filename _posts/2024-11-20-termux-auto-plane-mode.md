@@ -2,7 +2,7 @@
 layout: post
 title: "Termux Auto Plane Mode"
 date: 2024-11-20 05:46:00 +0800
-categories: [android]
+categories: [magisk]
 ---
 
 Kini **Simaster** telah meluncurkan terobosan terbaru bagi **koneksi data** anda yang sering terputus.
