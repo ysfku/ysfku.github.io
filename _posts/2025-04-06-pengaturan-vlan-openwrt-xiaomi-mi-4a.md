@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Panduan Konfigurasi VLAN, WAN, dan LAN pada OpenWRT Xiaomi Mi 4A"
+title: "Panduan Konfigurasi VLAN OpenWRT Xiaomi Mi 4A"
 date: 2025-04-06 23:32:00 +0700
 categories: [openwrt]
 ---
@@ -53,23 +53,21 @@ Sebelum mulai konfigurasi VLAN, WAN, dan LAN, pastikan langkah-langkah berikut t
 
 ### **Langkah-langkah konfigurasi VLAN**
 
-1. **Masuk ke LuCI Web Interface**  
-   - Buka browser dan akses **192.168.1.1**  
+1. **Masuk ke LuCI Web Interface**
+   - Buka browser dan akses **192.168.1.1**
    - Masukkan kredensial login (default: root, tanpa password)
 
 2. **Masuk ke menu Network > Switch**
-3. **Tambahkan VLAN baru**  
+3. **Tambahkan VLAN baru**
    - Setel VLAN ID sesuai kebutuhan, misalnya VLAN 10 untuk guest network.
    - Pilih port yang akan digunakan dan atur **Tagged/Untagged**.
    - Simpan dan terapkan perubahan.
 
-4. **Cek konfigurasi VLAN dengan perintah**:  
+4. **Cek konfigurasi VLAN dengan perintah**:
 
-<div class="code-block">Bash  
+<div class="code-block">Bash
   <button class="copy-button" onclick="copyCode(this)">Copy</button>
-{% highlight bash linenos %}
-swconfig dev switch0 show
-{% endhighlight %}
+{% highlight bash linenos %}swconfig dev switch0 show{% endhighlight %}
 </div>
 
 ## **5. Konfigurasi WAN pada OpenWRT**
