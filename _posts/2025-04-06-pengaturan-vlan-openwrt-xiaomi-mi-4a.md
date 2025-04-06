@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Panduan Konfigurasi VLAN OpenWRT Xiaomi Mi 4A"
-date: 2025-04-06 23:32:00 +0700
+date: 2025-04-06
 categories: [openwrt]
 ---
 

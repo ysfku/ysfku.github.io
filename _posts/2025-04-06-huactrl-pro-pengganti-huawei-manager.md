@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "HuaCtrl Pro: Pengganti Huawei Manager untuk Pengaturan Modem Huawei"
-date: 2025-04-06 23:45:00 +0700
+title: "HuaCtrl Pro Pengganti Huawei Manager"
+date: 2025-04-06
 categories: [apk]
 ---
 
