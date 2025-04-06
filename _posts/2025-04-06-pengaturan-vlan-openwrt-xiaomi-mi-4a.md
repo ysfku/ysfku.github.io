@@ -9,13 +9,13 @@ Dalam jaringan komputer, **Virtual LAN (VLAN), Wide Area Network (WAN), dan Loca
 
 Artikel ini akan membahas konfigurasi **VLAN, WAN, dan LAN** pada OpenWRT Xiaomi Mi 4A secara lengkap, mulai dari teori hingga langkah praktis.
 
-## **1. Mengenal OpenWRT dan Xiaomi Mi 4A**
+## Mengenal OpenWRT dan Xiaomi Mi 4A
 
-### **Apa Itu OpenWRT?**
+### Apa Itu OpenWRT?
 
 OpenWRT adalah sistem operasi berbasis Linux yang dirancang untuk perangkat jaringan seperti router. Dengan OpenWRT, pengguna mendapatkan kontrol penuh atas konfigurasi dan optimalisasi jaringan.
 
-### **Spesifikasi Xiaomi Mi 4A**
+### Spesifikasi Xiaomi Mi 4A
 
 Xiaomi Mi 4A adalah router yang cukup populer dengan dukungan OpenWRT. Spesifikasinya meliputi:
 
@@ -25,33 +25,33 @@ Xiaomi Mi 4A adalah router yang cukup populer dengan dukungan OpenWRT. Spesifika
 - **Port:** 2x LAN, 1x WAN
 - **Wi-Fi:** Dual-band 2.4GHz & 5GHz
 
-## **2. Pengertian VLAN, WAN, dan LAN**
+## Pengertian VLAN, WAN, dan LAN
 
-### **VLAN (Virtual LAN)**
+### VLAN (Virtual LAN)
 
 VLAN memungkinkan pengelompokan perangkat secara virtual dalam satu jaringan tanpa harus terhubung secara fisik, membantu mengisolasi lalu lintas dan meningkatkan keamanan.
 
-### **WAN (Wide Area Network)**
+### WAN (Wide Area Network)
 
 WAN digunakan untuk menghubungkan jaringan lokal ke internet atau ke jaringan yang lebih luas.
 
-### **LAN (Local Area Network)**
+### LAN (Local Area Network)
 
 LAN berfungsi menghubungkan perangkat dalam area terbatas seperti rumah atau kantor untuk komunikasi internal yang cepat.
 
-## **3. Persiapan Konfigurasi OpenWRT**
+## Persiapan Konfigurasi OpenWRT
 
 Sebelum mulai konfigurasi VLAN, WAN, dan LAN, pastikan langkah-langkah berikut telah dilakukan:
 
-### **Instalasi OpenWRT**
+### Instalasi OpenWRT
 
 1. **Unduh firmware OpenWRT** yang sesuai dengan Xiaomi Mi 4A dari situs resmi.
 2. **Flash firmware** menggunakan metode TFTP atau Web GUI.
 3. Pastikan router sudah berjalan dengan OpenWRT sebelum lanjut ke konfigurasi.
 
-## **4. Konfigurasi VLAN pada OpenWRT**
+## Konfigurasi VLAN pada OpenWRT
 
-### **Langkah-langkah konfigurasi VLAN**
+### Langkah-langkah konfigurasi VLAN
 
 1. **Masuk ke LuCI Web Interface**
    - Buka browser dan akses **192.168.1.1**
@@ -70,9 +70,9 @@ Sebelum mulai konfigurasi VLAN, WAN, dan LAN, pastikan langkah-langkah berikut t
 {% highlight bash linenos %}swconfig dev switch0 show{% endhighlight %}
 </div>
 
-## **5. Konfigurasi WAN pada OpenWRT**
+## Konfigurasi WAN pada OpenWRT
 
-### **Menghubungkan Router ke Internet**
+### Menghubungkan Router ke Internet
 
 1. Masuk ke **Network > Interfaces**.
 2. Edit interface **WAN**.
@@ -82,9 +82,9 @@ Sebelum mulai konfigurasi VLAN, WAN, dan LAN, pastikan langkah-langkah berikut t
 4. Masukkan username & password dari ISP (jika menggunakan PPPoE).
 5. Simpan dan terapkan.
 
-## **6. Konfigurasi LAN pada OpenWRT**
+## Konfigurasi LAN pada OpenWRT
 
-### **Mengatur IP Address LAN**
+### Mengatur IP Address LAN
 
 1. Masuk ke **Network > Interfaces**.
 2. Edit interface **LAN**.
@@ -92,7 +92,7 @@ Sebelum mulai konfigurasi VLAN, WAN, dan LAN, pastikan langkah-langkah berikut t
 4. Pastikan **DHCP Server** aktif agar perangkat lain mendapatkan IP otomatis.
 5. Simpan dan terapkan.
 
-## **7. Meningkatkan Keamanan dan Performa Jaringan**
+## Meningkatkan Keamanan dan Performa Jaringan
 
 Beberapa langkah tambahan untuk meningkatkan keamanan dan performa:
 - **Aktifkan firewall OpenWRT**.
@@ -100,6 +100,6 @@ Beberapa langkah tambahan untuk meningkatkan keamanan dan performa:
 - **Batasi bandwidth dengan QoS atau SQM**.
 - **Monitor jaringan dengan OpenWRT status page**.
 
-## **Catatan**
+## Catatan
 
 Dengan konfigurasi **VLAN, WAN, dan LAN** yang tepat pada OpenWRT Xiaomi Mi 4A, Anda bisa mendapatkan jaringan yang lebih aman, efisien, dan cepat. OpenWRT memberikan fleksibilitas tinggi untuk optimalisasi jaringan sesuai kebutuhan.
