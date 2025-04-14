@@ -16,20 +16,16 @@ title: Home
 </div>
 
 <!-- Untuk featured posts dalam grid -->
-<div class="featured-posts">
-  <div class="row">
-    {% for file in site.data.downloads %}
-    <div class="col-md-4 mb-4 d-flex align-items-stretch">
-      <div class="card h-100 grid-background">
-        <img class="card-img-top" src="/assets/images/download-icon.jpg" alt="{{ file.name }}">
-        <div class="card-body d-flex flex-column">
-          <h4 class="card-title">{{ file.name }}</h4>
-          <p class="card-text">{{ file.description }}</p>
-          <a href="{{ file.download_link }}" class="btn btn-primary mt-auto">Download File</a>
-        </div>
+<div class="row">
+  <div class="col-md-4 col-sm-6 col-12 mb-4 d-flex align-items-stretch">
+    <div class="card h-100">
+      <img class="card-img-top" src="{{ file.image }}" alt="Card image">
+      <div class="card-body d-flex flex-column">
+        <h4 class="card-title">{{ file.title }}</h4>
+        <p class="card-text">{{ file.description }}</p>
+        <a href="{{ file.link }}" class="btn btn-primary mt-auto">Download</a>
       </div>
     </div>
-    {% endfor %}
   </div>
 </div>
 
