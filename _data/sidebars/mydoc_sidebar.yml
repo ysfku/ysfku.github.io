@@ -2,8 +2,8 @@
 
 entries:
 - title: sidebar
-  product: Jekyll Doc Theme
-  version: 6.0
+  product: Follow & Subscribe ✍🏻
+  version: 
   folders:
 
   - title:
@@ -19,11 +19,11 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Overview
+  - title: Wellcome
     output: web, pdf
     folderitems:
 
-    - title: Get started
+    - title: Beranda
       url: /index.html
       output: web, pdf
       type: homepage
