@@ -1,36 +1,23 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title text-light">Daftar Isi Konten</h3>
-    </div>
-    <div class="panel-body">
-        <ul class="list-group">
-            {% assign nodes = include.html | strip | split: '<h' %}
-            {% assign lastLevel = 0 %}
-            {% assign minHeader = include.h_min | default: 1 %}
-            {% assign maxHeader = include.h_max | default: 6 %}
 
-            {% for node in nodes %}
-                {% if node != "" %}
-                    {% assign currLevel = node | replace: '"', '' | slice: 0, 1 | times: 1 %}
-                    {% if currLevel >= minHeader and currLevel <= maxHeader %}
-                        {% assign headerContent = node | split: '</h' | first | split: '>' | last %}
-                        {% capture itemId %}{{ headerContent | downcase | replace: ' ', '-' | replace: '<', '' | replace: '>', '' | replace: '/', '' | replace: '.', '' | replace: '#', '' }}{% endcapture %}
-                        {% if currLevel > lastLevel %}
-                            <ul class="list-group">
-                        {% elsif currLevel < lastLevel %}
-                            </li></ul>
-                        {% else %}
-                            </li>
-                        {% endif %}
-                        <li class="list-group-item bg-dark">
-                            <a class="text-warning" href="#{{ itemId }}">{{ headerContent }}</a>
-                        {% assign lastLevel = currLevel %}
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
-            {% for i in (lastLevel..minHeader) %}
-                </li></ul>
-            {% endfor %}
-        </ul>
-    </div>
-</div>
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+{% comment %} Copyright 2021 Google LLC {% endcomment %}

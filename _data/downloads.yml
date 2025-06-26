@@ -1,6 +1,0 @@
-- name: "Tutorial OpenWRT"
-  description: "Panduan lengkap untuk OpenWRT"
-  download_link: "/files/tutorial-openwrt.pdf"
-- name: "Konfigurasi Clash for Magisk"
-  description: "Setting optimal untuk routing"
-  download_link: "/files/clash-magisk.zip"
