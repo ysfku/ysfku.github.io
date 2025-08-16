@@ -1,120 +1,58 @@
-repository: yusufromantic/yusufromantic.github.io
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-output: web
-# this property is useful for conditional filtering of content that is separate from the PDF.
+# Site settings
+title: YSFKU
+brief-intro: All setup in here
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://ysfku.github.io" # the base hostname & protocol for your site
 
-topnav_title: Yusuf Romantic
-# this appears on the top navigation bar next to the home button
+permalink: /:year/:month/:day/:title/
 
-site_title: Yusuf Romantic
-# this appears in the html browser tab for the site title (seen mostly by search engines, not users)
+# other links
+twitter_username: yusufstudio
+facebook_username: yusufstudio
+github_username:  yusufstudio
+email: yusufromantic92@gmail.com
+weibo_username: 
+zhihu_username: 
 
-company_name: ©2025 Yusuf Romantic
-# this appears in the footer
+description_footer: Semua setup menjadi satu
 
-github_editme_path: yusufromantic/yusufromantic.github.io/blob/gh-pages/
-# if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
+# comments
+# two ways to comment, only choose one, and use your own short name
+# 两种评论插件，选一个就好了，使用自己的 short_name
+duoshuo_shortname: #hygblog
+disqus_shortname: mwns
 
-# gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
-# if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
+# statistic analysis 统计代码
+# 百度统计 id，将统计代码替换为自己的百度统计id，即
+# hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
+# xxxxx字符串
+baidu_tongji_id: 
+google_analytics_id: UA-72449510-4 # google 分析追踪id
 
-google_analytics: 
-# if you have google-analytics ID, put it in. if not, edit this value to blank.
-
-host: 127.0.0.1
-# the preview server used. Leave as is.
-
-port: 4000
-# the port where the preview is rendered. You can leave this as is unless you have other Jekyll builds using this same port that might cause conflicts. in that case, use another port such as 4006.
-
-exclude:
-  - .idea/
-  - .gitignore
-  - vendor
-# these are the files and directories that jekyll will exclude from the build
-
-feedback_subject_line: Yusuf Romantic
-
-feedback_email: myarachma92@gmail.com
-# used as a contact email for the Feedback link in the top navigation bar
-
-# feedback_disable: true
-# if you uncomment the previous line, the Feedback link gets removed
-
-# feedback_text: "Need help?"
-# if you uncomment the previous line, it changes the Feedback text
-
-# feedback_link: "http://helpy.io/"
-# if you uncomment the previous line, it changes where the feedback link points to
-
-highlighter: rouge
-# library used for syntax highlighting
-
+# Build settings
 markdown: kramdown
+
 kramdown:
- input: GFM
- auto_ids: true
- hard_wrap: false
- syntax_highlighter: rouge
+  input: GFM
+  syntax_highlighter: rouge
 
-# filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
+# port
+# port: 1234
 
-collections:
-  tooltips:
-    output: false
-# collections are declared here. this renders the content in _tooltips and processes it, but doesn't output it as actual files in the output unless you change output to true
+# url
+category_dir: category/
+tag_dir: tag/
 
-defaults:
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-      comments: true
-      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
-      search: true
-      sidebar: home_sidebar
-      topnav: topnav
-  -
-    scope:
-      path: ""
-      type: "tooltips"
-    values:
-      layout: "page"
-      search: true
-      tooltip: true
+# excerpt
+excerpt_separator: "\n\n\n\n"
 
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      comments: true
-      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
-      search: true
-      sidebar: home_sidebar
-      topnav: topnav
-
-# these are defaults used for the frontmatter for these file types
-
-sidebars:
-- home_sidebar
-- mydoc_sidebar
-- product1_sidebar
-- product2_sidebar
-- other
-
-description: "Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features."
-# the description is used in the feed.xml file
-
-# needed for sitemap.xml file only
-# url: http://idratherbewriting.com
-# baseurl: /documentation-theme-jekyll
-
-
-github: [metadata]
-
-
-# Copyright 2021 Google LLC
+# paginate
+gems: [jekyll-paginate]
+paginate: 5

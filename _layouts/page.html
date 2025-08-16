@@ -2,69 +2,27 @@
 layout: default
 ---
 
-<div class="post-header">
-   <h1 class="post-title-main">{{ page.title }}</h1>
-</div>
-
-{% if page.simple_map == true %}
-
-<script>
-    $(document).ready ( function(){
-        $('.box{{page.box_number}}').addClass('active');
-    });
-</script>
-
-{% include custom/{{page.map_name}}.html %}
-
-{% elsif page.complex_map == true %}
-
-<script>
-    $(document).ready ( function(){
-        $('.modalButton{{page.box_number}}').addClass('active');
-    });
-</script>
-
-{% include custom/{{page.map_name}}.html %}
-
-{% endif %}
-
-<div class="post-content">
-
-   {% if page.summary %}
-    <div class="summary">{{page.summary}}</div>
-   {% endif %}
-
-    {% unless page.toc == false %}
-    {% include toc.html %}
-    {% endunless %}
-
-
-    {% if site.github_editme_path %}
-
-    <a target="_blank" rel="noopener" href="https://github.com/{{site.github_editme_path}}{{page.path}}" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
-
-    {% endif %}
-
-   {{content}}
-
-    <div class="tags">
-        {% if page.tags != null %}
-        <b>Tags: </b>
-        {% assign projectTags = site.data.tags.allowed-tags %}
-        {% for tag in page.tags %}
-        {% if projectTags contains tag %}
-        <a href="{{ "tag_" | append: tag | append: ".html" }}" class="btn btn-default navbar-btn cursorNorm" role="button">{{page.tagName}}{{tag}}</a>
-        {% endif %}
-        {% endfor %}
-        {% endif %}
+<div class="page clearfix" post>
+    <div class="left">
+        <h1>{{page.title}}</h1>
+        <hr>
+        {{content}}
     </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
 
-{% include commento.html %}
-
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
 </div>
-
-{{site.data.alerts.hr_shaded}}
-
-{% include footer.html %}
-
-{% comment %} Copyright 2021 Google LLC {% endcomment %}
+<script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script>
