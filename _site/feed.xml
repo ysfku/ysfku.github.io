@@ -3,11 +3,11 @@
   <channel>
     <title>YSFKU</title>
     <description></description>
-    <link>https://ysfku.github.io/</link>
-    <atom:link href="https://ysfku.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 Aug 2025 01:31:02 +0800</pubDate>
-    <lastBuildDate>Sun, 17 Aug 2025 01:31:02 +0800</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 17 Aug 2025 02:28:31 +0800</pubDate>
+    <lastBuildDate>Sun, 17 Aug 2025 02:28:31 +0800</lastBuildDate>
+    <generator>Jekyll v4.4.1</generator>
     
       <item>
         <title>JavaScript 语言精粹笔记</title>
@@ -30,12 +30,12 @@
 
 &lt;h3 id=&quot;空白&quot;&gt;空白&lt;/h3&gt;
 
-&lt;p&gt;这里说一下JavaScript的注释，一种是 &lt;code class=&quot;highlighter-rouge&quot;&gt;/* */&lt;/code&gt; 包围的块注释，另一种是 &lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt; 开头的行注释。&lt;/p&gt;
+&lt;p&gt;这里说一下JavaScript的注释，一种是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/* */&lt;/code&gt; 包围的块注释，另一种是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;//&lt;/code&gt; 开头的行注释。&lt;/p&gt;
 
 &lt;p&gt;因为块注释的字符可能是JavaScript中正则表达式字面量，因此不是很安全，如：&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/*
-    var rm_a = /a*/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    var rm_a = /a*/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -52,36 +52,36 @@
 
 &lt;p&gt;用双引号或单引号包裹。&lt;/p&gt;
 
-&lt;p&gt;重点说一下转移字符&lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;重点说一下转移字符&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;反斜杠后面可以跟&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&#39;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt; (backspace), &lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt; (formfeed), &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt; (carriage return), &lt;code class=&quot;highlighter-rouge&quot;&gt;t&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;u1234&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;反斜杠后面可以跟&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b&lt;/code&gt; (backspace), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;f&lt;/code&gt; (formfeed), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r&lt;/code&gt; (carriage return), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;u1234&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s1&quot;&gt;&#39;A&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;u0041&#39;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;u0041&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;语句&quot;&gt;语句&lt;/h3&gt;
 
-&lt;p&gt;每个&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt;标签的内容被一起抛到一个公共的全局名字空间中。&lt;/p&gt;
+&lt;p&gt;每个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt;标签的内容被一起抛到一个公共的全局名字空间中。&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;{...}&lt;/code&gt;代码块不会创建新的作用域，因此变量应该被定义在函数的头部，而不是在代码块中。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{...}&lt;/code&gt;代码块不会创建新的作用域，因此变量应该被定义在函数的头部，而不是在代码块中。&lt;/p&gt;
 
 &lt;p&gt;下列值当做假：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&#39;&#39;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NaN&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;null&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;&apos;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NaN&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;其他所有值都当做真&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;for in&lt;/code&gt;语句枚举对象的所有属性名（键名），使用&lt;code class=&quot;highlighter-rouge&quot;&gt;object.hasOwnProperty(variable)&lt;/code&gt;来确定这个属性名是该对象成员，还是来自原型链。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;for in&lt;/code&gt;语句枚举对象的所有属性名（键名），使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;object.hasOwnProperty(variable)&lt;/code&gt;来确定这个属性名是该对象成员，还是来自原型链。&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myvar&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hasOwnProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myvar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myvar&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;hasOwnProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myvar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -100,39 +100,39 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[]&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;()&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;提取属性与调用函数&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;delete&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;typeof&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;!&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;delete&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;typeof&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;一元运算符&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;===&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;!==&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;===&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!==&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;逻辑与&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;||&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;||&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;逻辑或&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;?:&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;?:&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;三目&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -143,8 +143,8 @@
 &lt;h3 id=&quot;函数&quot;&gt;函数&lt;/h3&gt;
 </description>
         <pubDate>Fri, 12 May 2017 11:40:18 +0800</pubDate>
-        <link>https://ysfku.github.io/2017/05/12/JavaScript-good-parts-note/</link>
-        <guid isPermaLink="true">https://ysfku.github.io/2017/05/12/JavaScript-good-parts-note/</guid>
+        <link>http://localhost:4000/2017/05/12/JavaScript-good-parts-note/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/12/JavaScript-good-parts-note/</guid>
         
         <category>JavaScript</category>
         
@@ -168,7 +168,7 @@
 &lt;p&gt;在外刊君读者群中看到有人提出这样的一个需求：&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;把字符串切成连续相同字符的正则怎么写？比如&lt;code class=&quot;highlighter-rouge&quot;&gt;abbcccdddd&lt;/code&gt;切成&lt;code class=&quot;highlighter-rouge&quot;&gt;a,bb,ccc,dddd&lt;/code&gt;&lt;/p&gt;
+  &lt;p&gt;把字符串切成连续相同字符的正则怎么写？比如&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;abbcccdddd&lt;/code&gt;切成&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a,bb,ccc,dddd&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;之前我对正则表达式也是略有研究，想尝试一下。其实我对正则表达式的学习基本完全来源于犀牛书的第10章，真正看懂这一章，我觉得操作正则表达式应该不在话下。&lt;/p&gt;
@@ -177,14 +177,14 @@
 
 &lt;p&gt;先给出我的答案吧：&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s1&quot;&gt;&#39;abbccddd&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(\w)\1&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;*/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [&quot;a&quot;, &quot;bb&quot;, &quot;cc&quot;, &quot;ddd&quot;]&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;abbccddd&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(\w)\1&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;*/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [&quot;a&quot;, &quot;bb&quot;, &quot;cc&quot;, &quot;ddd&quot;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;说明&quot;&gt;说明&lt;/h2&gt;
 
-&lt;p&gt;拿到这个问题，首先要匹配字符&lt;code class=&quot;highlighter-rouge&quot;&gt;[a-zA-Z0-9]&lt;/code&gt;，这里直接使用&lt;code class=&quot;highlighter-rouge&quot;&gt;\w&lt;/code&gt;。然后是全局匹配，在最后加上&lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt;。难点在于怎么判断重复。&lt;/p&gt;
+&lt;p&gt;拿到这个问题，首先要匹配字符&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[a-zA-Z0-9]&lt;/code&gt;，这里直接使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\w&lt;/code&gt;。然后是全局匹配，在最后加上&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;g&lt;/code&gt;。难点在于怎么判断重复。&lt;/p&gt;
 
-&lt;p&gt;翻看了犀牛书后，又读了一遍分组和引用的部分。使用小括号&lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt;将字符作为一个最小单元，同时小括号还能记忆这个组合相匹配的字符串。再使用反斜杠&lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt;引用前面分组的表达式，数字1表示第一个小括号。这时完成了2个字符重复的要求。最后再使用&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;来匹配出现0次或n次。这个正则表达式就写完了。&lt;/p&gt;
+&lt;p&gt;翻看了犀牛书后，又读了一遍分组和引用的部分。使用小括号&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;()&lt;/code&gt;将字符作为一个最小单元，同时小括号还能记忆这个组合相匹配的字符串。再使用反斜杠&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\&lt;/code&gt;引用前面分组的表达式，数字1表示第一个小括号。这时完成了2个字符重复的要求。最后再使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;来匹配出现0次或n次。这个正则表达式就写完了。&lt;/p&gt;
 
 &lt;p&gt;下面详细说说分组和引用。&lt;/p&gt;
 
@@ -199,28 +199,28 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;|&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;选择，匹配的是该符号左边的子表达式或右边的子表达式&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(...)&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;组合，将几个项组合为一个单元，这个单元可通过&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;?&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; 等符号加以修饰，&lt;strong&gt;而且可以记住和这个组合相匹配的字符串以提供伺候的引用使用&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(...)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;组合，将几个项组合为一个单元，这个单元可通过&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;?&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;|&lt;/code&gt; 等符号加以修饰，&lt;strong&gt;而且可以记住和这个组合相匹配的字符串以提供伺候的引用使用&lt;/strong&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(?:...)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(?:...)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;只组合，把项组合到一个段元，但不记忆与该组相匹配的字符&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;和第n个分组第一次匹配的字符相匹配，组是圆括号中的子表达式（也有可能是嵌套的），组索引是从左到右的左括号数，&lt;code class=&quot;highlighter-rouge&quot;&gt;(?:&lt;/code&gt;形式的分组不编码&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\n&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;和第n个分组第一次匹配的字符相匹配，组是圆括号中的子表达式（也有可能是嵌套的），组索引是从左到右的左括号数，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(?:&lt;/code&gt;形式的分组不编码&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
 </description>
         <pubDate>Fri, 06 May 2016 11:40:18 +0800</pubDate>
-        <link>https://ysfku.github.io/2016/05/06/regular-expression-group/</link>
-        <guid isPermaLink="true">https://ysfku.github.io/2016/05/06/regular-expression-group/</guid>
+        <link>http://localhost:4000/2016/05/06/regular-expression-group/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/05/06/regular-expression-group/</guid>
         
         <category>JavaScript</category>
         
@@ -256,9 +256,9 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;本文主要说明对这个博客主题的改版和代码重构的过程。这个简洁高雅的博客主题受到了很多朋友的喜欢。在写第一版界面时，我对前端并不是很熟悉，对&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;也不熟悉。现在距离当时也一年了，对自己当时写的代码也不太满意了，同时&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;如今也已经升级了，目前最新版为3.1.2。因此我在临近毕业尚未入职前做一下博客主题的代码重构和改版吧。&lt;/p&gt;
+&lt;p&gt;本文主要说明对这个博客主题的改版和代码重构的过程。这个简洁高雅的博客主题受到了很多朋友的喜欢。在写第一版界面时，我对前端并不是很熟悉，对&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;也不熟悉。现在距离当时也一年了，对自己当时写的代码也不太满意了，同时&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;如今也已经升级了，目前最新版为3.1.2。因此我在临近毕业尚未入职前做一下博客主题的代码重构和改版吧。&lt;/p&gt;
 
-&lt;p&gt;主要想做这些事情有：添加归档，添加标签，添加分类页面，主页显示文章摘要，代码去除 jQuery 和 BootStrap，优化移动端显示，将所有变量写入配置文件&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中等。再优化一些细节吧。希望更多人会喜欢。&lt;/p&gt;
+&lt;p&gt;主要想做这些事情有：添加归档，添加标签，添加分类页面，主页显示文章摘要，代码去除 jQuery 和 BootStrap，优化移动端显示，将所有变量写入配置文件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中等。再优化一些细节吧。希望更多人会喜欢。&lt;/p&gt;
 
 &lt;h2 id=&quot;改版重构说明&quot;&gt;改版重构说明&lt;/h2&gt;
 
@@ -268,12 +268,12 @@
 
     &lt;p&gt;即 GFM(github flavored markdown) 的方式。&lt;/p&gt;
 
-    &lt;p&gt;Jekyll 已经升级至 3.1.2（2016-03），其中有一些新的要注意的地方，比如官网上说使用了 &lt;code class=&quot;highlighter-rouge&quot;&gt;Rouge&lt;/code&gt; 去做代码高亮而不是默认的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Pygments&lt;/code&gt;，因为 &lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt; 本身是基于 Ruby 的，因此我看到官方说希望不再使用基于 Python 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Pygments&lt;/code&gt; 了，而是都使用基于 Ruby 的代码。详情见官网升级说明 &lt;a href=&quot;https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed&quot;&gt;syntax-highlighter-changed&lt;/a&gt;。&lt;/p&gt;
+    &lt;p&gt;Jekyll 已经升级至 3.1.2（2016-03），其中有一些新的要注意的地方，比如官网上说使用了 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rouge&lt;/code&gt; 去做代码高亮而不是默认的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pygments&lt;/code&gt;，因为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt; 本身是基于 Ruby 的，因此我看到官方说希望不再使用基于 Python 的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pygments&lt;/code&gt; 了，而是都使用基于 Ruby 的代码。详情见官网升级说明 &lt;a href=&quot;https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed&quot;&gt;syntax-highlighter-changed&lt;/a&gt;。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;首页中添加摘要&lt;/strong&gt;&lt;/p&gt;
 
-    &lt;p&gt;摘要可以在每一篇 md 文件头中使用 excerpt 属性写出来。也可以在正文中，4个换行符来分割，这个设置见配置文件&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;。&lt;/p&gt;
+    &lt;p&gt;摘要可以在每一篇 md 文件头中使用 excerpt 属性写出来。也可以在正文中，4个换行符来分割，这个设置见配置文件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;添加归档&lt;/strong&gt;&lt;/p&gt;
@@ -303,7 +303,7 @@
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;简化评论配置，支持 多说 和 disqus&lt;/strong&gt;&lt;/p&gt;
 
-    &lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中评论配置直接添加自己的&lt;code class=&quot;highlighter-rouge&quot;&gt;short_name&lt;/code&gt;，评论就能正常使用了。&lt;/p&gt;
+    &lt;p&gt;在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中评论配置直接添加自己的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;short_name&lt;/code&gt;，评论就能正常使用了。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -315,9 +315,9 @@
 
 &lt;h3 id=&quot;错误呈现&quot;&gt;错误呈现&lt;/h3&gt;
 
-&lt;p&gt;在执行任何&lt;code class=&quot;highlighter-rouge&quot;&gt;gem&lt;/code&gt;命令的时候出现以下错误：&lt;/p&gt;
+&lt;p&gt;在执行任何&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem&lt;/code&gt;命令的时候出现以下错误：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
     SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://gems.ruby-china.org/specs.4.8.gz)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -331,11 +331,11 @@
 
 &lt;p&gt;我使用的是 &lt;a href=&quot;https://gist.github.com/fnichol/867550#the-manual-way-boring&quot;&gt;The Manual Way&lt;/a&gt;，因为 &lt;a href=&quot;https://gist.github.com/fnichol/867550#the-ruby-way-fun&quot;&gt;The Ruby Way&lt;/a&gt; 我没有成功，不知道什么原因，有兴趣的朋友可以试试。下面说说我的具体操作吧。&lt;/p&gt;
 
-&lt;p&gt;首先从 &lt;a href=&quot;https://curl.haxx.se/ca/cacert.pem&quot;&gt;https://curl.haxx.se/ca/cacert.pem&lt;/a&gt; 将文件&lt;code class=&quot;highlighter-rouge&quot;&gt;cacert.pem&lt;/code&gt;下载至 &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\RailsInstaller\cacert.pem&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;首先从 &lt;a href=&quot;https://curl.haxx.se/ca/cacert.pem&quot;&gt;https://curl.haxx.se/ca/cacert.pem&lt;/a&gt; 将文件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cacert.pem&lt;/code&gt;下载至 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C:\RailsInstaller\cacert.pem&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;然后执行&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set SSL_CERT_FILE=C:\RailsInstaller\cacert.pem
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set SSL_CERT_FILE=C:\RailsInstaller\cacert.pem
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;就成功了，不会再出现 SSL 错误了。&lt;/p&gt;
@@ -352,9 +352,9 @@
 
 &lt;p&gt;在启动 jekyll 服务的时候出现以下错误：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
 Configuration file: c:/gitWorkSpace/blog-based-on-jekyll-3/_config.yml
-  Dependency Error: Yikes! It looks like you don&#39;t have jekyll-paginate or one of its dependencies installed. In order to use Jekyll as currently configured, you&#39;ll need to install this gem. The full error message from Ruby is: &#39;cannot load such file -- jekyll-paginate&#39; If you run into trouble, you can find helpful resources at http://jekyllrb.com/help/!
+  Dependency Error: Yikes! It looks like you don&apos;t have jekyll-paginate or one of its dependencies installed. In order to use Jekyll as currently configured, you&apos;ll need to install this gem. The full error message from Ruby is: &apos;cannot load such file -- jekyll-paginate&apos; If you run into trouble, you can find helpful resources at http://jekyllrb.com/help/!
 jekyll 3.1.2 | Error:  jekyll-paginate
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -362,7 +362,7 @@ jekyll 3.1.2 | Error:  jekyll-paginate
 
 &lt;p&gt;我们安装这个插件到本地即可。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll-paginate
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll-paginate
 Fetching: jekyll-paginate-1.1.0.gem (100%)
 Successfully installed jekyll-paginate-1.1.0
 Parsing documentation for jekyll-paginate-1.1.0
@@ -377,12 +377,12 @@ Done installing documentation for jekyll-paginate after 3 seconds
 
 &lt;p&gt;在本地使用命令&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;出现错误，如下&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
 Configuration file: E:/GitWorkSpace/blog/_config.yml
            Source: E:/GitWorkSpace/blog
       Destination: E:/GitWorkSpace/blog/_site
@@ -390,8 +390,8 @@ Incremental build: disabled. Enable with --incremental
      Generating...
                    done in 0.547 seconds.
  Please add the following to your Gemfile to avoid polling for changes:
-   gem &#39;wdm&#39;, &#39;&amp;gt;= 0.1.0&#39; if Gem.win_platform?
-Auto-regeneration: enabled for &#39;E:/GitWorkSpace/blog&#39;
+   gem &apos;wdm&apos;, &apos;&amp;gt;= 0.1.0&apos; if Gem.win_platform?
+Auto-regeneration: enabled for &apos;E:/GitWorkSpace/blog&apos;
 Configuration file: E:/GitWorkSpace/blog/_config.yml
 jekyll 3.1.1 | Error:  Permission denied - bind(2) for 127.0.0.1:4000
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -406,14 +406,14 @@ jekyll 3.1.1 | Error:  Permission denied - bind(2) for 127.0.0.1:4000
 
 &lt;p&gt;输入命令，查看各端口被占用情况&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netstat -ano
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netstat -ano
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;找到4000端口被占用的&lt;code class=&quot;highlighter-rouge&quot;&gt;PID&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;找到4000端口被占用的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PID&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;我的结果如下：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;协议  本地地址          外部地址          状态           PID
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;协议  本地地址          外部地址          状态           PID
 TCP  0.0.0.0:80        0.0.0.0:0         LISTENING     4
 TCP  0.0.0.0:135       0.0.0.0:0         LISTENING     836
 TCP  0.0.0.0:445       0.0.0.0:0         LISTENING     4
@@ -437,12 +437,12 @@ TCP  127.0.0.1:4012    0.0.0.0:0         LISTENING     12724
 
 &lt;p&gt;可以看到4000端口的PID是2476。下面查看是什么进程，命令行中输入：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tasklist /svc /FI &quot;PID eq 2476&quot;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tasklist /svc /FI &quot;PID eq 2476&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;得到结果：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;映像名称                       PID 服务
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;映像名称                       PID 服务
 ========================= ======== ============================================
 FoxitProtect.exe              2476 FxService
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -453,22 +453,22 @@ FoxitProtect.exe              2476 FxService
 
 &lt;p&gt;当然也可以在启动jekyll服务的时候指定端口号，如下：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve --port 3000
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve --port 3000
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;这样在浏览器中输入 http://localhost:3000/ 就可以访问了。&lt;/p&gt;
 
-&lt;p&gt;还可以在配置文件&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中添加端口号设置（参考&lt;a href=&quot;https://jekyllrb.com/docs/configuration/#serve-command-options&quot;&gt;官网文档-Serve Command OptionsPermalink&lt;/a&gt;），如下：&lt;/p&gt;
+&lt;p&gt;还可以在配置文件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;中添加端口号设置（参考&lt;a href=&quot;https://jekyllrb.com/docs/configuration/#serve-command-options&quot;&gt;官网文档-Serve Command OptionsPermalink&lt;/a&gt;），如下：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# port
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# port
 port: 1234
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;此时，启动jekyll服务后，访问 http://localhost:1234/ 即可&lt;/p&gt;
 </description>
         <pubDate>Sat, 12 Mar 2016 11:40:18 +0800</pubDate>
-        <link>https://ysfku.github.io/2016/03/12/jekyll-theme-version-2.0/</link>
-        <guid isPermaLink="true">https://ysfku.github.io/2016/03/12/jekyll-theme-version-2.0/</guid>
+        <link>http://localhost:4000/2016/03/12/jekyll-theme-version-2.0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/03/12/jekyll-theme-version-2.0/</guid>
         
         <category>jekyll</category>
         
@@ -494,8 +494,8 @@ port: 1234
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#起因&quot; id=&quot;markdown-toc-起因&quot;&gt;起因&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#history&quot; id=&quot;markdown-toc-history&quot;&gt;History&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#back-forward-go-length&quot; id=&quot;markdown-toc-back-forward-go-length&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;back()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;forward()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;go()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;length&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#pushstate-replacestate&quot; id=&quot;markdown-toc-pushstate-replacestate&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;replaceState()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#back-forward-go-length&quot; id=&quot;markdown-toc-back-forward-go-length&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;back()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;forward()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;go()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;length&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#pushstate-replacestate&quot; id=&quot;markdown-toc-pushstate-replacestate&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;replaceState()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#pjax&quot; id=&quot;markdown-toc-pjax&quot;&gt;pjax&lt;/a&gt;&lt;/li&gt;
@@ -526,22 +526,22 @@ https://www.zhihu.com/question/38802932
   &lt;p&gt;纯前端怎么处理？用hash吗，如下:
 https://www.zhihu.com/question#38802932
 那如果本页跳转，只改变hash的话，页面不会刷新。
-使用&lt;code class=&quot;highlighter-rouge&quot;&gt;location.reload()&lt;/code&gt;倒是可以解决。&lt;/p&gt;
+使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;location.reload()&lt;/code&gt;倒是可以解决。&lt;/p&gt;
 
   &lt;p&gt;&lt;strong&gt;但总觉得这样处理不够优雅。大家在工作中是如何处理此类场景的？还是用传统的后台路由来提供动态url？&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;感谢郑海波和剧中人的热心回答。都提到了&lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt;对象中的&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState&lt;/code&gt;，这是我第一次接触到这方面的内容（顿时觉得自己真是才疏学浅）。&lt;/p&gt;
+&lt;p&gt;感谢郑海波和剧中人的热心回答。都提到了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history&lt;/code&gt;对象中的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState&lt;/code&gt;，这是我第一次接触到这方面的内容（顿时觉得自己真是才疏学浅）。&lt;/p&gt;
 
-&lt;p&gt;同时也有人提到了&lt;code class=&quot;highlighter-rouge&quot;&gt;pjax&lt;/code&gt;，这个就是&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState&lt;/code&gt;+&lt;code class=&quot;highlighter-rouge&quot;&gt;Ajax&lt;/code&gt;的封装，也很有意思。&lt;/p&gt;
+&lt;p&gt;同时也有人提到了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pjax&lt;/code&gt;，这个就是&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState&lt;/code&gt;+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ajax&lt;/code&gt;的封装，也很有意思。&lt;/p&gt;
 
 &lt;p&gt;下面就来研究和实践一下吧。&lt;/p&gt;
 
 &lt;h2 id=&quot;history&quot;&gt;History&lt;/h2&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;window&lt;/code&gt;对象通过&lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt;对象提供对浏览器历史记录的访问能力。它暴露了一些非常有用的方法和属性，让你在历史记录中自由前进和后退，而在 HTML5 中，更可以操纵历史记录中的数据。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;window&lt;/code&gt;对象通过&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history&lt;/code&gt;对象提供对浏览器历史记录的访问能力。它暴露了一些非常有用的方法和属性，让你在历史记录中自由前进和后退，而在 HTML5 中，更可以操纵历史记录中的数据。&lt;/p&gt;
 
-&lt;h3 id=&quot;back-forward-go-length&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;back()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;forward()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;go()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;length&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;back-forward-go-length&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;back()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;forward()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;go()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;length&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;浏览器的历史记录就好像一个栈，最新的在最上面，较早之前看过的在下面。&lt;/p&gt;
 
@@ -553,80 +553,80 @@ https://www.zhihu.com/question#38802932
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;back()&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;back()&lt;/code&gt;&lt;/p&gt;
 
     &lt;p&gt;在历史记录中后退&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  history.back();
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  history.back();
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;forward()&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;forward()&lt;/code&gt;&lt;/p&gt;
 
     &lt;p&gt;在历史记录中前进&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  history.forward();
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  history.forward();
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;go()&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;go()&lt;/code&gt;&lt;/p&gt;
 
     &lt;p&gt;移动到指定的历史记录点&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  history.go(-1);
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  history.go(-1);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
     &lt;p&gt;通过指定一个相对于当前页面位置的数值，你可以使用go()方法从当前会话的历史记录中加载页面（当前页面位置索引值为0，上一页就是-1，下一页为1）。&lt;/p&gt;
 
-    &lt;p&gt;&lt;strong&gt;go()不填参数或参数为go(0)时，页面会刷新，即&lt;code class=&quot;highlighter-rouge&quot;&gt;history.go()&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;history.go(0)&lt;/code&gt;相当于&lt;code class=&quot;highlighter-rouge&quot;&gt;location.reload()&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;go()不填参数或参数为go(0)时，页面会刷新，即&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history.go()&lt;/code&gt;或&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history.go(0)&lt;/code&gt;相当于&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;location.reload()&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;length&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;length&lt;/code&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;length&lt;/code&gt;为history的属性，显示history长度。&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;length&lt;/code&gt;为history的属性，显示history长度。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;本节在线demo见：&lt;a href=&quot;http://gaohaoyang.github.io/history-pjax-demo/&quot;&gt;History &amp;amp; pjax demo&lt;/a&gt; 源代码：&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;经过亲自测试，&lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt;对象只记录同一个 tab 页内的历史。如果是在新窗口打开的，则无效。如：在a标签中添加&lt;code class=&quot;highlighter-rouge&quot;&gt;target=&quot;_blank&quot;&lt;/code&gt;，或按住&lt;code class=&quot;highlighter-rouge&quot;&gt;ctrl&lt;/code&gt;点击，这类场景下，在新的tab页中，&lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt;对象也是新的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;经过亲自测试，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history&lt;/code&gt;对象只记录同一个 tab 页内的历史。如果是在新窗口打开的，则无效。如：在a标签中添加&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target=&quot;_blank&quot;&lt;/code&gt;，或按住&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctrl&lt;/code&gt;点击，这类场景下，在新的tab页中，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history&lt;/code&gt;对象也是新的。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;且&lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt;对象记录的信息与是否同源也无关，所以唯一要满足的就是同一个标签页。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;且&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history&lt;/code&gt;对象记录的信息与是否同源也无关，所以唯一要满足的就是同一个标签页。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;pushstate-replacestate&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;replaceState()&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;pushstate-replacestate&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;replaceState()&lt;/code&gt;&lt;/h3&gt;
 
-&lt;p&gt;HTML5 引进了&lt;code class=&quot;highlighter-rouge&quot;&gt;history.pushState()&lt;/code&gt;方法和&lt;code class=&quot;highlighter-rouge&quot;&gt;history.replaceState()&lt;/code&gt;方法，它们允许你逐条地添加和修改历史记录条目，能够在不加载新页面的情况下没改变浏览器的URL。这些方法可以协同&lt;code class=&quot;highlighter-rouge&quot;&gt;window.onpopstate&lt;/code&gt;事件一起工作。&lt;/p&gt;
+&lt;p&gt;HTML5 引进了&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history.pushState()&lt;/code&gt;方法和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history.replaceState()&lt;/code&gt;方法，它们允许你逐条地添加和修改历史记录条目，能够在不加载新页面的情况下没改变浏览器的URL。这些方法可以协同&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;window.onpopstate&lt;/code&gt;事件一起工作。&lt;/p&gt;
 
-&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;history.pushState()&lt;/code&gt;会改变&lt;code class=&quot;highlighter-rouge&quot;&gt;referrer&lt;/code&gt;的值，而在你调用方法后创建的  XMLHttpRequest 对象会在 HTTP 请求头中使用这个值。&lt;code class=&quot;highlighter-rouge&quot;&gt;referrer的&lt;/code&gt;值则是创建  XMLHttpRequest 对象时所处的窗口的 URL。&lt;/p&gt;
+&lt;p&gt;使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history.pushState()&lt;/code&gt;会改变&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;referrer&lt;/code&gt;的值，而在你调用方法后创建的  XMLHttpRequest 对象会在 HTTP 请求头中使用这个值。&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;referrer的&lt;/code&gt;值则是创建  XMLHttpRequest 对象时所处的窗口的 URL。&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState(any data, string title, [string url])&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState(any data, string title, [string url])&lt;/code&gt;&lt;/p&gt;
 
-    &lt;p&gt;第一个参数为&lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt;对象的&lt;code class=&quot;highlighter-rouge&quot;&gt;state&lt;/code&gt;属性值，可以放任意数据，记录历史状态。第二个参数是新状态的标题，目前浏览器基本不支持。第三个参数为可选的相对url。&lt;/p&gt;
+    &lt;p&gt;第一个参数为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history&lt;/code&gt;对象的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt;属性值，可以放任意数据，记录历史状态。第二个参数是新状态的标题，目前浏览器基本不支持。第三个参数为可选的相对url。&lt;/p&gt;
 
-    &lt;p&gt;执行&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState&lt;/code&gt;后，可以在不加载新页面的情况下，更改url。同时&lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt;栈中新增一条数据。&lt;/p&gt;
+    &lt;p&gt;执行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState&lt;/code&gt;后，可以在不加载新页面的情况下，更改url。同时&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history&lt;/code&gt;栈中新增一条数据。&lt;/p&gt;
 
     &lt;p&gt;例如，我们有这样一段代码：&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;button id=&quot;push1&quot;&amp;gt;pushState()&amp;lt;/button&amp;gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;button id=&quot;push1&quot;&amp;gt;pushState()&amp;lt;/button&amp;gt;
 
-  document.querySelector(&#39;#push1&#39;).addEventListener(&#39;click&#39;, function() {
-      history.pushState(&#39;abc&#39;,&#39;pushStatePageTitle&#39;,&#39;pushState.html&#39;);
-      document.querySelector(&#39;#length&#39;).innerHTML = history.length;//重新读取历史长度
+  document.querySelector(&apos;#push1&apos;).addEventListener(&apos;click&apos;, function() {
+      history.pushState(&apos;abc&apos;,&apos;pushStatePageTitle&apos;,&apos;pushState.html&apos;);
+      document.querySelector(&apos;#length&apos;).innerHTML = history.length;//重新读取历史长度
   });
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
-    &lt;p&gt;当点击按钮的时候，页面不会刷新，但&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;地址的最后已经变为&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState.html&lt;/code&gt;。这一点非常像&lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt;的作用，但比&lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt;更优雅。&lt;/p&gt;
+    &lt;p&gt;当点击按钮的时候，页面不会刷新，但&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;url&lt;/code&gt;地址的最后已经变为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState.html&lt;/code&gt;。这一点非常像&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash&lt;/code&gt;的作用，但比&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash&lt;/code&gt;更优雅。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;replaceState(any data, string title, [string url])&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;replaceState(any data, string title, [string url])&lt;/code&gt;&lt;/p&gt;
 
-    &lt;p&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;类似，只是在&lt;code class=&quot;highlighter-rouge&quot;&gt;history&lt;/code&gt;栈中不是新增记录，而是替换一条记录。&lt;/p&gt;
+    &lt;p&gt;与&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;类似，只是在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;history&lt;/code&gt;栈中不是新增记录，而是替换一条记录。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;需要注意的是：&lt;/strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;replaceState()&lt;/code&gt;方法存在安全方面的限制，本地测试是无效的，会报错，可以简单放到任何服务端测试，或者使用&lt;code class=&quot;highlighter-rouge&quot;&gt;http-server&lt;/code&gt;开启简单服务器，通过访问&lt;code class=&quot;highlighter-rouge&quot;&gt;localhost&lt;/code&gt;来查看效果。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;需要注意的是：&lt;/strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;replaceState()&lt;/code&gt;方法存在安全方面的限制，本地测试是无效的，会报错，可以简单放到任何服务端测试，或者使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http-server&lt;/code&gt;开启简单服务器，通过访问&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localhost&lt;/code&gt;来查看效果。&lt;/p&gt;
 
 &lt;p&gt;本节demo见：&lt;a href=&quot;http://gaohaoyang.github.io/history-pjax-demo/index.html&quot;&gt;History &amp;amp; pjax demo - pushState&lt;/a&gt;&lt;/p&gt;
 
@@ -634,7 +634,7 @@ https://www.zhihu.com/question#38802932
 
 &lt;p&gt;现在再看本文一开始提出的问题，如何让前端优雅的控制 url，这里就可以考虑 pjax 技术了。我们把 pushState + ajax 进行封装，合起来简称为 pjax。虽然不是什么新的技术，但概念已然不同。&lt;/p&gt;
 
-&lt;p&gt;如果不使用 pjax。我们依然可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt;来实现文本开始的需求。但会不利于 SEO，看着也不够优雅。&lt;/p&gt;
+&lt;p&gt;如果不使用 pjax。我们依然可以使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hash&lt;/code&gt;来实现文本开始的需求。但会不利于 SEO，看着也不够优雅。&lt;/p&gt;
 
 &lt;p&gt;Pjax的原理十分简单。&lt;/p&gt;
 
@@ -642,14 +642,14 @@ https://www.zhihu.com/question#38802932
   &lt;li&gt;拦截 a 标签的默认跳转动作或某些按钮的点击事件。&lt;/li&gt;
   &lt;li&gt;使用 Ajax 请求新页面。&lt;/li&gt;
   &lt;li&gt;将返回的 Html 替换到页面中。&lt;/li&gt;
-  &lt;li&gt;使用 HTML5 的&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;修改Url。&lt;/li&gt;
+  &lt;li&gt;使用 HTML5 的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;修改Url。&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;个人理解3中也可以仅仅请求数据，再由浏览器渲染。&lt;/p&gt;
 
-&lt;p&gt;每当同一个文档的浏览历史（即history对象）出现变化时，会触发&lt;code class=&quot;highlighter-rouge&quot;&gt;window.onpopstate&lt;/code&gt;事件。&lt;/p&gt;
+&lt;p&gt;每当同一个文档的浏览历史（即history对象）出现变化时，会触发&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;window.onpopstate&lt;/code&gt;事件。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;window.onpopstate = function(event) {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;window.onpopstate = function(event) {
     console.log(event.state);
     console.log(location);
 };
@@ -657,7 +657,7 @@ https://www.zhihu.com/question#38802932
 
 &lt;p&gt;这样在用户点击前进后退时也可以很好的监听url，来做相应的页面渲染。&lt;/p&gt;
 
-&lt;p&gt;若用户刷新了页面，但没有相应的页面资源，这时页面就会显示不存在。所以我认为较好的方法是在写&lt;code class=&quot;highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;第三个参数的时候，写为&lt;code class=&quot;highlighter-rouge&quot;&gt;?a=1&lt;/code&gt;这样的参数形式。&lt;a href=&quot;https://github.com/browserstate/history.js&quot;&gt;History.js&lt;/a&gt; 也是这么写的。但是这样应该会多一次请求。也许使用 nodeJS 作为中间层会好一些吧。&lt;/p&gt;
+&lt;p&gt;若用户刷新了页面，但没有相应的页面资源，这时页面就会显示不存在。所以我认为较好的方法是在写&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pushState()&lt;/code&gt;第三个参数的时候，写为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;?a=1&lt;/code&gt;这样的参数形式。&lt;a href=&quot;https://github.com/browserstate/history.js&quot;&gt;History.js&lt;/a&gt; 也是这么写的。但是这样应该会多一次请求。也许使用 nodeJS 作为中间层会好一些吧。&lt;/p&gt;
 
 &lt;p&gt;对于上述的探索，不知道是不是我还不够深入，总觉得还是不够完美。&lt;/p&gt;
 
@@ -680,8 +680,8 @@ https://www.zhihu.com/question#38802932
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 01 Jan 2016 07:06:05 +0800</pubDate>
-        <link>https://ysfku.github.io/2016/01/01/History-API/</link>
-        <guid isPermaLink="true">https://ysfku.github.io/2016/01/01/History-API/</guid>
+        <link>http://localhost:4000/2016/01/01/History-API/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/01/01/History-API/</guid>
         
         <category>JavaScript</category>
         
@@ -722,14 +722,14 @@ https://www.zhihu.com/question#38802932
 
 &lt;p&gt;解决方法很简单，即给这个块级元素填充任意颜色，然后将其透明度设置为0。代码如下：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;background-color: #fff;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;background-color: #fff;
 opacity: 0;
 filter:alpha(opacity=0);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 24 Jul 2015 08:06:05 +0800</pubDate>
-        <link>https://ysfku.github.io/2015/07/24/low-IE-click-empty-block-bug/</link>
-        <guid isPermaLink="true">https://ysfku.github.io/2015/07/24/low-IE-click-empty-block-bug/</guid>
+        <link>http://localhost:4000/2015/07/24/low-IE-click-empty-block-bug/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/07/24/low-IE-click-empty-block-bug/</guid>
         
         <category>IE</category>
         
@@ -751,8 +751,8 @@ filter:alpha(opacity=0);
 &lt;p&gt;&lt;img src=&quot;http://7q5cdt.com1.z0.glb.clouddn.com/blog-JavaScriptNet2.png&quot; alt=&quot;JavaScriptNet&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 09 Jul 2015 08:06:05 +0800</pubDate>
-        <link>https://ysfku.github.io/2015/07/09/JavaScript-Net/</link>
-        <guid isPermaLink="true">https://ysfku.github.io/2015/07/09/JavaScript-Net/</guid>
+        <link>http://localhost:4000/2015/07/09/JavaScript-Net/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/07/09/JavaScript-Net/</guid>
         
         <category>JavaScript</category>
         
@@ -792,7 +792,7 @@ filter:alpha(opacity=0);
 
 &lt;p&gt;上面说 weinre 是一个远程 web 调试器。说到了它的发音，还挺幽默，哈哈。&lt;/p&gt;
 
-&lt;p&gt;远程 web 调试器。先说调试器，就像火狐中的 FireBug，Chrome 中的调试器一样。就是在浏览器中按下 &lt;code class=&quot;highlighter-rouge&quot;&gt;F12&lt;/code&gt; 出现的那个工具。但是在手机上，你没办法按 &lt;code class=&quot;highlighter-rouge&quot;&gt;F12&lt;/code&gt;，而这个 weinre 就是在手机上的 &lt;code class=&quot;highlighter-rouge&quot;&gt;F12&lt;/code&gt;，与传统的不同的是，它是在手机上浏览你的 web 页面，在 PC 上查看调试工具，非常方便，这就是所谓的远程。&lt;/p&gt;
+&lt;p&gt;远程 web 调试器。先说调试器，就像火狐中的 FireBug，Chrome 中的调试器一样。就是在浏览器中按下 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;F12&lt;/code&gt; 出现的那个工具。但是在手机上，你没办法按 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;F12&lt;/code&gt;，而这个 weinre 就是在手机上的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;F12&lt;/code&gt;，与传统的不同的是，它是在手机上浏览你的 web 页面，在 PC 上查看调试工具，非常方便，这就是所谓的远程。&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -858,12 +858,12 @@ filter:alpha(opacity=0);
   &lt;li&gt;
     &lt;p&gt;使用 npm 命令，安装 weinre&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; npm -g install weinre
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; npm -g install weinre
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
     &lt;p&gt;安装成功后会有类似的信息：&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; C:\Users\haoyang\AppData\Roaming\npm\weinre -&amp;gt; C:\Users\haoyang\AppData\Roaming\npm\node_modules\weinre\weinre
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; C:\Users\haoyang\AppData\Roaming\npm\weinre -&amp;gt; C:\Users\haoyang\AppData\Roaming\npm\node_modules\weinre\weinre
  weinre@2.0.0-pre-I0Z7U9OV C:\Users\haoyang\AppData\Roaming\npm\node_modules\weinre
  ├── underscore@1.7.0
  ├── nopt@3.0.2 (abbrev@1.0.7)
@@ -880,7 +880,7 @@ filter:alpha(opacity=0);
   &lt;li&gt;
     &lt;p&gt;启动服务&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; weinre --boundHost -all- --httpPort 8081
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; weinre --boundHost -all- --httpPort 8081
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
     &lt;ul&gt;
@@ -916,19 +916,19 @@ filter:alpha(opacity=0);
 
     &lt;p&gt;Example:&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;script src=&quot;http://localhost:8081/target/target-script-min.js#anonymous&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;script src=&quot;http://localhost:8081/target/target-script-min.js#anonymous&quot;&amp;gt;&amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
     &lt;p&gt;这里要说明一下，要把上面的 localhost 换为本机的 ip 地址。&lt;/p&gt;
 
-    &lt;p&gt;我们可以在命令行中 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;ipconfig&lt;/code&gt; 得到 ip 地址，如下（当然你的可能和我的不一样）：&lt;/p&gt;
+    &lt;p&gt;我们可以在命令行中 使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ipconfig&lt;/code&gt; 得到 ip 地址，如下（当然你的可能和我的不一样）：&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; IPv4 地址 . . . . . . . . . . . . : 192.168.1.107
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; IPv4 地址 . . . . . . . . . . . . : 192.168.1.107
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
     &lt;p&gt;即插入如下代码：&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;script src=&quot;http://192.168.1.107:8081/target/target-script-min.js#anonymous&quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;script src=&quot;http://192.168.1.107:8081/target/target-script-min.js#anonymous&quot;&amp;gt;&amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -944,7 +944,7 @@ filter:alpha(opacity=0);
 
     &lt;p&gt;现在我们要用手机访问同一个局域网下的这个目标页面。我们可以把要调试的页面放到这个路径下：&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; C:\Users\haoyang\AppData\Roaming\npm\node_modules\weinre\web
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; C:\Users\haoyang\AppData\Roaming\npm\node_modules\weinre\web
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
 
     &lt;p&gt;通过 http://192.168.1.107:8081/FILE_NAME 在手机上访问，就可以看到了。当然前提是同一个局域网。&lt;/p&gt;
@@ -974,8 +974,8 @@ filter:alpha(opacity=0);
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 18 Jun 2015 08:06:05 +0800</pubDate>
-        <link>https://ysfku.github.io/2015/06/18/weinre/</link>
-        <guid isPermaLink="true">https://ysfku.github.io/2015/06/18/weinre/</guid>
+        <link>http://localhost:4000/2015/06/18/weinre/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/06/18/weinre/</guid>
         
         <category>Weinre</category>
         
@@ -1034,7 +1034,7 @@ filter:alpha(opacity=0);
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#其他&quot; id=&quot;markdown-toc-其他&quot;&gt;其他&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#-webkit-tap-highlight-color-属性&quot; id=&quot;markdown-toc--webkit-tap-highlight-color-属性&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-webkit-tap-highlight-color&lt;/code&gt; 属性&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#-webkit-tap-highlight-color-属性&quot; id=&quot;markdown-toc--webkit-tap-highlight-color-属性&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-webkit-tap-highlight-color&lt;/code&gt; 属性&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#textarea-标签-disabled-颜色&quot; id=&quot;markdown-toc-textarea-标签-disabled-颜色&quot;&gt;textarea 标签 disabled 颜色&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -1145,7 +1145,7 @@ filter:alpha(opacity=0);
   &lt;li&gt;
     &lt;p&gt;为移动设备添加 viewport&lt;/p&gt;
 
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;viewport&lt;/code&gt; 可以让布局在移动浏览器上显示的更好。 通常会写&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;viewport&lt;/code&gt; 可以让布局在移动浏览器上显示的更好。 通常会写&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1173,7 +1173,7 @@ filter:alpha(opacity=0);
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;zh-cmn-Hans&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 更加标准的 lang 属性写法 http://zhi.hu/XyIa --&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 声明文档使用的字符编码 --&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;utf-8&#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;utf-8&apos;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 优先使用 IE 最新版本和 Chrome --&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;IE=edge,chrome=1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 页面描述 --&amp;gt;&lt;/span&gt;
@@ -1301,9 +1301,9 @@ filter:alpha(opacity=0);
 
 &lt;p&gt;首先要有 ruby 环境。&lt;/p&gt;
 
-&lt;p&gt;由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败。这时候我们可以通过gem sources命令来配置源，先移除默认的 https://rubygems.org 源，然后添加淘宝的源 https://ruby.taobao.org/，然后查看下当前使用的源是哪个，如果是淘宝的，则表示可以输入 sass 安装命令 &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install sass&lt;/code&gt; 了。&lt;/p&gt;
+&lt;p&gt;由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败。这时候我们可以通过gem sources命令来配置源，先移除默认的 https://rubygems.org 源，然后添加淘宝的源 https://ruby.taobao.org/，然后查看下当前使用的源是哪个，如果是淘宝的，则表示可以输入 sass 安装命令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install sass&lt;/code&gt; 了。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem sources --remove https://rubygems.org/
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem sources --remove https://rubygems.org/
 $ gem sources -a https://ruby.taobao.org/
 $ gem sources -l
 *** CURRENT SOURCES ***
@@ -1315,14 +1315,14 @@ $ gem install sass
 
 &lt;h3 id=&quot;编译&quot;&gt;编译&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sass --watch style.scss:style.css --style expanded
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sass --watch style.scss:style.css --style expanded
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;补充&quot;&gt;补充&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rem&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;字体单位使用 rem，用户在手机上设置了字体大小时，不会打破布局，造成混乱。&lt;/p&gt;
 
@@ -1424,13 +1424,13 @@ $ gem install sass
  * @param  {String} str 用户输入的字符串
  * @return {String}     转码后的字符串
  */&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;changeCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&amp;amp;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;amp;amp;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&amp;lt;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;amp;lt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&amp;gt;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&quot;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;amp;quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&#39;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;amp;#x27;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-              &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;amp;#x2f;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;changeCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&amp;amp;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;amp;amp;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&amp;lt;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;amp;lt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&amp;gt;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&quot;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;amp;quot;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&apos;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;amp;#x27;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;amp;#x2f;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1554,9 +1554,9 @@ $ gem install sass
 
 &lt;p&gt;一个模块就是实现特定功能的文件，有了模块，我们就可以更方便地使用别人的代码，想要什么功能，就加载什么模块。模块开发需要遵循一定的规范，否则就都乱套了。&lt;/p&gt;
 
-&lt;p&gt;根据AMD规范，我们可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;define&lt;/code&gt; 定义模块，使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 调用模块。&lt;/p&gt;
+&lt;p&gt;根据AMD规范，我们可以使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;define&lt;/code&gt; 定义模块，使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;require&lt;/code&gt; 调用模块。&lt;/p&gt;
 
-&lt;p&gt;目前，通行的 js 模块规范主要有两种：&lt;code class=&quot;highlighter-rouge&quot;&gt;CommonJS&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;AMD&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;目前，通行的 js 模块规范主要有两种：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CommonJS&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AMD&lt;/code&gt;。&lt;/p&gt;
 
 &lt;h3 id=&quot;amd规范&quot;&gt;AMD规范&lt;/h3&gt;
 
@@ -1701,7 +1701,7 @@ CMD:延迟执行（运行到需加载，根据顺序执行）&lt;/p&gt;
 
     &lt;p&gt;以 JSON 模拟数据表的形式存储于 LocalStorage 中&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   使用数据库的思想，构建3张表。
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   使用数据库的思想，构建3张表。
    cateJson 分类
    childCateJson 子分类
    taskJson 任务
@@ -1723,7 +1723,7 @@ CMD:延迟执行（运行到需加载，根据顺序执行）&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;Sass&lt;/code&gt; 重构了 CSS 代码&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sass&lt;/code&gt; 重构了 CSS 代码&lt;/strong&gt;&lt;/p&gt;
 
     &lt;p&gt;使用分块、继承等方式，使得代码更加清晰明了。&lt;/p&gt;
   &lt;/li&gt;
@@ -1735,7 +1735,7 @@ CMD:延迟执行（运行到需加载，根据顺序执行）&lt;/p&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;加入页面切换效果&lt;/strong&gt;&lt;/p&gt;
 
-    &lt;p&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;translate3d()&lt;/code&gt;，纯 CSS3 切换动画效果。&lt;/p&gt;
+    &lt;p&gt;使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;translate3d()&lt;/code&gt;，纯 CSS3 切换动画效果。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;处理了 XSS 防护&lt;/strong&gt;&lt;/p&gt;
@@ -1763,17 +1763,17 @@ CMD:延迟执行（运行到需加载，根据顺序执行）&lt;/p&gt;
 
 &lt;h2 id=&quot;其他&quot;&gt;其他&lt;/h2&gt;
 
-&lt;h3 id=&quot;-webkit-tap-highlight-color-属性&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-webkit-tap-highlight-color&lt;/code&gt; 属性&lt;/h3&gt;
+&lt;h3 id=&quot;-webkit-tap-highlight-color-属性&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-webkit-tap-highlight-color&lt;/code&gt; 属性&lt;/h3&gt;
 
 &lt;p&gt;感谢 &lt;a href=&quot;https://github.com/fiona23&quot;&gt;fiona&lt;/a&gt; 指出。&lt;/p&gt;
 
-&lt;p&gt;safari移动端点击的时候会闪一下加上 &lt;code class=&quot;highlighter-rouge&quot;&gt;-webkit-tap-highlight-color: transparent;&lt;/code&gt; 就不会闪了。&lt;/p&gt;
+&lt;p&gt;safari移动端点击的时候会闪一下加上 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-webkit-tap-highlight-color: transparent;&lt;/code&gt; 就不会闪了。&lt;/p&gt;
 
 &lt;p&gt;参考：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.css88.com/webkit/-webkit-tap-highlight-color/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-webkit-tap-highlight-color&lt;/code&gt;  css88&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://ued.ctrip.com/webkitcss/prop/tap-highlight-color.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-webkit-tap-highlight-color&lt;/code&gt; 属性&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.css88.com/webkit/-webkit-tap-highlight-color/&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-webkit-tap-highlight-color&lt;/code&gt;  css88&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ued.ctrip.com/webkitcss/prop/tap-highlight-color.html&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-webkit-tap-highlight-color&lt;/code&gt; 属性&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -1793,7 +1793,7 @@ CMD:延迟执行（运行到需加载，根据顺序执行）&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;background: #fff;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;background: #fff;
 -webkit-text-fill-color: rgba(0, 0, 0, 1);
 -webkit-opacity: 1;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1801,9 +1801,9 @@ CMD:延迟执行（运行到需加载，根据顺序执行）&lt;/p&gt;
 &lt;p&gt;于是最终代码如下：&lt;/p&gt;
 
 &lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;textarea&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:disabled&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;-webkit-text-fill-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;-webkit-text-fill-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;nl&quot;&gt;-webkit-opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1813,8 +1813,8 @@ CMD:延迟执行（运行到需加载，根据顺序执行）&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 17 Jun 2015 22:06:05 +0800</pubDate>
-        <link>https://ysfku.github.io/2015/06/17/web-app/</link>
-        <guid isPermaLink="true">https://ysfku.github.io/2015/06/17/web-app/</guid>
+        <link>http://localhost:4000/2015/06/17/web-app/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/06/17/web-app/</guid>
         
         <category>JavaScript</category>
         
@@ -1853,14 +1853,14 @@ CMD:延迟执行（运行到需加载，根据顺序执行）&lt;/p&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#原型链&quot; id=&quot;markdown-toc-原型链&quot;&gt;原型链&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#objectcreatenull--bindnull&quot; id=&quot;markdown-toc-objectcreatenull--bindnull&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Object.create(null)&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;.bind(null)&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#objectcreatenull--bindnull&quot; id=&quot;markdown-toc-objectcreatenull--bindnull&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.create(null)&lt;/code&gt; &amp;amp; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.bind(null)&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#prototype-属性&quot; id=&quot;markdown-toc-prototype-属性&quot;&gt;prototype 属性&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#改变-prototype&quot; id=&quot;markdown-toc-改变-prototype&quot;&gt;改变 prototype&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#内置构造器的-prototype-属性&quot; id=&quot;markdown-toc-内置构造器的-prototype-属性&quot;&gt;内置构造器的 &lt;code class=&quot;highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#内置构造器的-prototype-属性&quot; id=&quot;markdown-toc-内置构造器的-prototype-属性&quot;&gt;内置构造器的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#创建对象-new原型链&quot; id=&quot;markdown-toc-创建对象-new原型链&quot;&gt;创建对象-new/原型链&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -1889,7 +1889,7 @@ CMD:延迟执行（运行到需加载，根据顺序执行）&lt;/p&gt;
 
 &lt;h2 id=&quot;基于原型的继承&quot;&gt;基于原型的继承&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Foo() {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Foo() {
     this.y = 2;
 }
 console.log(typeof Foo.prototype); //object
@@ -1901,11 +1901,11 @@ console.log(obj3.y); //2
 console.log(obj3.x); //1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;创建函数 &lt;code class=&quot;highlighter-rouge&quot;&gt;Foo&lt;/code&gt; 的时候，就会有一个内置的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Foo.prototype&lt;/code&gt; 属性，并且这个属性是对象。&lt;/p&gt;
+&lt;p&gt;创建函数 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Foo&lt;/code&gt; 的时候，就会有一个内置的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Foo.prototype&lt;/code&gt; 属性，并且这个属性是对象。&lt;/p&gt;
 
-&lt;p&gt;在使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;new Foo();&lt;/code&gt; 创建对象实例时。&lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; 会指向一个对象，并且这个对象的原型会指向 &lt;code class=&quot;highlighter-rouge&quot;&gt;Foo.prototype&lt;/code&gt; 属性。&lt;code class=&quot;highlighter-rouge&quot;&gt;this.y = 2&lt;/code&gt; 给这个对象赋值，并把这个对象返回。把这个对象赋值给 &lt;code class=&quot;highlighter-rouge&quot;&gt;obj3&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;在使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new Foo();&lt;/code&gt; 创建对象实例时。&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt; 会指向一个对象，并且这个对象的原型会指向 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Foo.prototype&lt;/code&gt; 属性。&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this.y = 2&lt;/code&gt; 给这个对象赋值，并把这个对象返回。把这个对象赋值给 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;obj3&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; 是 &lt;code class=&quot;highlighter-rouge&quot;&gt;obj3&lt;/code&gt; 上的，&lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; 是 &lt;code class=&quot;highlighter-rouge&quot;&gt;obj3&lt;/code&gt; 的原型 &lt;code class=&quot;highlighter-rouge&quot;&gt;Foo.prototype&lt;/code&gt; 上的。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y&lt;/code&gt; 是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;obj3&lt;/code&gt; 上的，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; 是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;obj3&lt;/code&gt; 的原型 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Foo.prototype&lt;/code&gt; 上的。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://7q5cdt.com1.z0.glb.clouddn.com/blog-prototype.png&quot; alt=&quot;prototype&quot; /&gt;&lt;/p&gt;
 
@@ -1921,7 +1921,7 @@ console.log(obj3.x); //1
 
 &lt;h4 id=&quot;例&quot;&gt;例&lt;/h4&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Person(name, age) {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Person(name, age) {
     this.name = name;
     this.age = age;
 }
@@ -1930,11 +1930,11 @@ Person.prototype.LEGS_NUM = 2;
 Person.prototype.ARMS_NUM = 2;
 
 Person.prototype.hi = function() {
-    console.log(&#39;Hi, my name is &#39; + this.name + &quot;. I&#39;m &quot; + this.age + &#39; years old now&#39;);
+    console.log(&apos;Hi, my name is &apos; + this.name + &quot;. I&apos;m &quot; + this.age + &apos; years old now&apos;);
 };
 
 Person.prototype.walking = function() {
-    console.log(this.name + &#39; is walking...&#39;);
+    console.log(this.name + &apos; is walking...&apos;);
 };
 
 function Student(name, age, className) {
@@ -1946,25 +1946,25 @@ Student.prototype = Object.create(Person.prototype);
 Student.prototype.constructor = Student;
 
 Student.prototype.hi = function() {
-    console.log(&#39;Hi, my name is &#39; + this.name + &quot;. I&#39;m &quot; + this.age + &#39; years old now, and from &#39; + this.className + &quot;.&quot;);
+    console.log(&apos;Hi, my name is &apos; + this.name + &quot;. I&apos;m &quot; + this.age + &apos; years old now, and from &apos; + this.className + &quot;.&quot;);
 };
 
 Student.prototype.learn = function(subject) {
-    console.log(this.name + &#39; is learning &#39; + subject + &#39; at &#39; + this.className + &#39;.&#39;);
+    console.log(this.name + &apos; is learning &apos; + subject + &apos; at &apos; + this.className + &apos;.&apos;);
 }
 
 //test
-var gao = new Student(&#39;Gao&#39;, &#39;24&#39;, &#39;Class 3123&#39;);
+var gao = new Student(&apos;Gao&apos;, &apos;24&apos;, &apos;Class 3123&apos;);
 console.log(gao); // 这个对象的具体内容见下图
-gao.hi(); //Hi, my name is Gao. I&#39;m 24 years old now, and from Class 3123.
+gao.hi(); //Hi, my name is Gao. I&apos;m 24 years old now, and from Class 3123.
 gao.LEGS_NUM; //2
 gao.walking(); //Gao is walking...
-gao.learn(&#39;JavaScript&#39;); //Gao is learning JavaScript at Class 3123.
+gao.learn(&apos;JavaScript&apos;); //Gao is learning JavaScript at Class 3123.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Object.create(arg)&lt;/code&gt; 创建一个空对象，并且这个对象的原型指向参数 &lt;code class=&quot;highlighter-rouge&quot;&gt;arg&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Student.prototype.constructor = Student&lt;/code&gt; 为了保证一致性，否则 constructor 指向 Person。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.create(arg)&lt;/code&gt; 创建一个空对象，并且这个对象的原型指向参数 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arg&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Student.prototype.constructor = Student&lt;/code&gt; 为了保证一致性，否则 constructor 指向 Person。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -1981,11 +1981,11 @@ gao.learn(&#39;JavaScript&#39;); //Gao is learning JavaScript at Class 3123.
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;objectcreatenull--bindnull&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Object.create(null)&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;.bind(null)&lt;/code&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;objectcreatenull--bindnull&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.create(null)&lt;/code&gt; &amp;amp; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.bind(null)&lt;/code&gt;&lt;/h4&gt;
 
 &lt;p&gt;这两种算是特例。&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Object.create(null)&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;.bind(null)&lt;/code&gt; 这两种方式创建出来的对象是没有 &lt;code class=&quot;highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性的，为 &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.create(null)&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.bind(null)&lt;/code&gt; 这两种方式创建出来的对象是没有 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性的，为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;。&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1999,7 +1999,7 @@ gao.learn(&#39;JavaScript&#39;); //Gao is learning JavaScript at Class 3123.
 
 &lt;p&gt;但是，直接修改 prototype 属性，是不会影响到已经创建好的实例对象的。但是会影响到新的实例对象。如下代码：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 上接上面的代码
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 上接上面的代码
 
 // 给 prototype 添加或删除一些属性
 Student.prototype.x = 101;
@@ -2015,31 +2015,31 @@ console.log(gao.x); //101
 console.log(gao.y); //undefined
 
 // 会影响到新创建的实例对象
-var ying = new Student(&#39;Ying&#39;, 24, &#39;UI&#39;);
+var ying = new Student(&apos;Ying&apos;, 24, &apos;UI&apos;);
 console.log(ying.x); //undefined
 console.log(ying.y); //2
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;内置构造器的-prototype-属性&quot;&gt;内置构造器的 &lt;code class=&quot;highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性&lt;/h3&gt;
+&lt;h3 id=&quot;内置构造器的-prototype-属性&quot;&gt;内置构造器的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性&lt;/h3&gt;
 
-&lt;p&gt;修改内置构造器的 &lt;code class=&quot;highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性后，在实例化这个对象后，枚举其属性时，会把修改的内置构造器的 &lt;code class=&quot;highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性也枚举出来，有时候这是要避免的。可用 &lt;code class=&quot;highlighter-rouge&quot;&gt;defineProperty&lt;/code&gt; 方法解决。如下代码：&lt;/p&gt;
+&lt;p&gt;修改内置构造器的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性后，在实例化这个对象后，枚举其属性时，会把修改的内置构造器的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性也枚举出来，有时候这是要避免的。可用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;defineProperty&lt;/code&gt; 方法解决。如下代码：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Object.prototype.x = 1;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Object.prototype.x = 1;
 var obj = {};
 console.log(obj.x); //1
 console.log(obj);
 
 for (var k in obj) {
-    console.log(&#39;result---&amp;gt;&#39; + k);
+    console.log(&apos;result---&amp;gt;&apos; + k);
 }
 // result---&amp;gt;x
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;defineProperty&lt;/code&gt; 后：&lt;/p&gt;
+&lt;p&gt;使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;defineProperty&lt;/code&gt; 后：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Object.defineProperty(Object.prototype, &#39;x&#39;, {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Object.defineProperty(Object.prototype, &apos;x&apos;, {
     writable: true,
     value: 1
 });
@@ -2047,14 +2047,14 @@ var obj = {};
 console.log(obj.x);//1
 console.log(obj);
 for (var k in obj) {
-    console.log(&#39;result---&amp;gt;&#39; + k);
+    console.log(&apos;result---&amp;gt;&apos; + k);
 }
 // nothing output here
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;其实也可以这样枚举，使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;hasOwnProperty&lt;/code&gt; 方法：&lt;/p&gt;
+&lt;p&gt;其实也可以这样枚举，使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hasOwnProperty&lt;/code&gt; 方法：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for (var key in obj) {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for (var key in obj) {
     if (obj.hasOwnProperty(key)) {
         console.log(&quot;result---&amp;gt;&quot; + key);
     }
@@ -2071,22 +2071,22 @@ for (var k in obj) {
 
 &lt;h2 id=&quot;instanceof&quot;&gt;instanceof&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;console.log([1, 2] instanceof Array); //true
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;console.log([1, 2] instanceof Array); //true
 console.log([1, 2] instanceof Object); //true
 console.log(new Object() instanceof Array); //false
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;左边要求是对象，右边要求是构造器或函数。它会判断：&lt;strong&gt;右边的构造器中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性是否出现在左边的对象的原型链上。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;左边要求是对象，右边要求是构造器或函数。它会判断：&lt;strong&gt;右边的构造器中的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 属性是否出现在左边的对象的原型链上。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;注意：&lt;/strong&gt;不同的 window 或 iframe 间的对象类型检测&lt;strong&gt;不能&lt;/strong&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;instanceof&lt;/code&gt;！&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;注意：&lt;/strong&gt;不同的 window 或 iframe 间的对象类型检测&lt;strong&gt;不能&lt;/strong&gt;使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;instanceof&lt;/code&gt;！&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;实现继承的方式&quot;&gt;实现继承的方式&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Person() {}
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Person() {}
 
 function Student() {}
 
@@ -2105,9 +2105,9 @@ Student.prototype.constructor = Student;
 
 &lt;p&gt;2 可以实现继承，但是其调用了构造函数，若父类构造函数中有形参，那么传值就会比较奇怪。&lt;/p&gt;
 
-&lt;p&gt;3 是最好的方法。创建了一个空对象，并且对象的原型指向参数 Person.prototype。这样便实现了继承。同时原型链写，不向上查找。但是 &lt;code class=&quot;highlighter-rouge&quot;&gt;Object.create&lt;/code&gt; 是ES5 中的方法，所以可以使用下列代码做兼容：&lt;/p&gt;
+&lt;p&gt;3 是最好的方法。创建了一个空对象，并且对象的原型指向参数 Person.prototype。这样便实现了继承。同时原型链写，不向上查找。但是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Object.create&lt;/code&gt; 是ES5 中的方法，所以可以使用下列代码做兼容：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (!Object.create) {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (!Object.create) {
     Object.create = function(proto) {
         function F() {}
         F.prototype = proto;
@@ -2120,9 +2120,9 @@ Student.prototype.constructor = Student;
 
 &lt;h2 id=&quot;模拟重载&quot;&gt;模拟重载&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Person() {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Person() {
     var args = arguments;
-    if (typeof args[0] === &#39;object&#39; &amp;amp;&amp;amp; args[0]) {
+    if (typeof args[0] === &apos;object&apos; &amp;amp;&amp;amp; args[0]) {
         if (args[0].name) {
             this.name = args[0].name;
         }
@@ -2141,13 +2141,13 @@ Student.prototype.constructor = Student;
 
 //重写 toString 方法
 Person.prototype.toString = function() {
-    console.log(&#39;name=&#39;+this.name+&#39;, age=&#39;+this.age);
+    console.log(&apos;name=&apos;+this.name+&apos;, age=&apos;+this.age);
 };
 
-var gao = new Person({name:&#39;Gao&#39;,age:24});
+var gao = new Person({name:&apos;Gao&apos;,age:24});
 gao.toString(); // name=Gao, age=24
 
-var ying = new Person(&#39;Ying&#39;,25);
+var ying = new Person(&apos;Ying&apos;,25);
 ying.toString(); // name=Ying, age=25
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -2157,7 +2157,7 @@ ying.toString(); // name=Ying, age=25
 
 &lt;h2 id=&quot;调用子类方法&quot;&gt;调用子类方法&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Person(name) {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Person(name) {
     this.name = name;
 }
 
@@ -2166,7 +2166,7 @@ function Student(name, className) {
     Person.call(this, name); // 调用基类的构造器
 }
 
-var gao = new Student(&#39;Gao&#39;, &#39;3123&#39;);
+var gao = new Student(&apos;Gao&apos;, &apos;3123&apos;);
 console.log(gao); // Student {className: &quot;3123&quot;, name: &quot;Gao&quot;}
 
 Person.prototype.init = function() {};
@@ -2183,14 +2183,14 @@ Student.prototype.init = function() {
 
 &lt;h2 id=&quot;链式调用&quot;&gt;链式调用&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function ClassManager() {}
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function ClassManager() {}
 ClassManager.prototype.addClass = function(str) {
-    console.log(&#39;Class: &#39; + str + &#39; added&#39;);
+    console.log(&apos;Class: &apos; + str + &apos; added&apos;);
     return this;
 };
 
 var manager = new ClassManager();
-manager.addClass(&#39;classA&#39;).addClass(&#39;classB&#39;).addClass(&#39;classC&#39;);
+manager.addClass(&apos;classA&apos;).addClass(&apos;classB&apos;).addClass(&apos;classC&apos;);
 // Class: classA added
 // Class: classB added
 // Class: classC added
@@ -2202,20 +2202,20 @@ manager.addClass(&#39;classA&#39;).addClass(&#39;classB&#39;).addClass(&#39;clas
 
 &lt;h2 id=&quot;抽象类&quot;&gt;抽象类&lt;/h2&gt;
 
-&lt;p&gt;在构造器中 &lt;code class=&quot;highlighter-rouge&quot;&gt;throw new Error(&#39;&#39;);&lt;/code&gt; 抛异常。这样防止这个类被直接调用。&lt;/p&gt;
+&lt;p&gt;在构造器中 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;throw new Error(&apos;&apos;);&lt;/code&gt; 抛异常。这样防止这个类被直接调用。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function DetectorBase() {
-    throw new Error(&#39;Abstract class can not be invoked directly!&#39;);
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function DetectorBase() {
+    throw new Error(&apos;Abstract class can not be invoked directly!&apos;);
 }
 
 DetectorBase.detect = function() {
-    console.log(&#39;Detection starting...&#39;);
+    console.log(&apos;Detection starting...&apos;);
 }
 DetectorBase.stop = function() {
-    console.log(&#39;Detection stopped.&#39;);
+    console.log(&apos;Detection stopped.&apos;);
 };
 DetectorBase.init = function() {
-    throw new Error(&#39;Error&#39;);
+    throw new Error(&apos;Error&apos;);
 }
 
 var d = new DetectorBase();// Uncaught Error: Abstract class can not be invoked directly!
@@ -2230,26 +2230,26 @@ l.detect(); //Uncaught TypeError: l.detect is not a function
 l.init(); //Uncaught TypeError: l.init is not a function
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var d = new DetectorBase();&lt;/code&gt; 是不能实例化的，会报错&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var d = new DetectorBase();&lt;/code&gt; 是不能实例化的，会报错&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;l.detect();&lt;/code&gt; 但是这个为什么报错我就不知道了。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l.detect();&lt;/code&gt; 但是这个为什么报错我就不知道了。&lt;/p&gt;
 
 &lt;p&gt;已经在原课程下提问了，期待老师的讲解。 &lt;a href=&quot;http://www.imooc.com/qadetail/82732&quot;&gt;抽象类中子类为什么不能调用父类的非抽象方法？&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;问题已经解决了，应该是老师当时的课件写错了，应该再基类中将这两个方法写在其原型 prototype 上。如下：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function DetectorBase() {
-    throw new Error(&#39;Abstract class can not be invoked directly!&#39;);
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function DetectorBase() {
+    throw new Error(&apos;Abstract class can not be invoked directly!&apos;);
 }
 
 DetectorBase.prototype.detect = function() {
-    console.log(&#39;Detection starting...&#39;);
+    console.log(&apos;Detection starting...&apos;);
 };
 DetectorBase.prototype.stop = function() {
-    console.log(&#39;Detection stopped.&#39;);
+    console.log(&apos;Detection stopped.&apos;);
 };
 DetectorBase.prototype.init = function() {
-    throw new Error(&#39;Error&#39;);
+    throw new Error(&apos;Error&apos;);
 };
 
 // var d = new DetectorBase();// Uncaught Error: Abstract class can not be invoked directly!
@@ -2268,7 +2268,7 @@ l.init(); //Uncaught Error: Error
 
 &lt;h2 id=&quot;模块化&quot;&gt;模块化&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var moduleA;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var moduleA;
 moduleA = function() {
     var prop = 1;
 
@@ -2285,7 +2285,7 @@ moduleA = function() {
 
 &lt;p&gt;或者另一种写法，使用 new&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;moduleA = new function() {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;moduleA = new function() {
     var prop = 1;
 
     function func() {}
@@ -2308,8 +2308,8 @@ moduleA = function() {
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 15 Jun 2015 22:06:05 +0800</pubDate>
-        <link>https://ysfku.github.io/2015/06/15/JavaScript-Object-Oriented/</link>
-        <guid isPermaLink="true">https://ysfku.github.io/2015/06/15/JavaScript-Object-Oriented/</guid>
+        <link>http://localhost:4000/2015/06/15/JavaScript-Object-Oriented/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/06/15/JavaScript-Object-Oriented/</guid>
         
         <category>JavaScript</category>
         
@@ -2338,7 +2338,7 @@ moduleA = function() {
 
 &lt;h2 id=&quot;闭包的例子&quot;&gt;闭包的例子&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function outer() {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function outer() {
     var localVal = 30;
     return localVal;
 }
@@ -2358,7 +2358,7 @@ console.log(func()); //30
 
 &lt;p&gt;对于第一个普通的函数，在执行过之后，它的局部变量就可以被释放。&lt;/p&gt;
 
-&lt;p&gt;对于第二个函数，&lt;code class=&quot;highlighter-rouge&quot;&gt;localVal&lt;/code&gt; 是不能被释放的。因为调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;outer2()&lt;/code&gt; 后，返回的是匿名函数，匿名函数可以访问外部的 &lt;code class=&quot;highlighter-rouge&quot;&gt;outer2()&lt;/code&gt; 中的局部变量，并返回了这个局部变量 localVal。当 &lt;code class=&quot;highlighter-rouge&quot;&gt;outer2()&lt;/code&gt; 赋值给 &lt;code class=&quot;highlighter-rouge&quot;&gt;func&lt;/code&gt; 后，再次调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;func()&lt;/code&gt;，仍能访问到局部变量 &lt;code class=&quot;highlighter-rouge&quot;&gt;localVal&lt;/code&gt;。这种情况就是闭包。&lt;/p&gt;
+&lt;p&gt;对于第二个函数，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localVal&lt;/code&gt; 是不能被释放的。因为调用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outer2()&lt;/code&gt; 后，返回的是匿名函数，匿名函数可以访问外部的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outer2()&lt;/code&gt; 中的局部变量，并返回了这个局部变量 localVal。当 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outer2()&lt;/code&gt; 赋值给 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func&lt;/code&gt; 后，再次调用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func()&lt;/code&gt;，仍能访问到局部变量 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localVal&lt;/code&gt;。这种情况就是闭包。&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -2368,9 +2368,9 @@ console.log(func()); //30
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;所谓闭包就是：子函数可以使用父函数中的局部变量。&lt;/strong&gt;&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ! function() {
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ! function() {
       var localData = &quot;localData here&quot;;
-      document.addEventListener(&#39;click&#39;,
+      document.addEventListener(&apos;click&apos;,
           function() {
               console.log(localData); //这里访问外部数据
           });
@@ -2397,10 +2397,10 @@ console.log(func()); //30
 
 &lt;p&gt;比如我们想循环绑定点击事件&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;document.body.innerHTML = &quot;&amp;lt;div id=div1&amp;gt;aaa&amp;lt;/div&amp;gt;&amp;lt;div id=div2&amp;gt;bbb&amp;lt;/div&amp;gt;&amp;lt;div id=div3&amp;gt;ccc&amp;lt;/div&amp;gt;&quot;;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;document.body.innerHTML = &quot;&amp;lt;div id=div1&amp;gt;aaa&amp;lt;/div&amp;gt;&amp;lt;div id=div2&amp;gt;bbb&amp;lt;/div&amp;gt;&amp;lt;div id=div3&amp;gt;ccc&amp;lt;/div&amp;gt;&quot;;
 for (var i = 1; i &amp;lt; 4; i++) {
-    document.getElementById(&#39;div&#39; + i).
-    addEventListener(&#39;click&#39;, function() {
+    document.getElementById(&apos;div&apos; + i).
+    addEventListener(&apos;click&apos;, function() {
         alert(i); // all are 4!
     });
 }
@@ -2410,11 +2410,11 @@ for (var i = 1; i &amp;lt; 4; i++) {
 
 &lt;p&gt;这是因为，for 循环中的 i 是一个全局变量。这里内函数的点击事件，访问到的是循环后的 i 值，所以是 4&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;document.body.innerHTML = &quot;&amp;lt;div id=div1&amp;gt;aaa&amp;lt;/div&amp;gt;&amp;lt;div id=div2&amp;gt;bbb&amp;lt;/div&amp;gt;&amp;lt;div id=div3&amp;gt;ccc&amp;lt;/div&amp;gt;&quot;;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;document.body.innerHTML = &quot;&amp;lt;div id=div1&amp;gt;aaa&amp;lt;/div&amp;gt;&amp;lt;div id=div2&amp;gt;bbb&amp;lt;/div&amp;gt;&amp;lt;div id=div3&amp;gt;ccc&amp;lt;/div&amp;gt;&quot;;
 for (var i = 1; i &amp;lt; 4; i++) {
     ! function(i) {
-        document.getElementById(&#39;div&#39; + i).
-        addEventListener(&#39;click&#39;, function() {
+        document.getElementById(&apos;div&apos; + i).
+        addEventListener(&apos;click&apos;, function() {
             alert(i); // 1, 2, 3
         });
     }(i);
@@ -2427,7 +2427,7 @@ for (var i = 1; i &amp;lt; 4; i++) {
 
 &lt;h2 id=&quot;封装&quot;&gt;封装&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(function() {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(function() {
     var _userId = 9527;
     var _typeId = &quot;item&quot;;
     var exp = {};
@@ -2491,8 +2491,8 @@ console.log(converter); //Uncaught ReferenceError: converter is not defined
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 14 Jun 2015 22:06:05 +0800</pubDate>
-        <link>https://ysfku.github.io/2015/06/14/JavaScript-closure/</link>
-        <guid isPermaLink="true">https://ysfku.github.io/2015/06/14/JavaScript-closure/</guid>
+        <link>http://localhost:4000/2015/06/14/JavaScript-closure/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/06/14/JavaScript-closure/</guid>
         
         <category>JavaScript</category>
         

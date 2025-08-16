@@ -15,11 +15,11 @@ permalink: /:year/:month/:day/:title/
 
 # other links
 twitter_username: yusufstudio
-facebook_username: yusufstudio
-github_username:  yusufstudio
+facebook_username: yusufstudioku
+telegram_username:  yusufromantic
 email: yusufromantic92@gmail.com
-weibo_username: 
-zhihu_username: 
+whatsapp_username: 87764241047
+youtube_username: yusufromantic
 
 description_footer: Semua setup menjadi satu
 
@@ -56,3 +56,6 @@ excerpt_separator: "\n\n\n\n"
 # paginate
 gems: [jekyll-paginate]
 paginate: 5
+
+plugins:
+- jekyll-paginate
