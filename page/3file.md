@@ -1,8 +1,8 @@
 ---
 layout: page
-title: File
-permalink: /file/
-icon: file
+title: Files
+permalink: /files/
+icon: user
 ---
 
 * content
